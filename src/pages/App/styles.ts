@@ -5,17 +5,13 @@ const {
   colors: { primaryBlue, secondaryBlue, gray1 },
 } = theme;
 
-export const Container = styled.h1`
-  background: ${({ theme }) => theme.colors.primary};
-`;
-
 export const Input = styled.input`
   padding: 12px 16px;
   border: 1.5px solid ${primaryBlue};
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  
+
   ::placeholder {
     font-weight: 500;
     color: ${gray1}
