@@ -10,8 +10,8 @@ export const MyThemeProvider = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      {children}
       <GlobalStyles />
+      {children}
     </ThemeProvider>
   );
 };
