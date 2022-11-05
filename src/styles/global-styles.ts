@@ -31,4 +31,8 @@ export const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+  nav {
+    font-family: 'Montserrat', sans-serif;
+  }
 `;

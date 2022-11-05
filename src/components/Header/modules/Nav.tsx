@@ -7,10 +7,10 @@ function Nav(props: NavProps) {
         <nav>
                 <StyledUl open={open}>
                     <li>Products</li>
-                    <li>Products</li>
-                    <li>Products</li>
-                    <li>Products</li>
-                    <li>Products</li>
+                    <li>Career Blog</li>
+                    <li>About Us</li>
+                    <li>Jobs</li>
+                    <li>FAQ</li>
                 </StyledUl>
             </nav>
     )

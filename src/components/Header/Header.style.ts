@@ -6,10 +6,11 @@ export const StyledHeader = styled.header`
     height: 65px;
     border-bottom: 2px solid #ccc;
     padding: 0 20px;
-
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+
+    
 
     @media (max-width: 768px) {
         align-items: flex-start;
@@ -17,12 +18,14 @@ export const StyledHeader = styled.header`
 
     .logo {
     }
-
-    nav {
-        
-    }
 `
+export const HeaderContent = styled.div`
+    width: min(100%, 1440px);
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
 export const StyledUl = styled.ul<BurgerProps>`
     list-style: none;
     display: flex;

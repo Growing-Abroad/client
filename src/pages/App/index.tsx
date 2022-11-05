@@ -1,12 +1,10 @@
-import Footer from '../../components/Footer';
-import Header from '../../components/Header/Header';
+import { PageLayout } from '../../components';
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Footer></Footer>
-    </div>
+    <PageLayout>
+      <div>Oi</div>
+    </PageLayout>
   );
 }
 
