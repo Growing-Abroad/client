@@ -7,6 +7,7 @@ function Header() {
     return (
         <StyledHeader>
             <HeaderContent>
+                //TODO: Não encontrei a logo do cliente
                 <SiYourtraveldottv size={50}/>
                 <Burger/>
             </HeaderContent>
