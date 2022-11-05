@@ -18,12 +18,12 @@ export const Input = styled.input`
   }
 `;
 
-interface ButtonProps {
+interface IButtonProps {
   width?: string;
   fontSize?: string;
   square?: boolean;
 }
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button<IButtonProps>`
   background-color: ${secondaryBlue};
   color: white;
   border-radius: ${(props) => (props.square ? '4px' : '50px')};

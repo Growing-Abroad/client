@@ -4,7 +4,7 @@ export interface TwoColorTitleParameters {
   text1: string;
   text2: string;
   hasSpaceBtw?: boolean;
-  fontSize: string;
+  fontSize?: string;
 }
 
 export default function TwoColorTitle({
@@ -19,9 +19,13 @@ export default function TwoColorTitle({
 
   return (
     <div style={{ fontWeight: 600 }}>
-      <span style={{ color: primaryBlue, fontSize }}>{text1}</span>
+      <span style={{ color: primaryBlue, fontSize: fontSize || '32px' }}>
+        {text1}
+      </span>
       {hasSpaceBtw && ' '}
-      <span style={{ color: secondaryBlue, fontSize }}>{text2}</span>
+      <span style={{ color: secondaryBlue, fontSize: fontSize || '32px' }}>
+        {text2}
+      </span>
     </div>
   );
 }
