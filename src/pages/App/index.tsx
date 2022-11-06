@@ -1,11 +1,11 @@
 import { PageLayout } from '../../components';
+import BlogSection from '../../components/Blog/BlogSection';
 
 function App() {
   return (
     <PageLayout>
-      <div>Oi</div>
+      <BlogSection/>
     </PageLayout>
-
   );
 }
 
