@@ -30,7 +30,6 @@ export const FooterContent = styled.div`
 
 export const FooterLinksWrapper = styled.div`
   display: flex;
-  align-items: center;
   gap: 48px;
   width: 100%;
 `;

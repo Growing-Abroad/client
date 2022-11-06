@@ -38,7 +38,7 @@ export default function NewsLetter() {
           <input onClick={(e) => handleCheckBox(e)} type="checkbox" />
           <span></span>
         </CheckboxWrapper>
-        <p style={{ fontSize: '.875rem' }}>
+        <p style={{ fontSize: '.750rem' }}>
           Yes, I would like to sign up for the Growing Abroad Newsletter and I
           accept the websites Privacy Policy.
         </p>

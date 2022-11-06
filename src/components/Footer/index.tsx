@@ -33,11 +33,12 @@ export default function Footer() {
               <FooterLinksLi>Online Course</FooterLinksLi>
               <FooterLinksLi>Coaching</FooterLinksLi>
               <FooterLinksLi>Jobs</FooterLinksLi>
+              <FooterLinksLi>Career Blog</FooterLinksLi>
             </FooterLinksUl>
             <FooterLinksUl>
               <FooterLinksLi>About Us</FooterLinksLi>
               <FooterLinksLi>FAQ</FooterLinksLi>
-              <FooterLinksLi>Career Blog</FooterLinksLi>
+              <FooterLinksLi>Contact Us</FooterLinksLi>
             </FooterLinksUl>
           </FooterLinksWrapper>
           <SocialMediaWrapper>
