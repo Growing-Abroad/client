@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 const {
-  colors: { secondaryBlue },
+  colors: { primaryBlue, secondaryBlue },
 } = theme;
 const boxSize = 20;
 
@@ -32,7 +32,7 @@ export const CheckboxWrapper = styled.label`
     height: ${boxSize}px;
     width: ${boxSize}px;
     border-radius: 4px;
-    outline: 1px solid black;
+    outline: 1px solid ${primaryBlue};
     background-color: white;
   }
 

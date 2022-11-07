@@ -48,10 +48,14 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Input = styled.input`
   padding: 12px 16px;
-  border: 1.5px solid ${primaryBlue};
+  outline: 1.5px solid ${primaryBlue};
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+
+  &:focus {
+    outline: 2px solid ${secondaryBlue};
+  }
 
   ::placeholder {
     font-weight: 500;

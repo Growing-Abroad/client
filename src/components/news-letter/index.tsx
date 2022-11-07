@@ -21,7 +21,6 @@ export default function NewsLetter() {
       <Input
         placeholder="Name"
         style={{
-          borderColor: theme.colors.primaryBlue,
           margin: '16px 0px 8px',
         }}
       />
