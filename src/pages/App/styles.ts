@@ -33,3 +33,10 @@ export const Button = styled.button<IButtonProps>`
   width: ${(props) => props.width || 'min-content'};
   font-size: ${(props) => props.fontSize || '1rem'};
 `;
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: center;
+  align-items:center;
+  width: 100vw;
+`;

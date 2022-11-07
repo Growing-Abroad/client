@@ -60,7 +60,7 @@ export default function Footer() {
 
       <FooterBottomContainer>
         <FooterBottomWrapper>
-          <span>2022 Growing Abroad GmbH</span>
+          <span>&#9426;&nbsp;2022 Growing Abroad GmbH</span>
           <FooterBottomRight>
             <Links href="#">Legal Notice</Links>
             <Links href="#">Data Privacy</Links>

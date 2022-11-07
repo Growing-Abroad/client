@@ -13,10 +13,13 @@ export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   background-color: ${terciaryBlue};
+  align-items: center;
+  width: 100%;
 `;
 
 export const FooterContentWrapper = styled.div`
   max-width: ${maxWidthAll};
+  width: 100%;
   padding: 80px 120px;
   display: flex;
   flex-direction: column;
@@ -68,18 +71,19 @@ export const Media = styled.img<IMedia>`
 
 export const FooterBottomContainer = styled.div`
   display: flex;
+  justify-content: center;
   background-color: ${secondaryBlue};
   color: white;
   width: 100%;
-  padding: 12px ${globalHorizontalPadding};
 `;
 
 export const FooterBottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  width: 100%;
   max-width: ${maxWidthAll};
+  width: 100%;
+  padding: 12px ${globalHorizontalPadding};
 `;
 
 export const FooterBottomRight = styled.div`

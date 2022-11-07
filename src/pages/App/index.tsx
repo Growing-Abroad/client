@@ -1,10 +1,11 @@
 import Footer from '../../components/Footer';
+import { Main } from './styles';
 
 function App() {
   return (
-    <div>
+    <Main>
       <Footer></Footer>
-    </div>
+    </Main>
   );
 }
 

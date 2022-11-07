@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     line-height: 1;
+    
+    #root {
+      width: 100vw;
+    }
   }
 
   blockquote, q {

@@ -4,12 +4,12 @@ import { theme } from '../../styles/theme';
 const {
   colors: { secondaryBlue },
 } = theme;
-const boxSize = 25;
+const boxSize = 20;
 
 export const CheckboxWrapper = styled.label`
   display: block;
   position: relative;
-  padding-left: 35px;
+  padding-left: ${boxSize}px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
@@ -27,16 +27,17 @@ export const CheckboxWrapper = styled.label`
   }
   span {
     position: absolute;
-    top: ${42 / 2 - boxSize / 2}px;
+    top: ${0}px;
     left: 0;
     height: ${boxSize}px;
     width: ${boxSize}px;
     border-radius: 4px;
-    background-color: #eee;
+    outline: 1px solid black;
+    background-color: white;
   }
 
   &:hover input ~ span {
-    background-color: #ccc;
+    background-color: #eee;
   }
 
   & input:checked ~ span {
@@ -54,8 +55,8 @@ export const CheckboxWrapper = styled.label`
   }
 
   & span:after {
-  left: 9px;
-  top: 5px;
+  left: 7px;
+  top: 2px;
   width: 5px;
   height: 10px;
   border: solid white;
