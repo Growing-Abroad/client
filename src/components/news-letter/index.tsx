@@ -1,12 +1,11 @@
 import { FormEvent } from 'react';
-import { Button, Input } from '../../pages/App/styles';
+import { Button, Input } from '../../styles/global-styles';
 import { theme } from '../../styles/theme';
 import TwoColorTitle from '../two-color-title';
 import { CheckboxWrapper } from './style';
 
 export default function NewsLetter() {
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
-    console.log({ e, aquui: 'entrei' });
     if (e.currentTarget.checked) {
       e.currentTarget.value = 'false';
     } else {
