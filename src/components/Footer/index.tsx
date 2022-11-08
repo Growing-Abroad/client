@@ -1,4 +1,3 @@
-import './style.css';
 import NewsLetter from '../news-letter';
 import {
   FooterContent,
