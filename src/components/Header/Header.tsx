@@ -1,6 +1,6 @@
 import { HeaderContent, StyledHeader } from "./Header.style"
 import Burger from "@components/Header/modules/Burger"
-import { SiYourtraveldottv } from 'react-icons/Si'
+import { SiYourtraveldottv } from 'react-icons/si'
 
 //TODO: Não encontrei a logo do cliente
 function Header() {

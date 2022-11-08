@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
 import { Button, Input } from '@styles/global-styles';
 import TwoColorTitle from '@components/two-color-title';
-import { CheckboxWrapper } from './style';
+import { CheckboxWrapper, NewsLetterContainer } from './style';
 
 export default function NewsLetter() {
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
