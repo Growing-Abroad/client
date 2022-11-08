@@ -1,4 +1,4 @@
-import { theme } from '../../styles/theme';
+import { theme } from '@styles/theme';
 
 export interface TwoColorTitleParameters {
   text1: string;

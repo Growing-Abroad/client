@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledBurger } from "../Header.style";
+import { StyledBurger } from "@components/Header/Header.style";
 import Nav from "./Nav";
 
 function Burger() {

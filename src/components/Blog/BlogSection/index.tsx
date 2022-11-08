@@ -1,6 +1,6 @@
 import * as S from './styles'
-import TwoColorTitle from '../../two-color-title';
-import BlogSwiper from '../BlogSwiper';
+import TwoColorTitle from '@components/two-color-title';
+import BlogSwiper from '@components/Blog/BlogSwiper';
 
 export default function BlogSection (){
   return (

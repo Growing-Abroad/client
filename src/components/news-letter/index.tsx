@@ -1,7 +1,6 @@
 import { FormEvent } from 'react';
-import { Button, Input } from '../../styles/global-styles';
-import { theme } from '../../styles/theme';
-import TwoColorTitle from '../two-color-title';
+import { Button, Input } from '@styles/global-styles';
+import TwoColorTitle from '@components/two-color-title';
 import { CheckboxWrapper } from './style';
 
 export default function NewsLetter() {

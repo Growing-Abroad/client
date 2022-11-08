@@ -1,4 +1,4 @@
-import NewsLetter from '../news-letter';
+import NewsLetter from '@components/news-letter';
 import {
   FooterContent,
   FooterContentWrapper,
@@ -14,12 +14,12 @@ import {
   FooterBottomContainer,
   Links,
 } from './style';
-import TwoColorTitle from '../two-color-title';
-import LinkedInIcon from '../../assets/icons/LinkedIn-icon.png';
-import FacebookIcon from '../../assets/icons/Facebook-icon.png';
-import InstagramIcon from '../../assets/icons/Instagram-icon.png';
-import TikTokIcon from '../../assets/icons/TikTok-icon.png';
-import YoutubeIcon from '../../assets/icons/Youtube-icon.png';
+import TwoColorTitle from '@components/two-color-title';
+import LinkedInIcon from '@assets/icons/LinkedIn-icon.png';
+import FacebookIcon from '@assets/icons/Facebook-icon.png';
+import InstagramIcon from '@assets/icons/Instagram-icon.png';
+import TikTokIcon from '@assets/icons/TikTok-icon.png';
+import YoutubeIcon from '@assets/icons/Youtube-icon.png';
 
 export default function Footer() {
   return (

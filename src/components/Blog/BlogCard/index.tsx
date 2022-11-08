@@ -1,5 +1,5 @@
 // import { useNavigate } from 'react-router-dom'
-import { IPost } from '../../../utils/blog_posts'
+import { IPost } from '@utils/blog_posts'
 import * as S from './styles'
 
 export default function BlogCard ({ id, title, category, image }: IPost){
