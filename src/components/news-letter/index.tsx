@@ -2,7 +2,7 @@ import { FormEvent } from 'react';
 import { Button, Input } from '../../styles/global-styles';
 import { theme } from '../../styles/theme';
 import TwoColorTitle from '../two-color-title';
-import { CheckboxWrapper } from './style';
+import { CheckboxWrapper, NewsLetterContainer } from './style';
 
 export default function NewsLetter() {
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
@@ -14,9 +14,7 @@ export default function NewsLetter() {
   };
 
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', maxWidth: '400px' }}
-    >
+    <NewsLetterContainer>
       <TwoColorTitle text1="News" text2="Letter" fontSize="32px" />
       <Input
         placeholder="Name"
@@ -42,6 +40,6 @@ export default function NewsLetter() {
         </p>
       </div>
       <Button fontSize="24px">Subscribe</Button>
-    </div>
+    </NewsLetterContainer>
   );
 }

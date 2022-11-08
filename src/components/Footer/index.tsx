@@ -26,6 +26,7 @@ export default function Footer() {
     <StyledFooter>
       <FooterContentWrapper>
         <NewsLetter />
+
         <FooterContent>
           <FooterLinksWrapper>
             <FooterLinksUl>
@@ -40,6 +41,7 @@ export default function Footer() {
               <FooterLinksLi>Contact Us</FooterLinksLi>
             </FooterLinksUl>
           </FooterLinksWrapper>
+
           <SocialMediaWrapper>
             <TwoColorTitle
               text1="Social"

@@ -1,10 +1,24 @@
 import styled from 'styled-components';
+import { variables } from '../../styles/global-variables';
 import { theme } from '../../styles/theme';
 
 const {
   colors: { primaryBlue, secondaryBlue },
 } = theme;
+const {
+  sizes: { mediaQuery },
+} = variables;
 const boxSize = 20;
+
+export const NewsLetterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+
+  @media (max-width: ${mediaQuery}) {
+    align-items: center;
+  }
+`;
 
 export const CheckboxWrapper = styled.label`
   display: block;
@@ -34,6 +48,10 @@ export const CheckboxWrapper = styled.label`
     border-radius: 4px;
     outline: 1px solid ${primaryBlue};
     background-color: white;
+
+    @media (max-width: ${mediaQuery}) {
+      top: ${42 / 2 - boxSize / 2}px;
+    }
   }
 
   &:hover input ~ span {
