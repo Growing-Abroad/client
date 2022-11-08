@@ -1,10 +1,11 @@
-import Footer from '../../components/Footer';
+import { PageLayout } from '../../components';
 
 function App() {
   return (
-    <>
-      <Footer></Footer>
-    </>
+    <PageLayout>
+      <div>Oi</div>
+    </PageLayout>
+
   );
 }
 
