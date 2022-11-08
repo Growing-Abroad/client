@@ -1,5 +1,5 @@
-import { PageLayout } from '../../components';
-import BlogSection from '../../components/Blog/BlogSection';
+import { PageLayout } from '@components';
+import BlogSection from '@components/Blog/BlogSection';
 
 function App() {
   return (
