@@ -1,5 +1,5 @@
 import { HeaderContent, StyledHeader } from "./Header.style"
-import Burger from "./modules/Burger"
+import Burger from "@components/Header/modules/Burger"
 import { SiYourtraveldottv } from 'react-icons/Si'
 
 //TODO: Não encontrei a logo do cliente

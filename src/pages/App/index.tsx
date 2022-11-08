@@ -1,4 +1,4 @@
-import { PageLayout } from '@components';
+import { PageLayout } from '@components/index';
 import BlogSection from '@components/Blog/BlogSection';
 
 function App() {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { variables } from '../../styles/global-variables';
-import { theme } from '../../styles/theme';
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
 
 const {
   colors: { primaryBlue, secondaryBlue },

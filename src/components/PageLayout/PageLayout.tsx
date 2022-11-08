@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from "react"
-import Footer from "../Footer"
-import Header from "../Header"
+import Footer from "@components/Footer"
+import Header from "@components/Header"
 
 function PageLayout(props: ComponentPropsWithoutRef<'body'>) {
     const {children} = props
