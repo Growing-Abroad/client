@@ -1,12 +1,17 @@
-import App from '@pages/App';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { PageLayout } from './components';
+import AboutUs from './pages/Aboout-us';
+import Home from './pages/Home';
 
-export function AppRoutes() {
+export function Router() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
-    </Router>
+    <PageLayout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
+    </PageLayout>
   );
 }

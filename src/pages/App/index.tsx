@@ -1,12 +1,8 @@
 import { PageLayout } from '@components/index';
-import BlogSection from '@components/Blog/BlogSection';
+import { Router } from '@/routes';
 
 function App() {
-  return (
-    <PageLayout>
-      <BlogSection/>
-    </PageLayout>
-  );
+  return <Router />;
 }
 
 export default App;
