@@ -6,7 +6,12 @@ const {
   colors: { secondaryBlue, terciaryBlue },
 } = theme;
 const {
-  sizes: { maxWidthAll, globalHorizontalPadding },
+  sizes: {
+    maxWidthAll,
+    globalHorizontalPadding,
+    mediaQuery,
+    globalHoriznalPaddingMobile,
+  },
 } = variables;
 
 export const StyledFooter = styled.footer`
@@ -24,11 +29,22 @@ export const FooterContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
+
+  @media (max-width: ${mediaQuery}) {
+    align-items: center;
+  }
 `;
 
 export const FooterContent = styled.div`
   display: flex;
   gap: 32px;
+
+  @media (max-width: ${mediaQuery}) {
+    align-items: center;
+    flex-direction: column;
+    gap: 48px;
+
+  }
 `;
 
 export const FooterLinksWrapper = styled.div`
@@ -84,6 +100,13 @@ export const FooterBottomWrapper = styled.div`
   max-width: ${maxWidthAll};
   width: 100%;
   padding: 12px ${globalHorizontalPadding};
+
+  @media (max-width: ${mediaQuery}) {
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px ${globalHoriznalPaddingMobile};
+  }
 `;
 
 export const FooterBottomRight = styled.div`
