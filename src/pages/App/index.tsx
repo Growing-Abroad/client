@@ -1,4 +1,3 @@
-import { PageLayout } from '@components/index';
 import { Router } from '@/routes';
 
 function App() {
