@@ -3,14 +3,24 @@ import styled from "styled-components";
 
 import { variables } from "@/styles/global-variables";
 
+export const BackgroudCTA = styled.section`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${theme.colors.secondaryBlue};
+`
+
 export const Container = styled.section`
     width: 100%;
+    max-width: ${variables.sizes.maxWidthAll};
     height: 70vh;
 
     display: flex;
     align-items: center;
 
     background-color: ${theme.colors.secondaryBlue};
+    
 
     .left-side {
         flex-direction: column;

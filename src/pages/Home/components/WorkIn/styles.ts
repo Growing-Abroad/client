@@ -3,7 +3,7 @@ import { theme } from "@/styles/theme";
 import { variables } from "@/styles/global-variables";
 
 export const Container = styled.section`
-    width: 100%;
+    width: min( 100%, ${variables.sizes.maxWidthAll});
     display: flex;
     flex-direction: column;
     align-items: center;
