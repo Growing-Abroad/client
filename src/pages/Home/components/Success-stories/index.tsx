@@ -12,45 +12,35 @@ const array = [
     imgSrc: Img1,
     title: 'Slide #1 is here',
     paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren`,
+    nonumy eirmod tempor invidunt.`,
     href: '',
   },
   {
     imgSrc: Img2,
     title: 'Slide #2 is here',
     paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren`,
+    nonumy eirmod tempor invidunt.`,
     href: '',
   },
   {
     imgSrc: Img3,
     title: 'Slide #3 is here',
     paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren`,
+    nonumy eirmod tempor invidunt.`,
     href: '',
   },
   {
     imgSrc: Img4,
     title: 'Slide #4 is here',
     paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren`,
+    nonumy eirmod tempor invidunt.`,
     href: '',
   },
   {
     imgSrc: Img5,
     title: 'Slide #4 is here',
     paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-    erat, sed diam voluptua. At vero eos et accusam et justo duo
-    dolores et ea rebum. Stet clita kasd gubergren`,
+    nonumy eirmod tempor invidunt.`,
     href: '',
   },
 ];

@@ -6,7 +6,7 @@ const {
   colors: { primaryBlue },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding, maxWidthAll },
+  sizes: { globalHorizontalPadding, maxWidthAll, globalHoriznalPaddingMobile },
 } = variables;
 
 export const SucessStoriesWrapper = styled.div`
@@ -16,12 +16,24 @@ export const SucessStoriesWrapper = styled.div`
   padding: 60px ${globalHorizontalPadding};
   align-items: center;
   max-width: ${maxWidthAll};
-  width: ${maxWidthAll};
+  width: 100vw;
+
+  @media (max-width: 1280px) {
+  padding: 48px ${globalHoriznalPaddingMobile};
+    
+  }
 `;
 
 export const SuccessSubtitle = styled.p`
   color: ${primaryBlue};
-  width: 670px;
+  max-width: 670px;
   font-size: 1.25rem;
   line-height: 2rem;
+  text-align: center;
+
+  @media (min-width: 200px) and (max-width: 1280px) {
+    font-size: calc(0.625rem + ((1vw - 2px) * 0.9259));
+    line-height: calc(0.75rem + ((1vw - 2px) * 1.8519));
+    min-height: 0vw;
+  }
 `;
