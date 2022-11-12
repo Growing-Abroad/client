@@ -6,7 +6,7 @@ const {
   colors: { primaryBlue },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding, maxWidthAll, globalHoriznalPaddingMobile },
+  sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHoriznalPaddingMobile },
 } = variables;
 
 export const SucessStoriesWrapper = styled.div`
@@ -18,7 +18,7 @@ export const SucessStoriesWrapper = styled.div`
   max-width: ${maxWidthAll};
   width: 100vw;
 
-  @media (max-width: 1280px) {
+  @media (max-width: ${mediaQuery}) {
   padding: 48px ${globalHoriznalPaddingMobile};
     
   }

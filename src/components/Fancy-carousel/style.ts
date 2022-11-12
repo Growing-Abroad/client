@@ -13,7 +13,7 @@ export const FlexboxSlider = styled.div`
   display: flex;
   gap: 36px;
   width: 100%;
-  height: 60vh;
+  height: 600px;
   visibility: hidden;
   align-items: baseline;
 
