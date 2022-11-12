@@ -54,7 +54,7 @@ export const StyledUl = styled.ul<BurgerProps>`
 export const StyledBurger = styled.div<BurgerProps>`
     width: 2rem;
     height: 2rem;
-    position: fixed;
+    position: absolute;
     top: 15px;
     right: 20px;
     display: flex;
