@@ -8,7 +8,7 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 12px;
+    padding: 26px;
 
     .title {
         font-size: 36px;
@@ -31,6 +31,7 @@ export const CardSpace = styled.section`
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 16px;
 
     @media(max-width: ${variables.sizes.mediaQuery}) {
         flex-direction: column;
@@ -38,24 +39,30 @@ export const CardSpace = styled.section`
 `
 
 export const Card = styled.article`
-    width: 25%;
+    width: 260px;
     display: flex;
     flex-direction: column;
+    padding: 16px;
     align-items: center;
+    border-radius: 8px;
+    box-shadow: 15px 15px 20px #aaa;
 
     h2 {
         font-size: 24px;
         margin-bottom: 8px;
+        text-align: center;
     }
     
     img {
-        width: 320px;
+        width: 220px;
     }
 
     article {
-        width: 320px;
+        width: 220px;
         text-align: center;
         margin-bottom: 12px;
+        font-size: 1rem;
+        line-height: 20px;
     }
 
     @media(max-width: ${variables.sizes.mediaQuery}) {
