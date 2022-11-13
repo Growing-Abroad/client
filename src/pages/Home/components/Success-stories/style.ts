@@ -9,14 +9,14 @@ const {
   sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHoriznalPaddingMobile },
 } = variables;
 
-export const SucessStoriesWrapper = styled.div`
+export const SucessStoriesWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 32px;
   padding: 60px ${globalHorizontalPadding};
   align-items: center;
   max-width: ${maxWidthAll};
-  width: 100vw;
+  width: 100%;
 
   @media (max-width: ${mediaQuery}) {
   padding: 48px ${globalHoriznalPaddingMobile};
