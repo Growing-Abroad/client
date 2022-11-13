@@ -1,5 +1,8 @@
+import { theme } from '@/styles/theme';
 import { ComponentPropsWithoutRef } from 'react'
 import styled from 'styled-components'
+
+const { colors: { secondaryBlue } } = theme;
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -11,10 +14,9 @@ export const StyledHeader = styled.header`
   background-color: white;
 
   @media (max-width: 768px) {
-      align-items: flex-start;
-  }
-
-  .logo {
+    align-items: center;
+    padding: 0 16px;
+ 
   }
 `
 export const HeaderContent = styled.div`
@@ -34,27 +36,37 @@ export const StyledUl = styled.ul<BurgerProps>`
   list-style: none;
   display: flex;
   gap: 24px;
+  z-index: 18;
+  padding-left: 24px;
 
   li {
       font-weight: 500;
+      font-size: 1.5rem;
       cursor: pointer;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    background-color: #00f;
+    background-color: ${secondaryBlue};
     position: fixed;
     transform: ${(props) => props.open ? 'translate(0)' : 'translate(100%)'};
     top: 0;
     right: 0;
     height: 100vh;
-    width: 300px;
-    padding-top: 1.5rem;
+    width: 100%;
+    padding-top: 16px;
 
     li {
         color: #fff;
     }
   }
+`
+
+export const BurguerLogo = styled.img`
+  height: 42px;
+  z-index: 19;
+  width: min-content;
+  margin-bottom: 24px;
 `
 
 export const StyledBurger = styled.div<BurgerProps>`
@@ -89,7 +101,10 @@ export const StyledBurger = styled.div<BurgerProps>`
   }
 
   @media (min-width: 768px) {
-      display: none;
+    display: none;
+  }
+  @media (max-width: 768px) {
+    position: fixed;
   }
 `
 
