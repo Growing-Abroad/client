@@ -32,6 +32,7 @@ export const FlexboxSlider = styled.div`
     flex-shrink: 0;
     flex-grow: 1;
     height: 100%;
+    cursor: default;
 
     .text-block {
       -webkit-transition-property: all;

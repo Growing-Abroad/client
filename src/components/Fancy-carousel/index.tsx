@@ -1,5 +1,6 @@
+import { useWindowSize } from '@/hooks/useWindowSize';
 import { variables } from '@/styles/global-variables';
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import {
   FlexboxSlide,
   FlexboxSlider,
@@ -8,7 +9,6 @@ import {
   TextBlock,
   TextBlockH3,
 } from './style';
-// import './style.css';
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
@@ -22,8 +22,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const [array, setArray] = useState(props.dataArray);
-  const [windowWidth, windowHeight] = useWindowSize();
+  const [windowWidth] = useWindowSize();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -31,60 +30,38 @@ export default function FancyCarousel(props: Props) {
   const mediaQueryNumber = Number(mediaQuery.slice(0, pxIndex));
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
-
-
   function initialSlide(): number {
-    if (windowWidth > mediaQueryNumber) {
-      return props.dataArray.length >= 2 ? 2 : 1;
+    if (windowWidth > mediaQueryNumber && props.dataArray.length > 2) {
+      return 2;
     } else {
       return 0;
     }
   }
 
-  function isSelectedSlide(index: number): string {
-    return selectedSlide === index ? 'selected-slide ' : ' ';
+  function handleSlideClasses(index: number): string {
+    let classes = 'flexbox-slide';
+
+    if (index % 2 !== 0) classes += ' short';
+    if (selectedSlide === index) classes += " selected-slide";
+    if (windowWidth < mediaQueryNumber) classes += handleMobileSliderClass(index);
+
+    return classes
   }
 
   function handleMobileSliderClass(index: number) {
-    if (windowWidth < mediaQueryNumber) {
-      if (
-        selectedSlide !== index && index !== selectedSlide - 1 && index !== selectedSlide + 1
-      ) {
-        return ' dontShow';
-      }
+    if (
+      selectedSlide !== index && index !== selectedSlide - 1 && index !== selectedSlide + 1
+    ) {
+      return ' dontShow';
     }
     return '';
   }
 
-  function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
-    useLayoutEffect(() => {
-      function updateSize() {
-        setSize([window.innerWidth, window.innerHeight]);
-      }
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
-    }, []);
-    return size;
-  }
-
-  useEffect(() => {
-    setSelectedSlide(initialSlide());
-    const arraycopy = [...array];
-    setArray(arraycopy);
-  }, [windowWidth]);
-
   return (
     <FlexboxSlider className="flexbox-slider my-flexbox-slider">
-      {array.map((item, i) => (
+      {props.dataArray.map((item, i) => (
         <FlexboxSlide
-          className={
-            'flexbox-slide ' +
-            (i % 2 !== 0 ? 'short ' : ' ') +
-            isSelectedSlide(i) +
-            handleMobileSliderClass(i)
-          }
+          className={handleSlideClasses(i)}
           key={i + '-' + item.title}
           onClick={() => setSelectedSlide(i)}
         >
