@@ -41,7 +41,7 @@ export const StyledUl = styled.ul<BurgerProps>`
 
   li {
       font-weight: 500;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       cursor: pointer;
   }
 
@@ -58,15 +58,18 @@ export const StyledUl = styled.ul<BurgerProps>`
 
     li {
         color: #fff;
+        font-size: 1.5rem;
+
     }
   }
 `
 
-export const BurguerLogo = styled.img`
+export const BurguerLogo = styled.img<BurgerProps>`
   height: 42px;
   z-index: 19;
   width: min-content;
   margin-bottom: 24px;
+  display: ${(props) => props.open ? 'inital' : 'none'};
 `
 
 export const StyledBurger = styled.div<BurgerProps>`
