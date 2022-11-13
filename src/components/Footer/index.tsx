@@ -15,11 +15,11 @@ import {
   Links,
 } from './style';
 import TwoColorTitle from '@components/two-color-title';
-import LinkedInIcon from '@assets/icons/LinkedIn-icon.png';
-import FacebookIcon from '@assets/icons/Facebook-icon.png';
-import InstagramIcon from '@assets/icons/Instagram-icon.png';
-import TikTokIcon from '@assets/icons/TikTok-icon.png';
-import YoutubeIcon from '@assets/icons/Youtube-icon.png';
+import LinkedInIcon from '@assets/icons/linkedin.webp';
+import FacebookIcon from '@assets/icons/facebook.webp';
+import InstagramIcon from '@assets/icons/instagram.webp';
+import TikTokIcon from '@assets/icons/tiktok.webp';
+import YoutubeIcon from '@assets/icons/youtube.webp';
 
 export default function Footer() {
   return (
