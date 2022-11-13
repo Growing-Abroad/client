@@ -20,9 +20,10 @@ export default function BlogSwiper() {
         slidesPerView={handleSwiperCards(2, 3)}
         spaceBetween={handleSwiperCards(2, 3)}
         navigation
+        loop
       >
         {posts.map((post) => (
-          <SwiperSlide key={post.id}>
+          <SwiperSlide key={post.id} zoom>
             <BlogCard {...post} />
           </SwiperSlide>
         ))}
