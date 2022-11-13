@@ -9,6 +9,7 @@ export const Container = styled.section`
     align-items: center;
     justify-content: center;
     padding: 26px;
+    margin-top: 60px;
 
     .title {
         font-size: 36px;
@@ -45,16 +46,16 @@ export const Card = styled.article`
     padding: 16px;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 15px 15px 20px #aaa;
 
     h2 {
         font-size: 24px;
         margin-bottom: 8px;
         text-align: center;
+        font-weight: 500;
     }
     
     img {
-        width: 220px;
+        width: 200px;
     }
 
     article {

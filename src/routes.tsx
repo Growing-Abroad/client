@@ -5,13 +5,13 @@ import Home from './pages/Home';
 
 export function Router() {
   return (
-    <PageLayout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <PageLayout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
         </Routes>
-      </BrowserRouter>
-    </PageLayout>
+      </PageLayout>
+    </BrowserRouter>
   );
 }

@@ -20,10 +20,10 @@ export default function TwoColorTitle({
 
   return (
     <TwoColorTitleWrapper style={{ gap: hasSpaceBtw ? '8px' : '0' }}>
-      <span style={{ color: primaryBlue, fontSize: fontSize || '32px' }}>
+      <span style={{ color: primaryBlue, fontSize: fontSize || '32px', whiteSpace: 'nowrap' }}>
         {text1}
       </span>
-      <span style={{ color: secondaryBlue, fontSize: fontSize || '32px' }}>
+      <span style={{ color: secondaryBlue, fontSize: fontSize || '32px', whiteSpace: 'nowrap' }}>
         {text2}
       </span>
     </TwoColorTitleWrapper>

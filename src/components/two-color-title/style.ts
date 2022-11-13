@@ -5,4 +5,5 @@ export const TwoColorTitleWrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: center;
   font-weight: 600;
+  width: min-content;
 `
