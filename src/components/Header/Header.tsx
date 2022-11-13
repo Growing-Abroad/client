@@ -1,17 +1,19 @@
-import { HeaderContent, StyledHeader } from "./Header.style"
+import { HeaderContent, Logo, StyledHeader } from "./Header.style"
 import Burger from "@components/Header/modules/Burger"
-import { SiYourtraveldottv } from 'react-icons/si'
+import logo from '@assets/growing-abroad-images/LOGO-Growing.webp'
+import { Link } from "react-router-dom"; 'react-router-dom';
 
-//TODO: Não encontrei a logo do cliente
 function Header() {
-    return (
-        <StyledHeader>
-            <HeaderContent>
-                <SiYourtraveldottv size={50}/>
-                <Burger/>
-            </HeaderContent>
-        </StyledHeader>
-    )
+  return (
+    <StyledHeader>
+      <HeaderContent>
+        <Link to='/'>
+          <Logo src={logo} alt='growing abroad logo' />
+        </Link>
+        <Burger />
+      </HeaderContent>
+    </StyledHeader>
+  )
 }
 
 export default Header

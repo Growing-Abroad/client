@@ -1,10 +1,13 @@
 import { theme } from '@styles/theme';
+import { TwoColorTitleWrapper } from './style';
 
 export interface TwoColorTitleParameters {
   text1: string;
   text2: string;
   hasSpaceBtw?: boolean;
   fontSize?: string;
+  style?: any;
+  fullWidth?: boolean
 }
 
 export default function TwoColorTitle({
@@ -12,20 +15,20 @@ export default function TwoColorTitle({
   text2,
   hasSpaceBtw,
   fontSize,
+  fullWidth
 }: TwoColorTitleParameters) {
   const {
     colors: { primaryBlue, secondaryBlue },
   } = theme;
 
   return (
-    <div style={{ fontWeight: 600 }}>
-      <span style={{ color: primaryBlue, fontSize: fontSize || '32px' }}>
+    <TwoColorTitleWrapper style={{ gap: hasSpaceBtw ? '8px' : '0', width: fullWidth ? '100%' : 'max-content' }}>
+      <span style={{ color: primaryBlue, fontSize: fontSize || '', whiteSpace: 'nowrap' }}>
         {text1}
       </span>
-      {hasSpaceBtw && ' '}
-      <span style={{ color: secondaryBlue, fontSize: fontSize || '32px' }}>
+      <span style={{ color: secondaryBlue, fontSize: fontSize || '', whiteSpace: 'nowrap' }}>
         {text2}
       </span>
-    </div>
+    </TwoColorTitleWrapper>
   );
 }

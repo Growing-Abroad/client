@@ -13,8 +13,8 @@ export default function NewsLetter() {
   };
 
   return (
-    <NewsLetterContainer>
-      <TwoColorTitle text1="News" text2="Letter" fontSize="32px" />
+    <NewsLetterContainer >
+      <TwoColorTitle text1="News" text2="Letter" fontSize="32px" fullWidth />
       <Input
         placeholder="Name"
         style={{
