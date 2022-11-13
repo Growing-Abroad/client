@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { theme } from '@styles/theme';
 import { variables } from '@/styles/global-variables';
+import { ComponentPropsWithoutRef } from 'react';
 
 const {
-  colors: { primaryBlue, secondaryBlue, primaryYellow },
+  colors: { primaryBlue, secondaryBlue },
 } = theme;
 const {
   sizes: { globalHorizontalPadding },
@@ -20,15 +21,17 @@ export const DiscoverWrapper = styled.div`
 export const DiscoverContent = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${secondaryBlue};
-`;
+  gap: 36px;
+  `;
 
 export const DiscoverReadMoreWrapper = styled.div`
+  background-color: ${secondaryBlue};
   display: flex;
   flex-direction: column;
   padding: 32px;
   gap: 32px;
   align-items: flex-start;
+  max-width: 600px;
 `;
 
 export const DiscoverReadMoreText = styled.p`
@@ -52,5 +55,19 @@ export const DiscoverReadMoreButton = styled.button`
 
 export const DiscoverImagesWrapper = styled.div`
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 36px;
+  height: 300px;
 `;
+
+export interface IDiscoverImgProps extends ComponentPropsWithoutRef<"div"> {
+  url: string
+}
+export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
+  background-image: url(${props => props.url});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70px;
+  height: 100%;
+`

@@ -1,12 +1,16 @@
 import TwoColorTitle from '@/components/two-color-title';
 import {
   DiscoverContent,
+  DiscoverGaImg,
   DiscoverImagesWrapper,
   DiscoverReadMoreButton,
   DiscoverReadMoreText,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
 } from './style';
+import Uan from '@assets/Photos-Main-Page/Uan-Business_Canva.png'
+import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.png'
+import Hands from '@assets/Photos-Main-Page/high-five.webp'
 
 export default function DiscoverGA() {
   return (
@@ -38,7 +42,11 @@ export default function DiscoverGA() {
           <DiscoverReadMoreButton>Read More</DiscoverReadMoreButton>
         </DiscoverReadMoreWrapper>
 
-        <DiscoverImagesWrapper></DiscoverImagesWrapper>
+        <DiscoverImagesWrapper>
+          <DiscoverGaImg url={Uan} />
+          <DiscoverGaImg url={Hands} />
+          <DiscoverGaImg url={Manu} />
+        </DiscoverImagesWrapper>
       </DiscoverContent>
     </DiscoverWrapper>
   );
