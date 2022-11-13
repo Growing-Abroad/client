@@ -9,72 +9,91 @@ export const BackgroudCTA = styled.section`
     justify-content: center;
     align-items: center;
     background-color: ${theme.colors.secondaryBlue};
+    padding-top: 0px;
+`
+
+export const CtaButton = styled.button`
+  margin-top: 2rem;
+  padding: 0px 24px;
+  height: 50px;
+
+  border-radius: 50px;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: ${theme.colors.primaryBlue};
+  color: white;
+  transition: 300ms;
+
+  &:hover {
+      cursor: pointer;
+      background-color: white;
+      color: ${theme.colors.primaryBlue};
+  }
 `
 
 export const Container = styled.section`
     width: 100%;
     max-width: ${variables.sizes.maxWidthAll};
-    height: 70vh;
 
     display: flex;
     align-items: center;
 
     background-color: ${theme.colors.secondaryBlue};
     
+    position: relative;
 
     .left-side {
         flex-direction: column;
 
         width: 50%;
 
-        padding: 2rem;
+        padding: 48px 32px;
 
         h1 {
             color: #fff;
             font-size: 5rem;
-            text-shadow: 4px 2px 8px #000;
-
+            text-shadow: 5px 5px 15px rgba(255, 255, 255, .6);
             height: 70%;
                 
             .verde {
                 color: #FFDB5C;
+                text-shadow: 5px 5px 15px rgba(255, 219, 92, .5);
+
             }
 
             .azul {
                 color: #05335B;
-            }
-        }
+                text-shadow: 5px 5px 15px rgba(5, 51, 91, .5);
 
-        button {
-            margin-top: 2rem;
-            padding: 0px 10px;
-            height: 50px;
-
-            border-radius: 8px;
-
-            font-size: 1.5rem;
-
-            &:hover {
-                cursor: pointer;
             }
         }
     }
 
     .right-side {
-        position: relative;
-        height: 100%;
-        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 600px;
+        height: min-content;
 
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: nowrap;
+
+        .right-side-img-container {
+          position: relative
+        }
         img {
-            max-height: 85%;
+            height: 400px;
+            bottom: 0;
+            position: absolute;
+          }
+          
+          .to-right {
             position: absolute;
             bottom: 0;
-        }
-
-        .to-right {
-            right: -3rem;
+            left: 150px;
         }
     }
     
