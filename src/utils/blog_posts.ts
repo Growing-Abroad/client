@@ -3,7 +3,7 @@ interface ICategory {
   name: string
 }
 
-interface IImage {
+export interface IImage {
   src: string
   alt: string
 }
