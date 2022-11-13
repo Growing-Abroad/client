@@ -19,7 +19,6 @@ export default function DiscoverGA() {
         text1="Discover"
         text2="GROWING ABROAD"
         hasSpaceBtw
-        fontSize="2.5rem"
       />
 
       <DiscoverContent>
