@@ -17,6 +17,7 @@ export const NewsLetterContainer = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
+    max-width: 225px;
   }
 `;
 

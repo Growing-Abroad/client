@@ -12,9 +12,13 @@ export const Container = styled.section`
     margin-top: 60px;
 
     .title {
-        font-size: 36px;
+        font-size: 2.5rem;
         font-weight: 600;
         margin: 16px 0px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
 
         span {
             color: ${theme.colors.secondaryBlue}
@@ -22,7 +26,9 @@ export const Container = styled.section`
     }
 
     @media(max-width: ${variables.sizes.mediaQuery}) {
-
+      .title {
+        font-size: 2rem;
+      }
     }
 `
 export const CardSpace = styled.section`
@@ -30,8 +36,8 @@ export const CardSpace = styled.section`
     height: 70%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 60px;
     margin-top: 16px;
 
     @media(max-width: ${variables.sizes.mediaQuery}) {
@@ -47,19 +53,21 @@ export const Card = styled.article`
     align-items: center;
     border-radius: 8px;
 
-    h2 {
-        font-size: 24px;
-        margin-bottom: 8px;
+    h3 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        margin-bottom: 16px;
         text-align: center;
-        font-weight: 500;
+        font-weight: 600;
     }
     
     img {
         width: 200px;
+        margin-bottom: 24px;
     }
 
     article {
-        width: 220px;
+        width: 260px;
         text-align: center;
         margin-bottom: 12px;
         font-size: 1rem;
@@ -70,12 +78,8 @@ export const Card = styled.article`
         width: 100%;
         text-align: center;
 
-        h2 {
-            font-size: 20px;
-        }
-
-        img {
-            width: 280px;
+        h3 {
+            font-size: 1.250rem;
         }
     }
 `

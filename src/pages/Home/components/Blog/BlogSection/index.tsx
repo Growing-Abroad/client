@@ -8,7 +8,6 @@ export default function BlogSection() {
       <TwoColorTitle
         text1="Read Our"
         text2="Blog"
-        fontSize="2.5rem"
         hasSpaceBtw
       />
       <h3>Choose one of our interesting topics to get more information</h3>

@@ -25,13 +25,15 @@ export const StyledFooter = styled.footer`
 export const FooterContentWrapper = styled.div`
   max-width: ${maxWidthAll};
   width: 100%;
-  padding: 80px 120px;
+  padding: 80px ${globalHorizontalPadding};
   display: flex;
   flex-direction: column;
   gap: 60px;
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
+    padding: 80px ${globalHoriznalPaddingMobile};
+
   }
 `;
 
@@ -68,6 +70,10 @@ export const SocialMediaWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
   width: 100%;
+
+  @media (max-width: ${mediaQuery}) {
+   align-items: center; 
+  }
 `;
 
 export const SocialMedia = styled.div`

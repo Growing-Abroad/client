@@ -10,7 +10,6 @@ export default function SuccessStories() {
         text1="Success"
         text2="Stories"
         hasSpaceBtw
-        fontSize="2.5rem"
       />
       <SuccessSubtitle>
         With our help customers from all over the world land their dream jobs -

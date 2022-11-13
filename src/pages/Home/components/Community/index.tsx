@@ -8,17 +8,16 @@ function CommunitySection() {
       <TwoColorTitle
         text1="Join Our"
         text2="Community"
-        fontSize="2.5rem"
         hasSpaceBtw
       />
       <S.Socials>
         {socials.map(social => (
           <S.Social key={social.socialLink}>
             <a href={social.socialLink} target="_blank">
-              <S.SocialImage src={social.source} alt={social.name}/>
+              <S.SocialImage src={social.source} alt={social.name} />
             </a>
             <S.SocialText>
-              <p>+ {social.followNumber.toLocaleString('en').replace(/,/g ,'.')}</p>
+              <p>+ {social.followNumber.toLocaleString('en').replace(/,/g, '.')}</p>
               <span>{social.followType + 's'}</span>
             </S.SocialText>
           </S.Social>
