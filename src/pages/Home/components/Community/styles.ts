@@ -11,6 +11,10 @@ export const Container = styled.section`
   gap: 4rem;
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   text-align: center;
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding: 26px ${variables.sizes.globalHoriznalPaddingMobile};
+  }
 `
 
 export const Socials = styled.div`

@@ -17,6 +17,10 @@ export const Container = styled.section`
   > h3 {
     font: 500 1.5rem 'Montserrat';
   }
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding: 26px ${variables.sizes.globalHoriznalPaddingMobile} 52px;
+  }
 `
 
 export const Button = styled.button`

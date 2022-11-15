@@ -3,15 +3,19 @@ import styled from "styled-components";
 
 import { variables } from "@/styles/global-variables";
 
-const { sizes: { globalHorizontalPadding } } = variables;
+const { sizes: { globalHorizontalPadding, mediaQuery, globalHoriznalPaddingMobile } } = variables;
 
 export const BackgroudCTA = styled.section`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${theme.colors.secondaryBlue};
-    padding: 0 ${globalHorizontalPadding};
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.colors.secondaryBlue};
+  padding: 0 ${globalHorizontalPadding};
+
+  @media (max-width: ${mediaQuery}) {
+  padding: 0 ${globalHoriznalPaddingMobile};
+  }
 `
 
 export const CtaButton = styled.button`

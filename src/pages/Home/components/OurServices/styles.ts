@@ -10,4 +10,8 @@ export const Container = styled.section`
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   overflow-x:hidden;
   height: 950px;
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding: 26px ${variables.sizes.globalHoriznalPaddingMobile};
+  }
 `

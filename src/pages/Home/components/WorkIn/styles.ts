@@ -2,37 +2,39 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { variables } from "@/styles/global-variables";
 
-const { sizes: { maxWidthAll, globalHorizontalPadding } } = variables;
+const { sizes: { maxWidthAll, globalHorizontalPadding, globalHoriznalPaddingMobile } } = variables;
 
 export const Container = styled.section`
-    width: min( 100%, ${maxWidthAll});
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 26px ${globalHorizontalPadding};
-    margin-top: 80px;
-    color: ${theme.colors.primaryBlue};
+  width: min( 100%, ${maxWidthAll});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px ${globalHorizontalPadding};
+  margin-top: 80px;
+  color: ${theme.colors.primaryBlue};
 
-    .title {
-        font-size: 3.25rem;
-        font-weight: 600;
-        margin: 16px 0px;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        flex-wrap: wrap;
+  .title {
+      font-size: 3.25rem;
+      font-weight: 600;
+      margin: 16px 0px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
 
-        span {
-            color: ${theme.colors.secondaryBlue}
-        }
-    }
-
-    @media(max-width: ${variables.sizes.mediaQuery}) {
-      .title {
-        font-size: 2rem;
+      span {
+          color: ${theme.colors.secondaryBlue}
       }
+  }
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding: 26px ${globalHoriznalPaddingMobile};
+    .title {
+      font-size: 2rem;
+
     }
+  }
 `
 export const CardSpace = styled.section`
     width: 100%;

@@ -7,7 +7,7 @@ const {
   colors: { primaryBlue, secondaryBlue },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding, maxWidthAll },
+  sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHoriznalPaddingMobile },
 } = variables;
 
 export const DiscoverWrapper = styled.div`
@@ -18,13 +18,21 @@ export const DiscoverWrapper = styled.div`
   gap: 48px;
   width: 100%;
   max-width: ${maxWidthAll};
+
+  @media (max-width: ${mediaQuery}) {
+    padding: 60px ${globalHoriznalPaddingMobile};
+  }
 `;
 
 export const DiscoverContent = styled.div`
   display: flex;
   align-items: center;
   gap: 36px;
-  `;
+
+  @media (max-width: ${mediaQuery}) {
+    flex-direction: column;
+  }
+`;
 
 export const DiscoverReadMoreWrapper = styled.div`
   background-color: ${secondaryBlue};
@@ -34,6 +42,12 @@ export const DiscoverReadMoreWrapper = styled.div`
   gap: 32px;
   align-items: flex-start;
   max-width: 60%;
+
+  
+  @media (max-width: ${mediaQuery}) {
+    width: 100%;
+    min-width: 100%;
+  }
 `;
 
 export const DiscoverReadMoreText = styled.p`
