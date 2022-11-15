@@ -2,8 +2,13 @@ import { FormEvent } from 'react';
 import { Button, Input } from '@styles/global-styles';
 import TwoColorTitle from '@components/two-color-title';
 import { CheckboxWrapper, NewsLetterContainer } from './style';
+import { useWindowSize } from '@/hooks/useWindowSize';
+import { variables } from '@/styles/global-variables';
+import { removePxFromCssValue } from '@/utils/scripts/general-utility';
 
 export default function NewsLetter() {
+  const [width] = useWindowSize();
+
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked) {
       e.currentTarget.value = 'false';
@@ -12,9 +17,10 @@ export default function NewsLetter() {
     }
   };
 
+
   return (
     <NewsLetterContainer >
-      <TwoColorTitle text1="News" text2="Letter" fontSize="32px" fullWidth />
+      <TwoColorTitle text1="News" text2="Letter" fontSize="32px" fullWidth style={{ justifyContent: width < removePxFromCssValue(variables.sizes.mediaQuery) ? 'center' : 'flex-start' }} />
       <Input
         placeholder="Name"
         style={{

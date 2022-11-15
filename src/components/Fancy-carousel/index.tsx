@@ -1,5 +1,6 @@
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { variables } from '@/styles/global-variables';
+import { removePxFromCssValue } from '@/utils/scripts/general-utility';
 import { useState } from 'react';
 import {
   FlexboxSlide,
@@ -26,8 +27,7 @@ export default function FancyCarousel(props: Props) {
   const {
     sizes: { mediaQuery },
   } = variables;
-  const pxIndex = mediaQuery.indexOf('px');
-  const mediaQueryNumber = Number(mediaQuery.slice(0, pxIndex));
+  const mediaQueryNumber = removePxFromCssValue(mediaQuery);
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
   function initialSlide(): number {

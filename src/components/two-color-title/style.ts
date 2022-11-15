@@ -6,7 +6,7 @@ const { sizes: { mediaQuery, globalHorizontalPadding, globalHoriznalPaddingMobil
 export const TwoColorTitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   font-weight: 600;
   width: max-content;
   font-size: 3.25rem;
@@ -18,6 +18,7 @@ export const TwoColorTitleWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
+    width: 100%;
 
 
     span {
