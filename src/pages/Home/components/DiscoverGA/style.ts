@@ -14,13 +14,13 @@ export const DiscoverWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
-  padding: 60px ${globalHorizontalPadding};
+  padding: 80px ${globalHorizontalPadding};
   gap: 48px;
   width: 100%;
   max-width: ${maxWidthAll};
 
   @media (max-width: ${mediaQuery}) {
-    padding: 60px ${globalHoriznalPaddingMobile};
+    padding: 80px ${globalHoriznalPaddingMobile};
   }
 `;
 

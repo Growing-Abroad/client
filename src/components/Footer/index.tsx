@@ -20,8 +20,13 @@ import FacebookIcon from '@assets/icons/facebook.webp';
 import InstagramIcon from '@assets/icons/instagram.webp';
 import TikTokIcon from '@assets/icons/tiktok.webp';
 import YoutubeIcon from '@assets/icons/youtube.webp';
+import { removePxFromCssValue } from '@/utils/scripts/general-utility';
+import { variables } from '@/styles/global-variables';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 export default function Footer() {
+  const [width] = useWindowSize();
+
   return (
     <StyledFooter>
       <FooterContentWrapper>
@@ -47,6 +52,7 @@ export default function Footer() {
               text1="Social"
               text2="Media"
               hasSpaceBtw
+              style={{ justifyContent: width < removePxFromCssValue(variables.sizes.mediaQuery) ? 'center' : 'flex-start' }}
             ></TwoColorTitle>
             <SocialMedia>
               <Media src={InstagramIcon} />

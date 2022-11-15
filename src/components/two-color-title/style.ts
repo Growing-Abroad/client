@@ -22,7 +22,8 @@ export const TwoColorTitleWrapper = styled.div`
 
 
     span {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      text-overflow: wrap;
     }
   }
 `

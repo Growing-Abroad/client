@@ -19,7 +19,7 @@ export const Container = styled.section`
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 26px ${variables.sizes.globalHoriznalPaddingMobile} 52px;
+    padding: 80px ${variables.sizes.globalHoriznalPaddingMobile} 120px;
   }
 `
 

@@ -26,12 +26,12 @@ export default function TwoColorTitle({
 
   return (
     <TwoColorTitleWrapper style={{ gap: hasSpaceBtw ? '12px' : '0', width: fullWidth ? '100%' : '100%', ...style }}>
-      <span style={{ color: primaryBlue, fontSize: fontSize || '', whiteSpace: 'nowrap', textTransform: upperCase ? 'uppercase' : 'initial' }}>
+      <span style={{ color: primaryBlue, fontSize: fontSize || '', textTransform: upperCase ? 'uppercase' : 'initial' }}>
         {text1}
       </span>
-      <span style={{ color: secondaryBlue, fontSize: fontSize || '', whiteSpace: 'nowrap', textTransform: upperCase ? 'uppercase' : 'initial' }}>
+      <span style={{ color: secondaryBlue, fontSize: fontSize || '', textTransform: upperCase ? 'uppercase' : 'initial' }}>
         {text2}
       </span>
-    </TwoColorTitleWrapper>
+    </TwoColorTitleWrapper >
   );
 }

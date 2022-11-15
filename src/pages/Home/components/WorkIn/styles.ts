@@ -10,8 +10,8 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 26px ${globalHorizontalPadding};
-  margin-top: 80px;
+  padding: 80px ${globalHorizontalPadding};
+  margin-top: 20px;
   color: ${theme.colors.primaryBlue};
 
   .title {
@@ -29,9 +29,9 @@ export const Container = styled.section`
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 26px ${globalHoriznalPaddingMobile};
+    padding: 80px ${globalHoriznalPaddingMobile};
     .title {
-      font-size: 2rem;
+      font-size: 2.5rem;
 
     }
   }
@@ -84,8 +84,6 @@ export const Card = styled.article`
         width: 100%;
         text-align: center;
 
-        h3 {
-            font-size: 1.250rem;
-        }
+      
     }
 `

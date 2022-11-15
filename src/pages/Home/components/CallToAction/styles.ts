@@ -2,30 +2,28 @@ import { theme } from "@/styles/theme";
 import styled from "styled-components";
 
 import { variables } from "@/styles/global-variables";
+import manuUanHappy from "@assets/Photos-Main-Page/uan-manu-happy.webp";
 
 const { sizes: { globalHorizontalPadding, mediaQuery, globalHoriznalPaddingMobile } } = variables;
+const { colors: { secondaryBlue } } = theme;
 
 export const BackgroudCTA = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.colors.secondaryBlue};
+  background-color: ${secondaryBlue};
   padding: 0 ${globalHorizontalPadding};
 
   @media (max-width: ${mediaQuery}) {
-  padding: 0 ${globalHoriznalPaddingMobile};
+    padding: 0;
   }
 `
 
 export const CtaButton = styled.button`
-  margin-top: 2rem;
-  padding: 0px 24px;
-  height: 50px;
-
+  padding: 18px 46px;
   border-radius: 50px;
-
-  font-size: 1rem;
+  font-size: 1.125rem;
   text-transform: uppercase;
   font-weight: 700;
   background-color: ${theme.colors.primaryBlue};
@@ -37,6 +35,11 @@ export const CtaButton = styled.button`
       background-color: white;
       color: ${theme.colors.primaryBlue};
   }
+
+  @media (max-width: ${mediaQuery}) {
+    padding: 16px 40px;
+    font-size: 1rem;
+  }
 `
 
 export const Container = styled.section`
@@ -46,22 +49,24 @@ export const Container = styled.section`
     display: flex;
     align-items: center;
 
-    background-color: ${theme.colors.secondaryBlue};
+    background-color: ${secondaryBlue};
     
     position: relative;
 
     .left-side {
+        display: flex;
+        align-items: flex-start;
         flex-direction: column;
+        gap: 2.75rem;
 
         width: 50%;
-
         padding: 80px 32px 80px 0;
 
         h1 {
             color: #fff;
             font-size: 5rem;
+            line-height: 5.5rem;
             text-shadow: 5px 5px 15px rgba(255, 255, 255, .6);
-            height: 70%;
                 
             .verde {
                 color: #FFDB5C;
@@ -98,13 +103,25 @@ export const Container = styled.section`
         }
     }
     
-    @media (max-width: ${variables.sizes.mediaQuery}) {
-        .left-side {
-            width: 100%;
+    @media (max-width: ${mediaQuery}) {
+      background-image: url(${manuUanHappy});
+      background-size: 130%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      
 
-            h1 {
-                font-size: 3rem;
-            }
+        .left-side {
+          width: 100%;
+          min-height: 85vh;
+          padding: 46px ${globalHoriznalPaddingMobile};
+          align-items: center;
+          background-color: rgba(74, 154, 253, .7);
+          justify-content: space-between;
+
+          h1 {
+              font-size: 4.5rem;
+              line-height: 5rem;
+          }
         }
 
         .right-side {
