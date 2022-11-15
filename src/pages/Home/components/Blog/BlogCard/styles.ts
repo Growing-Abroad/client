@@ -10,7 +10,7 @@ interface IPostText extends ComponentPropsWithoutRef<'p'> {
 export const Container = styled.div`  
   display: flex;
   flex-direction: column;
-  max-width: 15rem;
+  max-width: 100%;
   border: 1px solid lightgray;
   border-radius: 0.5rem;
   text-align: center;

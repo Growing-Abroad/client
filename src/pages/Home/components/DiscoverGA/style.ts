@@ -7,7 +7,7 @@ const {
   colors: { primaryBlue, secondaryBlue },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding },
+  sizes: { globalHorizontalPadding, maxWidthAll },
 } = variables;
 
 export const DiscoverWrapper = styled.div`
@@ -16,6 +16,8 @@ export const DiscoverWrapper = styled.div`
   align-items:center;
   padding: 60px ${globalHorizontalPadding};
   gap: 48px;
+  width: 100%;
+  max-width: ${maxWidthAll};
 `;
 
 export const DiscoverContent = styled.div`
@@ -31,7 +33,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   padding: 32px;
   gap: 32px;
   align-items: flex-start;
-  max-width: 600px;
+  max-width: 60%;
 `;
 
 export const DiscoverReadMoreText = styled.p`
@@ -58,6 +60,7 @@ export const DiscoverImagesWrapper = styled.div`
   align-items: center;
   gap: 36px;
   height: 300px;
+  width: 100%;
 `;
 
 export interface IDiscoverImgProps extends ComponentPropsWithoutRef<"div"> {
@@ -68,6 +71,6 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 70px;
+  width: 50%;
   height: 100%;
 `

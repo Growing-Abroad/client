@@ -7,7 +7,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  padding: 80px ${variables.sizes.globalHorizontalPadding};
   overflow-x:hidden;
+  height: 950px;
 `

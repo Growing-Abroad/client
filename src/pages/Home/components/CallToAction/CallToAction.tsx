@@ -1,6 +1,6 @@
 import * as S from "./styles"
-import uanHappy from '../../../../assets/Photos Main Page/Growing Abroad Uan happy_Canva.png'
-import manuHappy from '../../../../assets/Photos Main Page/Growing Abroad Manu happy_Canva.png'
+import uanHappy from '../../../../assets/Photos-Main-Page/Growing Abroad Uan happy_Canva.png'
+import manuHappy from '../../../../assets/Photos-Main-Page/Growing Abroad Manu happy_Canva.png'
 
 function CallToAction() {
   return (
@@ -8,9 +8,7 @@ function CallToAction() {
       <S.Container>
         <section className="left-side" >
           <h1>Get your dream job in
-            <span className="verde"> Germany </span>
-            or
-            <span className="azul"> Europe</span>
+            <span className="verde"> Germany</span>
           </h1>
           <S.CtaButton>Watch free masterclass</S.CtaButton>
         </section>

@@ -9,7 +9,7 @@ export const TwoColorTitleWrapper = styled.div`
   justify-content: flex-start;
   font-weight: 600;
   width: max-content;
-  font-size: 2.5rem;
+  font-size: 3.25rem;
 
 
   span {

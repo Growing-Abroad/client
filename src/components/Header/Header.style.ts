@@ -1,13 +1,14 @@
+import { variables } from '@/styles/global-variables';
 import { theme } from '@/styles/theme';
 import { ComponentPropsWithoutRef } from 'react'
 import styled from 'styled-components'
 
-const { colors: { secondaryBlue } } = theme;
+const { colors: { secondaryBlue, primaryBlue } } = theme;
 
 export const StyledHeader = styled.header`
   width: 100%;
   height: 65px;
-  padding: 0 36px;
+  padding: 0 ${variables.sizes.globalHorizontalPadding};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,6 +44,8 @@ export const StyledUl = styled.ul<BurgerProps>`
       font-weight: 500;
       font-size: 1.25rem;
       cursor: pointer;
+      color: ${primaryBlue};
+
   }
 
   @media (max-width: 768px) {

@@ -12,8 +12,8 @@ const {
 export const SucessStoriesWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 60px ${globalHorizontalPadding};
+  gap: 24px;
+  padding: 80px ${globalHorizontalPadding};
   align-items: center;
   max-width: ${maxWidthAll};
   width: 100%;

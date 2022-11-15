@@ -5,7 +5,8 @@ export const Container = styled.div`
   width: min( 100%, ${variables.sizes.maxWidthAll});
   display: flex;
   justify-content: center;
-  
+  height: 100%;
+
   .swiper-container {
     list-style: none;
     width: 100%;

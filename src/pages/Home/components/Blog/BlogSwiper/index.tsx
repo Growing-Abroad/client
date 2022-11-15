@@ -18,9 +18,11 @@ export default function BlogSwiper() {
     <S.Container>
       <Swiper
         slidesPerView={handleSwiperCards(2, 3)}
-        spaceBetween={handleSwiperCards(2, 3)}
+        spaceBetween={handleSwiperCards(2, 60)}
         navigation
         loop
+        style={{ padding: '0 60px' }}
+
       >
         {posts.map((post) => (
           <SwiperSlide key={post.id} zoom>

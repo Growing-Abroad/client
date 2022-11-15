@@ -2,17 +2,20 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { variables } from "@/styles/global-variables";
 
+const { sizes: { maxWidthAll, globalHorizontalPadding } } = variables;
+
 export const Container = styled.section`
-    width: min( 100%, ${variables.sizes.maxWidthAll});
+    width: min( 100%, ${maxWidthAll});
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 26px;
-    margin-top: 60px;
+    padding: 26px ${globalHorizontalPadding};
+    margin-top: 80px;
+    color: ${theme.colors.primaryBlue};
 
     .title {
-        font-size: 2.5rem;
+        font-size: 3.25rem;
         font-weight: 600;
         margin: 16px 0px;
         display: flex;
@@ -38,7 +41,7 @@ export const CardSpace = styled.section`
     flex-direction: row;
     justify-content: center;
     gap: 60px;
-    margin-top: 16px;
+    margin-top: 48px;
 
     @media(max-width: ${variables.sizes.mediaQuery}) {
         flex-direction: column;
@@ -46,10 +49,9 @@ export const CardSpace = styled.section`
 `
 
 export const Card = styled.article`
-    width: 260px;
+    width: 350px;
     display: flex;
     flex-direction: column;
-    padding: 16px;
     align-items: center;
     border-radius: 8px;
 
@@ -59,10 +61,11 @@ export const Card = styled.article`
         margin-bottom: 16px;
         text-align: center;
         font-weight: 600;
+        height: 70px;
     }
     
     img {
-        width: 200px;
+        width: 250px;
         margin-bottom: 24px;
     }
 
@@ -70,8 +73,9 @@ export const Card = styled.article`
         width: 260px;
         text-align: center;
         margin-bottom: 12px;
-        font-size: 1rem;
+        font-size: 1.125rem;
         line-height: 20px;
+        color: ${theme.colors.primaryBlue}
     }
 
     @media(max-width: ${variables.sizes.mediaQuery}) {

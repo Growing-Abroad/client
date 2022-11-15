@@ -8,8 +8,8 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 4rem;
+  padding: 80px ${variables.sizes.globalHorizontalPadding};
   text-align: center;
 `
 

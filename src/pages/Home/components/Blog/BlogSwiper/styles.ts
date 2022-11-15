@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 20rem;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
+  width: 100%;
   
   .swiper-container {
     list-style: none;
@@ -31,9 +32,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 768px) {
-    max-width: 50rem;
     .swiper-button-next {
-      right: 25px;
     }
   }
 `

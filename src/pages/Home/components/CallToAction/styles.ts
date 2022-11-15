@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 import { variables } from "@/styles/global-variables";
 
+const { sizes: { globalHorizontalPadding } } = variables;
+
 export const BackgroudCTA = styled.section`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: ${theme.colors.secondaryBlue};
-    padding-top: 0px;
+    padding: 0 ${globalHorizontalPadding};
 `
 
 export const CtaButton = styled.button`
@@ -49,7 +51,7 @@ export const Container = styled.section`
 
         width: 50%;
 
-        padding: 48px 32px;
+        padding: 80px 32px 80px 0;
 
         h1 {
             color: #fff;
@@ -60,13 +62,7 @@ export const Container = styled.section`
             .verde {
                 color: #FFDB5C;
                 text-shadow: 5px 5px 15px rgba(255, 219, 92, .5);
-
-            }
-
-            .azul {
-                color: #05335B;
-                text-shadow: 5px 5px 15px rgba(5, 51, 91, .5);
-
+                font-weight: 600;
             }
         }
     }
@@ -87,13 +83,14 @@ export const Container = styled.section`
         img {
             height: 400px;
             bottom: 0;
+            left: -80px;
             position: absolute;
           }
           
           .to-right {
             position: absolute;
             bottom: 0;
-            left: 150px;
+            left: 50px;
         }
     }
     

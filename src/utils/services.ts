@@ -1,4 +1,10 @@
 import { IImage } from '@utils/blog_posts';
+import Castle from '@assets/Photos-Main-Page/Castle-Neuschwanstein.webp';
+import CvOptimization from '@assets/Photos-Main-Page/CV-Optimization.webp';
+import CurriculumVitae from '@assets/Photos-Main-Page/Curriculum-Vitae.webp';
+import OnlineCourse from '@assets/Photos-Main-Page/online-course-success.webp';
+import JobInterview from '@assets/Photos-Main-Page/job-interview-coaching.webp';
+
 
 interface IDescription {
   id: string
@@ -22,13 +28,13 @@ export const services: IService[] = [
     title: 'Job Interview Preparation',
     subtitle: 'To rock every Job Interview',
     image: {
-      src: 'https://via.placeholder.com/200x100',
+      src: JobInterview,
       alt: 'Job Interview Preparation'
     },
     descriptions: [
-      {id: '9', content:'Guideline and Workbook to perfectly prepare for your job interview'},
-      {id: '99', content:'Feedback with Video Analysis on how to improve your appearance'},
-      {id: '999', content:'Templates with the most asked interview questions and how to prepare for them'}
+      { id: '9', content: 'Guideline and Workbook to perfectly prepare for your job interview' },
+      { id: '99', content: 'Feedback with Video Analysis on how to improve your appearance' },
+      { id: '999', content: 'Templates with the most asked interview questions and how to prepare for them' }
     ],
     hasMoreInfo: false
   },
@@ -37,13 +43,13 @@ export const services: IService[] = [
     title: 'Online Course',
     subtitle: 'How to land your dream job in Germany or Europe',
     image: {
-      src: 'https://via.placeholder.com/200x100',
+      src: OnlineCourse,
       alt: 'Online Course'
     },
     descriptions: [
-      {id: '1', content:'Learn all the steps you have to take to land your DREAM JOB in GERMANY'},
-      {id: '12', content:'Access to 50+ Videos, Workbook, Community, Templates and much more'},
-      {id: '123', content:'Lifetime access to the entire online course to build a successful career abroad'}
+      { id: '1', content: 'Learn all the steps you have to take to land your DREAM JOB in GERMANY' },
+      { id: '12', content: 'Access to 50+ Videos, Workbook, Community, Templates and much more' },
+      { id: '123', content: 'Lifetime access to the entire online course to build a successful career abroad' }
     ],
     hasMoreInfo: true
   },
@@ -52,13 +58,13 @@ export const services: IService[] = [
     title: 'CV Optimization',
     subtitle: 'To have a CV in german standards',
     image: {
-      src: 'https://via.placeholder.com/200x100',
+      src: CvOptimization,
       alt: 'CV Optimization'
     },
     descriptions: [
-      {id: '4', content:'Guideline and Workbook how to effectively optimize your CV for the German market'},
-      {id: '45', content:'Personal Feedback rounds and insider tips to elevate your CV from all the others'},
-      {id: '456', content:'Final corrections to have a perfectly optimized CV to get every job interview'}
+      { id: '4', content: 'Guideline and Workbook how to effectively optimize your CV for the German market' },
+      { id: '45', content: 'Personal Feedback rounds and insider tips to elevate your CV from all the others' },
+      { id: '456', content: 'Final corrections to have a perfectly optimized CV to get every job interview' }
     ],
     hasMoreInfo: false
   },
@@ -71,9 +77,9 @@ export const services: IService[] = [
       alt: 'Job Interview Preparation'
     },
     descriptions: [
-      {id: '6', content:'Guideline and Workbook to perfectly prepare for your job interview'},
-      {id: '67', content:'Feedback with Video Analysis on how to improve your appearance'},
-      {id: '678', content:'Templates with the most asked interview questions and how to prepare for them'}
+      { id: '6', content: 'Guideline and Workbook to perfectly prepare for your job interview' },
+      { id: '67', content: 'Feedback with Video Analysis on how to improve your appearance' },
+      { id: '678', content: 'Templates with the most asked interview questions and how to prepare for them' }
     ],
     hasMoreInfo: false
   },
@@ -86,9 +92,9 @@ export const services: IService[] = [
       alt: 'Online Course'
     },
     descriptions: [
-      {id: '8', content:'Learn all the steps you have to take to land your DREAM JOB in GERMANY'},
-      {id: '89', content:'Access to 50+ Videos, Workbook, Community, Templates and much more'},
-      {id: '890', content:'Lifetime access to the entire online course to build a successful career abroad'}
+      { id: '8', content: 'Learn all the steps you have to take to land your DREAM JOB in GERMANY' },
+      { id: '89', content: 'Access to 50+ Videos, Workbook, Community, Templates and much more' },
+      { id: '890', content: 'Lifetime access to the entire online course to build a successful career abroad' }
     ],
     hasMoreInfo: true
   },
@@ -101,9 +107,9 @@ export const services: IService[] = [
       alt: 'CV Optimization'
     },
     descriptions: [
-      {id: '0', content:'Guideline and Workbook how to effectively optimize your CV for the German market'},
-      {id: '01', content:'Personal Feedback rounds and insider tips to elevate your CV from all the others'},
-      {id: '012', content:'Final corrections to have a perfectly optimized CV to get every job interview'}
+      { id: '0', content: 'Guideline and Workbook how to effectively optimize your CV for the German market' },
+      { id: '01', content: 'Personal Feedback rounds and insider tips to elevate your CV from all the others' },
+      { id: '012', content: 'Final corrections to have a perfectly optimized CV to get every job interview' }
     ],
     hasMoreInfo: false
   }
