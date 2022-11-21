@@ -17,6 +17,7 @@ export const Container = styled.section`
   
   > p {
     max-width: ${variables.sizes.mediaQuery};
+    padding-inline: 1rem;
   }
 `
 
