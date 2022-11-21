@@ -1,5 +1,5 @@
-import Img1 from '@assets/Photos-Main-Page/Uan-Business_Canva.png';
-import Img2 from '@assets/Photos-Main-Page/Manu-Business_Canva.png';
+import Img1 from '@assets/Photos-Main-Page/Uan-Business_Canva.webp';
+import Img2 from '@assets/Photos-Main-Page/Manu-Business_Canva.webp';
 import Img3 from '@assets/Photos-Main-Page/Sucess-Case_Canva.png';
 import Img4 from '@assets/Photos-Main-Page/Blog-CV_Canva.png';
 import Img5 from '@assets/Photos-Main-Page/Blog-Germany_Canva.png';
