@@ -1,3 +1,9 @@
+import WhoWeAre from "./components/WhoWeAre";
+
 export default function AboutUs() {
-  return <div>about us</div>;
+  return (
+    <>
+      <WhoWeAre />
+    </>
+  )
 }
