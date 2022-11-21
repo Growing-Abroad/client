@@ -16,21 +16,33 @@ export const Container = styled.section`
   overflow-x: none;
   
   > p {
-    width: ${variables.sizes.mediaQuery};
+    max-width: ${variables.sizes.mediaQuery};
   }
 `
 
 export const ImagesContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
+
 export const ImagesWrapper = styled.div`
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 
+  img {
+    width: 100%;
+  }
 
   .text-left, .text-right {
+    width: 100%;
+
     position: absolute;
     bottom: 0;
     background: ${theme.colors.secondaryBlue}; 
