@@ -1,7 +1,7 @@
 import * as S from './styles'
-import studentHat from '@assets/Photos Main Page/Growing Abroad Education_Canva.png'
-import worldPicture from '@assets/Photos Main Page/Growing Abroad Earth_Canva.png'
-import expertPicture from '@assets/Photos Main Page/Growing Abroad Experts_Canva.png'
+import studentHat from '@assets/Photos-Main-Page/Growing Abroad Education_Canva.png'
+import worldPicture from '@assets/Photos-Main-Page/Growing Abroad Earth_Canva.png'
+import expertPicture from '@assets/Photos-Main-Page/Growing Abroad Experts_Canva.png'
 
 import WorkInCard from './WorkInCard'
 

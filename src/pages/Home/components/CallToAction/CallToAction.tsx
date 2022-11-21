@@ -1,6 +1,6 @@
 import * as S from "./styles"
-import uanHappy from '../../../../assets/Photos Main Page/Growing Abroad Uan happy_Canva.png'
-import manuHappy from '../../../../assets/Photos Main Page/Growing Abroad Manu happy_Canva.png'
+import uanHappy from '@assets/Photos-Main-Page/Growing Abroad Uan happy_Canva.png'
+import manuHappy from '@assets/Photos-Main-Page/Growing Abroad Manu happy_Canva.png'
 
 function CallToAction() {
   return (
