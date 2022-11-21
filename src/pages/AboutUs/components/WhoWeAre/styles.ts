@@ -10,12 +10,16 @@ export const Container = styled.section`
   justify-items: center;
   gap: 2rem;
   padding: 2rem;
-  font: 400 1rem 'Montserrat';
 `
 
 export const Paragraph = styled.p`
   display:flex;
   flex-direction: column;
   gap: 1rem;
-  color: ${theme.colors.primaryBlue}
+  color: ${theme.colors.primaryBlue};
+  font: 400 0.8rem 'Montserrat';
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 `

@@ -1,14 +1,19 @@
 import { socials } from '@utils/socials'
 import TwoColorTitle from '@components/two-color-title'
 import * as S from './styles'
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 function WhoWeAre() {
   const youtube = socials.find(social => social.name === 'youtube')
+  const [width] = useWindowSize()
   return (
     <S.Container>
       <TwoColorTitle text1='Who we' text2='are' hasSpaceBtw />
       <a href={youtube?.socialLink} target="_blank">
-        <img src="https://via.placeholder.com/960x500" alt="Growing Abroad Video" />
+        <img 
+          src={`https://via.placeholder.com/${width >= 1024 ? '960x500' : '350x300'}`} 
+          alt="Growing Abroad Video" 
+        />
       </a>
       <S.Paragraph>
         <span>
