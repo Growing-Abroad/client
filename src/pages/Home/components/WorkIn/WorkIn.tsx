@@ -2,7 +2,6 @@ import * as S from './styles'
 import studentHat from '@/assets/Photos-Main-Page/Growing-Abroad-Education_Canva.png'
 import worldPicture from '@/assets/Photos-Main-Page/Earth_Canva.png'
 import expertPicture from '@/assets/Photos-Main-Page/Experts_Canva.png'
-
 import WorkInCard from './WorkInCard'
 
 function WorkIn() {
