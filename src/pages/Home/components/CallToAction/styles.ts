@@ -13,7 +13,7 @@ export const BackgroudCTA = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${secondaryBlue};
-  padding: 0 ${globalHorizontalPadding};
+  padding: 65px ${globalHorizontalPadding} 0;
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;
@@ -23,22 +23,22 @@ export const BackgroudCTA = styled.section`
 export const CtaButton = styled.button`
   padding: 18px 46px;
   border-radius: 50px;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
-  font-weight: 700;
-  background-color: ${theme.colors.primaryBlue};
-  color: white;
+  font-weight: 900;
+  background-color: white;
+  color: ${theme.colors.primaryBlue};
   transition: 300ms;
 
   &:hover {
-      cursor: pointer;
-      background-color: white;
-      color: ${theme.colors.primaryBlue};
+      cursor: pointer; 
+      background-color: ${theme.colors.primaryBlue};
+      color: white;
   }
 
   @media (max-width: ${mediaQuery}) {
     padding: 16px 40px;
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 `
 
@@ -64,8 +64,9 @@ export const Container = styled.section`
 
         h1 {
             color: #fff;
-            font-size: 5rem;
+            font-size: 5.5rem;
             line-height: 5.5rem;
+            font-weight: 500;
             text-shadow: 5px 5px 15px rgba(255, 255, 255, .6);
                 
             .verde {

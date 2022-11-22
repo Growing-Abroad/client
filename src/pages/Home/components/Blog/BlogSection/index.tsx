@@ -7,7 +7,7 @@ export default function BlogSection() {
     <S.Container>
       <TwoColorTitle
         text1="Read Our"
-        text2="Blog"
+        text2="BLOG"
         hasSpaceBtw
       />
       <h3>Choose one of our interesting topics to get more information</h3>

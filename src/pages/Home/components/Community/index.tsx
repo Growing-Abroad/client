@@ -7,7 +7,7 @@ function CommunitySection() {
     <S.Container>
       <TwoColorTitle
         text1="Join Our"
-        text2="Community"
+        text2="COMMUNITY"
         hasSpaceBtw
       />
       <S.Socials>

@@ -13,10 +13,14 @@ export const StyledHeader = styled.header`
   justify-content: center;
   align-items: center;
   background-color: white;
+  position: fixed;
+  z-index: 1000;
+
 
   @media (max-width: 768px) {
     align-items: center;
     padding: 0 16px;
+    position: unset;
  
   }
 `

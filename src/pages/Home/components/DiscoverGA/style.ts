@@ -21,6 +21,7 @@ export const DiscoverWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     padding: 80px ${globalHoriznalPaddingMobile};
+    gap: 32px; 
   }
 `;
 
@@ -28,9 +29,11 @@ export const DiscoverContent = styled.div`
   display: flex;
   align-items: center;
   gap: 36px;
+  min-height: 450px;
 
   @media (max-width: ${mediaQuery}) {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 24px;
   }
 `;
 
@@ -41,8 +44,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   padding: 32px;
   gap: 32px;
   align-items: flex-start;
-  max-width: 60%;
-
+  max-width: 50%;
   
   @media (max-width: ${mediaQuery}) {
     width: 100%;
@@ -52,16 +54,20 @@ export const DiscoverReadMoreWrapper = styled.div`
 
 export const DiscoverReadMoreText = styled.p`
   color: white;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 `;
 
 export const DiscoverReadMoreButton = styled.button`
   color: ${primaryBlue};
   background-color: white;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.125rem;
   padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
+  text-transform: uppercase;
+  
 
   &:hover {
     color: white;
@@ -73,7 +79,8 @@ export const DiscoverImagesWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 36px;
-  height: 300px;
+  height: 450px;
+  min-height: 450px;
   width: 100%;
 `;
 
@@ -87,4 +94,14 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   background-size: cover;
   width: 50%;
   height: 100%;
+
+  :first-child {
+    height: 90%;
+  }
+  :nth-child(2) {
+    height: 80%;
+  }
+  :nth-child(3) {
+    height: 70%;
+  }
 `

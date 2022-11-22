@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     list-style: none;
+    letter-spacing: 0.025rem;
   }
 
   body {

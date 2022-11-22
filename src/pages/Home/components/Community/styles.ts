@@ -29,6 +29,11 @@ export const Socials = styled.div`
   ::-webkit-scrollbar {
     opacity: 0;
   }
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `
 
 export const Social = styled.div`
@@ -44,6 +49,10 @@ export const SocialImage = styled.img`
   cursor: pointer;
   height: 5rem;
   max-width: 6rem;
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    height: 8rem;
+    max-width: 10rem;
+  }
 `
 
 export const SocialText = styled.div`
@@ -66,5 +75,16 @@ export const SocialText = styled.div`
   > span {
     font-size: 1.2rem;
     font-weight: 400;
+  }
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    > p {
+      font-size: 2rem;
+    }
+
+    > span {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
   }
 `

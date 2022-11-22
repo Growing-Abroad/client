@@ -8,7 +8,7 @@ export default function SuccessStories() {
     <SucessStoriesWrapper>
       <TwoColorTitle
         text1="Success"
-        text2="Stories"
+        text2="STORIES"
         hasSpaceBtw
       />
       <SuccessSubtitle>

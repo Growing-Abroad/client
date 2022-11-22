@@ -35,15 +35,15 @@ export const CardHeader = styled.header`
     font-weight: 700;
   }
   h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
   }
 `
 export const CardDescriptions = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: .875rem;
+  font-size: .75rem;
   line-height: 1rem;
   text-align: left;
   font-weight: 500;
@@ -85,5 +85,5 @@ export const Button = styled.button`
   &:hover {
     opacity: 0.9;
     transform: scale(1.02)
-  }
+}
 `

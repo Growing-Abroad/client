@@ -32,8 +32,8 @@ export const SuccessSubtitle = styled.p`
   text-align: center;
 
   @media (min-width: 200px) and (max-width: 1280px) {
-    font-size: calc(0.625rem + ((1vw - 2px) * 0.9259));
-    line-height: calc(0.75rem + ((1vw - 2px) * 1.8519));
+    font-size: calc(0.875rem + ((1vw - 2px) * 0.5556));
+    line-height: calc(1rem + ((1vw - 2px) * 0.7407));
     min-height: 0vw;
   }
 `;

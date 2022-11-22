@@ -18,7 +18,7 @@ export default function OurServicesSwiper() {
           },
           640: {
             slidesPerView: 1,
-            spaceBetween: 20
+            spaceBetween: 100
           }
         }}
         navigation
