@@ -38,11 +38,16 @@ export const StyledUl = styled.ul<BurgerProps>`
   gap: 24px;
   z-index: 18;
   padding-left: 24px;
-
+  
   li {
       font-weight: 500;
       font-size: 1.25rem;
       cursor: pointer;
+  }
+
+  a { 
+    text-decoration: none;
+    color: black;
   }
 
   @media (max-width: 768px) {
