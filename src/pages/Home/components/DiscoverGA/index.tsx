@@ -8,8 +8,8 @@ import {
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
 } from './style';
-import Uan from '@assets/Photos-Main-Page/Uan-Business_Canva.png'
-import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.png'
+import Uan from '@assets/Photos-Main-Page/Uan-Business_Canva.webp'
+import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.webp'
 import Hands from '@assets/Photos-Main-Page/high-five.webp'
 
 export default function DiscoverGA() {
