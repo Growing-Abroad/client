@@ -1,0 +1,14 @@
+
+.MuiPaper-root {
+  width: min-content !important;
+  min-width: unset !important;
+}
+.MuiList-root {
+  padding: 0px !important;
+}
+.MuiMenuItem-root {
+  padding: 4px !important;
+}
+.MuiMenuItem-root img {
+  width: 30px;
+}
