@@ -64,14 +64,12 @@ export const Container = styled.section`
 
         h1 {
             color: #fff;
-            font-size: 5.5rem;
-            line-height: 5.5rem;
+            font-size: 5.4rem;
+            line-height: 5.75rem;
             font-weight: 500;
-            text-shadow: 5px 5px 15px rgba(255, 255, 255, .6);
                 
             .verde {
                 color: #FFDB5C;
-                text-shadow: 5px 5px 15px rgba(255, 219, 92, .5);
                 font-weight: 600;
             }
         }

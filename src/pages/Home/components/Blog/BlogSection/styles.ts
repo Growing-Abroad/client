@@ -15,7 +15,7 @@ export const Container = styled.section`
   width: 100%;
 
   > h3 {
-    font: 500 1.75rem 'Montserrat';
+    font: 500 1.5rem 'Montserrat';
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {

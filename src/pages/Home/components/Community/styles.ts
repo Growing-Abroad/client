@@ -31,7 +31,6 @@ export const Socials = styled.div`
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    flex-direction: column;
     gap: 3rem;
   }
 `
@@ -50,8 +49,7 @@ export const SocialImage = styled.img`
   height: 5rem;
   max-width: 6rem;
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    height: 8rem;
-    max-width: 10rem;
+    
   }
 `
 
@@ -79,11 +77,11 @@ export const SocialText = styled.div`
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
     > p {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     > span {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 400;
     }
   }

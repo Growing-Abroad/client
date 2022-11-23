@@ -17,7 +17,7 @@ export default function OurServicesSwiper() {
             spaceBetween: 60
           },
           640: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 100
           }
         }}

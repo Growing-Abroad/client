@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    outline: 4px solid ${theme.colors.secondaryBlue};
+    outline: 7px solid ${theme.colors.secondaryBlue};
   }
 `
 
