@@ -4,20 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.15",
+    "eslint-config-next": "^13.0.5",
     "i18next": "^22.0.6",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.0.1",
+    "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.0.0",
@@ -43,7 +42,7 @@
     "eslint-plugin-storybook": "^0.6.6",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.7.1",
-    "typescript": "^4.8.4",
+    "typescript": "^4.9.3",
     "vite": "^3.1.0"
   }
 }
