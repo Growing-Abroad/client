@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from "react"
 import { BurguerLogo, StyledUl } from "../Header.style"
 import Logo from '@assets/growing-abroad-images/LOGO-Growing-black.webp'
-import { Link } from "react-router-dom"
+import Link from 'next/link'
 
 function Nav(props: NavProps) {
   const { open } = props
@@ -12,7 +12,7 @@ function Nav(props: NavProps) {
         <li>Online Course</li>
         <li>Coaching</li>
         <li>Career Blog</li>
-        <li><Link to="/about-us">About Us</Link></li>
+        <li><Link href={"/about-us"}>About Us</Link></li>
         <li>Jobs</li>
         <li>FAQ</li>
       </StyledUl>

@@ -11,7 +11,7 @@ export interface TwoColorTitleParameters {
   upperCase?: boolean
 }
 
-export default function TwoColorTitle({
+const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
   hasSpaceBtw,
@@ -19,7 +19,7 @@ export default function TwoColorTitle({
   fullWidth,
   upperCase,
   style
-}: TwoColorTitleParameters) {
+}) => {
   const {
     colors: { primaryBlue, secondaryBlue },
   } = theme;
@@ -35,3 +35,5 @@ export default function TwoColorTitle({
     </TwoColorTitleWrapper >
   );
 }
+
+export default TwoColorTitle;
