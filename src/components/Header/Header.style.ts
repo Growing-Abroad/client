@@ -54,7 +54,7 @@ export const StyledUl = styled.ul<BurgerProps>`
 
   a { 
     text-decoration: none;
-    color: black;
+    color: ${primaryBlue};;
   }
 
   @media (max-width: 768px) {

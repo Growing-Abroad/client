@@ -1,29 +1,29 @@
-import { variables } from "@/styles/global-variables";
+import { variables } from "@styles/global-variables";
+import { theme } from '@styles/theme';
 import styled from "styled-components";
 
-const { sizes: { mediaQuery, globalHorizontalPadding, globalHoriznalPaddingMobile } } = variables;
+const { sizes: { mediaQuery } } = variables;
 
 export const TwoColorTitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   font-weight: 600;
   width: max-content;
-  font-size: 3.25rem;
-
-
-  span {
-    text-align: center;
-  }
+  font-size: 2.5rem;
 
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
-    width: 100%;
-
-
-    span {
-      font-size: 2.5rem;
-      text-overflow: wrap;
-    }
   }
+`
+
+interface IText {
+  color: string;
+  fontSize: string;
+}
+
+export const Text = styled.span<IText>`
+  color: ${({ color }) => theme.colors[color]};
+  font-size: ${({ fontSize }) => fontSize};
+  text-align: center;
 `
