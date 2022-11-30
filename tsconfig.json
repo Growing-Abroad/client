@@ -40,7 +40,7 @@
         "pages/*"
       ],
       "@assets/*": [
-        "src/assets/*"
+        "public/assets/*"
       ],
       "@utils/*": [
         "src/utils/*"

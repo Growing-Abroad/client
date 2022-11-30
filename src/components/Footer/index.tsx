@@ -23,6 +23,7 @@ import YoutubeIcon from '@assets/icons/youtube.webp';
 import { removePxFromCssValue } from '@/utils/scripts/general-utility';
 import { variables } from '@/styles/global-variables';
 import { useWindowSize } from '@/hooks/useWindowSize';
+import Image from 'next/image'
 
 export default function Footer() {
   const [width] = useWindowSize();
@@ -55,11 +56,11 @@ export default function Footer() {
               style={{ justifyContent: width < removePxFromCssValue(variables.sizes.mediaQuery) ? 'center' : 'flex-start' }}
             ></TwoColorTitle>
             <SocialMedia>
-              <Media src={InstagramIcon} />
-              <Media src={TikTokIcon} />
-              <Media src={YoutubeIcon} />
-              <Media src={FacebookIcon} />
-              <Media src={LinkedInIcon} />
+              <Image src={InstagramIcon} alt="instagram icon" height={32} width={32} />
+              <Image src={TikTokIcon} alt="tiktok icon" height={32} width={32} />
+              <Image src={YoutubeIcon} alt="youtube icon" height={32} width={32} />
+              <Image src={FacebookIcon} alt="facebook icon" height={32} width={32} />
+              <Image src={LinkedInIcon} alt="linkedin icon" height={32} width={32} />
             </SocialMedia>
           </SocialMediaWrapper>
         </FooterContent>
