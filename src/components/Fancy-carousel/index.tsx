@@ -6,10 +6,10 @@ import {
   FlexboxSlide,
   FlexboxSlider,
   WatchVideoBtn,
-  SlideImg,
   TextBlock,
   TextBlockH3,
 } from './style';
+import Image from 'next/image'
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
@@ -65,7 +65,7 @@ export default function FancyCarousel(props: Props) {
           key={i + '-' + item.title}
           onClick={() => setSelectedSlide(i)}
         >
-          <SlideImg src={item.imgSrc} alt="Slide Image" />
+          <Image src={item.imgSrc} alt="Slide Image" />
           <TextBlock className="text-block">
             <TextBlockH3>{item.title}</TextBlockH3>
             <p>{item.paragraph}</p>

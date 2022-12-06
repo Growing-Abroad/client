@@ -73,7 +73,7 @@ export const services: IService[] = [
     title: 'Job Interview Preparation',
     subtitle: 'To rock every Job Interview',
     image: {
-      src: 'https://via.placeholder.com/200x100',
+      src: Castle,
       alt: 'Job Interview Preparation'
     },
     descriptions: [
@@ -88,7 +88,7 @@ export const services: IService[] = [
     title: 'Online Course',
     subtitle: 'How to land your dream job in Germany or Europe',
     image: {
-      src: 'https://via.placeholder.com/200x100',
+      src: CurriculumVitae,
       alt: 'Online Course'
     },
     descriptions: [
@@ -98,19 +98,4 @@ export const services: IService[] = [
     ],
     hasMoreInfo: true
   },
-  {
-    id: '123456',
-    title: 'CV Optimization',
-    subtitle: 'To have a CV in german standards',
-    image: {
-      src: 'https://via.placeholder.com/200x100',
-      alt: 'CV Optimization'
-    },
-    descriptions: [
-      { id: '0', content: 'Guideline and Workbook how to effectively optimize your CV for the German market' },
-      { id: '01', content: 'Personal Feedback rounds and insider tips to elevate your CV from all the others' },
-      { id: '012', content: 'Final corrections to have a perfectly optimized CV to get every job interview' }
-    ],
-    hasMoreInfo: false
-  }
 ]

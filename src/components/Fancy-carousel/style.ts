@@ -97,22 +97,21 @@ export const FlexboxSlide = styled.div`
     z-index: 2;
     opacity: 0;
   }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 `;
 
-export const SlideImg = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  width: auto;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: 1;
-
-  
-`;
 export const TextBlock = styled.div`
   position: absolute;
   left: 0px;
