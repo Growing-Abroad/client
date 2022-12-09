@@ -7,10 +7,9 @@ const { sizes: { mediaQuery } } = variables;
 export const TwoColorTitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   font-weight: 600;
   width: max-content;
-  font-size: 2.5rem;
 
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
@@ -19,11 +18,11 @@ export const TwoColorTitleWrapper = styled.div`
 
 interface IText {
   color: string;
-  fontSize: string;
+  fontSize?: string;
 }
 
 export const Text = styled.span<IText>`
   color: ${({ color }) => theme.colors[color]};
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize }) => fontSize || '3.5rem'} ;
   text-align: center;
 `

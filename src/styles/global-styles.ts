@@ -21,7 +21,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    line-height: 1;
     
     #root {
       display: flex;

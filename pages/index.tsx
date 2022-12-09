@@ -9,9 +9,17 @@ import DiscoverGA from './components/DiscoverGA';
 import OurServicesSection from './components/OurServices';
 import SuccessStories from './components/Success-stories';
 import WorkIn from './components/WorkIn/WorkIn';
+import styled from 'styled-components';
+
+const HomeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  width: 100%;
+`
 
 const Page: NextPageWithLayout = () => {
-  return <>
+  return <HomeWrapper>
     <CallToAction />
     <WorkIn />
     <DiscoverGA />
@@ -19,7 +27,7 @@ const Page: NextPageWithLayout = () => {
     <SuccessStories />
     <CommunitySection />
     <BlogSection />
-  </>
+  </HomeWrapper>
 }
 
 Page.getLayout = function getLayout(page: ReactElement) {

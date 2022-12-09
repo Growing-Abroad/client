@@ -1,4 +1,6 @@
-export const theme = {
+type ITheme = Record<string, Record<string, string>>
+
+export const theme: ITheme = {
   colors: {
     primaryBlue: '#05335b',
     primaryYellow: '#FFDB5C',

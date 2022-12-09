@@ -13,7 +13,7 @@ const {
 export const DiscoverWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   padding: 80px ${globalHorizontalPadding};
   gap: 48px;
   width: 100%;
