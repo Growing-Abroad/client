@@ -53,7 +53,7 @@
   },
   "include": [
     "src"
-, "src/pages/_app.tsx", "pages/components"  ],
+, "src/pages/_app.tsx", "pages/components", "pages/AboutUs"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

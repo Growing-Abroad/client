@@ -40,10 +40,10 @@ export default function FancyCarousel(props: Props) {
 
   function handleSlideClasses(index: number): string {
     let classes = 'flexbox-slide';
-
+    console.log(windowWidth)
     if (index % 2 !== 0) classes += ' short';
     if (selectedSlide === index) classes += " selected-slide";
-    if (windowWidth < mediaQueryNumber) classes += handleMobileSliderClass(index);
+    if (windowWidth && windowWidth < mediaQueryNumber) classes += handleMobileSliderClass(index);
 
     return classes
   }

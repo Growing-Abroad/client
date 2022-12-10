@@ -24,7 +24,7 @@ export const FlexboxSlider = styled.div`
   }
 
   .short {
-  height: 90%;
+    height: 90%;
   }
   
   .selected-slide {
