@@ -31,7 +31,7 @@ export const Container = styled.section<IContainer>`
 `
 
 export const ContentWrapper = styled.div`
-  max-width: 1280px
+  max-width: 1280px;
 `
 
 export const ImagesContainer = styled.div`
@@ -47,6 +47,7 @@ export const ImagesContainer = styled.div`
 export interface IImagesWrapper {
   background: string;
 }
+
 export const ImagesWrapper = styled.div<IImagesWrapper>`
   position: relative;
   display: flex;
