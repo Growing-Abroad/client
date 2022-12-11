@@ -13,7 +13,8 @@ export const StyledHeader = styled.header`
   justify-content: center;
   align-items: center;
   background-color: white;
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 1000;
 
 
