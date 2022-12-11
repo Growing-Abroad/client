@@ -11,6 +11,7 @@ export const Container = styled.section`
   border-top: 1px solid darkgray;
   border-bottom: 1px solid darkgray;
   gap: 2rem;
+  margin: 2rem 0;
 `
 
 export const LeftContent = styled.div`
