@@ -13,7 +13,7 @@ export const BackgroudCTA = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${secondaryBlue};
-  padding: 65px ${globalHorizontalPadding} 0;
+  padding: 0 ${globalHorizontalPadding};
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;

@@ -11,6 +11,7 @@ import {
 import Uan from '@assets/Photos-Main-Page/Uan-Business_Canva.webp'
 import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.webp'
 import Hands from '@assets/Photos-Main-Page/high-five.webp'
+import Image from 'next/image'
 
 export default function DiscoverGA() {
   return (
@@ -42,9 +43,9 @@ export default function DiscoverGA() {
         </DiscoverReadMoreWrapper>
 
         <DiscoverImagesWrapper>
-          <DiscoverGaImg url={Uan} />
-          <DiscoverGaImg url={Hands} />
-          <DiscoverGaImg url={Manu} />
+          <DiscoverGaImg url={Uan.src} />
+          <DiscoverGaImg url={Hands.src} />
+          <DiscoverGaImg url={Manu.src} />
         </DiscoverImagesWrapper>
       </DiscoverContent>
     </DiscoverWrapper>
