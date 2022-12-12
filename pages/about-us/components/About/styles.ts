@@ -1,9 +1,10 @@
 import { open } from '@styles/animations';
 import { theme } from '@styles/theme';
+import { variables } from '@../../../src/styles/global-variables';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  width: min(100%, 1440px);
+  width: min(100%, 1280px);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -15,16 +16,17 @@ export const Container = styled.section`
 export const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 1rem;
-  gap: 2.5rem;
-`
+  padding: 0  ${variables.sizes.globalHorizontalPadding};
+  gap: 2rem;
+  `
 
 export const Text = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 40rem;
+  flex-grow: 1;
+  max-width: 50%;
+  width: 100%;
 
   h3 {
     font-weight: 700;

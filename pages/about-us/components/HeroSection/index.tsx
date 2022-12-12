@@ -1,8 +1,8 @@
+import React from 'react'
 import * as S from './styles'
 import Uan from '@assets/Photos-Main-Page/Uan-Business_Canva.webp'
 import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.webp'
 import TwoColorTitle from '@/components/two-color-title'
-import Image from 'next/image'
 import HeroBackground from '@../../../public/assets/aboutus/hero-background.webp'
 
 function TeamMembers() {

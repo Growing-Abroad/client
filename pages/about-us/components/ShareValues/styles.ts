@@ -1,6 +1,6 @@
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme'
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll}); 
@@ -41,7 +41,7 @@ export const CardContent = styled.div`
   position: relative;
 
   > h3 {
-    font: 600 1.75rem 'Montserrat', sans-serif;
+    font: 500 1.75rem 'Montserrat', sans-serif;
     z-index: 10;
   }
 
