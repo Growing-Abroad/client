@@ -1,53 +1,65 @@
 import styled  from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import BackgroundImage from "@assets/aboutus/online-course-success.webp";
+// import BackgroundImage from "@assets/aboutus/online-course-success.webp";
 
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll}); 
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  border-top: 1px solid darkgray;
-  border-bottom: 1px solid darkgray;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 1rem;
+  padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};
+
+  @media(min-width: ${variables.sizes.mediaQuery}) {
+    flex-direction: row;
+    padding-inline: ${variables.sizes.globalHorizontalPadding};
+  }
 `
 
-export const LeftContent = styled.div`
+export const TextContainer = styled.div<{ background?: string }>`
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  color: white;
+  font: 700 3rem 'Montserrat', sans-serif;
+  background: ${({ background }) => background === 'primary' ? theme.colors.primaryBlue : theme.colors.secondaryBlue};
   padding: 2rem;
-  height: 400px;
-  background-image: url(${BackgroundImage.src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-`
-
-interface ITextContainer {
-  color?: string
-  maxWidth?: string
-  background?: string 
-}
-
-export const TextContainer = styled.div<ITextContainer>`
-  color: ${({ color }) => color === "white"? color : theme.colors.primaryBlue };
-  font: 700 1rem "Montserrat", sans-serif;
-  position: relative;
-  background: ${({ background }) => background === 'blue' ? 'rgba(74,154,253,0.6)' : 'transparent'};
-  padding: 1.5rem 1rem;
   border-radius: 0.5rem;
 
   > h3 {
-    font-size: 3rem;
-    z-index: 10;
+    text-align: center;
+    letter-spacing: 2px;
   }
 
   > p {
-    letter-spacing: 1px;
-    font-weight: 400;
-    z-index: 10;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: ${variables.sizes.mediaQuery}) {
+    width: 50%;
+    > h3 {
+      text-align: left;
+    }
   }
 `
+
+// export const LeftContent = styled.div`
+//   display: flex;
+//   align-items: flex-end;
+//   justify-content: flex-end;
+//   height: 400px;
+//   background-image: url(${BackgroundImage.src});
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%;
+
+//   padding: 1rem;
+
+//   @media (min-width: ${variables.sizes.mediaQuery}) {
+//     padding-right: 0;
+//   }
+// `

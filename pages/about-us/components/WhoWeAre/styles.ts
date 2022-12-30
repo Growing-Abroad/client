@@ -9,7 +9,11 @@ export const Container = styled.section`
   align-items: center;
   justify-items: center;
   gap: 2rem;
-  padding: 2rem ${variables.sizes.globalHorizontalPadding};
+  padding: 80px ${variables.sizes.globalHorizontalPadding};
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+  }
 `
 
 export const Paragraph = styled.p`
@@ -19,7 +23,7 @@ export const Paragraph = styled.p`
   color: ${theme.colors.primaryBlue};
   font: 400 0.8rem 'Montserrat';
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     font-size: 1rem;
   }
 `

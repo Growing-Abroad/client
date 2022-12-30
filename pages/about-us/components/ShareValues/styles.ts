@@ -9,8 +9,12 @@ export const Container = styled.section`
   align-items: center;
   justify-items: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 80px ${variables.sizes.globalHorizontalPadding};
   color: ${theme.colors.primaryBlue};
+
+  @media(max-width: ${variables.sizes.mediaQuery}) {
+    padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+  }
 `
 
 export const CardContainer = styled.div`
@@ -18,7 +22,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   gap: 3rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
     gap: 2rem;
   }
@@ -51,7 +55,7 @@ export const CardContent = styled.div`
     z-index: 10;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     border-left: 2px solid ${theme.colors.primaryBlue}; 
     z-index: 10;
   }
@@ -60,11 +64,12 @@ export const CardContent = styled.div`
 
 export const WhiteTriangle = styled.div`
   position: absolute;
-  background-color: white;
   border-radius: 0.2rem;
-  transform: rotate(45deg);
-  top: -1rem;
-  width: 200px;
-  height: 200px;
+  background-color: white;
+  transform: rotate(15deg);
+  top: -2.4rem;
+  left: 0;
+  width: 100%;
+  height: 80px;
   z-index: 0;
 `
