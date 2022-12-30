@@ -43,12 +43,6 @@ function Burger() {
   const handleChange = (lang: string) => {
     setSelectedLanguage(lang);
     // changeLanguage(countryLangDict[lang.toLowerCase()]);
-
-    console.log("handleChangeEvent", lang);
-    console.log(
-      "handleChange changeLang value",
-      countryLangDict[lang.toLowerCase()]
-    );
   };
 
   function getKeyByValue(object: Record<string, string>, value: string) {
@@ -57,9 +51,7 @@ function Burger() {
 
 
   useEffect(() => {
-    // console.log("user laanguage", language);
     // const userLangExists = getKeyByValue(countryLangDict, language.slice(0, 2));
-    // console.log("dictresult", userLangExists);
     // if (userLangExists) {
     //   setSelectedLanguage(userLangExists);
     // }

@@ -7,7 +7,7 @@ export default function BlogCard({ id, title, category, image }: IPost) {
 
   const handleRedirectToBlogPost = (id: string) => {
     // navigate('blog/post/' + id)
-    console.log(id)
+    return id
   }
 
   return (
