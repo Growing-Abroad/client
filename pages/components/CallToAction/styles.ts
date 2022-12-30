@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { variables } from "@/styles/global-variables";
 import manuUanHappy from "@assets/Photos-Main-Page/uan-manu-happy.webp";
 
-const { sizes: { globalHorizontalPadding, mediaQuery, globalHoriznalPaddingMobile } } = variables;
+const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
 const { colors: { secondaryBlue } } = theme;
 
 export const BackgroudCTA = styled.section`
@@ -110,7 +110,7 @@ export const Container = styled.section`
         .left-side {
           width: 100%;
           min-height: 85vh;
-          padding: 46px ${globalHoriznalPaddingMobile};
+          padding: 46px ${globalHorizontalPaddingMobile};
           align-items: center;
           background-color: rgba(74, 154, 253, .7);
           justify-content: space-between;

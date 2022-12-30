@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { variables } from "@/styles/global-variables";
 
-const { sizes: { maxWidthAll, globalHorizontalPadding, globalHoriznalPaddingMobile } } = variables;
+const { sizes: { maxWidthAll, globalHorizontalPadding, globalHorizontalPaddingMobile } } = variables;
 
 export const Container = styled.section`
   width: min( 100%, ${maxWidthAll});
@@ -29,7 +29,7 @@ export const Container = styled.section`
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px ${globalHoriznalPaddingMobile};
+    padding: 80px ${globalHorizontalPaddingMobile};
     .title {
       font-size: 2.5rem;
 

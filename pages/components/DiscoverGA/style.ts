@@ -7,7 +7,7 @@ const {
   colors: { primaryBlue, secondaryBlue },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHoriznalPaddingMobile },
+  sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHorizontalPaddingMobile },
 } = variables;
 
 export const DiscoverWrapper = styled.div`
@@ -20,7 +20,7 @@ export const DiscoverWrapper = styled.div`
   max-width: ${maxWidthAll};
 
   @media (max-width: ${mediaQuery}) {
-    padding: 80px ${globalHoriznalPaddingMobile};
+    padding: 80px ${globalHorizontalPaddingMobile};
     gap: 32px; 
   }
 `;

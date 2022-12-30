@@ -5,7 +5,7 @@ import Manu from '@assets/Photos-Main-Page/Manu-Business_Canva.webp'
 import TwoColorTitle from '@/components/two-color-title'
 import HeroBackground from '@../../../public/assets/aboutus/hero-background.webp'
 
-function TeamMembers() {
+function HeroSection() {
   return (
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>
@@ -29,4 +29,4 @@ function TeamMembers() {
   )
 }
 
-export default TeamMembers
+export default HeroSection
