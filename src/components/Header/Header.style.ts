@@ -18,7 +18,7 @@ export const StyledHeader = styled.header`
   z-index: 1000;
 
 
-  @media (max-width: 768px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     align-items: center;
     padding: 0 16px;
     position: unset;
@@ -58,7 +58,7 @@ export const StyledUl = styled.ul<BurgerProps>`
     color: ${primaryBlue};;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     flex-direction: column;
     background-color: ${secondaryBlue};
     position: fixed;
@@ -116,10 +116,10 @@ export const StyledBurger = styled.div<BurgerProps>`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     display: none;
   }
-  @media (max-width: 768px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     position: fixed;
   }
 `

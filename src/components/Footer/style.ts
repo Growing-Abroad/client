@@ -10,7 +10,7 @@ const {
     maxWidthAll,
     globalHorizontalPadding,
     mediaQuery,
-    globalHoriznalPaddingMobile,
+    globalHorizontalPaddingMobile,
   },
 } = variables;
 
@@ -32,7 +32,7 @@ export const FooterContentWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
-    padding: 80px ${globalHoriznalPaddingMobile};
+    padding: 80px ${globalHorizontalPaddingMobile};
 
   }
 `;
@@ -111,7 +111,7 @@ export const FooterBottomWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 16px;
-    padding: 12px ${globalHoriznalPaddingMobile};
+    padding: 12px ${globalHorizontalPaddingMobile};
   }
 `;
 

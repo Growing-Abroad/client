@@ -3,7 +3,7 @@ import { variables } from '@styles/global-variables';
 import styled from 'styled-components';
 
 interface IContainer {
-  backgroundImg: any;
+  backgroundImg: string;
 }
 export const Container = styled.section<IContainer>`
   min-width: 100%;
@@ -13,7 +13,7 @@ export const Container = styled.section<IContainer>`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding-top: 2rem;
+  padding-top: 80px;
   color: ${theme.colors.primaryBlue};
   text-align: center;
   overflow: hidden;
@@ -32,6 +32,13 @@ export const Container = styled.section<IContainer>`
 
 export const ContentWrapper = styled.div`
   max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  > p {
+    padding-inline: 1rem;
+  }
 `
 
 export const ImagesContainer = styled.div`
@@ -39,7 +46,7 @@ export const ImagesContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -56,8 +63,8 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 600px;
-  width: 600px;
+  height: 450px;
+  width: 100%;
 
   &.right-wrapper {
     justify-content: flex-end;
@@ -72,7 +79,6 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
     font-weight: 700;
     padding: 2rem;
   }
-  
 `
 
 export const BlueSquare = styled.div`
@@ -91,6 +97,7 @@ export const BlueSquare = styled.div`
     right: var(--blueSquareOffset);
     transform: rotate(-25deg);
   }
+
   .text-left {
     left: 0;
   }
@@ -98,7 +105,4 @@ export const BlueSquare = styled.div`
   .text-right {
     right: 0;
   }
-
-
 `
-

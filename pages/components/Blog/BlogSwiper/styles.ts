@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { variables } from '@/styles/global-variables'
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -31,7 +32,7 @@ export const Container = styled.div`
     left: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${variables.sizes.mediaQuery}) {
     .swiper-button-next {
     }
   }

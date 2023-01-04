@@ -6,7 +6,7 @@ const {
   colors: { primaryBlue },
 } = theme;
 const {
-  sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHoriznalPaddingMobile },
+  sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHorizontalPaddingMobile },
 } = variables;
 
 export const SucessStoriesWrapper = styled.section`
@@ -19,7 +19,7 @@ export const SucessStoriesWrapper = styled.section`
   width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-  padding: 80px ${globalHoriznalPaddingMobile};
+  padding: 80px ${globalHorizontalPaddingMobile};
     
   }
 `;

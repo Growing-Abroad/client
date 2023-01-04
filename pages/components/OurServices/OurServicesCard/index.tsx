@@ -9,7 +9,7 @@ export default function OurServicesCard({ id, title, subtitle, descriptions, ima
 
   const handleRedirect = (id: string) => {
     // navigate('services/' + id)
-    console.log(id)
+    return id
   }
 
   return (
