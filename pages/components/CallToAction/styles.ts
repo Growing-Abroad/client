@@ -71,6 +71,56 @@ export const Container = styled.section`
             .verde {
                 color: #FFDB5C;
                 font-weight: 600;
+                animation: text-enter 3000ms ease;
+                animation-iteration-count: 1;
+                position: relative;
+                right: 0;
+                animation-fill-mode: both;
+
+                @keyframes text-enter {
+                  0% {
+                    top: 0;
+                    right: -200px;
+                    visibility: hidden;
+                    opacity: 0;
+                  }
+                  20% {
+                    top: 0;
+                    right: 0;
+                    visibility: visible;
+                    opacity:1;
+
+                  }
+                  70% {
+                    top: 0;
+                    right: 0;
+                    visibility: visible;
+                    opacity:1;
+                  }
+                  100% {
+                    top: -100px;
+                    visibility: hidden;
+                    opacity: 0;
+                  }
+                }
+            }
+
+            .leaving {
+              position: relative;
+              right: 0;
+              color: #FFDB5C;
+              font-weight: 600;
+              animation: text-leave 1000ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+              
+              @keyframes text-leave {
+                  
+                  100% {
+                    right: 0;
+                    visibility: hidden;
+                    opacity: 0;
+                    top: -100px;
+                  }
+                }
             }
         }
     }
