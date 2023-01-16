@@ -1,15 +1,25 @@
 import styled  from "styled-components";
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
+import { variables } from "../../../../src/styles/global-variables";
+import { theme } from "../../../../src/styles/theme";
 // import BackgroundImage from "@assets/aboutus/online-course-success.webp";
 
-export const Container = styled.section`
-  width: min(100%, ${variables.sizes.maxWidthAll}); 
+interface IContainer {
+  backgroundImg: string;
+}
+
+export const Container = styled.section<IContainer>`
+  width: min(100%, ${variables.sizes.maxWidthAll});
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};
+
+  background-image: url(${({ backgroundImg }) => backgroundImg});
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: left center ;
 
   @media(min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
@@ -17,14 +27,13 @@ export const Container = styled.section`
   }
 `
 
-export const TextContainer = styled.div<{ background?: string }>`
+export const TextContainer = styled.div<{ background?: string, color?:string}>`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  color: white;
+  color: ${({ color }) => color === 'primary' ? 'white' : theme.colors.primaryBlue};
   font: 700 3rem 'Montserrat', sans-serif;
-  background: ${({ background }) => background === 'primary' ? theme.colors.primaryBlue : theme.colors.secondaryBlue};
   padding: 2rem;
   border-radius: 0.5rem;
 
