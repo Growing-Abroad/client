@@ -2,7 +2,10 @@ import i18n from "./next-i18next.config.js";
 
 const nextConfig = {
   reactStrictMode: true,
-  i18n,
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt', 'de'],
+  },
   compiler: {
     // see https://styled-components.com/docs/tooling#babel-plugin for more info on the options.
     styledComponents: {

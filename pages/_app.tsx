@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { ElementType } from 'react'
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import "../src/components/Header/modules/style.css"
 import { MyThemeProvider } from '../src/styles/MyThemeProvider'
 import { Montserrat } from '@next/font/google'
+
+import { appWithI18Next } from 'ni18n'
+import { ni18nConfig } from '../ni18n.config';
 
 const montserrat = Montserrat({
   subsets: ['latin']
@@ -18,9 +21,9 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+function Home({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page)
+  const getLayout = Component.getLayout ?? ((page: ReactElement) => page)
 
   return getLayout(
     <>
@@ -37,3 +40,5 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     </>
   )
 }
+
+export default appWithI18Next((Home as ElementType), ni18nConfig)

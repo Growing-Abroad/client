@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { variables } from "@/styles/global-variables";
 import { removePxFromCssValue } from "@/utils/scripts/general-utility";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next'
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
 export type TCountryLangDict = Record<string, string>;
@@ -21,10 +21,10 @@ function Burger() {
 
   const [openLang, setOpenLang] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("us");
-  // const {
-  //   t,
-  //   i18n: { changeLanguage, language },
-  // } = useTranslation();
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
 
   const countryLangDict: TCountryLangDict = {
     us: "en",
@@ -42,7 +42,7 @@ function Burger() {
 
   const handleChange = (lang: string) => {
     setSelectedLanguage(lang);
-    // changeLanguage(countryLangDict[lang.toLowerCase()]);
+    changeLanguage(countryLangDict[lang.toLowerCase()]);
   };
 
   function getKeyByValue(object: Record<string, string>, value: string) {
@@ -51,12 +51,12 @@ function Burger() {
 
 
   useEffect(() => {
-    // const userLangExists = getKeyByValue(countryLangDict, language.slice(0, 2));
-    // if (userLangExists) {
-    //   setSelectedLanguage(userLangExists);
-    // }
+    const userLangExists = getKeyByValue(countryLangDict, language?.slice(0, 2));
+    if (userLangExists) {
+      setSelectedLanguage(userLangExists);
+    }
 
-    // Object.keys(countryLangDict).forEach((country) => console.log(country));
+    Object.keys(countryLangDict).forEach((country) => console.log(country));
   }, []);
 
   return (

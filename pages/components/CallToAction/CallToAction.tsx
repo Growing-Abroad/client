@@ -2,6 +2,7 @@ import * as S from "./styles"
 import gaCoaches from '@assets/Photos-Main-Page/ga-coaches.png'
 import Image from 'next/image'
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next";
 
 
 function CallToAction() {
@@ -24,7 +25,9 @@ function CallToAction() {
       <S.Container>
         <section className="left-side" >
           <h1>
-            Get your Dream Job in 
+            {/* Get your Dream Job in  */}
+            {/* {t("title",{ keyPrefix: 'mainPage.ctaSection' })} */}
+            Get your Dream Job In
             {currentComponent}
           </h1>
           <S.CtaButton>Watch free masterclass</S.CtaButton>
