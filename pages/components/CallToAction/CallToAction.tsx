@@ -1,17 +1,34 @@
 import * as S from "./styles"
 import gaCoaches from '@assets/Photos-Main-Page/ga-coaches.png'
 import Image from 'next/image'
+import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next";
+
 
 function CallToAction() {
   // const { t } = useTranslation();
+  const [currentName, setCurrentName] = useState<string>(' Germany');
+  const [currentComponent, setCurrentComponent] = useState(
+    <span key={'first'} className="verde"> {currentName}</span>
+  );
+
+  useEffect(() => {
+    setTimeout(() => {
+      const newName = currentName === ' Germany' ? ' Europe' : ' Germany'
+      setCurrentName(newName);
+      setCurrentComponent(<span key={currentName} className={'verde'}> {currentName}</span>)
+    }, 3000)
+  }, [currentComponent])
 
   return (
     <S.BackgroudCTA>
       <S.Container>
         <section className="left-side" >
           <h1>
-            Get your Dream Job in
-            <span className="verde"> Germany</span>
+            {/* Get your Dream Job in  */}
+            {/* {t("title",{ keyPrefix: 'mainPage.ctaSection' })} */}
+            Get your Dream Job In
+            {currentComponent}
           </h1>
           <S.CtaButton>Watch free masterclass</S.CtaButton>
         </section>
