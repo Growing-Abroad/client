@@ -7,9 +7,9 @@ import {
   TextBlockH3,
 } from "./style";
 import Image from "next/image";
-import { useWindowSize } from "@/src/hooks/useWindowSize";
-import { variables } from "@/src/styles/global-variables";
-import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { variables } from "@styles/global-variables";
+import { removePxFromCssValue } from "@utils/scripts/general-utility";
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {

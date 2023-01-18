@@ -1,10 +1,10 @@
 import { FormEvent } from "react";
 import TwoColorTitle from "../two-color-title";
-import { useWindowSize } from "@/src/hooks/useWindowSize";
+import { useWindowSize } from "@hooks/useWindowSize";
 import { CheckboxWrapper, NewsLetterContainer } from "./style";
-import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
-import { Input, Button } from "@/src/styles/global-styles";
-import { variables } from "@/src/styles/global-variables";
+import { removePxFromCssValue } from "@utils/scripts/general-utility";
+import { Input, Button } from "@styles/global-styles";
+import { variables } from "@styles/global-variables";
 
 export default function NewsLetter() {
   const [width] = useWindowSize();

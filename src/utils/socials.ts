@@ -1,7 +1,7 @@
-import InstagramIcon from "@/public/assets/icons/instagram.webp";
-import FacebookIcon from "@/public/assets/icons/facebook.webp";
-import TikTokIcon from "@/public/assets/icons/tiktok.webp";
-import YoutubeIcon from "@/public/assets/icons/youtube.webp";
+import InstagramIcon from "@/../public/assets/icons/instagram.webp";
+import FacebookIcon from "@/../public/assets/icons/facebook.webp";
+import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import YoutubeIcon from "@/../public/assets/icons/youtube.webp";
 import { StaticImageData } from "next/image";
 
 type FollowType = "follower" | "member" | "subscriber" | "course student";

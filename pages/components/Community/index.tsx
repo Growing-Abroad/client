@@ -1,7 +1,7 @@
 import * as S from "./styles";
-import { socials } from "@/src/utils/socials";
+import { socials } from "@utils/socials";
 import Image from "next/image";
-import TwoColorTitle from "@/src/components/two-color-title";
+import TwoColorTitle from "@components/two-color-title";
 
 function CommunitySection() {
   return (

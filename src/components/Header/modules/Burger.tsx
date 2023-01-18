@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Select, MenuItem } from "@mui/material";
 import Nav from "./Nav";
 import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
-import { useWindowSize } from "@/src/hooks/useWindowSize";
-import { variables } from "@/src/styles/global-variables";
-import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { variables } from "@styles/global-variables";
+import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import { StyledBurger } from "../Header.style";
 export type TCountryLangDict = Record<string, string>;
 

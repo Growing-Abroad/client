@@ -1,6 +1,7 @@
-import {variables} from "@/src/styles/global-variables";
-import {theme} from "@/src/styles/theme";
+
+import {theme} from "@styles/theme";
 import styled from "styled-components";
+import { variables } from "@styles/global-variables";
 
 interface IContainer {
   backgroundImg: string;

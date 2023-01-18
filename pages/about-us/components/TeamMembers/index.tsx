@@ -1,6 +1,6 @@
-import FancyCarousel from "@/src/components/Fancy-carousel";
-import TwoColorTitle from "@/src/components/two-color-title";
-import { successStoriesData } from "@/src/utils/mock-ups/success-stories-mock";
+import FancyCarousel from "@components/Fancy-carousel";
+import TwoColorTitle from "@components/two-color-title";
+import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
 import * as S from "./styles";
 
 function TeamMembers() {

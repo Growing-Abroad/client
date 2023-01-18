@@ -12,15 +12,15 @@ import {
   FooterBottomContainer,
   Links,
 } from "./style";
-import LinkedInIcon from "@/public/assets/icons/linkedin.webp";
-import FacebookIcon from "@/public/assets/icons/facebook.webp";
-import InstagramIcon from "@/public/assets/icons/instagram.webp";
-import TikTokIcon from "@/public/assets/icons/tiktok.webp";
-import YoutubeIcon from "@/public/assets/icons/youtube.webp";
+import LinkedInIcon from "@/../public/assets/icons/linkedin.webp";
+import FacebookIcon from "@/../public/assets/icons/facebook.webp";
+import InstagramIcon from "@/../public/assets/icons/instagram.webp";
+import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import YoutubeIcon from "@/../public/assets/icons/youtube.webp";
 import Image from "next/image";
-import { useWindowSize } from "@/src/hooks/useWindowSize";
-import { variables } from "@/src/styles/global-variables";
-import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { variables } from "@styles/global-variables";
+import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import NewsLetter from "../news-letter";
 import TwoColorTitle from "../two-color-title";
 

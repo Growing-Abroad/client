@@ -1,9 +1,7 @@
-
-
-import { successStoriesData } from '@/src/utils/mock-ups/success-stories-mock';
-import { SuccessSubtitle, SucessStoriesWrapper } from './style';
-import TwoColorTitle from "@/src/components/two-color-title";
-import FancyCarousel from "@/src/components/Fancy-carousel";
+import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
+import { SuccessSubtitle, SucessStoriesWrapper } from "./style";
+import TwoColorTitle from "@components/two-color-title";
+import FancyCarousel from "@components/Fancy-carousel";
 
 export default function SuccessStories() {
   return (

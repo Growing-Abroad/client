@@ -2,7 +2,7 @@ import {NextPage} from "next";
 import {ReactElement, ReactNode} from "react";
 import {AppProps} from "next/app";
 import {Montserrat} from "@next/font/google";
-import {MyThemeProvider} from "@/src/styles/MyThemeProvider";
+import {MyThemeProvider} from "@styles/MyThemeProvider";
 import { useRouter } from "next/router";
 import { IntlProvider } from "react-intl";
 import de from "../lang/de.json"

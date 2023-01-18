@@ -1,6 +1,6 @@
-import TwoColorTitle from "@/src/components/two-color-title";
-import { useWindowSize } from "@/src/hooks/useWindowSize";
-import { socials } from "@/src/utils/socials";
+import TwoColorTitle from "@components/two-color-title";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { socials } from "@utils/socials";
 import React from "react";
 import * as S from "./styles";
 

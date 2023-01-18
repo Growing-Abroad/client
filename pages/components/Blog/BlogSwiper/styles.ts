@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {variables} from "@/src/styles/global-variables";
+import {variables} from "@styles/global-variables";
 
 export const Container = styled.div`
   max-width: 1200px;

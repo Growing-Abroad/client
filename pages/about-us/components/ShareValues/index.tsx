@@ -1,8 +1,9 @@
 import React from "react";
 import * as S from "./styles";
-import TwoColorTitle from "@/src/components/two-color-title";
+import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
-import { successStoriesData } from "@/src/utils/mock-ups/success-stories-mock";
+import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
+
 
 function ShareValues() {
   return (

@@ -1,6 +1,7 @@
-import { variables } from "@/src/styles/global-variables";
-import { theme } from "@/src/styles/theme";
 import styled from "styled-components";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
+import { open } from "@styles/animations";
 
 export const Container = styled.section`
   width: min(100%, 1280px);

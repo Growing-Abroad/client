@@ -1,7 +1,7 @@
 import * as S from './styles'
 import {AiFillStar} from 'react-icons/ai'
 import Image from 'next/image'
-import {IService} from "@/src/utils/services";
+import {IService} from "@utils/services";
 
 export default function OurServicesCard({id, title, subtitle, descriptions, image, hasMoreInfo}: IService) {
   // const navigate = useNavigate()

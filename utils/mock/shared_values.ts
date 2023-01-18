@@ -1,4 +1,4 @@
-import ImageMock from '@../../../public/assets/about-us/job-interview-coaching.webp'
+import ImageMock from '@/../public/assets/about-us/job-interview-coaching.webp'
 
 interface ISharedValues {
   title: string

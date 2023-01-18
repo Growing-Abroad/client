@@ -1,10 +1,10 @@
 
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
-import {useWindowSize} from "@/src/hooks/useWindowSize";
-import {posts} from "@/src/utils/blog_posts";
+import {useWindowSize} from "@hooks/useWindowSize";
+import {posts} from "@utils/blog_posts";
 import SwiperCore, {Navigation} from "swiper";
-import BlogCard from "@/pages/components/Blog/BlogCard";
+import BlogCard from "@pages/components/Blog/BlogCard";
 import {Swiper, SwiperSlide} from "swiper/react";
 
 

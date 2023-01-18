@@ -1,7 +1,7 @@
 import * as S from './styles'
-import studentHat from '@/public/assets/Photos-Main-Page/Education-Item.webp'
-import worldPicture from '@/public/assets/Photos-Main-Page/Earth_Canva.png'
-import expertPicture from '@/public/assets/Photos-Main-Page/Experts_Canva.png'
+import studentHat from '@/../public/assets/Photos-Main-Page/Education-Item.webp'
+import worldPicture from '@/../public/assets/Photos-Main-Page/Earth_Canva.png'
+import expertPicture from '@/../public/assets/Photos-Main-Page/Experts_Canva.png'
 import WorkInCard from './WorkInCard'
 import { useRouter } from "next/router";
 import {FormattedMessage, useIntl} from "react-intl";

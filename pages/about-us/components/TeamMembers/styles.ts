@@ -1,4 +1,4 @@
-import { variables } from "@/src/styles/global-variables";
+import { variables } from "@styles/global-variables";
 import styled from "styled-components";
 
 export const Container = styled.section`

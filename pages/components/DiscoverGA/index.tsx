@@ -7,10 +7,10 @@ import {
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
 } from './style';
-import Uan from '@/public/assets/Photos-Main-Page/Uan-Business_Canva.webp'
-import Manu from '@/public/assets/Photos-Main-Page/Manu-Business_Canva.webp'
-import Hands from '@/public/assets/Photos-Main-Page/high-five.webp'
-import TwoColorTitle from "@/src/components/two-color-title";
+import Uan from '@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp'
+import Manu from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp'
+import Hands from '@/../public/assets/Photos-Main-Page/high-five.webp'
+import TwoColorTitle from "@components/two-color-title";
 
 export default function DiscoverGA() {
   return (

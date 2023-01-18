@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 import styled from 'styled-components';
-import {theme} from "@/src/styles/theme";
+import {theme} from "@styles/theme";
 
 
 interface IPostText extends ComponentPropsWithoutRef<'p'> {

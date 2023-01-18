@@ -1,8 +1,8 @@
-import Castle from "@/public/assets/Photos-Main-Page/Castle-Neuschwanstein.webp";
-import CvOptimization from "@/public/assets/Photos-Main-Page/CV-Optimization.webp";
-import CurriculumVitae from "@/public/assets/Photos-Main-Page/Curriculum-Vitae.webp";
-import OnlineCourse from "@/public/assets/Photos-Main-Page/online-course-success.webp";
-import JobInterview from "@/public/assets/Photos-Main-Page/job-interview-coaching.webp";
+import Castle from "@/../public/assets/Photos-Main-Page/Castle-Neuschwanstein.webp";
+import CvOptimization from "@/../public/assets/Photos-Main-Page/CV-Optimization.webp";
+import CurriculumVitae from "@/../public/assets/Photos-Main-Page/Curriculum-Vitae.webp";
+import OnlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.webp";
+import JobInterview from "@/../public/assets/Photos-Main-Page/job-interview-coaching.webp";
 import { IImage } from "./blog_posts";
 
 interface IDescription {

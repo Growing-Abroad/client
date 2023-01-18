@@ -1,5 +1,5 @@
 import * as S from "./styles"
-import gaCoaches from '@/public/assets/Photos-Main-Page/ga-coaches.png'
+import gaCoaches from '@/../public/assets/Photos-Main-Page/ga-coaches.png'
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 
