@@ -1,5 +1,5 @@
 import React from "react"
-import VisionAndMissionBackground from "../../../../public/assets/aboutus/vision-growing-abroad.webp"
+import VisionAndMissionBackground from "../../../../public/assets/about-us/vision-growing-abroad.webp"
 import * as S from "./styles"
 
 function VisionAndMission() {

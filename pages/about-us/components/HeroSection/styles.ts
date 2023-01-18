@@ -25,7 +25,7 @@ export const Container = styled.section<IContainer>`
   background-position: center;
 
   > p {
-    max-width: ${variables.sizes.mediaQuery};
+    max-width: 850px;
     padding-inline: 1rem;
   }
 `
@@ -34,6 +34,7 @@ export const ContentWrapper = styled.div`
   max-width: 1280px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 
   > p {
@@ -42,7 +43,7 @@ export const ContentWrapper = styled.div`
 `
 
 export const ImagesContainer = styled.div`
-  width: 100%;
+  width: 1280px;
   display: flex;
   flex-direction: column;
 
@@ -71,22 +72,26 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   }
 
   .text-left, .text-right {
-    width: 300px;
+    /* width: 280px;
     position: absolute;
     bottom: 0;
     color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 2rem;
+    padding: 1rem 1.2rem;
+    display:flex;
+    align-items: flex-start;
+    min-height: 115px; */
+    font-size: 1.375rem;
+    font-weight: 800;
+    margin-top: 16px;
   }
 `
 
 export const BlueSquare = styled.div`
-  --blueSquareOffset: -80px;
+  --blueSquareOffset: -105px;
   background: ${theme.colors.secondaryBlue}; 
   opacity: 70%;
-  width: 300px;
-  height: 400px;
+  width: 315px;
+  height: 415px;
   position: absolute;
   bottom: -225px;
   left: var(--blueSquareOffset);
@@ -97,12 +102,35 @@ export const BlueSquare = styled.div`
     right: var(--blueSquareOffset);
     transform: rotate(-25deg);
   }
+`
+export const TextsWrapper = styled.div`
+    width: 280px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 1rem 1.2rem;
+    min-height: 160px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-  .text-left {
+  &.reverse {
+    align-items: flex-end;
+  }
+`
+
+export const BigQuote = styled.span`
+  font-size: 50px;
+  line-height: 15px;
+`
+
+export const TextLeft = styled.span`
+    text-align: left;
     left: 0;
-  }
+    `
 
-  .text-right {
+export const TextRight = styled.span`
+    text-align: right;
     right: 0;
-  }
 `

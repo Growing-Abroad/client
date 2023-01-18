@@ -1,7 +1,6 @@
 import styled  from "styled-components";
 import { variables } from "../../../../src/styles/global-variables";
 import { theme } from "../../../../src/styles/theme";
-// import BackgroundImage from "@assets/aboutus/online-course-success.webp";
 
 interface IContainer {
   backgroundImg: string;
