@@ -1,72 +1,73 @@
-import InstagramIcon from '@assets/icons/instagram.webp';
-import FacebookIcon from '@assets/icons/facebook.webp';
-import TikTokIcon from '@assets/icons/tiktok.webp';
-import YoutubeIcon from '@assets/icons/youtube.webp';
+import InstagramIcon from "@/public/assets/icons/instagram.webp";
+import FacebookIcon from "@/public/assets/icons/facebook.webp";
+import TikTokIcon from "@/public/assets/icons/tiktok.webp";
+import YoutubeIcon from "@/public/assets/icons/youtube.webp";
+import { StaticImageData } from "next/image";
 
-type FollowType = 'follower' | 'member' | 'subscriber' | 'course student'
+type FollowType = "follower" | "member" | "subscriber" | "course student";
 
 export interface ISocial {
-  name: string
-  source: string
-  socialLink: string
-  followNumber: number
-  followType: FollowType
+  name: string;
+  source: StaticImageData | string;
+  socialLink: string;
+  followNumber: number;
+  followType: FollowType;
 }
 
 export enum Instagram {
-  name = 'instagram',
-  socialLink = 'https://www.instagram.com/growing.abroad',
+  name = "instagram",
+  socialLink = "https://www.instagram.com/growing.abroad",
   followNumber = 5144,
-  followType = 'follower'
+  followType = "follower",
 }
 
 export enum Facebook {
-  name = 'facebook',
-  socialLink = 'https://www.facebook.com/',
+  name = "facebook",
+  socialLink = "https://www.facebook.com/",
   followNumber = 100,
-  followType = 'member'
+  followType = "member",
 }
 
 export enum TikTok {
-  name = 'tiktok',
-  socialLink = 'https://www.tiktok.com/@growing.abroad',
+  name = "tiktok",
+  socialLink = "https://www.tiktok.com/@growing.abroad",
   followNumber = 48800,
-  followType = 'follower'
+  followType = "follower",
 }
 
 export enum Youtube {
-  name = 'youtube',
-  socialLink = 'https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ',
+  name = "youtube",
+  socialLink = "https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ",
   followNumber = 244,
-  followType = 'subscriber'
+  followType = "subscriber",
 }
 
 export enum Course {
-  name = 'course',
-  socialLink = 'https://google.com/search?q=growing+abroad', // temporarily while client does not have course link
+  name = "course",
+  socialLink = "https://google.com/search?q=growing+abroad", // temporarily while client does not have course link
   followNumber = 42000,
-  followType = 'course student'
+  followType = "course student",
 }
 
 export const socials: ISocial[] = [
   {
     source: InstagramIcon,
-    ...Instagram
+    ...Instagram,
   },
   {
     source: FacebookIcon,
-    ...Facebook
+    ...Facebook,
   },
   {
     source: TikTokIcon,
-    ...TikTok
+    ...TikTok,
   },
   {
     source: YoutubeIcon,
-    ...Youtube
+    ...Youtube,
   },
   {
     source: FacebookIcon, // I've used facebook icon here because I do not know can I import assets from Canva
-    ...Course
-  }
-]
+    ...Course,
+  },
+];

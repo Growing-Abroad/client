@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { theme } from "@/styles/theme";
-import { variables } from "@/styles/global-variables";
+import {variables} from "@/src/styles/global-variables";
+import {theme} from "@/src/styles/theme";
+
 
 const { sizes: { maxWidthAll, globalHorizontalPadding, globalHorizontalPaddingMobile } } = variables;
 
@@ -17,7 +18,7 @@ export const Container = styled.section`
   .title {
     font-size: 3.25rem;
     font-weight: 600;
-    margin: 16px 0px;
+    margin: 16px 0;
     display: flex;
     justify-content: center;
     gap: 8px;

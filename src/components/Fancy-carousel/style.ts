@@ -1,11 +1,13 @@
-import { variables } from '@/styles/global-variables';
-import { theme } from '@/styles/theme';
-import styled from 'styled-components';
+import { variables } from "@/src/styles/global-variables";
+import { theme } from "@/src/styles/theme";
+import styled from "styled-components";
 
 const {
   colors: { primaryBlue, secondaryBlue },
 } = theme;
-const { sizes: { mediaQuery } } = variables;
+const {
+  sizes: { mediaQuery },
+} = variables;
 
 export const FlexboxSlider = styled.div`
   display: -webkit-box;
@@ -20,13 +22,13 @@ export const FlexboxSlider = styled.div`
   @media (min-width: 200px) and (max-width: 1280px) {
     gap: calc(0.4375rem + ((1vw - 3.5px) * 3.1183));
     height: calc(12.5rem + ((1vw - 2px) * 18.5185));
-    min-height: 0vw;
+    min-height: 0;
   }
 
   .short {
     height: 90%;
   }
-  
+
   .selected-slide {
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -45,13 +47,13 @@ export const FlexboxSlider = styled.div`
       transition-delay: 0.5s;
       bottom: 30px;
       left: 30px;
-      opacity: .9;
+      opacity: 0.9;
       visibility: visible;
       cursor: default;
 
       @media (max-width: ${mediaQuery}) {
         bottom: 12px;
-        left: 12px    
+        left: 12px;
       }
     }
   }
@@ -81,15 +83,14 @@ export const FlexboxSlide = styled.div`
   @media (min-width: 200px) and (max-width: 1280px) {
     width: calc(0.625rem + ((1vw - 2px) * 3.7037));
     min-width: calc(0.625rem + ((1vw - 2px) * 3.7037));
-    min-height: 0vw;
+    min-height: 0;
   }
-
 
   &:after {
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 100%;
@@ -114,7 +115,7 @@ export const FlexboxSlide = styled.div`
 
 export const TextBlock = styled.div`
   position: absolute;
-  left: 0px;
+  left: 0;
   bottom: 30px;
   max-width: 400px;
   padding: 20px;
@@ -125,13 +126,12 @@ export const TextBlock = styled.div`
   visibility: hidden;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: .875rem;
+    font-size: 0.875rem;
     padding: 12px;
-    left: 0px;
-    bottom: 12px;    
-    background-color: rgb(74, 154, 253, .5) ;
+    left: 0;
+    bottom: 12px;
+    background-color: rgb(74, 154, 253, 0.5);
     max-width: 180px;
-
   }
 `;
 
@@ -142,8 +142,7 @@ export const TextBlockH3 = styled.h3`
 
   @media (max-width: ${mediaQuery}) {
     font-size: 16px;
-  margin-bottom: 4px;
-
+    margin-bottom: 4px;
   }
 `;
 
@@ -156,11 +155,11 @@ export const WatchVideoBtn = styled.button`
   border-radius: 8px;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin-top: 16px;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: .65rem;
+    font-size: 0.65rem;
     padding: 8px 16px;
     margin-top: 8px;
   }

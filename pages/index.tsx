@@ -1,14 +1,13 @@
-import React from 'react'
-import type { ReactElement } from 'react'
-import PageLayout from '../src/components/PageLayout'
-import type { NextPageWithLayout } from './_app'
-import BlogSection from './components/Blog/BlogSection';
-import CallToAction from './components/CallToAction/CallToAction';
-import CommunitySection from './components/Community';
-import DiscoverGA from './components/DiscoverGA';
-import OurServicesSection from './components/OurServices';
-import SuccessStories from './components/Success-stories';
-import WorkIn from './components/WorkIn/WorkIn';
+import CallToAction from "./components/CallToAction/CallToAction"
+import WorkIn from "@/pages/components/WorkIn/WorkIn";
+import OurServicesSection from "@/pages/components/OurServices";
+import SuccessStories from "@/pages/components/Success-stories";
+import CommunitySection from "@/pages/components/Community";
+import BlogSection from "@/pages/components/Blog/BlogSection";
+import {ReactElement} from "react";
+import DiscoverGA from "@/pages/components/DiscoverGA";
+import {NextPageWithLayout} from "@/pages/_app";
+import PageLayout from "@/src/components/PageLayout";
 
 const Page: NextPageWithLayout = () => {
   return <>
@@ -24,9 +23,9 @@ const Page: NextPageWithLayout = () => {
 
 Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <PageLayout>
-      {page}
-    </PageLayout>
+      <PageLayout>
+        {page}
+      </PageLayout>
   )
 }
 

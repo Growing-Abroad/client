@@ -1,19 +1,18 @@
-import React from 'react';
-import { aboutUs } from '@utils/mock-ups/about-us.mock';
-import { useState } from 'react';
-import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
-import * as S from './styles';
+import { aboutUs } from "@/src/utils/mock-ups/about-us.mock";
+import React, { useState } from "react";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import * as S from "./styles";
 
 function About() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <S.Container>
       <S.TextContainer>
-        {aboutUs.map(section => (
+        {aboutUs.map((section) => (
           <S.Text key={section.title}>
             <h3>{section.title}</h3>
             <h4>{section.subtitle}</h4>
-            {!!isOpen && section.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+            {isOpen && section.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
           </S.Text>
         ))}
       </S.TextContainer>
@@ -23,7 +22,7 @@ function About() {
         </button>
       </S.More>
     </S.Container>
-  )
+  );
 }
 
 export default About;

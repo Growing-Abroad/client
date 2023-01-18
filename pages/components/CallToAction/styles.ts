@@ -1,8 +1,7 @@
-import { theme } from "@/styles/theme";
 import styled from "styled-components";
-
-import { variables } from "@/styles/global-variables";
-import manuUanHappy from "@assets/Photos-Main-Page/uan-manu-happy.webp";
+import manuUanHappy from "@/public/assets/Photos-Main-Page/uan-manu-happy.webp";
+import {variables} from "@/src/styles/global-variables";
+import {theme} from "@/src/styles/theme";
 
 const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
 const { colors: { secondaryBlue } } = theme;

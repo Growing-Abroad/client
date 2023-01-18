@@ -1,11 +1,14 @@
-import FancyCarousel from '@/components/Fancy-carousel';
-import TwoColorTitle from '@/components/two-color-title';
-import { successStoriesData } from '@/utils/mock-ups/success-stories-mock';
+
+
+import { successStoriesData } from '@/src/utils/mock-ups/success-stories-mock';
 import { SuccessSubtitle, SucessStoriesWrapper } from './style';
+import TwoColorTitle from "@/src/components/two-color-title";
+import FancyCarousel from "@/src/components/Fancy-carousel";
 
 export default function SuccessStories() {
   return (
     <SucessStoriesWrapper>
+      {/* eslint-disable-next-line react/jsx-no-undef */}
       <TwoColorTitle
         text1="Success"
         text2="STORIES"

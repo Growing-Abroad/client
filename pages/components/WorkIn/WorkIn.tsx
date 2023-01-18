@@ -1,14 +1,37 @@
 import * as S from './styles'
-import studentHat from '@assets/Photos-Main-Page/Education-Item.webp'
-import worldPicture from '@assets/Photos-Main-Page/Earth_Canva.png'
-import expertPicture from '@assets/Photos-Main-Page/Experts_Canva.png'
+import studentHat from '@/public/assets/Photos-Main-Page/Education-Item.webp'
+import worldPicture from '@/public/assets/Photos-Main-Page/Earth_Canva.png'
+import expertPicture from '@/public/assets/Photos-Main-Page/Experts_Canva.png'
 import WorkInCard from './WorkInCard'
+import { useRouter } from "next/router";
+import {FormattedMessage, useIntl} from "react-intl";
+import Link from "next/link";
 
 function WorkIn() {
+  const { locales } = useRouter();
+  const intl = useIntl();
+  const title = intl.formatMessage({ id: "page.home.head.title" });
+  const description = intl.formatMessage({
+    id: "page.home.head.meta.description",
+  });
+
   return (
     <S.Container>
-
+      <FormattedMessage
+          id="page.home.title"
+          values={{ b: (chunks) => <b>{chunks}</b> }}
+      />
+      <div >
+        {[...locales].sort().map((locale) => (
+            <Link key={locale} href="/" locale={locale}>
+              {locale}
+            </Link>
+        ))}
+      </div>
+      <title>{title}</title>
+      <meta name="description" content={description} />
       <h2 className="title">
+
         Work in <span>EUROPE</span> or <span>GERMANY</span>
       </h2>
 

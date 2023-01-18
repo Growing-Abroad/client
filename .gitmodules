@@ -1,3 +1,0 @@
-[submodule "src/shared-models"]
-	path = src/shared-models
-	url = https://github.com/Growing-Abroad/shared-data-models.git

@@ -1,9 +1,9 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
-import OurServicesCard from '@pages/components/OurServices/OurServicesCard';
-import { services } from '@utils/services';
+import {services} from "@/src/utils/services";
+import SwiperCore, {Navigation, Pagination} from "swiper";
+import OurServicesCard from "@/pages/components/OurServices/OurServicesCard";
+import  {Swiper, SwiperSlide} from "swiper/react";
 
 export default function OurServicesSwiper() {
   SwiperCore.use([Navigation, Pagination]);

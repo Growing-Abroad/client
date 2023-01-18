@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { theme } from '@styles/theme'
-import { variables } from '@/styles/global-variables';
+import {variables} from "@/src/styles/global-variables";
+import {theme} from "@/src/styles/theme";
+
 
 export const Container = styled.section`
   display: flex;

@@ -1,6 +1,7 @@
-import { variables } from '@/styles/global-variables';
-import { theme } from '@/styles/theme';
+
 import styled from 'styled-components';
+import {theme} from "@/src/styles/theme";
+import {variables} from "@/src/styles/global-variables";
 
 const {
   colors: { primaryBlue },
@@ -34,6 +35,6 @@ export const SuccessSubtitle = styled.p`
   @media (min-width: 200px) and (max-width: 1280px) {
     font-size: calc(0.875rem + ((1vw - 2px) * 0.5556));
     line-height: calc(1rem + ((1vw - 2px) * 0.7407));
-    min-height: 0vw;
+    min-height: 0;
   }
 `;

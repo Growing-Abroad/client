@@ -1,17 +1,23 @@
-import React, { ElementType } from 'react'
-import type { ReactElement, ReactNode } from 'react'
-import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
-import "../src/components/Header/modules/style.css"
-import { MyThemeProvider } from '../src/styles/MyThemeProvider'
-import { Montserrat } from '@next/font/google'
-
-import { appWithI18Next } from 'ni18n'
-import { ni18nConfig } from '../ni18n.config';
+import {NextPage} from "next";
+import {ReactElement, ReactNode} from "react";
+import {AppProps} from "next/app";
+import {Montserrat} from "@next/font/google";
+import {MyThemeProvider} from "@/src/styles/MyThemeProvider";
+import { useRouter } from "next/router";
+import { IntlProvider } from "react-intl";
+import de from "../lang/de.json"
+import en from "../lang/en.json";
+import pt from "../lang/pt.json";
 
 const montserrat = Montserrat({
   subsets: ['latin']
 })
+
+const messages = {
+  de,
+  en,
+  pt,
+};
 
 export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -21,24 +27,23 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 
-function Home({ Component, pageProps }: AppPropsWithLayout) {
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page: ReactElement) => page)
-
+  const getLayout = Component.getLayout ?? ((page) => page)
+  const { locale } = useRouter();
   return getLayout(
-    <>
-      <style jsx global>{`
+      <>
+        <style jsx global>{`
           html {
             font-family: ${montserrat.style.fontFamily};
             font-display: swap;
           }
       `}</style>
-
-      <MyThemeProvider >
-        <Component {...pageProps} />
-      </MyThemeProvider>
-    </>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+        <MyThemeProvider >
+          <Component {...pageProps} />
+        </MyThemeProvider>
+        </IntlProvider>
+      </>
   )
 }
-
-export default appWithI18Next((Home as ElementType), ni18nConfig)

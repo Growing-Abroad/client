@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
+import styled from "styled-components";
+import { variables } from "@/src/styles/global-variables";
+import { theme } from "@/src/styles/theme";
 
 const {
   colors: { secondaryBlue, terciaryBlue },
@@ -33,7 +33,6 @@ export const FooterContentWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     align-items: center;
     padding: 80px ${globalHorizontalPaddingMobile};
-
   }
 `;
 
@@ -45,7 +44,6 @@ export const FooterContent = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 48px;
-
   }
 `;
 
@@ -55,8 +53,7 @@ export const FooterLinksWrapper = styled.div`
   width: 100%;
 `;
 
-export const FooterLinksUl = styled.ul`
-`;
+export const FooterLinksUl = styled.ul``;
 
 export const FooterLinksLi = styled.li`
   color: ${secondaryBlue};
@@ -72,7 +69,7 @@ export const SocialMediaWrapper = styled.div`
   width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-   align-items: center; 
+    align-items: center;
   }
 `;
 

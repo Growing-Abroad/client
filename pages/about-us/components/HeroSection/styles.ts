@@ -1,13 +1,14 @@
-import { theme } from '@/styles/theme';
-import { variables } from '@styles/global-variables';
-import styled from 'styled-components';
+import {variables} from "@/src/styles/global-variables";
+import {theme} from "@/src/styles/theme";
+import styled from "styled-components";
 
 interface IContainer {
   backgroundImg: string;
 }
+
 export const Container = styled.section<IContainer>`
   min-width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,8 +18,8 @@ export const Container = styled.section<IContainer>`
   color: ${theme.colors.primaryBlue};
   text-align: center;
   overflow: hidden;
-  
-  background-image: url(${({ backgroundImg }) => backgroundImg});
+
+  background-image: url(${({backgroundImg}) => backgroundImg});
   background-color: lightgray;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,12 +47,12 @@ export const ImagesContainer = styled.div`
   width: 1280px;
   display: flex;
   flex-direction: column;
-
   @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
     justify-content: space-between;
   }
 `
+
 export interface IImagesWrapper {
   background: string;
 }
@@ -60,7 +61,7 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  background-image: url(${({ background }) => background});
+  background-image: url(${({background}) => background});
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
@@ -88,7 +89,7 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
 
 export const BlueSquare = styled.div`
   --blueSquareOffset: -105px;
-  background: ${theme.colors.secondaryBlue}; 
+  background: ${theme.colors.secondaryBlue};
   opacity: 70%;
   width: 315px;
   height: 415px;
@@ -96,7 +97,7 @@ export const BlueSquare = styled.div`
   bottom: -225px;
   left: var(--blueSquareOffset);
   transform: rotate(25deg);
-  
+
   &.right-image {
     left: unset;
     right: var(--blueSquareOffset);
@@ -104,16 +105,16 @@ export const BlueSquare = styled.div`
   }
 `
 export const TextsWrapper = styled.div`
-    width: 280px;
-    position: absolute;
-    bottom: 0;
-    color: white;
-    padding: 1rem 1.2rem;
-    min-height: 160px;
- 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  width: 280px;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  padding: 1rem 1.2rem;
+  min-height: 160px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   &.reverse {
     align-items: flex-end;
@@ -126,11 +127,11 @@ export const BigQuote = styled.span`
 `
 
 export const TextLeft = styled.span`
-    text-align: left;
-    left: 0;
-    `
+  text-align: left;
+  left: 0;
+`
 
 export const TextRight = styled.span`
-    text-align: right;
-    right: 0;
+  text-align: right;
+  right: 0;
 `

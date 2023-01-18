@@ -1,8 +1,10 @@
-import { variables } from "@styles/global-variables";
-import { theme } from '@styles/theme';
+import { variables } from "@/src/styles/global-variables";
+import { theme } from "@/src/styles/theme";
 import styled from "styled-components";
 
-const { sizes: { mediaQuery } } = variables;
+const {
+  sizes: { mediaQuery },
+} = variables;
 
 export const TwoColorTitleWrapper = styled.div`
   display: flex;
@@ -14,7 +16,7 @@ export const TwoColorTitleWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
   }
-`
+`;
 
 interface IText {
   color: string;
@@ -23,6 +25,6 @@ interface IText {
 
 export const Text = styled.span<IText>`
   color: ${({ color }) => theme.colors[color]};
-  font-size: ${({ fontSize }) => fontSize || '3.5rem'} ;
+  font-size: ${({ fontSize }) => fontSize || "3.5rem"};
   text-align: center;
-`
+`;

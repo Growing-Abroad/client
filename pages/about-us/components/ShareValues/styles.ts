@@ -1,9 +1,9 @@
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme'
-import styled from 'styled-components';
+import { variables } from "@/src/styles/global-variables";
+import { theme } from "@/src/styles/theme";
+import styled from "styled-components";
 
 export const Container = styled.section`
-  width: min(100%, ${variables.sizes.maxWidthAll}); 
+  width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,10 +12,10 @@ export const Container = styled.section`
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   color: ${theme.colors.primaryBlue};
 
-  @media(max-width: ${variables.sizes.mediaQuery}) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
   }
-`
+`;
 
 export const CardContainer = styled.div`
   display: flex;
@@ -26,14 +26,13 @@ export const CardContainer = styled.div`
     flex-direction: row;
     gap: 2rem;
   }
-
-`
+`;
 export const Card = styled.div`
   width: 100%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const CardContent = styled.div`
   display: flex;
@@ -45,7 +44,7 @@ export const CardContent = styled.div`
   position: relative;
 
   > h3 {
-    font: 500 1.75rem 'Montserrat', sans-serif;
+    font: 500 1.75rem "Montserrat", sans-serif;
     z-index: 10;
   }
 
@@ -56,11 +55,10 @@ export const CardContent = styled.div`
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
-    border-left: 2px solid ${theme.colors.primaryBlue}; 
+    border-left: 2px solid ${theme.colors.primaryBlue};
     z-index: 10;
   }
-`
-
+`;
 
 export const WhiteTriangle = styled.div`
   position: absolute;
@@ -72,4 +70,4 @@ export const WhiteTriangle = styled.div`
   width: 100%;
   height: 80px;
   z-index: 0;
-`
+`;

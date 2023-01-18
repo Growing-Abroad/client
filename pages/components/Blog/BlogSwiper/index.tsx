@@ -1,10 +1,12 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation } from 'swiper';
+
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
-import { posts } from '@utils/blog_posts';
-import BlogCard from '@pages/components/Blog/BlogCard';
-import { useWindowSize } from '@hooks/useWindowSize';
+import {useWindowSize} from "@/src/hooks/useWindowSize";
+import {posts} from "@/src/utils/blog_posts";
+import SwiperCore, {Navigation} from "swiper";
+import BlogCard from "@/pages/components/Blog/BlogCard";
+import {Swiper, SwiperSlide} from "swiper/react";
+
 
 export default function BlogSwiper() {
   SwiperCore.use([Navigation]);

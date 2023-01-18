@@ -1,35 +1,32 @@
 import { useEffect, useState } from "react";
-import { StyledBurger } from "@components/Header/Header.style";
+import { Select, MenuItem } from "@mui/material";
 import Nav from "./Nav";
-import { useWindowSize } from "@/hooks/useWindowSize";
-import { variables } from "@/styles/global-variables";
-import { removePxFromCssValue } from "@/utils/scripts/general-utility";
-import { useTranslation } from 'react-i18next'
-import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
+import { useWindowSize } from "@/src/hooks/useWindowSize";
+import { variables } from "@/src/styles/global-variables";
+import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
+import { StyledBurger } from "../Header.style";
 export type TCountryLangDict = Record<string, string>;
 
 function Burger() {
   const [open, setOpen] = useState(false);
   const [width] = useWindowSize();
-  const { sizes: { mediaQuery } } = variables;
+  const {
+    sizes: { mediaQuery },
+  } = variables;
   const mediaQueryNumber = removePxFromCssValue(mediaQuery);
 
   useEffect(() => {
     if (width < mediaQueryNumber) setOpen(false);
-  }, [width])
+  }, [width]);
 
   const [openLang, setOpenLang] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("us");
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
 
   const countryLangDict: TCountryLangDict = {
     us: "en",
     br: "pt",
-    de: "de"
+    de: "de",
   };
 
   const handleClose = () => {
@@ -42,22 +39,12 @@ function Burger() {
 
   const handleChange = (lang: string) => {
     setSelectedLanguage(lang);
-    changeLanguage(countryLangDict[lang.toLowerCase()]);
+    // changeLanguage(countryLangDict[lang.toLowerCase()]);
   };
 
   function getKeyByValue(object: Record<string, string>, value: string) {
     return Object.keys(object).find((key) => object[key] === value);
   }
-
-
-  useEffect(() => {
-    const userLangExists = getKeyByValue(countryLangDict, language?.slice(0, 2));
-    if (userLangExists) {
-      setSelectedLanguage(userLangExists);
-    }
-
-    Object.keys(countryLangDict).forEach((country) => console.log(country));
-  }, []);
 
   return (
     <>
@@ -103,9 +90,8 @@ function Burger() {
           </Select>
         </SelectLangWrapper>
       </NavWrapper>
-
     </>
-  )
+  );
 }
 
-export default Burger
+export default Burger;

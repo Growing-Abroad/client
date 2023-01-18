@@ -1,15 +1,15 @@
-import { useWindowSize } from '@/hooks/useWindowSize';
-import { variables } from '@/styles/global-variables';
-import { removePxFromCssValue } from '@/utils/scripts/general-utility';
-import { useState } from 'react';
+import { useState } from "react";
 import {
   FlexboxSlide,
   FlexboxSlider,
   WatchVideoBtn,
   TextBlock,
   TextBlockH3,
-} from './style';
-import Image from 'next/image'
+} from "./style";
+import Image from "next/image";
+import { useWindowSize } from "@/src/hooks/useWindowSize";
+import { variables } from "@/src/styles/global-variables";
+import { removePxFromCssValue } from "@/src/utils/scripts/general-utility";
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
@@ -39,21 +39,24 @@ export default function FancyCarousel(props: Props) {
   }
 
   function handleSlideClasses(index: number): string {
-    let classes = 'flexbox-slide';
-    if (index % 2 !== 0) classes += ' short';
+    let classes = "flexbox-slide";
+    if (index % 2 !== 0) classes += " short";
     if (selectedSlide === index) classes += " selected-slide";
-    if (windowWidth && windowWidth < mediaQueryNumber) classes += handleMobileSliderClass(index);
+    if (windowWidth && windowWidth < mediaQueryNumber)
+      classes += handleMobileSliderClass(index);
 
-    return classes
+    return classes;
   }
 
   function handleMobileSliderClass(index: number) {
     if (
-      selectedSlide !== index && index !== selectedSlide - 1 && index !== selectedSlide + 1
+      selectedSlide !== index &&
+      index !== selectedSlide - 1 &&
+      index !== selectedSlide + 1
     ) {
-      return ' dontShow';
+      return " dontShow";
     }
-    return '';
+    return "";
   }
 
   return (
@@ -61,7 +64,7 @@ export default function FancyCarousel(props: Props) {
       {props.dataArray.map((item, i) => (
         <FlexboxSlide
           className={handleSlideClasses(i)}
-          key={i + '-' + item.title}
+          key={i + "-" + item.title}
           onClick={() => setSelectedSlide(i)}
         >
           <Image src={item.imgSrc} alt="Slide Image" />

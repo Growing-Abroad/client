@@ -1,7 +1,7 @@
-import TwoColorTitle from '@components/two-color-title';
-import * as S from './styles';
-import { socials } from '@/utils/socials';
-import Image from 'next/image'
+import * as S from "./styles";
+import { socials } from "@/src/utils/socials";
+import Image from "next/image";
+import TwoColorTitle from "@/src/components/two-color-title";
 
 function CommunitySection() {
   return (
@@ -14,12 +14,12 @@ function CommunitySection() {
       <S.Socials>
         {socials.map(social => (
           <S.Social key={social.socialLink}>
-            <a href={social.socialLink} target="_blank">
-              <Image src={social.source} alt={social.name} />
+            <a href={social.socialLink} target="_blank" rel="noreferrer">
+              <Image src={social.source} alt={social.name} width={85} />
             </a>
             <S.SocialText>
-              <p>+ {social.followNumber.toLocaleString('en').replace(/,/g, '.')}</p>
-              <span>{social.followType + 's'}</span>
+              <p>+ {social.followNumber.toLocaleString("en").replace(/,/g, ".")}</p>
+              <span>{social.followType + "s"}</span>
             </S.SocialText>
           </S.Social>
         ))}
@@ -28,4 +28,4 @@ function CommunitySection() {
   );
 }
 
-export default CommunitySection
+export default CommunitySection;
