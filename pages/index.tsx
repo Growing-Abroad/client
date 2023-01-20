@@ -6,9 +6,14 @@ import CommunitySection from "@pages/components/Community";
 import BlogSection from "@pages/components/Blog/BlogSection";
 import {ReactElement} from "react";
 
-import {NextPageWithLayout} from "@pages/_app";
+import { NextPageWithLayout} from "@pages/_app";
 import PageLayout from "@components/PageLayout";
 import DiscoverGA from "@pages/components/DiscoverGA";
+import { useRouter } from "next/router";
+import { IntlProvider } from "react-intl";
+import de from "../lang/de.json"
+import en from "../lang/en.json";
+import pt from "../lang/pt.json";
 
 const Page: NextPageWithLayout = () => {
   return <>
@@ -22,11 +27,22 @@ const Page: NextPageWithLayout = () => {
   </>
 }
 
+export const languages = {
+  de,
+  en,
+  pt,
+};
+
 Page.getLayout = function getLayout(page: ReactElement) {
+  const { locale } = useRouter();
+
   return (
+    <IntlProvider locale={locale!} messages={languages[locale]}>
       <PageLayout>
         {page}
       </PageLayout>
+    </IntlProvider>
+
   )
 }
 
