@@ -15,23 +15,10 @@ function WorkIn() {
     id: "page.home.head.meta.description",
   });
 
+
   return (
     <S.Container>
-      <FormattedMessage
-          id="page.home.title"
-          values={{ b: (chunks) => <b>{chunks}</b> }}
-      />
-      <div >
-        {[...locales].sort().map((locale) => (
-            <Link key={locale} href="/" locale={locale}>
-              {locale}
-            </Link>
-        ))}
-      </div>
-      <title>{title}</title>
-      <meta name="description" content={description} />
       <h2 className="title">
-
         Work in <span>EUROPE</span> or <span>GERMANY</span>
       </h2>
 
