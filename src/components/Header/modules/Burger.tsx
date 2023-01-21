@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import { Select, MenuItem } from '@mui/material';
-import Nav from './Nav';
-import { NavWrapper, SelectLangLabel, SelectLangWrapper } from './BurguerStyle';
-import { useWindowSize } from '@hooks/useWindowSize';
-import { variables } from '@styles/global-variables';
-import { removePxFromCssValue } from '@utils/scripts/general-utility';
-import { StyledBurger } from '../Header.style';
-import { useRouter } from 'next/router';
-import { useIntl } from 'react-intl';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import { Select, MenuItem } from "@mui/material";
+import Nav from "./Nav";
+import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { variables } from "@styles/global-variables";
+import { removePxFromCssValue } from "@utils/scripts/general-utility";
+import { StyledBurger } from "../Header.style";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
+
+
 export type TCountryLangDict = Record<string, string>;
 
 function Burger() {
   const { locales } = useRouter();
-  const intl = useIntl();
 
   const [open, setOpen] = useState(false);
   const [width] = useWindowSize();
@@ -89,9 +89,9 @@ function Burger() {
               return (
                 <MenuItem key={country[0]} value={country[0]}>
                   <Link
-                    key={locales[country[1]]}
+                    key={locales?.find(locale => locale === country[1])}
                     href="/"
-                    locale={locales[country[1]]}
+                    locale={locales?.find(locale => locale === country[1])}
                   >
                     <Image
                       src={`countries-flags/${country[0]}.svg`}
