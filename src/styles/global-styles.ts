@@ -44,16 +44,12 @@ export const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
 
-  nav {
-    font-family: 'Montserrat', sans-serif;
-  }
 `;
 
 export const Input = styled.input`
   padding: 12px 16px;
   outline: 1.5px solid ${primaryBlue};
   border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 
   &:focus {

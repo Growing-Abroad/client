@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styles";
 import Uan from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
 import Manu from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
@@ -8,6 +8,8 @@ import Image from "next/image";
 import Quote from "@/../public/assets/about-us/quote.webp"
 
 function HeroSection() {
+
+
   return (
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>

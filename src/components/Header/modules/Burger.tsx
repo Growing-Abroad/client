@@ -29,6 +29,7 @@ function Burger() {
 
   const [openLang, setOpenLang] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('us');
+  const [windowS, setWindow] = useState<Location>();
 
   const countryLangDict: TCountryLangDict = {
     us: 'en',
@@ -52,6 +53,19 @@ function Burger() {
   function getKeyByValue(object: Record<string, string>, value: string) {
     return Object.keys(object).find((key) => object[key] === value);
   }
+
+  function getCurrent(lang: string) {
+    if (windowS) {
+      const { pathname } = windowS;
+      console.log({pathname, lang, windowLo: window.location})
+      return `${lang}${pathname}`;
+    }
+    return '';
+  }
+
+  useEffect(() => {
+    setWindow(window.location)
+  }, [])
 
   return (
     <>
@@ -85,22 +99,21 @@ function Burger() {
             inputProps={{ MenuProps: { disableScrollLock: true } }}
           >
             {Object.entries(countryLangDict).map((country) => {
-              console.log({ country });
               return (
-                <MenuItem key={country[0]} value={country[0]}>
-                  <Link
-                    key={locales?.find(locale => locale === country[1])}
-                    href="/"
-                    locale={locales?.find(locale => locale === country[1])}
-                  >
-                    <Image
-                      src={`countries-flags/${country[0]}.svg`}
-                      alt={country[0] + ' flag'}
-                      width={25}
-                      height={20}
-                    />
-                  </Link>
-                </MenuItem>
+                <Link
+                  key={locales?.find(locale => locale === country[1])}
+                  href={getCurrent(countryLangDict[selectedLanguage])}
+                  locale={locales?.find(locale => locale === country[1])}
+                >
+                  <MenuItem key={country[0]} value={country[0]}>
+                      <Image
+                        src={`countries-flags/${country[0]}.svg`}
+                        alt={country[0] + ' flag'}
+                        width={25}
+                        height={20}
+                      />
+                  </MenuItem>
+                </Link>
               );
             })}
           </Select>
