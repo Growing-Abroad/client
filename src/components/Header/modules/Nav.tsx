@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef } from "react";
-import { BurguerLogo, StyledUl } from "../Header.style";
-import Logo from "@/../public/assets/growing-abroad-images/LOGO-Growing-black.webp";
-import Link from "next/link";
+import { ComponentPropsWithoutRef } from 'react';
+import { BurguerLogo, StyledUl } from '../Header.style';
+import Logo from '@/../public/assets/growing-abroad-images/LOGO-Growing-black.webp';
+import Link from 'next/link';
 
 function Nav(props: NavProps) {
   const { open } = props;
@@ -13,7 +13,7 @@ function Nav(props: NavProps) {
         <li>Coaching</li>
         <li>Career Blog</li>
         <li>
-          <Link href={"/about-us"}>About Us</Link>
+          <Link href={'/about-us'}>About Us</Link>
         </li>
         <li>Jobs</li>
         <li>FAQ</li>
@@ -22,7 +22,7 @@ function Nav(props: NavProps) {
   );
 }
 
-interface NavProps extends ComponentPropsWithoutRef<"nav"> {
+interface NavProps extends ComponentPropsWithoutRef<'nav'> {
   open: boolean;
 }
 
