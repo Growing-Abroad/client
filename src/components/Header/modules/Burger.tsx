@@ -6,9 +6,17 @@ import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import { StyledBurger } from "../Header.style";
+import { useRouter } from "next/router";
+import { useIntl } from "react-intl";
+import Link from "next/link";
+import Image from "next/image";
 export type TCountryLangDict = Record<string, string>;
 
 function Burger() {
+  const { locales } = useRouter();
+  const intl = useIntl();
+
+
   const [open, setOpen] = useState(false);
   const [width] = useWindowSize();
   const {
@@ -77,13 +85,17 @@ function Burger() {
             onChange={(e) => handleChange(e.target.value)}
             inputProps={{ MenuProps: { disableScrollLock: true } }}
           >
-            {Object.keys(countryLangDict).map((country) => {
+            {Object.entries(countryLangDict).map((country) => {
+              console.log({country})
               return (
-                <MenuItem key={country} value={country}>
-                  <img
-                    src={`countries-flags/${country}.svg`}
-                    alt={country + " flag"}
-                  />
+                <MenuItem key={country[0]} value={country[0]}>
+                  <Link key={locales[country[1]]} href="/" locale={locales[country[1]]}>
+                    <Image
+                      src={`countries-flags/${country[0]}.svg`}
+                      alt={country[0] + " flag"}
+                      width={25} height={20}
+                    />
+                  </Link>
                 </MenuItem>
               );
             })}
