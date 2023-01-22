@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import { Select, MenuItem } from "@mui/material";
+import 'react-select-search-nextjs/style.css'
+import { HTMLAttributes, ReactNode, RefObject, useEffect, useRef, useState } from "react";
+import { Select, MenuItem, dividerClasses, SelectClassKey, SelectProps } from "@mui/material";
 import Nav from "./Nav";
 import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
 import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import { StyledBurger } from "../Header.style";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-
+import BrFlag from "public/countries-flags/br.svg"
+import DeFlag from "public/countries-flags/de.svg"
+import UsFlag from "public/countries-flags/us.svg"
+import SelectSearch from 'react-select-search-nextjs';
 
 export type TCountryLangDict = Record<string, string>;
 
 function Burger() {
-  const { locales } = useRouter();
-
   const [open, setOpen] = useState(false);
   const [width] = useWindowSize();
   const {
@@ -29,13 +30,35 @@ function Burger() {
 
   const [openLang, setOpenLang] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('us');
-  const [windowS, setWindow] = useState<Location>();
+  const [flag, setFlag] = useState(UsFlag);
+  const [selectImg, setSelectImage] = useState<ReactNode>(<Image src={UsFlag} alt={'us flag'} width={25} height={20} />);
 
   const countryLangDict: TCountryLangDict = {
     us: 'en',
     br: 'pt',
     de: 'de',
   };
+
+  const LangToFlag: TCountryLangDict = {
+    us: UsFlag,
+    br: BrFlag,
+    de: DeFlag
+  }
+
+  const options = [
+    {
+      name: 'Deutch', 
+      value: 'de'
+    },
+    {
+      name: 'English', 
+      value: 'us',
+    },
+    {
+      name: 'Portuguese', 
+      value: 'br',
+    },
+  ];
 
   const handleClose = () => {
     setOpenLang(false);
@@ -47,6 +70,16 @@ function Burger() {
 
   const handleChange = (lang: string) => {
     setSelectedLanguage(lang);
+    setFlag(LangToFlag[lang])
+    setSelectImage(
+      <Image
+        src={LangToFlag[lang]}
+        alt={lang +' flag'}
+        width={25}
+        height={20}
+      />
+    )
+    setOpen(false);
     // changeLanguage(countryLangDict[lang.toLowerCase()]);
   };
 
@@ -54,17 +87,22 @@ function Burger() {
     return Object.keys(object).find((key) => object[key] === value);
   }
 
-  function getCurrent(lang: string) {
-    if (windowS) {
-      const { pathname } = windowS;
-      console.log({pathname, lang, windowLo: window.location})
-      return `${lang}${pathname}`;
-    }
-    return '';
-  }
-
   useEffect(() => {
-    setWindow(window.location)
+    const lang = window.location.pathname.slice(1,3)
+    const flag = getKeyByValue(countryLangDict, lang)
+    if (flag) {
+      setSelectedLanguage(flag);
+      setFlag(LangToFlag[flag])
+      setSelectImage(
+            <Image
+              src={LangToFlag[flag]}
+              alt={lang +' flag'}
+              width={25}
+              height={20}
+            />
+      )
+    }
+    console.log({loca: window.location, flag, lang})
   }, [])
 
   return (
@@ -85,7 +123,7 @@ function Burger() {
               padding: '4px',
             }}
           >
-            <img src={`countries-flags/${selectedLanguage}.svg`} alt="" />
+            {selectImg}
           </SelectLangLabel>
           <Select
             className="hide"
@@ -98,24 +136,53 @@ function Burger() {
             onChange={(e) => handleChange(e.target.value)}
             inputProps={{ MenuProps: { disableScrollLock: true } }}
           >
-            {Object.entries(countryLangDict).map((country) => {
-              return (
-                <Link
-                  key={locales?.find(locale => locale === country[1])}
-                  href={getCurrent(countryLangDict[selectedLanguage])}
-                  locale={locales?.find(locale => locale === country[1])}
-                >
-                  <MenuItem key={country[0]} value={country[0]}>
-                      <Image
-                        src={`countries-flags/${country[0]}.svg`}
-                        alt={country[0] + ' flag'}
-                        width={25}
-                        height={20}
-                      />
-                  </MenuItem>
-                </Link>
-              );
-            })}
+            <Link
+              key={'br'}
+              href={''}
+              locale={'pt'}
+              onClick={() => handleChange('br')}
+            >
+              <MenuItem key={'br'} value={'br'}>
+                  <Image
+                    src={BrFlag}
+                    alt={'br flag'}
+                    width={25}
+                    height={20}
+                  />
+              </MenuItem>
+            </Link>
+            <Link
+              key={'us'}
+              href={''}
+              locale={'en'}
+              onClick={() => handleChange('us')}
+            >
+              <MenuItem key={'us'} value={'us'}>
+                  <Image
+                    src={UsFlag}
+                    alt={'Us flag'}
+                    width={25}
+                    height={20}
+                  />
+              </MenuItem>
+            </Link>
+            <Link
+              key={'de'}
+              href={''}
+              locale={'de'}
+              onClick={() => handleChange('de')}
+            >
+              <MenuItem key={'de'} value={'de'}>
+                  <Image
+                    src={DeFlag}
+                    alt={'de flag'}
+                    width={25}
+                    height={20}
+                  />
+              </MenuItem>
+            </Link>
+
+
           </Select>
         </SelectLangWrapper>
       </NavWrapper>

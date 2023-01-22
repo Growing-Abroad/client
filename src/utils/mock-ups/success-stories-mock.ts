@@ -1,43 +1,25 @@
-import Img1 from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
-import Img2 from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
-import Img3 from "@/../public/assets/Photos-Main-Page/Sucess-Case_Canva.png";
-import Img4 from "@/../public/assets/Photos-Main-Page/Blog-CV_Canva.png";
-import Img5 from "@/../public/assets/Photos-Main-Page/Blog-Germany_Canva.png";
+import Img1 from "@/../public/assets/about-us/inspiration.webp";
+import Img2 from "@/../public/assets/about-us/trust.webp";
+import Img3 from "@/../public/assets/about-us/customer-centric.webp";
 
 export const successStoriesData = [
   {
     imgSrc: Img1,
-    title: "Slide #1 is here",
-    paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt.`,
+    title: "Inspiration",
+    paragraph: `Inspiration is the source to dream bigger, push harder and lead to a more fulfilling life. We want to inspire and motivate other people so that they can discover new possibilities for themselves and overcome boundaries.`,
     href: "",
   },
   {
     imgSrc: Img2,
-    title: "Slide #2 is here",
-    paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt.`,
+    title: "Trust",
+    paragraph: `To show yourself in your full potential is only possible with trust.  We want to create an environment where people of all nations and backgrounds can meet on the same level of inclusiveness, integrity and diversity.`,
     href: "",
   },
   {
     imgSrc: Img3,
-    title: "Slide #3 is here",
-    paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt.`,
+    title: "Customer Centric",
+    paragraph: `Our costumers are the heart of our work. We truly want to understand the needs and concerns of our customers to create a meaningful experience and build a lasting relationship.`,
     href: "",
   },
-  {
-    imgSrc: Img4,
-    title: "Slide #4 is here",
-    paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt.`,
-    href: "",
-  },
-  {
-    imgSrc: Img5,
-    title: "Slide #4 is here",
-    paragraph: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt.`,
-    href: "",
-  },
+
 ];

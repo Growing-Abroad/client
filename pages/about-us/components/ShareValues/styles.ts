@@ -43,8 +43,9 @@ export const CardContent = styled.div`
   height: 100%;
   position: relative;
 
-  > h3 {
-    font: 500 1.75rem "Montserrat", sans-serif;
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
     z-index: 10;
   }
 
@@ -55,7 +56,6 @@ export const CardContent = styled.div`
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
-    border-left: 2px solid ${theme.colors.primaryBlue};
     z-index: 10;
   }
 `;

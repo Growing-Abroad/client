@@ -91,7 +91,7 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
 export const BlueSquare = styled.div`
   --blueSquareOffset: -105px;
   background: ${theme.colors.secondaryBlue};
-  opacity: 70%;
+  opacity: 80%;
   width: 315px;
   height: 415px;
   position: absolute;

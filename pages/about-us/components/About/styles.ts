@@ -10,7 +10,7 @@ export const Container = styled.section`
   gap: 2.5rem;
   padding: 80px ${variables.sizes.globalHorizontalPadding} 0;
   color: ${theme.colors.primaryBlue};
-  font: 400 1rem "Montserrat", sans-serif;
+  font: 400 1rem;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};

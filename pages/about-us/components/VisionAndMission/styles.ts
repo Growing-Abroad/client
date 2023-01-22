@@ -6,6 +6,8 @@ interface IContainer {
   backgroundImg: string;
 }
 
+const {sizes: {globalHorizontalPadding, globalHorizontalPaddingMobile, mediaQuery}} = variables;
+
 export const Container = styled.section<IContainer>`
   width: min(100%, ${variables.sizes.maxWidthAll});
   height: 600px;
@@ -13,37 +15,47 @@ export const Container = styled.section<IContainer>`
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};
+  margin: 80px ${globalHorizontalPadding};
+
+  position: relative;
 
   background-image: url(${({ backgroundImg }) => backgroundImg});
   background-color: white;
   background-repeat: no-repeat;
   background-position: left center ;
 
-  @media(min-width: ${variables.sizes.mediaQuery}) {
+  @media(min-width: ${mediaQuery}) {
     flex-direction: row;
-    padding-inline: ${variables.sizes.globalHorizontalPadding};
+    margin-inline: ${globalHorizontalPaddingMobile};
   }
 `
 
-export const TextContainer = styled.div<{ background?: string, color?:string}>`
+export const TextContainer = styled.div<{ color?:string, left: string, top: string}>`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
   color: ${({ color }) => color === 'primary' ? 'white' : theme.colors.primaryBlue};
-  font: 700 3rem 'Montserrat', sans-serif;
+  font: 700 3rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  position: absolute;
+  left: ${({left})=> left};
+  top: ${({top})=> top};
+  text-align: justify;
 
   > h3 {
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
+    font-size: 66px;
+    font-weight: 600;
   }
 
   > p {
+    max-width: 411px;
     font-size: 1.2rem;
-    font-weight: 500;
+    line-height: 1.8rem;
+    font-weight: 400;
     letter-spacing: 0.5px;
   }
 
@@ -54,20 +66,3 @@ export const TextContainer = styled.div<{ background?: string, color?:string}>`
     }
   }
 `
-
-// export const LeftContent = styled.div`
-//   display: flex;
-//   align-items: flex-end;
-//   justify-content: flex-end;
-//   height: 400px;
-//   background-image: url(${BackgroundImage.src});
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: 100% 100%;
-
-//   padding: 1rem;
-
-//   @media (min-width: ${variables.sizes.mediaQuery}) {
-//     padding-right: 0;
-//   }
-// `

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import * as S from "./styles";
-import Uan from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
-import Manu from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
 import HeroBackground from "@/../public/assets/about-us/hero-background.webp"
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
 import Quote from "@/../public/assets/about-us/quote.webp"
+import Uan from "@/../public/assets/about-us/uan-career-coach.webp";
+import Manu from "@/../public/assets/about-us/manu-career-coach.webp";
 
 function HeroSection() {
 
@@ -14,8 +14,10 @@ function HeroSection() {
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>
         <TwoColorTitle text1="Discover" text2="Growing Abroad" hasSpaceBtw />
-        <p>We, Uan from Brazil and Manu from Germany, put together our skills and knowledge to create a unique
-          platform for foreigners to help to make your dream to live and work in Germany or Europe come true.</p>
+        <p style={{maxWidth: '850px'}}>
+          We, Uan from Brazil and Manu from Germany, put together our skills and knowledge to create a unique
+          platform <strong>for foreigners</strong> to help to make your dream to live and work in Germany or Europe come true.
+        </p>
 
         <S.ImagesContainer>
 
