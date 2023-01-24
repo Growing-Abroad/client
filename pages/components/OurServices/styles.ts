@@ -12,6 +12,6 @@ export const Container = styled.section`
   height: 950px;
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};
+    padding: 80px 6px;
   }
 `

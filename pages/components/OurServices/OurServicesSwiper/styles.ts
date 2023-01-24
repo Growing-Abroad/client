@@ -6,10 +6,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
-
+  
   .swiper-container {
     list-style: none;
     width: 100%;
+    padding: 0 50px;
+
+    @media(max-width: ${variables.sizes.mediaQuery}) {
+      padding: 0 36px;
+    }
   }
 
   .pagination {

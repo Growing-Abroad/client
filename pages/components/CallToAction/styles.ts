@@ -73,31 +73,28 @@ export const Container = styled.section`
                 animation: text-enter 3000ms ease;
                 animation-iteration-count: 1;
                 position: relative;
-                right: 0;
+                left: 0;
                 animation-fill-mode: both;
 
                 @keyframes text-enter {
                   0% {
-                    top: 0;
-                    right: -200px;
+                    left: -200px;
                     visibility: hidden;
                     opacity: 0;
                   }
                   20% {
-                    top: 0;
-                    right: 0;
+                    left: 0;
                     visibility: visible;
                     opacity:1;
 
                   }
-                  70% {
-                    top: 0;
-                    right: 0;
+                  80% {
+                    left: 0;
                     visibility: visible;
                     opacity:1;
                   }
                   100% {
-                    top: -100px;
+                    left: 300px;
                     visibility: hidden;
                     opacity: 0;
                   }
@@ -117,7 +114,7 @@ export const Container = styled.section`
                     right: 0;
                     visibility: hidden;
                     opacity: 0;
-                    top: -100px;
+                    right: 200px;
                   }
                 }
             }

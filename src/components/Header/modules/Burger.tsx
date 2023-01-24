@@ -12,9 +12,22 @@ import Image from "next/image";
 import BrFlag from "public/countries-flags/br.svg"
 import DeFlag from "public/countries-flags/de.svg"
 import UsFlag from "public/countries-flags/us.svg"
-import SelectSearch from 'react-select-search-nextjs';
 
 export type TCountryLangDict = Record<string, string>;
+
+export enum ECountryToLang {
+  us = 'en',
+  br = 'pt',
+  de = 'de'
+}
+
+export const countryToFlag: {
+  [key in ECountryToLang]: string
+ } = {
+   [ECountryToLang.us]: UsFlag,
+   [ECountryToLang.br]: BrFlag,
+   [ECountryToLang.de]: DeFlag,
+ }
 
 function Burger() {
   const [open, setOpen] = useState(false);
@@ -29,7 +42,7 @@ function Burger() {
   }, [width]);
 
   const [openLang, setOpenLang] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('us');
+  const [selectedCountry, setSelectedCountry] = useState('us');
   const [flag, setFlag] = useState(UsFlag);
   const [selectImg, setSelectImage] = useState<ReactNode>(<Image src={UsFlag} alt={'us flag'} width={25} height={20} />);
 
@@ -45,21 +58,6 @@ function Burger() {
     de: DeFlag
   }
 
-  const options = [
-    {
-      name: 'Deutch', 
-      value: 'de'
-    },
-    {
-      name: 'English', 
-      value: 'us',
-    },
-    {
-      name: 'Portuguese', 
-      value: 'br',
-    },
-  ];
-
   const handleClose = () => {
     setOpenLang(false);
   };
@@ -69,7 +67,7 @@ function Burger() {
   };
 
   const handleChange = (lang: string) => {
-    setSelectedLanguage(lang);
+    setSelectedCountry(lang);
     setFlag(LangToFlag[lang])
     setSelectImage(
       <Image
@@ -89,20 +87,24 @@ function Burger() {
 
   useEffect(() => {
     const lang = window.location.pathname.slice(1,3)
-    const flag = getKeyByValue(countryLangDict, lang)
-    if (flag) {
-      setSelectedLanguage(flag);
-      setFlag(LangToFlag[flag])
+
+    const initialFlag = countryToFlag[lang as ECountryToLang] 
+    // const initialFlag = getKeyByValue(countryLangDict, lang)
+    console.log({initialFlag});
+    
+    if (initialFlag) {
+      setSelectedCountry(getKeyByValue(countryLangDict, lang)!);
+      setFlag(initialFlag)
       setSelectImage(
             <Image
-              src={LangToFlag[flag]}
+              src={initialFlag}
               alt={lang +' flag'}
               width={25}
               height={20}
             />
       )
     }
-    console.log({loca: window.location, flag, lang})
+    console.log({loca: window.location, flag: initialFlag, lang})
   }, [])
 
   return (
@@ -130,7 +132,7 @@ function Burger() {
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"
             open={openLang}
-            value={selectedLanguage}
+            value={selectedCountry}
             onClose={handleClose}
             onOpen={handleOpen}
             onChange={(e) => handleChange(e.target.value)}

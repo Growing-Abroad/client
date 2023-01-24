@@ -19,8 +19,20 @@ export default function BlogSwiper() {
   return (
     <S.Container>
       <Swiper
-        slidesPerView={handleSwiperCards(2, 3)}
-        spaceBetween={handleSwiperCards(2, 60)}
+        breakpoints={{
+          200: {
+            slidesPerView: 1,
+            spaceBetween: 100
+          },
+          940: {
+            slidesPerView: 2,
+            spaceBetween: 100
+          },
+          1230: {
+            slidesPerView: 3,
+            spaceBetween: 100
+          },
+        }}
         navigation
         loop
         style={{ padding: '0 60px' }}

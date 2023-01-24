@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 import {theme} from "@styles/theme";
+import { variables } from '@/styles/global-variables';
 
 
 export const Container = styled.div`  
   width: 100%;
+  max-width: 306px;
+  min-width: 255px;
   display: flex;
   flex-direction: column;
   outline: 2px solid lightgray;
   border-radius: 8px;
   text-align: center;
   color: ${theme.colors.primaryBlue};
-
+  overflow: hidden;
   transition: all 450ms;
 
   &:hover {

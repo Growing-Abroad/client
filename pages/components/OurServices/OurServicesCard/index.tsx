@@ -8,11 +8,12 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
 
   const handleRedirect = (id: string) => {
     // navigate('services/' + id)
+    console.log('botão book now')
     return id
   }
 
   return (
-      <S.Container onClick={() => handleRedirect(id)}>
+      <S.Container>
         <Image src={image.src} alt={image.alt}/>
         <S.CardContainer>
           <S.CardHeader>
@@ -30,7 +31,7 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
           </S.CardDescriptions>
 
           <footer>
-            <S.Button>{hasMoreInfo ? 'More Info' : 'Book Now'}</S.Button>
+            <S.Button onClick={() => handleRedirect(id)}>{hasMoreInfo ? 'More Info' : 'Book Now'}</S.Button>
           </footer>
         </S.CardContainer>
       </S.Container>

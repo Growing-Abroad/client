@@ -4,26 +4,35 @@ import {services} from "@utils/services";
 import SwiperCore, {Navigation, Pagination} from "swiper";
 import OurServicesCard from "@pages/components/OurServices/OurServicesCard";
 import  {Swiper, SwiperSlide} from "swiper/react";
+import { variables } from '@/styles/global-variables';
+import { removePxFromCssValue } from '@/utils/scripts/general-utility';
+
 
 export default function OurServicesSwiper() {
   SwiperCore.use([Navigation, Pagination]);
+  const {sizes: { mediaQuery }} = variables;
+  const mediaQueryNum = removePxFromCssValue(mediaQuery);
 
   return (
     <S.Container>
       <Swiper
         breakpoints={{
-          768: {
+          200: {
+            slidesPerView: 1,
+            spaceBetween: 100
+          },
+          940: {
+            slidesPerView: 2,
+            spaceBetween: 60
+          },
+          1230: {
             slidesPerView: 3,
             spaceBetween: 60
           },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 100
-          }
         }}
         navigation
         pagination
-        style={{ padding: '0 50px' }}
+        className='swiper-container'
       >
         {services.map((service) => (
           <SwiperSlide key={service.id} zoom>
