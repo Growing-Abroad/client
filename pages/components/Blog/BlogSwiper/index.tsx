@@ -2,19 +2,25 @@
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
 import {useWindowSize} from "@hooks/useWindowSize";
-import {posts} from "@utils/blog_posts";
+import {posts, IPost} from "@utils/blog_posts";
 import SwiperCore, {Navigation} from "swiper";
 import BlogCard from "@pages/components/Blog/BlogCard";
 import {Swiper, SwiperSlide} from "swiper/react";
+import { useEffect, useState } from 'react';
 
 
 export default function BlogSwiper() {
   SwiperCore.use([Navigation]);
   const [width] = useWindowSize();
+  const [posts_, setPosts] = useState<IPost[]>()
 
   const handleSwiperCards = (mobile: number, desktop: number) => {
     return width < 768 ? mobile : desktop;
   };
+
+  useEffect(() => {
+    setPosts(posts);
+  },[])
 
   return (
     <S.Container>
@@ -38,7 +44,7 @@ export default function BlogSwiper() {
         style={{ padding: '0 60px' }}
 
       >
-        {posts.map((post) => (
+        {posts_?.map((post) => (
           <SwiperSlide key={post.id} zoom>
             <BlogCard {...post} />
           </SwiperSlide>
