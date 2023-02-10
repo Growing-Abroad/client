@@ -6,14 +6,14 @@ import {
   TextBlock,
   TextBlockH3,
 } from "./style";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
-  imgSrc: string;
+  imgSrc: StaticImageData;
   title: string;
   paragraph: string;
   href: string;
