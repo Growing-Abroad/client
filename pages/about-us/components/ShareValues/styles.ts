@@ -53,6 +53,7 @@ export const CardContent = styled.div`
     text-align: justify;
     letter-spacing: 1px;
     z-index: 10;
+    color: ${theme.colors.blue700};
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {

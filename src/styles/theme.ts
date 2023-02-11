@@ -7,5 +7,10 @@ export const theme: ITheme = {
     secondaryBlue: '#4a9afd',
     terciaryBlue: '#EDF5FF',
     gray1: '#9DA5AF',
+
+    blue400: '#4A9AFD',
+    blue500: '#0073CF',
+    blue700: '#05335B',
+    yellow400: '#FFDB5C'
   },
 };

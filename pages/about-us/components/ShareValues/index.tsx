@@ -3,6 +3,7 @@ import * as S from "./styles";
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
 import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
+import StdParagraqh from "@/components/StdParagraqh/StdParagraqh";
 
 
 function ShareValues() {
@@ -20,7 +21,7 @@ function ShareValues() {
             <S.CardContent>
               <S.WhiteTriangle />
               <h3>{sharedValue.title}</h3>
-              <p>{sharedValue.paragraph}</p>
+              <StdParagraqh>{sharedValue.paragraph}</StdParagraqh>
             </S.CardContent>
           </S.Card>
         ))}
