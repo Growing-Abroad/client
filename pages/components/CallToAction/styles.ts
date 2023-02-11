@@ -4,35 +4,57 @@ import {variables} from "@styles/global-variables";
 import {theme} from "@styles/theme";
 
 const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
-const { colors: { secondaryBlue } } = theme;
+const { colors: { secondaryBlue, blue400, blue500, blue700, yellow400 } } = theme;
 
 export const BackgroudCTA = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${secondaryBlue};
+  background-color: ${blue500};
   padding: 0 ${globalHorizontalPadding};
+  height: 85vh;
+  overflow: hidden;
+  position: relative;
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;
+  }
+
+  .styled-div {
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+  }
+  .white-line {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: -1px;
+  
   }
 `
 
 export const CtaButton = styled.button`
   padding: 18px 46px;
-  border-radius: 50px;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: 900;
-  background-color: white;
-  color: ${theme.colors.primaryBlue};
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: ${yellow400};
+  color: ${blue700};
   transition: 300ms;
+  height: 54px;
+  letter-spacing: 1.3px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 
   &:hover {
       cursor: pointer; 
-      background-color: ${theme.colors.primaryBlue};
-      color: white;
+      background-color: ${blue700};
+      color: ${yellow400};
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -43,12 +65,13 @@ export const CtaButton = styled.button`
 
 export const Container = styled.section`
     width: 100%;
+    height: 100%;
     max-width: ${variables.sizes.maxWidthAll};
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
-    background-color: ${secondaryBlue};
+    background-color: ${blue500};
     
     position: relative;
 
@@ -56,9 +79,9 @@ export const Container = styled.section`
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 2.75rem;
+        gap: 56px;
 
-        width: 50%;
+        width: 800px;
         padding: 80px 32px 80px 0;
 
         h1 {
@@ -66,8 +89,9 @@ export const Container = styled.section`
             font-size: 5.4rem;
             line-height: 5.75rem;
             font-weight: 500;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 
-            .verde {
+            .title-change {
                 color: #FFDB5C;
                 font-weight: 600;
                 animation: text-enter 3000ms ease;
@@ -79,6 +103,7 @@ export const Container = styled.section`
                 @keyframes text-enter {
                   0% {
                     left: -200px;
+                    color: ${blue500};
                     visibility: hidden;
                     opacity: 0;
                   }
@@ -86,17 +111,23 @@ export const Container = styled.section`
                     left: 0;
                     visibility: visible;
                     opacity:1;
+                    color: ${yellow400};
+
 
                   }
                   80% {
                     left: 0;
                     visibility: visible;
                     opacity:1;
+                    color: ${yellow400};
+
+                    
                   }
                   100% {
-                    left: 300px;
+                    left: 200px;
                     visibility: hidden;
                     opacity: 0;
+                    color: ${blue500};
                   }
                 }
             }
@@ -124,7 +155,7 @@ export const Container = styled.section`
     .right-side {
         position: absolute;
         bottom: 0;
-        left: 600px;
+        left: 560px;
         height: min-content;
 
         flex-direction: row;
@@ -132,22 +163,45 @@ export const Container = styled.section`
         flex-wrap: nowrap;
 
         .right-side-img-container {
-          position: relative
-        }
-        img {
-            bottom: 0;
+          position: relative;
+          bottom: 42px;
+
+          .colored-divs {
+            position: relative;
+            left: 114px;
+            bottom: 10px;
+
+            .blue, .yellow {
+            width: 400px;
+            height: 476px;
+            border-radius: 219px;
             position: absolute;
+            }
+            .yellow {
+              background: ${yellow400};
+              z-index: 1;
+              bottom: -19px;
+              left: 0;
+            }
+            .blue {
+              background: ${blue400};
+              z-index: 2;
+              bottom: 0;
+              left: 0;
+              left: 109px;
+            }
           }
           
-          /* .to-right {
+          img {
+            bottom: -30px;
             position: absolute;
-            bottom: 0;
-            left: 50px;
-        } */
+            z-index: 3;
+          }
+        }
     }
     
     @media (max-width: ${mediaQuery}) {
-      background-image: url(${manuUanHappy});
+      background-image: url(${manuUanHappy.src});
       background-size: 130%;
       background-repeat: no-repeat;
       background-position: bottom;
