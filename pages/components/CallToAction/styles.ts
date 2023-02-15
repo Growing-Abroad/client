@@ -4,7 +4,7 @@ import {variables} from "@styles/global-variables";
 import {theme} from "@styles/theme";
 
 const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
-const { colors: { secondaryBlue, blue400, blue500, blue700, yellow400 } } = theme;
+const { colors: { blue400, blue500, blue700, yellow400 } } = theme;
 
 export const BackgroudCTA = styled.section`
   width: 100%;
@@ -23,16 +23,21 @@ export const BackgroudCTA = styled.section`
 
   .styled-div {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     z-index: 100;
+    width: 100vw;
+
+    img {
+      bottom: 0;
+      position: absolute;
+    }
   }
   .white-line {
-    height: 3px;
+    height: 5px;
     width: 100%;
     background-color: white;
     position: absolute;
     bottom: -1px;
-  
   }
 `
 
@@ -164,7 +169,7 @@ export const Container = styled.section`
 
         .right-side-img-container {
           position: relative;
-          bottom: 42px;
+          bottom: 36px;
 
           .colored-divs {
             position: relative;

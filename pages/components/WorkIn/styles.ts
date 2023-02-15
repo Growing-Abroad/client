@@ -4,6 +4,7 @@ import {theme} from "@styles/theme";
 
 
 const { sizes: { maxWidthAll, globalHorizontalPadding, globalHorizontalPaddingMobile } } = variables;
+const { colors: { blue700, blue400}} = theme;
 
 export const Container = styled.section`
   width: min( 100%, ${maxWidthAll});
@@ -43,7 +44,7 @@ export const CardSpace = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 60px;
+  gap: 38px;
   margin-top: 48px;
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
@@ -52,35 +53,48 @@ export const CardSpace = styled.section`
 `
 
 export const Card = styled.article`
-  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
 
-  h3 {
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    margin-bottom: 16px;
-    text-align: center;
-    font-weight: 600;
-    height: 70px;
-    width: 250px;
+  border: 3px solid transparent;
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  transition: 500ms;
+  padding: 77px 50px;
 
+  &:hover {
+    border: 3px solid ${blue700};
+    transform: translateY(-20px)
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.438rem;
+    letter-spacing: 1.3px;
+    text-align: center;
+    
+    height: 78px;
+    width: 276px;
+    margin-top: 24px;
+    margin-bottom: 18px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
   }
   
-  img {
-    width: 250px;
-    margin-bottom: 24px;
-  }
-
-  article {
+  .workin-description {
     width: 260px;
     text-align: center;
     margin-bottom: 12px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.5rem;
-    color: ${theme.colors.primaryBlue}
+    color: ${blue700}
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {

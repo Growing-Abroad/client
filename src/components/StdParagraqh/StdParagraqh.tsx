@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 
 const StyledStdParagraqh = styled.p`
     font-weight: 300;
@@ -7,6 +7,11 @@ const StyledStdParagraqh = styled.p`
     line-height: 1.5rem;
 `
 
-export default function StdParagraqh({children}: PropsWithChildren) {
-    return <StyledStdParagraqh>{children}</StyledStdParagraqh>
+export interface IStdParagraqh extends PropsWithChildren {
+    className?: string
+    style?: CSSProperties
+}
+
+export default function StdParagraqh({children, className}: IStdParagraqh) {
+    return <StyledStdParagraqh className={className}>{children}</StyledStdParagraqh>
 }

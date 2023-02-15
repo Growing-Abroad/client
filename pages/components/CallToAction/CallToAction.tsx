@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 function CallToAction() {
   const [currentName, setCurrentName] = useState<string>(' Germany');
@@ -13,6 +14,7 @@ function CallToAction() {
     <div key={'first'} className="title-change"> {currentName}</div>
   );
   const intl = useIntl();
+  const [size] = useWindowSize()
 
   const t = (id: string): string => {
     return intl.formatMessage({id})
@@ -47,12 +49,14 @@ function CallToAction() {
               <div className="yellow"></div>
               <div className="blue"></div>
             </div>
-            <Image src={gaCoaches} alt="growing abroad coaches" height={500} />
+            <Image src={gaCoaches} alt="growing abroad coaches" width={616} style={{objectFit: 'contain'}} />
           </div>
         </section>
       </S.Container>
-      <Image className="styled-div" src={heroSectionMask} alt="styled div" />
-      <div className="white-line"></div>
+      <div className="styled-div" >
+        <Image src={heroSectionMask} alt="styled mask" width={size} />
+        <div className="white-line"></div>
+      </div>
     </S.BackgroudCTA>
   )
 }
