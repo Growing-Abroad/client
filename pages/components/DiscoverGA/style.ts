@@ -4,7 +4,7 @@ import {theme} from "@styles/theme";
 import {variables} from "@styles/global-variables";
 
 const {
-  colors: { primaryBlue, secondaryBlue },
+  colors: { secondaryBlue, blue500 },
 } = theme;
 const {
   sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHorizontalPaddingMobile },
@@ -38,10 +38,10 @@ export const DiscoverContent = styled.div`
 `;
 
 export const DiscoverReadMoreWrapper = styled.div`
-  background-color: ${secondaryBlue};
+  background-color: ${blue500};
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 50px;
   gap: 32px;
   align-items: flex-start;
   max-width: 50%;
@@ -52,34 +52,11 @@ export const DiscoverReadMoreWrapper = styled.div`
   }
 `;
 
-export const DiscoverReadMoreText = styled.p`
-  color: white;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-`;
-
-export const DiscoverReadMoreButton = styled.button`
-  color: ${primaryBlue};
-  background-color: white;
-  font-weight: 700;
-  font-size: 1.125rem;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  
-
-  &:hover {
-    color: white;
-    background-color: ${primaryBlue};
-  }
-`;
-
 export const DiscoverImagesWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 36px;
-  height: 450px;
+  height: 505px;
   min-height: 450px;
   width: 100%;
 `;

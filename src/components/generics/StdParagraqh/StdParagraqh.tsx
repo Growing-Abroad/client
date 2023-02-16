@@ -12,6 +12,6 @@ export interface IStdParagraqh extends PropsWithChildren {
     style?: CSSProperties
 }
 
-export default function StdParagraqh({children, className}: IStdParagraqh) {
-    return <StyledStdParagraqh className={className}>{children}</StyledStdParagraqh>
+export default function StdParagraqh({children, className, style}: IStdParagraqh) {
+    return <StyledStdParagraqh className={className} style={style}>{children}</StyledStdParagraqh>
 }

@@ -3,7 +3,7 @@ import * as S from "./styles";
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
 import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
-import StdParagraqh from "@/components/StdParagraqh/StdParagraqh";
+import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 
 
 function ShareValues() {

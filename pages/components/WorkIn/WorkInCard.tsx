@@ -1,7 +1,7 @@
 import * as S from './styles'
 import Image, { StaticImageData } from 'next/image'
 import { CSSProperties } from 'styled-components'
-import StdParagraqh from '@/components/StdParagraqh/StdParagraqh'
+import StdParagraqh from '@/components/generics/StdParagraqh/StdParagraqh'
 
 function WorkInCard(p: CardProps) {
   return (

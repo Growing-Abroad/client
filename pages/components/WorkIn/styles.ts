@@ -3,7 +3,7 @@ import {variables} from "@styles/global-variables";
 import {theme} from "@styles/theme";
 
 
-const { sizes: { maxWidthAll, globalHorizontalPadding, globalHorizontalPaddingMobile } } = variables;
+const { sizes: { maxWidthAll, globalHorizontalPadding, globalHorizontalPaddingMobile, fontSizes: {h2} } } = variables;
 const { colors: { blue700, blue400}} = theme;
 
 export const Container = styled.section`
@@ -17,7 +17,7 @@ export const Container = styled.section`
   color: ${theme.colors.primaryBlue};
 
   .title {
-    font-size: 3.25rem;
+    font-size: ${h2};
     font-weight: 600;
     margin: 16px 0;
     display: flex;

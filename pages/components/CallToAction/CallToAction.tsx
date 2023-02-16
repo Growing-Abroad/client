@@ -4,9 +4,9 @@ import heroSectionMask from '@/../public/assets/main-page/hero-section-mask.svg'
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useWindowSize } from "@/hooks/useWindowSize";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 function CallToAction() {
   const [currentName, setCurrentName] = useState<string>(' Germany');
@@ -38,10 +38,9 @@ function CallToAction() {
               {currentComponent}
             </>
           </h1>
-          <S.CtaButton>
-            <FontAwesomeIcon icon={faPlay} size='lg' />
-           <span>Watch Free Masterclass</span>
-          </S.CtaButton>
+          <StdButton icon={faPlay} >
+            Watch Free Masterclass
+          </StdButton>
         </section>
         <section className="right-side">
           <div className="right-side-img-container">

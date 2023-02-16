@@ -25,6 +25,6 @@ interface IText {
 
 export const Text = styled.span<IText>`
   color: ${({ color }) => theme.colors[color]};
-  font-size: ${({ fontSize }) => fontSize || "3.5rem"};
+  font-size: ${({ fontSize }) => fontSize || "4.625rem"};
   text-align: center;
 `;
