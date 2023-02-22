@@ -1,7 +1,7 @@
 export const variables = {
   sizes: {
-    maxWidthAll: '1280px',
-    globalHorizontalPadding: '72px',
+    maxWidthAll: '1513px',
+    globalHorizontalPadding: '140px',
     globalHorizontalPaddingMobile: '24px',
     mediaQuery: '768px',
     

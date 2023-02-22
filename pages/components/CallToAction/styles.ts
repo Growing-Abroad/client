@@ -15,7 +15,6 @@ export const BackgroudCTA = styled.section`
   padding: 0 ${globalHorizontalPadding};
   height: 85vh;
   overflow: hidden;
-  position: relative;
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;
@@ -73,8 +72,6 @@ export const Container = styled.section`
     height: 100%;
     max-width: ${variables.sizes.maxWidthAll};
 
-    display: flex;
-    align-items: flex-start;
 
     background-color: ${blue500};
     
@@ -84,7 +81,7 @@ export const Container = styled.section`
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 56px;
+        gap: 170px;
 
         width: 800px;
         padding: 80px 32px 80px 0;
@@ -92,7 +89,7 @@ export const Container = styled.section`
         h1 {
             color: #fff;
             font-size: 5.4rem;
-            line-height: 5.75rem;
+            line-height: 6.25rem;
             font-weight: 500;
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 
@@ -104,6 +101,7 @@ export const Container = styled.section`
                 position: relative;
                 left: 0;
                 animation-fill-mode: both;
+                display: inline-block;
 
                 @keyframes text-enter {
                   0% {
@@ -160,16 +158,16 @@ export const Container = styled.section`
     .right-side {
         position: absolute;
         bottom: 0;
-        left: 560px;
+        left: 50%;
         height: min-content;
-
+        width: 50%;
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: nowrap;
 
         .right-side-img-container {
-          position: relative;
-          bottom: 36px;
+          position: absolute;
+          bottom: 0px;
 
           .colored-divs {
             position: relative;

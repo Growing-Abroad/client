@@ -34,7 +34,7 @@ function CallToAction() {
         <section className="left-side" >
           <h1>
             <>
-              {t("page.home.callToAction")} 
+              {t("page.home.callToAction") + " "} 
               {currentComponent}
             </>
           </h1>

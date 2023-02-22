@@ -22,9 +22,9 @@ export default function NewsLetter() {
       <TwoColorTitle
         text1="News"
         text2="Letter"
-        fontSize="32px"
+        styles={{fontSize: "32px"}}
         fullWidth
-        style={{
+        wrapperStyles={{
           justifyContent:
             width < removePxFromCssValue(variables.sizes.mediaQuery)
               ? "center"

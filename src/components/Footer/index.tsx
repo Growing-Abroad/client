@@ -52,7 +52,7 @@ export default function Footer() {
               text1="Social"
               text2="Media"
               hasSpaceBtw
-              style={{
+              wrapperStyles={{
                 justifyContent:
                   width < removePxFromCssValue(variables.sizes.mediaQuery)
                     ? "center"
