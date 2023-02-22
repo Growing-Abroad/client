@@ -1,9 +1,10 @@
 import ImageMock from '@/../public/assets/about-us/job-interview-coaching.webp'
+import { StaticImageData } from 'next/image'
 
 interface ISharedValues {
   title: string
   body: string
-  image: string
+  image: StaticImageData
 }
 
 export const sharedValues: ISharedValues[] = [

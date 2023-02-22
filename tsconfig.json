@@ -57,7 +57,8 @@
     "src/pages/_app.tsx",
     "pages/components",
     "pages/AboutUs",
-    "ni18n.config.ts"
+    "ni18n.config.ts",   
+    "src/context/AppContext.ts"  
   ],
   "exclude": [
     "node_modules"

@@ -7,9 +7,9 @@ import {
   TextBlockH3,
 } from "./style";
 import Image, { StaticImageData } from "next/image";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
+import useAppContext from "@/hooks/useAppContext";
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
@@ -23,7 +23,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const [windowWidth] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -31,7 +31,7 @@ export default function FancyCarousel(props: Props) {
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
   function initialSlide(): number {
-    if (windowWidth > mediaQueryNumber && props.dataArray.length > 2) {
+    if (width > mediaQueryNumber && props.dataArray.length > 2) {
       return 2;
     } else {
       return 0;
@@ -42,7 +42,7 @@ export default function FancyCarousel(props: Props) {
     let classes = "flexbox-slide";
     if (index % 2 !== 0) classes += " short";
     if (selectedSlide === index) classes += " selected-slide";
-    if (windowWidth && windowWidth < mediaQueryNumber)
+    if (width && width < mediaQueryNumber)
       classes += handleMobileSliderClass(index);
 
     return classes;

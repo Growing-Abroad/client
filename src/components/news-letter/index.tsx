@@ -1,13 +1,13 @@
 import { FormEvent } from "react";
 import TwoColorTitle from "../two-color-title";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { CheckboxWrapper, NewsLetterContainer } from "./style";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import { Input, Button } from "@styles/global-styles";
 import { variables } from "@styles/global-variables";
+import useAppContext from "@/hooks/useAppContext";
 
 export default function NewsLetter() {
-  const [width] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
 
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked) {

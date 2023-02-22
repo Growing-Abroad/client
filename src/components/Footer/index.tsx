@@ -18,14 +18,14 @@ import InstagramIcon from "@/../public/assets/icons/instagram.webp";
 import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
 import YoutubeIcon from "@/../public/assets/icons/youtube.webp";
 import Image from "next/image";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import NewsLetter from "../news-letter";
 import TwoColorTitle from "../two-color-title";
+import useAppContext from "@/hooks/useAppContext";
 
 export default function Footer() {
-  const [width] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
 
   return (
     <StyledFooter>

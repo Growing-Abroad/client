@@ -1,17 +1,17 @@
 
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
-import {useWindowSize} from "@hooks/useWindowSize";
 import {posts, IPost} from "@utils/blog_posts";
 import SwiperCore, {Navigation} from "swiper";
 import BlogCard from "@pages/components/Blog/BlogCard";
 import {Swiper, SwiperSlide} from "swiper/react";
 import { useEffect, useState } from 'react';
+import useAppContext from '@/hooks/useAppContext';
 
 
 export default function BlogSwiper() {
   SwiperCore.use([Navigation]);
-  const [width] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
   const [posts_, setPosts] = useState<IPost[]>()
 
   const handleSwiperCards = (mobile: number, desktop: number) => {

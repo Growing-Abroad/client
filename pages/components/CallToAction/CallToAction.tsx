@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { useWindowSize } from "@/hooks/useWindowSize";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
 
 function CallToAction() {
   const [currentName, setCurrentName] = useState<string>(' Germany');
@@ -14,7 +14,7 @@ function CallToAction() {
     <div key={'first'} className="title-change"> {currentName}</div>
   );
   const intl = useIntl();
-  const [size] = useWindowSize()
+  const {windowSize: {width}} = useAppContext()
 
   const t = (id: string): string => {
     return intl.formatMessage({id})
@@ -53,7 +53,7 @@ function CallToAction() {
         </section>
       </S.Container>
       <div className="styled-div" >
-        <Image src={heroSectionMask} alt="styled mask" width={size} />
+        <Image src={heroSectionMask} alt="styled mask" width={width} />
         <div className="white-line"></div>
       </div>
     </S.BackgroudCTA>
