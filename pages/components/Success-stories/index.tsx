@@ -9,7 +9,7 @@ export default function SuccessStories() {
       {/* eslint-disable-next-line react/jsx-no-undef */}
       <TwoColorTitle
         text1="Success"
-        text2="STORIES"
+        text2="Stories"
         hasSpaceBtw
       />
       <SuccessSubtitle>
