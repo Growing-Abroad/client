@@ -10,9 +10,9 @@ export const Container = styled.div`
   .swiper-container {
     list-style: none;
     width: 100%;
-    padding: 0 50px;
     overflow: hidden;
-
+    padding: 0 50px;
+    
     @media(max-width: ${variables.sizes.mediaQuery}) {
       padding: 0 36px;
     }
@@ -32,11 +32,11 @@ export const Container = styled.div`
   }
 
   .swiper-button-next {
-    right: 0;
+    right: 0px;
   }
 
   .swiper-button-prev {
-    left: 0;
+    left: 0px;
   }
 
   .swiper-pagination{
