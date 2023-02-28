@@ -1,9 +1,8 @@
 import 'react-select-search-nextjs/style.css'
-import { HTMLAttributes, ReactNode, RefObject, useEffect, useRef, useState } from "react";
-import { Select, MenuItem, dividerClasses, SelectClassKey, SelectProps } from "@mui/material";
+import { ReactNode, useEffect, useState } from "react";
+import { Select, MenuItem } from "@mui/material";
 import Nav from "./Nav";
 import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import { StyledBurger } from "../Header.style";
@@ -12,6 +11,7 @@ import Image from "next/image";
 import BrFlag from "public/countries-flags/br.svg"
 import DeFlag from "public/countries-flags/de.svg"
 import UsFlag from "public/countries-flags/us.svg"
+import useAppContext from '@/hooks/useAppContext';
 
 export type TCountryLangDict = Record<string, string>;
 
@@ -31,7 +31,7 @@ export const countryToFlag: {
 
 function Burger() {
   const [open, setOpen] = useState(false);
-  const [width] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;

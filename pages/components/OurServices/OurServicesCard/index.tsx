@@ -11,10 +11,10 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
     console.log('botão book now')
     return id
   }
-
+  console.log(image.src)
   return (
       <S.Container>
-        <Image src={image.src} alt={image.alt}/>
+        <div className='card-image' style={{backgroundImage: `url(${image.src})`}}></div>
         <S.CardContainer>
           <S.CardHeader>
             <h2> {title} </h2>
@@ -30,9 +30,9 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
             ))}
           </S.CardDescriptions>
 
-          <footer>
+          <div>
             <S.Button onClick={() => handleRedirect(id)}>{hasMoreInfo ? 'More Info' : 'Book Now'}</S.Button>
-          </footer>
+          </div>
         </S.CardContainer>
       </S.Container>
   )

@@ -8,8 +8,9 @@ function CommunitySection() {
     <S.Container>
       <TwoColorTitle
         text1="Join Our"
-        text2="COMMUNITY"
+        text2="Community"
         hasSpaceBtw
+        color="#ffffff"
       />
       <S.Socials>
         {socials.map(social => (

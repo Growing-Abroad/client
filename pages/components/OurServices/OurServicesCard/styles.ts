@@ -5,7 +5,7 @@ import { variables } from '@/styles/global-variables';
 
 export const Container = styled.div`  
   width: 100%;
-  max-width: 306px;
+  max-width: 400px;
   min-width: 255px;
   display: flex;
   flex-direction: column;
@@ -15,27 +15,33 @@ export const Container = styled.div`
   color: ${theme.colors.primaryBlue};
   overflow: hidden;
   transition: all 450ms;
+  min-height: 660px;
+  max-height: 660px;
 
   &:hover {
     transform: scale(1.05);
     outline: 7px solid ${theme.colors.secondaryBlue};
   }
 
-  img {
+  .card-image {
     width: 100%;
-    height: 200px;
+    height: 295px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 `
 
 export const CardContainer = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
 `
 
-export const CardHeader = styled.header`
+export const CardHeader = styled.div`
   display: flex;
   flex-direction: column;
   gap: .75rem;
@@ -48,7 +54,7 @@ export const CardHeader = styled.header`
     font-weight: 600;
   }
 `
-export const CardDescriptions = styled.section`
+export const CardDescriptions = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -56,6 +62,7 @@ export const CardDescriptions = styled.section`
   line-height: 1rem;
   text-align: left;
   font-weight: 500;
+  flex-grow: 1;
 
   > div {
     display: flex;
@@ -85,6 +92,7 @@ export const Button = styled.button`
   padding: 16px 24px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: auto;
 
   &:hover {
     opacity: 0.9;

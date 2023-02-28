@@ -7,15 +7,18 @@ import {
   TextBlockH3,
 } from "./style";
 import Image, { StaticImageData } from "next/image";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
+import useAppContext from "@/hooks/useAppContext";
+import StdButton from "../generics/StdButton/StdButton";
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
-  paragraph: string;
+  from: string;
+  countryFlag: string;
   href: string;
 }
 export interface Props {
@@ -23,7 +26,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const [windowWidth] = useWindowSize();
+  const {windowSize: {width}} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -31,7 +34,7 @@ export default function FancyCarousel(props: Props) {
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
   function initialSlide(): number {
-    if (windowWidth > mediaQueryNumber && props.dataArray.length > 2) {
+    if (width > mediaQueryNumber && props.dataArray.length > 2) {
       return 2;
     } else {
       return 0;
@@ -42,7 +45,7 @@ export default function FancyCarousel(props: Props) {
     let classes = "flexbox-slide";
     if (index % 2 !== 0) classes += " short";
     if (selectedSlide === index) classes += " selected-slide";
-    if (windowWidth && windowWidth < mediaQueryNumber)
+    if (width && width < mediaQueryNumber)
       classes += handleMobileSliderClass(index);
 
     return classes;
@@ -67,12 +70,12 @@ export default function FancyCarousel(props: Props) {
           key={i + "-" + item.title}
           onClick={() => setSelectedSlide(i)}
         >
-          <Image src={item.imgSrc} alt="Slide Image" />
           <TextBlock className="text-block">
             <TextBlockH3>{item.title}</TextBlockH3>
-            <p>{item.paragraph}</p>
-            <WatchVideoBtn>Watch Video</WatchVideoBtn>
+            <p>{item.from}</p>
+            <StdButton icon={faPlay} style={{marginTop: 'auto', width: 'max-content'}}>Watch Video</StdButton>
           </TextBlock>
+          <Image src={item.imgSrc} alt="Slide Image" />
         </FlexboxSlide>
       ))}
     </FlexboxSlider>

@@ -27,7 +27,7 @@ export const services: IService[] = [
     title: "Job Interview Preparation",
     subtitle: "To rock every Job Interview",
     image: {
-      src: JobInterview,
+      src: JobInterview.src,
       alt: "Job Interview Preparation",
     },
     descriptions: [
@@ -54,7 +54,7 @@ export const services: IService[] = [
     title: "Online Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
-      src: OnlineCourse,
+      src: OnlineCourse.src,
       alt: "Online Course",
     },
     descriptions: [
@@ -81,7 +81,7 @@ export const services: IService[] = [
     title: "CV Optimization",
     subtitle: "To have a CV in german standards",
     image: {
-      src: CvOptimization,
+      src: CvOptimization.src,
       alt: "CV Optimization",
     },
     descriptions: [
@@ -108,7 +108,7 @@ export const services: IService[] = [
     title: "Job Interview Preparation",
     subtitle: "To rock every Job Interview",
     image: {
-      src: Castle,
+      src: Castle.src,
       alt: "Job Interview Preparation",
     },
     descriptions: [
@@ -135,7 +135,7 @@ export const services: IService[] = [
     title: "Online Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
-      src: CurriculumVitae,
+      src: CurriculumVitae.src,
       alt: "Online Course",
     },
     descriptions: [

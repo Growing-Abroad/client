@@ -1,5 +1,4 @@
 import TwoColorTitle from "@components/two-color-title";
-import { useWindowSize } from "@hooks/useWindowSize";
 import { socials } from "@utils/socials";
 import React from "react";
 import * as S from "./styles";
@@ -10,7 +9,6 @@ import { theme } from "@styles/theme";
 
 function WhoWeAre() {
   const youtube = socials.find((social) => social.name === "youtube");
-  const [width] = useWindowSize();
   const { colors: {secondaryBlue} } = theme;
 
   return (

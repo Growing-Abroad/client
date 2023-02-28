@@ -21,7 +21,7 @@ function WorkIn() {
   return (
     <S.Container>
       <h2 className="title">
-        English speaking jobs in  <span>Germany</span>
+        English Speaking Jobs in  <span>Germany</span>
       </h2>
 
       <S.CardSpace>

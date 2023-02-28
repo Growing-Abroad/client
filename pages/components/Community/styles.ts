@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import {variables} from "@styles/global-variables";
 import {theme} from "@styles/theme";
 
+const {colors: { blue500 }} = theme;
+
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
@@ -11,6 +13,7 @@ export const Container = styled.section`
   gap: 4rem;
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   text-align: center;
+  background-color: ${blue500};
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
     padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};

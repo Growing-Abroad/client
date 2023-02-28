@@ -19,20 +19,22 @@ export default function OurServicesSwiper() {
         breakpoints={{
           200: {
             slidesPerView: 1,
-            spaceBetween: 100
+            spaceBetween: 32,
+
           },
           940: {
             slidesPerView: 2,
-            spaceBetween: 60
+            spaceBetween: 53,
           },
           1230: {
             slidesPerView: 3,
-            spaceBetween: 60
+            spaceBetween: 53,
           },
         }}
         navigation
         pagination
-        className='swiper-container'
+        autoplay
+        className='mySwiper swiper-container'
       >
         {services.map((service) => (
           <SwiperSlide key={service.id} zoom>

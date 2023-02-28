@@ -15,7 +15,7 @@ export const FlexboxSlider = styled.div`
   display: flex;
   gap: 36px;
   width: 100%;
-  height: 400px;
+  height: 571px;
   visibility: hidden;
   align-items: baseline;
 
@@ -37,17 +37,17 @@ export const FlexboxSlider = styled.div`
     cursor: default;
 
     .text-block {
-      -webkit-transition-property: all;
+      /* -webkit-transition-property: all;
       transition-property: all;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s;
       -webkit-transition-timing-function: linear;
       transition-timing-function: linear;
-      -webkit-transition-delay: 0.5s;
-      transition-delay: 0.5s;
-      bottom: 30px;
-      left: 30px;
-      opacity: 0.9;
+      -webkit-transition-delay: 0.5s; */
+      /* transition-delay: 0.5s; */
+      bottom: 0;
+      top: 0;
+      left: 0;
       visibility: visible;
       cursor: default;
 
@@ -102,10 +102,10 @@ export const FlexboxSlide = styled.div`
   img {
     position: absolute;
     top: 50%;
-    left: 50%;
-    height: auto;
+    left: 75%;
+    height: 100%;
     width: auto;
-    min-width: 100%;
+    min-width: 50%;
     min-height: 100%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -117,13 +117,15 @@ export const TextBlock = styled.div`
   position: absolute;
   left: 0;
   bottom: 30px;
-  max-width: 400px;
-  padding: 20px;
-  border-radius: 5px;
+  max-width: 500px;
+  width: 500px;
+  padding: 44px 30px;
   background-color: ${secondaryBlue};
   color: #fff;
   z-index: 4;
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 0.875rem;
@@ -133,12 +135,23 @@ export const TextBlock = styled.div`
     background-color: rgb(74, 154, 253, 0.5);
     max-width: 180px;
   }
+  
+  p {
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+  }
 `;
 
 export const TextBlockH3 = styled.h3`
-  font-size: 20px;
+  font-size: 2rem;
+  line-height: 2.438rem;
+  letter-spacing: 1.3px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
+  max-width: 386px;
+  display: flex;
+  gap: 8px;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 16px;

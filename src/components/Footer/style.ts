@@ -3,7 +3,7 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 
 const {
-  colors: { secondaryBlue, terciaryBlue, white },
+  colors: { primaryYellow, primaryBlue,secondaryBlue, terciaryBlue, white },
 } = theme;
 const {
   sizes: {
@@ -32,6 +32,7 @@ export const FooterContentWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
+    justify-content: center;
     padding: 80px ${globalHorizontalPaddingMobile};
   }
 `;
@@ -91,7 +92,7 @@ export const Media = styled.img<IMedia>`
 export const FooterBottomContainer = styled.div`
   display: flex;
   justify-content: center;
-  background-color: ${secondaryBlue};
+  background-color: ${white};
   color: white;
   width: 100%;
 `;
@@ -99,10 +100,11 @@ export const FooterBottomContainer = styled.div`
 export const FooterBottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
+  font-weight: 600;
+  color:${primaryBlue};
   max-width: ${maxWidthAll};
   width: 100%;
-  padding: 12px ${globalHorizontalPadding};
+  padding: 24px ${globalHorizontalPadding};
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
@@ -121,4 +123,49 @@ export const Links = styled.a`
   all: unset;
   color: inherit;
   cursor: pointer;
+`;
+export const FooterLinksContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 105px;
+  width: 100%;
+  &:first-child {
+    margin-right: 293px;
+  }
+  @media (max-width: ${mediaQuery}) {
+    margin-right:0;
+    flex-direction: column;
+    gap:43px;
+  }
+`;
+export const FooterLinks = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 600;
+  gap: 10px;
+  color: ${white};
+  & h3 {
+    font-size: 32px;
+    text-decoration: underline;
+    text-underline-offset: 24px;
+    color: ${white};
+    margin-bottom:50px;
+  }
+  & li,
+  p,
+  p > span {
+    font-weight: 400;
+    text-decoration: none;
+  }
+  & li {
+    font-size: 16px;
+  }
+  & p {
+    font-size: 20px;
+    margin-bottom:18px;
+  }
+  & p > span {
+    color: ${primaryYellow};
+  }
 `;

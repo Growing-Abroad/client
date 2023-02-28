@@ -66,14 +66,17 @@ interface IButtonProps {
   width?: string;
   fontSize?: string;
   square?: boolean;
+  padding?: string;
+  height?: string;
 }
 export const Button = styled.button<IButtonProps>`
   background-color: ${primaryYellow};
   color: ${blue700};
   border-radius: ${(props) => (props.square ? '4px' : '50px')};
-  padding: 8px 28px;
-  font-weight: 500;
+  padding: ${(props) => props.padding || '8px 28px'};
+  font-weight: 600;
   cursor: pointer;
   width: ${(props) => props.width || 'min-content'};
   font-size: ${(props) => props.fontSize || '1rem'};
+  height: ${(props) => props.height || '59px'}
 `;
