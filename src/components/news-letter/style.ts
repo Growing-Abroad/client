@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { Input } from '@/styles/global-styles';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+
 
 const {
   colors: { primaryBlue, secondaryBlue },
@@ -13,14 +15,19 @@ const boxSize = 20;
 export const NewsLetterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  width:100%;
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
     max-width: 225px;
+    flex-direction: column;
   }
 `;
-
+export const InputNewsLetter = styled(Input)`
+ width: 585px;
+ max-height: 64px;
+ border-radius:50px;
+`
 export const CheckboxWrapper = styled.label`
   display: block;
   position: relative;

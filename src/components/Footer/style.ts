@@ -3,7 +3,7 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 
 const {
-  colors: { secondaryBlue, terciaryBlue },
+  colors: { secondaryBlue, terciaryBlue, white },
 } = theme;
 const {
   sizes: {
@@ -17,7 +17,7 @@ const {
 export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background-color: ${terciaryBlue};
+  background-color: ${secondaryBlue};
   align-items: center;
   width: 100%;
 `;
@@ -56,7 +56,7 @@ export const FooterLinksWrapper = styled.div`
 export const FooterLinksUl = styled.ul``;
 
 export const FooterLinksLi = styled.li`
-  color: ${secondaryBlue};
+  color: ${white};
   font-weight: 500;
   cursor: pointer;
   line-height: 2rem;

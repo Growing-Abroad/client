@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from './theme';
 
 const {
-  colors: { primaryBlue, secondaryBlue, gray1 },
+  colors: { primaryYellow,primaryBlue, secondaryBlue, gray1, blue700 },
 } = theme;
 
 export const GlobalStyles = createGlobalStyle`
@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    
+
     #root {
       display: flex;
       flex-direction: column;
@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     quotes: none;
   }
 
-  *:before, 
+  *:before,
   *:after {
     content: '';
     content: none;
@@ -68,8 +68,8 @@ interface IButtonProps {
   square?: boolean;
 }
 export const Button = styled.button<IButtonProps>`
-  background-color: ${secondaryBlue};
-  color: white;
+  background-color: ${primaryYellow};
+  color: ${blue700};
   border-radius: ${(props) => (props.square ? '4px' : '50px')};
   padding: 8px 28px;
   font-weight: 500;
