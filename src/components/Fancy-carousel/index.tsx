@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   FlexboxSlide,
   FlexboxSlider,
-  WatchVideoBtn,
+  FromWrapper,
   TextBlock,
   TextBlockH3,
 } from "./style";
@@ -71,11 +71,28 @@ export default function FancyCarousel(props: Props) {
           onClick={() => setSelectedSlide(i)}
         >
           <TextBlock className="text-block">
+
             <TextBlockH3>{item.title}</TextBlockH3>
-            <p>{item.from}</p>
-            <StdButton icon={faPlay} style={{marginTop: 'auto', width: 'max-content'}}>Watch Video</StdButton>
+
+            <FromWrapper>
+              <p>{item.from}</p>
+              <Image 
+              src={`countries-flags/${item.countryFlag}.svg`} 
+              alt={`flag of ${item.countryFlag}`} 
+              width={64} height={45} 
+              className="country-flag" />
+            </FromWrapper>
+
+            <StdButton 
+            icon={faPlay} 
+            className="watch-video-btn" 
+            style={{marginTop: 'auto', width: 'max-content'}}
+            >
+              Watch Video
+            </StdButton>
           </TextBlock>
-          <Image src={item.imgSrc} alt="Slide Image" />
+
+          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
         </FlexboxSlide>
       ))}
     </FlexboxSlider>

@@ -3,7 +3,7 @@ import { theme } from "@styles/theme";
 import styled from "styled-components";
 
 const {
-  colors: { primaryBlue, secondaryBlue },
+  colors: { primaryBlue, blue500 },
 } = theme;
 const {
   sizes: { mediaQuery },
@@ -37,23 +37,28 @@ export const FlexboxSlider = styled.div`
     cursor: default;
 
     .text-block {
-      /* -webkit-transition-property: all;
-      transition-property: all;
-      -webkit-transition-duration: 0.2s;
-      transition-duration: 0.2s;
-      -webkit-transition-timing-function: linear;
-      transition-timing-function: linear;
-      -webkit-transition-delay: 0.5s; */
-      /* transition-delay: 0.5s; */
+      
       bottom: 0;
       top: 0;
       left: 0;
       visibility: visible;
       cursor: default;
-
+      
       @media (max-width: ${mediaQuery}) {
         bottom: 12px;
         left: 12px;
+      }
+
+      h3, p , .country-flag, .watch-video-btn {
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+        opacity: 1;
       }
     }
   }
@@ -99,7 +104,7 @@ export const FlexboxSlide = styled.div`
     opacity: 0;
   }
 
-  img {
+  .slide-img {
     position: absolute;
     top: 50%;
     left: 75%;
@@ -116,16 +121,18 @@ export const FlexboxSlide = styled.div`
 export const TextBlock = styled.div`
   position: absolute;
   left: 0;
-  bottom: 30px;
+  bottom: 0;
+  top: 0;
   max-width: 500px;
   width: 500px;
   padding: 44px 30px;
-  background-color: ${secondaryBlue};
+  background-color: ${blue500};
   color: #fff;
   z-index: 4;
   visibility: hidden;
   display: flex;
   flex-direction: column;
+  visibility: hidden;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 0.875rem;
@@ -141,6 +148,12 @@ export const TextBlock = styled.div`
     line-height: 1.125rem;
     font-weight: 600;
   }
+
+  p, .country-flag, .watch-video-btn {
+    opacity: 0;
+  }
+
+  
 `;
 
 export const TextBlockH3 = styled.h3`
@@ -152,6 +165,7 @@ export const TextBlockH3 = styled.h3`
   max-width: 386px;
   display: flex;
   gap: 8px;
+  opacity: 0;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 16px;
@@ -159,21 +173,9 @@ export const TextBlockH3 = styled.h3`
   }
 `;
 
-export const WatchVideoBtn = styled.button`
-  all: unset;
-  background-color: ${primaryBlue};
-  color: white;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-top: 16px;
+export const FromWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+`
 
-  @media (max-width: ${mediaQuery}) {
-    font-size: 0.65rem;
-    padding: 8px 16px;
-    margin-top: 8px;
-  }
-`;
