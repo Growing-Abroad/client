@@ -21,7 +21,7 @@ function ShareValues() {
             <S.CardContent>
               <S.WhiteTriangle />
               <h3>{sharedValue.title}</h3>
-              <StdParagraqh>{sharedValue.paragraph}</StdParagraqh>
+              <StdParagraqh>{sharedValue.from}</StdParagraqh>
             </S.CardContent>
           </S.Card>
         ))}

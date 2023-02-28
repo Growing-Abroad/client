@@ -6,21 +6,39 @@ import { TCarouselData } from "@/components/Fancy-carousel";
 export const successStoriesData: TCarouselData = [
   {
     imgSrc: Img1,
-    title: "Inspiration",
-    paragraph: `Inspiration is the source to dream bigger, push harder and lead to a more fulfilling life. We want to inspire and motivate other people so that they can discover new possibilities for themselves and overcome boundaries.`,
+    title: "“It was great experience working with growing abroad”",
+    from: `Bianca from Brazil`,
     href: "",
+    countryFlag: ''
   },
   {
     imgSrc: Img2,
-    title: "Trust",
-    paragraph: `To show yourself in your full potential is only possible with trust.  We want to create an environment where people of all nations and backgrounds can meet on the same level of inclusiveness, integrity and diversity.`,
+    title: "“It was great experience working with growing abroad”",
+    from: `Bianca from Brazil`,
+
     href: "",
+    countryFlag: ''
   },
   {
     imgSrc: Img3,
-    title: "Customer Centric",
-    paragraph: `Our costumers are the heart of our work. We truly want to understand the needs and concerns of our customers to create a meaningful experience and build a lasting relationship.`,
+    title: "“It was great experience working with growing abroad”",
+    from: `Bianca from Brazil`,
     href: "",
+    countryFlag: ''
+  },
+  {
+    imgSrc: Img3,
+    title: "“It was great experience working with growing abroad”",
+    from: `Bianca from Brazil`,
+    href: "",
+    countryFlag: ''
+  },
+  {
+    imgSrc: Img3,
+    title: "“It was great experience working with growing abroad”",
+    from: `Bianca from Brazil`,
+    href: "",
+    countryFlag: ''
   },
 
 ];
