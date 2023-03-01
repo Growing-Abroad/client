@@ -20,8 +20,8 @@ export const Container = styled.section`
 
 export const VideoPlayButtonWrapper = styled.div`
   position: absolute;
-  left: calc(50% - 75px/2) ;
-  top: 35%;
+  left: calc(50% - 120px/2) ;
+  top: 43%;
   z-index: 2;
 
   span {

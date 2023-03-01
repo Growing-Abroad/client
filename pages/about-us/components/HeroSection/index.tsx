@@ -3,9 +3,17 @@ import * as S from "./styles";
 import HeroBackground from "@/../public/assets/about-us/hero-background.webp"
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
-import Quote from "@/../public/assets/about-us/quote.webp"
+import quoteLeft from "@/../public/assets/about-us/quotes-left.png"
+import quoteRight from "@/../public/assets/about-us/quotes-right.png"
 import Uan from "@/../public/assets/about-us/uan-career-coach.webp";
 import Manu from "@/../public/assets/about-us/manu-career-coach.webp";
+import { Montserrat } from "@next/font/google";
+import classes from './Hero.module.css'
+import { Row } from "react-bootstrap";
+
+const montserrat = Montserrat({
+  subsets: ['latin']
+})
 
 function HeroSection() {
 
@@ -14,7 +22,7 @@ function HeroSection() {
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>
         <TwoColorTitle text1="Discover" text2="Growing Abroad" hasSpaceBtw />
-        <p style={{maxWidth: '850px'}}>
+        <p style={{maxWidth: '80vw', fontFamily: montserrat.style.fontFamily }} className={classes.para}>
           We, Uan from Brazil and Manu from Germany, put together our skills and knowledge to create a unique
           platform <strong>for foreigners</strong> to help to make your dream to live and work in Germany or Europe come true.
         </p>
@@ -25,7 +33,7 @@ function HeroSection() {
             <S.BlueSquare />
 
             <S.TextsWrapper>
-              <Image src={Quote} alt="quotes" height={28} width={40}></Image>
+              <Image src={quoteLeft} alt="quotes" className={classes.quotes} width={90}></Image>
               <S.TextLeft className="text-left">If you don't believe in yourself, nobody else will.</S.TextLeft>
             </S.TextsWrapper>
 
@@ -35,7 +43,7 @@ function HeroSection() {
             <S.BlueSquare className="right-image" />
 
             <S.TextsWrapper className="reverse">
-              <Image src={Quote} alt="quotes" height={28} width={40}></Image>
+              <Image src={quoteRight} alt="quotes"  className={classes.quotes} width={90}></Image>
               <S.TextRight className="text-right">
                 You just have this one life.
               </S.TextRight>

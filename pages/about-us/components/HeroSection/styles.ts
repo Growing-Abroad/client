@@ -2,10 +2,15 @@
 import {theme} from "@styles/theme";
 import styled from "styled-components";
 import { variables } from "@styles/global-variables";
+import {Montserrat} from '@next/font/google'
 
 interface IContainer {
   backgroundImg: string;
 }
+
+const font = Montserrat({
+  subsets:['latin']
+})
 
 export const Container = styled.section<IContainer>`
   min-width: 100%;
@@ -45,7 +50,7 @@ export const ContentWrapper = styled.div`
 `
 
 export const ImagesContainer = styled.div`
-  width: 1280px;
+  width: 95vw;
   display: flex;
   flex-direction: column;
   @media (min-width: ${variables.sizes.mediaQuery}) {
@@ -63,7 +68,7 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   display: flex;
   flex-wrap: wrap;
   background-image: url(${({background}) => background});
-  background-position: bottom;
+  background-position: 90%;
   background-repeat: no-repeat;
   background-size: contain;
   height: 450px;
@@ -71,6 +76,7 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
 
   &.right-wrapper {
     justify-content: flex-end;
+    background-position: 10%;
   }
 
   .text-left, .text-right {
@@ -82,22 +88,21 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
     display:flex;
     align-items: flex-start;
     min-height: 115px; */
-    font-size: 1.375rem;
-    font-weight: 800;
     margin-top: 16px;
+    margin-bottom: 30px
   }
 `
 
 export const BlueSquare = styled.div`
-  --blueSquareOffset: -105px;
-  background: ${theme.colors.secondaryBlue};
-  opacity: 80%;
-  width: 315px;
+  --blueSquareOffset: -14vw;
+  background: ${theme.colors.themeBlue};
+  width: 40vw;
   height: 415px;
   position: absolute;
-  bottom: -225px;
+  bottom: -137px;
   left: var(--blueSquareOffset);
   transform: rotate(25deg);
+  font-family: ${font}
 
   &.right-image {
     left: unset;
@@ -106,7 +111,7 @@ export const BlueSquare = styled.div`
   }
 `
 export const TextsWrapper = styled.div`
-  width: 280px;
+  width: 28vw;
   position: absolute;
   bottom: 0;
   color: white;
@@ -130,9 +135,17 @@ export const BigQuote = styled.span`
 export const TextLeft = styled.span`
   text-align: left;
   left: 0;
+  font-family: ${font};
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 1.3px
 `
 
 export const TextRight = styled.span`
   text-align: right;
   right: 0;
+  font-family: ${font};
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 1.3px
 `

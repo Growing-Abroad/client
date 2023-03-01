@@ -4,6 +4,7 @@ import {AppProps} from "next/app";
 import {Montserrat} from "@next/font/google";
 import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const montserrat = Montserrat({
   subsets: ['latin']

@@ -1,0 +1,26 @@
+.embarmain {
+    margin: 0 0 30px;
+	display: flow-root;
+}
+.embar.embarbig {
+    margin: auto;
+    position: relative;
+}
+
+.tcenter .embar.embarbig::before {
+    right: 0;
+    margin: auto;
+}
+
+.embar.embarbig::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 4px;
+    left: 0;
+    border: 4px solid transparent;
+    border-bottom: 0;
+    border-top-color: #0073cf;
+    top: auto;
+}
