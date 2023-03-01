@@ -3,7 +3,7 @@ import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
 
 const {
-  colors: { primaryYellow, primaryBlue, secondaryBlue, terciaryBlue, white },
+  colors: { primaryYellow, primaryBlue, blue500, white },
 } = theme;
 const {
   sizes: {
@@ -17,7 +17,7 @@ const {
 export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background-color: ${secondaryBlue};
+  background-color: ${blue500};
   align-items: center;
   width: 100%;
 `;
@@ -51,7 +51,6 @@ export const FooterContent = styled.div`
 export const FooterLinksWrapper = styled.div`
   display: flex;
   gap: 48px;
-  width: 100%;
 `;
 
 export const FooterLinksUl = styled.ul``;
@@ -76,7 +75,7 @@ export const SocialMediaWrapper = styled.div`
 
 export const SocialMedia = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 11px;
 `;
 
 interface IMedia {
@@ -102,6 +101,7 @@ export const FooterBottomWrapper = styled.div`
   justify-content: space-between;
   color: ${primaryBlue};
   margin:0 auto;
+  width: 100%;
   max-width: ${maxWidthAll};
   padding: 24px ${globalHorizontalPadding};
   span{
@@ -121,7 +121,6 @@ export const FooterBottomWrapper = styled.div`
 `;
 
 export const FooterBottomRight = styled.div`
-  width:100%;
   display: flex;
   gap: 32px;
   @media (max-width: ${mediaQuery}) {
@@ -169,7 +168,7 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
   & li,
   p,
   p > span {
-    font-weight: 400;
+    font-weight: 300;
     text-decoration: none;
   }
   & li {

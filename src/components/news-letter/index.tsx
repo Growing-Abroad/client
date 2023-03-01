@@ -3,6 +3,7 @@ import {
   CheckboxWrapper,
   ContentInputNewsLetter,
   InputNewsLetter,
+  InputWrapper,
   NewsLetterContainer,
   SubscribeButton,
   SubscribeWrapper,
@@ -31,8 +32,10 @@ export default function NewsLetter() {
       <TitleNewsLetter>Join our newsletter</TitleNewsLetter>
       <ContentInputNewsLetter>
         <SubscribeWrapper>
+          <InputWrapper>
           <InputNewsLetter placeholder="Enter Your Full Name" />
           <InputNewsLetter placeholder="Enter Your E-mail Adress" />
+          </InputWrapper>
           <div
             style={{
               gap: '8px',

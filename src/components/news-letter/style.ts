@@ -5,7 +5,7 @@ import { theme } from '@styles/theme';
 import { Button } from '@/styles/global-styles';
 
 const {
-  colors: { primaryYellow, primaryBlue, secondaryBlue, white },
+  colors: { primaryYellow, primaryBlue,blue500, white },
 } = theme;
 const {
   sizes: { mediaQuery },
@@ -38,19 +38,29 @@ color:${white};
 
   }
 `
+export const InputWrapper= styled.div`
+width: 100%;
+display:flex;
+justify-content:space-between;
+@media (max-width: ${mediaQuery}) {
+    flex-direction: column;
+    gap:22px;
+    align-items: start;
+  }
+`
 export const InputNewsLetter = styled(Input)`
-  width: 510px;
+  width: 530px;
   max-height: 64px;
   border-radius: 50px;
   border:transparent;
   padding: 16px 50px;
+  outline:0;
   ${Button}{
 
     }
   @media (max-width: ${mediaQuery}) {
-    width: 312px;
+    width: 80%;
     max-height: 32px;
-    margin:0 70px;
     ${Button}{
       margin:0 70px;
     }
@@ -59,7 +69,6 @@ export const InputNewsLetter = styled(Input)`
 
 `;
 export const SubscribeButton = styled(Button)`
-  margin-right:40px;
   @media (max-width: ${mediaQuery}) {
     margin:0 70px;
   }
@@ -80,6 +89,7 @@ export const SubscribeWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap:12px;
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap:22px;
@@ -127,7 +137,7 @@ export const CheckboxWrapper = styled.label`
     background-color: #eee;
   }
   & input:checked ~ span {
-    background-color: ${secondaryBlue};
+    background-color: ${blue500};
   }
   & span:after {
     content: "";
