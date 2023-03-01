@@ -26,7 +26,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}} = useAppContext();
+  const {windowSize: {width}, isMobile} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -79,7 +79,7 @@ export default function FancyCarousel(props: Props) {
               <Image 
               src={`countries-flags/${item.countryFlag}.svg`} 
               alt={`flag of ${item.countryFlag}`} 
-              width={64} height={45} 
+              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
               className="country-flag" />
             </FromWrapper>
 
