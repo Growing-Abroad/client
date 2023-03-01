@@ -3,7 +3,7 @@ import { theme } from "@styles/theme";
 import styled from "styled-components";
 
 const {
-  colors: { primaryBlue, secondaryBlue },
+  colors: { primaryBlue, blue500 },
 } = theme;
 const {
   sizes: { mediaQuery },
@@ -37,24 +37,35 @@ export const FlexboxSlider = styled.div`
     cursor: default;
 
     .text-block {
-      /* -webkit-transition-property: all;
-      transition-property: all;
-      -webkit-transition-duration: 0.2s;
-      transition-duration: 0.2s;
-      -webkit-transition-timing-function: linear;
-      transition-timing-function: linear;
-      -webkit-transition-delay: 0.5s; */
-      /* transition-delay: 0.5s; */
+      
       bottom: 0;
       top: 0;
       left: 0;
       visibility: visible;
       cursor: default;
-
+      
       @media (max-width: ${mediaQuery}) {
-        bottom: 12px;
-        left: 12px;
       }
+
+      h3, p , .country-flag, .watch-video-btn {
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+        opacity: 1;
+      }
+      /* .watch-video-btn {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      } */
+      .watch-video-btn:hover {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      } 
     }
   }
 
@@ -80,11 +91,6 @@ export const FlexboxSlide = styled.div`
   cursor: pointer;
   visibility: visible;
 
-  @media (min-width: 200px) and (max-width: 1280px) {
-    width: calc(0.625rem + ((1vw - 2px) * 3.7037));
-    min-width: calc(0.625rem + ((1vw - 2px) * 3.7037));
-    min-height: 0;
-  }
 
   &:after {
     position: absolute;
@@ -99,7 +105,7 @@ export const FlexboxSlide = styled.div`
     opacity: 0;
   }
 
-  img {
+  .slide-img {
     position: absolute;
     top: 50%;
     left: 75%;
@@ -111,69 +117,87 @@ export const FlexboxSlide = styled.div`
     transform: translate(-50%, -50%);
     z-index: 1;
   }
+
+  @media (min-width: 200px) and (max-width: 1280px) {
+    width: calc(0.625rem + ((1vw - 2px) * 3.7037));
+    min-width: calc(0.625rem + ((1vw - 2px) * 3.7037));
+    min-height: 0;
+
+    .slide-img {
+      left: 85%;
+    }
+  }
+
 `;
 
 export const TextBlock = styled.div`
   position: absolute;
   left: 0;
-  bottom: 30px;
-  max-width: 500px;
-  width: 500px;
+  bottom: 0;
+  top: 0;
+  max-width: 58%;
+  width: 58%;
   padding: 44px 30px;
-  background-color: ${secondaryBlue};
+  background-color: ${blue500};
   color: #fff;
   z-index: 4;
   visibility: hidden;
   display: flex;
   flex-direction: column;
+  visibility: hidden;
 
-  @media (max-width: ${mediaQuery}) {
-    font-size: 0.875rem;
-    padding: 12px;
-    left: 0;
-    bottom: 12px;
-    background-color: rgb(74, 154, 253, 0.5);
-    max-width: 180px;
-  }
-  
   p {
     font-size: 1.125rem;
     line-height: 1.125rem;
     font-weight: 600;
   }
+
+  p, .country-flag, .watch-video-btn {
+    opacity: 0;
+  }
+
+  
+
+  @media (max-width: ${mediaQuery}) {
+    padding: 12px 0px 15px 12px;
+    max-width: 75%;
+    width: 75%;
+
+    p {
+      font-size: 0.875rem;
+      line-height: 1.063rem;
+    }
+  }
+
+  
 `;
 
 export const TextBlockH3 = styled.h3`
   font-size: 2rem;
   line-height: 2.438rem;
   letter-spacing: 1.3px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 32px;
   max-width: 386px;
   display: flex;
   gap: 8px;
+  opacity: 0;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: 16px;
-    margin-bottom: 4px;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    font-weight: 500;
+    margin-bottom: 12px;
   }
 `;
 
-export const WatchVideoBtn = styled.button`
-  all: unset;
-  background-color: ${primaryBlue};
-  color: white;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-top: 16px;
+export const FromWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: 0.65rem;
-    padding: 8px 16px;
-    margin-top: 8px;
+    gap: 10.15px;
   }
-`;
+`
+

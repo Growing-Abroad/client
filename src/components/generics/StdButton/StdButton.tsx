@@ -1,3 +1,4 @@
+import { variables } from "@/styles/global-variables";
 import { theme } from "@/styles/theme";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -5,6 +6,7 @@ import { PropsWithChildren } from "react";
 import styled, { CSSProperties } from "styled-components";
 
 const { colors: { yellow400, blue700 } } = theme;
+const {sizes: {mediaQuery}} = variables;
 
 const StyledStdBtn = styled.button`
     font-weight: 600;
@@ -22,6 +24,13 @@ const StyledStdBtn = styled.button`
     &:hover {
         background-color: ${blue700};
         color: ${yellow400};
+    }
+
+    @media (max-width: ${mediaQuery}) {
+        font-size: 0.875rem;
+        line-height: 1.188rem;
+        padding: 12px 18px;
+
     }
 `
 

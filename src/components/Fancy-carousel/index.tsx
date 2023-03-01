@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   FlexboxSlide,
   FlexboxSlider,
-  WatchVideoBtn,
+  FromWrapper,
   TextBlock,
   TextBlockH3,
 } from "./style";
@@ -26,7 +26,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}} = useAppContext();
+  const {windowSize: {width}, isMobile} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -71,11 +71,28 @@ export default function FancyCarousel(props: Props) {
           onClick={() => setSelectedSlide(i)}
         >
           <TextBlock className="text-block">
+
             <TextBlockH3>{item.title}</TextBlockH3>
-            <p>{item.from}</p>
-            <StdButton icon={faPlay} style={{marginTop: 'auto', width: 'max-content'}}>Watch Video</StdButton>
+
+            <FromWrapper>
+              <p>{item.from}</p>
+              <Image 
+              src={`countries-flags/${item.countryFlag}.svg`} 
+              alt={`flag of ${item.countryFlag}`} 
+              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
+              className="country-flag" />
+            </FromWrapper>
+
+            <StdButton 
+            icon={faPlay} 
+            className="watch-video-btn" 
+            style={{marginTop: 'auto', width: 'max-content'}}
+            >
+              Watch Video
+            </StdButton>
           </TextBlock>
-          <Image src={item.imgSrc} alt="Slide Image" />
+
+          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
         </FlexboxSlide>
       ))}
     </FlexboxSlider>

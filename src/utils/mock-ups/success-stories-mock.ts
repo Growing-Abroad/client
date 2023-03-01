@@ -9,7 +9,7 @@ export const successStoriesData: TCarouselData = [
     title: "“It was great experience working with growing abroad”",
     from: `Bianca from Brazil`,
     href: "",
-    countryFlag: ''
+    countryFlag: 'br'
   },
   {
     imgSrc: Img2,
@@ -17,28 +17,28 @@ export const successStoriesData: TCarouselData = [
     from: `Bianca from Brazil`,
 
     href: "",
-    countryFlag: ''
+    countryFlag: 'de'
   },
   {
     imgSrc: Img3,
     title: "“It was great experience working with growing abroad”",
     from: `Bianca from Brazil`,
     href: "",
-    countryFlag: ''
+    countryFlag: 'us'
   },
   {
     imgSrc: Img3,
     title: "“It was great experience working with growing abroad”",
     from: `Bianca from Brazil`,
     href: "",
-    countryFlag: ''
+    countryFlag: 'br'
   },
   {
     imgSrc: Img3,
     title: "“It was great experience working with growing abroad”",
     from: `Bianca from Brazil`,
     href: "",
-    countryFlag: ''
+    countryFlag: 'br'
   },
 
 ];

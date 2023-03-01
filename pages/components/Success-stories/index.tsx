@@ -13,8 +13,7 @@ export default function SuccessStories() {
         hasSpaceBtw
       />
       <SuccessSubtitle>
-        With our help customers from all over the world land their dream jobs -
-        from innovative start ups to the worlds leading companies
+        With our help customers from all over the world land their dream jobs - from innovative start ups to the worlds leading companies
       </SuccessSubtitle>
       <FancyCarousel dataArray={successStoriesData} />
     </SucessStoriesWrapper>

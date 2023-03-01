@@ -4,7 +4,7 @@ import {theme} from "@styles/theme";
 import {variables} from "@styles/global-variables";
 
 const {
-  colors: { primaryBlue },
+  colors: { blue700 },
 } = theme;
 const {
   sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHorizontalPaddingMobile },
@@ -13,7 +13,6 @@ const {
 export const SucessStoriesWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 24px;
   padding: 80px ${globalHorizontalPadding};
   align-items: center;
   max-width: ${maxWidthAll};
@@ -26,11 +25,14 @@ export const SucessStoriesWrapper = styled.section`
 `;
 
 export const SuccessSubtitle = styled.p`
-  color: ${primaryBlue};
-  max-width: 800px;
-  font-size: 1.25rem;
-  line-height: 2rem;
+  color: ${blue700};
+  max-width: 604px;
+  font-size: 1.5rem;
+  line-height: 38px;
+  font-weight: 600;
   text-align: center;
+  margin-top: 9px;
+  margin-bottom: 30px;
 
   @media (min-width: 200px) and (max-width: 1280px) {
     font-size: calc(0.875rem + ((1vw - 2px) * 0.5556));
