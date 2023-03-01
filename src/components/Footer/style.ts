@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
+import styled from 'styled-components';
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
 
 const {
-  colors: { primaryYellow, primaryBlue,secondaryBlue, terciaryBlue, white },
+  colors: { primaryYellow, primaryBlue, secondaryBlue, terciaryBlue, white },
 } = theme;
 const {
   sizes: {
@@ -91,7 +91,6 @@ export const Media = styled.img<IMedia>`
 
 export const FooterBottomContainer = styled.div`
   display: flex;
-  justify-content: center;
   background-color: ${white};
   color: white;
   width: 100%;
@@ -99,24 +98,35 @@ export const FooterBottomContainer = styled.div`
 
 export const FooterBottomWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   font-weight: 600;
-  color:${primaryBlue};
+  justify-content: space-between;
+  color: ${primaryBlue};
+  margin:0 auto;
   max-width: ${maxWidthAll};
-  width: 100%;
   padding: 24px ${globalHorizontalPadding};
+  span{
+    white-space:  nowrap;
+  }
 
   @media (max-width: ${mediaQuery}) {
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     gap: 16px;
+    margin: 0 70px;
     padding: 12px ${globalHorizontalPaddingMobile};
+    span{
+      letter-spacing:1.4px;
+    }
   }
 `;
 
 export const FooterBottomRight = styled.div`
+  width:100%;
   display: flex;
   gap: 32px;
+  @media (max-width: ${mediaQuery}) {
+    justify-content: space-between;
+  }
 `;
 
 export const Links = styled.a`
@@ -124,33 +134,37 @@ export const Links = styled.a`
   color: inherit;
   cursor: pointer;
 `;
-export const FooterLinksContentWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 105px;
-  width: 100%;
-  &:first-child {
-    margin-right: 293px;
-  }
-  @media (max-width: ${mediaQuery}) {
-    margin-right:0;
-    flex-direction: column;
-    gap:43px;
-  }
-`;
-export const FooterLinks = styled.ul`
+
+interface IFooterLinksProps {
+  width?: string;
+  alignItems?: string;
+}
+export const FooterLinks = styled.ul<IFooterLinksProps>`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: ${(props) => props.width};
   font-weight: 600;
   gap: 10px;
   color: ${white};
+  align-items: ${(props) => props.alignItems || 'center'};
+  @media (max-width: ${mediaQuery}) {
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    margin-left: 70px;
+    & p {
+      width: 70%;
+      font-size: 14px;
+      text-align: start;
+      height: 100%;
+    }
+  }
   & h3 {
-    font-size: 32px;
+    font-size: 26px;
     text-decoration: underline;
     text-underline-offset: 24px;
     color: ${white};
-    margin-bottom:50px;
+    margin-bottom: 50px;
   }
   & li,
   p,
@@ -163,9 +177,20 @@ export const FooterLinks = styled.ul`
   }
   & p {
     font-size: 20px;
-    margin-bottom:18px;
+    margin-bottom: 18px;
   }
   & p > span {
     color: ${primaryYellow};
+  }
+`;
+export const FooterLinksContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  width: 100%;
+  @media (max-width: ${mediaQuery}) {
+    margin-right:0;
+    flex-direction: column;
+    gap:43px;
   }
 `;

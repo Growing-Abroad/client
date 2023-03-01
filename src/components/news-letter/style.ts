@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Input } from '@/styles/global-styles';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import { Button } from '@/styles/global-styles';
 
 const {
   colors: { primaryYellow, primaryBlue, secondaryBlue, white },
@@ -18,10 +19,12 @@ export const NewsLetterContainer = styled.div`
   align-items:flex-start;
   gap:26px;
 
+
   @media (max-width: ${mediaQuery}) {
     align-items: center;
-    max-width: 225px;
+    width: 100%;
     flex-direction: column;
+
   }
 `;
 export const TitleNewsLetter = styled.h2`
@@ -29,28 +32,47 @@ font-size:36px;
 text-align:center;
 font-weight:bold;
 color:${white};
+@media (max-width: ${mediaQuery}) {
+    width: 200px;
+    height:auto;
+
+  }
 `
 export const InputNewsLetter = styled(Input)`
-  width: 530px;
+  width: 510px;
   max-height: 64px;
   border-radius: 50px;
   border:transparent;
   padding: 16px 50px;
+  ${Button}{
+
+    }
   @media (max-width: ${mediaQuery}) {
     width: 312px;
     max-height: 32px;
+    margin:0 70px;
+    ${Button}{
+      margin:0 70px;
+    }
   }
 
-`;
 
+`;
+export const SubscribeButton = styled(Button)`
+  margin-right:40px;
+  @media (max-width: ${mediaQuery}) {
+    margin:0 70px;
+  }
+`
 export const ContentInputNewsLetter= styled.div`
 display: flex;
-gap: 20px;
+flex-direction:row;
+gap:12px;
 width: 100%;
-
 @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap:22px;
+
   }
 `
 export const SubscribeWrapper = styled.div`
@@ -58,6 +80,15 @@ export const SubscribeWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: ${mediaQuery}) {
+    flex-direction: column;
+    gap:22px;
+    align-items: start;
+      & div{
+        margin:0 65px!important;
+      }
+
+  }
 `
 
 export const CheckboxWrapper = styled.label`

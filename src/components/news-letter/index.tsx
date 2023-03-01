@@ -4,13 +4,13 @@ import {
   ContentInputNewsLetter,
   InputNewsLetter,
   NewsLetterContainer,
+  SubscribeButton,
   SubscribeWrapper,
   TitleNewsLetter,
 } from './style';
 import { removePxFromCssValue } from '@utils/scripts/general-utility';
 import { variables } from '@styles/global-variables';
 import useAppContext from '@/hooks/useAppContext';
-import { Button } from '@/styles/global-styles';
 
 export default function NewsLetter() {
   const {
@@ -25,8 +25,9 @@ export default function NewsLetter() {
     }
   };
 
-  return (
+  return (<>
     <NewsLetterContainer>
+
       <TitleNewsLetter>Join our newsletter</TitleNewsLetter>
       <ContentInputNewsLetter>
         <SubscribeWrapper>
@@ -48,8 +49,8 @@ export default function NewsLetter() {
             </p>
           </div>
         </SubscribeWrapper>
-        <Button width='193px' fontSize='16px' height='50px'>Subscribe</Button>
+        <SubscribeButton width='153px' fontSize='16px' height='50px'>Subscribe</SubscribeButton>
       </ContentInputNewsLetter>
     </NewsLetterContainer>
-  );
+    </>);
 }
