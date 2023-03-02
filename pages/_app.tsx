@@ -3,7 +3,6 @@ import {ReactElement, ReactNode} from "react";
 import {AppProps} from "next/app";
 import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -27,7 +26,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       {getLayout(
         <>
           <style jsx global>{`
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
             body {
               font-family: 'Montserrat', sans-serif;
             }
