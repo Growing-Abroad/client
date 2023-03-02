@@ -1,31 +1,28 @@
-import * as S from "./styles";
-import { socials } from "@utils/socials";
-import Image from "next/image";
+import {CardsWrapper, Container, ContainerWrapper, Socials} from "./styles";
+import { socials1, socials2 } from "@utils/socials";
 import TwoColorTitle from "@components/two-color-title";
+import SocialCard from "./SocialCard";
 
 function CommunitySection() {
   return (
-    <S.Container>
-      <TwoColorTitle
-        text1="Join Our"
-        text2="Community"
-        hasSpaceBtw
-        color="#ffffff"
-      />
-      <S.Socials>
-        {socials.map(social => (
-          <S.Social key={social.socialLink}>
-            <a href={social.socialLink} target="_blank" rel="noreferrer">
-              <Image src={social.source} alt={social.name} width={85} />
-            </a>
-            <S.SocialText>
-              <p>+ {social.followNumber.toLocaleString("en").replace(/,/g, ".")}</p>
-              <span>{social.followType + "s"}</span>
-            </S.SocialText>
-          </S.Social>
-        ))}
-      </S.Socials>
-    </S.Container>
+    <ContainerWrapper>
+      <Container>
+        <TwoColorTitle
+          text1="Join our"
+          text2="Community"
+          hasSpaceBtw
+          color="#ffffff"
+        />
+        <Socials>
+          <CardsWrapper>
+            {socials1.map(social => (<SocialCard {...social} />))}
+          </CardsWrapper>
+          <CardsWrapper>
+            {socials2.map(social => (<SocialCard {...social} />))}
+          </CardsWrapper>
+        </Socials>
+      </Container>
+    </ContainerWrapper>
   );
 }
 

@@ -33,4 +33,9 @@ export const Text = styled.span<IText>`
     text-align: center;
     letter-spacing: 1.3px;
   `}}
+
+  @media(max-width: ${mediaQuery}) {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
 `;
