@@ -32,6 +32,13 @@ export const Card = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
+  border: 1px solid #ececec;
+  transition: all 0.5s ease;
+
+  &:hover {
+    box-shadow: 0 2px 10px #e2dfdf;
+    transform: scale(1.02)
+  }
 `;
 
 export const CardContent = styled.div`

@@ -4,7 +4,7 @@ import * as S from "./styles"
 
 function VisionAndMission() {
   return (
-    <S.Container backgroundImg={VisionAndMissionBackground.src}>
+    <S.Container backgroundImg={VisionAndMissionBackground.src} style={{overflow:'hidden'}}>
       <S.TextContainer color="primary" left="300px" top="57%">
         <h3>Mission</h3>
         <p>
