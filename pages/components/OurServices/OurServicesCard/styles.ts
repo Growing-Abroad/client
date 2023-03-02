@@ -15,22 +15,27 @@ export const Container = styled.div`
   color: ${theme.colors.primaryBlue};
   overflow: hidden;
   transition: all 450ms;
-  min-height: 605px;
+  min-height: 660px;
+  max-height: 660px;
 
   &:hover {
     transform: scale(1.05);
     outline: 7px solid ${theme.colors.secondaryBlue};
   }
 
-  img {
+  .card-image {
     width: 100%;
-    height: 200px;
+    height: 295px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 `
 
 export const CardContainer = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
@@ -57,6 +62,7 @@ export const CardDescriptions = styled.div`
   line-height: 1rem;
   text-align: left;
   font-weight: 500;
+  flex-grow: 1;
 
   > div {
     display: flex;

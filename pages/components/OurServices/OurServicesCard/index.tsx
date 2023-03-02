@@ -11,10 +11,10 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
     console.log('botão book now')
     return id
   }
-
+  console.log(image.src)
   return (
       <S.Container>
-        <Image src={image.src} alt={image.alt}  />
+        <div className='card-image' style={{backgroundImage: `url(${image.src})`}}></div>
         <S.CardContainer>
           <S.CardHeader>
             <h2> {title} </h2>

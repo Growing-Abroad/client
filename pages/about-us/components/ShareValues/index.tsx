@@ -30,7 +30,7 @@ function ShareValues() {
               <div className={classes.embarmain+' '+classes.tcenter}>
               <div className={classes.embar + ' ' + classes.embarbig}></div>
             </div>
-              <StdParagraqh style={{fontFamily: font.style.fontFamily}}>{sharedValue.paragraph}</StdParagraqh>
+              {/* <StdParagraqh style={{fontFamily: font.style.fontFamily}}>{sharedValue.paragraph}</StdParagraqh> */}
             </S.CardContent>
           </S.Card>
         ))}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   FlexboxSlide,
   FlexboxSlider,
-  WatchVideoBtn,
+  FromWrapper,
   TextBlock,
   TextBlockH3,
 } from "./style";
@@ -10,12 +10,15 @@ import Image, { StaticImageData } from "next/image";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import useAppContext from "@/hooks/useAppContext";
+import StdButton from "../generics/StdButton/StdButton";
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
-  paragraph: string;
+  from: string;
+  countryFlag: string;
   href: string;
 }
 export interface Props {
@@ -23,7 +26,7 @@ export interface Props {
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}} = useAppContext();
+  const {windowSize: {width}, isMobile} = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -67,12 +70,29 @@ export default function FancyCarousel(props: Props) {
           key={i + "-" + item.title}
           onClick={() => setSelectedSlide(i)}
         >
-          <Image src={item.imgSrc} alt="Slide Image" />
           <TextBlock className="text-block">
+
             <TextBlockH3>{item.title}</TextBlockH3>
-            <p>{item.paragraph}</p>
-            <WatchVideoBtn>Watch Video</WatchVideoBtn>
+
+            <FromWrapper>
+              <p>{item.from}</p>
+              <Image 
+              src={`countries-flags/${item.countryFlag}.svg`} 
+              alt={`flag of ${item.countryFlag}`} 
+              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
+              className="country-flag" />
+            </FromWrapper>
+
+            <StdButton 
+            icon={faPlay} 
+            className="watch-video-btn" 
+            style={{marginTop: 'auto', width: 'max-content'}}
+            >
+              Watch Video
+            </StdButton>
           </TextBlock>
+
+          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
         </FlexboxSlide>
       ))}
     </FlexboxSlider>

@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
+import styled from 'styled-components';
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
 
 const {
-  colors: { secondaryBlue, terciaryBlue },
+  colors: { primaryYellow, primaryBlue, blue500, white },
 } = theme;
 const {
   sizes: {
@@ -17,7 +17,7 @@ const {
 export const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background-color: ${terciaryBlue};
+  background-color: ${blue500};
   align-items: center;
   width: 100%;
 `;
@@ -32,6 +32,7 @@ export const FooterContentWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     align-items: center;
+    justify-content: center;
     padding: 80px ${globalHorizontalPaddingMobile};
   }
 `;
@@ -50,13 +51,12 @@ export const FooterContent = styled.div`
 export const FooterLinksWrapper = styled.div`
   display: flex;
   gap: 48px;
-  width: 100%;
 `;
 
 export const FooterLinksUl = styled.ul``;
 
 export const FooterLinksLi = styled.li`
-  color: ${secondaryBlue};
+  color: ${white};
   font-weight: 500;
   cursor: pointer;
   line-height: 2rem;
@@ -75,7 +75,7 @@ export const SocialMediaWrapper = styled.div`
 
 export const SocialMedia = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 11px;
 `;
 
 interface IMedia {
@@ -90,35 +90,106 @@ export const Media = styled.img<IMedia>`
 
 export const FooterBottomContainer = styled.div`
   display: flex;
-  justify-content: center;
-  background-color: ${secondaryBlue};
+  background-color: ${white};
   color: white;
   width: 100%;
 `;
 
 export const FooterBottomWrapper = styled.div`
   display: flex;
+  font-weight: 600;
   justify-content: space-between;
-  font-weight: 500;
-  max-width: ${maxWidthAll};
+  color: ${primaryBlue};
+  margin:0 auto;
   width: 100%;
-  padding: 12px ${globalHorizontalPadding};
+  max-width: ${maxWidthAll};
+  padding: 24px ${globalHorizontalPadding};
+  span{
+    white-space:  nowrap;
+  }
 
   @media (max-width: ${mediaQuery}) {
-    align-items: center;
+    align-items: start;
     flex-direction: column;
     gap: 16px;
+    margin: 0 70px;
     padding: 12px ${globalHorizontalPaddingMobile};
+    span{
+      letter-spacing:1.4px;
+    }
   }
 `;
 
 export const FooterBottomRight = styled.div`
   display: flex;
   gap: 32px;
+  @media (max-width: ${mediaQuery}) {
+    justify-content: space-between;
+  }
 `;
 
 export const Links = styled.a`
   all: unset;
   color: inherit;
   cursor: pointer;
+`;
+
+interface IFooterLinksProps {
+  width?: string;
+  alignItems?: string;
+}
+export const FooterLinks = styled.ul<IFooterLinksProps>`
+  display: flex;
+  flex-direction: column;
+  width: ${(props) => props.width};
+  font-weight: 600;
+  gap: 10px;
+  color: ${white};
+  align-items: ${(props) => props.alignItems || 'center'};
+  @media (max-width: ${mediaQuery}) {
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    margin-left: 70px;
+    & p {
+      width: 70%;
+      font-size: 14px;
+      text-align: start;
+      height: 100%;
+    }
+  }
+  & h3 {
+    font-size: 26px;
+    text-decoration: underline;
+    text-underline-offset: 24px;
+    color: ${white};
+    margin-bottom: 50px;
+  }
+  & li,
+  p,
+  p > span {
+    font-weight: 300;
+    text-decoration: none;
+  }
+  & li {
+    font-size: 16px;
+  }
+  & p {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  & p > span {
+    color: ${primaryYellow};
+  }
+`;
+export const FooterLinksContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  width: 100%;
+  @media (max-width: ${mediaQuery}) {
+    margin-right:0;
+    flex-direction: column;
+    gap:43px;
+  }
 `;

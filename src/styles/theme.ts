@@ -7,6 +7,7 @@ export const theme: ITheme = {
     secondaryBlue: '#4a9afd',
     terciaryBlue: '#EDF5FF',
     gray1: '#9DA5AF',
+    white:'#FFFFFF',
 
     blue400: '#4A9AFD',
     blue500: '#0073CF',

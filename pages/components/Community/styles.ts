@@ -4,6 +4,14 @@ import {theme} from "@styles/theme";
 
 const {colors: { blue500 }} = theme;
 
+export const ContainerWrapper = styled.div`
+  background-color: ${blue500};
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+`
+
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
@@ -11,81 +19,39 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding};
+  padding: 94px ${variables.sizes.globalHorizontalPadding} 124px;
   text-align: center;
-  background-color: ${blue500};
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px ${variables.sizes.globalHorizontalPaddingMobile};
+    padding: 58px ${variables.sizes.globalHorizontalPaddingMobile} 70px; 
   }
 `
 
 export const Socials = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  color: ${theme.colors.primaryBlue};
-  overflow-x: auto;
-  overflow-y: hidden;
+  gap: 100px;
 
   ::-webkit-scrollbar {
     opacity: 0;
   }
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    gap: 3rem;
+    gap: 42px;
+    flex-direction: column;
   }
 `
 
-export const Social = styled.div`
-  width: 100%;
+export const CardsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem; 
-
-  img {
-    cursor: pointer;
-    height: 5rem;
-    max-width: 6rem;
-    @media(max-width: ${variables.sizes.mediaQuery}) {
-      
-    }
-  }
-`
-
-export const SocialText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .25rem;
-  
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  white-space: nowrap;
-  
-  width: 100%;
-
-  > h6 {
-    width: 100%;
-  }
-
-  > span {
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
+  justify-content: center;
+  gap: 100px;
+  color: ${theme.colors.primaryBlue};
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-shrink: 0;
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    > p {
-      font-size: 1.5rem;
-    }
-
-    > span {
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
+    gap: 42px;
   }
 `
+
