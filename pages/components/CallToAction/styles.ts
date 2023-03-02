@@ -13,8 +13,10 @@ export const BackgroudCTA = styled.section`
   align-items: center;
   background-color: ${blue500};
   padding: 0 ${globalHorizontalPadding};
-  height: 85vh;
+  height: 100vh;
+  max-height: 740px;
   overflow: hidden;
+  position: relative;
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;
@@ -168,11 +170,12 @@ export const Container = styled.section`
         .right-side-img-container {
           position: absolute;
           bottom: 0px;
+          left: 40px;
 
           .colored-divs {
             position: relative;
             left: 114px;
-            bottom: 10px;
+            bottom: 27px;
 
             .blue, .yellow {
             width: 400px;
@@ -196,7 +199,7 @@ export const Container = styled.section`
           }
           
           img {
-            bottom: -30px;
+            bottom: 10px;
             position: absolute;
             z-index: 3;
           }

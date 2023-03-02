@@ -18,7 +18,7 @@ import LinkedInIcon from '@/../public/assets/icons/linkedin.webp';
 import FacebookIcon from '@/../public/assets/icons/facebook.webp';
 import InstagramIcon from '@/../public/assets/icons/instagram.webp';
 import TikTokIcon from '@/../public/assets/icons/tiktok.webp';
-import YoutubeIcon from '@/../public/assets/icons/youtube.webp';
+import YoutubeIcon from '@/../public/assets/icons/youtube-icon.svg';
 import Image from 'next/image';
 import { variables } from '@styles/global-variables';
 import { removePxFromCssValue } from '@utils/scripts/general-utility';
