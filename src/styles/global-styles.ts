@@ -7,6 +7,7 @@ const {
 } = theme;
 
 export const GlobalStyles = createGlobalStyle`
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     vertical-align: baseline;
     list-style: none;
     letter-spacing: 0.025rem;
-  }
+      }
 
   body {
 
@@ -26,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
       align-items:center;
       width: 100%;
+
     }
   }
 
