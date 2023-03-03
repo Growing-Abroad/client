@@ -13,23 +13,29 @@ export const BackgroudCTA = styled.section`
   align-items: center;
   background-color: ${blue500};
   padding: 0 ${globalHorizontalPadding};
-  height: 100vh;
+  height: 90vh;
+  min-height: 600px;
   max-height: 740px;
   overflow: hidden;
   position: relative;
 
   @media (max-width: ${mediaQuery}) {
     padding: 0;
+    max-height: 80vh;
   }
 
-  .styled-div {
+  .cta-mask {
     position: absolute;
     bottom: 0px;
+    left: 0;
+    right: 0;
     z-index: 100;
-    width: 100vw;
+    width: 100%;
 
     img {
       bottom: 0;
+      left: 0;
+      right: 0;
       position: absolute;
     }
   }
@@ -104,13 +110,13 @@ export const Container = styled.section`
         opacity: 0;
         animation-fill-mode: both;
         display: inline-block;
-        color: ${blue400};
+        color: ${blue500};
         animation: text-enter-germany 3000ms ease;
 
         @keyframes text-enter-germany {
           0% {
             left: -200px;
-            color: ${blue400};
+            color: ${blue500};
             visibility: hidden;
             opacity: 0;
           }
@@ -134,7 +140,7 @@ export const Container = styled.section`
             left: 200px;
             visibility: hidden;
             opacity: 0;
-            color: ${blue400};
+            color: ${blue500};
           }
         }
       }
@@ -155,33 +161,6 @@ export const Container = styled.section`
       position: absolute;
       bottom: 0px;
       left: 40px;
-
-      .colored-divs {
-        position: relative;
-        left: 114px;
-        bottom: 27px;
-
-        .blue, .yellow {
-        width: 400px;
-        height: 476px;
-        border-radius: 219px;
-        position: absolute;
-        }
-
-        .yellow {
-          background: ${yellow400};
-          z-index: 1;
-          bottom: -19px;
-          left: 0;
-        }
-        .blue {
-          background: ${blue400};
-          z-index: 2;
-          bottom: 0;
-          left: 0;
-          left: 109px;
-        }
-      }
           
       img {
         bottom: 10px;
@@ -192,7 +171,7 @@ export const Container = styled.section`
   }
     
   @media (max-width: ${mediaQuery}) {
-    background-image: url(${manuUanHappy.src});
+    /* background-image: url(${manuUanHappy.src}); */
     background-size: 130%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -200,20 +179,26 @@ export const Container = styled.section`
 
     .left-side {
       width: 100%;
-      min-height: 85vh;
       padding: 46px ${globalHorizontalPaddingMobile};
-      align-items: center;
-      background-color: rgba(74, 154, 253, .7);
-      justify-content: space-between;
+      
+      gap: 25px;
 
       h1 {
-          font-size: 4.5rem;
-          line-height: 5rem;
+        font-size: 44px;
+        line-height: 54px;
+      }
+      button {
+        font-size: 1rem;
       }
     }
 
     .right-side {
-        display: none;
+      left: -25px;
+      transform: scale(.63);
+
+      .right-side-img-container {
+        left: 0
+      }
     }
   }
 `

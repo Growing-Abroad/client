@@ -1,18 +1,16 @@
 import * as S from "./styles"
-import gaCoaches from '@/../public/assets/main-page/german-coaches.svg';
-import heroSectionMask from '@/../public/assets/main-page/hero-section-mask.svg';
+import gaCoaches from '@/../public/assets/main-page/cta-img.svg';
+import gaCoachesMobile from '@/../public/assets/main-page/cta-img-mobile.svg';
+import ctaMask from '@/../public/assets/main-page/hero-section-mask.svg';import ctaMaskMobile from '@/../public/assets/main-page/hero-section-mask.svg';
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
-import { theme } from "@/styles/theme";
-
-const { colors: { blue700, yellow400 } } = theme;
-
 
 function CallToAction() {
+  const {isMobile} = useAppContext();
   const [currentName, setCurrentName] = useState<string>(' Germany');
   const [currentComponent, setCurrentComponent] = useState(
     <div key={'first'} className="title-change"> {currentName}</div>
@@ -51,16 +49,12 @@ function CallToAction() {
         </section>
         <section className="right-side">
           <div className="right-side-img-container">
-            <div className="colored-divs">
-              <div className="yellow"></div>
-              <div className="blue"></div>
-            </div>
             <Image src={gaCoaches} alt="growing abroad coaches" width={616} style={{objectFit: 'contain'}} />
           </div>
         </section>
       </S.Container>
-      <div className="styled-div" >
-        <Image src={heroSectionMask} alt="styled mask" width={width} />
+      <div className="cta-mask" >
+        <Image src={isMobile ? ctaMaskMobile : ctaMask} alt="styled mask" width={width} />
         <div className="white-line"></div>
       </div>
     </S.BackgroudCTA>
