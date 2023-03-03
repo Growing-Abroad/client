@@ -16,26 +16,8 @@ export const Container = styled.section`
   margin-top: 20px;
   color: ${theme.colors.primaryBlue};
 
-  .title {
-    font-size: ${h2};
-    font-weight: 600;
-    margin: 16px 0;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-
-    span {
-        color: ${theme.colors.secondaryBlue}
-    }
-  }
-
   @media(max-width: ${variables.sizes.mediaQuery}) {
     padding: 80px ${globalHorizontalPaddingMobile};
-    .title {
-      font-size: 2.5rem;
-
-    }
   }
 `
 export const CardSpace = styled.section`

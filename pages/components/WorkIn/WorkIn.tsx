@@ -8,6 +8,7 @@ import WorkInCard from './WorkInCard'
 import { useRouter } from "next/router";
 import {FormattedMessage, useIntl} from "react-intl";
 import Link from "next/link";
+import TwoColorTitle from '@/components/two-color-title'
 
 function WorkIn() {
   const { locales } = useRouter();
@@ -18,11 +19,13 @@ function WorkIn() {
   });
 
 
-  return (
+return (
     <S.Container>
-      <h2 className="title">
-        English Speaking Jobs in  <span>Germany</span>
-      </h2>
+      <TwoColorTitle
+          text1="English Speaking Jobs in"
+          text2="Germany"
+          hasSpaceBtw
+        />
 
       <S.CardSpace>
         <WorkInCard

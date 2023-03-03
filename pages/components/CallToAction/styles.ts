@@ -68,167 +68,152 @@ export const CtaButton = styled.button`
     font-size: 1.125rem;
   }
 `
+interface GermanyColor {
+  color: string
+}
 
 export const Container = styled.section`
-    width: 100%;
-    height: 100%;
-    max-width: ${variables.sizes.maxWidthAll};
+  width: 100%;
+  height: 100%;
+  max-width: ${variables.sizes.maxWidthAll};
 
+  background-color: ${blue500};
+  
+  position: relative;
 
-    background-color: ${blue500};
+  .left-side {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 170px;
+
+    width: 800px;
+    padding: 80px 32px 80px 0;
+
+    h1 {
+      color: #fff;
+      font-size: 5.4rem;
+      line-height: 6.25rem;
+      font-weight: 500;
+              
+      .title-change {
+        font-weight: 600;
+        animation-iteration-count: 1;
+        position: relative;
+        left: -200px;
+        opacity: 0;
+        animation-fill-mode: both;
+        display: inline-block;
+        color: ${blue400};
+        animation: text-enter-germany 3000ms ease;
+
+        @keyframes text-enter-germany {
+          0% {
+            left: -200px;
+            color: ${blue400};
+            visibility: hidden;
+            opacity: 0;
+          }
+          20% {
+            left: 0;
+            visibility: visible;
+            color: ${blue700};
+            
+          }
+          40% {
+            color: ${yellow400};
+            opacity:1;
+          }
+          80% {
+            left: 0;
+            visibility: visible;
+            color: ${yellow400};
+            opacity:1;
+          }
+          100% {
+            left: 200px;
+            visibility: hidden;
+            opacity: 0;
+            color: ${blue400};
+          }
+        }
+      }
+    }
+  }
+
+  .right-side {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: min-content;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .right-side-img-container {
+      position: absolute;
+      bottom: 0px;
+      left: 40px;
+
+      .colored-divs {
+        position: relative;
+        left: 114px;
+        bottom: 27px;
+
+        .blue, .yellow {
+        width: 400px;
+        height: 476px;
+        border-radius: 219px;
+        position: absolute;
+        }
+
+        .yellow {
+          background: ${yellow400};
+          z-index: 1;
+          bottom: -19px;
+          left: 0;
+        }
+        .blue {
+          background: ${blue400};
+          z-index: 2;
+          bottom: 0;
+          left: 0;
+          left: 109px;
+        }
+      }
+          
+      img {
+        bottom: 10px;
+        position: absolute;
+        z-index: 3;
+      }
+    }
+  }
     
-    position: relative;
+  @media (max-width: ${mediaQuery}) {
+    background-image: url(${manuUanHappy.src});
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
 
     .left-side {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 170px;
+      width: 100%;
+      min-height: 85vh;
+      padding: 46px ${globalHorizontalPaddingMobile};
+      align-items: center;
+      background-color: rgba(74, 154, 253, .7);
+      justify-content: space-between;
 
-        width: 800px;
-        padding: 80px 32px 80px 0;
-
-        h1 {
-            color: #fff;
-            font-size: 5.4rem;
-            line-height: 6.25rem;
-            font-weight: 500;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                
-            .title-change {
-                color: #FFDB5C;
-                font-weight: 600;
-                animation: text-enter 3000ms ease;
-                animation-iteration-count: 1;
-                position: relative;
-                left: 0;
-                animation-fill-mode: both;
-                display: inline-block;
-
-                @keyframes text-enter {
-                  0% {
-                    left: -200px;
-                    color: ${blue500};
-                    visibility: hidden;
-                    opacity: 0;
-                  }
-                  20% {
-                    left: 0;
-                    visibility: visible;
-                    opacity:1;
-                    color: ${yellow400};
-
-
-                  }
-                  80% {
-                    left: 0;
-                    visibility: visible;
-                    opacity:1;
-                    color: ${yellow400};
-
-                    
-                  }
-                  100% {
-                    left: 200px;
-                    visibility: hidden;
-                    opacity: 0;
-                    color: ${blue500};
-                  }
-                }
-            }
-
-            .leaving {
-              position: relative;
-              right: 0;
-              color: #FFDB5C;
-              font-weight: 600;
-              animation: text-leave 1000ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-              
-              @keyframes text-leave {
-                  
-                  100% {
-                    right: 0;
-                    visibility: hidden;
-                    opacity: 0;
-                    right: 200px;
-                  }
-                }
-            }
-        }
+      h1 {
+          font-size: 4.5rem;
+          line-height: 5rem;
+      }
     }
 
     .right-side {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        height: min-content;
-        width: 50%;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-
-        .right-side-img-container {
-          position: absolute;
-          bottom: 0px;
-          left: 40px;
-
-          .colored-divs {
-            position: relative;
-            left: 114px;
-            bottom: 27px;
-
-            .blue, .yellow {
-            width: 400px;
-            height: 476px;
-            border-radius: 219px;
-            position: absolute;
-            }
-            .yellow {
-              background: ${yellow400};
-              z-index: 1;
-              bottom: -19px;
-              left: 0;
-            }
-            .blue {
-              background: ${blue400};
-              z-index: 2;
-              bottom: 0;
-              left: 0;
-              left: 109px;
-            }
-          }
-          
-          img {
-            bottom: 10px;
-            position: absolute;
-            z-index: 3;
-          }
-        }
+        display: none;
     }
-    
-    @media (max-width: ${mediaQuery}) {
-      background-image: url(${manuUanHappy.src});
-      background-size: 130%;
-      background-repeat: no-repeat;
-      background-position: bottom;
-      
-
-        .left-side {
-          width: 100%;
-          min-height: 85vh;
-          padding: 46px ${globalHorizontalPaddingMobile};
-          align-items: center;
-          background-color: rgba(74, 154, 253, .7);
-          justify-content: space-between;
-
-          h1 {
-              font-size: 4.5rem;
-              line-height: 5rem;
-          }
-        }
-
-        .right-side {
-            display: none;
-        }
-    }
+  }
 `

@@ -7,6 +7,10 @@ import { useIntl} from "react-intl";
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import { theme } from "@/styles/theme";
+
+const { colors: { blue700, yellow400 } } = theme;
+
 
 function CallToAction() {
   const [currentName, setCurrentName] = useState<string>(' Germany');
@@ -24,7 +28,10 @@ function CallToAction() {
     setTimeout(() => {
       const newName = currentName === t("page.home.callToAction.germany") ? t("page.home.callToAction.europe") : t("page.home.callToAction.germany")
       setCurrentName(newName);
-      setCurrentComponent(<div key={currentName} className={'title-change'}> {currentName}</div>)
+
+      const newComponent = <div key={currentName} className={'title-change'} > {currentName}</div>
+
+      setCurrentComponent(newComponent)
     }, 3000)
   }, [currentComponent])
 
