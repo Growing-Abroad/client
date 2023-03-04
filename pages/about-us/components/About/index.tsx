@@ -26,7 +26,7 @@ function About() {
       <Container>
         <Row>
           {aboutUs.map((section) => (
-            <Col className="text-center">
+            <Col className="text-center" key={section.title}>
               {isOpen && section.paragraphs.map((p, i) => <p className="more-text" key={i}>{p}</p>)}
               <Button variant="warning" className="read-more-btn">Read More</Button>
             </Col>

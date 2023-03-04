@@ -8,7 +8,7 @@ export default function SocialCard(social: ISocial) {
     const {isMobile} = useAppContext();
 
     return (
-        <Social key={social.socialLink}>
+        <Social>
             <a 
             href={social.socialLink} 
             target="_blank" 

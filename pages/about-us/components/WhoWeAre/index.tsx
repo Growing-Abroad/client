@@ -1,5 +1,5 @@
 import TwoColorTitle from "@components/two-color-title";
-import { socials } from "@utils/socials";
+import { socials2 } from "@utils/socials";
 import React from "react";
 import UanAndManu from '@assets/about-us/about-us-coaches.webp';
 import Image from "next/image";
@@ -16,7 +16,7 @@ const font = Montserrat({
 })
 
 function WhoWeAre() {
-  const youtube = socials.find((social) => social.name === "youtube");
+  const youtube = socials2?.find((social) => social.name === "youtube");
   const { colors: { secondaryBlue } } = theme;
 
   return (
