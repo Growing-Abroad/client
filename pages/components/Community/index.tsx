@@ -18,7 +18,7 @@ function CommunitySection() {
             {socials1.map(social => (<SocialCard {...social} key={social.socialLink} />))}
           </CardsWrapper>
           <CardsWrapper>
-            {socials2.map(social => (<SocialCard {...social} />))}
+            {socials2.map(social => (<SocialCard {...social} key={social.socialLink} />))}
           </CardsWrapper>
         </Socials>
       </Container>

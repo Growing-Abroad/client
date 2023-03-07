@@ -74,9 +74,6 @@ export const CtaButton = styled.button`
     font-size: 1.125rem;
   }
 `
-interface GermanyColor {
-  color: string
-}
 
 export const Container = styled.section`
   width: 100%;
