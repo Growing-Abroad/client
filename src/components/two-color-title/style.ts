@@ -31,8 +31,8 @@ export const Text = styled.span<IText>`
     const { styles, color } = props;
     return css`
     color: ${() => styles?.color || theme.colors[color]};
-    font-size: ${() => styles?.fontSize || "4.625rem"};
-    line-height: ${() => styles?.lineHeight || "5.625rem"};
+    font-size: ${() => styles?.fontSize || "3.75rem"};
+    line-height: ${() => styles?.lineHeight || "4.5rem"};
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
