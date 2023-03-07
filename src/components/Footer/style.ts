@@ -20,6 +20,22 @@ export const StyledFooter = styled.footer`
   background-color: ${blue500};
   align-items: center;
   width: 100%;
+  position: relative;
+
+  .wave {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    height: 200px;
+  }
 `;
 
 export const FooterContentWrapper = styled.div`
@@ -33,7 +49,7 @@ export const FooterContentWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     align-items: center;
     justify-content: center;
-    padding: 80px ${globalHorizontalPaddingMobile};
+    padding: 56px ${globalHorizontalPaddingMobile};
   }
 `;
 
