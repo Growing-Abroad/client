@@ -26,34 +26,53 @@ export default function NewsLetter() {
     }
   };
 
-  return (<>
-    <NewsLetterContainer>
-
-      <TitleNewsLetter>Join our newsletter</TitleNewsLetter>
-      <ContentInputNewsLetter>
-        <SubscribeWrapper>
-          <InputWrapper>
-          <InputNewsLetter placeholder="Enter Your Full Name" />
-          <InputNewsLetter placeholder="Enter Your E-mail Adress" />
-          </InputWrapper>
-          <div
+  return (
+    <>
+      <NewsLetterContainer>
+        <TitleNewsLetter>Join our newsletter</TitleNewsLetter>
+        <ContentInputNewsLetter>
+          <SubscribeWrapper>
+            <InputWrapper>
+              <InputNewsLetter placeholder="Enter Your Full Name" />
+              <InputNewsLetter placeholder="Enter Your E-mail Adress" />
+            </InputWrapper>
+            <div
+              style={{
+                gap: '8px',
+                margin: '18px 0',
+              }}
+            >
+              <CheckboxWrapper>
+                <input onClick={(e) => handleCheckBox(e)} type="checkbox" />
+                <span></span>
+              </CheckboxWrapper>
+              <p
+                style={{
+                  marginLeft: '40px',
+                  fontSize: '.750rem',
+                  color: 'white',
+                }}
+              >
+                Yes, I would like to sign up for the Growing Abroad Newsletter
+                and I accept the websites Privacy Policy.
+              </p>
+            </div>
+          </SubscribeWrapper>
+          <SubscribeButton
             style={{
-              gap: '8px',
-              margin: '18px 0',
+              display:'flex',
+              alignItems: 'center',
+              width: '193px',
+              padding: '20px 40px',
+              fontSize: '16px',
+              height:'54px',
+              textAlign: 'center'
             }}
           >
-            <CheckboxWrapper>
-              <input onClick={(e) => handleCheckBox(e)} type="checkbox" />
-              <span></span>
-            </CheckboxWrapper>
-            <p style={{ marginLeft:'40px',fontSize: '.750rem', color: 'white' }}>
-              Yes, I would like to sign up for the Growing Abroad Newsletter and
-              I accept the websites Privacy Policy.
-            </p>
-          </div>
-        </SubscribeWrapper>
-        <SubscribeButton width='153px' fontSize='16px' height='50px'>Subscribe</SubscribeButton>
-      </ContentInputNewsLetter>
-    </NewsLetterContainer>
-    </>);
+            Subscribe
+          </SubscribeButton>
+        </ContentInputNewsLetter>
+      </NewsLetterContainer>
+    </>
+  );
 }

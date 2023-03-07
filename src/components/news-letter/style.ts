@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Input } from '@/styles/global-styles';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
-import { Button } from '@/styles/global-styles';
+import StdButton from '../generics/StdButton/StdButton';
 
 const {
   colors: { primaryYellow, primaryBlue,blue500, white },
@@ -41,6 +41,7 @@ color:${white};
 export const InputWrapper= styled.div`
 width: 100%;
 display:flex;
+gap:1vw;
 justify-content:space-between;
 @media (max-width: ${mediaQuery}) {
     flex-direction: column;
@@ -55,20 +56,15 @@ export const InputNewsLetter = styled(Input)`
   border:transparent;
   padding: 16px 50px;
   outline:0;
-  ${Button}{
 
-    }
   @media (max-width: ${mediaQuery}) {
     width: 80%;
     max-height: 32px;
-    ${Button}{
-      margin:0 70px;
-    }
   }
 
 
 `;
-export const SubscribeButton = styled(Button)`
+export const SubscribeButton = styled(StdButton)`
   @media (max-width: ${mediaQuery}) {
     margin:0 70px;
   }

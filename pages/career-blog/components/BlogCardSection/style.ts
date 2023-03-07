@@ -10,9 +10,11 @@ export const ContainerBlogCardSection = styled.div`
 width:100%;
 background-color:${white};
 flex-wrap:wrap;
-padding: 100px 160px 160px;
+padding-top:7%;
 display:flex;
-justify-content:center;
+justify-content:space-between;
+gap:3rem;
 align-items:center;
-gap:47px;
+@media (max-width: 768px) {
+}
 `

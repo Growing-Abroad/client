@@ -53,7 +53,8 @@ export const FooterLinksWrapper = styled.div`
   gap: 48px;
 `;
 
-export const FooterLinksUl = styled.ul``;
+export const FooterLinksUl = styled.ul`
+`;
 
 export const FooterLinksLi = styled.li`
   color: ${white};
@@ -143,9 +144,14 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
   flex-direction: column;
   width: ${(props) => props.width};
   font-weight: 600;
+  width:25rem;
   gap: 10px;
   color: ${white};
   align-items: ${(props) => props.alignItems || 'center'};
+  &:first-child{
+    width:40rem;
+
+  }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     width: 100%;
@@ -185,7 +191,7 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
 export const FooterLinksContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: 5vw;
   width: 100%;
   @media (max-width: ${mediaQuery}) {
     margin-right:0;
