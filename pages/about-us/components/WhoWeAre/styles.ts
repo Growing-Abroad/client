@@ -59,6 +59,11 @@ export const p = styled.p `
   font-size: 1.25rem;
   line-height: 2rem;
 
+  @media (max-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   @media (max-width: 580px) {
     font-size: 16px;
     line-height: 30px;

@@ -31,7 +31,7 @@ function WhoWeAre() {
         </Col>
       </Row>
       <Row>
-        <Col className={classes.centerContents + " pb-5" } sm="12" md="6">
+        <Col className={classes.centerContents + " pb-5" } sm="12" md="12" lg="6">
           <div className={classes.imageContainer}>
             <Image src={UanAndManu} alt="uan and manu" className={classes.youtubeImage}></Image>
             <div className={classes.ripplesContainer}>
@@ -39,7 +39,7 @@ function WhoWeAre() {
             </div>
           </div>
         </Col>
-        <Col style={{ paddingLeft: "10px" }} sm="12" md="6">
+        <Col style={{ paddingLeft: "10px" }} sm="12" md="12" lg="6">
           <S.p style={{ fontFamily: font.style.fontFamily }}>
             Growing abroad helps qualified people that dream to live and work abroad, but have
             no clue on where to start in order to achieve that. These are people who

@@ -42,6 +42,13 @@ export const Container = styled.section`
       font-size: 14px;
     }
   }
+
+  @media (max-width: 476px) {
+    .read-more-btn {
+      min-width: auto;
+      padding: 5px 25px;
+    }
+  }
 `;
 
 export const TextContainer = styled.div`
