@@ -22,9 +22,9 @@ function HeroSection() {
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>
         <TwoColorTitle text1="Discover" text2="Growing Abroad" hasSpaceBtw />
-        <p style={{maxWidth: '80vw', fontFamily: montserrat.style.fontFamily }} className={classes.para}>
+        <p style={{ maxWidth: '80vw', fontFamily: montserrat.style.fontFamily }} className={classes.para}>
           We, Uan from Brazil and Manu from Germany, put together our skills and knowledge to create a unique
-          platform <strong>for foreigners</strong> to help to make your dream to live and work in Germany or Europe come true.
+          platform for foreigners to help to make your dream to live and work in Germany or Europe come true.
         </p>
 
         <S.ImagesContainer>
@@ -33,7 +33,7 @@ function HeroSection() {
             <S.BlueSquare />
 
             <S.TextsWrapper>
-              <Image src={quoteLeft} alt="quotes" className={classes.quotes} width={90}></Image>
+              <S.Quote className={classes.quotes}>“</S.Quote>
               <S.TextLeft className="text-left">If you don't believe in yourself, nobody else will.</S.TextLeft>
             </S.TextsWrapper>
 
@@ -43,7 +43,7 @@ function HeroSection() {
             <S.BlueSquare className="right-image" />
 
             <S.TextsWrapper className="reverse">
-              <Image src={quoteRight} alt="quotes"  className={classes.quotes} width={90}></Image>
+              <S.Quote className={classes.quotes}>”</S.Quote>
               <S.TextRight className="text-right">
                 You just have this one life.
               </S.TextRight>

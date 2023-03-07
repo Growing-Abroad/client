@@ -1,6 +1,11 @@
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 import styled from "styled-components";
+import { Montserrat } from "@next/font/google";
+
+const font = Montserrat({
+  subsets: ['latin']
+})
 
 const { colors: {primaryBlue, secondaryBlue} } = theme;
 
@@ -45,5 +50,37 @@ export const Paragraph = styled.p`
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
     font-size: 1rem;
+  }
+`;
+
+export const p = styled.p `
+  font-family: ${font.style.fontFamily};
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  @media (max-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: 580px) {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+    padding: 0 15px;
+  }
+`;
+
+export const ul = styled.ul`
+  font-family: ${font.style.fontFamily};
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  @media (max-width: 580px) {
+    font-size: 16px;
+    line-height: 30px;
+    padding-right: 2rem;
   }
 `;

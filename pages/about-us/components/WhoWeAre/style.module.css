@@ -2,9 +2,6 @@
 .whoWrAre {
     padding-top: 40px;
 }
-.whoWrAre p {
-	fontFamily:
-}
 .imageContainer {
     border-radius: 5px;
     overflow: hidden;
@@ -114,7 +111,7 @@
 /*** underline styling **/
 .embarmain {
     margin: 0 0 30px;
-	display: 'flex-root';
+	display: flex;
 }
 .embar.embarbig {
     margin: auto;
@@ -143,4 +140,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.centerContents {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+@media (max-width: 580px) {
+	.imageContainer {
+		padding: 0 10px;
+	}
 }

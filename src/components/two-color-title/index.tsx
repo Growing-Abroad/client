@@ -21,11 +21,11 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
 }) => {
   return (
     <TwoColorTitleWrapper style={{ width: fullWidth ? '100%' : '100%', ...wrapperStyles}}>
-      <Text color={'primaryBlue'} styles={{...styles}} >
+      <Text color={'primaryBlue'} styles={{...styles}}>
         {text1}
         {hasSpaceBtw ? '\xa0' : ''}
       </Text>
-      <Text color={'secondaryBlue'} styles={{...styles}} >
+      <Text color={'secondaryBlue'} styles={{...styles}}>
         {text2}
       </Text>
     </TwoColorTitleWrapper >

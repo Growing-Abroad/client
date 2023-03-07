@@ -10,6 +10,7 @@ import YoutubeplayButton from '@assets/about-us/youtube-play-btn.png'
 import { Col, Container, Row } from "react-bootstrap";
 import classes from './style.module.css';
 import { Montserrat } from '@next/font/google'
+import * as S from "./styles";
 
 const font = Montserrat({
   subsets: ['latin']
@@ -22,7 +23,15 @@ function WhoWeAre() {
   return (
     <Container className={classes.whoWrAre}>
       <Row>
-        <Col className={classes.centerContents}>
+        <Col>
+          <TwoColorTitle text1="Who" text2="we are" hasSpaceBtw fontSize="50px" wrapperStyles={{ justifyContent: "center" }} />
+          <div className={classes.embarmain}>
+            <div className={classes.embar + ' ' + classes.embarbig}></div>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className={classes.centerContents + " pb-5" } sm="12" md="12" lg="6">
           <div className={classes.imageContainer}>
             <Image src={UanAndManu} alt="uan and manu" className={classes.youtubeImage}></Image>
             <div className={classes.ripplesContainer}>
@@ -30,28 +39,24 @@ function WhoWeAre() {
             </div>
           </div>
         </Col>
-        <Col style={{ paddingLeft: "10px" }}>
-          <TwoColorTitle text1="Who" text2="we are" hasSpaceBtw fontSize="50px" wrapperStyles={{ justifyContent: "left" }} />
-          <div className={classes.embarmain}>
-            <div className={classes.embar +' '+classes.embarbig}></div>
-          </div>
-          <p style={{fontFamily: font.style.fontFamily}}>
+        <Col style={{ paddingLeft: "10px" }} sm="12" md="12" lg="6">
+          <S.p style={{ fontFamily: font.style.fontFamily }}>
             Growing abroad helps qualified people that dream to live and work abroad, but have
             no clue on where to start in order to achieve that. These are people who
-            </p>
-            <ul style={{fontFamily: font.style.fontFamily}}>
-              <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Speak English</li>
-              <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Have either a University degree or a completed vocational training</li>
-              <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Don’t see many opportunities in their home country</li>
-            </ul>
-          <p style={{fontFamily: font.style.fontFamily}}>
+          </S.p>
+          <S.ul style={{ fontFamily: font.style.fontFamily }}>
+            <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Speak English</li>
+            <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Have either a University degree or a completed vocational training</li>
+            <li><FontAwesomeIcon icon={faCheck} style={{ color: secondaryBlue, fontWeight: '600', paddingRight: '10px' }} /> Don’t see many opportunities in their home country</li>
+          </S.ul>
+          <S.p style={{ fontFamily: font.style.fontFamily }}>
             We will be with you through the whole application process and help you to optimize
             your CV and application documents into German standards, help you to look for adequate
-            jobs, help you to rock your job interview to get the job you admire.</p>
-          <p style={{fontFamily: font.style.fontFamily}}>
+            jobs, help you to rock your job interview to get the job you admire.</S.p>
+          <S.p style={{ fontFamily: font.style.fontFamily }}>
             We provide a life-changing experience where you will learn a different language, get to
             know a new culture and have a different perspective in your life.
-          </p>
+          </S.p>
         </Col>
       </Row>
     </Container>

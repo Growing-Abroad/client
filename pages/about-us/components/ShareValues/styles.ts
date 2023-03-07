@@ -39,6 +39,10 @@ export const Card = styled.div`
     box-shadow: 0 2px 10px #e2dfdf;
     transform: scale(1.02)
   }
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+  }
 `;
 
 export const CardContent = styled.div`

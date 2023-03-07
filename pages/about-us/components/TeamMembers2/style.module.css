@@ -1,0 +1,17 @@
+.leftCol {
+    display: flex;
+}
+.leftCol .leftPanel {
+    width: 15%;
+}
+.leftCol .leftPanel .imgContainer {
+    background-color: grey;
+    margin: 5px;
+}
+.leftCol .rightPanel {
+    width: 80%;
+}
+.leftCol .rightPanel .imgContainer {
+    background-color: grey;
+    margin: 5px;
+}
