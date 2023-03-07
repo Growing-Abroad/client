@@ -40,7 +40,17 @@ export const Text = styled.span<IText>`
   `}}
 
   @media(max-width: ${mediaQuery}) {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 2.75rem;
+    line-height: 3.353rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 44px;
+    line-height: 53.64px;
+  }
+
+  @media (max-width: 580px) {
+    font-size: 36px;
+    line-height: 53.64px;
   }
 `;

@@ -3,6 +3,8 @@ import {ReactElement, ReactNode} from "react";
 import {AppProps} from "next/app";
 import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './custom.css';
 
 
 
