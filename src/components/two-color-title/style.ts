@@ -33,7 +33,7 @@ export const Text = styled.h1<IText>`
     return css`
     color: ${() => styles?.color || theme.colors[color]};
     font-size: "4.625rem";
-    line-height: ${() => styles?.lineHeight || "5.625rem"};
+    line-height: "5.625rem";
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
