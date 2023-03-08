@@ -8,9 +8,13 @@ export const Container = styled.section`
   align-items: center;
   justify-items: center;
   gap: 2rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding};
+  padding: 40px ${variables.sizes.globalHorizontalPadding} 149px;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+  }
+
+  @media (max-width: 580px) {
+    padding-bottom: 73px;
   }
 `;

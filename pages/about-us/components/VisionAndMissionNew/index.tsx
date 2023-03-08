@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import VisionAndMissionBackground from "../../../../public/assets/about-us/puzzle.png"
+import VisionAndMissionBackground from "../../../../public/assets/about-us/mission-vision.webp"
 import classes from "./style.module.css"
 
 function VisionAndMissionNew() {

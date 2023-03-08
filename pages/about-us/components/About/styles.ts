@@ -38,6 +38,8 @@ export const Container = styled.section`
   }
 
   @media (max-width: 580px) {
+    padding: 28px 26px 58px 26px;
+
     .read-more-btn {
       font-size: 14px;
     }
@@ -46,7 +48,7 @@ export const Container = styled.section`
   @media (max-width: 476px) {
     .read-more-btn {
       min-width: auto;
-      padding: 5px 25px;
+      padding: 8px 15px;
     }
   }
 `;

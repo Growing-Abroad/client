@@ -1,6 +1,6 @@
 
 .whoWrAre {
-    padding-top: 40px;
+    padding-top: 87px;
 }
 .imageContainer {
     border-radius: 5px;
@@ -152,5 +152,9 @@
 @media (max-width: 580px) {
 	.imageContainer {
 		padding: 0 10px;
+	}
+
+	.whoWrAre {
+		padding-top: 22.43px;
 	}
 }
