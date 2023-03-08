@@ -25,6 +25,7 @@ return (
           text1="English Speaking Jobs in"
           text2="Germany"
           hasSpaceBtw
+          as="h2"
         />
 
       <S.CardSpace>

@@ -9,23 +9,26 @@ export interface TwoColorTitleParameters {
   fontSize?: string;
   color?: string;
   styles?: CSSProperties;
+  as?: keyof JSX.IntrinsicElements
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
-  hasSpaceBtw,
+  hasSpaceBtw,  
   fullWidth,
   wrapperStyles,
+  as,
   ...styles
 }) => {
+  console.log({as})
   return (
     <TwoColorTitleWrapper style={{ width: fullWidth ? '100%' : '100%', ...wrapperStyles}}>
-      <Text color={'primaryBlue'} styles={{...styles}}>
+      <Text color={'primaryBlue'} styles={{...styles}} as={as || 'h1'} >
         {text1}
         {hasSpaceBtw ? '\xa0' : ''}
       </Text>
-      <Text color={'secondaryBlue'} styles={{...styles}}>
+      <Text color={'secondaryBlue'} styles={{...styles}} as={as || 'h1'} >
         {text2}
       </Text>
     </TwoColorTitleWrapper >

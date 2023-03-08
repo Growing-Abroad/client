@@ -24,20 +24,71 @@ export const TwoColorTitleWrapper = styled.div`
 interface IText {
   color: string;
   styles?: CSSProperties;
+  as?: keyof JSX.IntrinsicElements;
 }
 
-export const Text = styled.span<IText>`
+export const Text = styled.h1<IText>`
   ${(props) => {
     const { styles, color } = props;
     return css`
     color: ${() => styles?.color || theme.colors[color]};
-    font-size: ${() => styles?.fontSize || "3.75rem"};
-    line-height: ${() => styles?.lineHeight || "4.5rem"};
+    font-size: "4.625rem";
+    line-height: ${() => styles?.lineHeight || "5.625rem"};
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
     letter-spacing: 1.3px;
   `}}
+
+  ${(props) => {
+    switch (props.as) {
+      case "h1":
+        return css`
+          font-size: 4.625rem;
+          line-height: 5.625rem;
+        `;
+      case "h2":
+        return css`
+          font-size: 3.75rem;
+          line-height: 4.625rem;
+        `;
+      case "h3":
+        return css`
+          font-size: 2rem;
+          line-height: 2.5rem;
+        `;
+      case "h4":
+        return css`
+          font-size: 1.5rem;
+          line-height: 1.875rem;
+        `;
+      case "h5":
+        return css`
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+        `;
+      default:
+        return null;
+    }
+  }}
+
+  ${(props) => {
+    const { styles } = props;
+    if (styles?.fontSize) {
+      return css`
+        font-size: styles?.fontSize;
+      `
+    }
+  }}
+
+  ${(props) => {
+    const { styles } = props;
+    if (styles?.lineHeight) {
+      return css`
+        line-height: styles?.lineHeight;
+      `
+    }
+  }}
 
   @media(max-width: ${mediaQuery}) {
     font-size: 2.75rem;

@@ -35,7 +35,7 @@ export default function CareerHeroSection() {
                 text2="Blogs"
                 hasSpaceBtw
                 wrapperStyles={{ justifyContent: 'flex-start' , fontSize:'44px'}}
-              />
+                />
             </ContentHero>
           </ContainerHero>
           <SubheadingHero>
@@ -45,9 +45,9 @@ export default function CareerHeroSection() {
         </>
       ):(
         <ContainerHero
-          backgroundImageDesktop={background.src}
-          backgroundImageMobile={backgroundMobile.src}
-          styles={{}}
+        backgroundImageDesktop={background.src}
+        backgroundImageMobile={backgroundMobile.src}
+        styles={{}}
         >
           <ContentHero>
             <TwoColorTitle
@@ -55,7 +55,7 @@ export default function CareerHeroSection() {
               text2="Blogs"
               hasSpaceBtw
               wrapperStyles={{ justifyContent: 'flex-start' }}
-            />
+              />
             <SubheadingHero>
               Everything you need to know about your career in Germany or
               Europe, you will find here in blogposts.

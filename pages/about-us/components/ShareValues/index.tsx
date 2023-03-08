@@ -16,7 +16,7 @@ const font = Montserrat({
 function ShareValues() {
   return (
     <S.Container>
-      <TwoColorTitle text1="Do we share the same" text2="values?" hasSpaceBtw />
+      <TwoColorTitle text1="Do we share the same" text2="values?" hasSpaceBtw as="h2" />
 
       <Container>
       <Row>

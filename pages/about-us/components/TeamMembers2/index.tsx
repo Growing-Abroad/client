@@ -8,7 +8,7 @@ import classes from './style.module.css'
 function TeamMembers2() {
   return (
     <S.Container>
-      <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw textShadow="none" />
+      <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw as="h2" />
       <Container>
         <Row>
           <Col lg={8} className={classes.leftCol}>

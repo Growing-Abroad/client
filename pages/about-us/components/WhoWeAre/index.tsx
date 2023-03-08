@@ -24,7 +24,7 @@ function WhoWeAre() {
     <Container className={classes.whoWrAre}>
       <Row>
         <Col>
-          <TwoColorTitle text1="Who" text2="we are" hasSpaceBtw fontSize="50px" wrapperStyles={{ justifyContent: "center" }} />
+          <TwoColorTitle text1="Who" text2="We Are" hasSpaceBtw wrapperStyles={{ justifyContent: "center" }} as="h2" />
           <div className={classes.embarmain}>
             <div className={classes.embar + ' ' + classes.embarbig}></div>
           </div>

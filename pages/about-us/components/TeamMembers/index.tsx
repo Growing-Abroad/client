@@ -6,7 +6,7 @@ import * as S from "./styles";
 function TeamMembers() {
   return (
     <S.Container>
-      <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw />
+      <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw as="h2" />
       <FancyCarousel dataArray={successStoriesData} />
     </S.Container>
   );

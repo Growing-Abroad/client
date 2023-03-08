@@ -41,7 +41,7 @@ export default function BlogSection() {
   ];
   return (
     <Container>
-      <TwoColorTitle text1="Latest" text2="Blog" hasSpaceBtw />
+      <TwoColorTitle text1="Latest" text2="Blog" hasSpaceBtw as="h2" />
       <SubHeadingBlog>Choose one of our interesting topics to get more information</SubHeadingBlog>
       <BlogCard>
         {cards.map((card, index) => (
