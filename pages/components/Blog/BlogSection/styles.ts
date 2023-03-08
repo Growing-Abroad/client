@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import {variables} from "@styles/global-variables";
 import {theme} from "@styles/theme";
+const {
+  sizes: { mediaQuery },
+} = variables;
+
 
 
 export const Container = styled.section`
@@ -19,24 +23,22 @@ export const Container = styled.section`
   }
 `
 export const SubHeadingBlog= styled.h3`
-width:50%;
-font: 500 1rem;
+width:100%;
+font: 400 1.5rem;
 text-align: center;
 `
 export const BlogCard = styled.div`
 width:100%;
 flex-wrap:wrap;
-padding-top:2%;
-display:flex;
-gap:3rem;
-align-items:flex-start;
-div{
-display:flex;
+display:grid;
+grid-template-columns:repeat(2,1fr);
 justify-content:space-between;
-align-items:flex-start;
-}
-
-@media (max-width: 768px) {
- gap:3rem;
+padding-top:20px;
+align-items:center;
+@media (max-width: ${mediaQuery}) {
+  grid-template-columns:repeat(1,1fr);
+  justify-content:center;
+  align-items:center;
+  padding: 0 42px;
 }
 `

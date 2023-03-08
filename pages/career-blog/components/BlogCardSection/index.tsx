@@ -82,8 +82,8 @@ export default function BlogCardSection() {
             textMobile={card.textMobile}
           />
         ))}
-        <Pagination indexes={4} />
       </ContainerBlogCardSection>
+      <Pagination indexes={4} />
     </Wrapper>
   );
 }

@@ -13,7 +13,7 @@ interface ICardProps{
   const {isMobile} = useAppContext();
 
   return(<ContainerBlogCard>
-    <Image width={ isMobile ? 135 : 240} height={ isMobile ? 122 : 225} src={src} alt={description}/>
+    <Image width={ isMobile ? 175 : 240} height={ isMobile ? 150 : 240} src={src} alt={description}/>
     <ContentBlogCard>
       <TitleBlogCard>{title}</TitleBlogCard>
       <TextBlogCard>{isMobile ? textMobile : text }</TextBlogCard>

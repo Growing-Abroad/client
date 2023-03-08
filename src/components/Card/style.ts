@@ -16,9 +16,11 @@ width:31rem;
 gap:0.875rem;
 justify-content: start;
 align-items: flex-start;
-height:14rem;
+height:15rem;
+margin-bottom:3%;
 @media (max-width: ${mediaQuery}) {
-  height:8rem;
+  height:10rem;
+  width:25rem;
 }
 `
 export const ContentBlogCard = styled.div`
