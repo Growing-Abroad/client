@@ -33,6 +33,8 @@ flex-wrap:wrap;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 justify-content:space-between;
+justify-items:center;
+margin:0 auto;
 padding-top:20px;
 align-items:center;
 @media (max-width: ${mediaQuery}) {
