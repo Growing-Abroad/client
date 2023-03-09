@@ -19,7 +19,7 @@ import NewsLetter from '../news-letter';
 import useAppContext from '@/hooks/useAppContext';
 import StdButton from '../generics/StdButton/StdButton';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import wave from "../../../public/assets/desktop-wave.svg"
+import wave from "../../../public/assets/wave-desktop.svg"
 
 export default function Footer() {
   const {

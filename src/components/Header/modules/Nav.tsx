@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
 import { BurguerLogo, StyledUl } from '../Header.style';
-import Logo from '@/../public/assets/growing-abroad-images/LOGO-Growing-black.webp';
+import Logo from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
 import Link from 'next/link';
 
 function Nav(props: NavProps) {

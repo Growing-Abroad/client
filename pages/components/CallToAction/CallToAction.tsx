@@ -1,8 +1,8 @@
 import * as S from "./styles"
 import gaCoaches from '@/../public/assets/cta-img.svg';
 import gaCoachesMobile from '@/../public/assets/cta-img-mobile.svg';
-import ctaMask from '@/../public/assets/main-page/hero-section-mask.svg';
-import ctaMaskMobile from '@/../public/assets/main-page/hero-section-mask.svg';
+import ctaMask from '@/../public/assets/pages/main-page/hero-section-mask.svg';
+import ctaMaskMobile from '@/../public/assets/pages/main-page/hero-section-mask.svg';
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
