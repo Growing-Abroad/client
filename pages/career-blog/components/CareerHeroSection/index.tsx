@@ -1,8 +1,8 @@
 import TwoColorTitle from '@components/two-color-title';
 import Image from 'next/image';
-import search from '@/../public/assets/career-blog/search.svg';
-import background from '@/../public/assets/career-blog/background-hero.png';
-import backgroundMobile from '@/../public/assets/career-blog/background-hero-mobile.png';
+import search from '@/../public/assets/search.svg';
+import background from '@/../public/assets/pages/career-blog/background-hero.webp';
+import backgroundMobile from '@/../public/assets/pages/career-blog/background-hero-mobile.webp';
 
 import {
   ContentHero,

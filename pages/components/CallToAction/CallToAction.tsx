@@ -1,7 +1,8 @@
 import * as S from "./styles"
-import gaCoaches from '@/../public/assets/main-page/cta-img.svg';
-import gaCoachesMobile from '@/../public/assets/main-page/cta-img-mobile.svg';
-import ctaMask from '@/../public/assets/main-page/hero-section-mask.svg';import ctaMaskMobile from '@/../public/assets/main-page/hero-section-mask.svg';
+import gaCoaches from '@/../public/assets/cta-img.svg';
+import gaCoachesMobile from '@/../public/assets/cta-img-mobile.svg';
+import ctaMask from '@/../public/assets/main-page/hero-section-mask.svg';
+import ctaMaskMobile from '@/../public/assets/main-page/hero-section-mask.svg';
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 import { useIntl} from "react-intl";
@@ -39,7 +40,7 @@ function CallToAction() {
         <section className="left-side" >
           <h1>
             <>
-              {t("page.home.callToAction") + " "} 
+              {t("page.home.callToAction") + " "}
               {currentComponent}
             </>
           </h1>

@@ -7,7 +7,7 @@ import StdButton from '@/components/generics/StdButton/StdButton';
 export default function BlogSection() {
   const cards = [
     {
-      src: '/../public/assets/career-blog/image6.png',
+      src: '/../public/assets/puzzle.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -15,7 +15,7 @@ export default function BlogSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image7.png',
+      src: '/../public/assets/online-course-success.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -23,7 +23,7 @@ export default function BlogSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image8.png',
+      src: '/../public/assets/faqs.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -31,7 +31,7 @@ export default function BlogSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image8.png',
+      src: '/../public/assets/job-interview-coach.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',

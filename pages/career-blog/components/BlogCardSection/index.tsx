@@ -5,7 +5,7 @@ import Pagination from '../Pagination';
 export default function BlogCardSection() {
   const cards = [
     {
-      src: '/../public/assets/career-blog/image.png',
+      src: '/../public/assets/curriculum.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -13,7 +13,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image2.png',
+      src: '/../public/assets/handshake.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -21,7 +21,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image3.png',
+      src: '/../public/assetsonline-course-success.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -29,7 +29,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image4.png',
+      src: '/../public/assets/meeting.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -37,7 +37,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image5.png',
+      src: '/../public/assets/puzzle.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -45,7 +45,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image6.png',
+      src: '/../public/assets/trust.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -53,7 +53,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image7.png',
+      src: '/../public/assets/job-interview-coach.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -61,7 +61,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assets/career-blog/image8.png',
+      src: '/../public/assets/faqs.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
