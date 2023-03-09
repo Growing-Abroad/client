@@ -11,7 +11,7 @@ function Nav(props: NavProps) {
         <BurguerLogo src={Logo} alt="growing abroad logo" open={open} />
         <li>Online Course</li>
         <li>Coaching</li>
-        <li><Link href={'/career-blog'}>About Us</Link></li>
+        <li><Link href={'/career-blog'}>Career Blog</Link></li>
         <li>
           <Link href={'/about-us'}>About Us</Link>
         </li>
