@@ -21,7 +21,7 @@ export default function BlogCardSection() {
         'Our Vision is to create a platform that brings people together as a community',
     },
     {
-      src: '/../public/assetsonline-course-success.webp',
+      src: '/../public/assets/online-course-success.webp',
       description: 'image',
       title: 'Practical Marketing Tips for Black Friday',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna',
@@ -83,7 +83,7 @@ export default function BlogCardSection() {
           />
         ))}
       </ContainerBlogCardSection>
-      <Pagination indexes={4} />
+      <Pagination indexes={5} />
     </Wrapper>
   );
 }

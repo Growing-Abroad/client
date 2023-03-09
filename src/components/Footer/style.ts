@@ -101,7 +101,7 @@ export const FooterBottomRight = styled.div`
   display: flex;
   gap: 32px;
   @media (max-width: ${mediaQuery}) {
-    justify-content: space-between;
+    gap:87px;
   }
 `;
 
@@ -109,6 +109,7 @@ export const Links = styled.a`
   all: unset;
   color: inherit;
   cursor: pointer;
+  letter-spacing:1.3px
 `;
 
 interface IFooterLinksProps {

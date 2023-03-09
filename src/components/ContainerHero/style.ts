@@ -18,9 +18,9 @@ export const Container = styled.div<IContainerProps>`
 width:100%;
 background-image:url('${({backgroundImage})=>backgroundImage}');
 background-repeat:no-repeat;
-background-size:fit;
+background-size:contain;
 background-position:50% 0%;
-height:40rem;
+height:34rem;
 display:flex;
 gap:2rem;
 flex-direction:column;

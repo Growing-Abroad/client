@@ -8,20 +8,14 @@ const {
 const {
   sizes: { mediaQuery },
 } = variables;
-
-export const line= styled.hr`
-width:100%;
-height:2px;
-background-color:${blue700};`
-
 export const ContentHero = styled.div`
 display:flex;
 flex-direction:column;
 height:100%;
 justify-content:center;
-align-items:center;
-padding:0 120px;
-gap:2.5rem;
+align-items:start;
+padding:0 140px;
+gap:33px;
 max-width:60%;
 @media (max-width: ${mediaQuery}){
   padding:0 42px;
@@ -34,10 +28,9 @@ max-width:60%;
     text-align:start;
 
   }
-  div > span{
-   font-size:3rem;
-   line-height:3.5rem;
-   padding-left:1rem;
+  div > h1{
+   font-size:44px;
+   padding-left:1.2rem;
     &:first-child{
       padding-left:0
     }
@@ -51,11 +44,14 @@ export const SubheadingHero = styled.p`
 font-size:24px;
 font-weight: 400;
 line-height: 38px;
+width:650px;
+font-style:normal;
 @media (max-width: ${mediaQuery}){
   max-width:100%;
   font-size:1rem;
   line-height:27px;
-  margin-bottom:5rem;
+  z-index:2;
+  margin-bottom:86px;
   text-align:start;
   padding:0 42px;
 }
@@ -72,15 +68,15 @@ border-bottom:2px solid ${blue700};
 @media (max-width: ${mediaQuery}){
   flex-wrap: wrap;
   gap:12px;
-  height:13.75rem;
+  height:162px;
   margin-bottom:2rem;
-  padding:0 42px;
+  padding:0 32px 62px 42px;
 }
 `
 export const NavList = styled.ul`
 width:100%;
 display:flex;
-gap:24px;
+gap:48px;
 height:100%;
 padding:0;
 @media (max-width: ${mediaQuery}){
@@ -95,10 +91,14 @@ font-weight: 700;
 font-size:20px;
 letter-spacing: 1.3px;
 white-space: nowrap;
+width:max-content;
 color:${blue700};
-padding:1rem 2rem;
+padding:0 0.7rem;
 &:first-child{
   padding-left:0;
+}
+&:last-child{
+  margin-left:172px;
 }
 
 @media (max-width: ${mediaQuery}){
