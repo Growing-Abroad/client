@@ -12,6 +12,7 @@ import yourFriend from "@assets/pages/coaching/yourFriend.svg";
 import yourMotivator from "@assets/pages/coaching/yourMotivator.svg";
 import yourMentor from "@assets/pages/coaching/yourMentor.svg";
 import yourCareerAdvisor from "@assets/pages/coaching/yourCareerAdvisor.svg";
+import ShareValues from "@pages/about-us/components/ShareValues";
 
 export default function Coaching() {
     const cardsContent1 = [
@@ -64,6 +65,7 @@ export default function Coaching() {
                 )}
             </CardsWrapper>
         </CenteredSection>
+        <ShareValues></ShareValues>
     </>
 }
 
