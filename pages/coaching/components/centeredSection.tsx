@@ -31,6 +31,9 @@ const Section = styled.section<IStyledProp>`
 const ContentWrapper = styled.div<IStyledProp>`
     max-width: ${maxWidthAll};
     padding: 80px ${globalHorizontalPadding};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     ${({ style }) =>
     style &&
     css`
