@@ -15,7 +15,7 @@ interface IContainerProps{
 }
 
 export const Container = styled.div<IContainerProps>`
-width:100%;
+min-width:100%;
 background-image:url('${({backgroundImage})=>backgroundImage}');
 background-repeat:no-repeat;
 background-size:contain;
@@ -24,6 +24,8 @@ height:34rem;
 display:flex;
 gap:2rem;
 flex-direction:column;
+align-items:center;
+justify-content:center;
 position:relative;
 .border-image{
 width:100%;

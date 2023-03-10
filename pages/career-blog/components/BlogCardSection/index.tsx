@@ -1,4 +1,4 @@
-import { ContainerBlogCardSection } from './style';
+import { Container,ContentBlogCardSection } from './style';
 import { Wrapper } from '@/components/Wrapper';
 import Card from '@/components/Card';
 import Pagination from '../Pagination';
@@ -70,8 +70,8 @@ export default function BlogCardSection() {
     },
   ];
   return (
-    <Wrapper>
-      <ContainerBlogCardSection>
+    <Container>
+      <ContentBlogCardSection>
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -82,8 +82,8 @@ export default function BlogCardSection() {
             textMobile={card.textMobile}
           />
         ))}
-      </ContainerBlogCardSection>
+      </ContentBlogCardSection>
       <Pagination indexes={5} />
-    </Wrapper>
+    </Container>
   );
 }

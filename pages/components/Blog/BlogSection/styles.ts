@@ -58,6 +58,7 @@ column-gap:40px;
 padding-top:32px;
 padding-bottom:42px;
 @media (max-width: ${mediaQuery}) {
+  min-width:100%;
   grid-template-columns:repeat(1,1fr);
   justify-content:center;
   align-items:center;

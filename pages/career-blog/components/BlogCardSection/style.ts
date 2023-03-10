@@ -9,9 +9,16 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-
-export const ContainerBlogCardSection = styled.div`
+export const Container = styled.div`
 width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+justify-items:center;
+`
+export const ContentBlogCardSection = styled.div`
+min-width:1280px;
 background-color:${white};
 flex-wrap:wrap;
 padding: 0px 140px;
@@ -24,6 +31,7 @@ row-gap:45px;
 column-gap:40px;
 align-items:center;
 @media (max-width: ${mediaQuery}) {
+  min-width:430px;
   grid-template-columns:repeat(1,1fr);
   justify-content:center;
   align-items:center;

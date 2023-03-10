@@ -10,7 +10,7 @@ const {
 } = variables;
 
 export const ContentPagination = styled.div`
-width:100%;
+min-width:1280px;
 display:flex;
 justify-content:center;
 align-items:center;
