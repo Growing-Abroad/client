@@ -32,8 +32,6 @@ export const Text = styled.h1<IText>`
     const { styles, color } = props;
     return css`
     color: ${() => styles?.color || theme.colors[color]};
-    font-size: "4.625rem";
-    line-height: "5.625rem";
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
@@ -67,8 +65,12 @@ export const Text = styled.h1<IText>`
           font-size: 1.25rem;
           line-height: 1.5rem;
         `;
+
       default:
-        return null;
+        return css`
+          font-size: 4.625rem;
+          line-height: 5.625rem;
+        `;
     }
   }}
 
@@ -76,7 +78,7 @@ export const Text = styled.h1<IText>`
     const { styles } = props;
     if (styles?.fontSize) {
       return css`
-        font-size: styles?.fontSize;
+        font-size: ${styles.fontSize};
       `
     }
   }}
