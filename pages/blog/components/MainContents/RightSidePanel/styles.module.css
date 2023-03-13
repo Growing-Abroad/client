@@ -36,6 +36,8 @@
     .rightPanel {
         max-width: none;
         margin: 40px;
+        margin-top: 19px;
+        margin-bottom: 0;
     }
     .social img {
         width: 50px;

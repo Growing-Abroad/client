@@ -39,6 +39,7 @@
         letter-spacing: 0em;
         text-align: left;
         margin-bottom: 40px;
+        margin-top: 24px;
     }
 
     .button {
@@ -50,6 +51,7 @@
         padding: 8px 15px !important;
         height: auto!important;
         margin-right: 10px;
+        margin-bottom: 3px;
     }
 
     .bannerContainer {

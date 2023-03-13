@@ -61,6 +61,7 @@
     .leftPanel h1 {
         font-size: 36px;
         line-height: 44px;
+        display: block;
     }
 
     .leftPanel .para:first-of-type:first-letter {

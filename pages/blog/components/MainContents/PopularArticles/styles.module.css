@@ -12,6 +12,10 @@
 }
 
 @media (max-width: 1024px) {
+    .popularArticles {
+        padding-top: 14px;
+    }
+
     .popularArticles h3 {
         font-size: 24px !important;
         font-weight: 600 !important;
@@ -22,7 +26,7 @@
     }
 
     .article {
-        padding-bottom: 40px;
+        padding-bottom: 33px;
     }
 
     .article h3 {
