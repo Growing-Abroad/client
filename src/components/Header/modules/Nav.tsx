@@ -8,13 +8,14 @@ function Nav(props: NavProps) {
   return (
     <nav>
       <StyledUl open={open}>
-        <BurguerLogo src={Logo} alt="growing abroad logo" open={open} />
+        <BurguerLogo src={Logo.src} alt="growing abroad logo" open={open} />
         <li>Online Course</li>
         <li>Coaching</li>
         <li>Career Blog</li>
         <li>
           <Link href={'/about-us'}>About Us</Link>
         </li>
+        <li><Link href={'/blog'}>Blog</Link></li>
         <li>Jobs</li>
         <li>FAQ</li>
       </StyledUl>

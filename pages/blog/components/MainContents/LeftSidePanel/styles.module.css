@@ -1,0 +1,41 @@
+.leftPanel {
+    padding-left: 140px;
+    padding-right: 44px;
+    padding-bottom: 175px;
+}
+
+.selectOption {
+    padding: 10px 47px;
+    width: auto;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: 1.3px;
+    text-align: left;
+    border: 1px solid #000;
+    margin-bottom: 48px;
+
+}
+.para {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: justify;
+    margin-bottom: 25px;
+    margin-top: 28px;   
+}
+.leftPanel .para:first-of-type{
+    margin-top: 49px;
+}
+.leftPanel .para:first-of-type:first-letter {
+    font-family: inherit;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: justify;
+}

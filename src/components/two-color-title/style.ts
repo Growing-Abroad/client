@@ -31,13 +31,13 @@ export const Text = styled.h1<IText>`
   ${(props) => {
     const { styles, color } = props;
     return css`
+    display: ${styles?.display || 'contents'};
     color: ${() => styles?.color || theme.colors[color]};
-    font-size: "4.625rem";
-    line-height: "5.625rem";
-    font-family: ${montserrat.style.fontFamily};
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 1.3px;
+    font-size: ${ styles?.fontSize ||"4.625rem"};
+    line-height: ${ styles?.lineHeight || "5.625rem"};
+    font-weight: ${styles?.fontWeight || 600};
+    text-align: ${styles?.textAlign || 'inherit'};
+    letter-spacing: ${ styles?.letterSpacing || '1.3px'};
   `}}
 
   ${(props) => {
@@ -54,6 +54,7 @@ export const Text = styled.h1<IText>`
         `;
       case "h3":
         return css`
+        display: ${props.styles?.display || 'contents'};
           font-size: 2rem;
           line-height: 2.5rem;
         `;
