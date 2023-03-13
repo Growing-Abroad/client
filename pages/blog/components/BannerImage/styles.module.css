@@ -64,7 +64,8 @@
     display: flex;
 }
 
-.author span, .published span {
+.author span,
+.published span {
     font-family: inherit;
     font-size: 20px;
     font-weight: 600;
@@ -72,16 +73,61 @@
     letter-spacing: 0em;
     text-align: left;
 }
+
 .published {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 91px;
 }
+
 .author span:first-child {
     padding-right: 66px;
 }
+
 .author span img {
     height: 50px;
     width: 50px;
+}
+
+@media (max-width:768px) {
+    .publisherContainer {
+        padding: 15px 40px 70px;
+        display: block;
+    }
+
+    .publisherContainer div {
+        width: 100%;
+    }
+
+    .author,
+    .published {
+        display: flex;
+        margin: auto;
+    }
+
+    .published {
+        text-align: left;
+        display: block;
+    }
+
+    .author {
+        margin-bottom: 20px;
+    }
+
+    .author span,
+    .published span {
+        margin: auto;
+        display: block;
+    }
+
+    .bannerCol {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 430px) {
+    .bannerCol {
+        height: 110px;
+    }
 }

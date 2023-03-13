@@ -12,7 +12,7 @@ function Masterclass () {
 
         <Image src={image.src} width="100%"></Image>
 
-        <Button padding="20px 40px" fontSize="20px" width="auto" className={classes.button}>Watch free Masterclasses</Button>
+        <Button width="auto" className={classes.button}>Watch free Masterclasses</Button>
         </div>
     );
 }

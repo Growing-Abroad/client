@@ -10,5 +10,21 @@
 }
 
 .button {
-    line-height: 19px;
+    font-size: 20px!important;
+    line-height: 19px!important;
+    height: auto!important;
+    padding: 20px 40px!important;
+}
+
+@media (max-width: 1024px) {
+    .masterclass h3 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .button {
+        font-size: 14px!important;
+        height: auto!important;
+        padding: 8px 15px!important;
+    }
 }

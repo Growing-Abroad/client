@@ -14,8 +14,8 @@ function LeftSidePanel() {
                     <option>Option Three</option>
                 </FormSelect>
 
-                <TwoColorTitle text1="How to write a CV in German" text2="Standards" hasSpaceBtw wrapperStyles={{ display: 'initial' }}
-                    styles={{ display: 'flex' }}></TwoColorTitle>
+                <TwoColorTitle text1="How to write a CV in German" text2="Standards" hasSpaceBtw wrapperStyles={{ display: 'contents' }}
+                    styles={{ display: 'block' }}></TwoColorTitle>
 
                 <p className={classes.para}>
                     Growing abroad helps qualified people that dream to live and work abroad, but have no clue on where to start in order to achieve that.
