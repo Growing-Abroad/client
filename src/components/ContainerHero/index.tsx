@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Container } from './style';
-import border from '@/../public/assets/career-blog/border-bottom.png';
-import borderMobile from '@/../public/assets/career-blog/border-mobile.svg';
+import border from '@/../public/assets/border-bottom.webp';
+import borderMobile from '@/../public/assets/border-mobile.svg';
 import useAppContext from '@/hooks/useAppContext';
 import { CSSProperties } from 'styled-components';
 

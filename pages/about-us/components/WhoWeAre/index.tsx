@@ -1,12 +1,12 @@
 import TwoColorTitle from "@components/two-color-title";
 import { socials2 } from "@utils/socials";
 import React from "react";
-import UanAndManu from '@assets/about-us/about-us-coaches.webp';
+import UanAndManu from '@assets/pages/about-us/about-us-coaches.webp';
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { theme } from "@styles/theme";
-import YoutubeplayButton from '@assets/about-us/youtube-play-btn.png'
+import YoutubeplayButton from '@assets/youtube-play-btn.webp'
 import { Col, Container, Row } from "react-bootstrap";
 import classes from './style.module.css';
 import { Montserrat } from '@next/font/google'

@@ -1,12 +1,7 @@
 import {
-  FooterContent,
   FooterContentWrapper,
   FooterLinks,
   FooterLinksContentWrapper,
-  FooterLinksLi,
-  FooterLinksUl,
-  FooterLinksWrapper,
-  SocialMediaWrapper,
   StyledFooter,
   SocialMedia,
   FooterBottomWrapper,
@@ -24,7 +19,7 @@ import NewsLetter from '../news-letter';
 import useAppContext from '@/hooks/useAppContext';
 import StdButton from '../generics/StdButton/StdButton';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import wave from "../../../public/assets/main-page/desktop-wave.svg"
+import wave from "../../../public/assets/wave-desktop.svg"
 
 export default function Footer() {
   const {
@@ -66,9 +61,11 @@ export default function Footer() {
               <StdButton
                 style={{
                   display: 'flex',
-                  width: '210px',
-                  padding: '20px 40px',
-                  fontSize: '16px',
+                  alignItems: `${isMobile ?'center' :''}`,
+                  justifyContent: `${isMobile ?'center' :''}`,
+                  width: `${isMobile ?'143px' : '210px'}`,
+                  padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
+                  fontSize: `${isMobile ?'12px' : '16px'}`,
                 }}
                 icon={faEnvelope}
               >
