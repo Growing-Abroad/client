@@ -21,17 +21,16 @@ export const TwoColorTitleWrapper = styled.div`
   }
   `;
 
-interface IText {
-  color: string;
-  styles?: CSSProperties;
+export interface IText {
+  color?: string;
   as?: keyof JSX.IntrinsicElements;
 }
 
 export const Text = styled.h1<IText>`
   ${(props) => {
-    const { styles, color } = props;
+    const { color } = props;
     return css`
-    color: ${() => styles?.color || theme.colors[color]};
+    color: ${theme.colors[color!]};
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
@@ -71,24 +70,6 @@ export const Text = styled.h1<IText>`
           font-size: 4.625rem;
           line-height: 5.625rem;
         `;
-    }
-  }}
-
-  ${(props) => {
-    const { styles } = props;
-    if (styles?.fontSize) {
-      return css`
-        font-size: ${styles.fontSize};
-      `
-    }
-  }}
-
-  ${(props) => {
-    const { styles } = props;
-    if (styles?.lineHeight) {
-      return css`
-        line-height: styles?.lineHeight;
-      `
     }
   }}
 

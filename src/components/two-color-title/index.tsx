@@ -1,15 +1,13 @@
 import { CSSProperties } from 'styled-components';
-import { TwoColorTitleWrapper, Text } from './style';
-export interface TwoColorTitleParameters {
+import { TwoColorTitleWrapper, Text, IText } from './style';
+export interface TwoColorTitleParameters extends IText {
   text1: string;
   text2: string;
   hasSpaceBtw?: boolean;
   fullWidth?: boolean;
   wrapperStyles?: CSSProperties;
   fontSize?: string;
-  color?: string;
   styles?: CSSProperties;
-  as?: keyof JSX.IntrinsicElements
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
@@ -24,11 +22,11 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
 }) => {
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
-      <Text color={'primaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
+      <Text color={'primaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
         {text1}
         {hasSpaceBtw ? '\xa0' : ''}
       </Text>
-      <Text color={'secondaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
+      <Text color={'secondaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
         {text2}
       </Text>
     </TwoColorTitleWrapper >
