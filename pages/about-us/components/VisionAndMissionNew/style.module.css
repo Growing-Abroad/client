@@ -1,0 +1,154 @@
+.section {
+    box-shadow: 0px 10px 10px #efefef;
+    margin-top: 93px;
+}
+
+.missionBg {
+    height: 748px;
+    background-position: right;
+    background-size: cover;
+    position: relative;
+}
+
+.missionContainer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 109px 0 138px 0;
+    background: #0073CFEB;
+}
+
+.missionInner {
+    max-width: 420px;
+    margin: auto;
+    color: white;
+}
+
+.missionInner h3,
+.visionContainer h3 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 49px;
+    letter-spacing: 1.3px;
+    text-align: left;
+
+}
+
+.missionInner p,
+.visionContainer p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: justify;
+
+}
+
+.visionCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visionContainer {
+    /* padding-left: 79px; */
+    max-width: 400px;
+}
+
+@media (max-width: 992px) {
+    .visionContainer {
+        padding-top: 109px;
+        padding-bottom: 138px;
+        padding-left:0;
+        max-width: 420px;
+    }
+    .missionContainer {
+        background: #0073CF;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .section {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: auto;
+    }
+
+    .visionCol {
+        box-shadow: 10px -4px 6px #c6c6c6;
+        padding: 0px 40px 0px 46px;
+    }
+
+    .sectionContainer {
+        padding: 0;
+        margin-top: 93px;
+    }
+
+    .visionContainer {
+        padding-left: 0;
+        max-width: 420px;
+        padding: 36px 0 34px 0 ;
+    }
+
+    .missionContainer {
+        padding: 36px 0 34px 0 ;
+    }
+
+    .missionBg {
+        height: 420px;
+    }
+
+
+}
+
+@media (max-width: 580px) {
+    .visionContainer {
+		padding:0;
+	}
+}
+
+@media (max-width: 500px) {
+    .missionInner h3, .visionContainer h3 {
+        font-size: 24px;
+        line-height: 29px;
+        text-align: left;
+
+    }
+
+    .missionInner p, .visionContainer p  {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    .missionBg {
+        height: 350px;
+    }
+
+    .missionContainer {
+        padding: 29px 40px 20px 46px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: auto;
+    }
+
+    .visionCol {
+        box-shadow: 10px -4px 6px #c6c6c6;
+        padding: 36px 40px 34px 46px;
+    }
+
+    .sectionContainer {
+        padding: 0;
+        margin-top: 93px;
+    }
+}

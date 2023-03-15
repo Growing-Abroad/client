@@ -1,0 +1,84 @@
+.leftPanel {
+    margin-left: 140px;
+    margin-right: 44px;
+    padding-bottom: 175px;
+    padding: 0;
+    max-width: 780px;
+}
+
+.selectOption {
+    padding: 10px 47px;
+    width: auto;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: 1.3px;
+    text-align: left;
+    border: 1px solid #000;
+    margin-bottom: 48px;
+
+}
+
+.para {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: justify;
+    margin-bottom: 25px;
+    margin-top: 28px;
+}
+
+.leftPanel .para:first-of-type {
+    margin-top: 49px;
+}
+
+.leftPanel .para:first-of-type:first-letter {
+    font-family: inherit;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: justify;
+}
+
+@media (max-width: 1024px) {
+    .leftPanel {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .selectOption {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+
+    .leftPanel h1 {
+        font-size: 36px;
+        line-height: 44px;
+        display: block;
+    }
+
+    .leftPanel .para:first-of-type:first-letter {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .para {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .leftPanel .para:first-of-type {
+        margin-top: 16px;
+        margin-bottom: 23px;
+    }
+
+}

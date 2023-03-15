@@ -1,0 +1,23 @@
+.para {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.375rem;
+    max-width: 65.813rem;
+}
+
+.container {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .para {
+        font-size: 1rem;
+        line-height: 1.688rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .para {
+        max-width: 92vw;
+    }
+  }

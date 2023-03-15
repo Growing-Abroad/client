@@ -1,0 +1,40 @@
+.popularArticles {
+    padding-top: 30px;
+}
+
+.article {
+    padding-bottom: 57px;
+}
+
+.article img {
+    width: 100%;
+    padding-bottom: 12px;
+}
+
+@media (max-width: 1024px) {
+    .popularArticles {
+        padding-top: 14px;
+    }
+
+    .popularArticles h3 {
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        line-height: 29px !important;
+        letter-spacing: 1.3px !important;
+        text-align: center !important;
+
+    }
+
+    .article {
+        padding-bottom: 33px;
+    }
+
+    .article h3 {
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        line-height: 29px !important;
+        letter-spacing: 1.3px !important;
+        text-align: left !important;
+
+    }
+}
