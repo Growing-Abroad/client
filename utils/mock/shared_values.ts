@@ -1,8 +1,7 @@
-import ImageMock from '@/../public/assets/about-us/job-interview-coaching.webp';
 import { StaticImageData } from 'next/image';
-import inspiration from '@assets/about-us/inspiration.webp';
-import truste from '@assets/about-us/trust.webp';
-import customerCentric from '@assets/about-us/customer-centric.webp';
+import inspiration from '@assets/pages/about-us/inspiration.webp';
+import trust from '@assets/trust.webp';
+import customerCentric from '@assets/pages/about-us/customer-centric.webp';
 
 
 interface ISharedValues {
@@ -20,7 +19,7 @@ export const sharedValues: ISharedValues[] = [
   {
     title: "Trust",
     body: "To show yourself in your full potential is only possible with trust.  We want to create an environment where people of all nations and backgrounds can meet on the same level of inclusiveness, integrity and diversity.",
-    image: truste
+    image: trust
   },
   {
     title: "Customer Centric",

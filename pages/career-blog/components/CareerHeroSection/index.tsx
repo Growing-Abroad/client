@@ -1,13 +1,14 @@
 import TwoColorTitle from '@components/two-color-title';
 import Image from 'next/image';
-import search from '@/../public/assets/career-blog/search.svg';
-import background from '@/../public/assets/career-blog/background-hero.png';
-import backgroundMobile from '@/../public/assets/career-blog/background-hero-mobile.png';
+import search from '@/../public/assets/search.svg';
+import background from '@/../public/assets/pages/career-blog/background-hero.webp';
+import backgroundMobile from '@/../public/assets/pages/career-blog/background-hero-mobile.webp';
 
 import {
+  Container,
   ContentHero,
-  line,
   SubheadingHero,
+  Line,
   NavHero,
   NavList,
   NavItem,
@@ -21,7 +22,7 @@ export default function CareerHeroSection() {
   const { isMobile } = useAppContext();
 
   return (
-    <Wrapper>
+    <Container>
       {isMobile ? (
         <>
           <ContainerHero
@@ -34,8 +35,14 @@ export default function CareerHeroSection() {
                 text1="Career"
                 text2="Blogs"
                 hasSpaceBtw
-                wrapperStyles={{ justifyContent: 'flex-start' , fontSize:'44px'}}
-                />
+                wrapperStyles={{
+                  justifyContent: 'flex-start',
+                  fontSize: '44px',
+                  paddingBottom: 0,
+                  lineHeight: '54px',
+                  textAlign: 'center',
+                }}
+              />
             </ContentHero>
           </ContainerHero>
           <SubheadingHero>
@@ -43,11 +50,11 @@ export default function CareerHeroSection() {
             you will find here in blogposts.
           </SubheadingHero>
         </>
-      ):(
+      ) : (
         <ContainerHero
-        backgroundImageDesktop={background.src}
-        backgroundImageMobile={backgroundMobile.src}
-        styles={{}}
+          backgroundImageDesktop={background.src}
+          backgroundImageMobile={backgroundMobile.src}
+          styles={{}}
         >
           <ContentHero>
             <TwoColorTitle
@@ -55,7 +62,7 @@ export default function CareerHeroSection() {
               text2="Blogs"
               hasSpaceBtw
               wrapperStyles={{ justifyContent: 'flex-start' }}
-              />
+            />
             <SubheadingHero>
               Everything you need to know about your career in Germany or
               Europe, you will find here in blogposts.
@@ -77,6 +84,7 @@ export default function CareerHeroSection() {
           </NavItem>
         </NavList>
       </NavHero>
-    </Wrapper>
+      <Line />
+    </Container>
   );
 }
