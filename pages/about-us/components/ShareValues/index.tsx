@@ -20,7 +20,7 @@ function ShareValues() {
                 <Image
                   src={sharedValue.image}
                   alt={sharedValue.title}
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: '100%', maxHeight: '258px', height: '258px' }}
                 />
                 <S.CardContent>
                   {/* <S.WhiteTriangle /> */}
