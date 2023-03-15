@@ -12,31 +12,36 @@ const {
 
 export const ContainerBlogCard = styled.div`
 display: flex;
-width:31rem;
-gap:0.875rem;
-justify-content: start;
+width:594px;
+gap:1rem;
+justify-content:flex-start;
 align-items: flex-start;
-height:14rem;
+height:246px;
 @media (max-width: ${mediaQuery}) {
-  height:8rem;
+  height:124px;
+  width:346px;
+  gap:12px;
 }
 `
 export const ContentBlogCard = styled.div`
 display: flex;
 flex-direction: column;
-width:100%;
+max-width:306px;
 height:100%;
-justify-content: space-between;
+justify-content:flex-start;
 align-items: flex-start;
-gap:0.75rem;
+gap:14px;
 @media (max-width: ${mediaQuery}) {
   height:100%;
-  gap:0.8rem;
+  gap:0.75rem;
   h3{
-    font-size:0.875rem;
+    font-size:1rem;
+    line-height:20px;
+    letter-spacing:1px;
   }
   p{
     font-size:0.75rem;
+    line-height:15px;
     }
   }
   button{
@@ -46,14 +51,18 @@ gap:0.75rem;
 export const TitleBlogCard = styled.h3`
 color:${blue700};
 font-weight: 600;
-font-size:20px;
-letter-spacing: 1.3px;
+font-size:26px;
+letter-spacing:1.3px;
+margin:0;
 `
 export const TextBlogCard = styled.p`
 color:${blue700};
 font-weight: 500;
-font-size:0.8rem;
-letter-spacing: 1.3px;
+font-size:16px;
+line-height:24px;
+max-width:306px;
+max-height:141px;
+margin:0;
 
 `
 export const ButtonReadMore = styled.button`

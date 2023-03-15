@@ -19,16 +19,16 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   fullWidth,
   wrapperStyles,
   as,
-  ...styles
+  styles, 
+  ...rest
 }) => {
-  console.log({as})
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
-      <Text color={'primaryBlue'} styles={{...styles}} as={as || 'h1'} >
+      <Text color={'primaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
         {text1}
         {hasSpaceBtw ? '\xa0' : ''}
       </Text>
-      <Text color={'secondaryBlue'} styles={{...styles}} as={as || 'h1'} >
+      <Text color={'secondaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
         {text2}
       </Text>
     </TwoColorTitleWrapper >

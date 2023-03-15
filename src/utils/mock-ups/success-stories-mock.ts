@@ -1,6 +1,6 @@
-import Img1 from "@/../public/assets/about-us/inspiration.webp";
-import Img2 from "@/../public/assets/about-us/trust.webp";
-import Img3 from "@/../public/assets/about-us/customer-centric.webp";
+import Img1 from "@/../public/assets/pages/about-us/inspiration.webp";
+import Img2 from "@/../public/assets/pages/about-us/trust.webp";
+import Img3 from "@/../public/assets/pages/about-us/customer-centric.webp";
 import { TCarouselData } from "@/components/Fancy-carousel";
 
 export const successStoriesData: TCarouselData = [

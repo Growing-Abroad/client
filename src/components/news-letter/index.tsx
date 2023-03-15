@@ -5,17 +5,18 @@ import {
   InputNewsLetter,
   InputWrapper,
   NewsLetterContainer,
-  SubscribeButton,
   SubscribeWrapper,
   TitleNewsLetter,
 } from './style';
 import { removePxFromCssValue } from '@utils/scripts/general-utility';
 import { variables } from '@styles/global-variables';
 import useAppContext from '@/hooks/useAppContext';
+import StdButton from '../generics/StdButton/StdButton';
 
 export default function NewsLetter() {
   const {
     windowSize: { width },
+    isMobile
   } = useAppContext();
 
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
@@ -39,7 +40,7 @@ export default function NewsLetter() {
             <div
               style={{
                 gap: '8px',
-                margin: '18px 0',
+
               }}
             >
               <CheckboxWrapper>
@@ -58,19 +59,20 @@ export default function NewsLetter() {
               </p>
             </div>
           </SubscribeWrapper>
-          <SubscribeButton
+          <StdButton
             style={{
               display:'flex',
-              alignItems: 'center',
-              width: '193px',
-              padding: '20px 40px',
-              fontSize: '16px',
-              height:'54px',
-              textAlign: 'center'
+              alignItems: `${isMobile ? "flex-start" : "center"}`,
+              justifyContent:`${isMobile ? "center" : "center"}`,
+              width: `${isMobile ? "112px" : "193px"}`,
+              padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
+              fontSize:`${isMobile ?'14px' : '16px'}`,
+              height:`${isMobile ?'35px' : '54px'}`,
+              textAlign: `${isMobile ? "start" : "center"}`
             }}
           >
             Subscribe
-          </SubscribeButton>
+          </StdButton>
         </ContentInputNewsLetter>
       </NewsLetterContainer>
     </>

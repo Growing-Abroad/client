@@ -2,18 +2,24 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import styled from "styled-components";
 
+const { colors: { blue700 } } = theme;
+
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  gap: 2rem;
+  gap: 50px;
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   color: ${theme.colors.primaryBlue};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+  }
+
+  @media (max-width: 580px) {
+    padding: 72px 42px 2px;
   }
 `;
 
@@ -29,7 +35,7 @@ export const CardContainer = styled.div`
 `;
 export const Card = styled.div`
   width: 100%;
-  max-width: 300px;
+  max-width: 376px;
   display: flex;
   flex-direction: column;
   border: 1px solid #ececec;
@@ -48,23 +54,23 @@ export const Card = styled.div`
 export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 30px;
   align-items: center;
-  padding: 1rem;
+  padding: 30px;
   height: 100%;
   position: relative;
+  text-align: justify;
+  color: ${blue700};
 
   h3 {
-    font-size: 1.75rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 600;
     z-index: 10;
   }
 
   > p {
-    text-align: justify;
-    letter-spacing: 1px;
-    z-index: 10;
     color: ${theme.colors.blue700};
+    font-weight: 500;
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {

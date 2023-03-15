@@ -1,12 +1,12 @@
 import TwoColorTitle from "@components/two-color-title";
 import { socials2 } from "@utils/socials";
 import React from "react";
-import UanAndManu from '@assets/about-us/about-us-coaches.webp';
+import UanAndManu from '@assets/pages/about-us/about-us-coaches.webp';
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { theme } from "@styles/theme";
-import YoutubeplayButton from '@assets/about-us/youtube-play-btn.png'
+import YoutubeplayButton from '@assets/youtube-play-btn.webp'
 import { Col, Container, Row } from "react-bootstrap";
 import classes from './style.module.css';
 import { Montserrat } from '@next/font/google'
@@ -22,15 +22,7 @@ function WhoWeAre() {
 
   return (
     <Container className={classes.whoWrAre}>
-      <Row>
-        <Col>
-          <TwoColorTitle text1="Who" text2="We Are" hasSpaceBtw wrapperStyles={{ justifyContent: "center" }} as="h2" />
-          <div className={classes.embarmain}>
-            <div className={classes.embar + ' ' + classes.embarbig}></div>
-          </div>
-        </Col>
-      </Row>
-      <Row>
+        <TwoColorTitle text1="Who" text2="We Are" hasSpaceBtw wrapperStyles={{width: '100%', justifyContent: "center" }} as="h2" />
         <Col className={classes.centerContents + " pb-5" } sm="12" md="12" lg="6">
           <div className={classes.imageContainer}>
             <Image src={UanAndManu} alt="uan and manu" className={classes.youtubeImage}></Image>
@@ -39,7 +31,6 @@ function WhoWeAre() {
             </div>
           </div>
         </Col>
-        <Col style={{ paddingLeft: "10px" }} sm="12" md="12" lg="6">
           <S.p style={{ fontFamily: font.style.fontFamily }}>
             Growing abroad helps qualified people that dream to live and work abroad, but have
             no clue on where to start in order to achieve that. These are people who
@@ -57,8 +48,6 @@ function WhoWeAre() {
             We provide a life-changing experience where you will learn a different language, get to
             know a new culture and have a different perspective in your life.
           </S.p>
-        </Col>
-      </Row>
     </Container>
   );
 }
