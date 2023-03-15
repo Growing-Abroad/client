@@ -17,6 +17,10 @@ export const Container = styled.section`
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
   }
+
+  @media (max-width: 580px) {
+    padding: 72px 42px 2px;
+  }
 `;
 
 export const CardContainer = styled.div`
