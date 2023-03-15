@@ -12,6 +12,7 @@ function CommunitySection() {
           text2="Community"
           hasSpaceBtw
           color="#ffffff"
+          as="h2"
         />
         <Socials>
           <CardsWrapper>

@@ -1,8 +1,8 @@
 import * as S from './styles'
 
-import studentHat from '@/../public/assets/main-page/student-hat.svg'
-import worldPicture from '@/../public/assets/main-page/world-icon.svg'
-import expertPicture from '@/../public/assets/main-page/person-icon.svg'
+import studentHat from '@/../public/assets/student-hat.svg'
+import worldPicture from '@/../public/assets/world-icon.svg'
+import expertPicture from '@/../public/assets/person-icon.svg'
 
 import WorkInCard from './WorkInCard'
 import { useRouter } from "next/router";
@@ -25,6 +25,7 @@ return (
           text1="English Speaking Jobs in"
           text2="Germany"
           hasSpaceBtw
+          as="h2"
         />
 
       <S.CardSpace>

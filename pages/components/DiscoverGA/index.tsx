@@ -19,6 +19,7 @@ export default function DiscoverGA() {
         text1="Discover"
         text2="Growing Abroad"
         hasSpaceBtw
+        as="h2"
       />
 
       <DiscoverContent>

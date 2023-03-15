@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Input } from '@/styles/global-styles';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
-import { Button } from '@/styles/global-styles';
+import StdButton from '../generics/StdButton/StdButton';
 
 const {
   colors: { primaryYellow, primaryBlue,blue500, white },
@@ -18,10 +18,8 @@ export const NewsLetterContainer = styled.div`
   width: 100%;
   align-items:flex-start;
   gap:26px;
-
-
   @media (max-width: ${mediaQuery}) {
-    align-items: center;
+    align-items: start;
     width: 100%;
     flex-direction: column;
 
@@ -35,12 +33,13 @@ color:${white};
 @media (max-width: ${mediaQuery}) {
     width: 200px;
     height:auto;
-
+    text-align:start;
   }
 `
 export const InputWrapper= styled.div`
 width: 100%;
 display:flex;
+gap:1vw;
 justify-content:space-between;
 @media (max-width: ${mediaQuery}) {
     flex-direction: column;
@@ -55,24 +54,16 @@ export const InputNewsLetter = styled(Input)`
   border:transparent;
   padding: 16px 50px;
   outline:0;
-  ${Button}{
 
-    }
   @media (max-width: ${mediaQuery}) {
-    width: 80%;
+    width:312px;
     max-height: 32px;
-    ${Button}{
-      margin:0 70px;
-    }
+    font-size:12px;
   }
 
 
 `;
-export const SubscribeButton = styled(Button)`
-  @media (max-width: ${mediaQuery}) {
-    margin:0 70px;
-  }
-`
+
 export const ContentInputNewsLetter= styled.div`
 display: flex;
 flex-direction:row;
@@ -80,7 +71,9 @@ gap:12px;
 width: 100%;
 @media (max-width: ${mediaQuery}) {
     flex-direction: column;
+    align-items:flex-start;
     gap:22px;
+
 
   }
 `
@@ -94,10 +87,6 @@ export const SubscribeWrapper = styled.div`
     flex-direction: column;
     gap:22px;
     align-items: start;
-      & div{
-        margin:0 65px!important;
-      }
-
   }
 `
 
@@ -122,7 +111,7 @@ export const CheckboxWrapper = styled.label`
   }
   span {
     position: absolute;
-    top: ${12}px;
+    top: ${10}px;
     left: '10px';
     height: ${boxSize}px;
     width: ${boxSize}px;
@@ -130,7 +119,7 @@ export const CheckboxWrapper = styled.label`
 
     outline: 3px solid ${white};
     @media (max-width: ${mediaQuery}) {
-      top: ${42 / 2 - boxSize / 2}px;
+      top: ${52 / 2 - boxSize / 2}px;
     }
   }
   &:hover input ~ span {
@@ -149,7 +138,7 @@ export const CheckboxWrapper = styled.label`
   }
   & span:after {
   left: 4px;
-  top: -1px;
+  top: 1px;
   width: 5px;
   height: 10px;
   border: solid white;
