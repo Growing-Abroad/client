@@ -1,17 +1,16 @@
+import Image from 'next/image';
 import TwoColorTitle from '@components/two-color-title';
-import background from '@/../public/assets/pages/career-blog/background-hero.webp';
-import backgroundMobile from '@/../public/assets/pages/career-blog/background-hero-mobile.webp';
-
-import {
-  Container,
-  ContentHero,
-  SubheadingHero,
-} from './style';
 import ContainerHero from '@/components/ContainerHero';
-import NavHero  from '@/components/NavHero';
 import useAppContext from '@/hooks/useAppContext';
 
-export default function CareerHeroSection() {
+import background from '@/../public/assets/pages/faq/background-desktop.webp';
+import backgroundMobile from '@/../public/assets/pages/faq/background-mobile.webp';
+
+import { Container, ContentHero, SubheadingHero } from './style';
+import NavHero from '@/components/NavHero';
+import Link from 'next/link';
+
+export default function FaqHeroSection() {
   const { isMobile } = useAppContext();
 
   return (
@@ -25,22 +24,24 @@ export default function CareerHeroSection() {
           >
             <ContentHero>
               <TwoColorTitle
-                text1="Career"
-                text2="Blogs"
+                text1="Frequently"
+                text2="Asked Questions"
                 hasSpaceBtw
                 wrapperStyles={{
                   justifyContent: 'flex-start',
                   fontSize: '44px',
                   paddingBottom: 0,
                   lineHeight: '54px',
-                  textAlign: 'center',
+                  textAlign: 'start',
+                  maxWidth: '50%',
                 }}
               />
             </ContentHero>
           </ContainerHero>
           <SubheadingHero>
-            Everything you need to know about your career in Germany or Europe,
-            you will find here in blogposts.
+            Got a question? We're here to answer ! If you don't see your
+            question here, drop us a line on or{' '}
+            <Link href="#">contact page.</Link>
           </SubheadingHero>
         </>
       ) : (
@@ -51,19 +52,20 @@ export default function CareerHeroSection() {
         >
           <ContentHero>
             <TwoColorTitle
-              text1="Career"
-              text2="Blogs"
+              text1="Frequently"
+              text2="Asked Questions"
               hasSpaceBtw
-              wrapperStyles={{ justifyContent: 'flex-start' }}
+              wrapperStyles={{ justifyContent: 'flex-start', maxWidth: '60%' }}
             />
             <SubheadingHero>
-              Everything you need to know about your career in Germany or
-              Europe, you will find here in blogposts.
+            Got a question? We're here to answer ! If you don't see your
+            question here, drop us a line on or{' '}
+            <Link href="#">contact page.</Link>
             </SubheadingHero>
           </ContentHero>
         </ContainerHero>
       )}
-       <NavHero />
+      <NavHero />
     </Container>
   );
 }
