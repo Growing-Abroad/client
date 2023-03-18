@@ -10,13 +10,13 @@ const font = Montserrat({
 const { colors: {primaryBlue, secondaryBlue} } = theme;
 
 export const Container = styled.section`
-  width: min(100%, ${variables.sizes.maxWidthAll});
+  width:100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
   gap: 2rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding};
+  padding: 80px ${variables.sizes.globalHorizontalPadding} 0 ${variables.sizes.globalHorizontalPadding};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
@@ -25,7 +25,7 @@ export const Container = styled.section`
 
 export const VideoPlayButtonWrapper = styled.div`
   position: absolute;
-  left: calc(50% - 120px/2) ;
+  left: calc(50% - 20px/2) ;
   top: 43%;
   z-index: 2;
 
@@ -44,6 +44,9 @@ export const VideoPlayButtonWrapper = styled.div`
 export const Paragraph = styled.p`
   display: flex;
   flex-direction: column;
+  width:918px;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   color: ${primaryBlue};
   font: 400 0.8rem;
@@ -58,6 +61,7 @@ export const p = styled.p `
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 2rem;
+  text-align: center;
 
   @media (max-width: 768px) {
     padding-left: 40px;

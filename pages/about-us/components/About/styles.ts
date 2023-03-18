@@ -12,44 +12,14 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding} 0;
+  padding: 40px ${variables.sizes.globalHorizontalPadding} 0;
   color: ${theme.colors.primaryBlue};
   font: 400 1rem;
   padding-bottom:100px;
-  background-color: #e3effe;
-
-  .read-more-btn {
-    margin: auto;
-    min-width: 200px;
-    border-radius: 50px;
-    padding: 20px 40px;
-    background: #FFDB5C;
-    border: #FFDB5C;
-    box-shadow: 0px 15px 30px 0px #00000040;
-    color: #05335B;
-    font-family: ${font.style.fontFamily};
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 19px;
-  }
+  border-bottom: 1px solid #05335B;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
-  }
-
-  @media (max-width: 580px) {
-    padding: 28px 26px 58px 26px;
-
-    .read-more-btn {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-width: 476px) {
-    .read-more-btn {
-      min-width: auto;
-      padding: 8px 15px;
-    }
   }
 `;
 
@@ -57,9 +27,9 @@ export const TextContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  gap: 293px;
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
@@ -71,17 +41,19 @@ export const TextContainer = styled.div`
 `;
 
 export const Text = styled.div`
-  display: flex;
+width:400px;
+display: flex;
   flex-direction: column;
-  gap: 1rem;
-  flex-grow: 1;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
 
   h3 {
     font-weight: 600;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin:0;
+    white-space:nowrap;
   }
 
   h4{
@@ -92,7 +64,8 @@ export const Text = styled.div`
     line-height: 1.5rem;
     max-width: 342px;
     width:100%;
-    margin:auto;
+    padding-bottom: 20px;
+
   }
 
   p {
