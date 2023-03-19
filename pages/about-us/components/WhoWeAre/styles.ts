@@ -19,7 +19,8 @@ export const Container = styled.section`
   padding: 80px ${variables.sizes.globalHorizontalPadding} 0 ${variables.sizes.globalHorizontalPadding};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+    padding:20px 40px 0 40px;
+    gap:1.5rem;
   }
 `;
 
@@ -54,6 +55,9 @@ export const Paragraph = styled.p`
   @media (min-width: ${variables.sizes.mediaQuery}) {
     font-size: 1rem;
   }
+  @media (max-width: 580px) {
+    width:100%;
+  }
 `;
 
 export const p = styled.p `
@@ -73,6 +77,7 @@ export const p = styled.p `
     line-height: 30px;
     text-align: justify;
     padding: 0 15px;
+    letter-spacing: 1.3px;
   }
 `;
 

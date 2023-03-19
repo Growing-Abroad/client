@@ -12,11 +12,11 @@ function About() {
   return (
     <S.Container>
       <S.TextContainer>
-        {aboutUs.map((section) => (
-          <S.Text key={section.title}>
+        {aboutUs.map((section, i) => (
+          <S.Text key={section.title}  id={'box'+ i}>
             <h3>{section.title}</h3>
             <h4>{section.subtitle}</h4>
-            <StdButton style={{width:'202px', height:'59px', display:'flex', padding:"20px 40px", letterSpacing:'1.3px',whiteSpace:'nowrap'}}>
+            <StdButton style={{width:`${isMobile ?'118px' :'202px'}`, height:`${isMobile ?'40px' :'59px'}`, display:'flex',alignItems: 'center',justifyContent:'center',padding:`${isMobile ?'8px 15px' :'20px 40px;'}`, letterSpacing:'1.3px',whiteSpace:'nowrap'}}>
               Read More
             </StdButton>
             {isOpen && section.paragraphs.map((p, i) => <p className="more-text" key={i}>{p}</p>)}

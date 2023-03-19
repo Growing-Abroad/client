@@ -42,6 +42,7 @@
   width:144px;
   height:99px;
   border-radius:14px;
+
 }
 
 .blurbRippleOut:after {
@@ -159,4 +160,22 @@
 	.whoWrAre {
 		padding-top: 22.43px;
 	}
+}
+
+@media(max-width:580px){
+  .youtubePlayButton{
+    width:44px;
+    height:30px;
+    border-radius:9px;
+  }
+  .ripplesContainer {
+    text-align: center;
+	margin: 0 auto;
+	/* padding: 2em 0 3em; */
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: calc(50% - 30px);
+    left: calc(50% - 50px);
+}
 }

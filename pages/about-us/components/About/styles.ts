@@ -19,7 +19,8 @@ export const Container = styled.section`
   border-bottom: 1px solid #05335B;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+    padding:30px 40px 60px 40px;
+
   }
 `;
 
@@ -38,6 +39,24 @@ export const TextContainer = styled.div`
   @media (max-width:5580px) {
     flex-direction: initial;
   }
+  @media (max-width: 580px) {
+    justify-content:space-between;
+    gap:50px;
+    #box0 {
+      h3,h4{
+        text-align:left;
+      }
+      align-items: start;
+    }
+
+    #box1{
+      h3,h4{
+        text-align:right;
+      }
+      align-items: end;
+    }
+
+    }
 `;
 
 export const Text = styled.div`
@@ -74,8 +93,11 @@ display: flex;
   }
 
   @media (max-width: 580px) {
+
+    max-width:160px;
     h3 {
       font-size: 24px;
+      white-space: initial;
     }
     h4 {
       font-size: 14px;

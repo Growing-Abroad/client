@@ -11,6 +11,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import classes from './style.module.css';
 import { Montserrat } from '@next/font/google';
 import * as S from './styles';
+import useAppContext from '@/hooks/useAppContext';
 
 const font = Montserrat({
   subsets: ['latin'],
@@ -18,6 +19,7 @@ const font = Montserrat({
 
 function WhoWeAre() {
   const youtube = socials2?.find((social) => social.name === 'youtube');
+  const {isMobile} = useAppContext();
   const {
     colors: { secondaryBlue },
   } = theme;
@@ -28,7 +30,7 @@ function WhoWeAre() {
         text1="Who"
         text2="We Are"
         hasSpaceBtw
-        wrapperStyles={{ width: '100%', justifyContent: 'center' }}
+        wrapperStyles={{ width: '100%', justifyContent: 'center', height:`${isMobile ? '44px' : 'auto'}` }}
         as="h2"
       />
 
