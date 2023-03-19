@@ -48,7 +48,7 @@ const Service = styled.div`
 const ServiceData = styled.div`
     flex-grow: 1;
     padding: 80px 0 70px;
-    max-width: 1000px;
+    max-width: 1500px;
 
     .services-list {
         display: flex;

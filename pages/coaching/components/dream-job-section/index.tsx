@@ -108,7 +108,7 @@ export default function DreamJobSection() {
     const { isMobile } = useAppContext();
     return (
         <>
-            <CenteredSection>
+            <CenteredSection contentStyles={{paddingTop: '160px'}}>
                 <TwoColorTitle text1="Ready for your" text2="Dream Job?" as="h2" hasSpaceBtw wrapperStyles={isMobile ? {flexDirection: 'column'} : undefined} styles={isMobile ? {lineHeight: '44px'} : undefined} />
                 <DreamJobSubtitle>
                     Choose one of our individual Coaching Services to prepare you for your journey to Germany and Europe
