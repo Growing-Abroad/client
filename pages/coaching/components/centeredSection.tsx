@@ -13,7 +13,7 @@ interface IStyledProp {
 
 }
 
-const { sizes: { globalHorizontalPadding, maxWidthAll}} = variables;
+const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
 
 const Section = styled.section<IStyledProp>`
     display: flex;
@@ -42,6 +42,11 @@ const ContentWrapper = styled.div<IStyledProp>`
         return `${formattedKey}: ${value};`;
       })}
     `}
+
+    @media (max-width: ${mediaQuery}) {
+      padding: 80px 66px;
+      
+    }
 `
 
 export default function CenteredSection({children, containerStyles, contentStyles}: Props) {

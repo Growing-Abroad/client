@@ -3,18 +3,16 @@ import CenteredSection from "../centeredSection";
 import styled from "styled-components";
 import { variables } from "@/styles/global-variables";
 import { theme } from "@/styles/theme";
-import coverLetter from '@assets/pages/coaching/cover-letter-optimization.png';
-import jobSearch from '@assets/pages/coaching/job-search-strategy.png';
-import jobInterview from '@assets/pages/coaching/job-interview-preparation.png';
+import DreamJobCard, { IDramJobCardProps } from "./dream-job-card";
 import cvOptimization from '@assets/pages/coaching/cv-optimization.png';
-import linkedInOptimization from '@assets/pages/coaching/linkedIn-optimization.png';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import Image from "next/image";
-import checkIcon from '@assets/icons/check-icon.svg';
-import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
-import StdButton from "@/components/generics/StdButton/StdButton";
+import coverLetter from '@assets/pages/coaching/cover-letter-optimization.png';
+import jobInterviewPrep from '@assets/pages/coaching/job-interview.png';
+import jobSearchStrategy from '@assets/pages/coaching/job-searching-strategy.png';
+import linkedinOpt from '@assets/pages/coaching/linkedin-optimization.png';
+import useAppContext from "@/hooks/useAppContext";
 
-const { sizes: { globalHorizontalPadding, maxWidthAll}} = variables;
+
+const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
 const { colors: {blue700} } = theme; 
 
 
@@ -24,69 +22,112 @@ const DreamJobSubtitle = styled.p`
     line-height: 38px;
     font-weight: 600;
     max-width: 708px;
-    text-align: center;
     margin-top: 44px;
     margin-bottom: 90px;
+    text-align: center;
+
+    @media (max-width: ${mediaQuery}) {
+        font-size: 1rem;
+        line-height: 1.625rem;
+        margin-bottom: 0;
+    }
 `
 
-const Service = styled.div`
-    height: 600px;
-    width: 100%;
-    max-width: ${maxWidthAll};
-    padding-left: ${globalHorizontalPadding};
+const CardsWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    gap: 56px;
+    width: 100%;
 `
 
-const ServiceData = styled.div`
-    flex-grow: 1;
-    padding: 80px 0 70px;
-`
+const mockupDreamJobCard: IDramJobCardProps[] = [
+    {
+        title: 'CV Optimization',
+        description: "Your CV is your Business Card. Without an optimized Resume into German standards, you won't be considered.",
+        info: [
+            'Guideline and Workbook how to effectively optimize your CV for the German market', 
+            'Personal Feedback rounds and insider tips to elevate your CV from all the others', 
+            'Final corrections to have a perfectly optimized CV to get every job interview'
+        ],
+        deprecatedPrice: '297 €',
+        actualPrice: '177 €',
+        img: cvOptimization
+    },
+    {
+        title: 'Cover Letter Optimization',
+        description: "Your Cover Letter shows your motivation and strengths. This is next to the CV one of the most important documents for recruiters.",
+        info: [
+            'Guideline and Workbook how to effectively optimize your Cover Letter for the German market', 
+            'Personal Feedback rounds and insider tips to elevate your Cover Letter from all the others', 
+            'Final corrections to have a perfectly optimized Cover Letter to get every job interview'
+        ],
+        deprecatedPrice: '297 €',
+        actualPrice: '177 €',
+        img: coverLetter
+    },
+    {
+        title: 'LinkedIn Optimization',
+        description: "With an optimized LinkedIn Profile you don't even have to apply for jobs. Recruiters will contact you for jobs.",
+        info: [
+            'Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market', 
+            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile from all the others', 
+            'Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview'
+        ],
+        deprecatedPrice: '297 €',
+        actualPrice: '177 €',
+        img: linkedinOpt
+    },
+    {
+        title: 'Job Search Strategy',
+        description: "With our Job Search Strategy you will focus on your strengths and know exactly where to find the right jobs for you",
+        info: [
+            'Guideline and Workbook how to effectively search for jobs on the German market', 
+            'Personal Feedback to develop your individual Job Search Strategy based on your strengths and goals', 
+            'Templates with the most used Job Platforms, Companies which hire English speakers and your personal Application tracker'
+        ],
+        deprecatedPrice: '297 €',
+        actualPrice: '177 €',
+        img: jobSearchStrategy
+    },
+    {
+        title: 'Job Interview Preparation',
+        description: "When you know how to convince in job interviews and present yourself with all your strengths you will be unstoppable",
+        info: [
+            'Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market', 
+            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile from all the others', 
+            'Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview'
+        ],
+        deprecatedPrice: '297 €',
+        actualPrice: '177 €',
+        img: jobInterviewPrep
+    }
+]
 
 
 export default function DreamJobSection() {
+    const { isMobile } = useAppContext();
     return (
         <>
             <CenteredSection>
-                <TwoColorTitle text1="Ready for your" text2="Dream Job?" as="h2" hasSpaceBtw />
+                <TwoColorTitle text1="Ready for your" text2="Dream Job?" as="h2" hasSpaceBtw wrapperStyles={isMobile ? {flexDirection: 'column'} : undefined} styles={isMobile ? {lineHeight: '44px'} : undefined} />
                 <DreamJobSubtitle>
                     Choose one of our individual Coaching Services to prepare you for your journey to Germany and Europe
                 </DreamJobSubtitle>
             </CenteredSection>
-            <Service>
-                <ServiceData>
-                    <TwoColorTitle text1="CV Optimization" text2="" as="h3" styles={{fontWeight: '700'}}/>
-                    <TwoColorTitle wrapperStyles={{width: '100%', margin: '20px 0 42px'}} styles={{textAlign: 'justify'}} text1="Your CV is your Business Card. Without an optimized Resume into German standards, you won't be considered." text2="" as="h4" />
-                    <ul style={{display: 'flex', flexDirection: "column", gap: '30px'}}>
-                        <li style={{display: 'felx', alignItems: "center"}}>
-                            <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
-                            <StdParagraqh style={{display: 'inline-block', margin: '0 0 0 32px', fontWeight: '400', lineHeight: '1.25rem', letterSpacing: '0.04rem;'}}>
-                                Guideline and Workbook how to effectively optimize your CV for the German market
-                            </StdParagraqh>
-                        </li>
-                        <li style={{display: 'felx', alignItems: "center"}}>
-                            <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
-                            <StdParagraqh style={{display: 'inline-block', margin: '0 0 0 32px', fontWeight: '400', lineHeight: '1.25rem', letterSpacing: '0.04rem;'}}>
-                                Personal Feedback rounds and insider tips to elevate your CV from all the others
-                            </StdParagraqh>
-                        </li>
-                        <li style={{display: 'felx', alignItems: "center"}}>
-                            <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
-                            <StdParagraqh style={{display: 'inline-block', margin: '0 0 0 32px', fontWeight: '400', lineHeight: '1.25rem', letterSpacing: '0.04rem;'}}>
-                                Final corrections to have a perfectly optimized CV to get every job interview
-                            </StdParagraqh>
-                        </li>
-                    </ul>
-                    
-                    <div style={{display: 'flex', gap: '40px', alignItems: 'center', marginTop: '56px'}} >
-                        <StdButton>Book Now</StdButton>
-                        <span>297 €</span>
-                        <span>177 €</span>
-                    </div>
-
-        
-                </ServiceData>
-                <Image src={cvOptimization} alt="cv-optimization" />
-            </Service>
+            <CardsWrapper>
+                {mockupDreamJobCard.map((c: IDramJobCardProps, i) => (
+                    <DreamJobCard 
+                        title={c.title} 
+                        description={c.description} 
+                        info={c.info} 
+                        deprecatedPrice={c.deprecatedPrice} 
+                        actualPrice={c.actualPrice} 
+                        img={c.img}
+                        key={c.title} 
+                        classes={i % 2 ? 'reversed': ''}
+                    />
+                ))}
+            </CardsWrapper>
         </>
     )
 }

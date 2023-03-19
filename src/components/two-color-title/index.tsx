@@ -22,13 +22,13 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
 }) => {
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
-      <Text color={'primaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
+      {text1 && <Text color={'primaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
         {text1}
         {hasSpaceBtw ? '\xa0' : ''}
-      </Text>
-      <Text color={'secondaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
+      </Text>}
+      {text2 && <Text color={'secondaryBlue'} style={{...styles, ...rest}} as={as || 'h1'} >
         {text2}
-      </Text>
+      </Text>}
     </TwoColorTitleWrapper >
   );
 }
