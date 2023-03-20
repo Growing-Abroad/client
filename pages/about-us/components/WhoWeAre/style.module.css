@@ -1,7 +1,4 @@
 
-.whoWrAre {
-    padding-top: 87px;
-}
 .imageContainer {
     border-radius: 5px;
     overflow: hidden;
@@ -22,7 +19,7 @@
     width: 100px;
     height: auto;
     top: calc(50% - 48px);
-    left: calc(50% - 69px);
+    left: calc(50% - 108px);
 }
 
 .blurbRippleOut {
@@ -41,6 +38,12 @@
 	-moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
 	transition: transform ease-out 0.1s, background 0.2s;
 }
+.youtubePlayButton{
+  width:144px;
+  height:99px;
+  border-radius:14px;
+
+}
 
 .blurbRippleOut:after {
 	pointer-events: none;
@@ -49,8 +52,8 @@
 	height: 100%;
 	border-radius: 50%;
 	content: '';
-	-webkit-box-sizing: content-box; 
-	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	top: 0;
 	left: 0;
@@ -157,4 +160,22 @@
 	.whoWrAre {
 		padding-top: 22.43px;
 	}
+}
+
+@media(max-width:580px){
+  .youtubePlayButton{
+    width:44px;
+    height:30px;
+    border-radius:9px;
+  }
+  .ripplesContainer {
+    text-align: center;
+	margin: 0 auto;
+	/* padding: 2em 0 3em; */
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: calc(50% - 30px);
+    left: calc(50% - 50px);
+}
 }

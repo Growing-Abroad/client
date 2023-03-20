@@ -48,7 +48,7 @@ justify-content:space-between;
   }
 `
 export const InputNewsLetter = styled(Input)`
-  width: 530px;
+  width:50%;
   max-height: 64px;
   border-radius: 50px;
   border:transparent;

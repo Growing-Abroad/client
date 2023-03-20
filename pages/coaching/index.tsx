@@ -9,12 +9,13 @@ import VisionAndMission from "@pages/about-us/components/VisionAndMission";
 import CoachingHeroSection from "./components/hero-section";
 import GuideSection from "./components/guide-section";
 import DreamJobSection from "./components/dream-job-section";
+import VisionAndMissionNew from "@pages/about-us/components/VisionAndMissionNew";
 
 export default function Coaching() {
     return <>
         <CoachingHeroSection />
         <GuideSection />
-        <VisionAndMission />
+        <VisionAndMissionNew />
         <DreamJobSection />
     </>
 }
