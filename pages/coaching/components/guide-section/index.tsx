@@ -75,7 +75,7 @@ export default function GuideSection() {
     text2="Germany or Europe as" 
     hasSpaceBtw 
     wrapperStyles={{flexDirection: `column`, maxWidth: '100%', width: '100%'}} 
-    styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.65rem'}}
+    styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.5rem'}}
     />
     <CardsWrapper>
         {cardsContent1.map(content => 

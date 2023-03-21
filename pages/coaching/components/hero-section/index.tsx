@@ -28,7 +28,7 @@ export default function CoachingHeroSection() {
             <ContainerHero 
             backgroundImageDesktop={CoachingHeroBg.src}  
             backgroundImageMobile={CoachingHeroBg.src}
-            styles={isMobile ? {height: '100%', justifyContent: 'flex-start', backgroundPosition: '-155px'}: {height: '100%', justifyContent: 'flex-start'}}
+            styles={isMobile ? {height: '100%', justifyContent: 'flex-start', backgroundPosition: '-155px'} : {height: '100%', justifyContent: 'flex-start'}}
             >
                 <HeroTitleWrapper>
                     <TwoColorTitle 
@@ -38,7 +38,7 @@ export default function CoachingHeroSection() {
                     wrapperStyles={isMobile ? {padding: `0 0 14px`, flexDirection: 'column'} : {padding: `0 0 35px`}} 
                     styles={isMobile 
                         ? {marginBottom: '0', fontSize: '44px'} 
-                        : {marginBottom: '0', fontSize: '44px'}
+                        : {marginBottom: '0'}
                     }
                     />
                     <StdButton style={isMobile ? {padding: '8px 15px'} : {}}>Book a Coaching Now</StdButton>
