@@ -30,9 +30,20 @@ export const Container = styled.section<IContainerProps>`
 
   .border-image{
     width: 100%;
+    height: 154px;
+
     left: 0;
     bottom: 0;
     position: absolute;
+    z-index: 1;
+
+    @media (max-width: 1513px) {
+      height: calc(9.625rem + ((1vw - 15.13px) * 8.0332));
+    }
+    @media (max-width: 430px) {
+      height: 67px;
+    }
+ 
   }
 
   @media (max-width: ${mediaQuery}) {
