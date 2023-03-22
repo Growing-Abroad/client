@@ -10,9 +10,10 @@
     height: 390px;
     background-image: url('../../../../public/assets/blog/Curriculum-Vitae.webp');
     background-position: top left;
-    background-size: 1412px;
+    background-size:cover;
     background-repeat: no-repeat;
     position: relative;
+    margin-left:-140px;
 }
 
 .arrow {
@@ -60,7 +61,7 @@
 }
 
 .publisherContainer {
-    padding: 26px 141px 115px;
+    padding: 26px 0 115px;
     display: flex;
 }
 
@@ -92,10 +93,31 @@
 
 @media (max-width:768px) {
     .publisherContainer {
-        padding: 15px 40px 70px;
-        display: block;
-    }
+        padding: 15px 0px 70px 0px;
+        display:flex;
+        flex-direction: column;
 
+    }
+    .author{
+      display: flex;
+      gap:82px;
+      justify-content: start;
+    }
+    .author :first-child{
+      width:111px;
+      font-size:20px;
+      text-align:start;
+      white-space: nowrap;
+    }
+    .author :nth-child(2){
+      display:flex;
+      width:157px;
+      gap:17px;
+    }
+    .author span img {
+      height: 40px;
+      width: 40px;
+  }
     .publisherContainer div {
         width: 100%;
     }
@@ -128,6 +150,8 @@
 
 @media (max-width: 430px) {
     .bannerCol {
-        height: 110px;
+      height: 110px;
+      width:100%;
+      margin-left:-40px;
     }
 }

@@ -1,5 +1,5 @@
 .bannerContainer {
-    padding: 81px 140px 57px;
+    padding: 81px 0px 57px;
 }
 
 .para {
@@ -12,12 +12,19 @@
     max-width: 870px;
     margin-bottom: 61px;
 }
+.buttons{
+  display:flex;
+  width:100%;
+  gap:26px;
+  align-items:flex-start;
+  justify-content:flex-start;
 
+}
 .button {
     letter-spacing: 1.3px;
-    margin-right: 26px;
     line-height: 19px;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    text-align: center;
 }
 .topBanner {
     padding: 0;
@@ -41,21 +48,18 @@
         margin-bottom: 40px;
         margin-top: 24px;
     }
+    .button{
+      letter-spacing: 1.0;
+      max-width: 162px;
+    }
+    .buttons{
+      gap:8px;
 
-    .button {
-        font-size: 14px!important;
-        font-weight: 600!important;
-        line-height: 19px;
-        letter-spacing: 1.3px;
-        text-align: center;
-        padding: 8px 15px !important;
-        height: auto!important;
-        margin-right: 10px;
-        margin-bottom: 3px;
+
     }
 
     .bannerContainer {
-        padding: 53px 40px 58px;
+        padding: 53px 0px 58px 0px;
     }
 
     .topBanner {

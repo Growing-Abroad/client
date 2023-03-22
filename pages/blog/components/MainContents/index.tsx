@@ -6,12 +6,12 @@ import classes from './style.module.css';
 function MainContents() {
     return (
         <Container className={classes.noPadding}>
-            <Row className={classes.noPadding}>
-                <Col md="12" sm="12" className={classes.noPadding}>
-                    <LeftSidePanel></LeftSidePanel>
+            <Row>
+                <Col md="8" sm="12">
+                    <LeftSidePanel />
                 </Col>
-                <Col md="12" sm="12" className={classes.noPadding}>
-                    <RightSidePanel></RightSidePanel>
+                <Col md="4" sm="12">
+                    <RightSidePanel />
                 </Col>
             </Row>
         </Container>
