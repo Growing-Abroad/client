@@ -34,8 +34,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   background-repeat: no-repeat;
   background-position: 100% 110%;
   background-size: 728px 520px;
-  width: 100%;
-  max-width: 1514px;
+  width: 1250px;
   height: 100%;
   /* padding-bottom: 170px; */
 `;
