@@ -11,7 +11,7 @@ function CommunitySection() {
           text1="Join our"
           text2="Community"
           hasSpaceBtw
-          color="#ffffff"
+          color="#ffffff !important"
           as="h2"
         />
         <Socials>

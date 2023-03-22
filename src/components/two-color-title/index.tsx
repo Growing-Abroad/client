@@ -33,7 +33,7 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
         >
           {text1}
           {hasSpaceBtw ? '\xa0' : ''}
-          <ColoredSpan color={'secondaryBlue'}>{text2}</ColoredSpan>
+          <ColoredSpan color={'secondaryBlue'} style={{ ...styles, ...rest }}>{text2}</ColoredSpan>
         </Text>
       )}
     </TwoColorTitleWrapper>
