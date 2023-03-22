@@ -35,6 +35,7 @@ export const Text = styled.h1<IText>`
     font-weight: 600;
     text-align: center;
     letter-spacing: 1.3px;
+    margin: 0;
   `}}
 
   ${(props) => {
