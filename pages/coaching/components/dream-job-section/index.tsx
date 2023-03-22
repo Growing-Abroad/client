@@ -38,6 +38,12 @@ const CardsWrapper = styled.div`
     flex-direction: column;
     gap: 56px;
     width: 100%;
+    margin-bottom: 190px;
+
+    @media (max-width: ${mediaQuery}) {
+        margin-bottom: 160px;
+        
+    }
 `
 
 const mockupDreamJobCard: IDramJobCardProps[] = [

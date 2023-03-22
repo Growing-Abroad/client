@@ -42,7 +42,6 @@ Page.getLayout = function getLayout(page: ReactElement) {
         {page}
       </PageLayout>
     </IntlProvider>
-
   )
 }
 
