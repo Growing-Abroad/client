@@ -11,15 +11,40 @@ interface ImageBackgroundProps {
 }
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   min-width: 100%;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.backgroundBlue};
-  padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0;
+  padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
+    ${({ theme }) => theme.sizes.globalHorizontalPadding};
 `;
 
 export const Content = styled.div`
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const ImageBackground = styled.div<ImageBackgroundProps>`
+  background-image: url(${({ background }) => background});
+  background-repeat: no-repeat;
+  background-position: 100% 110%;
+  background-size: 728px 520px;
+  width: 100%;
+  max-width: 1514px;
+  height: 100%;
+  /* padding-bottom: 170px; */
+`;
+
+export const TextsContainer = styled.div`
   max-width: 752px;
+  padding-bottom: 170px;
   z-index: 999;
+  /* background-color: red; */
 `;
 
 export const Title: TitleProps = {
@@ -70,19 +95,6 @@ export const Subtitle = styled.h2`
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 85%;
+  width: 80%;
   justify-content: space-between;
-`;
-
-export const ImageBackground = styled.div<ImageBackgroundProps>`
-  display: flex;
-  flex-wrap: wrap;
-  background-image: url(${({ background }) => background});
-  background-position: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 450px;
-  width: 100%;
-  margin-top: 146px;
-  margin-bottom: -10px;
 `;
