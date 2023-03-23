@@ -72,7 +72,7 @@ export const TextsContainer = styled.div`
 
 export const Title: TitleProps = {
   Container: styled.div`
-    width: 100vw;
+    width: 100%;
     padding: 0 30px 0 30px;
 
     ${({ theme }) => css`
