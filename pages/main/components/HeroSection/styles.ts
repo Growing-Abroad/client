@@ -161,7 +161,8 @@ export const Subtitle = styled.h2`
       font-size: 16px;
       text-align: center;
       padding: 0 10px;
-      line-height: 0px;
+      line-height: 27px;
+      letter-spacing: 1.3px;
       height: 16px;
     }
   `}
