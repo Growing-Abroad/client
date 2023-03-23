@@ -14,12 +14,11 @@ import { IntlProvider } from 'react-intl';
 import de from '../lang/de.json';
 import en from '../lang/en.json';
 import pt from '../lang/pt.json';
-import HeroSection from './components/HeroSection';
 
 const Page: NextPageWithLayout = () => {
   return (
     <>
-      <HeroSection />
+      <CallToAction />
       <WorkIn />
       <DiscoverGA />
       <OurServicesSection />
