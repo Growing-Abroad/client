@@ -28,8 +28,9 @@ export default function CareerHeroSection() {
                 text1="Career"
                 text2="Blogs"
                 hasSpaceBtw
+                className='title'
                 wrapperStyles={{
-                  justifyContent: 'flex-start',
+                  flexDirection: 'column',
                   fontSize: '44px',
                   paddingBottom: 0,
                   lineHeight: '54px',
