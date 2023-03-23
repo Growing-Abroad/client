@@ -45,7 +45,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 40px 0 270px 0;
+      padding: 40px 0 305px 0;
       background-size: 380px 271px;
       background-position: 50% 101%;
       flex-direction: column;
@@ -157,11 +157,10 @@ export const Subtitle = styled.h2`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       justify-content: center;
-      max-width: 80%;
       font-size: 16px;
       text-align: center;
       padding: 0 10px;
-      line-height: 27px;
+      line-height: 0px;
       letter-spacing: 1.3px;
       height: 16px;
     }
