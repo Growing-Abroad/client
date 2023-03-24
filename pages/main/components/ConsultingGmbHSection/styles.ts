@@ -7,6 +7,12 @@ export const SupraContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 50px 20px;
+    }
+  `}
 `;
 
 export const Container = styled.div`
@@ -33,6 +39,14 @@ export const Subtitle = styled.h1`
   letter-spacing: 1.3px;
   color: ${({ theme }) => theme.colors.primaryBlue};
   padding: 0 163px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 16px;
+      padding: 0 77px;
+      text-align: center;
+    }
+  `}
 `;
 
 export const Content = styled.div`

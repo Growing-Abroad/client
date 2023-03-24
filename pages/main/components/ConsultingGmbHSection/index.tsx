@@ -3,6 +3,7 @@ import React from 'react';
 import FancyCarousel from '@/components/Fancy-carousel';
 import TwoColorTitle from '@/components/two-color-title';
 import consultingGmbhMock from '@/utils/mock-ups/consulting-gmbh-mock-texts';
+import useAppContext from '@/hooks/useAppContext';
 
 import {
   CarouselContainer,
@@ -16,6 +17,8 @@ import {
 } from './styles';
 
 function ConsultingGmbHSection() {
+  const { isMobile } = useAppContext();
+
   return (
     <SupraContainer>
       <Container>
@@ -23,13 +26,17 @@ function ConsultingGmbHSection() {
           <TwoColorTitle
             text1="Growing Abroad"
             text2="Consulting GmbH"
-            hasSpaceBtw
-            fontSize="60px"
+            fontSize={!isMobile ? '60px' : '36px'}
+            breakingLine
           />
-          <Subtitle>
-            Your Recruiting agency offering Career Coach & Development Services
-            in the Europen and German job Market
-          </Subtitle>
+          {!isMobile ? (
+            <Subtitle>
+              Your Recruiting agency offering Career Coach & Development
+              Services in the Europen and German job Market
+            </Subtitle>
+          ) : (
+            <Subtitle>Recruiting, Career Coach & Development Services</Subtitle>
+          )}
         </TitlesContainer>
         <Content>
           <ParagraphsContainer>
