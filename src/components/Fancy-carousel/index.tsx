@@ -15,16 +15,16 @@ import useAppContext from '@/hooks/useAppContext';
 import StdButton from '../generics/StdButton/StdButton';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
-export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
   from: string;
+  texts: string[];
   countryFlag: string;
   href: string;
 }
 export interface Props {
-  dataArray: TCarouselData;
+  dataArray: ICarouselData[];
   haveSmallsSlides?: boolean;
 }
 
@@ -72,7 +72,10 @@ export default function FancyCarousel(props: Props) {
   const isActive = (i: number) => selectedSlide === i;
 
   return (
-    <FlexboxSlider className="flexbox-slider my-flexbox-slider">
+    <FlexboxSlider
+      className="flexbox-slider my-flexbox-slider"
+      isSmall={props.haveSmallsSlides}
+    >
       {props.dataArray.map((item, i) =>
         !props.haveSmallsSlides ? (
           <FlexboxSlide
@@ -113,8 +116,10 @@ export default function FancyCarousel(props: Props) {
             <ImageBackground src={item.imgSrc.src}>
               <ImageBackgroundContent isActive={isActive(i)}>
                 <h3>{item.title}</h3>
-
-                <p>{item.from}</p>
+                <div className="paragraph-container">
+                  <p>{item.from}</p>
+                  {item.texts.length && item.texts.map((text) => <p>{text}</p>)}
+                </div>
 
                 <StdButton style={{ marginTop: 'auto', width: 'max-content' }}>
                   Find Experts Now

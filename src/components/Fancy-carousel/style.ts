@@ -21,15 +21,23 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-export const FlexboxSlider = styled.div`
+export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 36px;
-  width: 100%;
-  height: 571px;
   visibility: hidden;
   align-items: baseline;
+
+  width: 100%;
+  ${({ isSmall }) =>
+    !isSmall
+      ? css`
+          height: 571px;
+        `
+      : css`
+          height: 461px;
+        `}
 
   @media (min-width: 200px) and (max-width: 1280px) {
     gap: calc(0.4375rem + ((1vw - 3.5px) * 3.1183));
@@ -98,7 +106,7 @@ export const FlexboxSlide = styled.div`
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   width: 50px;
-  min-width: 50px;
+  min-width: 114px;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -224,9 +232,9 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
 
   position: absolute;
   /* top: 50%; */
@@ -240,4 +248,38 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     css`
       display: none;
     `}
+
+  h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    /* font-size: 32px; */
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.3px;
+    text-transform: capitalize;
+
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  .paragraph-container {
+    margin-top: 50px;
+    margin-bottom: 23px;
+    padding-right: 60px;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.3px;
+    text-transform: capitalize;
+
+    margin: 0;
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
