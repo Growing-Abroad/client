@@ -27,7 +27,8 @@ function ConsultingGmbHSection() {
             text1="Growing Abroad"
             text2="Consulting GmbH"
             fontSize={!isMobile ? '60px' : '36px'}
-            breakingLine
+            hasSpaceBtw={!isMobile}
+            breakingLine={isMobile}
           />
           {!isMobile ? (
             <Subtitle>

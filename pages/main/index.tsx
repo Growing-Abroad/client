@@ -5,16 +5,14 @@ import HeroSection from './components/HeroSection';
 import { ReactElement } from 'react';
 import { PageLayout } from '@/components';
 import ConsultingGmbHSection from './components/ConsultingGmbHSection/index';
+import RecruitingAndCareerServicesSection from './components/RecrutingAndCareerServicesSection';
 
-interface Props {
-  title: string;
-}
-
-export default function Main({ title }: Props) {
+export default function Main() {
   return (
     <>
       <HeroSection />
       <ConsultingGmbHSection />
+      <RecruitingAndCareerServicesSection />
     </>
   );
 }
