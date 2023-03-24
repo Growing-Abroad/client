@@ -10,7 +10,8 @@ export const SupraContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 50px 20px;
+      min-height: 100vh;
+      padding: 50px 20px 300px 20px;
     }
   `}
 `;
@@ -45,6 +46,7 @@ export const Subtitle = styled.h1`
       font-size: 16px;
       padding: 0 77px;
       text-align: center;
+      margin-top: 30px;
     }
   `}
 `;
@@ -54,6 +56,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 50px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      flex-direction: column;
+      margin-top: 0;
+    }
+  `}
 `;
 
 export const ParagraphsContainer = styled.div`
@@ -77,4 +86,10 @@ export const CarouselContainer = styled.div`
   max-height: 100%;
   margin-left: 19px;
   /* background-color: red; */
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin-top: 30px;
+    }
+  `}
 `;
