@@ -122,7 +122,18 @@ export default function FancyCarousel(props: Props) {
                   {item.texts.length && item.texts.map((text) => <p>{text}</p>)}
                 </div>
 
-                <StdButton style={{ marginTop: 'auto', width: 'max-content' }}>
+                <StdButton
+                  style={{
+                    marginTop: `${isMobile ? '36px' : 'auto'}`,
+                    marginBottom: `${isMobile ? '36px' : 'auto'}`,
+                    width: `${isMobile ? '196px' : 'max-content'}`,
+                    height: `${isMobile ? '35px' : 'auto'}`,
+                    fontSize: `${isMobile ? '14px' : '19px'}`,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
                   Find Experts Now
                 </StdButton>
               </ImageBackgroundContent>

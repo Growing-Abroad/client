@@ -38,13 +38,17 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
         `}
 
   width: 100%;
-  ${({ isSmall }) =>
+  ${({ theme, isSmall }) =>
     !isSmall
       ? css`
           height: 571px;
         `
       : css`
           height: 461px;
+          @media (max-width: ${theme.sizes.mediaQuery}) {
+            width: 100%;
+            height: 252px;
+          }
         `}
 
   @media (min-width: 200px) and (max-width: 1280px) {
@@ -70,9 +74,6 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
       left: 0;
       visibility: visible;
       cursor: default;
-
-      @media (max-width: ${mediaQuery}) {
-      }
 
       h3,
       p,
@@ -167,6 +168,14 @@ export const FlexboxSlide = styled.div<FlexboxSliderProps>`
       left: 85%;
     }
   }
+
+  ${({ isSmall, theme }) =>
+    isSmall &&
+    css`
+      @media (max-width: ${theme.sizes.mediaQuery}) {
+        min-width: 62px;
+      }
+    `}
 `;
 
 export const TextBlock = styled.div`
@@ -300,4 +309,23 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     margin: 0;
     color: ${({ theme }) => theme.colors.white};
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 100px 8px 70px 8px;
+      h3 {
+        font-size: 14px;
+        line-height: 17.07px;
+      }
+
+      .paragraph-container {
+        margin: 0;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 17.07px;
+      }
+    }
+  `}
 `;
