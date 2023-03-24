@@ -17,7 +17,7 @@ import { theme } from "@/styles/theme";
 
 const {colors: { yellow400, blue700 }} = theme;
 
-const PackageCourseWrapper = styled.div`
+const PackageCourseWrapper = styled.section`
     max-width: ${maxWidthAll};
     width: 100%;
     flex-grow: 1;
