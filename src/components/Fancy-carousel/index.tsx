@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   FlexboxSlide,
   FlexboxSlider,
@@ -38,6 +38,7 @@ export default function FancyCarousel(props: Props) {
   } = variables;
   const mediaQueryNumber = removePxFromCssValue(mediaQuery);
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
+  const [selectedSlideTitle, setSelectedSlideTitle] = useState<string>('');
 
   function initialSlide(): number {
     if (width > mediaQueryNumber && props.dataArray.length > 2) {
@@ -67,6 +68,8 @@ export default function FancyCarousel(props: Props) {
     }
     return '';
   }
+
+  const isActive = (i: number) => selectedSlide === i;
 
   return (
     <FlexboxSlider className="flexbox-slider my-flexbox-slider">
@@ -107,17 +110,13 @@ export default function FancyCarousel(props: Props) {
             key={i + '-' + item.title}
             onClick={() => setSelectedSlide(i)}
           >
-            <ImageBackground src={item.imgSrc.src} className="img">
-              <ImageBackgroundContent isActive={selectedSlide === i}>
-                <TextBlockH3>{item.title}</TextBlockH3>
+            <ImageBackground src={item.imgSrc.src}>
+              <ImageBackgroundContent isActive={isActive(i)}>
+                <h3>{item.title}</h3>
 
                 <p>{item.from}</p>
 
-                <StdButton
-                  icon={faPlay}
-                  className="watch-video-btn"
-                  style={{ marginTop: 'auto', width: 'max-content' }}
-                >
+                <StdButton style={{ marginTop: 'auto', width: 'max-content' }}>
                   Find Experts Now
                 </StdButton>
               </ImageBackgroundContent>

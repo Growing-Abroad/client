@@ -1,6 +1,6 @@
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface FlexboxSliderProps {
   isSmall?: boolean;
@@ -220,4 +220,24 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   background-position: center;
 `;
 
-export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>``;
+export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.25);
+
+  position: absolute;
+  /* top: 50%; */
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  padding: 152px 36px;
+
+  ${({ isActive }) =>
+    !isActive &&
+    css`
+      display: none;
+    `}
+`;
