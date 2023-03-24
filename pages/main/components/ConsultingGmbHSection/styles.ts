@@ -57,12 +57,11 @@ export const Content = styled.div`
   flex-direction: row;
   margin-top: 50px;
 
-  ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      flex-direction: column;
-      margin-top: 0;
-    }
-  `}
+  @media (max-width: 1395px) {
+    flex-direction: column;
+    margin-top: 0;
+    padding-bottom: 120%;
+  }
 `;
 
 export const ParagraphsContainer = styled.div`
