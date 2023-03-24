@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   FlexboxSlide,
   FlexboxSlider,
   FromWrapper,
+  ImageBackground,
+  ImageBackgroundContent,
   TextBlock,
   TextBlockH3,
-} from "./style";
-import Image, { StaticImageData } from "next/image";
-import { variables } from "@styles/global-variables";
-import { removePxFromCssValue } from "@utils/scripts/general-utility";
-import useAppContext from "@/hooks/useAppContext";
-import StdButton from "../generics/StdButton/StdButton";
+} from './style';
+import Image, { StaticImageData } from 'next/image';
+import { variables } from '@styles/global-variables';
+import { removePxFromCssValue } from '@utils/scripts/general-utility';
+import useAppContext from '@/hooks/useAppContext';
+import StdButton from '../generics/StdButton/StdButton';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export type TCarouselData = Array<ICarouselData>;
@@ -23,10 +25,14 @@ export interface ICarouselData {
 }
 export interface Props {
   dataArray: TCarouselData;
+  haveSmallsSlides?: boolean;
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}, isMobile} = useAppContext();
+  const {
+    windowSize: { width },
+    isMobile,
+  } = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -42,9 +48,9 @@ export default function FancyCarousel(props: Props) {
   }
 
   function handleSlideClasses(index: number): string {
-    let classes = "flexbox-slide";
-    if (index % 2 !== 0) classes += " short";
-    if (selectedSlide === index) classes += " selected-slide";
+    let classes = 'flexbox-slide';
+    if (index % 2 !== 0) classes += ' short';
+    if (selectedSlide === index) classes += ' selected-slide';
     if (width && width < mediaQueryNumber)
       classes += handleMobileSliderClass(index);
 
@@ -57,44 +63,68 @@ export default function FancyCarousel(props: Props) {
       index !== selectedSlide - 1 &&
       index !== selectedSlide + 1
     ) {
-      return " dontShow";
+      return ' dontShow';
     }
-    return "";
+    return '';
   }
 
   return (
     <FlexboxSlider className="flexbox-slider my-flexbox-slider">
-      {props.dataArray.map((item, i) => (
-        <FlexboxSlide
-          className={handleSlideClasses(i)}
-          key={i + "-" + item.title}
-          onClick={() => setSelectedSlide(i)}
-        >
-          <TextBlock className="text-block">
+      {props.dataArray.map((item, i) =>
+        !props.haveSmallsSlides ? (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + '-' + item.title}
+            onClick={() => setSelectedSlide(i)}
+          >
+            <TextBlock className="text-block">
+              <TextBlockH3>{item.title}</TextBlockH3>
 
-            <TextBlockH3>{item.title}</TextBlockH3>
+              <FromWrapper>
+                <p>{item.from}</p>
+                <Image
+                  src={`countries-flags/${item.countryFlag}.svg`}
+                  alt={`flag of ${item.countryFlag}`}
+                  width={isMobile ? 25 : 64}
+                  height={isMobile ? 17.58 : 45}
+                  className="country-flag"
+                />
+              </FromWrapper>
 
-            <FromWrapper>
-              <p>{item.from}</p>
-              <Image 
-              src={`countries-flags/${item.countryFlag}.svg`} 
-              alt={`flag of ${item.countryFlag}`} 
-              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
-              className="country-flag" />
-            </FromWrapper>
+              <StdButton
+                icon={faPlay}
+                className="watch-video-btn"
+                style={{ marginTop: 'auto', width: 'max-content' }}
+              >
+                Watch Video
+              </StdButton>
+            </TextBlock>
+            <Image src={item.imgSrc} alt="Slide Image" className="slide-img" />
+          </FlexboxSlide>
+        ) : (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + '-' + item.title}
+            onClick={() => setSelectedSlide(i)}
+          >
+            <ImageBackground src={item.imgSrc.src} className="img">
+              <ImageBackgroundContent isActive={selectedSlide === i}>
+                <TextBlockH3>{item.title}</TextBlockH3>
 
-            <StdButton 
-            icon={faPlay} 
-            className="watch-video-btn" 
-            style={{marginTop: 'auto', width: 'max-content'}}
-            >
-              Watch Video
-            </StdButton>
-          </TextBlock>
+                <p>{item.from}</p>
 
-          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
-        </FlexboxSlide>
-      ))}
+                <StdButton
+                  icon={faPlay}
+                  className="watch-video-btn"
+                  style={{ marginTop: 'auto', width: 'max-content' }}
+                >
+                  Find Experts Now
+                </StdButton>
+              </ImageBackgroundContent>
+            </ImageBackground>
+          </FlexboxSlide>
+        ),
+      )}
     </FlexboxSlider>
   );
 }

@@ -1,6 +1,18 @@
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
+import styled from 'styled-components';
+
+interface FlexboxSliderProps {
+  isSmall?: boolean;
+}
+
+interface ImageBackgroundProps {
+  src: string;
+}
+
+interface ImageBackgroundContentProps {
+  isActive: boolean;
+}
 
 const {
   colors: { primaryBlue, blue500 },
@@ -37,17 +49,19 @@ export const FlexboxSlider = styled.div`
     cursor: default;
 
     .text-block {
-      
       bottom: 0;
       top: 0;
       left: 0;
       visibility: visible;
       cursor: default;
-      
+
       @media (max-width: ${mediaQuery}) {
       }
 
-      h3, p , .country-flag, .watch-video-btn {
+      h3,
+      p,
+      .country-flag,
+      .watch-video-btn {
         -webkit-transition-property: all;
         transition-property: all;
         -webkit-transition-duration: 0.2s;
@@ -65,7 +79,7 @@ export const FlexboxSlider = styled.div`
       .watch-video-btn:hover {
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
-      } 
+      }
     }
   }
 
@@ -91,12 +105,11 @@ export const FlexboxSlide = styled.div`
   cursor: pointer;
   visibility: visible;
 
-
   &:after {
     position: absolute;
     top: 0;
     left: 0;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;
@@ -112,7 +125,7 @@ export const FlexboxSlide = styled.div`
     height: 100%;
     width: auto;
     min-width: 50%;
-    min-height: 100%;
+    min-height: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -127,7 +140,6 @@ export const FlexboxSlide = styled.div`
       left: 85%;
     }
   }
-
 `;
 
 export const TextBlock = styled.div`
@@ -152,11 +164,11 @@ export const TextBlock = styled.div`
     font-weight: 600;
   }
 
-  p, .country-flag, .watch-video-btn {
+  p,
+  .country-flag,
+  .watch-video-btn {
     opacity: 0;
   }
-
-  
 
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
@@ -168,8 +180,6 @@ export const TextBlock = styled.div`
       line-height: 1.063rem;
     }
   }
-
-  
 `;
 
 export const TextBlockH3 = styled.h3`
@@ -199,5 +209,15 @@ export const FromWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     gap: 10.15px;
   }
-`
+`;
 
+export const ImageBackground = styled.div<ImageBackgroundProps>`
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(${({ src }) => src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>``;
