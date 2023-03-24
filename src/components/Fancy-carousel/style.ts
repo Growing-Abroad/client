@@ -241,7 +241,7 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   height: 100%;
   width: 100%;
   z-index: 1;
-  padding: 152px 36px;
+  padding: 152px 0px 152px 23px;
 
   ${({ isActive }) =>
     !isActive &&
@@ -253,7 +253,6 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    /* font-size: 32px; */
     line-height: 39px;
     display: flex;
     align-items: center;
@@ -266,14 +265,13 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   .paragraph-container {
     margin-top: 50px;
     margin-bottom: 23px;
-    padding-right: 60px;
   }
 
   p {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     letter-spacing: 1.3px;
