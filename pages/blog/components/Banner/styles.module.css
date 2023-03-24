@@ -33,15 +33,19 @@
 .topBanner {
     padding: 0;
 }
-
 @media (max-width: 1024px) {
-    .topBanner h1 {
-        font-size: 44px;
+    .topBanner > div > h1 {
+        font-size: 42px;
         line-height: 53.64px;
         margin-bottom: 24px;
     }
 }
+@media(min-width: 1520px){
+  .bannerContainer{
+    padding-left:0;
+  }
 
+}
 @media (max-width: 768px) {
     .para {
         font-size: 16px;
