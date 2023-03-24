@@ -27,7 +27,15 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   display: flex;
   gap: 36px;
   visibility: hidden;
-  align-items: baseline;
+
+  ${({ isSmall }) =>
+    !isSmall
+      ? css`
+          align-items: baseline;
+        `
+      : css`
+          align-items: center;
+        `}
 
   width: 100%;
   ${({ isSmall }) =>
@@ -96,7 +104,7 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   }
 `;
 
-export const FlexboxSlide = styled.div`
+export const FlexboxSlide = styled.div<FlexboxSliderProps>`
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.3s;
@@ -107,7 +115,18 @@ export const FlexboxSlide = styled.div`
   transition-delay: 0s;
   width: 50px;
   min-width: 114px;
-  height: 100%;
+
+  ${({ isSmall }) =>
+    !isSmall
+      ? css`
+          height: 100%;
+        `
+      : css`
+          border: 1px solid #e9e9e9;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          height: 85%;
+          max-width: 461.17px;
+        `}
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -276,6 +295,7 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     align-items: center;
     letter-spacing: 1.3px;
     text-transform: capitalize;
+    text-align: left;
 
     margin: 0;
     color: ${({ theme }) => theme.colors.white};

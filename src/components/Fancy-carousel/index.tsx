@@ -112,6 +112,7 @@ export default function FancyCarousel(props: Props) {
             className={handleSlideClasses(i)}
             key={i + '-' + item.title}
             onClick={() => setSelectedSlide(i)}
+            isSmall
           >
             <ImageBackground src={item.imgSrc.src}>
               <ImageBackgroundContent isActive={isActive(i)}>

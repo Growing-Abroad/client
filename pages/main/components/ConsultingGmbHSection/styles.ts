@@ -1,8 +1,16 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const SupraContainer = styled.div`
   width: 100vw;
   padding: 163px 140px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Container = styled.div`
+  max-width: 1514px;
 `;
 
 export const TitlesContainer = styled.div`
@@ -24,7 +32,7 @@ export const Subtitle = styled.h1`
   align-items: center;
   letter-spacing: 1.3px;
   color: ${({ theme }) => theme.colors.primaryBlue};
-  padding: 0 153px;
+  padding: 0 163px;
 `;
 
 export const Content = styled.div`
@@ -35,6 +43,7 @@ export const Content = styled.div`
 `;
 
 export const ParagraphsContainer = styled.div`
+  padding-top: 32px;
   max-width: 473px;
 `;
 

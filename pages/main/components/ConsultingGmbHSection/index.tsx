@@ -6,61 +6,64 @@ import consultingGmbhMock from '@/utils/mock-ups/consulting-gmbh-mock-texts';
 
 import {
   CarouselContainer,
-  Container,
+  SupraContainer,
   Content,
   Paragraph,
   ParagraphsContainer,
   Subtitle,
   TitlesContainer,
+  Container,
 } from './styles';
 
 function ConsultingGmbHSection() {
   return (
-    <Container>
-      <TitlesContainer>
-        <TwoColorTitle
-          text1="Growing Abroad"
-          text2="Consulting GmbH"
-          hasSpaceBtw
-          fontSize="60px"
-        />
-        <Subtitle>
-          Your Recruiting agency offering Career Coach & Development Services in
-          the Europen and German job Market
-        </Subtitle>
-      </TitlesContainer>
-      <Content>
-        <ParagraphsContainer>
-          <Paragraph>
-            We founded Growing Abroad Consulting to match international talents
-            with companies with the fast growing demand of jobs in Germany and
-            Europe.
-          </Paragraph>
-          <Paragraph>
-            We offer Career development and Consulting for anbitional students
-            and professionals looking to settle in Germany as well as HR
-            services to match the best talents for German Companies.
-          </Paragraph>
-          <Paragraph>
-            <strong>We have experience in different industries:</strong>
-            <br />
-            Financial Service, Management and Consulting, Tech, Automotive and
-            Industry 4.0
-          </Paragraph>
-          <Paragraph>
-            <strong>
-              We have a pool of talents in different areas of business:
-            </strong>
-            <br />
-            IT, Engineers, Web, Data and Analytics, Business and Project
-            Management
-          </Paragraph>
-        </ParagraphsContainer>
-        <CarouselContainer>
-          <FancyCarousel haveSmallsSlides dataArray={consultingGmbhMock} />
-        </CarouselContainer>
-      </Content>
-    </Container>
+    <SupraContainer>
+      <Container>
+        <TitlesContainer>
+          <TwoColorTitle
+            text1="Growing Abroad"
+            text2="Consulting GmbH"
+            hasSpaceBtw
+            fontSize="60px"
+          />
+          <Subtitle>
+            Your Recruiting agency offering Career Coach & Development Services
+            in the Europen and German job Market
+          </Subtitle>
+        </TitlesContainer>
+        <Content>
+          <ParagraphsContainer>
+            <Paragraph>
+              We founded Growing Abroad Consulting to match international
+              talents with companies with the fast growing demand of jobs in
+              Germany and Europe.
+            </Paragraph>
+            <Paragraph>
+              We offer Career development and Consulting for anbitional students
+              and professionals looking to settle in Germany as well as HR
+              services to match the best talents for German Companies.
+            </Paragraph>
+            <Paragraph>
+              <strong>We have experience in different industries:</strong>
+              <br />
+              Financial Service, Management and Consulting, Tech, Automotive and
+              Industry 4.0
+            </Paragraph>
+            <Paragraph>
+              <strong>
+                We have a pool of talents in different areas of business:
+              </strong>
+              <br />
+              IT, Engineers, Web, Data and Analytics, Business and Project
+              Management
+            </Paragraph>
+          </ParagraphsContainer>
+          <CarouselContainer>
+            <FancyCarousel haveSmallsSlides dataArray={consultingGmbhMock} />
+          </CarouselContainer>
+        </Content>
+      </Container>
+    </SupraContainer>
   );
 }
 
