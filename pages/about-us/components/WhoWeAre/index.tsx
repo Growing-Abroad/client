@@ -34,7 +34,7 @@ function WhoWeAre() {
         as="h2"
       />
 
-      <div className={classes.imageContainer}>
+      <S.ImageContainer className={classes.imageContainer}>
         <Image width={1128} height={628}
           src={UanAndManu}
           alt="uan and manu"
@@ -47,7 +47,7 @@ function WhoWeAre() {
             className={classes.youtubePlayButton + ' ' + classes.blurbRippleOut}
           ></Image>
         </div>
-      </div>
+      </S.ImageContainer>
 
       <S.Paragraph>
         <S.p style={{ fontFamily: font.style.fontFamily }}>

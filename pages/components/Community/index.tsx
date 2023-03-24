@@ -13,7 +13,7 @@ function CommunitySection() {
           text1="Join our"
           text2="Community"
           hasSpaceBtw
-          color="#ffffff"
+          color="#ffffff !important"
           as="h2"
           wrapperStyles={isMobile ? {flexDirection: 'column', maxWidth: '100%'} : {}}
           styles={isMobile ? {lineHeight: '44px'} : {}}

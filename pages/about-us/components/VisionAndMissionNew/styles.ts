@@ -28,6 +28,7 @@ export const Container = styled.section<IContainer>`
     flex-direction: row;
     margin-inline: ${globalHorizontalPaddingMobile};
   }
+
 `
 
 export const TextContainer = styled.div<{ color?:string, left: string, top: string}>`

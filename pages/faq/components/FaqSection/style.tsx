@@ -13,7 +13,7 @@ justify-items: center;
 min-width: 100%;
 height: 100%;
 gap:29px;
-padding:125px 307px;
+padding:125px 307px 303px 307px;
 @media (max-width: ${mediaQuery}) {
   max-width: 430px;
   padding:65px 28px 233px 28px;
