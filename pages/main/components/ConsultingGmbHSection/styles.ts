@@ -85,11 +85,10 @@ export const CarouselContainer = styled.div`
   width: 100%;
   max-height: 100%;
   margin-left: 19px;
-  /* background-color: red; */
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      margin-top: 30px;
+      margin: 30px 0 0 0;
     }
   `}
 `;
