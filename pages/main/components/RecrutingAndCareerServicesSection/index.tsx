@@ -16,15 +16,21 @@ import { CardWithImage } from '@/components';
 import useAppContext from '@/hooks/useAppContext';
 
 function RecruitingAndCareerServicesSection() {
-  const { isMobile } = useAppContext();
+  const {
+    windowSize: { width },
+    isMobile,
+  } = useAppContext();
+
+  const shouldBreakLine: boolean = width <= 1395;
+
   return (
     <Container>
       <TitlesContainer>
         <TwoColorTitle
           text1="Recruiting and"
           text2="Career Services "
-          hasSpaceBtw={!isMobile}
-          breakingLine={isMobile}
+          hasSpaceBtw={!shouldBreakLine}
+          breakingLine={shouldBreakLine}
         />
         {!isMobile ? (
           <SubtitleContainer>

@@ -43,6 +43,12 @@ export const Subtitle = styled.h1`
   text-align: center;
 
   color: ${({ theme }) => theme.colors.primaryBlue};
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 16px;
+    }
+  `}
 `;
 
 export const CardsContainer = styled.div`

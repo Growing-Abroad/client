@@ -27,7 +27,7 @@ export const CardContent = styled.div`
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 30px;
+  padding: 30px 90px;
   height: 100%;
   position: relative;
   text-align: justify;
@@ -58,11 +58,11 @@ export const CardContent = styled.div`
     color: ${({ theme }) => theme.colors.blue700};
     font-weight: 500;
     font-size: 16px;
+    text-align: center;
 
     ${({ theme }) => css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         font-size: 10px;
-        text-align: center;
       }
     `}
   }

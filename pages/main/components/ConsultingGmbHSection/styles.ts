@@ -61,6 +61,7 @@ export const Content = styled.div`
     flex-direction: column;
     margin-top: 0;
     padding-bottom: 120%;
+    align-items: center;
   }
 `;
 
@@ -75,12 +76,15 @@ export const Paragraph = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  text-align: justify;
+  text-align: left;
 
   color: ${({ theme }) => theme.colors.primaryBlue};
 `;
 
 export const CarouselContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-height: 100%;
   margin-left: 19px;

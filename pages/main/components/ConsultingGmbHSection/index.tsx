@@ -17,7 +17,12 @@ import {
 } from './styles';
 
 function ConsultingGmbHSection() {
-  const { isMobile } = useAppContext();
+  const {
+    isMobile,
+    windowSize: { width },
+  } = useAppContext();
+
+  const shouldBreakLine: boolean = width <= 1395;
 
   return (
     <SupraContainer>
@@ -27,8 +32,8 @@ function ConsultingGmbHSection() {
             text1="Growing Abroad"
             text2="Consulting GmbH"
             fontSize={!isMobile ? '60px' : '36px'}
-            hasSpaceBtw={!isMobile}
-            breakingLine={isMobile}
+            hasSpaceBtw={!shouldBreakLine}
+            breakingLine={shouldBreakLine}
           />
           {!isMobile ? (
             <Subtitle>
