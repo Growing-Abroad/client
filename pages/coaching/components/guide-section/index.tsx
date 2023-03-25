@@ -8,8 +8,11 @@ import yourMentor from "@assets/pages/coaching/yourMentor.svg";
 import yourCareerAdvisor from "@assets/pages/coaching/yourCareerAdvisor.svg";
 import Image from "next/image";
 import { theme } from "@/styles/theme";
+import useAppContext from "@/hooks/useAppContext";
+import { variables } from "@/styles/global-variables";
 
 const { colors: {blue700} } = theme; 
+const {sizes: { mediaQuery }} = variables;
 
 export const CardsWrapper = styled.div`
     display: flex;
@@ -17,7 +20,12 @@ export const CardsWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 36px 0 176px;
+    margin: 36px 0 83px;
+
+    @media (max-width: ${mediaQuery}) {
+        gap: 14px;
+        margin-bottom: 45px;
+    }
 `
 
 export const Card = styled.div`
@@ -36,9 +44,20 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
+    @media (max-width: ${mediaQuery}) {
+        min-height: 134px;
+        width: 102px;
+        font-size: 16px;
+        line-height: 20px;
+        box-shadow: 0px 10px 18px rgba(0,0,0,0.15)
+
+    }
 `
 
 export default function GuideSection() {
+    const { isMobile } = useAppContext();
+
     const cardsContent1 = [
         {text: '+ Your Mentor', icon: yourMentor},
         {text: '+ Your Career Advisor', icon: yourCareerAdvisor},
@@ -49,25 +68,25 @@ export default function GuideSection() {
         {text: '+ Your Personal Coach', icon: yourPersonalCoach}
     ]
 
-    return <CenteredSection containerStyles={{marginTop: '24px'}}>
+    return <CenteredSection contentStyles={isMobile ? {padding: '16px 36px 0', paddingInline: '36px'} : {paddingTop: '24px', paddingBottom: '0'}}>
     <TwoColorTitle 
     as="h2"
     text1="We guide you to get your dream job in" 
     text2="Germany or Europe as" 
     hasSpaceBtw 
-    wrapperStyles={{flexDirection: `column`, maxWidth: '100%'}} 
-    styles={{fontSize: '3.65rem'}}
+    wrapperStyles={{flexDirection: `column`, maxWidth: '100%', width: '100%'}} 
+    styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.5rem'}}
     />
     <CardsWrapper>
         {cardsContent1.map(content => 
             <Card>
-                <Image src={content.icon} alt={content.text + " icon"} height={70} width={70} />
+                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 32 : 70} />
                 {content.text}
             </Card>
         )}
         {cardsContent2.map(content => 
             <Card>
-                <Image src={content.icon} alt={content.text + " icon"} height={70} width={80} />
+                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 36 : 80} />
                 {content.text}
             </Card>
         )}
