@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 73px;
+  padding: 73px 140px;
 `;
 
 export const TitlesContainer = styled.div`
