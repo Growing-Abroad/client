@@ -2,7 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 import StdButton from '../generics/StdButton/StdButton';
 
-import { Card, CardContent } from './styles';
+import { Container, CardContent } from './styles';
+import useAppContext from '@/hooks/useAppContext';
 
 interface Props {
   title: string;
@@ -19,8 +20,10 @@ function CardWithImage({
   buttonTitle,
   onClick,
 }: Props) {
+  const { isMobile } = useAppContext();
+
   return (
-    <Card>
+    <Container>
       <Image
         src={imageSrc}
         alt={imageSrc}
@@ -32,9 +35,20 @@ function CardWithImage({
         {/* <S.WhiteTriangle /> */}
         <h3 style={{ margin: '0' }}>{title}</h3>
         <p>{description}</p>
-        <StdButton onClick={onClick}>{buttonTitle}</StdButton>
+        <StdButton
+          onClick={onClick}
+          style={{
+            width: `${isMobile ? '196px' : '259px'}`,
+            height: `${isMobile ? '35px' : '59px'}`,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {buttonTitle}
+        </StdButton>
       </CardContent>
-    </Card>
+    </Container>
   );
 }
 

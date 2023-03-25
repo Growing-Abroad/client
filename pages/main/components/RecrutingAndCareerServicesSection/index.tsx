@@ -1,43 +1,57 @@
 import React from 'react';
 
 import TwoColorTitle from '@/components/two-color-title';
-import Germany from '@/../public/assets/Photos-Main-Page/Blog-Germany_Canva.png';
-
-import OtherCard from '@/components/Card';
+import Company from '@/../public/assets/Photos-Main-Page/building.webp';
+import Interview from '@/../public/assets/Photos-Main-Page/meeting.webp';
 
 import {
-  Card,
-  CardContent,
+  CardsContainer,
+  CardSeparator,
   Container,
   Subtitle,
   TitlesContainer,
 } from './styles';
-import Image from 'next/image';
-import StdButton from '@/components/generics/StdButton/StdButton';
 import { CardWithImage } from '@/components';
+import useAppContext from '@/hooks/useAppContext';
 
 function RecruitingAndCareerServicesSection() {
+  const { isMobile } = useAppContext();
   return (
     <Container>
       <TitlesContainer>
         <TwoColorTitle
           text1="Recruiting and"
           text2="Career Services "
-          hasSpaceBtw
+          hasSpaceBtw={!isMobile}
+          breakingLine={isMobile}
         />
-        <Subtitle>
-          Are you a candidate and want to land your dream job in Germany? Are
-          you not finding the right candidates and struggling to attract talents
-          to your company?
-        </Subtitle>
+        {!isMobile ? (
+          <Subtitle>
+            Are you a candidate and want to land your dream job in Germany? Are
+            you not finding the right candidates and struggling to attract
+            talents to your company?
+          </Subtitle>
+        ) : (
+          <Subtitle>Recruiting, Career Coach & Development Services</Subtitle>
+        )}
       </TitlesContainer>
-      <CardWithImage
-        title="For Companies"
-        description="We will find the best international talents for you and help you to attract qualified professionals from around the world"
-        imageSrc={Germany.src}
-        buttonTitle="Find Experts Now"
-        onClick={() => null}
-      />
+      <CardsContainer>
+        <CardWithImage
+          title="For Companies"
+          description="We will find the best international talents for you and help you to attract qualified professionals from around the world"
+          imageSrc={Company.src}
+          buttonTitle="Find Experts Now"
+          onClick={() => null}
+        />
+        <CardSeparator />
+        <CardWithImage
+          title="For Candidates"
+          description="We help you to land your dream job in Germany or Europe and build a successful career abroad"
+          imageSrc={Interview.src}
+          buttonTitle="Find a job now"
+          onClick={() => null}
+        />
+      </CardsContainer>
     </Container>
   );
 }

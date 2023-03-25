@@ -3,8 +3,15 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   padding: 73px 140px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 73px 40px;
+    }
+  `}
 `;
 
 export const TitlesContainer = styled.div`
@@ -13,6 +20,7 @@ export const TitlesContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 1514px;
 `;
 
 export const Subtitle = styled.h1`
@@ -27,4 +35,26 @@ export const Subtitle = styled.h1`
   margin-top: 12px;
 
   color: ${({ theme }) => theme.colors.primaryBlue};
+`;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 1514px;
+
+  margin-top: 60px;
+
+  @media (max-width: 1395px) {
+    flex-direction: column;
+
+    align-items: center;
+  }
+`;
+
+export const CardSeparator = styled.div`
+  @media (max-width: 1395px) {
+    margin-top: 50px;
+  }
 `;
