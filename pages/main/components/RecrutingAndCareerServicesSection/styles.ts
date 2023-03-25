@@ -23,6 +23,15 @@ export const TitlesContainer = styled.div`
   max-width: 1514px;
 `;
 
+export const SubtitleContainer = styled.div`
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Subtitle = styled.h1`
   font-family: 'Montserrat';
   font-style: normal;
@@ -32,7 +41,6 @@ export const Subtitle = styled.h1`
   display: flex;
   align-items: center;
   text-align: center;
-  margin-top: 12px;
 
   color: ${({ theme }) => theme.colors.primaryBlue};
 `;

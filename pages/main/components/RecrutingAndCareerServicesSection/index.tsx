@@ -10,6 +10,7 @@ import {
   Container,
   Subtitle,
   TitlesContainer,
+  SubtitleContainer,
 } from './styles';
 import { CardWithImage } from '@/components';
 import useAppContext from '@/hooks/useAppContext';
@@ -26,11 +27,15 @@ function RecruitingAndCareerServicesSection() {
           breakingLine={isMobile}
         />
         {!isMobile ? (
-          <Subtitle>
-            Are you a candidate and want to land your dream job in Germany? Are
-            you not finding the right candidates and struggling to attract
-            talents to your company?
-          </Subtitle>
+          <SubtitleContainer>
+            <Subtitle>
+              Are you a candidate and want to land your dream job in Germany?
+            </Subtitle>
+            <Subtitle>
+              Are you not finding the right candidates and struggling to attract
+              talents to your company?
+            </Subtitle>
+          </SubtitleContainer>
         ) : (
           <Subtitle>Recruiting, Career Coach & Development Services</Subtitle>
         )}
