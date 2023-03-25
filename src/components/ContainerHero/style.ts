@@ -19,7 +19,7 @@ export const Container = styled.section<IContainerProps>`
   background-image: url('${({backgroundImage})=>backgroundImage}');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right;
+  background-position:left;
   height: 40rem;
   display: flex;
   gap: 2rem;
