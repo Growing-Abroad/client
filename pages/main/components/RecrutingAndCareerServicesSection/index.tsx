@@ -19,9 +19,10 @@ function RecruitingAndCareerServicesSection() {
   const {
     windowSize: { width },
     isMobile,
+    smallDesktopSize,
   } = useAppContext();
 
-  const shouldBreakLine: boolean = width <= 1395;
+  const shouldBreakLine: boolean = width <= smallDesktopSize;
 
   return (
     <Container>
