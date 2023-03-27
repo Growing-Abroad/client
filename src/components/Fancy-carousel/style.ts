@@ -12,6 +12,7 @@ interface ImageBackgroundProps {
 
 interface ImageBackgroundContentProps {
   isActive: boolean;
+  isIntroducingAPerson?: boolean;
 }
 
 const {
@@ -259,7 +260,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
 export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: flex-start;
 
   background-color: rgba(0, 0, 0, 0.5);
@@ -269,13 +270,24 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   height: 100%;
   width: 100%;
   z-index: 1;
-  padding: 152px 0px 152px 23px;
+
+  ${({ isIntroducingAPerson }) =>
+    isIntroducingAPerson
+      ? css`
+          padding: 152px 0px 18px 23px;
+          justify-content: flex-end;
+        `
+      : css`
+          padding: 152px 0px 152px 23px;
+          justify-content: center;
+        `}
 
   ${({ isActive }) =>
     !isActive &&
     css`
       display: none;
     `}
+
 
   h3 {
     font-family: 'Montserrat';
@@ -290,9 +302,24 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     color: ${({ theme }) => theme.colors.white};
   }
 
+  h4 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.38px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    /* letter-spacing: 1.3px; */
+    text-transform: capitalize;
+
+    color: ${({ theme }) => theme.colors.white};
+  }
+
   .paragraph-container {
     margin-top: 50px;
-    margin-bottom: 23px;
+    margin-bottom: ${({ isIntroducingAPerson }) =>
+      isIntroducingAPerson ? '0px' : '23px'};
   }
 
   p {
@@ -307,9 +334,11 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     text-align: left;
 
     margin: 0;
+    padding: 0;
     color: ${({ theme }) => theme.colors.white};
   }
 
+  //MEDIA QUERY
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 100px 8px 70px 8px;

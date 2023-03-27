@@ -18,6 +18,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
+  subtitle?: string;
   from: string;
   texts: string[];
   countryFlag: string;
@@ -26,6 +27,7 @@ export interface ICarouselData {
 export interface Props {
   dataArray: ICarouselData[];
   haveSmallsSlides?: boolean;
+  isIntroducingAPerson?: boolean;
 }
 
 export default function FancyCarousel(props: Props) {
@@ -115,27 +117,32 @@ export default function FancyCarousel(props: Props) {
             isSmall
           >
             <ImageBackground src={item.imgSrc.src}>
-              <ImageBackgroundContent isActive={isActive(i)}>
+              <ImageBackgroundContent
+                isIntroducingAPerson={props.isIntroducingAPerson}
+                isActive={isActive(i)}
+              >
                 <h3>{item.title}</h3>
+                {item.subtitle && <h4>{item.subtitle}</h4>}
                 <div className="paragraph-container">
                   <p>{item.from}</p>
                   {item.texts.length && item.texts.map((text) => <p>{text}</p>)}
                 </div>
-
-                <StdButton
-                  style={{
-                    marginTop: `${isMobile ? '36px' : 'auto'}`,
-                    marginBottom: `${isMobile ? '36px' : 'auto'}`,
-                    width: `${isMobile ? '196px' : 'max-content'}`,
-                    height: `${isMobile ? '35px' : 'auto'}`,
-                    fontSize: `${isMobile ? '14px' : '19px'}`,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  Find Experts Now
-                </StdButton>
+                {!props.isIntroducingAPerson && (
+                  <StdButton
+                    style={{
+                      marginTop: `${isMobile ? '36px' : 'auto'}`,
+                      marginBottom: `${isMobile ? '36px' : 'auto'}`,
+                      width: `${isMobile ? '196px' : 'max-content'}`,
+                      height: `${isMobile ? '35px' : 'auto'}`,
+                      fontSize: `${isMobile ? '14px' : '19px'}`,
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    Find Experts Now
+                  </StdButton>
+                )}
               </ImageBackgroundContent>
             </ImageBackground>
           </FlexboxSlide>
