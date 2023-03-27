@@ -15,7 +15,7 @@ const defaultContext = {
     height: 0,
   },
   isMobile: false,
-  smallDesktopSize: 1395,
+  smallDesktopSize: 0,
 };
 
 const AppContext = React.createContext<IContext>(defaultContext);

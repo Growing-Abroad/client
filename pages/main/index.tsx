@@ -7,6 +7,7 @@ import { PageLayout } from '@/components';
 import ConsultingGmbHSection from './components/ConsultingGmbHSection/index';
 import RecruitingAndCareerServicesSection from './components/RecrutingAndCareerServicesSection';
 import PartnersSection from './components/PartnersSection';
+import SectionDivider from './components/SectionDivider';
 
 export default function Main() {
   return (
@@ -15,6 +16,7 @@ export default function Main() {
       <ConsultingGmbHSection />
       <RecruitingAndCareerServicesSection />
       <PartnersSection />
+      <SectionDivider />
     </>
   );
 }
