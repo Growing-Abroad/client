@@ -6,6 +6,7 @@ import { ReactElement } from 'react';
 import { PageLayout } from '@/components';
 import ConsultingGmbHSection from './components/ConsultingGmbHSection/index';
 import RecruitingAndCareerServicesSection from './components/RecrutingAndCareerServicesSection';
+import PartnersSection from './components/PartnersSection';
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
       <HeroSection />
       <ConsultingGmbHSection />
       <RecruitingAndCareerServicesSection />
+      <PartnersSection />
     </>
   );
 }
