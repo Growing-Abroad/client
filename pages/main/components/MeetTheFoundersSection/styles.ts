@@ -1,7 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   padding: 90px 140px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 90px 14px;
+    }
+  `}
 `;
 
 export const TitlesContainer = styled.div`
@@ -21,6 +27,14 @@ export const Subtitle = styled.h1`
   display: flex;
   align-items: center;
   letter-spacing: 1.3px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 16px;
+      line-height: 27px;
+      text-align: center;
+    }
+  `}
 `;
 
 export const Content = styled.div`
@@ -28,12 +42,24 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      flex-direction: column;
+    }
+  `}
 `;
 
 export const TextsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 30px 26px;
+    }
+  `}
 `;
 
 export const ContentTitle = styled.h4`
@@ -43,6 +69,13 @@ export const ContentTitle = styled.h4`
   line-height: 39px;
   letter-spacing: 1.3px;
   color: ${({ theme }) => theme.colors.primaryBlue};
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 24px;
+      line-height: 29.26px;
+    }
+  `}
 `;
 
 export const ContentDescription = styled.p`
@@ -53,12 +86,37 @@ export const ContentDescription = styled.p`
   letter-spacing: 1.3px;
   color: ${({ theme }) => theme.colors.primaryBlue};
   margin-top: 20px;
+  text-align: left;
 
-  span {
-    color: ${({ theme }) => theme.colors.secondaryBlue};
-  }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  `}
+`;
+
+export const Span = styled.span`
+  color: ${({ theme }) => theme.colors.secondaryBlue};
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      color: ${({ theme }) => theme.colors.primaryBlue};
+    }
+  `}
 `;
 
 export const CallToAction = styled.div`
   margin-top: 60px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  `}
 `;
