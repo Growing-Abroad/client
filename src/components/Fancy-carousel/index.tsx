@@ -1,19 +1,24 @@
 import { useCallback, useState } from 'react';
+
+import Image, { StaticImageData } from 'next/image';
+
+import { variables } from '@styles/global-variables';
+import { removePxFromCssValue } from '@utils/scripts/general-utility';
+import useAppContext from '@/hooks/useAppContext';
+import StdButton from '../generics/StdButton/StdButton';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import LinkedinImage from '@/../public/assets/icons/linkedin.webp';
+
 import {
   FlexboxSlide,
   FlexboxSlider,
   FromWrapper,
   ImageBackground,
   ImageBackgroundContent,
+  LinkedinIcon,
   TextBlock,
   TextBlockH3,
 } from './style';
-import Image, { StaticImageData } from 'next/image';
-import { variables } from '@styles/global-variables';
-import { removePxFromCssValue } from '@utils/scripts/general-utility';
-import useAppContext from '@/hooks/useAppContext';
-import StdButton from '../generics/StdButton/StdButton';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export interface ICarouselData {
   imgSrc: StaticImageData;
@@ -117,6 +122,9 @@ export default function FancyCarousel(props: Props) {
             isSmall
           >
             <ImageBackground src={item.imgSrc.src}>
+              {props.isIntroducingAPerson && isActive(i) && (
+                <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
+              )}
               <ImageBackgroundContent
                 isIntroducingAPerson={props.isIntroducingAPerson}
                 isActive={isActive(i)}

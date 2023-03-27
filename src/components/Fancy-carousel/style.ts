@@ -1,5 +1,6 @@
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import Image, { ImageProps } from 'next/image';
 import styled, { css } from 'styled-components';
 
 interface FlexboxSliderProps {
@@ -263,8 +264,6 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
 
   align-items: flex-start;
 
-  background-color: rgba(0, 0, 0, 0.5);
-
   position: absolute;
   /* top: 50%; */
   height: 100%;
@@ -274,10 +273,12 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   ${({ isIntroducingAPerson }) =>
     isIntroducingAPerson
       ? css`
+          background-color: rgba(0, 0, 0, 0.25);
           padding: 152px 0px 18px 23px;
           justify-content: flex-end;
         `
       : css`
+          background-color: rgba(0, 0, 0, 0.5);
           padding: 152px 0px 152px 23px;
           justify-content: center;
         `}
@@ -357,4 +358,13 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
       }
     }
   `}
+`;
+
+export const LinkedinIcon = styled(Image).attrs({
+  width: 56,
+  height: 54,
+})`
+  position: absolute;
+  top: 6px;
+  right: 6px;
 `;
