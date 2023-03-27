@@ -6,7 +6,7 @@ import DreamJobSection from "./components/dream-job-section";
 import VisionAndMissionNew from "@pages/about-us/components/VisionAndMissionNew";
 import CoachingPackageOnlineCourseSection from "./components/coaching-package-online-course";
 import WhatOurClientsSay from "./components/what-our-clients-say";
-import FaqSection from "@pages/faq/components/FaqSection";
+import ReusedFaq from "@/components/reused-faq";
 
 export default function Coaching() {
     return <>
@@ -16,7 +16,7 @@ export default function Coaching() {
         <DreamJobSection />
         <CoachingPackageOnlineCourseSection />
         <WhatOurClientsSay />
-        <FaqSection />
+        <ReusedFaq />
     </>
 }
 
