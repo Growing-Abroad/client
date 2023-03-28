@@ -74,7 +74,7 @@ export const Container = styled.div<ContainerProps>`
   `}
 `;
 
-export const LogoContainer = styled.button`
+export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

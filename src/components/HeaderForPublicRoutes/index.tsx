@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
+import GlobeIcon from '@/../public/assets/globe-icon.svg';
 import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
 import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
 import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
 import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
 import BurgerIcon from '@/../public/assets/burger-icon.svg';
 
@@ -20,9 +19,10 @@ import {
   Icon,
   StyledBurger,
 } from './styles';
-import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
 import useAppContext from '@/hooks/useAppContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
@@ -32,7 +32,7 @@ function HeaderForPublicRoutes() {
   } = useTheme();
 
   const { isMobile } = useAppContext();
-
+  console.log({isMobile})
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
@@ -45,24 +45,20 @@ function HeaderForPublicRoutes() {
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <Icon src={GlobeIcon} />
+              <FontAwesomeIcon icon={faGlobe}  />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>
               <Button>For companies</Button>
-            </Button>
-            <Button>
               <Button>For candidates</Button>
-            </Button>
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
                 <IconButton>
-                  <Icon src={GlobeIcon} color={primaryBlue} />
+                  <FontAwesomeIcon icon={faGlobe}  />
                 </IconButton>
               </>
             )}

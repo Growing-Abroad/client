@@ -51,32 +51,20 @@ function HeaderForCandidates() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>
               <Button>Online course</Button>
-            </Button>
-            <Button>
               <Button>Coaching</Button>
-            </Button>
-            <Button>
               <Button>Jobs</Button>
-            </Button>
             {isMobile && (
               <>
-                <Button>
-                  <Button>Login</Button>
-                </Button>
-                <Button>
-                  <Button>For Companies</Button>
-                </Button>
+                <Button>Login</Button>
+                <Button>For Companies</Button>
               </>
             )}
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <Button>
                   <Button>Login</Button>
-                </Button>
                 <IconButton>
                   <Icon src={GlobeIcon} color={primaryBlue} />
                 </IconButton>

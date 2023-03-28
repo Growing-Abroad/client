@@ -25,6 +25,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <ContextProvider>
+      <MyThemeProvider>
       {getLayout(
         <>
           <style jsx global>{`
@@ -33,11 +34,10 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
               font-family: 'Montserrat', sans-serif;
             }
           `}</style>
-          <MyThemeProvider>
             <Component {...pageProps} />
-          </MyThemeProvider>
         </>,
       )}
+      </MyThemeProvider>
     </ContextProvider>
   );
 }

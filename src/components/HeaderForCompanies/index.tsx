@@ -51,16 +51,10 @@ function HeaderForCompanies() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>
               <Button>our services</Button>
-            </Button>
-            <Button>
               <Button>about us</Button>
-            </Button>
             {isMobile && (
-              <Button>
                 <Button>For Candidates</Button>
-              </Button>
             )}
           </ButtonsContainer>
           <IconsContainer>

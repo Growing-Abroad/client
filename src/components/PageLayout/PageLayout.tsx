@@ -23,17 +23,15 @@ const HeaderComponentMapping = {
 };
 
 function PageLayout(props: Props) {
-  const { children, chosenHeader } = props;
+  const { children } = props;
 
   const Header = HeaderComponentMapping[ChosenHeader.DEFAULT];
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <HeaderForPublicRoutes />
-        {children}
-        <Footer />
-      </ThemeProvider>
+      <HeaderForPublicRoutes />
+      {children}
+      <Footer />
     </>
   );
 }
