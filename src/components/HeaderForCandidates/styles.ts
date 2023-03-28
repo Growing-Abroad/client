@@ -135,11 +135,11 @@ export const Button = styled.button`
 
   color: ${({ theme }) => theme.colors.primaryBlue};
 
-  ${({ theme }) => css`
+  /* ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       color: ${theme.colors.white};
     }
-  `}
+  `} */
 `;
 
 export const IconsContainer = styled.div`

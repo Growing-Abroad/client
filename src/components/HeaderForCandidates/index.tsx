@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
 import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
+import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
+import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
 import GlobeIcon from '@/../public/assets/globe-icon.svg';
 import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
 import BurgerIcon from '@/../public/assets/burger-icon.svg';
@@ -40,12 +42,10 @@ function HeaderForCandidates() {
       </StyledBurger>
       <Container itsOpen={itsOpen}>
         <LogoContainer>
-          <Logo
-            src={!isMobile ? GrowingAbroadImage.src : GrowingAbroadImageBW.src}
-          />
+          <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <Icon src={GlobeIconWhite} />
+              <Icon src={GlobeIcon} />
             </IconButton>
           )}
         </LogoContainer>
