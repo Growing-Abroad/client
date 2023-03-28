@@ -25,14 +25,12 @@ const HeaderComponentMapping = {
 function PageLayout(props: Props) {
   const { children, chosenHeader } = props;
 
-  const Header = chosenHeader
-    ? HeaderComponentMapping[chosenHeader]
-    : HeaderComponentMapping[ChosenHeader.DEFAULT];
+  const Header = HeaderComponentMapping[ChosenHeader.DEFAULT];
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header />
+        <HeaderForPublicRoutes />
         {children}
         <Footer />
       </ThemeProvider>

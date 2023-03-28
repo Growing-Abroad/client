@@ -28,7 +28,7 @@ function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
 
   const {
-    colors: { white, primaryBlue, yellow400 },
+    colors: { primaryBlue },
   } = useTheme();
 
   const { isMobile } = useAppContext();
