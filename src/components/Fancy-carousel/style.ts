@@ -191,7 +191,6 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 56px;
       }
     `}
 `;
@@ -275,15 +274,6 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  ${({ isActive, isIntroducingAPerson, theme }) =>
-    isActive &&
-    isIntroducingAPerson &&
-    css`
-      @media (max-width: ${theme.sizes.mediaQuery}) {
-        max-height: 100%;
-      }
-    `}
 `;
 
 export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
@@ -303,12 +293,12 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     isIntroducingAPerson
       ? css`
           background-color: rgba(0, 0, 0, 0.25);
+
           justify-content: flex-end;
 
           @media (max-width: ${theme.sizes.mediaQuery}) {
-            position: relative;
-            max-height: 100%;
-            justify-content: flex-end;
+            /* position: relative; */
+            /* max-height: 100%; */
           }
         `
       : css`
@@ -374,9 +364,10 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   }
 
   //MEDIA QUERY
-  ${({ theme }) => css`
+  ${({ theme, isIntroducingAPerson }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 100px 8px 70px 8px;
+      padding: 100px 8px 20px 8px;
+
       h3 {
         font-size: 14px;
         line-height: 17.07px;
@@ -404,10 +395,10 @@ export const LinkedinIcon = styled(Image).attrs({
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      width: 18px;
-      height: 17px;
-      top: auto;
-      bottom: 21%;
+      width: 32px;
+      height: 30px;
+      /* top: auto;
+      bottom: 21%; */
     }
   `}
 `;
