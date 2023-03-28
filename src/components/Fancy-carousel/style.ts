@@ -272,6 +272,15 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ isActive, isIntroducingAPerson, theme }) =>
+    isActive &&
+    isIntroducingAPerson &&
+    css`
+      @media (max-width: ${theme.sizes.mediaQuery}) {
+        /* width: 50%; */
+      }
+    `}
 `;
 
 export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
@@ -285,24 +294,24 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   height: 100%;
   width: 100%;
   z-index: 1;
+  padding: 152px 0px 18px 23px;
 
   ${({ isIntroducingAPerson, theme }) =>
     isIntroducingAPerson
       ? css`
           background-color: rgba(0, 0, 0, 0.25);
-          padding: 152px 0px 18px 23px;
           justify-content: flex-end;
 
           @media (max-width: ${theme.sizes.mediaQuery}) {
             position: relative;
             max-width: 100%;
-            max-height: 100%;
-            padding: 152px 0px 18px 23px;
+            justify-content: flex-end;
+            padding: 15px;
           }
         `
       : css`
           background-color: rgba(0, 0, 0, 0.5);
-          padding: 0;
+          padding: 152px 0px 152px 23px;
           justify-content: center;
         `}
 
@@ -367,11 +376,8 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 100px 8px 70px 8px;
       h3 {
-        font-size: 20px;
-        line-height: 17.07px;
-      }
-      h4 {
         font-size: 14px;
+        line-height: 17.07px;
       }
 
       .paragraph-container {
@@ -396,10 +402,10 @@ export const LinkedinIcon = styled(Image).attrs({
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      width: 18px;
-      height: 17px;
+      width: 26px;
+      height: 24px;
       top: auto;
-      right: 0;
+      bottom: 2rem;
     }
   `}
 `;
