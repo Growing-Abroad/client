@@ -1,7 +1,5 @@
 import { variables } from './global-variables';
 
-type ITheme = Record<string, Record<string, string>>;
-
 const { sizes } = variables;
 
 export const theme = {

@@ -3,29 +3,32 @@
     padding-bottom: 175px;
     padding: 0;
     max-width: 780px;
+    color:#05335B !important;
 }
 
 .selectOption {
     padding: 10px 47px;
     width: auto;
-    border-radius: 25px;
+    border-radius: 20px;
     font-family: inherit;
     font-size: 32px;
     font-weight: 600;
     line-height: 39px;
     letter-spacing: 1.3px;
     text-align: left;
-    border: 1px solid #000;
+    border: 1px solid  #05335B;
     margin-bottom: 48px;
+    color: #05335B;
+
 
 }
 .mobileTitle{
-  display: flex !important;
-  flex-direction: column !important;
+  display: inline-block!important;
+  /* flex-direction: column !important; */
   text-align: left !important;
   align-items: flex-start !important;
+  font-size:60px !important;
 }
-
 .para {
     font-family: inherit;
     font-size: 20px;
@@ -35,6 +38,7 @@
     text-align: justify;
     margin-bottom: 25px;
     margin-top: 28px;
+    color:#05335B !important;
 }
 
 .leftPanel .para:first-of-type {
@@ -49,6 +53,12 @@
     letter-spacing: 0em;
     text-align: justify;
 }
+@media (min-width:1024px) and (max-width:1230px){
+  .mobileTitle{
+    font-size:48px !important;
+    line-height: 60px !important;
+  }
+}
 
 @media (max-width: 1024px) {
 
@@ -58,6 +68,7 @@
         line-height: 20px;
         margin-bottom: 24px;
     }
+
 
     .leftPanel h1 {
         font-size: 36px;
@@ -89,6 +100,11 @@
     padding-bottom: 175px;
     padding: 0;
     max-width: 430px;
+}
+.mobileTitle{
+  font-size:36px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 

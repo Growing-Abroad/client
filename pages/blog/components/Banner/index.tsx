@@ -9,8 +9,7 @@ function Banner() {
 
     return (
         <Container className={classes.bannerContainer}>
-            <Row>
-                <Col className={classes.topBanner}>
+                <Col className={classes.topBanner} >
                     <TwoColorTitle text1="How to write a CV in" text2="German Standards" hasSpaceBtw styles={{ textAlign: 'left' }}
                         wrapperStyles={{ display: 'block', textAlign: 'left', maxWidth: '870px', width: '100%' }} />
                     <p className={classes.para}>
@@ -25,7 +24,6 @@ function Banner() {
                     <StdButton style={{padding:`${isMobile?"8px 15px":"20px 40px"}`,fontSize:`${isMobile?"14px":"20px"}`}} className={classes.button}>Job Application</StdButton>
                     </div>
                 </Col>
-            </Row>
         </Container>
     );
 }

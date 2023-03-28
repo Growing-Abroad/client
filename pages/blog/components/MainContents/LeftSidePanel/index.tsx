@@ -18,33 +18,18 @@ function LeftSidePanel() {
           <option>Option Three</option>
         </FormSelect>
 
-        {isMobile ? (
-          <TwoColorTitle
-            text1="How to write a CV in German"
-            text2="Standards"
-            hasSpaceBtw
-            className={classes.mobileTitle}
-            wrapperStyles={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              maxWidth: '310px',
-              textAlign: 'left',
-            }}
-          />
-        ) : (
-          <TwoColorTitle
-            text1="How to write a CV in German"
-            text2="Standards"
-            hasSpaceBtw
-            wrapperStyles={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              flexWrap: 'wrap',
-              maxWidth: '759px',
-              textAlign: 'justify',
-            }}
-          />
-        )}
+        <TwoColorTitle
+          text1="How to write a CV in German"
+          text2="Standards"
+          hasSpaceBtw
+          className={classes.mobileTitle}
+          wrapperStyles={{
+            display: 'flex',
+            justifyContent: 'flex-start',
+            maxWidth: `${isMobile ? '330px' : '769px'}`,
+            textAlign: 'left',
+          }}
+        />
 
         <p className={classes.para}>
           Growing abroad helps qualified people that dream to live and work

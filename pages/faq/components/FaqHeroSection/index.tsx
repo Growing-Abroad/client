@@ -27,6 +27,7 @@ export default function FaqHeroSection() {
                 text1="Frequently"
                 text2="Asked Questions"
                 hasSpaceBtw
+                className='title'
                 wrapperStyles={{
                   justifyContent: 'flex-start',
                   fontSize: '44px',
@@ -54,8 +55,9 @@ export default function FaqHeroSection() {
             <TwoColorTitle
               text1="Frequently"
               text2="Asked Questions"
+              className='title'
               hasSpaceBtw
-              wrapperStyles={{ justifyContent: 'flex-start', maxWidth: '60%' }}
+              wrapperStyles={{ display:'flex',flexDirection:'column', justifyContent: 'flex-start'}}
             />
             <SubheadingHero>
             Got a question? We're here to answer ! If you don't see your

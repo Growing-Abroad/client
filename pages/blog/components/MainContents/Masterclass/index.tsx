@@ -4,6 +4,7 @@ import classes from './styles.module.css'
 import image from '../../../../../public/assets/blog/growing-abroad-blog-online-course-canva.webp'
 import { Button } from "@/styles/global-styles";
 import useAppContext from "@/hooks/useAppContext";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 function Masterclass () {
   const {isMobile}= useAppContext();
@@ -14,7 +15,7 @@ function Masterclass () {
 
         <Image src={image.src} width="100%"></Image>
 
-        <Button width="auto" className={classes.button}>Watch free Masterclasses</Button>
+        <StdButton  className={classes.button}>Watch free Masterclasses</StdButton>
         </div>
     );
 }
