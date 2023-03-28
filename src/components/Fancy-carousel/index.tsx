@@ -120,15 +120,21 @@ export default function FancyCarousel(props: Props) {
             key={i + '-' + item.title}
             onClick={() => setSelectedSlide(i)}
             isSmall
+            isActive={isActive(i)}
+            isIntroducingAPerson={props.isIntroducingAPerson}
           >
-            <ImageBackground src={item.imgSrc.src}>
-              {props.isIntroducingAPerson && isActive(i) && (
-                <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
-              )}
+            <ImageBackground
+              src={item.imgSrc.src}
+              isIntroducingAPerson={props.isIntroducingAPerson}
+              isActive={isActive(i)}
+            >
               <ImageBackgroundContent
                 isIntroducingAPerson={props.isIntroducingAPerson}
                 isActive={isActive(i)}
               >
+                {props.isIntroducingAPerson && isActive(i) && (
+                  <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
+                )}
                 <h3>{item.title}</h3>
                 {item.subtitle && <h4>{item.subtitle}</h4>}
                 <div className="paragraph-container">

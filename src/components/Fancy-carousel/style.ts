@@ -5,16 +5,16 @@ import styled, { css } from 'styled-components';
 
 interface FlexboxSliderProps {
   isSmall?: boolean;
-}
-
-interface ImageBackgroundProps {
-  src: string;
-}
-
-interface ImageBackgroundContentProps {
   isActive: boolean;
   isIntroducingAPerson?: boolean;
 }
+
+interface ImageBackgroundProps extends Omit<FlexboxSliderProps, 'isSmall'> {
+  src: string;
+}
+
+interface ImageBackgroundContentProps
+  extends Omit<FlexboxSliderProps, 'isSmall'> {}
 
 const {
   colors: { primaryBlue, blue500 },
@@ -178,6 +178,19 @@ export const FlexboxSlide = styled.div<FlexboxSliderProps>`
         min-width: 62px;
       }
     `}
+
+  ${({ isSmall, isActive, isIntroducingAPerson, theme }) =>
+    isSmall &&
+    isActive &&
+    isIntroducingAPerson &&
+    css`
+      @media (max-width: ${theme.sizes.mediaQuery}) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 56px;
+      }
+    `}
 `;
 
 export const TextBlock = styled.div`
@@ -256,6 +269,9 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
@@ -270,16 +286,23 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   width: 100%;
   z-index: 1;
 
-  ${({ isIntroducingAPerson }) =>
+  ${({ isIntroducingAPerson, theme }) =>
     isIntroducingAPerson
       ? css`
           background-color: rgba(0, 0, 0, 0.25);
           padding: 152px 0px 18px 23px;
           justify-content: flex-end;
+
+          @media (max-width: ${theme.sizes.mediaQuery}) {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 152px 0px 18px 23px;
+          }
         `
       : css`
           background-color: rgba(0, 0, 0, 0.5);
-          padding: 152px 0px 152px 23px;
+          padding: 0;
           justify-content: center;
         `}
 
@@ -344,8 +367,11 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 100px 8px 70px 8px;
       h3 {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 17.07px;
+      }
+      h4 {
+        font-size: 14px;
       }
 
       .paragraph-container {
@@ -367,4 +393,13 @@ export const LinkedinIcon = styled(Image).attrs({
   position: absolute;
   top: 6px;
   right: 6px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 18px;
+      height: 17px;
+      top: auto;
+      right: 0;
+    }
+  `}
 `;

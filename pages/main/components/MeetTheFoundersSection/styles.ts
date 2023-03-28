@@ -43,11 +43,9 @@ export const Content = styled.div`
   justify-content: space-between;
   padding-top: 50px;
 
-  ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      flex-direction: column;
-    }
-  `}
+  @media (max-width: 1395px) {
+    flex-direction: column;
+  }
 `;
 
 export const TextsContainer = styled.div`

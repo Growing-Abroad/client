@@ -17,13 +17,13 @@ export default [
   },
   {
     imgSrc: Img2,
-    title: 'Uan Silva',
+    title: 'Manuel Feneberg',
     subtitle: 'Co-founder',
     from: ``,
     texts: [
-      'MSc + MBA in German University',
-      'Ex Bosch, Accenture, Allianz',
-      'management experience in Germany',
+      'Bachelor BA',
+      'Certified Professional Coach',
+      'Professional Actor',
     ],
     href: '',
     countryFlag: 'br',
