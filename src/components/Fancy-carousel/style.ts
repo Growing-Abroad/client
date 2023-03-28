@@ -5,16 +5,19 @@ import styled, { css } from 'styled-components';
 
 interface FlexboxSliderProps {
   isSmall?: boolean;
-  isActive: boolean;
   isIntroducingAPerson?: boolean;
 }
 
-interface ImageBackgroundProps extends Omit<FlexboxSliderProps, 'isSmall'> {
+interface FlexboxSlideProps extends FlexboxSliderProps {
+  isActive: boolean;
+}
+
+interface ImageBackgroundProps extends Omit<FlexboxSlideProps, 'isSmall'> {
   src: string;
 }
 
 interface ImageBackgroundContentProps
-  extends Omit<FlexboxSliderProps, 'isSmall'> {}
+  extends Omit<FlexboxSlideProps, 'isSmall'> {}
 
 const {
   colors: { primaryBlue, blue500 },
@@ -107,7 +110,7 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   }
 `;
 
-export const FlexboxSlide = styled.div<FlexboxSliderProps>`
+export const FlexboxSlide = styled.div<FlexboxSlideProps>`
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.3s;
@@ -278,7 +281,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
     isIntroducingAPerson &&
     css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
-        /* width: 50%; */
+        max-height: 100%;
       }
     `}
 `;
@@ -304,9 +307,8 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
 
           @media (max-width: ${theme.sizes.mediaQuery}) {
             position: relative;
-            max-width: 100%;
+            max-height: 100%;
             justify-content: flex-end;
-            padding: 15px;
           }
         `
       : css`
@@ -402,10 +404,10 @@ export const LinkedinIcon = styled(Image).attrs({
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      width: 26px;
-      height: 24px;
+      width: 18px;
+      height: 17px;
       top: auto;
-      bottom: 2rem;
+      bottom: 21%;
     }
   `}
 `;

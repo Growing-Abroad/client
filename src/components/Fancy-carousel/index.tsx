@@ -82,6 +82,7 @@ export default function FancyCarousel(props: Props) {
     <FlexboxSlider
       className="flexbox-slider my-flexbox-slider"
       isSmall={props.haveSmallsSlides}
+      isIntroducingAPerson={props.isIntroducingAPerson}
     >
       {props.dataArray.map((item, i) =>
         !props.haveSmallsSlides ? (
@@ -89,6 +90,9 @@ export default function FancyCarousel(props: Props) {
             className={handleSlideClasses(i)}
             key={i + '-' + item.title}
             onClick={() => setSelectedSlide(i)}
+            isActive={isActive(i)}
+            isSmall={props.haveSmallsSlides}
+            isIntroducingAPerson={props.isIntroducingAPerson}
           >
             <TextBlock className="text-block">
               <TextBlockH3>{item.title}</TextBlockH3>
