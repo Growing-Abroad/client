@@ -9,6 +9,8 @@ export interface TwoColorTitleParameters extends IText {
   fontSize?: string;
   styles?: CSSProperties;
   className?: string;
+  color1?: string;
+  color2?: string;
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
@@ -20,20 +22,22 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   className,
   as,
   styles,
+  color1,
+  color2,
   ...rest
 }) => {
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
       {text1 && (
         <Text
-          color={'primaryBlue'}
+          color={color1 ? color1 : 'primaryBlue'}
           className={className}
           style={{ ...styles, ...rest }}
           as={as || 'h1'}
         >
           {text1}
           {hasSpaceBtw ? '\xa0' : ''}
-          <ColoredSpan color={'secondaryBlue'} style={{ ...styles, ...rest }}>{text2}</ColoredSpan>
+          <ColoredSpan color={color2 ? color2 : 'secondaryBlue'} style={{ ...styles, ...rest }}>{text2}</ColoredSpan>
         </Text>
       )}
     </TwoColorTitleWrapper>

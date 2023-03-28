@@ -14,6 +14,7 @@ import { IntlProvider } from "react-intl";
 import de from "../lang/de.json"
 import en from "../lang/en.json";
 import pt from "../lang/pt.json";
+import { EHeaderType } from "@/components/PageLayout/PageLayout";
 
 const Page: NextPageWithLayout = () => {
   return <>

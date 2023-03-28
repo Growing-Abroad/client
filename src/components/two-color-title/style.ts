@@ -25,19 +25,14 @@ export interface IText {
   color?: string;
   as?: keyof JSX.IntrinsicElements;
 }
-export const ColoredSpan = styled.span<IText>`
-  ${(props) => {
-    const { color } = props;
-    return css`
-    color: ${theme.colors[color!]}
-  `}}`;
+
 
 export const Text = styled.h1<IText>`
   ${(props) => {
     const { color } = props;
     return css`
     display: inline-block;
-    color: ${theme.colors[color!]};
+    color: ${() => {console.log('text',color); return color}};
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
@@ -96,3 +91,13 @@ export const Text = styled.h1<IText>`
     line-height: 53.64px;
   }
 `;
+
+export const ColoredSpan = styled.span<IText>`
+  ${(props) => {
+    const { color } = props;
+    console.log('span color', color)
+    return css`
+      color: ${color}
+    `
+  }}
+`
