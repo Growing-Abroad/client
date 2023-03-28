@@ -1,16 +1,85 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Image from 'next/image';
+import { ComponentPropsWithoutRef } from 'react';
 
-export const Container = styled.div`
+interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
+  open: boolean;
+}
+
+interface ContainerProps {
+  itsOpen: boolean;
+}
+
+export const StyledBurger = styled.div<BurgerProps>`
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 120;
+
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: ${({ theme }) => theme.colors.white};
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s;
+
+    &:nth-child(1) {
+      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+    }
+    &:nth-child(2) {
+      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      opacity: ${(props) => (props.open ? 0 : 1)};
+    }
+    &:nth-child(3) {
+      transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
+    }
+  }
+
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) {
+      display: none;
+    }
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      position: fixed;
+    }
+  `}
+`;
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
+
+  ${({ theme, itsOpen }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      display: ${itsOpen ? 'flex' : 'none'};
+      flex-direction: column;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 110;
+      padding: 15px 90px 32px 22px;
+      background-color: ${theme.colors.secondaryBlue};
+    }
+  `}
 `;
 
-export const LogoContainer = styled.div``;
+export const LogoContainer = styled.button`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: transparent;
+`;
 
 export const Logo = styled(Image).attrs({
   width: 150,
@@ -24,13 +93,29 @@ export const Content = styled.div`
   padding-left: 80px;
   flex: 1;
   justify-content: space-around;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 0;
+      flex-direction: column;
+    }
+  `}
 `;
 
 export const ButtonsContainer = styled.div`
   width: 100%;
   display: flex;
   flex: 5;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 37px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      align-items: flex-start;
+      flex-direction: column;
+      flex: 2;
+    }
+  `}
 `;
 
 export const Button = styled.button`
@@ -48,17 +133,42 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.primaryBlue};
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      color: ${theme.colors.white};
+    }
+  `}
 `;
 
 export const IconsContainer = styled.div`
   display: flex;
-  flex: 2;
+  flex: 3;
   justify-content: space-around;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  `}
 `;
 
 export const IconButton = styled.button`
   background-color: transparent;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+  `}
 `;
 
 export const Icon = styled(Image).attrs({
