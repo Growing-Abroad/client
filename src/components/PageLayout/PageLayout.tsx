@@ -1,14 +1,19 @@
-import { ComponentPropsWithoutRef } from "react";
-import Footer from "../Footer";
-import Header from "../Header";
+import { theme } from '@/styles/theme';
+import { ComponentPropsWithoutRef } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Footer from '../Footer';
+import Header from '../Header';
+import { HeaderForCandidates } from '../HeaderForCandidates';
 
-function PageLayout(props: ComponentPropsWithoutRef<"body">) {
+function PageLayout(props: ComponentPropsWithoutRef<'body'>) {
   const { children } = props;
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <ThemeProvider theme={theme}>
+        <HeaderForCandidates />
+        {children}
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

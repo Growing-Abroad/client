@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import search from '@/../public/assets/search.svg';
 
-import {
-  Line,
-  NavContainer,
-  NavList,
-  NavItem,
-  SearchButton,
-} from './style';
+import { Line, NavContainer, NavList, NavItem, SearchButton } from './style';
 export default function NavHero() {
   return (
     <>
@@ -25,8 +19,7 @@ export default function NavHero() {
           </NavItem>
         </NavList>
       </NavContainer>
-      <Line />
+      {/* <Line /> */}
     </>
   );
 }
-
