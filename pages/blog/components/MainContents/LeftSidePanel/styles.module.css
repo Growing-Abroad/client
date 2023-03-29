@@ -58,6 +58,10 @@
     font-size:48px !important;
     line-height: 60px !important;
   }
+  .leftPanel{
+    max-width: 600px;
+    padding-left:30px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -94,7 +98,7 @@
     }
 
 }
-@media (max-width: 430px) {
+@media (max-width: 758px) {
   .leftPanel {
     margin:0;
     padding-bottom: 175px;

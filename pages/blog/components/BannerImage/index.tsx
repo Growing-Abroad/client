@@ -1,8 +1,7 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import classes from './styles.module.css';
-import authorPicture from '../../../../public/assets/blog/uanderson.webp';
-import borderRight from '../../../../public/assets/blog/right-border.svg';
 import useAppContext from '@/hooks/useAppContext';
+import Publisher from '../MainContents/Publisher';
 
 function BannerImage() {
   const {isMobile} = useAppContext();
@@ -26,17 +25,6 @@ function BannerImage() {
               fill="white"
             />
           </svg>
-        </Col>
-        <Col md="8" className={classes.publisherContainer}>
-          <div className={classes.author}>
-            <span>Written by</span>
-            <span>
-              <Image src={authorPicture.src}></Image> Manuel Feneberg
-            </span>
-          </div>
-          <div className={classes.published}>
-            <span>Published on: 01.01.2023</span>
-          </div>
         </Col>
       </Row>
     </Container>
