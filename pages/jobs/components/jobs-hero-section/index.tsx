@@ -1,15 +1,18 @@
 import ContainerHero from "@/components/ContainerHero"
 import styled from "styled-components"
-import JobsHeroBg from "@assets/pages/jobs/jobs-hero-bg.png"
+import JobsHeroBg from "@assets/pages/jobs/jobs-hero-bg-desktop.png"
+import JobsHeroMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png"
+import JobsHeroWide from "@assets/pages/jobs/jobs-hero-ultra-wide.png"
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";
 import { theme } from "@/styles/theme";
 import { variables } from "@/styles/global-variables";
+import StdButton from "@/components/generics/StdButton/StdButton"
 
 const { colors: { blue700, yellow400 }} = theme;
-const { sizes: { maxWidthAll, globalHorizontalPadding }} = variables;
+const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
 
-const ContainerWrapper = styled.div`
+const ContainerWrapper = styled.section`
     height: 412px;
     width: 100%;
 
@@ -23,12 +26,32 @@ const ContainerWrapper = styled.div`
 `
 
 export const HeroTitleWrapper = styled.div`
-    padding: 128px 65px 0px ;
+    padding: 90px 65px 0px ;
     max-width: ${maxWidthAll};
     width: 100%;
 
     .jobs-title {
         text-align: left;
+    }
+
+    .upload-cv-btn {
+        margin-top: 24px
+    }
+
+    @media (max-width: ${mediaQuery}) {
+        padding: 59px 42px 0px ;
+
+        .jobs-title {
+            max-width: 210px;
+            span {
+                display: block
+            }
+        }
+
+        .upload-cv-btn {
+            margin-top: 14px;
+            padding: 8px 15px;
+        }
     }
 `
         
@@ -41,7 +64,7 @@ export default function JobsHeroSection() {
         <ContainerWrapper>
             <ContainerHero 
                 backgroundImageDesktop={JobsHeroBg.src}  
-                backgroundImageMobile={JobsHeroBg.src}
+                backgroundImageMobile={JobsHeroMobile.src}
                 styles={isMobile ? {
                     height: '100%', 
                     justifyContent: 'flex-start', 
@@ -56,7 +79,7 @@ export default function JobsHeroSection() {
                 <HeroTitleWrapper>
                     <div style={{maxWidth: '740px'}}>
                         <TwoColorTitle 
-                        text1="Land your Dream Job in" 
+                        text1="Get your Dream Job in" 
                         text2="Germany" 
                         hasSpaceBtw
                         color1={blue700}
@@ -64,13 +87,17 @@ export default function JobsHeroSection() {
                         className="jobs-title"
                         wrapperStyles={{maxWidth: '100%', justifyContent: 'flex-start'}}
                         />
-                        <TwoColorTitle 
+                        {!isMobile && <TwoColorTitle 
                         text1="or" 
                         text2="Europe" 
                         hasSpaceBtw
                         color1={blue700}
                         color2={yellow400}
-                        />       
+                        />}  
+
+                        <StdButton className="upload-cv-btn">
+                            Upload your CV NOW    
+                        </StdButton>  
                     </div>
                 </HeroTitleWrapper>
             </ContainerHero>

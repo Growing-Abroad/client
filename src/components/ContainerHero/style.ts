@@ -14,7 +14,7 @@ interface IContainerProps{
   backgroundImage:string
 }
 
-export const Container = styled.section<IContainerProps>`
+export const Container = styled.div<IContainerProps>`
   width: 100%;
   background-image: url('${({backgroundImage})=>backgroundImage}');
   background-repeat: no-repeat;

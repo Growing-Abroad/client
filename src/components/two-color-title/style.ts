@@ -32,7 +32,7 @@ export const Text = styled.h1<IText>`
     const { color } = props;
     return css`
     display: inline-block;
-    color: ${() => {console.log('text',color); return color}};
+    color: ${color};
     font-family: ${montserrat.style.fontFamily};
     font-weight: 600;
     text-align: center;
@@ -95,7 +95,6 @@ export const Text = styled.h1<IText>`
 export const ColoredSpan = styled.span<IText>`
   ${(props) => {
     const { color } = props;
-    console.log('span color', color)
     return css`
       color: ${color}
     `
