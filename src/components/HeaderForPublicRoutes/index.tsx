@@ -32,7 +32,7 @@ function HeaderForPublicRoutes() {
   } = useTheme();
 
   const { isMobile } = useAppContext();
-  console.log({isMobile})
+  console.log({ isMobile });
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
@@ -45,20 +45,28 @@ function HeaderForPublicRoutes() {
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <FontAwesomeIcon icon={faGlobe}  />
+              <FontAwesomeIcon
+                icon={faGlobe}
+                size="2xl"
+                style={{ color: primaryBlue }}
+              />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-              <Button>For companies</Button>
-              <Button>For candidates</Button>
+            <Button>For companies</Button>
+            <Button>For candidates</Button>
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
                 <IconButton>
-                  <FontAwesomeIcon icon={faGlobe}  />
+                  <FontAwesomeIcon
+                    icon={faGlobe}
+                    size="2xl"
+                    style={{ color: primaryBlue }}
+                  />
                 </IconButton>
               </>
             )}

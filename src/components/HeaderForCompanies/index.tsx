@@ -23,6 +23,8 @@ import {
 import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
 import useAppContext from '@/hooks/useAppContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderForCompanies() {
   const [itsOpen, setItsOpen] = useState(false);
@@ -45,23 +47,29 @@ function HeaderForCompanies() {
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <Icon src={GlobeIcon} />
+              <FontAwesomeIcon
+                icon={faGlobe}
+                size="2xl"
+                style={{ color: primaryBlue }}
+              />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-              <Button>our services</Button>
-              <Button>about us</Button>
-            {isMobile && (
-                <Button>For Candidates</Button>
-            )}
+            <Button>our services</Button>
+            <Button>about us</Button>
+            {isMobile && <Button>For Candidates</Button>}
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
                 <IconButton>
-                  <Icon src={GlobeIcon} color={primaryBlue} />
+                  <FontAwesomeIcon
+                    icon={faGlobe}
+                    size="2xl"
+                    style={{ color: primaryBlue }}
+                  />
                 </IconButton>
                 <StdButton
                   style={{

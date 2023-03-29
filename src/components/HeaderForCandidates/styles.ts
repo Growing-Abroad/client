@@ -4,6 +4,7 @@ import { ComponentPropsWithoutRef } from 'react';
 
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
+  isForDesktop?: boolean;
 }
 
 interface ContainerProps {
@@ -13,9 +14,7 @@ interface ContainerProps {
 export const StyledBurger = styled.div<BurgerProps>`
   width: 2rem;
   height: 2rem;
-  position: absolute;
-  top: 15px;
-  right: 20px;
+
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
@@ -43,10 +42,16 @@ export const StyledBurger = styled.div<BurgerProps>`
 
   ${({ theme }) => css`
     @media (min-width: ${theme.sizes.mediaQuery}) {
-      display: none;
+      display: ${({ isForDesktop }) => (!isForDesktop ? 'none' : 'flex')};
+
+      div {
+        background-color: ${({ theme }) => theme.colors.primaryBlue};
+      }
     }
     @media (max-width: ${theme.sizes.mediaQuery}) {
       position: fixed;
+      top: 15px;
+      right: 20px;
     }
   `}
 `;
@@ -74,7 +79,7 @@ export const Container = styled.div<ContainerProps>`
   `}
 `;
 
-export const LogoContainer = styled.button`
+export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

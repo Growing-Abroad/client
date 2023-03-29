@@ -157,7 +157,7 @@ export const IconsContainer = styled.div`
   `};
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled.div`
   background-color: transparent;
 
   ${({ theme }) => css`

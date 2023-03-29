@@ -7,6 +7,8 @@ import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-
 import GlobeIcon from '@/../public/assets/globe-icon.svg';
 import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
 import BurgerIcon from '@/../public/assets/burger-icon.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 import {
   Container,
@@ -45,15 +47,19 @@ function HeaderForCandidates() {
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <Icon src={GlobeIcon} />
+              <FontAwesomeIcon
+                icon={faGlobe}
+                size="2xl"
+                style={{ color: primaryBlue }}
+              />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-              <Button>Online course</Button>
-              <Button>Coaching</Button>
-              <Button>Jobs</Button>
+            <Button>Online course</Button>
+            <Button>Coaching</Button>
+            <Button>Jobs</Button>
             {isMobile && (
               <>
                 <Button>Login</Button>
@@ -64,13 +70,23 @@ function HeaderForCandidates() {
           <IconsContainer>
             {!isMobile && (
               <>
-                  <Button>Login</Button>
+                <Button>Login</Button>
                 <IconButton>
-                  <Icon src={GlobeIcon} color={primaryBlue} />
+                  <FontAwesomeIcon
+                    icon={faGlobe}
+                    size="2xl"
+                    style={{ color: primaryBlue }}
+                  />
                 </IconButton>
-                <IconButton>
-                  <Icon src={BurgerIcon} />
-                </IconButton>
+                <StyledBurger
+                  open={itsOpen}
+                  onClick={() => setItsOpen(!itsOpen)}
+                  isForDesktop
+                >
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </StyledBurger>
                 <StdButton
                   style={{
                     width: 195,

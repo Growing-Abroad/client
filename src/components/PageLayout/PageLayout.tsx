@@ -6,30 +6,38 @@ import HeaderForCandidates from '../HeaderForCandidates';
 import HeaderForCompanies from '../HeaderForCompanies';
 import HeaderForPublicRoutes from '../HeaderForPublicRoutes';
 
-enum ChosenHeader {
+export enum ChosenHeader {
   DEFAULT = 'DEFAULT',
   FOR_CANDIDATES = 'FOR_CANDIDATES',
   FOR_COMPANIES = 'FOR_COMPANIES',
 }
 
 interface Props extends ComponentPropsWithoutRef<'body'> {
-  chosenHeader?: ChosenHeader;
+  chosenHeader: ChosenHeader;
 }
 
-const HeaderComponentMapping = {
-  DEFAULT: lazy(() => import('../HeaderForPublicRoutes')),
-  FOR_CANDIDATES: lazy(() => import('../HeaderForCandidates')),
-  FOR_COMPANIES: lazy(() => import('../HeaderForCompanies')),
-};
+interface HeaderProps {
+  chosenHeader: ChosenHeader;
+}
+
+function Header({ chosenHeader }: HeaderProps) {
+  switch (chosenHeader) {
+    case ChosenHeader.FOR_CANDIDATES:
+      return <HeaderForCandidates />;
+    case ChosenHeader.FOR_COMPANIES:
+      return <HeaderForCompanies />;
+    case ChosenHeader.DEFAULT:
+    default:
+      return <HeaderForPublicRoutes />;
+  }
+}
 
 function PageLayout(props: Props) {
-  const { children } = props;
-
-  const Header = HeaderComponentMapping[ChosenHeader.DEFAULT];
+  const { children, chosenHeader } = props;
 
   return (
     <>
-      <HeaderForPublicRoutes />
+      <Header chosenHeader={chosenHeader} />
       {children}
       <Footer />
     </>
