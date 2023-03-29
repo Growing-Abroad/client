@@ -26,7 +26,7 @@ const ContainerWrapper = styled.section`
 `
 
 export const HeroTitleWrapper = styled.div`
-    padding: 90px 65px 0px ;
+    padding: 90px 140px 0px ;
     max-width: ${maxWidthAll};
     width: 100%;
 
