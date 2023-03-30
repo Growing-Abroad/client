@@ -72,7 +72,11 @@ function ConsultingGmbHSection() {
             </Paragraph>
           </ParagraphsContainer>
           <CarouselContainer>
-            <FancyCarousel haveSmallsSlides dataArray={consultingGmbhMock} />
+            <FancyCarousel
+              initialSlideIndex={1}
+              haveSmallsSlides
+              dataArray={consultingGmbhMock}
+            />
           </CarouselContainer>
         </Content>
       </Container>

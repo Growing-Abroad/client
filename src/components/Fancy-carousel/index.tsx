@@ -33,6 +33,7 @@ export interface Props {
   dataArray: ICarouselData[];
   haveSmallsSlides?: boolean;
   isIntroducingAPerson?: boolean;
+  initialSlideIndex?: number;
 }
 
 export default function FancyCarousel(props: Props) {
@@ -48,6 +49,7 @@ export default function FancyCarousel(props: Props) {
   const [selectedSlideTitle, setSelectedSlideTitle] = useState<string>('');
 
   function initialSlide(): number {
+    if (props.initialSlideIndex) return props.initialSlideIndex;
     if (width > mediaQueryNumber && props.dataArray.length > 2) {
       return 2;
     } else {
