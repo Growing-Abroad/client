@@ -19,7 +19,7 @@ export const Container = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  padding: 0 80px;
+  padding: 0 100px;
 `;
 
 export const ImageContainerA = styled.div`
@@ -35,9 +35,9 @@ export const ImageContainerB = styled.div`
 export const Content = styled.div<ContentProps>`
   display: grid;
   width: 100%;
-  max-width: 100%;
+  /* max-width: 100%; */
   margin-top: 60px;
-  grid-gap: 24px;
+  grid-gap: 24.5px 110px;
   justify-content: center;
   align-items: center;
 

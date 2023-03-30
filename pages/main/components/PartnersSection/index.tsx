@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import TwoColorTitle from '@/components/two-color-title';
 
@@ -21,6 +21,18 @@ import {
 import Image from 'next/image';
 import useAppContext from '@/hooks/useAppContext';
 
+interface ImageSize {
+  width: number;
+  height: number;
+}
+
+interface ImageSizes {
+  desktop: ImageSize;
+  mobile: ImageSize;
+}
+
+type IsMobileType = 'mobile' | 'desktop';
+
 function PartnersSection() {
   const {
     windowSize: { width },
@@ -29,6 +41,27 @@ function PartnersSection() {
   } = useAppContext();
 
   const shouldBreakLine: boolean = width <= smallDesktopSize;
+
+  const imageSizes: ImageSizes = {
+    desktop: {
+      width: 162,
+      height: 78.34,
+    },
+    mobile: {
+      width: 121,
+      height: 58,
+    },
+  };
+
+  const checkIfIsMobile = (isMobile: boolean): IsMobileType => {
+    switch (isMobile) {
+      case true:
+        return 'mobile';
+      case false:
+      default:
+        return 'desktop';
+    }
+  };
 
   return (
     <Container>
@@ -43,80 +76,80 @@ function PartnersSection() {
       <Content isMobile={isMobile}>
         <ImageContainerA>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={TodayIcon}
             alt="Today"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={HuuffpostIcon}
             alt="Huffpost"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={TasteOfHomeIcon}
             alt="Taste of Home"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={ParadeIcon}
             alt="Parade"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={RedBookIcon}
             alt="Redbook"
           />
         </ImageContainerA>
         <ImageContainerB>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[isMobile ? 'mobile' : 'desktop'].height}
             src={SelfIcon}
             alt="Self"
           />
         </ImageContainerB>
         <ImageContainerB>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={ParadeIcon}
             alt="Parade"
           />
         </ImageContainerB>
         <ImageContainerB>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[isMobile ? 'mobile' : 'desktop'].height}
             src={BuzzFeedIcon}
             alt="Buzz Feed"
           />
         </ImageContainerB>
         <ImageContainerB>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={WomansWorldIcon}
             alt="Woman's World"
           />
         </ImageContainerB>
         <ImageContainerB>
           <Image
-            width={!isMobile ? 162 : 121}
-            height={!isMobile ? 78.34 : 58}
+            width={imageSizes[checkIfIsMobile(isMobile)].width}
+            height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={HuuffpostIcon}
             alt="Huffpost"
           />
