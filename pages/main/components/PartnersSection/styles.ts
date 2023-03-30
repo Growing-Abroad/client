@@ -20,6 +20,12 @@ export const Container = styled.div`
 
 export const TitleContainer = styled.div`
   padding: 0 100px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 0 160px;
+    }
+  `}
 `;
 
 export const ImageContainerA = styled.div`

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { CSSProperties } from 'styled-components';
 import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from './style';
 export interface TwoColorTitleParameters extends IText {
@@ -10,6 +11,8 @@ export interface TwoColorTitleParameters extends IText {
   styles?: CSSProperties;
   className?: string;
   breakingLine?: boolean;
+  text2IsAChildren?: boolean;
+  children?: ReactNode;
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
@@ -22,6 +25,8 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   breakingLine,
   as,
   styles,
+  text2IsAChildren,
+  children,
   ...rest
 }) => {
   return (
@@ -37,7 +42,7 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
           {hasSpaceBtw ? '\xa0' : ''}
           {breakingLine && <br />}
           <ColoredSpan color={'secondaryBlue'} style={{ ...styles, ...rest }}>
-            {text2}
+            {!text2IsAChildren ? text2 : children ?? ''}
           </ColoredSpan>
         </Text>
       )}
