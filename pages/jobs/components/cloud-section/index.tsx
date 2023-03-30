@@ -9,7 +9,7 @@ import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 const { colors: { blue700, yellow400 }} = theme;
 const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
 
-const CloudWrapper = styled.div`
+const CloudWrapper = styled.section`
     display: flex;
     padding-inline: ${globalHorizontalPadding};
     max-width: ${maxWidthAll};
@@ -17,12 +17,19 @@ const CloudWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 124px;
+    gap: 24px;
 
+    img { 
+        width: 100%;
+        height: auto;
+        max-width: 440px;
+    }
     @media (max-width: ${mediaQuery}) {
         flex-direction: column;
         gap: 30px;
         padding-inline: 40px;
         margin-bottom: 40px;
+
     }
 `
 
@@ -33,6 +40,7 @@ const CloudDetails = styled.div`
     text-align: justify;
     color: ${blue700};
     max-width: 500px;
+    width: 100%;
 
     .heading3 {
         max-width: 100%;
@@ -60,6 +68,7 @@ export default function CloudSection() {
                 text1="It doesn't get any smarter than this: We take care of your job search. Let us find you now!" 
                 text2="" 
                 className="heading3"
+                wrapperStyles={{maxWidth: '100%'}}
                 />
                 <StdParagraqh className="cloud-paragraqh">
                     We work together with companies in Germany. These companies often ask us for suitable candidates for their job positions. By sending us your CV and application documents, you will have the possibility to register on our recruiting platform and maximize your chances to get a job this way. We will then go on a targeted job search for you and match your profile with the requirements of the companies. As soon as we have found a suitable job that fits your profile, we will contact you immediately - our service is of course free of charge.
