@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import StdButton from '../generics/StdButton/StdButton';
 
-import { Container, CardContent } from './styles';
+import { Container, CardContent, ButtonContainer } from './styles';
 import useAppContext from '@/hooks/useAppContext';
 
 interface Props {
@@ -35,6 +35,8 @@ function CardWithImage({
         {/* <S.WhiteTriangle /> */}
         <h3 style={{ margin: '0' }}>{title}</h3>
         <p>{description}</p>
+      </CardContent>
+      <ButtonContainer>
         <StdButton
           onClick={onClick}
           style={{
@@ -43,11 +45,12 @@ function CardWithImage({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            margin: 0,
           }}
         >
           {buttonTitle}
         </StdButton>
-      </CardContent>
+      </ButtonContainer>
     </Container>
   );
 }
