@@ -68,6 +68,12 @@ export const Content = styled.div`
 export const ParagraphsContainer = styled.div`
   padding-top: 32px;
   max-width: 473px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding: 23px 40px;
+    }
+  `}
 `;
 
 export const Paragraph = styled.p`
