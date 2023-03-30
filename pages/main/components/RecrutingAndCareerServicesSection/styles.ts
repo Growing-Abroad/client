@@ -6,12 +6,12 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 73px 140px;
-
+  max-width: ${({ theme }) => theme.sizes.maxWidthAll};
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 73px 40px;
     }
-  `}
+  `};
 `;
 
 export const TitlesContainer = styled.div`
