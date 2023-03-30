@@ -71,6 +71,7 @@ function PartnersSection() {
           text2="Partners in Germany"
           hasSpaceBtw={!shouldBreakLine}
           breakingLine={shouldBreakLine}
+          as="h2"
         />
       </TitleContainer>
       <Content isMobile={isMobile}>
