@@ -58,6 +58,7 @@ export const Container = styled.div<ContainerProps>`
   height: 90px;
   padding: 22px 64px;
   margin: 0;
+  max-width: ${({ theme }) => theme.sizes.maxWidthAll};
 
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
