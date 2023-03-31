@@ -21,13 +21,16 @@ import {
   IconButton,
   Icon,
   StyledBurger,
+  DesktopBurgerMenuContent,
 } from './styles';
 import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
 import useAppContext from '@/hooks/useAppContext';
+import { DesktopMenuContent } from './Comopnents/DesktopMenuContent';
 
 function HeaderForCandidates() {
-  const [itsOpen, setItsOpen] = useState(false);
+  const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
+  const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
 
   const {
     colors: { white, primaryBlue, yellow400 },
@@ -37,12 +40,15 @@ function HeaderForCandidates() {
 
   return (
     <>
-      <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
+      <StyledBurger
+        open={itsMobileMenuOpen}
+        onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
+      >
         <div></div>
         <div></div>
         <div></div>
       </StyledBurger>
-      <Container itsOpen={itsOpen}>
+      <Container itsOpen={itsMobileMenuOpen}>
         <LogoContainer>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
@@ -79,8 +85,8 @@ function HeaderForCandidates() {
                   />
                 </IconButton>
                 <StyledBurger
-                  open={itsOpen}
-                  onClick={() => setItsOpen(!itsOpen)}
+                  open={itsDesktopMenuOpen}
+                  onClick={() => setItsDesktopMenuOpen(!itsDesktopMenuOpen)}
                   isForDesktop
                 >
                   <div></div>
@@ -106,6 +112,10 @@ function HeaderForCandidates() {
             )}
           </IconsContainer>
         </Content>
+        <DesktopMenuContent
+          itsOpen={itsDesktopMenuOpen}
+          setItsOpen={setItsDesktopMenuOpen}
+        />
       </Container>
     </>
   );
