@@ -21,6 +21,12 @@ export const TitlesContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1514px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin-top: 90px;
+    }
+  `}
 `;
 
 export const SubtitleContainer = styled.div`
