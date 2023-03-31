@@ -30,6 +30,8 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
+    ${({ theme }) => theme.sizes.globalHorizontalPadding};
 `;
 
 export const ImageBackground = styled.div<ImageBackgroundProps>`
@@ -40,8 +42,6 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   width: 100%;
   max-width: 1513px;
   height: 100%;
-  padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
-    ${({ theme }) => theme.sizes.globalHorizontalPadding};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -56,7 +56,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
 export const TextsContainer = styled.div`
   max-width: 752px;
   padding-bottom: 170px;
-  z-index: 999;
+  /* z-index: 999; */
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -179,4 +179,13 @@ export const ButtonsContainer = styled.div`
       align-items: center;
     }
   `}
+`;
+
+export const Video = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100vw;
+  height: 75.5%;
 `;
