@@ -38,56 +38,63 @@ interface IFooterLinksProps {
   width?: string;
   alignItems?: string;
 }
-export const CtaButton = styled.button`
-  padding: 18px 46px;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: ${yellow400};
-  color: ${blue700};
-  transition: 300ms;
-  height: 54px;
-  letter-spacing: 1.3px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
+export const FooterLinks = styled.ul<IFooterLinksProps>`
   display: flex;
+  flex-direction: column;
+  width: ${(props) => props.width};
+  font-weight: 600;
+  width:500px;
+  padding-top:20px;
+  padding-left:0px;
   gap: 10px;
-  align-items: center;
-
-  &:hover {
-      cursor: pointer; 
-      background-color: ${blue700};
-      color: ${yellow400};
+  color: ${white};
+  align-items: ${(props) => props.alignItems || 'left'};
+  &:first-child{
+    width:402px;
+    padding-left:0px;
   }
-
+  & h3 {
+    font-size: 36px;
+    color: ${white};
+    margin-bottom: 20px;
+    }
+  & li,
+  p,
+  p > span {
+    font-weight: 300;
+    text-decoration: none;
+  }
+  & li {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  & p {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  & p > span {
+    color: ${primaryYellow};
+  }
   @media (max-width: ${mediaQuery}) {
-    padding: 16px 40px;
-    font-size: 1.125rem;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    padding:0;
+    gap:8px;
+    & p {
+      max-width: 304px;
+      font-size: 14px;
+      font-weight:500;
+      text-align: start;
+      height: 100%;
+    }
+    & h3 {
+    font-size: 24px;
+    text-decoration: underline;
+    text-underline-offset: 20px;
+    color: ${white};
+    margin-bottom: 30px;
+  }
   }
 `;
 
-export const CtaButton = styled.button`
-  padding: 18px 46px;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: ${yellow400};
-  color: ${blue700};
-  transition: 300ms;
-  height: 54px;
-  letter-spacing: 1.3px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-
-  &:hover {
-      cursor: pointer; 
-      background-color: ${blue700};
-      color: ${yellow400};
-  }
-
-  @media (max-width: ${mediaQuery}) {
-    padding: 16px 40px;
-    font-size: 1.125rem;
-  }
-`;

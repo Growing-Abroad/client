@@ -87,8 +87,7 @@ export default function Contact() {
                                       }}>
                           Send Message
                         </StdButton>
-                     
-                    </div>
+                     </div>
                 </div>
             </div>
         </Wrapper>
