@@ -151,6 +151,7 @@ export const IconsContainer = styled.div`
   display: flex;
   flex: 3;
   justify-content: space-around;
+  align-items: center;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

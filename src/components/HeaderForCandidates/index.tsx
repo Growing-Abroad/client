@@ -19,9 +19,7 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  Icon,
   StyledBurger,
-  DesktopBurgerMenuContent,
 } from './styles';
 import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
