@@ -6,6 +6,7 @@ import TwoColorTitle from "@/components/two-color-title";
 import { theme } from "@/styles/theme";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import StdInput from "@/components/generics/StdInput";
 
 const { colors: { blue700, yellow400 }} = theme;
 const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
@@ -17,7 +18,7 @@ const UploadCvWrapper = styled.section`
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 81px;
+    margin-bottom: 80px;
     gap: 72px;
     flex-direction: column;
 
@@ -71,6 +72,33 @@ const CvForm = styled.form`
         color: ${blue700};
         margin: 6px 0 36px 0;
     }
+
+    .personal-info-inputs-wrapper,
+    .skills-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 12px 40px;
+        width: 100%;
+        margin-bottom: 80px;
+        align-items: end;
+    }
+    .skills-wrapper {
+        grid-row-gap: 0px;
+        width: 100%;
+    }
+
+    .other-info-wrapper {
+        display: flex;
+        gap: 32px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .language-wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+    }
     
     @media (max-width: ${mediaQuery}) {
         display: flex;
@@ -81,7 +109,19 @@ const CvForm = styled.form`
         .personal-info-sub-heading {
             margin-top: 16px;
         }
+
+        .personal-info-inputs-wrapper,
+        .skills-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .language-wrapper {
+            flex-direction: column;
+            gap: 0px;
+        }
     }
+
+    
 `
 
 
@@ -115,6 +155,66 @@ export default function UploadCvSection() {
                 <StdParagraqh className="personal-info-sub-heading">
                     Enter your personal details below
                 </StdParagraqh>
+
+                <div className="personal-info-inputs-wrapper">
+                    <StdInput label="First Name" name="First Name" required onChange={(e)=>{console.log({e})}} value="" />
+                    
+                    <StdInput label="Last Name" name="Last Name" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Email" name="Email" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Date of Birth" name="Date of Birth" required onChange={(e)=>{console.log({e})}} value="" />
+ 
+                    <StdInput label="LinkedIn Profile" name="LinkedIn Profile" onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Telephone Number" name="Telephone Number" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Nationality" name="Nationality" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Country of Residence" name="Country of Residence" required onChange={(e)=>{console.log({e})}} value="" />
+                    
+                    <StdInput label="City of residence" name="City of residence" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Address" name="address" required onChange={(e)=>{console.log({e})}} value="" />
+                   
+                </div>
+
+                <TwoColorTitle as="h3" 
+                    text1="Other Information" 
+                    text2="" 
+                    className="upload-cv-heading3"
+                    wrapperStyles={{maxWidth: '100%'}}
+                    />
+
+                <StdParagraqh className="personal-info-sub-heading">
+                    Which of the following specializations apply?
+                </StdParagraqh>
+
+                <div className="other-info-wrapper">
+                    <StdInput label="Area of Expertise" name="Area of Expertise" onChange={(e)=>{console.log({e})}} value="" />
+                    
+                    <div className="language-wrapper">
+                        <StdInput label="Language" name="Language" required onChange={(e)=>{console.log({e})}} value="" />
+
+                        <StdInput label="" name="Language" onChange={(e)=>{console.log({e})}} value="" />
+                    </div>
+
+
+                    <StdInput label="Art of Work" name="Art of Work" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Highest Degree" name="Highest Degree" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <StdInput label="Work Experience" name="Work Experience*" required onChange={(e)=>{console.log({e})}} value="" />
+
+                    <div className="skills-wrapper">
+                        <StdInput label="Skills" name="Work Experience*" required onChange={(e)=>{console.log({e})}} value="" />
+
+                        <StdInput label="" name="Work Experience*" onChange={(e)=>{console.log({e})}} value="" />
+                        <StdInput label="" name="Work Experience*" onChange={(e)=>{console.log({e})}} value="" />
+                        <StdInput label="" name="Work Experience*" onChange={(e)=>{console.log({e})}} value="" />
+                    </div>
+                </div>
+
             </CvForm>
         </>
     )
