@@ -7,9 +7,11 @@ import {
   Subtitle,
   ButtonsContainer,
   TextsContainer,
-  ImageBackground,
   SubtitleContainer,
   Video,
+  VideoContainer,
+  VideoContent,
+  VideoBackgroundOpacity,
 } from './styles';
 import StdButton from '@/components/generics/StdButton/StdButton';
 import useAppContext from '@/hooks/useAppContext';
@@ -19,10 +21,14 @@ function HeroSection() {
   const { isMobile } = useAppContext();
   return (
     <Container>
-      <Video autoPlay loop muted>
-        <source src="/public/assets/videos/header-video.mp4" type="video/mp4" />
-      </Video>
-
+      <VideoContainer>
+        <VideoContent>
+          <Video autoPlay loop muted>
+            <source src="assets/videos/header-video.mp4" type="video/mp4" />
+          </Video>
+        </VideoContent>
+        <VideoBackgroundOpacity />
+      </VideoContainer>
       <Content>
         <TextsContainer>
           {!isMobile ? (
@@ -72,7 +78,7 @@ function HeroSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: `${isMobile ? '8px 15px' : '20px 40px;'}`,
+                padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
                 letterSpacing: '1.3px',
                 whiteSpace: 'nowrap',
                 fontSize: `${isMobile ? '16px' : '20px'}`,
@@ -88,7 +94,7 @@ function HeroSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: `${isMobile ? '8px 15px' : '20px 40px;'}`,
+                padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
                 letterSpacing: '1.3px',
                 whiteSpace: 'nowrap',
                 backgroundColor: '#FFFFFF',

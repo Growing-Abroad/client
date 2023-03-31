@@ -7,6 +7,8 @@ export const SupraContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 15;
+  background-color: ${({ theme }) => theme.colors.white};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

@@ -21,51 +21,46 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 100%;
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.backgroundBlue};
+  max-height: 4992px;
+  height: 50%;
+  background-color: ${({ theme }) => theme.colors.primaryBlue};
 `;
 
 export const Content = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
     ${({ theme }) => theme.sizes.globalHorizontalPadding};
-`;
-
-export const ImageBackground = styled.div<ImageBackgroundProps>`
-  background-image: url(${({ background }) => background});
-  background-repeat: no-repeat;
-  background-position: 100% 110%;
-  background-size: 728px 520px;
-  width: 100%;
-  max-width: 1513px;
-  height: 100%;
+  z-index: 15;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 40px 0 305px 0;
-      background-size: 380px 271px;
-      background-position: 50% 101%;
-      flex-direction: column;
+      padding: 0;
     }
   `}
 `;
 
 export const TextsContainer = styled.div`
   max-width: 752px;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
   padding-bottom: 170px;
   /* z-index: 999; */
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       display: flex;
+      position: relative;
+      top: 0;
       flex-direction: column;
       width: 100%;
+      max-height: 100%;
       justify-content: center;
       align-items: center;
-      padding-bottom: 0;
+      padding-bottom: 30px;
     }
   `}
 `;
@@ -73,7 +68,7 @@ export const TextsContainer = styled.div`
 export const Title: TitleProps = {
   Container: styled.div`
     width: 100%;
-    padding: 0 30px 0 30px;
+    /* padding: 0 30px 0 30px; */
 
     ${({ theme }) => css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -112,12 +107,13 @@ export const Title: TitleProps = {
     flex-direction: row;
   `,
   SecondColor: styled.span`
-    color: ${({ theme }) => theme.colors.primaryBlue};
+    color: ${({ theme }) => theme.colors.secondaryBlue};
   `,
 };
 
 export const SubtitleContainer = styled.div`
   width: 100vw;
+  height: 100%;
   padding: 0 30px 0 30px;
 
   display: flex;
@@ -181,11 +177,38 @@ export const ButtonsContainer = styled.div`
   `}
 `;
 
-export const Video = styled.video`
+export const VideoContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
   width: 100vw;
-  height: 75.5%;
+  height: 100%;
+  max-height: 4992px;
+  z-index: 10;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      height: 75.5%;
+    }
+  `}
+`;
+
+export const VideoContent = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const VideoBackgroundOpacity = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
