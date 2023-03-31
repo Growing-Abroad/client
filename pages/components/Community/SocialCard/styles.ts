@@ -14,6 +14,12 @@ export const Social = styled.div`
   img {
     cursor: pointer;
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 70px;
+    }
+  `}
 `;
 
 export const SocialText = styled.div`
@@ -37,21 +43,24 @@ export const SocialText = styled.div`
   > span {
     font-size: 1.5rem;
     font-weight: 400;
+    display: block;
+    max-width: 100%;
+    white-space: pre-wrap;
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     > p {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
       transition: all 0.5;
     }
 
     p,
     span {
-      line-height: 1.5rem;
+      line-height: 0.75rem;
     }
 
     > span {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
       font-weight: 300;
     }
   }

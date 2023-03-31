@@ -2,17 +2,21 @@ import useAppContext from '@/hooks/useAppContext';
 import { ISocial } from '@/utils/socials';
 import Image from 'next/image';
 import { MyCounter, Social, SocialText } from './styles';
-import {
-  useState,
-  useEffect,
-  useRef,
-  useLayoutEffect,
-  useCallback,
-} from 'react';
+import { useState, useCallback } from 'react';
 import ScrollTrigger from 'react-scroll-trigger';
+
+interface ImageSizeProps {
+  mobile: number;
+  desktop: number;
+}
 
 export default function SocialCard(social: ISocial) {
   const [counterOn, setCounterOn] = useState(false);
+
+  const imageSize: ImageSizeProps = {
+    desktop: 120,
+    mobile: 30,
+  };
 
   const { isMobile } = useAppContext();
 
@@ -31,8 +35,8 @@ export default function SocialCard(social: ISocial) {
           <Image
             src={social.source}
             alt={social.name}
-            width={isMobile ? 60 : 120}
-            height={isMobile ? 60 : 120}
+            width={imageSize[isMobile ? 'mobile' : 'desktop']}
+            height={imageSize[isMobile ? 'mobile' : 'desktop']}
           />
         </a>
         <SocialText>
