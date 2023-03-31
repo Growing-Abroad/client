@@ -7,7 +7,7 @@ import quoteLeft from "@/../public/assets/pages/about-us/quotes-left.webp"
 import quoteRight from "@/../public/assets/pages/about-us/quotes-right.webp"
 import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";
 import Manu from "@/../public/assets/pages/about-us/manu-career-coach.webp";
-import { Montserrat } from "@next/font/google";
+import { Montserrat } from "next/font/google";
 import classes from './Hero.module.css'
 import { Row } from "react-bootstrap";
 

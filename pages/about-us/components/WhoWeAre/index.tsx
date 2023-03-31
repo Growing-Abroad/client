@@ -9,7 +9,7 @@ import { theme } from '@styles/theme';
 import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
 import { Col, Container, Row } from 'react-bootstrap';
 import classes from './style.module.css';
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from "next/font/google";
 import * as S from './styles';
 import useAppContext from '@/hooks/useAppContext';
 
@@ -34,7 +34,7 @@ function WhoWeAre() {
         as="h2"
       />
 
-      <S.ImageContainer className={classes.imageContainer}>
+      <div className={classes.imageContainer}>
         <Image width={1128} height={628}
           src={UanAndManu}
           alt="uan and manu"
@@ -47,7 +47,7 @@ function WhoWeAre() {
             className={classes.youtubePlayButton + ' ' + classes.blurbRippleOut}
           ></Image>
         </div>
-      </S.ImageContainer>
+      </div>
 
       <S.Paragraph>
         <S.p style={{ fontFamily: font.style.fontFamily }}>
