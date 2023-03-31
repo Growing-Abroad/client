@@ -16,7 +16,8 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width:1280px;
+  width: 100%;
+  min-width:1280px;
   height: 100%;
   background-color: white;
 `;
@@ -25,7 +26,7 @@ export const Title = styled.h5`
   font-size: 24px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 `;
 
 export const ContainerCards = styled.div`
@@ -33,16 +34,19 @@ export const ContainerCards = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap:150px;
   width: 100%;
   height: 100%;
   background-color: white;
 `;
-
-export const ContentCard = styled.div`
+interface ContentCardProps{
+  reverse:boolean;
+}
+export const ContentCard = styled.div<ContentCardProps>`
 width: 100%;
 height: 373px;
 display: flex;
-flex-direction: row;
+flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
 gap:116px;
 `
 export const CardInfo = styled.div`

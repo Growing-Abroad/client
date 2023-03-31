@@ -12,7 +12,8 @@ export const Wrapper = styled.div`
   gap:81px;
 `
 export const Content = styled.div`
-max-width:1280px;
+width: 100%;
+min-width:1280px;
 display:flex;
 gap:72px;
 align-items:center;
