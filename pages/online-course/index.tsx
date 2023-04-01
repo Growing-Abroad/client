@@ -11,6 +11,7 @@ import styled
 import TwoCards from './components/TwoCards';
 import FaqSection from '@pages/faq/components/FaqSection';
 import TwoColorTitle from '@/components/two-color-title';
+import useAppContext from '@/hooks/useAppContext';
 
  export const Wrapper = styled.div`
   width:100%;
@@ -21,6 +22,7 @@ import TwoColorTitle from '@/components/two-color-title';
 
 
 export default function OnlineCourse() {
+  const {isMobile} = useAppContext();
   return (
     <Wrapper>
      <CTAction />
@@ -29,7 +31,7 @@ export default function OnlineCourse() {
     <BigCard />
     <SuccessStoriesSection />
     <TwoCards />
-    <TwoColorTitle text1="Frequently " text2="Asked Questions" />
+    <TwoColorTitle text1="Frequently " text2="Asked Questions"  styles={{ width:`${isMobile?'387px' :''}`}}/>
     <FaqSection/>
     </Wrapper>
   );

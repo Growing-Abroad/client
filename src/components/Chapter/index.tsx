@@ -2,15 +2,17 @@ import * as S from './style';
 import ScrollBar from './VerticalBar';
 import Image from 'next/image';
 import index1 from '@/../public/assets/index-1.png';
+import useAppContext from '@/hooks/useAppContext';
 
 export function Chapter() {
+  const {isMobile} = useAppContext();
   return (
     <S.Container>
       <S.Content>
         <S.Title>Chapter</S.Title>
         <S.ContainerCards>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -63,7 +65,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -116,7 +118,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -169,7 +171,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -222,7 +224,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -275,7 +277,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard  reverse>
-            <Image src={index1} alt="Germany Flag" width={700} height={373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>

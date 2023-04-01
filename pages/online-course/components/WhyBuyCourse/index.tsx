@@ -2,12 +2,14 @@ import StdButton from '@/components/generics/StdButton/StdButton';
 import threePersons from '@/../public/assets/pages/online-course/three-persons.png';
 import Image from 'next/image';
 import * as S from './style';
+import useAppContext from '@/hooks/useAppContext';
 
 export function WhyBuyCourse() {
+  const {isMobile} = useAppContext();
   return (
     <S.Wrapper>
       <S.Content>
-        <Image src={threePersons} width={748} height={558} alt="" />
+        <Image src={threePersons} width={isMobile ? 520 : 748} height={isMobile? 390:558} alt="" />
         <S.RightContent>
           <S.TextWrapper>
             <S.Icon>

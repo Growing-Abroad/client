@@ -2,12 +2,14 @@ import Image from 'next/image';
 import * as S from './styles';
 import onlineCourse from '@/../public/assets/Photos-Main-Page/online-course-success.webp';
 import StdButton from '@/components/generics/StdButton/StdButton';
+import useAppContext from '@/hooks/useAppContext';
 
 export function BigCard() {
+  const {isMobile} = useAppContext();
   return (
     <S.Container>
       <S.BigCardWrapper>
-        <Image src={onlineCourse} alt="" width={705} height={515} />
+        <Image src={onlineCourse} alt="" width={isMobile ? 383 : 705} height={ isMobile ? 241 : 515} />
         <h1>Online Courses</h1>
         <h2>How to land your dream job in Germany or Europe</h2>
         <p className="descount">
@@ -111,7 +113,7 @@ export function BigCard() {
             50+ video sessions to learn step by step how to land your dream job
             in Germany or Europe
           </S.CardText>
-          <StdButton style={{width:"365px", padding:"20px 40px", marginRight:"30px"}}>Get Lifetime Access Now</StdButton>
+          <StdButton style={{width:`${isMobile ?'238px' :'365px'}`, padding:`${isMobile ?'8px 15px' :'20px 40px'}`, marginRight:`${isMobile ?'0' :'30px'}`, marginTop:`${isMobile ?'20px' :'0'}`}}>Get Lifetime Access Now</StdButton>
         </div>
       </S.BigCardWrapper>
     </S.Container>

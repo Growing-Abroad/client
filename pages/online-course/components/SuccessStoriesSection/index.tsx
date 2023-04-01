@@ -24,7 +24,7 @@ const WrapperSection = styled.section`
 
 `
 
-export default function WhatOurClientsSay() {
+export default function SuccessStoriesSection() {
     const { isMobile } = useAppContext();
 
     return (
