@@ -8,6 +8,9 @@ import BigCard from './components/BigCard';
 import SuccessStoriesSection from './components/SuccessStoriesSection';
 import styled
  from 'styled-components';
+import TwoCards from './components/TwoCards';
+import FaqSection from '@pages/faq/components/FaqSection';
+import TwoColorTitle from '@/components/two-color-title';
 
  export const Wrapper = styled.div`
   width:100%;
@@ -25,6 +28,9 @@ export default function OnlineCourse() {
     <Chapter/>
     <BigCard />
     <SuccessStoriesSection />
+    <TwoCards />
+    <TwoColorTitle text1="Frequently " text2="Asked Questions" />
+    <FaqSection/>
     </Wrapper>
   );
 }
