@@ -59,7 +59,7 @@
     "pages/AboutUs",
     "ni18n.config.ts",   
     "src/context/AppContext.ts"  
-  ],
+, "pages/contact/Contact.jsx"  ],
   "exclude": [
     "node_modules"
   ]

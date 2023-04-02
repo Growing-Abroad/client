@@ -17,7 +17,7 @@ function Nav(props: NavProps) {
         </li>
         <li><Link href={'/blog'}>Blog</Link></li>
         <li>Jobs</li>
-        <li>FAQ</li>
+        <li><Link href={'/faq'}>Faq</Link></li>
       </StyledUl>
     </nav>
   );

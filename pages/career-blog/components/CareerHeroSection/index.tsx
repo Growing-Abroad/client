@@ -1,6 +1,4 @@
 import TwoColorTitle from '@components/two-color-title';
-import Image from 'next/image';
-import search from '@/../public/assets/search.svg';
 import background from '@/../public/assets/pages/career-blog/background-hero.webp';
 import backgroundMobile from '@/../public/assets/pages/career-blog/background-hero-mobile.webp';
 
@@ -8,15 +6,10 @@ import {
   Container,
   ContentHero,
   SubheadingHero,
-  Line,
-  NavHero,
-  NavList,
-  NavItem,
-  SearchButton,
 } from './style';
 import ContainerHero from '@/components/ContainerHero';
+import NavHero  from '@/components/NavHero';
 import useAppContext from '@/hooks/useAppContext';
-import { Wrapper } from '@/components/Wrapper';
 
 export default function CareerHeroSection() {
   const { isMobile } = useAppContext();
@@ -70,21 +63,7 @@ export default function CareerHeroSection() {
           </ContentHero>
         </ContainerHero>
       )}
-      <NavHero>
-        <NavList>
-          <NavItem>APPLICATION</NavItem>
-          <NavItem>JOB SEARCH</NavItem>
-          <NavItem>JOB INTERVIEW</NavItem>
-          <NavItem>GERMANY</NavItem>
-          <NavItem>VISA</NavItem>
-          <NavItem>
-            <SearchButton>
-              <Image src={search} alt="serch-icon" />
-            </SearchButton>
-          </NavItem>
-        </NavList>
-      </NavHero>
-      <Line />
+       <NavHero />
     </Container>
   );
 }

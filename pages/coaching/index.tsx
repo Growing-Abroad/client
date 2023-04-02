@@ -5,10 +5,11 @@ import TwoColorTitle from "@/components/two-color-title";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp"
 import { ReactElement } from "react";
 import CenteredSection from "./components/centeredSection";
-import VisionAndMission from "@pages/about-us/components/VisionAndMission";
+import VisionAndMission from "@pages/coaching/components/VisionAndMissionCoaching";
 import CoachingHeroSection from "./components/hero-section";
 import GuideSection from "./components/guide-section";
 import DreamJobSection from "./components/dream-job-section";
+import VisionAndMissionNew from "@pages/about-us/components/VisionAndMissionNew";
 
 export default function Coaching() {
     return <>
