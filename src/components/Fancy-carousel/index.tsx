@@ -1,32 +1,47 @@
-import { useState } from "react";
+import { useCallback, useState } from 'react';
+
+import Image, { StaticImageData } from 'next/image';
+
+import { variables } from '@styles/global-variables';
+import { removePxFromCssValue } from '@utils/scripts/general-utility';
+import useAppContext from '@/hooks/useAppContext';
+import StdButton from '../generics/StdButton/StdButton';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import LinkedinImage from '@/../public/assets/icons/linkedin.webp';
+
 import {
   FlexboxSlide,
   FlexboxSlider,
   FromWrapper,
+  ImageBackground,
+  ImageBackgroundContent,
+  LinkedinIcon,
   TextBlock,
   TextBlockH3,
-} from "./style";
-import Image, { StaticImageData } from "next/image";
-import { variables } from "@styles/global-variables";
-import { removePxFromCssValue } from "@utils/scripts/general-utility";
-import useAppContext from "@/hooks/useAppContext";
-import StdButton from "../generics/StdButton/StdButton";
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+} from './style';
 
-export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
+  subtitle?: string;
   from: string;
+  texts: string[];
   countryFlag: string;
   href: string;
 }
 export interface Props {
-  dataArray: TCarouselData;
+  dataArray: ICarouselData[];
+  haveSmallsSlides?: boolean;
+  isIntroducingAPerson?: boolean;
+  initialSlideIndex?: number;
+  IsCentralized?: boolean;
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}, isMobile} = useAppContext();
+  const {
+    windowSize: { width },
+    isMobile,
+  } = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -34,6 +49,7 @@ export default function FancyCarousel(props: Props) {
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
   function initialSlide(): number {
+    if (props.initialSlideIndex) return props.initialSlideIndex;
     if (width > mediaQueryNumber && props.dataArray.length > 2) {
       return 2;
     } else {
@@ -42,9 +58,9 @@ export default function FancyCarousel(props: Props) {
   }
 
   function handleSlideClasses(index: number): string {
-    let classes = "flexbox-slide";
-    if (index % 2 !== 0) classes += " short";
-    if (selectedSlide === index) classes += " selected-slide";
+    let classes = 'flexbox-slide';
+    if (index % 2 !== 0) classes += ' short';
+    if (selectedSlide === index) classes += ' selected-slide';
     if (width && width < mediaQueryNumber)
       classes += handleMobileSliderClass(index);
 
@@ -57,44 +73,102 @@ export default function FancyCarousel(props: Props) {
       index !== selectedSlide - 1 &&
       index !== selectedSlide + 1
     ) {
-      return " dontShow";
+      return ' dontShow';
     }
-    return "";
+    return '';
   }
 
+  const isActive = (i: number) => selectedSlide === i;
+
   return (
-    <FlexboxSlider className="flexbox-slider my-flexbox-slider">
-      {props.dataArray.map((item, i) => (
-        <FlexboxSlide
-          className={handleSlideClasses(i)}
-          key={i + "-" + item.title}
-          onClick={() => setSelectedSlide(i)}
-        >
-          <TextBlock className="text-block">
+    <FlexboxSlider
+      className="flexbox-slider my-flexbox-slider"
+      isSmall={props.haveSmallsSlides}
+      isIntroducingAPerson={props.isIntroducingAPerson}
+      isCentralized={props.IsCentralized}
+    >
+      {props.dataArray.map((item, i) =>
+        !props.haveSmallsSlides ? (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + '-' + item.title}
+            onClick={() => setSelectedSlide(i)}
+            isActive={isActive(i)}
+            isSmall={props.haveSmallsSlides}
+            isIntroducingAPerson={props.isIntroducingAPerson}
+          >
+            <TextBlock className="text-block">
+              <TextBlockH3>{item.title}</TextBlockH3>
 
-            <TextBlockH3>{item.title}</TextBlockH3>
+              <FromWrapper>
+                <p>{item.from}</p>
+                <Image
+                  src={`countries-flags/${item.countryFlag}.svg`}
+                  alt={`flag of ${item.countryFlag}`}
+                  width={isMobile ? 25 : 64}
+                  height={isMobile ? 17.58 : 45}
+                  className="country-flag"
+                />
+              </FromWrapper>
 
-            <FromWrapper>
-              <p>{item.from}</p>
-              <Image 
-              src={`countries-flags/${item.countryFlag}.svg`} 
-              alt={`flag of ${item.countryFlag}`} 
-              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
-              className="country-flag" />
-            </FromWrapper>
-
-            <StdButton 
-            icon={faPlay} 
-            className="watch-video-btn" 
-            style={{marginTop: 'auto', width: 'max-content'}}
+              <StdButton
+                icon={faPlay}
+                className="watch-video-btn"
+                style={{ marginTop: 'auto', width: 'max-content' }}
+              >
+                Watch Video
+              </StdButton>
+            </TextBlock>
+            <Image src={item.imgSrc} alt="Slide Image" className="slide-img" />
+          </FlexboxSlide>
+        ) : (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + '-' + item.title}
+            onClick={() => setSelectedSlide(i)}
+            isSmall
+            isActive={isActive(i)}
+            isIntroducingAPerson={props.isIntroducingAPerson}
+          >
+            <ImageBackground
+              src={item.imgSrc.src}
+              isIntroducingAPerson={props.isIntroducingAPerson}
+              isActive={isActive(i)}
             >
-              Watch Video
-            </StdButton>
-          </TextBlock>
-
-          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
-        </FlexboxSlide>
-      ))}
+              <ImageBackgroundContent
+                isIntroducingAPerson={props.isIntroducingAPerson}
+                isActive={isActive(i)}
+              >
+                {props.isIntroducingAPerson && isActive(i) && (
+                  <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
+                )}
+                <h3>{item.title}</h3>
+                {item.subtitle && <h4>{item.subtitle}</h4>}
+                <div className="paragraph-container">
+                  <p>{item.from}</p>
+                  {item.texts.length && item.texts.map((text) => <p>{text}</p>)}
+                </div>
+                {!props.isIntroducingAPerson && (
+                  <StdButton
+                    style={{
+                      marginTop: `${isMobile ? '36px' : 'auto'}`,
+                      marginBottom: `${isMobile ? '36px' : 'auto'}`,
+                      width: `${isMobile ? '196px' : 'max-content'}`,
+                      height: `${isMobile ? '35px' : 'auto'}`,
+                      fontSize: `${isMobile ? '14px' : '19px'}`,
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    Find Experts Now
+                  </StdButton>
+                )}
+              </ImageBackgroundContent>
+            </ImageBackground>
+          </FlexboxSlide>
+        ),
+      )}
     </FlexboxSlider>
   );
 }

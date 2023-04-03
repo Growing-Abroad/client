@@ -92,10 +92,8 @@ function Burger() {
   useEffect(() => {
     const lang = window.location.pathname.slice(1, 3);
 
-    const initialFlag = countryToFlag[lang as ECountryToLang];
-    // const initialFlag = getKeyByValue(countryLangDict, lang)
-    console.log({ initialFlag });
-
+    const initialFlag = countryToFlag[lang as ECountryToLang] 
+    
     if (initialFlag) {
       setSelectedCountry(getKeyByValue(countryLangDict, lang)!);
       setFlag(initialFlag);
@@ -103,8 +101,7 @@ function Burger() {
         <Image src={initialFlag} alt={lang + ' flag'} width={25} height={20} />,
       );
     }
-    console.log({ loca: window.location, flag: initialFlag, lang });
-  }, []);
+  }, [])
 
   return (
     <>

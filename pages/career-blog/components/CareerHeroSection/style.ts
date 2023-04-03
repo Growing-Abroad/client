@@ -27,11 +27,6 @@ export const ContentHero = styled.div`
   justify-content: center;
   align-items: start;
   gap: 33px;
-  .title{
-    display: flex;
-    flex-direction: column;
-    text-align:left
-  }
 
   @media (max-width: ${mediaQuery}) {
     padding: 0 32px;

@@ -6,15 +6,10 @@ const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMob
 const { colors: { blue400, blue500, blue700, yellow400 } } = theme;
 
 export const Container = styled.div`
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 0 140px;
-  padding-bottom:175px;
-  color:${blue700};
+  padding: 0 ${globalHorizontalPadding};
+
   @media (max-width: ${mediaQuery}) {
-    padding: 0 40px;
+
   }
 `
