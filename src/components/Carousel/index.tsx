@@ -5,26 +5,24 @@ interface Props<T> {
   data: T[];
   renderItem: React.FC<T>;
   visibleItems: number;
+  itemWidth: number;
 }
 
 function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
   const [slideIsWorking, setSlideIsWorking] = useState<boolean>(true);
   const timeToRestart = 5;
-  const clonedData = [
-    ...data.slice(-visibleItems),
-    ...data,
-    ...data.slice(0, visibleItems),
-  ];
+  const [clonedData, setClonedData] = useState<T[]>([]);
 
   const [startIndex, setStartIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setStartIndex((prevIndex) => (prevIndex + 1) % data.length);
-  //   }, timeToRestart * 1000);
+  useEffect(() => {
+    console.log(clonedData);
+    setClonedData(() => [...data, ...data.slice(0, visibleItems)]);
+  }, []);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+  useEffect(() => {
+    console.log(clonedData);
+  }, [clonedData]);
 
   return (
     <Container visibleItems={visibleItems}>
@@ -33,9 +31,7 @@ function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
         isWorking={slideIsWorking}
         startIndex={startIndex}
       >
-        {clonedData
-          .slice(startIndex, startIndex + visibleItems)
-          .map(renderItem)}
+        {clonedData.map(renderItem)}
       </Content>
     </Container>
   );
