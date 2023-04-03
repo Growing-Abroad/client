@@ -1,15 +1,13 @@
-import StdButton from "@/components/generics/StdButton/StdButton";
 import TwoColorTitle from "@/components/two-color-title";
-import useAppContext from "@/hooks/useAppContext";
+import { Button } from "@/styles/global-styles";
 import { Container, Row, Col } from "react-bootstrap";
 import classes from './styles.module.css';
 
 function Banner() {
-  const {isMobile} = useAppContext();
-
     return (
         <Container className={classes.bannerContainer}>
-                <Col className={classes.topBanner} >
+            <Row>
+                <Col className={classes.topBanner}>
                     <TwoColorTitle text1="How to write a CV in" text2="German Standards" hasSpaceBtw styles={{ textAlign: 'left' }}
                         wrapperStyles={{ display: 'block', textAlign: 'left', maxWidth: '870px', width: '100%' }} />
                     <p className={classes.para}>
@@ -18,12 +16,12 @@ function Banner() {
                         take your current CV and optimize it the best way possible and only after
                         that start applying. for you don't do that, you will loose your chances.
                     </p>
-                    <div className={classes.buttons}>
-                    <StdButton style={{padding:`${isMobile?"8px 15px":"20px 40px"}`,fontSize:`${isMobile?"14px":"20px"}`}} className={classes.button}>CV</StdButton>
-                    <StdButton style={{padding:`${isMobile?"8px 15px":"20px 40px"}`,fontSize:`${isMobile?"14px":"20px"}`}} className={classes.button}>Ats Friendly</StdButton>
-                    <StdButton style={{padding:`${isMobile?"8px 15px":"20px 40px"}`,fontSize:`${isMobile?"14px":"20px"}`}} className={classes.button}>Job Application</StdButton>
-                    </div>
+
+                    <Button padding="20px 40px" fontSize="20px" width="auto" className={classes.button}>CV</Button>
+                    <Button padding="20px 40px" fontSize="20px" width="auto" className={classes.button}>Ats Friendly</Button>
+                    <Button padding="20px 40px" fontSize="20px" width="auto" className={classes.button}>Job Application</Button>
                 </Col>
+            </Row>
         </Container>
     );
 }

@@ -88,7 +88,7 @@ export const Container = styled.section`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 170px;
+    gap: 30px;
 
     width: 800px;
     padding: 80px 32px 80px 0;
