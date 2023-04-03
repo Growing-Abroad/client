@@ -9,7 +9,7 @@ interface Props<T> {
 
 function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
   const [slideIsWorking, setSlideIsWorking] = useState<boolean>(true);
-  const timeToRestart = 15;
+  const timeToRestart = 5;
   const clonedData = [
     ...data.slice(-visibleItems),
     ...data,

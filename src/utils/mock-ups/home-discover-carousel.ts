@@ -15,4 +15,8 @@ export default [
     image: img3,
     alt: 'Manu',
   },
+  {
+    image: img2,
+    alt: 'High five',
+  },
 ];
