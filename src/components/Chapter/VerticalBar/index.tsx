@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import * as S from './style';
+import useAppContext from '@/hooks/useAppContext';
 
 const VerticalBar: React.FC = () => {
-  const [barColor, setBarColor] = useState<string>('red');
+  const { isMobile } = useAppContext();
+  const propsBar = [
+    {
+      index: 1,
+      height: '547px',
+    },
+    { index: 2, height:'594px' },
+    { index: 3, height: '758px' },
+    { index: 4, height: '904px' },
+    { index: 5, height: '788px' },
+    { index: 6, height: '897px' },
+    { index: 7, height: '' },
+  ];
+  const [barColor, setBarColor] = useState<string>('#0073CF');
   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
 
   useEffect(() => {
@@ -9,7 +24,8 @@ const VerticalBar: React.FC = () => {
       const scrollPosition = window.pageYOffset;
       const windowHeight = window.innerHeight;
       const fullHeight = document.body.clientHeight;
-      const newScrollPercentage = (scrollPosition / (fullHeight - windowHeight)) * 100;
+      const newScrollPercentage =
+        (scrollPosition / (fullHeight - windowHeight)) * 100;
 
       setScrollPercentage(newScrollPercentage);
     };
@@ -23,10 +39,9 @@ const VerticalBar: React.FC = () => {
     let requestId: number;
 
     const animateFill = () => {
-      const blue = Math.round(255 - (255 * (scrollPercentage / 100))); // Define o valor de azul com base na porcentagem de rolagem
       const fillPercentage = Math.min(scrollPercentage / 100, 1); // Define a porcentagem de preenchimento, limitando-a a no máximo 100%
 
-      const newColor = `rgb(0, 0, ${blue})`; // Define a nova cor com base no valor de azul
+      const newColor = `#0073CF`; // Define a nova cor com base no valor de azul
 
       setBarColor(newColor);
 
@@ -53,8 +68,34 @@ const VerticalBar: React.FC = () => {
   }, [scrollPercentage]);
 
   return (
-    <div style={{ backgroundColor: 'blue', width: '5px', height: '100vh', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: `${scrollPercentage}%`, backgroundColor: barColor }} />
+    <div
+      style={{
+        position: 'absolute',
+        top: '0',
+        left: `${isMobile ? '16px' : '50%'}`,
+        display: 'flex',
+        marginLeft: `${isMobile ? '0' : '-40px'}`,
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: '75px',
+      }}
+    >
+      {propsBar.map((prop) => {
+        return (
+          <>
+            {' '}
+            <S.IndexCircle>
+              {prop.index}
+              <S.IndexCircleProgress
+                backgroundColor={barColor}
+              ></S.IndexCircleProgress>
+            </S.IndexCircle>
+            <S.VerticalBar height={prop.height}>
+              <S.VerticaProgressBar />
+            </S.VerticalBar>
+          </>
+        );
+      })}
     </div>
   );
 };

@@ -13,6 +13,7 @@ export function TwoCards() {
         text1="Who is this"
         styles={{ fontSize:`${isMobile ?'36px' :'60px'}`, display:'flex', flexWrap:'wrap', width:`${isMobile ?'334px' :''}`, justifyContent:'center'}}
         text2="Online Course for?"
+        hasSpaceBtw
       />
       <S.ContentTwoCards>
         <S.TwoCardsWrapper>
