@@ -18,7 +18,7 @@ export const Container = styled.div<ContainerProps>`
 export const Content = styled.div<ContentProps>`
   gap: 16px;
   display: flex;
-  transition: all 10s ease-in-out;
+  transition: all 25s ease-in-out;
   transform: translateX(-${({ startIndex }) => startIndex * 100}%);
 
   ${({ isWorking, timeToRestart }) =>
