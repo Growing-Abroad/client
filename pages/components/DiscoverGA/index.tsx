@@ -4,32 +4,50 @@ import {
   DiscoverImagesWrapper,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
+  RIContainer,
+  RIImage,
 } from './style';
-import Uan from '@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp'
-import Manu from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp'
-import Hands from '@/../public/assets/Photos-Main-Page/high-five.webp'
-import TwoColorTitle from "@components/two-color-title";
+import Uan from '@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp';
+import Manu from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp';
+import Hands from '@/../public/assets/Photos-Main-Page/high-five.webp';
+import TwoColorTitle from '@components/two-color-title';
 import StdParagraqh from '@/components/generics/StdParagraqh/StdParagraqh';
 import StdButton from '@/components/generics/StdButton/StdButton';
 import useAppContext from '@/hooks/useAppContext';
+import Carousel from '@/components/Carousel';
+import ImagesList from '@/utils/mock-ups/home-discover-carousel';
+import { StaticImageData } from 'next/image';
+
+interface ItemProps {
+  image: StaticImageData;
+  alt: string;
+}
 
 export default function DiscoverGA() {
- const { isMobile } = useAppContext(); 
+  const { isMobile } = useAppContext();
 
- return (
+  const renderItem = ({ image, alt }: ItemProps) => (
+    <RIContainer>
+      <RIImage src={image.src} alt={alt} />
+    </RIContainer>
+  );
+
+  return (
     <DiscoverWrapper>
       <TwoColorTitle
         text1="Discover"
         text2="Growing Abroad"
         hasSpaceBtw
         as="h2"
-        wrapperStyles={isMobile ? {flexDirection: 'column', maxWidth: '100%'} : {}}
-        styles={isMobile ? {lineHeight: '44px'} : {}}
+        wrapperStyles={
+          isMobile ? { flexDirection: 'column', maxWidth: '100%' } : {}
+        }
+        styles={isMobile ? { lineHeight: '44px' } : {}}
       />
 
       <DiscoverContent>
         <DiscoverReadMoreWrapper>
-          <StdParagraqh style={{color: 'white', textAlign: 'justify'}}>
+          <StdParagraqh style={{ color: 'white', textAlign: 'justify' }}>
             Our goal is to help skilled people from all of the world to get
             their dream job in Germany or Europe.
             <br />
@@ -46,14 +64,9 @@ export default function DiscoverGA() {
             costumers to show their full potential.
           </StdParagraqh>
 
-          <StdButton style={{fontSize: '20px'}}>Read More</StdButton>
+          <StdButton style={{ fontSize: '20px' }}>Read More</StdButton>
         </DiscoverReadMoreWrapper>
-
-        <DiscoverImagesWrapper>
-          <DiscoverGaImg url={Uan.src} />
-          <DiscoverGaImg url={Hands.src} />
-          <DiscoverGaImg url={Manu.src} />
-        </DiscoverImagesWrapper>
+        <Carousel<ItemProps> data={ImagesList} renderItem={renderItem} />
       </DiscoverContent>
     </DiscoverWrapper>
   );

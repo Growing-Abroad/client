@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import { ComponentPropsWithoutRef } from 'react';
-import {theme} from "@styles/theme";
-import {variables} from "@styles/global-variables";
+import { theme } from '@styles/theme';
+import { variables } from '@styles/global-variables';
 
 const {
   colors: { secondaryBlue, blue500 },
 } = theme;
 const {
-  sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHorizontalPaddingMobile },
+  sizes: {
+    globalHorizontalPadding,
+    maxWidthAll,
+    mediaQuery,
+    globalHorizontalPaddingMobile,
+  },
 } = variables;
+
+interface BgImageProps {
+  src: string;
+}
 
 export const DiscoverWrapper = styled.div`
   display: flex;
@@ -21,7 +30,7 @@ export const DiscoverWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     padding: 80px ${globalHorizontalPaddingMobile};
-    gap: 32px; 
+    gap: 32px;
   }
 `;
 
@@ -45,7 +54,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   gap: 32px;
   align-items: flex-start;
   max-width: 50%;
-  
+
   @media (max-width: ${mediaQuery}) {
     width: 100%;
     min-width: 100%;
@@ -61,11 +70,11 @@ export const DiscoverImagesWrapper = styled.div`
   width: 100%;
 `;
 
-export interface IDiscoverImgProps extends ComponentPropsWithoutRef<"div"> {
-  url: string
+export interface IDiscoverImgProps extends ComponentPropsWithoutRef<'div'> {
+  url: string;
 }
 export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
-  background-image: url(${props => props.url});
+  background-image: url(${(props) => props.url});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,4 +90,15 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   :nth-child(3) {
     height: 70%;
   }
-`
+`;
+
+export const RIContainer = styled.div``;
+
+export const RIImage = styled.div<BgImageProps>`
+  width: 205px;
+  height: 465px;
+  background-image: url(${({ src }) => src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
