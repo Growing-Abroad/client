@@ -76,6 +76,7 @@ function ConsultingGmbHSection() {
               initialSlideIndex={1}
               haveSmallsSlides
               dataArray={consultingGmbhMock}
+              IsCentralized
             />
           </CarouselContainer>
         </Content>

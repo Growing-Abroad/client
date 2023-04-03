@@ -91,8 +91,6 @@ export const Paragraph = styled.p`
 
 export const CarouselContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   max-height: 100%;
   margin-left: 19px;

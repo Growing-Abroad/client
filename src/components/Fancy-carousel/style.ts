@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 interface FlexboxSliderProps {
   isSmall?: boolean;
   isIntroducingAPerson?: boolean;
+  isCentralized?: boolean;
 }
 
 interface FlexboxSlideProps extends FlexboxSliderProps {
@@ -30,6 +31,12 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  ${({ isCentralized }) =>
+    isCentralized &&
+    css`
+      align-items: center;
+      justify-content: center;
+    `}
   gap: 36px;
   visibility: hidden;
 

@@ -34,6 +34,7 @@ export interface Props {
   haveSmallsSlides?: boolean;
   isIntroducingAPerson?: boolean;
   initialSlideIndex?: number;
+  IsCentralized?: boolean;
 }
 
 export default function FancyCarousel(props: Props) {
@@ -46,7 +47,6 @@ export default function FancyCarousel(props: Props) {
   } = variables;
   const mediaQueryNumber = removePxFromCssValue(mediaQuery);
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
-  const [selectedSlideTitle, setSelectedSlideTitle] = useState<string>('');
 
   function initialSlide(): number {
     if (props.initialSlideIndex) return props.initialSlideIndex;
@@ -85,6 +85,7 @@ export default function FancyCarousel(props: Props) {
       className="flexbox-slider my-flexbox-slider"
       isSmall={props.haveSmallsSlides}
       isIntroducingAPerson={props.isIntroducingAPerson}
+      isCentralized={props.IsCentralized}
     >
       {props.dataArray.map((item, i) =>
         !props.haveSmallsSlides ? (
