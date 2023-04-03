@@ -27,6 +27,7 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   styles,
   color1,
   color2,
+  className,
   ...rest
 }) => {
   return (
