@@ -1,24 +1,10 @@
 import ContainerHero from "@/components/ContainerHero";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import TwoColorTitle from "@/components/two-color-title";
-import useAppContext from "@/hooks/useAppContext";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp"
-import styled from "styled-components";
 import { HeroTitleWrapper } from "./style";
-
-const ContainerWrapper = styled.div`
-    height: 233px;
-    width: 100%;
-
-    @media (min-width: 430px) {
-        height: calc(14.5625rem + ((1vw - 4.3px) * 32.0406));
-    }
-    @media (min-width: 1513px) {
-        height: 580px;
-    }
-
-`
-
+import useAppContext from "@/hooks/useAppContext";
+import { ContainerWrapper } from "@pages/components/Community/styles";
 
 export default function CoachingHeroSection() {
     const { isMobile } = useAppContext();

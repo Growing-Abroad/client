@@ -20,10 +20,9 @@ export interface TwoColorTitleParameters extends IText {
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
-  hasSpaceBtw,
+  hasSpaceBtw,  
   fullWidth,
   wrapperStyles,
-  className,
   as,
   styles,
   color1,
@@ -46,6 +45,6 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
       )}
     </TwoColorTitleWrapper>
   );
-};
+}
 
 export default TwoColorTitle;

@@ -9,11 +9,9 @@ import { useRouter } from "next/router";
 import {FormattedMessage, useIntl} from "react-intl";
 import Link from "next/link";
 import TwoColorTitle from '@/components/two-color-title'
-import useAppContext from '@/hooks/useAppContext'
 
 function WorkIn() {
   const { locales } = useRouter();
- const { isMobile } = useAppContext(); 
   const intl = useIntl();
   const title = intl.formatMessage({ id: "page.home.head.title" });
   const description = intl.formatMessage({
@@ -28,8 +26,6 @@ return (
           text2="Germany"
           hasSpaceBtw
           as="h2"
-          wrapperStyles={isMobile ? {flexDirection: 'column', maxWidth: '100%'} : {}}
-          styles={isMobile ? {lineHeight: '44px'} : {}}
         />
 
       <S.CardSpace>
