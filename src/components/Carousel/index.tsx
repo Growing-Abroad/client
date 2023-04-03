@@ -18,13 +18,13 @@ function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
 
   const [startIndex, setStartIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // setStartIndex((prevIndex) => (prevIndex + 1) % data.length);
-    }, timeToRestart * 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setStartIndex((prevIndex) => (prevIndex + 1) % data.length);
+  //   }, timeToRestart * 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <Container visibleItems={visibleItems}>
