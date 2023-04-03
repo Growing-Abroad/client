@@ -66,7 +66,11 @@ export default function DiscoverGA() {
 
           <StdButton style={{ fontSize: '20px' }}>Read More</StdButton>
         </DiscoverReadMoreWrapper>
-        <Carousel<ItemProps> data={ImagesList} renderItem={renderItem} />
+        <Carousel<ItemProps>
+          visibleItems={27}
+          data={ImagesList}
+          renderItem={renderItem}
+        />
       </DiscoverContent>
     </DiscoverWrapper>
   );

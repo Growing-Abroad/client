@@ -1,65 +1,41 @@
-import react, { useEffect, useRef, useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { Container, Content } from './styles';
 
 interface Props<T> {
   data: T[];
   renderItem: React.FC<T>;
+  visibleItems: number;
 }
 
-function Carousel<T>({ data, renderItem }: Props<T>) {
-  const [slideWidth, setSlideWidth] = useState<number>(0);
-  const [slideCount, setSlideCount] = useState<number>(data.length);
+function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
+  const [slideIsWorking, setSlideIsWorking] = useState<boolean>(true);
+  const timeToRestart = 15;
+  const clonedData = [
+    ...data.slice(-visibleItems),
+    ...data,
+    ...data.slice(0, visibleItems),
+  ];
 
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!data || data.length === 0) {
-      setSlideCount(0);
-      return;
-    }
-    const firstSlideClone = data[0];
-    const lastSlideClone = data[data.length - 1];
-    setSlideCount(data.length + 2);
-    data.unshift(lastSlideClone);
-    data.push(firstSlideClone);
-  }, [data]);
+  const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
-    const slideWidth = contentRef.current?.firstElementChild?.clientWidth ?? 0;
-    setSlideWidth(slideWidth);
-  }, [slideCount]);
+    const interval = setInterval(() => {
+      // setStartIndex((prevIndex) => (prevIndex + 1) % data.length);
+    }, timeToRestart * 1000);
 
-  const handleTransitionEnd = () => {
-    const firstSlide = data[1];
-    const lastSlide = data[data.length - 2];
-    if (firstSlide === lastSlide) {
-      setSlideCount(data.length - 2);
-      data.shift();
-      data.pop();
-      contentRef.current?.classList.remove('infinite');
-      contentRef.current?.classList.add('reset');
-      setTimeout(() => {
-        contentRef.current?.classList.remove('reset');
-      }, 0);
-    }
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <Container>
+    <Container visibleItems={visibleItems}>
       <Content
-        ref={contentRef}
-        slideWidth={slideWidth}
-        slideCount={slideCount}
-        onTransitionEnd={handleTransitionEnd}
-        className={slideCount > data.length ? 'infinite' : ''}
+        timeToRestart={timeToRestart}
+        isWorking={slideIsWorking}
+        startIndex={startIndex}
       >
-        {data &&
-          data.map((item, index) => (
-            <div key={index} style={{ minWidth: slideWidth }}>
-              {renderItem(item)}
-            </div>
-          ))}
+        {clonedData
+          .slice(startIndex, startIndex + visibleItems)
+          .map(renderItem)}
       </Content>
     </Container>
   );
