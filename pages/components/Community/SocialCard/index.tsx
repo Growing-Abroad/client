@@ -29,7 +29,7 @@ export default function SocialCard(social: ISocial) {
   }, [setCounterOn]);
 
   return (
-    <ScrollTrigger onEnter={onEnter} onExit={onExit}>
+    <ScrollTrigger onEnter={onEnter} onExit={() => null}>
       <Social>
         <a href={social.socialLink} target="_blank" rel="noreferrer">
           <Image
