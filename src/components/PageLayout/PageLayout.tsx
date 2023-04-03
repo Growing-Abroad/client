@@ -7,7 +7,7 @@ function PageLayout(props: ComponentPropsWithoutRef<"body">) {
   return (
     <>
       <Header />
-      {children}
+        {children}
       <Footer />
     </>
   );

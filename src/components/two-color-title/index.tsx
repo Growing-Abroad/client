@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
-import { CSSProperties } from 'styled-components';
+import { theme } from '@/styles/theme';
+import { CSSProperties, useTheme } from 'styled-components';
 import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from './style';
+
+const { colors: { blue700, blue400 }} = theme;
+
 export interface TwoColorTitleParameters extends IText {
   text1: string;
   text2: string;
@@ -11,29 +15,29 @@ export interface TwoColorTitleParameters extends IText {
   styles?: CSSProperties;
   className?: string;
   breakingLine?: boolean;
-  text2IsAChildren?: boolean;
-  children?: ReactNode;
+  color1?: string;
+  color2?: string;
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
-  hasSpaceBtw,
+  hasSpaceBtw,  
   fullWidth,
   wrapperStyles,
   className,
   breakingLine,
   as,
   styles,
-  text2IsAChildren,
-  children,
+  color1,
+  color2,
   ...rest
 }) => {
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
       {text1 && (
         <Text
-          color={'primaryBlue'}
+          color={color1 ? color1 : blue700}
           className={className}
           style={{ ...styles, ...rest }}
           as={as || 'h1'}
@@ -41,13 +45,11 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
           {text1}
           {hasSpaceBtw ? '\xa0' : ''}
           {breakingLine && <br />}
-          <ColoredSpan color={'secondaryBlue'} style={{ ...styles, ...rest }}>
-            {!text2IsAChildren ? text2 : children ?? ''}
-          </ColoredSpan>
+          <ColoredSpan color={color2 ? color2 : blue400} style={{ ...styles, ...rest }}>{text2}</ColoredSpan>
         </Text>
       )}
     </TwoColorTitleWrapper>
   );
-};
+}
 
 export default TwoColorTitle;

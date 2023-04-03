@@ -89,8 +89,6 @@ function Burger() {
     const lang = window.location.pathname.slice(1,3)
 
     const initialFlag = countryToFlag[lang as ECountryToLang] 
-    // const initialFlag = getKeyByValue(countryLangDict, lang)
-    console.log({initialFlag});
     
     if (initialFlag) {
       setSelectedCountry(getKeyByValue(countryLangDict, lang)!);
@@ -104,7 +102,6 @@ function Burger() {
             />
       )
     }
-    console.log({loca: window.location, flag: initialFlag, lang})
   }, [])
 
   return (

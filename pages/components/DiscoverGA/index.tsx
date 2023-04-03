@@ -11,20 +11,15 @@ import Hands from '@/../public/assets/Photos-Main-Page/high-five.webp'
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from '@/components/generics/StdParagraqh/StdParagraqh';
 import StdButton from '@/components/generics/StdButton/StdButton';
-import useAppContext from '@/hooks/useAppContext';
 
 export default function DiscoverGA() {
- const { isMobile } = useAppContext(); 
-
- return (
+  return (
     <DiscoverWrapper>
       <TwoColorTitle
         text1="Discover"
         text2="Growing Abroad"
         hasSpaceBtw
         as="h2"
-        wrapperStyles={isMobile ? {flexDirection: 'column', maxWidth: '100%'} : {}}
-        styles={isMobile ? {lineHeight: '44px'} : {}}
       />
 
       <DiscoverContent>

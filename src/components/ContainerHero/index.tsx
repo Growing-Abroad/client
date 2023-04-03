@@ -11,14 +11,14 @@ export interface ContainerHeroParameters{
   styles?: CSSProperties,
   children: React.ReactNode,
 }
-const ContainerHero:React.FC<ContainerHeroParameters> = ({backgroundImageDesktop, backgroundImageMobile, styles, children})=>{
+const ContainerHero:React.FC<ContainerHeroParameters> = ({backgroundImageDesktop, backgroundImageMobile,styles, children})=>{
   const {isMobile} = useAppContext();
   return (
     <Container
       backgroundImage={isMobile ? backgroundImageMobile : backgroundImageDesktop}
      style={{...styles}}>
       <Image
-        src={border}
+        src={isMobile ? borderMobile : border}
         className="border-image"
         alt="white border"
       />
