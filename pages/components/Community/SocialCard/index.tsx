@@ -24,10 +24,6 @@ export default function SocialCard(social: ISocial) {
     setCounterOn(true);
   }, [setCounterOn]);
 
-  const onExit = useCallback(() => {
-    setCounterOn(false);
-  }, [setCounterOn]);
-
   return (
     <ScrollTrigger onEnter={onEnter} onExit={() => null}>
       <Social>
