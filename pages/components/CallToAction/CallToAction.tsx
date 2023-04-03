@@ -44,7 +44,7 @@ function CallToAction() {
               {currentComponent}
             </>
           </h1>
-          <StdButton icon={faPlay} >
+          <StdButton icon={faPlay} style={{textTransform: 'uppercase', fontWeight: '800'}}>
             Watch Free Masterclass
           </StdButton>
         </section>

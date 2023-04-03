@@ -78,15 +78,15 @@ export default function GuideSection() {
     styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.5rem'}}
     />
     <CardsWrapper>
-        {cardsContent1.map(content => 
+        {cardsContent1.map((content,i) => 
             <Card>
-                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 32 : 70} />
+                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 32 : 70} key={content.text + i} />
                 {content.text}
             </Card>
         )}
-        {cardsContent2.map(content => 
+        {cardsContent2.map((content, i) => 
             <Card>
-                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 36 : 80} />
+                <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 36 : 80} key={content.text + i}/>
                 {content.text}
             </Card>
         )}

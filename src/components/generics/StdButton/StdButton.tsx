@@ -15,12 +15,16 @@ const StyledStdBtn = styled.button`
     background-color: ${yellow400};
     color: ${blue700};
     letter-spacing: 1.3px;
-    padding: 20px 40px;
+    padding: 20px 35px;
     border-radius: 50px;
     cursor: pointer;
     transition: 400ms;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
 
     &:hover {
         background-color: ${blue700};
@@ -44,8 +48,7 @@ export interface IStdButton extends PropsWithChildren {
 export default function StdButton({children: text, className, icon, style}: IStdButton) {
     return (
         <StyledStdBtn className={className} style={style}>
-            {icon && <FontAwesomeIcon icon={icon} size='lg' />}
-            {'\xa0'}
+            {icon && <FontAwesomeIcon icon={icon} />}
             {text}
         </StyledStdBtn>)
 }

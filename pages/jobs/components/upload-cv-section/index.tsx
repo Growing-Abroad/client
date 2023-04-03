@@ -96,7 +96,7 @@ const CvForm = styled.form`
 
     .language-wrapper {
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
         gap: 40px;
     }
     

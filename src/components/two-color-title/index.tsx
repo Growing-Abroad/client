@@ -30,7 +30,6 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   color2,
   ...rest
 }) => {
-  console.log({color1, color2})
   return (
     <TwoColorTitleWrapper style={wrapperStyles}>
       {text1 && (

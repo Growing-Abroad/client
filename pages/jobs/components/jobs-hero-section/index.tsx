@@ -35,7 +35,9 @@ export const HeroTitleWrapper = styled.div`
     }
 
     .upload-cv-btn {
-        margin-top: 24px
+        margin-top: 24px;
+        text-transform: uppercase; 
+        font-weight: 800;
     }
 
     @media (max-width: ${mediaQuery}) {
@@ -95,7 +97,7 @@ export default function JobsHeroSection() {
                         color2={yellow400}
                         />}  
 
-                        <StdButton className="upload-cv-btn">
+                        <StdButton className="upload-cv-btn" >
                             Upload your CV NOW    
                         </StdButton>  
                     </div>

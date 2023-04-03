@@ -49,7 +49,7 @@ export default function CoachingHeroSection() {
                         : {marginBottom: '0'}
                     }
                     />
-                    <StdButton style={isMobile ? {padding: '8px 15px'} : {}}>Book a Coaching Now</StdButton>
+                    <StdButton style={isMobile ? {padding: '8px 15px', textTransform: 'uppercase', fontWeight: '800'} : {textTransform: 'uppercase', fontWeight: '800'}}>Book a Coaching Now</StdButton>
                 </HeroTitleWrapper>
             </ContainerHero>
         </ContainerWrapper>
