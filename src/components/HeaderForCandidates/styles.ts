@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { ComponentPropsWithoutRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
@@ -19,6 +20,13 @@ export const StyledBurger = styled.div<BurgerProps>`
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 120;
+  :hover {
+    cursor: pointer;
+
+    div {
+      background-color: ${({ theme }) => theme.colors.blue400};
+    }
+  }
 
   div {
     width: 2rem;
@@ -54,6 +62,14 @@ export const StyledBurger = styled.div<BurgerProps>`
       right: 20px;
     }
   `}
+`;
+
+export const AwesomeIcon = styled(FontAwesomeIcon)`
+  color: ${({ theme }) => theme.colors.blue700};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+  }
 `;
 
 export const Container = styled.div<ContainerProps>`
@@ -99,6 +115,10 @@ export const Content = styled.div`
   flex: 1;
   justify-content: space-around;
 
+  @media (min-width: 1750px) {
+    justify-content: flex-end;
+  }
+
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 0;
@@ -111,13 +131,13 @@ export const ButtonsContainer = styled.div`
   width: 100%;
   display: flex;
   flex: 5;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 37px;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      align-items: flex-start;
       flex-direction: column;
+      align-items: flex-start;
       flex: 2;
     }
   `}
@@ -130,6 +150,7 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 20px;
   line-height: 12px;
+
   /* or 60% */
 
   display: flex;
@@ -145,6 +166,10 @@ export const Button = styled.button`
       color: ${theme.colors.white};
     }
   `}
+
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+  }
 `;
 
 export const IconsContainer = styled.div`
@@ -152,6 +177,14 @@ export const IconsContainer = styled.div`
   flex: 3;
   justify-content: space-around;
   align-items: center;
+  gap: 37px;
+  padding-left: 37px;
+
+  @media (min-width: 1750px) {
+    gap: 37px;
+    justify-content: flex-start;
+    flex: 1;
+  }
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

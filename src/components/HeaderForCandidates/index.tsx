@@ -14,6 +14,7 @@ import {
   IconsContainer,
   IconButton,
   StyledBurger,
+  AwesomeIcon,
 } from './styles';
 import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
@@ -25,7 +26,7 @@ function HeaderForCandidates() {
   const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
 
   const {
-    colors: { white, primaryBlue, yellow400 },
+    colors: { white, blue700, blue400, yellow400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();
@@ -48,7 +49,7 @@ function HeaderForCandidates() {
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
-                style={{ color: primaryBlue }}
+                style={{ color: blue700 }}
               />
             </IconButton>
           )}
@@ -70,11 +71,7 @@ function HeaderForCandidates() {
               <>
                 <Button>Login</Button>
                 <IconButton>
-                  <FontAwesomeIcon
-                    icon={faGlobe}
-                    size="2xl"
-                    style={{ color: primaryBlue }}
-                  />
+                  <AwesomeIcon icon={faGlobe} size="2xl" />
                 </IconButton>
                 <StyledBurger
                   open={itsDesktopMenuOpen}
@@ -94,8 +91,15 @@ function HeaderForCandidates() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     borderRadius: 8,
-                    backgroundColor: !isMobile ? primaryBlue : white,
-                    color: !isMobile ? white : primaryBlue,
+                    // backgroundColor: !isMobile ? blue700 : white,
+                    // color: !isMobile ? white : blue700,
+                    boxShadow: 'none',
+                  }}
+                  backgroundColor={!isMobile ? blue700 : white}
+                  color={!isMobile ? white : blue700}
+                  hover={{
+                    backgroundColor: blue400,
+                    color: white,
                   }}
                 >
                   For Companies
