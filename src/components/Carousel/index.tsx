@@ -16,13 +16,8 @@ function Carousel<T>({ data, renderItem, visibleItems }: Props<T>) {
   const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
-    console.log(clonedData);
     setClonedData(() => [...data, ...data.slice(0, visibleItems)]);
   }, []);
-
-  useEffect(() => {
-    console.log(clonedData);
-  }, [clonedData]);
 
   return (
     <Container visibleItems={visibleItems}>
