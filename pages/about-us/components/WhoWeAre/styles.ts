@@ -1,7 +1,7 @@
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 import styled from "styled-components";
-import { Montserrat } from "@next/font/google";
+import { Montserrat } from "next/font/google";
 
 const font = Montserrat({
   subsets: ['latin']
@@ -93,14 +93,3 @@ export const ul = styled.ul`
     padding-right: 2rem;
   }
 `;
-export const ImageContainer = styled.div`
-    border-radius: 5px;
-    overflow: hidden;
-    width:100%;
-    max-width: ${variables.sizes.maxWidthAll};
-    height: auto;
-    position: relative;
-    @media (max-width: 580px) {
-      padding:0 10px;
-    }
-`

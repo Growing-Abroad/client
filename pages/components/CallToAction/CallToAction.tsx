@@ -56,7 +56,9 @@ function CallToAction() {
               {currentComponent}
             </>
           </h1>
-          <StdButton icon={faPlay}>Watch Free Masterclass</StdButton>
+          <StdButton icon={faPlay} style={{textTransform: 'uppercase', fontWeight: '800'}}>
+            Watch Free Masterclass
+          </StdButton>
         </section>
         <section className="right-side">
           <div className="right-side-img-container">

@@ -8,10 +8,8 @@ export default function OurServicesCard({id, title, subtitle, descriptions, imag
 
   const handleRedirect = (id: string) => {
     // navigate('services/' + id)
-    console.log('botão book now')
     return id
   }
-  console.log(image.src)
   return (
       <S.Container>
         <div className='card-image' style={{backgroundImage: `url(${image.src})`}}></div>
