@@ -1,16 +1,17 @@
 import 'swiper/swiper-bundle.css';
 import * as S from './styles';
-import {services} from "@utils/services";
-import SwiperCore, {Navigation, Pagination} from "swiper";
-import OurServicesCard from "@pages/components/OurServices/OurServicesCard";
-import  {Swiper, SwiperSlide} from "swiper/react";
+import { services } from '@utils/services';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import OurServicesCard from '../OurServicesCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { variables } from '@/styles/global-variables';
 import { removePxFromCssValue } from '@/utils/scripts/general-utility';
 
-
 export default function OurServicesSwiper() {
   SwiperCore.use([Navigation, Pagination]);
-  const {sizes: { mediaQuery }} = variables;
+  const {
+    sizes: { mediaQuery },
+  } = variables;
   const mediaQueryNum = removePxFromCssValue(mediaQuery);
 
   return (
@@ -20,7 +21,6 @@ export default function OurServicesSwiper() {
           200: {
             slidesPerView: 1,
             spaceBetween: 32,
-
           },
           940: {
             slidesPerView: 2,
@@ -34,7 +34,7 @@ export default function OurServicesSwiper() {
         navigation
         pagination
         autoplay
-        className='mySwiper swiper-container'
+        className="mySwiper swiper-container"
       >
         {services.map((service) => (
           <SwiperSlide key={service.id} zoom>

@@ -1,6 +1,6 @@
-import * as S from './styles'
-import TwoColorTitle from "@components/two-color-title";
-import OurServicesSwiper from "@pages/components/OurServices/OurServicesSwiper";
+import * as S from './styles';
+import TwoColorTitle from '@components/two-color-title';
+import OurServicesSwiper from './OurServicesSwiper';
 
 export default function OurServicesSection() {
   return (
@@ -8,5 +8,5 @@ export default function OurServicesSection() {
       <TwoColorTitle text1="Explore our" text2="Services" hasSpaceBtw as="h2" />
       <OurServicesSwiper />
     </S.Container>
-  )
+  );
 }
