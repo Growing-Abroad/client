@@ -1,13 +1,44 @@
-import { ComponentPropsWithoutRef } from "react";
-import Footer from "../Footer";
-import Header from "../Header";
+import { theme } from '@/styles/theme';
+import { ComponentPropsWithoutRef, lazy } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Footer from '../Footer';
+import HeaderForCandidates from '../HeaderForCandidates';
+import HeaderForCompanies from '../HeaderForCompanies';
+import HeaderForPublicRoutes from '../HeaderForPublicRoutes';
 
-function PageLayout(props: ComponentPropsWithoutRef<"body">) {
-  const { children } = props;
+export enum ChosenHeader {
+  DEFAULT = 'DEFAULT',
+  FOR_CANDIDATES = 'FOR_CANDIDATES',
+  FOR_COMPANIES = 'FOR_COMPANIES',
+}
+
+interface Props extends ComponentPropsWithoutRef<'body'> {
+  chosenHeader: ChosenHeader;
+}
+
+interface HeaderProps {
+  chosenHeader: ChosenHeader;
+}
+
+function Header({ chosenHeader }: HeaderProps) {
+  switch (chosenHeader) {
+    case ChosenHeader.FOR_CANDIDATES:
+      return <HeaderForCandidates />;
+    case ChosenHeader.FOR_COMPANIES:
+      return <HeaderForCompanies />;
+    case ChosenHeader.DEFAULT:
+    default:
+      return <HeaderForPublicRoutes />;
+  }
+}
+
+function PageLayout(props: Props) {
+  const { children, chosenHeader } = props;
+
   return (
     <>
-      <Header />
-        {children}
+      <Header chosenHeader={chosenHeader} />
+      {children}
       <Footer />
     </>
   );
