@@ -33,7 +33,7 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
     <TwoColorTitleWrapper style={wrapperStyles}>
       {text1 && (
         <Text
-          color={'primaryBlue'}
+          color={'blue700'}
           className={className}
           style={{ ...styles, ...rest }}
           as={as || 'h1'}
@@ -41,7 +41,7 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
           {text1}
           {hasSpaceBtw ? '\xa0' : ''}
           {breakingLine && <br />}
-          <ColoredSpan color={'secondaryBlue'} style={{ ...styles, ...rest }}>
+          <ColoredSpan color={'blue400'} style={{ ...styles, ...rest }}>
             {!text2IsAChildren ? text2 : children ?? ''}
           </ColoredSpan>
         </Text>

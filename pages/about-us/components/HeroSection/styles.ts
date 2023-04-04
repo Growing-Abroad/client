@@ -1,16 +1,15 @@
-
-import { theme } from "@styles/theme";
-import styled from "styled-components";
-import { variables } from "@styles/global-variables";
-import { Montserrat } from '@next/font/google'
+import { theme } from '@styles/theme';
+import styled from 'styled-components';
+import { variables } from '@styles/global-variables';
+import { Montserrat } from '@next/font/google';
 
 interface IContainer {
   backgroundImg: string;
 }
 
 const font = Montserrat({
-  subsets: ['latin']
-})
+  subsets: ['latin'],
+});
 
 export const Container = styled.section<IContainer>`
   min-width: 100%;
@@ -21,7 +20,7 @@ export const Container = styled.section<IContainer>`
   justify-content: center;
   gap: 2rem;
   padding-top: 80px;
-  color: ${theme.colors.primaryBlue};
+  color: ${theme.colors.blue700};
   text-align: center;
   overflow: hidden;
 
@@ -35,7 +34,7 @@ export const Container = styled.section<IContainer>`
     max-width: 850px;
     padding-inline: 1rem;
   }
-`
+`;
 
 export const ContentWrapper = styled.div`
   max-width: 1280px;
@@ -47,7 +46,7 @@ export const ContentWrapper = styled.div`
   > p {
     padding-inline: 1rem;
   }
-`
+`;
 
 export const ImagesContainer = styled.div`
   width: 95vw;
@@ -68,7 +67,7 @@ export const ImagesContainer = styled.div`
   @media (max-width: 480px) {
     margin-top: -115px;
   }
-`
+`;
 
 export interface IImagesWrapper {
   background: string;
@@ -90,7 +89,8 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
     background-position: 10%;
   }
 
-  .text-left, .text-right {
+  .text-left,
+  .text-right {
     /* width: 280px;
     position: absolute;
     bottom: 0;
@@ -100,16 +100,17 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
     align-items: flex-start;
     min-height: 115px; */
     margin-top: 16px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
   }
 
-  @media (max-width:1024px) {
-    .text-right, .text-left {
+  @media (max-width: 1024px) {
+    .text-right,
+    .text-left {
       margin-bottom: 10px;
     }
   }
 
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     width: 50%;
     height: 380px;
     background-position: bottom;
@@ -119,20 +120,21 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
     }
   }
 
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     height: 300px;
   }
 
-  @media (max-width:588px) {
+  @media (max-width: 588px) {
     height: 300px;
   }
 
   @media (max-width: 480px) {
-    .text-right, .text-left {
+    .text-right,
+    .text-left {
       margin-bottom: 10px;
     }
   }
-`
+`;
 
 export const BlueSquare = styled.div`
   --blueSquareOffset: -16vw;
@@ -143,30 +145,28 @@ export const BlueSquare = styled.div`
   bottom: -240px;
   left: var(--blueSquareOffset);
   transform: rotate(25deg);
-  font-family: ${font}
-
-  &.right-image {
+  font-family: ${font} &.right-image {
     left: unset;
     right: var(--blueSquareOffset);
     transform: rotate(-26.08deg);
   }
 
-  @media (max-width:1400px) {
+  @media (max-width: 1400px) {
     bottom: -240px;
     --blueSquareOffset: -16vw;
     width: 46vw;
   }
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     bottom: -260px;
     --blueSquareOffset: -34vw;
     width: 68vw;
   }
 
-  @media (max-width:769px) {
+  @media (max-width: 769px) {
     width: 60vw;
   }
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     --blueSquareOffset: -20vw;
     bottom: -325px;
     width: 50vw;
@@ -181,7 +181,7 @@ export const BlueSquare = styled.div`
     --blueSquareOffset: -30vw;
     bottom: -370px;
   }
-`
+`;
 export const TextsWrapper = styled.div`
   width: 28vw;
   position: absolute;
@@ -198,28 +198,28 @@ export const TextsWrapper = styled.div`
     align-items: flex-end;
   }
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     width: 40vw;
   }
 
-  @media (max-width:769px) {
+  @media (max-width: 769px) {
     width: 45vw;
   }
 
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     width: 40vw;
-    padding: 5rem  1.2rem 0;
+    padding: 5rem 1.2rem 0;
   }
 
-  @media (max-width:480px) {
+  @media (max-width: 480px) {
     width: 43vw;
   }
-`
+`;
 
 export const BigQuote = styled.span`
   font-size: 50px;
   line-height: 15px;
-`
+`;
 
 export const TextLeft = styled.span`
   text-align: left;
@@ -229,21 +229,21 @@ export const TextLeft = styled.span`
   line-height: 39px;
   letter-spacing: 1.3px;
   font-weight: 600;
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     font-size: 1.3rem;
-    line-height: 25px
+    line-height: 25px;
   }
 
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     font-size: 16px;
     line-height: 20px;
   }
 
-  @media (max-width:480px) {
+  @media (max-width: 480px) {
     font-size: 12px;
     line-height: 16px;
   }
-`
+`;
 
 export const TextRight = styled.span`
   text-align: right;
@@ -254,21 +254,21 @@ export const TextRight = styled.span`
   letter-spacing: 1.3px;
   font-weight: 600;
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
     font-size: 1.3rem;
-    line-height: 25px
+    line-height: 25px;
   }
 
-  @media (max-width:700px) {
+  @media (max-width: 700px) {
     font-size: 16px;
     line-height: 20px;
   }
 
-  @media (max-width:480px) {
+  @media (max-width: 480px) {
     font-size: 12px;
     line-height: 16px;
   }
-`
+`;
 
 export const Quote = styled.div`
   font-family: ${font.style.fontFamily};
@@ -277,15 +277,15 @@ export const Quote = styled.div`
   line-height: 1.188rem;
   letter-spacing: 0.081rem;
 
-  @media (max-width:1024px) {
-    font-size: 6rem
+  @media (max-width: 1024px) {
+    font-size: 6rem;
   }
 
-  @media (max-width:520px) {
-    font-size: 4rem
+  @media (max-width: 520px) {
+    font-size: 4rem;
   }
 
-  @media (max-width:480px) {
+  @media (max-width: 480px) {
     font-size: 32px;
   }
-`
+`;

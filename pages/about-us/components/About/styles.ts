@@ -1,26 +1,25 @@
-import styled from "styled-components";
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
-import { open } from "@styles/animations";
-import { Montserrat } from "@next/font/google";
+import styled from 'styled-components';
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
+import { open } from '@styles/animations';
+import { Montserrat } from '@next/font/google';
 
 const font = Montserrat({
-  subsets: ['latin']
-})
+  subsets: ['latin'],
+});
 export const Container = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   padding: 40px ${variables.sizes.globalHorizontalPadding} 0;
-  color: ${theme.colors.primaryBlue};
+  color: ${theme.colors.blue700};
   font: 400 1rem;
-  padding-bottom:100px;
-  border-bottom: 1px solid #05335B;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #05335b;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding:30px 40px 60px 40px;
-
+    padding: 30px 40px 60px 40px;
   }
 `;
 
@@ -36,55 +35,55 @@ export const TextContainer = styled.div`
     flex-direction: row;
   }
 
-  @media (max-width:5580px) {
+  @media (max-width: 5580px) {
     flex-direction: initial;
   }
   @media (max-width: 580px) {
-    justify-content:space-between;
-    gap:50px;
+    justify-content: space-between;
+    gap: 50px;
     #box0 {
-      h3,h4{
-        text-align:left;
+      h3,
+      h4 {
+        text-align: left;
       }
       align-items: start;
     }
 
-    #box1{
-      h3,h4{
-        text-align:right;
+    #box1 {
+      h3,
+      h4 {
+        text-align: right;
       }
       align-items: end;
     }
-
-    }
+  }
 `;
 
 export const Text = styled.div`
-width:400px;
-display: flex;
+  width: 400px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:20px;
+  gap: 20px;
 
   h3 {
     font-weight: 600;
     font-size: 2rem;
     text-align: center;
-    margin:0;
-    white-space:nowrap;
+    margin: 0;
+    white-space: nowrap;
   }
 
-  h4{
+  h4 {
     text-align: center;
     font-family: ${font.style.fontFamily};
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
     max-width: 342px;
-    width:100%;
+    width: 100%;
     padding-bottom: 20px;
-
   }
 
   p {
@@ -93,8 +92,7 @@ display: flex;
   }
 
   @media (max-width: 580px) {
-
-    max-width:160px;
+    max-width: 160px;
     h3 {
       font-size: 24px;
       white-space: initial;
@@ -117,12 +115,12 @@ export const More = styled.div`
     justify-content: center;
     cursor: pointer;
     padding: 0.5rem;
-    color: ${theme.colors.secondaryBlue};
+    color: ${theme.colors.blue400};
     font-weight: 700;
-    border: 1px solid ${theme.colors.secondaryBlue};
+    border: 1px solid ${theme.colors.blue400};
     border-radius: 50%;
     transition: all 0.5s ease;
-    display:none;
+    display: none;
 
     &:hover {
       transform: scale(1.05);

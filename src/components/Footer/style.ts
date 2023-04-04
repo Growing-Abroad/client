@@ -3,13 +3,10 @@ import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
 
 const {
-  colors: { primaryYellow, primaryBlue, blue500, white },
+  colors: { yellow400, blue700, blue500, white },
 } = theme;
 const {
-  sizes: {
-    maxWidthAll,
-    mediaQuery,
-  },
+  sizes: { maxWidthAll, mediaQuery },
 } = variables;
 
 export const StyledFooter = styled.footer`
@@ -77,13 +74,13 @@ export const FooterBottomWrapper = styled.div`
   display: flex;
   font-weight: 600;
   justify-content: space-between;
-  color: ${primaryBlue};
-  margin:0 auto;
+  color: ${blue700};
+  margin: 0 auto;
   width: 100%;
   max-width: ${maxWidthAll};
   padding: 24px 74px;
-  span{
-    white-space:  nowrap;
+  span {
+    white-space: nowrap;
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -91,8 +88,8 @@ export const FooterBottomWrapper = styled.div`
     flex-direction: column;
     gap: 16px;
     padding: 12px 44px;
-    span{
-      letter-spacing:1.4px;
+    span {
+      letter-spacing: 1.4px;
     }
   }
 `;
@@ -101,7 +98,7 @@ export const FooterBottomRight = styled.div`
   display: flex;
   gap: 32px;
   @media (max-width: ${mediaQuery}) {
-    gap:87px;
+    gap: 87px;
   }
 `;
 
@@ -109,7 +106,7 @@ export const Links = styled.a`
   all: unset;
   color: inherit;
   cursor: pointer;
-  letter-spacing:1.3px
+  letter-spacing: 1.3px;
 `;
 
 interface IFooterLinksProps {
@@ -121,13 +118,13 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
   flex-direction: column;
   width: ${(props) => props.width};
   font-weight: 600;
-  width:246px;
+  width: 246px;
   gap: 10px;
   color: ${white};
   align-items: ${(props) => props.alignItems || 'center'};
-  &:first-child{
-    width:402px;
-    padding-left:0px;
+  &:first-child {
+    width: 402px;
+    padding-left: 0px;
   }
   & h3 {
     font-size: 26px;
@@ -152,28 +149,28 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
     margin-bottom: 18px;
   }
   & p > span {
-    color: ${primaryYellow};
+    color: ${yellow400};
   }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     width: 100%;
     align-items: start;
-    padding:0;
-    gap:8px;
+    padding: 0;
+    gap: 8px;
     & p {
       max-width: 304px;
       font-size: 14px;
-      font-weight:500;
+      font-weight: 500;
       text-align: start;
       height: 100%;
     }
     & h3 {
-    font-size: 24px;
-    text-decoration: underline;
-    text-underline-offset: 20px;
-    color: ${white};
-    margin-bottom: 30px;
-  }
+      font-size: 24px;
+      text-decoration: underline;
+      text-underline-offset: 20px;
+      color: ${white};
+      margin-bottom: 30px;
+    }
   }
 `;
 export const FooterLinksContentWrapper = styled.div`
@@ -182,9 +179,9 @@ export const FooterLinksContentWrapper = styled.div`
   gap: 5vw;
   width: 100%;
   @media (max-width: ${mediaQuery}) {
-    margin-right:0;
+    margin-right: 0;
     flex-direction: column;
-    align-items:flex-start;
-    gap:43px;
+    align-items: flex-start;
+    gap: 43px;
   }
 `;

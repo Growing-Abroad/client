@@ -1,12 +1,14 @@
-import styled  from "styled-components";
-import { variables } from "../../../../src/styles/global-variables";
-import { theme } from "../../../../src/styles/theme";
+import styled from 'styled-components';
+import { variables } from '../../../../src/styles/global-variables';
+import { theme } from '../../../../src/styles/theme';
 
 interface IContainer {
   backgroundImg: string;
 }
 
-const {sizes: {globalHorizontalPadding, globalHorizontalPaddingMobile, mediaQuery}} = variables;
+const {
+  sizes: { globalHorizontalPadding, globalHorizontalPaddingMobile, mediaQuery },
+} = variables;
 
 export const Container = styled.section<IContainer>`
   width: min(100%, ${variables.sizes.maxWidthAll});
@@ -22,27 +24,31 @@ export const Container = styled.section<IContainer>`
   background-image: url(${({ backgroundImg }) => backgroundImg});
   background-color: white;
   background-repeat: no-repeat;
-  background-position: left center ;
+  background-position: left center;
 
-  @media(min-width: ${mediaQuery}) {
+  @media (min-width: ${mediaQuery}) {
     flex-direction: row;
     margin-inline: ${globalHorizontalPaddingMobile};
   }
+`;
 
-`
-
-export const TextContainer = styled.div<{ color?:string, left: string, top: string}>`
+export const TextContainer = styled.div<{
+  color?: string;
+  left: string;
+  top: string;
+}>`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  color: ${({ color }) => color === 'primary' ? 'white' : theme.colors.primaryBlue};
+  color: ${({ color }) =>
+    color === 'primary' ? 'white' : theme.colors.blue700};
   font: 700 3rem;
   padding: 2rem;
   border-radius: 0.5rem;
   position: absolute;
-  left: ${({left})=> left};
-  top: ${({top})=> top};
+  left: ${({ left }) => left};
+  top: ${({ top }) => top};
   text-align: justify;
 
   > h3 {
@@ -66,4 +72,4 @@ export const TextContainer = styled.div<{ color?:string, left: string, top: stri
       text-align: left;
     }
   }
-`
+`;

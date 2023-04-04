@@ -40,7 +40,7 @@ export const Subtitle = styled.h1`
   display: flex;
   align-items: center;
   letter-spacing: 1.3px;
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
   padding: 0 163px;
 
   ${({ theme }) => css`
@@ -86,7 +86,7 @@ export const Paragraph = styled.p`
   line-height: 24px;
   text-align: left;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 `;
 
 export const CarouselContainer = styled.div`

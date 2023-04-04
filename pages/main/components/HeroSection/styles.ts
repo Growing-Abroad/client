@@ -23,7 +23,7 @@ export const Container = styled.div`
   min-width: 100%;
   max-height: 4992px;
   height: 50%;
-  background-color: ${({ theme }) => theme.colors.primaryBlue};
+  background-color: ${({ theme }) => theme.colors.blue700};
 `;
 
 export const Content = styled.div`
@@ -103,11 +103,11 @@ export const Title: TitleProps = {
     `}
   `,
   FirstColor: styled.span`
-    color: ${({ theme }) => theme.colors.primaryYellow};
+    color: ${({ theme }) => theme.colors.yellow400};
     flex-direction: row;
   `,
   SecondColor: styled.span`
-    color: ${({ theme }) => theme.colors.secondaryBlue};
+    color: ${({ theme }) => theme.colors.blue400};
   `,
 };
 

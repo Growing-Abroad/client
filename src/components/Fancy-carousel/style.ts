@@ -21,7 +21,7 @@ interface ImageBackgroundContentProps
   extends Omit<FlexboxSlideProps, 'isSmall'> {}
 
 const {
-  colors: { primaryBlue, blue500 },
+  colors: { blue700, blue500 },
 } = theme;
 const {
   sizes: { mediaQuery },
@@ -153,7 +153,7 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
     display: block;
     width: 100%;
     height: 100%;
-    background-color: ${primaryBlue};
+    background-color: ${blue700};
     z-index: 2;
     opacity: 0;
   }
