@@ -389,6 +389,10 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
         line-height: 17.07px;
       }
     }
+
+    @media (max-width: 365px) {
+      padding-bottom: 5px;
+    }
   `}
 `;
 
@@ -406,6 +410,19 @@ export const LinkedinIcon = styled(Image).attrs({
       height: 30px;
       /* top: auto;
       bottom: 21%; */
+    }
+  `}
+`;
+
+export const StdButtonContainer = styled.div`
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin: 36px 0;
+    }
+
+    @media (max-width: 405px) {
+      margin-top: 30px;
+      margin-bottom: 90px;
     }
   `}
 `;
