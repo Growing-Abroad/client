@@ -55,6 +55,7 @@ export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
   className?: string;
   style?: CSSProperties;
   icon?: IconProp;
+  onClick?(): any;
 }
 
 export default function StdButton({
@@ -65,6 +66,7 @@ export default function StdButton({
   hover,
   backgroundColor,
   color,
+  onClick,
 }: IStdButton) {
   return (
     <StyledStdBtn
@@ -73,6 +75,7 @@ export default function StdButton({
       hover={hover}
       className={className}
       style={style}
+      onClick={onClick}
     >
       {icon && <FontAwesomeIcon icon={icon} size="lg" />}
       {'\xa0'}

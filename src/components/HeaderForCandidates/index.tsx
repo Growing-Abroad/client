@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,16 +21,47 @@ import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
 import useAppContext from '@/hooks/useAppContext';
 import { DesktopMenuContent } from './Comopnents/DesktopMenuContent';
+import { useRouter } from 'next/router';
+
+enum CandidatesMenuPages {
+  ONLINE_COURSE = 'online-course',
+  COACHING = 'coaching',
+  JOBS = 'jobs',
+  LOGIN = 'login',
+  FOR_COMPANIES = 'for-companies',
+}
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
   const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
+
+  const router = useRouter();
 
   const {
     colors: { white, blue700, blue400, yellow400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();
+
+  const onGoToNextScreen = useCallback(
+    (page: CandidatesMenuPages) => {
+      router.push(`/${page}`);
+    },
+    [router],
+  );
+
+  const handleGoToOnlineCourse = () =>
+    onGoToNextScreen(CandidatesMenuPages.ONLINE_COURSE);
+
+  const handleGoToCoaching = () =>
+    onGoToNextScreen(CandidatesMenuPages.COACHING);
+
+  const handleGoToJobs = () => onGoToNextScreen(CandidatesMenuPages.JOBS);
+
+  const handleGoToLogin = () => onGoToNextScreen(CandidatesMenuPages.LOGIN);
+
+  const handleGoToForCompanies = () =>
+    onGoToNextScreen(CandidatesMenuPages.FOR_COMPANIES);
 
   return (
     <>
@@ -64,20 +95,20 @@ function HeaderForCandidates() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>Online course</Button>
-            <Button>Coaching</Button>
-            <Button>Jobs</Button>
+            <Button onClick={handleGoToOnlineCourse}>Online course</Button>
+            <Button onClick={handleGoToCoaching}>Coaching</Button>
+            <Button onClick={handleGoToJobs}>Jobs</Button>
             {isMobile && (
               <>
-                <Button>Login</Button>
-                <Button>For Companies</Button>
+                <Button onClick={handleGoToLogin}>Login</Button>
+                <Button onClick={handleGoToForCompanies}>For Companies</Button>
               </>
             )}
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <Button>Login</Button>
+                <Button onClick={handleGoToLogin}>Login</Button>
                 <IconButton>
                   <AwesomeIcon icon={faGlobe} size="2xl" />
                 </IconButton>
@@ -99,10 +130,9 @@ function HeaderForCandidates() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     borderRadius: 8,
-                    // backgroundColor: !isMobile ? blue700 : white,
-                    // color: !isMobile ? white : blue700,
                     boxShadow: 'none',
                   }}
+                  onClick={handleGoToForCompanies}
                   backgroundColor={!isMobile ? blue700 : white}
                   color={!isMobile ? white : blue700}
                   hover={{
