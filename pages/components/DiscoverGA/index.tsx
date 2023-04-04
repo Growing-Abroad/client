@@ -27,7 +27,7 @@ export default function DiscoverGA() {
   const { isMobile } = useAppContext();
 
   const renderItem = ({ image, alt }: ItemProps) => (
-    <RIContainer>
+    <RIContainer key={alt}>
       <RIImage src={image.src} alt={alt} />
     </RIContainer>
   );
