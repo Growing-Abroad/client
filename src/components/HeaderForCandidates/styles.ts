@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
   isForDesktop?: boolean;
+  hasALitBackground?: boolean;
+  bg?: string;
+  hoveredBG?: string;
 }
 
 export interface ContainerProps {
@@ -24,14 +27,21 @@ export const StyledBurger = styled.div<BurgerProps>`
     cursor: pointer;
 
     div {
-      background-color: ${({ theme }) => theme.colors.blue400};
+      background-color: ${({ theme, bg }) => bg ?? theme.colors.blue400};
     }
   }
 
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ theme }) => theme.colors.white};
+    ${({ theme, hasALitBackground }) =>
+      !hasALitBackground
+        ? css`
+            background-color: ${theme.colors.white};
+          `
+        : css`
+            background-color: ${theme.colors.blue700};
+          `};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s;
@@ -70,6 +80,21 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
   }
+`;
+
+export const Header = styled.div`
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) {
+      display: ${({ isForDesktop }) => (!isForDesktop ? 'none' : 'flex')};
+    }
+  `};
 `;
 
 export const Container = styled.div<ContainerProps>`

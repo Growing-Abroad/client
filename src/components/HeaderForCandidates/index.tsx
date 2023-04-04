@@ -15,6 +15,7 @@ import {
   IconButton,
   StyledBurger,
   AwesomeIcon,
+  Header,
 } from './styles';
 import StdButton from '../generics/StdButton/StdButton';
 import { useTheme } from 'styled-components';
@@ -33,14 +34,21 @@ function HeaderForCandidates() {
 
   return (
     <>
-      <StyledBurger
-        open={itsMobileMenuOpen}
-        onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
-      >
-        <div></div>
-        <div></div>
-        <div></div>
-      </StyledBurger>
+      <Header>
+        <LogoContainer>
+          <Logo src={GrowingAbroadImage.src} />
+        </LogoContainer>
+        <StyledBurger
+          open={itsMobileMenuOpen}
+          onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
+          hasALitBackground
+          bg={blue700}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </StyledBurger>
+      </Header>
       <Container itsOpen={itsMobileMenuOpen}>
         <LogoContainer>
           <Logo src={GrowingAbroadImage.src} />
