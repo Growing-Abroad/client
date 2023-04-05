@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   max-width: 540px;
-  height: 653px;
+  height: 683px;
   display: flex;
   flex-direction: column;
   border: 1px solid #ececec;
@@ -29,7 +29,8 @@ export const CardContent = styled.div`
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 30px 140px 0 140px;
+
+  padding-top: 30px;
   height: 100%;
   position: relative;
   text-align: justify;
@@ -38,9 +39,10 @@ export const CardContent = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       max-width: 350px;
-      padding: 25px 72px 0px 72px;
+      padding-top: 25px;
       z-index: 10;
       justify-content: flex-start;
+      gap: 15px;
     }
   `}
 
@@ -50,9 +52,13 @@ export const CardContent = styled.div`
     z-index: 10;
     font-size: 32px;
     margin: 0;
+    padding: 0 50px;
+    text-align: center;
     ${({ theme }) => css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         font-size: 24px;
+        padding: 0 10px;
+        line-height: 29px;
       }
     `};
   }
@@ -63,10 +69,11 @@ export const CardContent = styled.div`
     font-size: 16px;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 0 105px;
     ${({ theme }) => css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         font-size: 14px;
+        padding: 0 44px;
       }
     `};
   }
