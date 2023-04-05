@@ -5,7 +5,7 @@ import { Container, Title } from './styles';
 export function HeroSection() {
   return (
     <Container>
-      <Title> {title} </Title>
+      <Title> title </Title>
     </Container>
   );
 }
