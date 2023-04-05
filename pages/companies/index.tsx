@@ -1,12 +1,15 @@
 import React, { ReactElement } from 'react';
 import PageLayout from '@components/PageLayout';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
+import HeroSection from './components/HeroSection';
+import OurServicesSection from './components/OurServicesSection';
 
 function Companies() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <HeroSection />
+      <OurServicesSection />
+    </>
   );
 }
 
