@@ -92,7 +92,10 @@ export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
   alt: '',
-})``;
+})`
+  width: 200px;
+  height: auto;
+`;
 
 export const Content = styled.div`
   width: 100%;

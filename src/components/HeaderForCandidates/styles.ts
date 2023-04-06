@@ -115,7 +115,7 @@ export const Container = styled.div<ContainerProps>`
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.secondaryBlue};
+      background-color: ${theme.colors.blue400};
     }
   `}
 `;
@@ -131,7 +131,10 @@ export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
   alt: '',
-})``;
+})`
+  width: 200px;
+  height: auto;
+`;
 
 export const Content = styled.div`
   width: 100%;
