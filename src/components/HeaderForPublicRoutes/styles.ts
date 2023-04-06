@@ -60,7 +60,7 @@ export const Container = styled.div<ContainerProps>`
   z-index: 120;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  min-width: 100%;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
@@ -76,7 +76,7 @@ export const Container = styled.div<ContainerProps>`
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.secondaryBlue};
+      background-color: ${theme.colors.blue400};
     }
   `}
 `;
