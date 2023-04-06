@@ -9,7 +9,7 @@ interface Props {
   title: string;
   description: string;
   imageSrc: string;
-  onClick(arg: any): any;
+  onClick(): any;
   buttonTitle: string;
 }
 

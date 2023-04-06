@@ -80,5 +80,5 @@ export const ButtonContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 25px;
+  padding-bottom: 50px;
 `;
