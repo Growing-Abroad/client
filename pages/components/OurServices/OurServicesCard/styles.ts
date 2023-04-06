@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import {theme} from "@styles/theme";
+import { theme } from '@styles/theme';
 import { variables } from '@/styles/global-variables';
 
-
-export const Container = styled.div`  
+export const Container = styled.div`
   width: 100%;
   max-width: 400px;
   min-width: 255px;
@@ -12,7 +11,7 @@ export const Container = styled.div`
   outline: 2px solid lightgray;
   border-radius: 8px;
   text-align: center;
-  color: ${theme.colors.primaryBlue};
+  color: ${theme.colors.blue700};
   overflow: hidden;
   transition: all 450ms;
   min-height: 660px;
@@ -20,7 +19,7 @@ export const Container = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    outline: 7px solid ${theme.colors.secondaryBlue};
+    outline: 7px solid ${theme.colors.blue400};
   }
 
   .card-image {
@@ -30,7 +29,7 @@ export const Container = styled.div`
     background-size: cover;
     background-position: center;
   }
-`
+`;
 
 export const CardContainer = styled.div`
   min-height: 100%;
@@ -39,12 +38,12 @@ export const CardContainer = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
-`
+`;
 
 export const CardHeader = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.75rem;
   font-size: 1.5rem;
   h2 {
     font-weight: 700;
@@ -53,12 +52,12 @@ export const CardHeader = styled.div`
     font-size: 1rem;
     font-weight: 600;
   }
-`
+`;
 export const CardDescriptions = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   text-align: left;
   font-weight: 500;
@@ -67,7 +66,7 @@ export const CardDescriptions = styled.div`
   > div {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   .star {
@@ -75,17 +74,17 @@ export const CardDescriptions = styled.div`
     color: yellow;
     width: 1.75rem;
     height: 1.75rem;
-    color: ${theme.colors.primaryYellow}
+    color: ${theme.colors.yellow400};
   }
-`
+`;
 
 export const PostText = styled.p`
   text-transform: capitalize;
-  color: ${theme.colors.primaryBlue};
-`
+  color: ${theme.colors.blue700};
+`;
 
 export const Button = styled.button`
-  background: ${theme.colors.secondaryBlue};
+  background: ${theme.colors.blue400};
   color: white;
   font-weight: 700;
   font-size: 1rem;
@@ -96,6 +95,6 @@ export const Button = styled.button`
 
   &:hover {
     opacity: 0.9;
-    transform: scale(1.02)
-}
-`
+    transform: scale(1.02);
+  }
+`;

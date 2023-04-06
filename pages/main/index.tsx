@@ -9,6 +9,7 @@ import RecruitingAndCareerServicesSection from './components/RecrutingAndCareerS
 import PartnersSection from './components/PartnersSection';
 import SectionDivider from './components/SectionDivider';
 import { MeetTheFoundersSection } from './components/MeetTheFoundersSection';
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
 export default function Main() {
   return (
@@ -24,5 +25,5 @@ export default function Main() {
 }
 
 Main.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
+  return <PageLayout chosenHeader={ChosenHeader.DEFAULT}>{page}</PageLayout>;
 };

@@ -66,7 +66,7 @@ export const ContentTitle = styled.h4`
   font-size: 32px;
   line-height: 39px;
   letter-spacing: 1.3px;
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -82,7 +82,7 @@ export const ContentDescription = styled.p`
   font-size: 20px;
   line-height: 24.26px;
   letter-spacing: 1.3px;
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
   margin-top: 20px;
   text-align: left;
 
@@ -96,11 +96,11 @@ export const ContentDescription = styled.p`
 `;
 
 export const Span = styled.span`
-  color: ${({ theme }) => theme.colors.secondaryBlue};
+  color: ${({ theme }) => theme.colors.blue400};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      color: ${({ theme }) => theme.colors.primaryBlue};
+      color: ${({ theme }) => theme.colors.blue700};
     }
   `}
 `;

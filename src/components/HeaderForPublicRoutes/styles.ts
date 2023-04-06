@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { ComponentPropsWithoutRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
@@ -52,6 +53,11 @@ export const StyledBurger = styled.div<BurgerProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -135,7 +141,11 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.white};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+  }
 
   /* ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -161,6 +171,13 @@ export const IconsContainer = styled.div`
 
 export const IconButton = styled.button`
   background-color: transparent;
+
+  .icon {
+    color: ${({ theme }) => theme.colors.white};
+    :hover {
+      color: ${({ theme }) => theme.colors.blue400};
+    }
+  }
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
