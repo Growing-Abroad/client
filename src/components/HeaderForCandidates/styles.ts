@@ -63,7 +63,7 @@ export const StyledBurger = styled.div<BurgerProps>`
       display: ${({ isForDesktop }) => (!isForDesktop ? 'none' : 'flex')};
 
       div {
-        background-color: ${({ theme }) => theme.colors.primaryBlue};
+        background-color: ${({ theme }) => theme.colors.blue700};
       }
     }
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -184,7 +184,7 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

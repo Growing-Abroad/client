@@ -16,11 +16,11 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
   height: 110vh;
   padding: 0 140px;
-  background-color: ${({ theme }) => theme.colors.primaryBlue};
+  background-color: ${({ theme }) => theme.colors.blue700};
   border-radius: 0 0 20px 20px;
   z-index: 115;
   overflow: hidden;
-  transition: all 750ms;
+  transition: all 500ms;
   transition-delay: 0.025s;
   ${({ itsOpen }) =>
     itsOpen &&
@@ -46,13 +46,13 @@ export const CloseButton = styled.button`
   height: 3rem;
   border-radius: 1.5rem;
   background-color: ${({ theme }) => theme.colors.yellow400};
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 54px;
+  font-size: 66px;
 `;
 
 export const Content = styled.div`

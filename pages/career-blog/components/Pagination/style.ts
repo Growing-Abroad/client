@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { variables } from '@/styles/global-variables';
 
 const {
-  colors: { blue700, blue700, white },
+  colors: { blue700, white },
 } = theme;
 const {
   sizes: { mediaQuery },

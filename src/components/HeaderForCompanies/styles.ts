@@ -133,7 +133,7 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   /* ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

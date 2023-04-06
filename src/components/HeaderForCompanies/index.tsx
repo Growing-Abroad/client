@@ -30,7 +30,7 @@ function HeaderForCompanies() {
   const [itsOpen, setItsOpen] = useState(false);
 
   const {
-    colors: { white, primaryBlue, yellow400 },
+    colors: { white, blue700, yellow400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();
@@ -50,7 +50,7 @@ function HeaderForCompanies() {
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
-                style={{ color: primaryBlue }}
+                style={{ color: blue700 }}
               />
             </IconButton>
           )}
@@ -68,7 +68,7 @@ function HeaderForCompanies() {
                   <FontAwesomeIcon
                     icon={faGlobe}
                     size="2xl"
-                    style={{ color: primaryBlue }}
+                    style={{ color: blue700 }}
                   />
                 </IconButton>
                 <StdButton
@@ -80,8 +80,8 @@ function HeaderForCompanies() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     borderRadius: 8,
-                    backgroundColor: !isMobile ? primaryBlue : white,
-                    color: !isMobile ? white : primaryBlue,
+                    backgroundColor: !isMobile ? blue700 : white,
+                    color: !isMobile ? white : blue700,
                   }}
                 >
                   For Candidates
