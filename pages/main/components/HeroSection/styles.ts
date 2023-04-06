@@ -31,7 +31,7 @@ export const Content = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding: 40px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
+  padding: 170px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
     ${({ theme }) => theme.sizes.globalHorizontalPadding};
   z-index: 15;
 

@@ -1,11 +1,6 @@
 import { theme } from '@styles/theme';
 import { variables } from '@styles/global-variables';
 import styled from 'styled-components';
-import { Montserrat } from '@next/font/google';
-
-const font = Montserrat({
-  subsets: ['latin'],
-});
 
 const {
   colors: { blue700, blue400 },
@@ -45,7 +40,7 @@ export const VideoPlayButtonWrapper = styled.div`
   }
 `;
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.div`
   display: flex;
   flex-direction: column;
   width: 918px;
@@ -64,7 +59,6 @@ export const Paragraph = styled.p`
 `;
 
 export const p = styled.p`
-  font-family: ${font.style.fontFamily};
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 2rem;
@@ -85,7 +79,6 @@ export const p = styled.p`
 `;
 
 export const ul = styled.ul`
-  font-family: ${font.style.fontFamily};
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 2rem;

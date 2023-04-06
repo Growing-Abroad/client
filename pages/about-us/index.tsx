@@ -6,6 +6,7 @@ import ShareValues from './components/ShareValues';
 import TeamMembers from './components/TeamMembers';
 import About from './components/About';
 import PageLayout from '../../src/components/PageLayout';
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
 export default function AboutUs() {
   return (
@@ -21,5 +22,7 @@ export default function AboutUs() {
 }
 
 AboutUs.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
+  return (
+    <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+  );
 };

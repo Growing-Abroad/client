@@ -7,10 +7,6 @@ interface IContainer {
   backgroundImg: string;
 }
 
-const font = Montserrat({
-  subsets: ['latin'],
-});
-
 export const Container = styled.section<IContainer>`
   min-width: 100%;
 
@@ -145,7 +141,8 @@ export const BlueSquare = styled.div`
   bottom: -240px;
   left: var(--blueSquareOffset);
   transform: rotate(25deg);
-  font-family: ${font} &.right-image {
+
+  &.right-image {
     left: unset;
     right: var(--blueSquareOffset);
     transform: rotate(-26.08deg);
@@ -224,7 +221,7 @@ export const BigQuote = styled.span`
 export const TextLeft = styled.span`
   text-align: left;
   left: 0;
-  font-family: ${font.style.fontFamily};
+
   font-size: 2rem;
   line-height: 39px;
   letter-spacing: 1.3px;
@@ -248,7 +245,7 @@ export const TextLeft = styled.span`
 export const TextRight = styled.span`
   text-align: right;
   right: 0;
-  font-family: ${font.style.fontFamily};
+
   font-size: 2rem;
   line-height: 39px;
   letter-spacing: 1.3px;
@@ -271,7 +268,6 @@ export const TextRight = styled.span`
 `;
 
 export const Quote = styled.div`
-  font-family: ${font.style.fontFamily};
   font-weight: 900;
   font-size: 8rem;
   line-height: 1.188rem;

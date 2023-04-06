@@ -9,7 +9,7 @@ import { theme } from '@styles/theme';
 import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
 import { Col, Container, Row } from 'react-bootstrap';
 import classes from './style.module.css';
-import { Montserrat } from '@next/font/google';
+import { Montserrat } from 'next/font/google';
 import * as S from './styles';
 import useAppContext from '@/hooks/useAppContext';
 
