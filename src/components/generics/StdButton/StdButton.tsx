@@ -12,27 +12,36 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-const StyledStdBtn = styled.button`
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-    background-color: ${yellow400};
-    color: ${blue700};
-    letter-spacing: 1.3px;
-    padding: 20px 35px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 400ms;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+interface HoverProps {
+  color?: string;
+  backgroundColor?: string;
+}
 
+interface StyledStdBtnProps {
+  hover?: HoverProps;
+  backgroundColor?: string;
+  color?: string;
+}
+
+const StyledStdBtn = styled.button<StyledStdBtnProps>`
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  background-color: ${({ theme, backgroundColor }) =>
+    backgroundColor ?? theme.colors.yellow400};
+  color: ${({ theme, color }) => color ?? theme.colors.blue700};
+  letter-spacing: 1.3px;
+  padding: 20px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 400ms;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
 
   &:hover {
-    background-color: ${blue700};
-    color: ${yellow400};
+    background-color: ${({ theme, hover }) =>
+      hover?.backgroundColor ?? theme.colors.blue700};
+    color: ${({ theme, hover }) => hover?.color ?? theme.colors.yellow400};
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -42,17 +51,35 @@ const StyledStdBtn = styled.button`
   }
 `;
 
-export interface IStdButton extends PropsWithChildren {
+export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
   className?: string;
   style?: CSSProperties;
   icon?: IconProp;
-  onClick?(arg: any): any;
+  onClick?(): any;
 }
 
-export default function StdButton({children: text, className, icon, style}: IStdButton) {
-    return (
-        <StyledStdBtn className={className} style={style}>
-            {icon && <FontAwesomeIcon icon={icon} />}
-            {text}
-        </StyledStdBtn>)
+export default function StdButton({
+  children: text,
+  className,
+  icon,
+  style,
+  hover,
+  backgroundColor,
+  color,
+  onClick,
+}: IStdButton) {
+  return (
+    <StyledStdBtn
+      backgroundColor={backgroundColor}
+      color={color}
+      hover={hover}
+      className={className}
+      style={style}
+      onClick={onClick}
+    >
+      {icon && <FontAwesomeIcon icon={icon} size="lg" />}
+      {'\xa0'}
+      {text}
+    </StyledStdBtn>
+  );
 }

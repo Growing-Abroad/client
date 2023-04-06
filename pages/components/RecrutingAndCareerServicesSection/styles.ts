@@ -11,6 +11,10 @@ export const Container = styled.div`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 73px 40px;
     }
+
+    @media (max-width: 405px) {
+      padding-top: 173px;
+    }
   `};
 `;
 
@@ -48,7 +52,7 @@ export const Subtitle = styled.h1`
   align-items: center;
   text-align: center;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

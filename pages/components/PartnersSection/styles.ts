@@ -23,7 +23,7 @@ export const TitleContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 0 160px;
+      padding: 0 60px;
     }
   `}
 `;

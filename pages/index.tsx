@@ -37,7 +37,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={languages[locale]}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+      <PageLayout chosenHeader={ChosenHeader.DEFAULT}>{page}</PageLayout>
     </IntlProvider>
   );
 };

@@ -14,6 +14,7 @@ import { IntlProvider } from 'react-intl';
 import de from '../../lang/de.json';
 import en from '../../lang/en.json';
 import pt from '../../lang/pt.json';
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -40,7 +41,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={languages[locale]}>
-      <PageLayout>{page}</PageLayout>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
     </IntlProvider>
   );
 };

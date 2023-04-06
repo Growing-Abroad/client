@@ -72,12 +72,10 @@ function PartnersSection() {
           hasSpaceBtw={!shouldBreakLine}
           breakingLine={shouldBreakLine}
           as="h2"
-          text2IsAChildren={isMobile}
-        >
-          Partners in
-          <br />
-          Germany
-        </TwoColorTitle>
+          wrapperStyles={{
+            width: '100%',
+          }}
+        />
       </TitleContainer>
       <Content isMobile={isMobile}>
         <ImageContainerA>

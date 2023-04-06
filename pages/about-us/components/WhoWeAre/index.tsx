@@ -9,7 +9,7 @@ import { theme } from '@styles/theme';
 import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
 import { Col, Container, Row } from 'react-bootstrap';
 import classes from './style.module.css';
-import { Montserrat } from "next/font/google";
+import { Montserrat } from 'next/font/google';
 import * as S from './styles';
 import useAppContext from '@/hooks/useAppContext';
 
@@ -19,23 +19,29 @@ const font = Montserrat({
 
 function WhoWeAre() {
   const youtube = socials2?.find((social) => social.name === 'youtube');
-  const {isMobile} = useAppContext();
+  const { isMobile } = useAppContext();
   const {
-    colors: { secondaryBlue },
+    colors: { blue400 },
   } = theme;
 
   return (
-    <S.Container >
+    <S.Container>
       <TwoColorTitle
         text1="Who"
         text2="We Are"
         hasSpaceBtw
-        wrapperStyles={{ width: '100%', justifyContent: 'center', height:`${isMobile ? '44px' : 'auto'}` }}
+        wrapperStyles={{
+          width: '100%',
+          justifyContent: 'center',
+          height: `${isMobile ? '44px' : 'auto'}`,
+        }}
         as="h2"
       />
 
-      <div className={classes.imageContainer}>
-        <Image width={1128} height={628}
+      <S.ImageContainer className={classes.imageContainer}>
+        <Image
+          width={1128}
+          height={628}
           src={UanAndManu}
           alt="uan and manu"
           className={classes.youtubeImage}
@@ -47,7 +53,7 @@ function WhoWeAre() {
             className={classes.youtubePlayButton + ' ' + classes.blurbRippleOut}
           ></Image>
         </div>
-      </div>
+      </S.ImageContainer>
 
       <S.Paragraph>
         <S.p style={{ fontFamily: font.style.fontFamily }}>

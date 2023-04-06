@@ -20,8 +20,8 @@ export const Container = styled.div<ContainerProps>`
   border-radius: 0 0 20px 20px;
   z-index: 115;
   overflow: hidden;
-  transition: all 1400ms;
-  transition-delay: 0.25s;
+  transition: all 750ms;
+  transition-delay: 0.025s;
   ${({ itsOpen }) =>
     itsOpen &&
     css`

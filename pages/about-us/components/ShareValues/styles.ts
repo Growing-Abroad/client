@@ -1,8 +1,10 @@
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
-import styled from "styled-components";
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
+import styled from 'styled-components';
 
-const { colors: { blue700 } } = theme;
+const {
+  colors: { blue700 },
+} = theme;
 
 export const Container = styled.section`
   width: min(100%, ${variables.sizes.maxWidthAll});
@@ -12,7 +14,7 @@ export const Container = styled.section`
   justify-items: center;
   gap: 50px;
   padding: 80px ${variables.sizes.globalHorizontalPadding};
-  color: ${theme.colors.primaryBlue};
+  color: ${theme.colors.blue700};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
@@ -43,7 +45,7 @@ export const Card = styled.div`
 
   &:hover {
     box-shadow: 0 2px 10px #e2dfdf;
-    transform: scale(1.02)
+    transform: scale(1.02);
   }
 
   @media (max-width: 992px) {
