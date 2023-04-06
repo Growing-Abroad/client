@@ -28,7 +28,7 @@ function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
 
   const {
-    colors: { primaryBlue },
+    colors: { primaryBlue, white },
   } = useTheme();
 
   const { isMobile } = useAppContext();
@@ -48,7 +48,7 @@ function HeaderForPublicRoutes() {
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
-                style={{ color: primaryBlue }}
+                style={{ color: white }}
               />
             </IconButton>
           )}
@@ -63,9 +63,10 @@ function HeaderForPublicRoutes() {
               <>
                 <IconButton>
                   <FontAwesomeIcon
+                    className="icon"
                     icon={faGlobe}
                     size="2xl"
-                    style={{ color: primaryBlue }}
+                    // style={{ color: white }}
                   />
                 </IconButton>
               </>
