@@ -1,15 +1,21 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
 }
 
-interface ContainerProps {
+interface AlternativeHeaderProp {
+  showAlternativeHeader?: boolean;
+}
+
+interface ContainerProps extends AlternativeHeaderProp {
   itsOpen: boolean;
 }
+
+interface ButtonsProps extends AlternativeHeaderProp {}
 
 export const StyledBurger = styled.div<BurgerProps>`
   width: 2rem;
@@ -53,10 +59,6 @@ export const StyledBurger = styled.div<BurgerProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 120;
   display: flex;
   justify-content: space-between;
@@ -65,6 +67,38 @@ export const Container = styled.div<ContainerProps>`
   padding: 22px 64px;
   margin: 0;
   max-width: ${({ theme }) => theme.sizes.maxWidthAll};
+  transition: all 1.5s;
+
+  ${({ showAlternativeHeader }) =>
+    showAlternativeHeader &&
+    css`
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      background-color: ${({ theme }) => theme.colors.white};
+
+      animation: slide-down 400ms forwards;
+      animation-iteration-count: 1;
+      z-index: 250;
+
+      @keyframes slide-down {
+        0% {
+          top: -100px;
+          opacity: 0;
+        }
+        1% {
+          position: fixed;
+          top: -100px;
+          opacity: 0.01;
+        }
+        100% {
+          top: 10;
+          opacity: 1;
+        }
+      }
+    `}
 
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -92,9 +126,16 @@ export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
   alt: '',
-})`
+})<AlternativeHeaderProp>`
   width: 200px;
   height: auto;
+  transition: all 1.5s;
+
+  ${({ showAlternativeHeader }) =>
+    showAlternativeHeader &&
+    css`
+      display: none;
+    `}
 `;
 
 export const Content = styled.div`
@@ -129,7 +170,7 @@ export const ButtonsContainer = styled.div`
   `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonsProps>`
   background-color: transparent;
   font-family: 'Montserrat';
   font-style: normal;
@@ -143,8 +184,16 @@ export const Button = styled.button`
   text-align: center;
   letter-spacing: 1.3px;
   text-transform: uppercase;
+  transition-duration: 1.5s;
 
-  color: ${({ theme }) => theme.colors.white};
+  ${({ showAlternativeHeader, theme }) =>
+    !showAlternativeHeader
+      ? css`
+          color: ${theme.colors.white};
+        `
+      : css`
+          color: ${theme.colors.blue700};
+        `}
 
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
@@ -172,11 +221,19 @@ export const IconsContainer = styled.div`
   `};
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled.button<ButtonsProps>`
   background-color: transparent;
 
   .icon {
-    color: ${({ theme }) => theme.colors.white};
+    transition-duration: 1.5s;
+    ${({ showAlternativeHeader, theme }) =>
+      !showAlternativeHeader
+        ? css`
+            color: ${theme.colors.white};
+          `
+        : css`
+            color: ${theme.colors.blue700};
+          `}
     :hover {
       color: ${({ theme }) => theme.colors.blue400};
     }

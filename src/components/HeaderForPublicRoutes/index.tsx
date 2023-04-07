@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
+import GrowingAbroadBW from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
 
 import {
   Container,
@@ -18,6 +13,7 @@ import {
   IconButton,
   Icon,
   StyledBurger,
+  SupraContainer,
 } from './styles';
 import { useTheme } from 'styled-components';
 import useAppContext from '@/hooks/useAppContext';
@@ -26,13 +22,29 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
+  const [showAlternativeHeader, setShowAlternativeHeader] = useState(false);
 
   const {
     colors: { blue700, white },
   } = useTheme();
 
   const { isMobile } = useAppContext();
-  console.log({ isMobile });
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY >= 100) {
+        setShowAlternativeHeader(true);
+      } else {
+        setShowAlternativeHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
@@ -40,9 +52,20 @@ function HeaderForPublicRoutes() {
         <div></div>
         <div></div>
       </StyledBurger>
-      <Container itsOpen={itsOpen}>
+      <Container
+        className={showAlternativeHeader ? 'animated-header' : ''}
+        showAlternativeHeader={showAlternativeHeader}
+        itsOpen={itsOpen}
+      >
         <LogoContainer>
-          <Logo src={GrowingAbroadImage.src} />
+          <Logo
+            src={GrowingAbroadImage.src}
+            showAlternativeHeader={!showAlternativeHeader}
+          />
+          <Logo
+            src={GrowingAbroadBW.src}
+            showAlternativeHeader={showAlternativeHeader}
+          />
           {isMobile && (
             <IconButton>
               <FontAwesomeIcon
@@ -55,13 +78,17 @@ function HeaderForPublicRoutes() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>For companies</Button>
-            <Button>For candidates</Button>
+            <Button showAlternativeHeader={showAlternativeHeader}>
+              For companies
+            </Button>
+            <Button showAlternativeHeader={showAlternativeHeader}>
+              For candidates
+            </Button>
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <IconButton>
+                <IconButton showAlternativeHeader={showAlternativeHeader}>
                   <FontAwesomeIcon
                     className="icon"
                     icon={faGlobe}
