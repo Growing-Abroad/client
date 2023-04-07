@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import CloudSection from "./components/cloud-section";
 import JobsHeroSection from "./components/jobs-hero-section";
 import UploadCvSection from "./components/upload-cv-section";
+import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 
 
 export default function Jobs() {
@@ -14,5 +15,5 @@ export default function Jobs() {
 }
 
 Jobs.getLayout = function getLayout(page: ReactElement) {
-    return <PageLayout>{page}</PageLayout>;
+    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
 }

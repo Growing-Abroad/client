@@ -26,13 +26,12 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
+  const { isMobile } = useAppContext();
 
   const {
     colors: { blue700, white },
   } = useTheme();
 
-  const { isMobile } = useAppContext();
-  console.log({ isMobile });
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
