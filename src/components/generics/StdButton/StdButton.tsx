@@ -1,3 +1,4 @@
+import useAppContext from '@/hooks/useAppContext';
 import { variables } from '@/styles/global-variables';
 import { theme } from '@/styles/theme';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -31,11 +32,11 @@ const StyledStdBtn = styled.button<StyledStdBtnProps>`
     backgroundColor ?? theme.colors.yellow400};
   color: ${({ theme, color }) => color ?? theme.colors.blue700};
   letter-spacing: 1.3px;
-  padding: 20px 40px;
+  padding: 20px 36px;
   border-radius: 50px;
   cursor: pointer;
-  transition: 400ms;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  transition: 350ms;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
 
   &:hover {
@@ -68,6 +69,8 @@ export default function StdButton({
   color,
   onClick,
 }: IStdButton) {
+  const { isMobile } = useAppContext();
+
   return (
     <StyledStdBtn
       backgroundColor={backgroundColor}
@@ -77,8 +80,7 @@ export default function StdButton({
       style={style}
       onClick={onClick}
     >
-      {icon && <FontAwesomeIcon icon={icon} size="lg" />}
-      {'\xa0'}
+      {icon && <FontAwesomeIcon icon={icon} style={isMobile ? {marginRight: '8px'} : {marginRight: '16px'}}/>}
       {text}
     </StyledStdBtn>
   );
