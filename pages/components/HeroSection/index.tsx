@@ -97,9 +97,9 @@ function HeroSection() {
                 padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
                 letterSpacing: '1.3px',
                 whiteSpace: 'nowrap',
-                backgroundColor: '#FFFFFF',
                 fontSize: `${isMobile ? '16px' : '20px'}`,
               }}
+              className='find-job-btn'
             >
               Find A Job Now
             </StdButton>

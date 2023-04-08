@@ -175,6 +175,17 @@ export const ButtonsContainer = styled.div`
       align-items: center;
     }
   `}
+
+  .find-job-btn {
+    background-color: ${({theme}) => theme.colors.white};
+
+    &:hover {
+      background-color: ${({theme}) => theme.colors.blue700};
+      color: ${({theme}) => theme.colors.white};
+    }
+  }
+  
+  
 `;
 
 export const VideoContainer = styled.div`

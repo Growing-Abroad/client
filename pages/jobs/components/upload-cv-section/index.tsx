@@ -198,7 +198,7 @@ export default function UploadCvSection() {
                         text2="" 
                         className="upload-cv-heading3"
                         wrapperStyles={{maxWidth: '100%'}}
-                        styles={isMobile ? {marginBottom: '24px'} : {marginBottom: '24px'} }
+                        styles={isMobile ? {marginBottom: '24px'} : {marginBottom: '24px'}}
                     />
 
                     <div  style={{

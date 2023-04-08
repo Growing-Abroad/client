@@ -5,6 +5,7 @@ import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
+import withAuth from "@/components/DevAuth";
 
 
 
@@ -22,22 +23,24 @@ type AppPropsWithLayout = AppProps & {
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);
-
   return (
     <ContextProvider>
-      <MyThemeProvider>
-      {getLayout(
-        <>
-          <style jsx global>{`
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-            body {
-              font-family: 'Montserrat', sans-serif;
-            }
-          `}</style>
-            <Component {...pageProps} />
-        </>,
-      )}
-      </MyThemeProvider>
+      {withAuth() && (
+        <MyThemeProvider>
+          {getLayout(
+            <>
+              <style jsx global>{`
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+                body {
+                  font-family: 'Montserrat', sans-serif;
+                }
+                `}</style>
+              <Component {...pageProps} />
+            </>,
+          )}
+        </MyThemeProvider>)
+      }
+        
     </ContextProvider>
   );
 }
