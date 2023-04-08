@@ -1,4 +1,3 @@
-import 'react-select-search-nextjs/style.css';
 import { ReactNode, useEffect, useState } from 'react';
 import { Select, MenuItem } from '@mui/material';
 import Nav from './Nav';
