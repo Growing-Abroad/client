@@ -56,7 +56,7 @@ export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
   className?: string;
   style?: CSSProperties;
   icon?: IconProp;
-  onClick?(): any;
+  onClick?(arg: any): any;
 }
 
 export default function StdButton({

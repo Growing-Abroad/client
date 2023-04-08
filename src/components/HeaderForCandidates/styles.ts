@@ -60,7 +60,6 @@ export const StyledBurger = styled.div<BurgerProps>`
 
   ${({ theme }) => css`
     @media (min-width: ${theme.sizes.mediaQuery}) {
-      display: ${({ isForDesktop }) => (!isForDesktop ? 'none' : 'flex')};
 
       div {
         background-color: ${({ theme }) => theme.colors.blue700};
@@ -92,7 +91,6 @@ export const Header = styled.div`
   padding: 0 18px;
   ${({ theme }) => css`
     @media (min-width: ${theme.sizes.mediaQuery}) {
-      display: ${({ isForDesktop }) => (!isForDesktop ? 'none' : 'flex')};
     }
   `};
 `;

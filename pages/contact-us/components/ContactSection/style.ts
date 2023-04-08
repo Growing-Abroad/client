@@ -3,10 +3,10 @@ import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
 
 const {
-  colors: { primaryYellow, blue700, blue500, white },
+  colors: { white, yellow400 },
 } = theme;
 const {
-  sizes: { maxWidthAll, mediaQuery },
+  sizes: { mediaQuery },
 } = variables;
 
 export const SocialMedia = styled.div`
@@ -70,7 +70,7 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
     margin-bottom: 18px;
   }
   & p > span {
-    color: ${primaryYellow};
+    color: ${yellow400};
   }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;

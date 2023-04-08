@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import PageLayout from '../../src/components/PageLayout';
 import { Wrapper } from '@/components/Wrapper';
 import ContactSection from './components/ContactSection';
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
 export default function CONTACT() {
   return (
@@ -12,5 +13,5 @@ export default function CONTACT() {
 }
 
 CONTACT.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
+  return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
 };

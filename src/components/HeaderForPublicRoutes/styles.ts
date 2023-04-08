@@ -76,7 +76,7 @@ export const Container = styled.div<ContainerProps>`
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.secondaryBlue};
+      background-color: ${theme.colors.blue400};
     }
   `}
 `;

@@ -1,4 +1,4 @@
-import React, {useState, FormEvent} from 'react';
+import React, {useState, FormEvent, ChangeEvent} from 'react';
 import TwoColorTitle from "@/components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
@@ -18,29 +18,24 @@ export default function UploadCvSection() {
     } = useTheme();
     const { isMobile } = useAppContext();
 
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState<File>();
 
-    const handleFileChange = (event) => {
-      setSelectedFile(event.target.files[0]);
-    };
-  
-    const handleDrop = (event) => {
-      event.preventDefault();
-      setSelectedFile(event.dataTransfer.files[0]);
-    };
-  
-    const handleDragOver = (event) => {
-      event.preventDefault();
-    };
-
-    const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
-        if (e.currentTarget.checked) {
-          e.currentTarget.value = 'false';
-        } else {
-          e.currentTarget.value = 'true';
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files?.[0]) {
+            setSelectedFile(event.target.files[0]);
         }
-      };
-    
+    };
+  
+    const handleDrop: React.DragEventHandler<HTMLDivElement> = (event) => {
+      event.preventDefault();
+        if (event.dataTransfer?.files[0]) {
+            setSelectedFile(event.dataTransfer?.files[0]);
+        }
+    };
+  
+    const handleDragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
+      event.preventDefault();
+    };
 
     return (
         <>

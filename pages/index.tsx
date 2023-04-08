@@ -17,7 +17,7 @@ import de from '../lang/de.json';
 import en from '../lang/en.json';
 import pt from '../lang/pt.json';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
-import { languages } from './candidates';
+import useLocale from '@/hooks/useLocale';
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -33,10 +33,10 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  const { locale } = useRouter();
+  const { locale, messages } = useLocale();
 
   return (
-    <IntlProvider locale={locale!} messages={languages[locale]}>
+    <IntlProvider locale={locale!} messages={messages}>
       <PageLayout chosenHeader={ChosenHeader.DEFAULT}>{page}</PageLayout>
     </IntlProvider>
   );
