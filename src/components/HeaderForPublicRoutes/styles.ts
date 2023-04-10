@@ -52,7 +52,7 @@ export const StyledBurger = styled.div<BurgerProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
