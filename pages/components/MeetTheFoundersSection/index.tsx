@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import MeetFounders from '@/utils/mock-ups/meet-founders-carousel';
+import MeetFounders from "@/utils/mock-ups/meet-founders-carousel";
 
-import FancyCarousel from '@/components/Fancy-carousel';
-import TwoColorTitle from '@/components/two-color-title';
+import FancyCarousel from "@/components/Fancy-carousel";
+import TwoColorTitle from "@/components/two-color-title";
 
 import {
   Container,
@@ -15,9 +15,9 @@ import {
   TextsContainer,
   CallToAction,
   Span,
-} from './styles';
-import StdButton from '@/components/generics/StdButton/StdButton';
-import useAppContext from '@/hooks/useAppContext';
+} from "../../../styles/components/MeetTheFoundersSection/styles";
+import StdButton from "@/components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
 
 export function MeetTheFoundersSection() {
   const {
@@ -72,9 +72,9 @@ export function MeetTheFoundersSection() {
             fontSize: !isMobile ? 20 : 16,
             lineHeight: 19,
             letterSpacing: 1.3,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           Learn more about us

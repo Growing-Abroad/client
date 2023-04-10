@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import FancyCarousel from '@/components/Fancy-carousel';
-import TwoColorTitle from '@/components/two-color-title';
-import consultingGmbhMock from '@/utils/mock-ups/consulting-gmbh-mock-texts';
-import useAppContext from '@/hooks/useAppContext';
+import FancyCarousel from "@/components/Fancy-carousel";
+import TwoColorTitle from "@/components/two-color-title";
+import consultingGmbhMock from "@/utils/mock-ups/consulting-gmbh-mock-texts";
+import useAppContext from "@/hooks/useAppContext";
 
 import {
   CarouselContainer,
@@ -14,7 +14,7 @@ import {
   Subtitle,
   TitlesContainer,
   Container,
-} from './styles';
+} from "../../../styles/components/ConsultingGmbHSection/styles";
 
 function ConsultingGmbHSection() {
   const {
@@ -31,7 +31,7 @@ function ConsultingGmbHSection() {
           <TwoColorTitle
             text1="Growing Abroad"
             text2="Consulting GmbH"
-            fontSize={!isMobile ? '60px' : '36px'}
+            fontSize={!isMobile ? "60px" : "36px"}
             hasSpaceBtw={!shouldBreakLine}
             breakingLine={shouldBreakLine}
           />

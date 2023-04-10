@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Container,
@@ -12,10 +12,10 @@ import {
   VideoContainer,
   VideoContent,
   VideoBackgroundOpacity,
-} from './styles';
-import StdButton from '@/components/generics/StdButton/StdButton';
-import useAppContext from '@/hooks/useAppContext';
-import MainHeroPhoto from '@/../public/assets/main-hero-photo.webp';
+} from "../../../styles/components/HeroSection/styles";
+import StdButton from "@/components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
+import MainHeroPhoto from "@/../public/assets/main-hero-photo.webp";
 
 function HeroSection() {
   const { isMobile } = useAppContext();
@@ -35,12 +35,12 @@ function HeroSection() {
             <Title.Container>
               <Title.GeneralColor>
                 Matching the best International
-                {'\xa0'}
-                <Title.FirstColor>TALENTS{'\xa0'}</Title.FirstColor>
+                {"\xa0"}
+                <Title.FirstColor>TALENTS{"\xa0"}</Title.FirstColor>
               </Title.GeneralColor>
               <Title.GeneralColor>
-                with your{'\xa0'}
-                <Title.SecondColor>COMPANY{'\xa0'}</Title.SecondColor>
+                with your{"\xa0"}
+                <Title.SecondColor>COMPANY{"\xa0"}</Title.SecondColor>
               </Title.GeneralColor>
             </Title.Container>
           ) : (
@@ -49,11 +49,11 @@ function HeroSection() {
               <Title.GeneralColor>the best</Title.GeneralColor>
               <Title.GeneralColor>International</Title.GeneralColor>
               <Title.GeneralColor>
-                <Title.FirstColor>TALENTS{'\xa0'}</Title.FirstColor>
+                <Title.FirstColor>TALENTS{"\xa0"}</Title.FirstColor>
                 with
               </Title.GeneralColor>
               <Title.GeneralColor>
-                your{'\xa0'}
+                your{"\xa0"}
                 <Title.SecondColor>COMPANY</Title.SecondColor>
               </Title.GeneralColor>
             </Title.Container>
@@ -73,33 +73,33 @@ function HeroSection() {
           <ButtonsContainer>
             <StdButton
               style={{
-                width: `${isMobile ? '196px' : '284px'}`,
-                height: `${isMobile ? '35px' : '59px'}`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
-                letterSpacing: '1.3px',
-                whiteSpace: 'nowrap',
-                fontSize: `${isMobile ? '16px' : '20px'}`,
-                marginBottom: `${isMobile ? '19px' : '0px'}`,
+                width: `${isMobile ? "196px" : "284px"}`,
+                height: `${isMobile ? "35px" : "59px"}`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
+                letterSpacing: "1.3px",
+                whiteSpace: "nowrap",
+                fontSize: `${isMobile ? "16px" : "20px"}`,
+                marginBottom: `${isMobile ? "19px" : "0px"}`,
               }}
             >
               Find experts now
             </StdButton>
             <StdButton
               style={{
-                width: `${isMobile ? '177px' : '284px'}`,
-                height: `${isMobile ? '35px' : '59px'}`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
-                letterSpacing: '1.3px',
-                whiteSpace: 'nowrap',
-                fontSize: `${isMobile ? '16px' : '20px'}`,
+                width: `${isMobile ? "177px" : "284px"}`,
+                height: `${isMobile ? "35px" : "59px"}`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
+                letterSpacing: "1.3px",
+                whiteSpace: "nowrap",
+                fontSize: `${isMobile ? "16px" : "20px"}`,
               }}
-              className='find-job-btn'
+              className="find-job-btn"
             >
               Find A Job Now
             </StdButton>
