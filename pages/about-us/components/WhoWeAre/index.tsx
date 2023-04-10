@@ -1,13 +1,8 @@
 import TwoColorTitle from '@components/two-color-title';
-import { socials2 } from '@utils/socials';
 import React from 'react';
 import UanAndManu from '@assets/pages/about-us/about-us-coaches.webp';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { theme } from '@styles/theme';
 import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
-import { Col, Container, Row } from 'react-bootstrap';
 import classes from './style.module.css';
 import { Montserrat } from 'next/font/google';
 import * as S from './styles';
@@ -18,11 +13,7 @@ const font = Montserrat({
 });
 
 function WhoWeAre() {
-  const youtube = socials2?.find((social) => social.name === 'youtube');
   const { isMobile } = useAppContext();
-  const {
-    colors: { blue400 },
-  } = theme;
 
   return (
     <S.Container>

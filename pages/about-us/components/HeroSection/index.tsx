@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as S from "./styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp"
 import TwoColorTitle from "@components/two-color-title";
-import Image from "next/image";
-import quoteLeft from "@/../public/assets/pages/about-us/quotes-left.webp"
-import quoteRight from "@/../public/assets/pages/about-us/quotes-right.webp"
 import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";
 import Manu from "@/../public/assets/pages/about-us/manu-career-coach.webp";
 import { Montserrat } from "next/font/google";
 import classes from './Hero.module.css'
-import { Row } from "react-bootstrap";
 
 const montserrat = Montserrat({
   subsets: ['latin']

@@ -1,11 +1,9 @@
 import TwoColorTitle from "@/components/two-color-title";
 import CenteredSection from "../centeredSection";
 import styled from "styled-components";
-import yourPersonalCoach from "@assets/pages/coaching/yourPersonalCoach.svg";
 import yourFriend from "@assets/pages/coaching/yourFriend.svg";
 import yourMotivator from "@assets/pages/coaching/yourMotivator.svg";
 import yourMentor from "@assets/pages/coaching/yourMentor.svg";
-import yourCareerAdvisor from "@assets/pages/coaching/yourCareerAdvisor.svg";
 import Image from "next/image";
 import { theme } from "@/styles/theme";
 import useAppContext from "@/hooks/useAppContext";

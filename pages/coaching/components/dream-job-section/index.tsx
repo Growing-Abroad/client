@@ -12,7 +12,7 @@ import linkedinOpt from '@assets/pages/coaching/linkedin-optimization.png';
 import useAppContext from "@/hooks/useAppContext";
 
 
-const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
+const { sizes: { mediaQuery }} = variables;
 const { colors: {blue700} } = theme; 
 
 

@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
 import { theme } from '@/styles/theme';
-import { CSSProperties, useTheme } from 'styled-components';
+import { CSSProperties } from 'styled-components';
 import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from './style';
 
 const {
@@ -11,7 +10,6 @@ export interface TwoColorTitleParameters extends IText {
   text1: string;
   text2: string;
   hasSpaceBtw?: boolean;
-  fullWidth?: boolean;
   wrapperStyles?: CSSProperties;
   fontSize?: string;
   styles?: CSSProperties;
@@ -25,7 +23,6 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
   hasSpaceBtw,
-  fullWidth,
   wrapperStyles,
   className,
   breakingLine,

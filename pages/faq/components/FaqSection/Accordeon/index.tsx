@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Container,
   AccordeonHeader,
   AccordeonButton,
   AccordeonContent,
@@ -36,9 +35,9 @@ function Accordeon({ title, content }: AccordeonProps) {
               <path
                 d="M1.40039 1.39062L9.65698 9.6099L17.9136 1.39062"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth={2}
+                strokeLinecap='round'
+                strokeLinejoin="round"
               />
             </svg>
           </AccordeonButton>
@@ -54,9 +53,9 @@ function Accordeon({ title, content }: AccordeonProps) {
               <path
                 d="M1.54688 17.916L9.76615 9.65943L1.54688 1.40284"
                 stroke="#05335B"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth={2}
+                strokeLinecap='round'
+                strokeLinejoin="round"
               />
             </svg>
           </AccordeonButton>

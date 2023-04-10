@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import search from '@/../public/assets/search.svg';
 
-import { Line, NavContainer, NavList, NavItem, SearchButton } from './style';
+import { NavContainer, NavList, NavItem, SearchButton } from './style';
 export default function NavHero() {
   return (
     <>

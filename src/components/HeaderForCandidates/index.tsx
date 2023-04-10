@@ -38,7 +38,7 @@ function HeaderForCandidates() {
   const router = useRouter();
 
   const {
-    colors: { white, blue700, blue400, yellow400 },
+    colors: { white, blue700, blue400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();

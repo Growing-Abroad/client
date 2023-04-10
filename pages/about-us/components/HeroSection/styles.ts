@@ -1,7 +1,6 @@
 import { theme } from '@styles/theme';
 import styled from 'styled-components';
 import { variables } from '@styles/global-variables';
-import { Montserrat } from '@next/font/google';
 
 interface IContainer {
   backgroundImg: string;

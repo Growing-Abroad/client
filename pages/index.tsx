@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { Container, Title } from './styles';
 import HeroSection from './components/HeroSection';
 import { ReactElement } from 'react';
 import ConsultingGmbHSection from './components/ConsultingGmbHSection/index';
@@ -8,16 +6,11 @@ import RecruitingAndCareerServicesSection from './components/RecrutingAndCareerS
 import PartnersSection from './components/PartnersSection';
 import SectionDivider from './components/SectionDivider';
 import { MeetTheFoundersSection } from './components/MeetTheFoundersSection';
-
 import { NextPageWithLayout } from '@pages/_app';
 import PageLayout from '@components/PageLayout';
-import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
-import de from '../lang/de.json';
-import en from '../lang/en.json';
-import pt from '../lang/pt.json';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
-import useLocale from '@/hooks/useLocale';
+import _useLocale from '@/hooks/useLocale';
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -33,7 +26,7 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = useLocale();
+  const { locale, messages } = _useLocale();
 
   return (
     <IntlProvider locale={locale!} messages={messages}>

@@ -1,19 +1,17 @@
-import React, {useState, FormEvent, ChangeEvent} from 'react';
+import React, {useState, ChangeEvent} from 'react';
 import TwoColorTitle from "@/components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import StdInput from "@/components/generics/StdInput";
 import { CvForm, UploadCvDetails, UploadCvWrapper } from "./style";
 import { useTheme } from "styled-components";
-import { Checkbox, IconButton, Input } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudUploadAlt, faUpload } from '@fortawesome/free-solid-svg-icons';
 import useAppContext from '@/hooks/useAppContext';
-import { CheckboxWrapper } from '@/components/news-letter/style';
 
 export default function UploadCvSection() {
     const {
-        sizes: { globalHorizontalPadding },
         colors: { blue700, blue400 }
     } = useTheme();
     const { isMobile } = useAppContext();

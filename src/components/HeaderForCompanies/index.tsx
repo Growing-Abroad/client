@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
-
 import {
   Container,
   LogoContainer,
@@ -17,7 +9,6 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  Icon,
   StyledBurger,
 } from './styles';
 import StdButton from '../generics/StdButton/StdButton';
@@ -30,7 +21,7 @@ function HeaderForCompanies() {
   const [itsOpen, setItsOpen] = useState(false);
 
   const {
-    colors: { white, blue700, yellow400 },
+    colors: { white, blue700 },
   } = useTheme();
 
   const { isMobile } = useAppContext();

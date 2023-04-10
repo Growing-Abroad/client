@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 
-const withAuth = () => {
+const useWithAuth = () => {
     const router = useRouter();
     const { password } = router.query;
 
-    console.log({envPass: process.env.NEXT_PUBLIC_AUTH, password, env: process.env.NODE_ENV})
     if (
         !process.env.NEXT_PUBLIC_AUTH || 
         (process.env.NODE_ENV === 'production' 
@@ -18,4 +17,4 @@ const withAuth = () => {
     return true;
 };
 
-export default withAuth;
+export default useWithAuth;

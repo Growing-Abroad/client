@@ -1,14 +1,10 @@
 import useAppContext from '@/hooks/useAppContext';
 import { variables } from '@/styles/global-variables';
-import { theme } from '@/styles/theme';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
 import styled, { CSSProperties } from 'styled-components';
 
-const {
-  colors: { yellow400, blue700 },
-} = theme;
 const {
   sizes: { mediaQuery },
 } = variables;

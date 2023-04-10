@@ -1,6 +1,4 @@
-import { theme } from '@/styles/theme';
-import { ComponentPropsWithoutRef, lazy } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ComponentPropsWithoutRef } from 'react';
 import Footer from '../Footer';
 import HeaderForCandidates from '../HeaderForCandidates';
 import HeaderForCompanies from '../HeaderForCompanies';

@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
-
 import {
   Container,
   LogoContainer,
@@ -16,7 +9,6 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  Icon,
   StyledBurger,
 } from './styles';
 import { useTheme } from 'styled-components';
@@ -29,7 +21,7 @@ function HeaderForPublicRoutes() {
   const { isMobile } = useAppContext();
 
   const {
-    colors: { blue700, white },
+    colors: { white },
   } = useTheme();
 
   return (

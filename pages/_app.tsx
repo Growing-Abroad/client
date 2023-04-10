@@ -5,7 +5,7 @@ import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
-import withAuth from "@/components/DevAuth";
+import useWithAuth from "@/components/DevAuth";
 
 
 
@@ -25,11 +25,11 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <ContextProvider>
-      {withAuth() && (
+      {useWithAuth() && (
         <MyThemeProvider>
           {getLayout(
             <>
-              <style jsx global>{`
+              <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
                 body {
                   font-family: 'Montserrat', sans-serif;

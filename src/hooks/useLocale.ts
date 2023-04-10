@@ -3,7 +3,7 @@ import de from '../../lang/de.json';
 import en from '../../lang/en.json';
 import pt from '../../lang/pt.json';
 
-export default function useLocale() {
+export default function _useLocale() {
     const { locale } = useRouter();
     const code = 'en';
     

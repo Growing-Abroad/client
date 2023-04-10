@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import type { ContainerProps } from '../../styles';
-import { theme } from '@/styles/theme';
 
 interface LiProps {
   isLit?: boolean;

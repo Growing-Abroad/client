@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { ComponentPropsWithoutRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;

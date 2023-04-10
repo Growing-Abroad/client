@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import * as S from './styles';
 import { aboutUs } from '@utils/mock-ups/about-us.mock';
 import StdButton from '@/components/generics/StdButton/StdButton';

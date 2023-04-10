@@ -5,17 +5,12 @@ import SuccessStories from './components/Success-stories';
 import CommunitySection from './components/Community';
 import BlogSection from './components/Blog/BlogSection';
 import { ReactElement } from 'react';
-
 import { NextPageWithLayout } from '@pages/_app';
 import PageLayout from '@components/PageLayout';
 import DiscoverGA from './components/DiscoverGA';
-import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
-import de from '../../lang/de.json';
-import en from '../../lang/en.json';
-import pt from '../../lang/pt.json';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
-import useLocale from '@/hooks/useLocale';
+import _useLocale from '@/hooks/useLocale';
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -32,7 +27,7 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = useLocale();
+  const { locale, messages } = _useLocale();
 
   return (
     <IntlProvider locale={locale!} messages={messages}>

@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { Input } from '@/styles/global-styles';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
-import StdButton from '../generics/StdButton/StdButton';
 
 const {
-  colors: { yellow400, blue700, blue500, white },
+  colors: { blue500, white },
 } = theme;
 const {
   sizes: { mediaQuery },

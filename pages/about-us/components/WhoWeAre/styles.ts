@@ -3,7 +3,7 @@ import { variables } from '@styles/global-variables';
 import styled from 'styled-components';
 
 const {
-  colors: { blue700, blue400 },
+  colors: { blue700 },
 } = theme;
 
 export const Container = styled.section`

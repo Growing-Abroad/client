@@ -1,23 +1,11 @@
 import * as S from './styles'
-
 import studentHat from '@/../public/assets/student-hat.svg'
 import worldPicture from '@/../public/assets/world-icon.svg'
 import expertPicture from '@/../public/assets/person-icon.svg'
-
 import WorkInCard from './WorkInCard'
-import { useRouter } from "next/router";
-import {FormattedMessage, useIntl} from "react-intl";
-import Link from "next/link";
 import TwoColorTitle from '@/components/two-color-title'
 
 function WorkIn() {
-  const { locales } = useRouter();
-  const intl = useIntl();
-  const title = intl.formatMessage({ id: "page.home.head.title" });
-  const description = intl.formatMessage({
-    id: "page.home.head.meta.description",
-  });
-
 
 return (
     <S.Container>

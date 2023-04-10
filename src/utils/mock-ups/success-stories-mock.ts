@@ -3,16 +3,6 @@ import Img2 from "@/../public/assets/pages/about-us/trust.webp";
 import Img3 from "@/../public/assets/pages/about-us/customer-centric.webp";
 import { ICarouselData } from "@/components/Fancy-carousel";
 
-// ICarouselData {
-//   imgSrc: StaticImageData;
-//   title: string;
-//   subtitle?: string;
-//   from: string;
-//   texts: string[];
-//   countryFlag: string;
-//   href: string;
-// }
-
 export const successStoriesData: Array<ICarouselData> = [
   {
     imgSrc: Img1,
