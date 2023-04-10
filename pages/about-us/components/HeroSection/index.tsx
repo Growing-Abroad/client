@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../../../../styles/about-us/components/HeroSection/index.styles";
+import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
 import TwoColorTitle from "@components/two-color-title";
 import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";

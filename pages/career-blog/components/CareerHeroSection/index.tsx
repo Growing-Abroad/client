@@ -6,7 +6,7 @@ import {
   Container,
   ContentHero,
   SubheadingHero,
-} from "../../../../styles/career-blog/components/CareerHeroSection/index.styles";
+} from "@/../styles/career-blog/components/CareerHeroSection/index.styles";
 import ContainerHero from "@/components/ContainerHero";
 import NavHero from "@/components/NavHero";
 import useAppContext from "@/hooks/useAppContext";

@@ -14,7 +14,7 @@ import {
   Subtitle,
   TitlesContainer,
   Container,
-} from "../../../styles/components/ConsultingGmbHSection/index.styles";
+} from "@/../styles/components/ConsultingGmbHSection/index.styles";
 
 function ConsultingGmbHSection() {
   const {
