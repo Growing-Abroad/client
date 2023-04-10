@@ -1,22 +1,22 @@
-import * as S from './styles';
-import gaCoaches from '@/../public/assets/cta-img.svg';
-import ctaMask from '@/../public/assets/pages/main-page/hero-section-mask.svg';
-import ctaMaskMobile from '@/../public/assets/pages/main-page/hero-section-mask.svg';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useIntl } from 'react-intl';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import StdButton from '@/components/generics/StdButton/StdButton';
-import useAppContext from '@/hooks/useAppContext';
+import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
+import gaCoaches from "@/../public/assets/cta-img.svg";
+import ctaMask from "@/../public/assets/pages/main-page/hero-section-mask.svg";
+import ctaMaskMobile from "@/../public/assets/pages/main-page/hero-section-mask.svg";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import StdButton from "@/components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
 
 function CallToAction() {
   const { isMobile } = useAppContext();
-  const [currentName, setCurrentName] = useState<string>(' Germany');
+  const [currentName, setCurrentName] = useState<string>(" Germany");
   const [currentComponent, setCurrentComponent] = useState(
-    <div key={'first'} className="title-change">
-      {' '}
+    <div key={"first"} className="title-change">
+      {" "}
       {currentName}
-    </div>,
+    </div>
   );
   const intl = useIntl();
   const {
@@ -30,14 +30,14 @@ function CallToAction() {
   useEffect(() => {
     setTimeout(() => {
       const newName =
-        currentName === t('page.home.callToAction.germany')
-          ? t('page.home.callToAction.europe')
-          : t('page.home.callToAction.germany');
+        currentName === t("page.home.callToAction.germany")
+          ? t("page.home.callToAction.europe")
+          : t("page.home.callToAction.germany");
       setCurrentName(newName);
 
       const newComponent = (
-        <div key={currentName} className={'title-change'}>
-          {' '}
+        <div key={currentName} className={"title-change"}>
+          {" "}
           {currentName}
         </div>
       );
@@ -52,11 +52,14 @@ function CallToAction() {
         <section className="left-side">
           <h1>
             <>
-              {t('page.home.callToAction') + ' '}
+              {t("page.home.callToAction") + " "}
               {currentComponent}
             </>
           </h1>
-          <StdButton icon={faPlay} style={{textTransform: 'uppercase', fontWeight: '800'}}>
+          <StdButton
+            icon={faPlay}
+            style={{ textTransform: "uppercase", fontWeight: "800" }}
+          >
             Watch Free Masterclass
           </StdButton>
         </section>
@@ -66,7 +69,7 @@ function CallToAction() {
               src={gaCoaches}
               alt="growing abroad coaches"
               width={616}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: "contain" }}
             />
           </div>
         </section>

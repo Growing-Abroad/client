@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 
-import TwoColorTitle from '@/components/two-color-title';
+import TwoColorTitle from "@/components/two-color-title";
 
-import TodayIcon from '@/../public/assets/partners-icons/today.svg';
-import HuuffpostIcon from '@/../public/assets/partners-icons/huffpost.svg';
-import TasteOfHomeIcon from '@/../public/assets/partners-icons/taste-of-home.svg';
-import ParadeIcon from '@/../public/assets/partners-icons/parade.svg';
-import RedBookIcon from '@/../public/assets/partners-icons/red-book.svg';
-import SelfIcon from '@/../public/assets/partners-icons/self.svg';
-import BuzzFeedIcon from '@/../public/assets/partners-icons/buzz-feed.svg';
-import WomansWorldIcon from '@/../public/assets/partners-icons/womans-world.svg';
+import TodayIcon from "@/../public/assets/partners-icons/today.svg";
+import HuuffpostIcon from "@/../public/assets/partners-icons/huffpost.svg";
+import TasteOfHomeIcon from "@/../public/assets/partners-icons/taste-of-home.svg";
+import ParadeIcon from "@/../public/assets/partners-icons/parade.svg";
+import RedBookIcon from "@/../public/assets/partners-icons/red-book.svg";
+import SelfIcon from "@/../public/assets/partners-icons/self.svg";
+import BuzzFeedIcon from "@/../public/assets/partners-icons/buzz-feed.svg";
+import WomansWorldIcon from "@/../public/assets/partners-icons/womans-world.svg";
 
 import {
   Container,
@@ -17,9 +17,9 @@ import {
   ImageContainerA,
   ImageContainerB,
   TitleContainer,
-} from './styles';
-import Image from 'next/image';
-import useAppContext from '@/hooks/useAppContext';
+} from "../../../styles/components/PartnersSection/index.styles";
+import Image from "next/image";
+import useAppContext from "@/hooks/useAppContext";
 
 interface ImageSize {
   width: number;
@@ -31,7 +31,7 @@ interface ImageSizes {
   mobile: ImageSize;
 }
 
-type IsMobileType = 'mobile' | 'desktop';
+type IsMobileType = "mobile" | "desktop";
 
 function PartnersSection() {
   const {
@@ -56,10 +56,10 @@ function PartnersSection() {
   const checkIfIsMobile = (isMobile: boolean): IsMobileType => {
     switch (isMobile) {
       case true:
-        return 'mobile';
+        return "mobile";
       case false:
       default:
-        return 'desktop';
+        return "desktop";
     }
   };
 
@@ -73,7 +73,7 @@ function PartnersSection() {
           breakingLine={shouldBreakLine}
           as="h2"
           wrapperStyles={{
-            width: '100%',
+            width: "100%",
           }}
         />
       </TitleContainer>
@@ -121,7 +121,7 @@ function PartnersSection() {
         <ImageContainerB>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[isMobile ? 'mobile' : 'desktop'].height}
+            height={imageSizes[isMobile ? "mobile" : "desktop"].height}
             src={SelfIcon}
             alt="Self"
           />
@@ -137,7 +137,7 @@ function PartnersSection() {
         <ImageContainerB>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[isMobile ? 'mobile' : 'desktop'].height}
+            height={imageSizes[isMobile ? "mobile" : "desktop"].height}
             src={BuzzFeedIcon}
             alt="Buzz Feed"
           />

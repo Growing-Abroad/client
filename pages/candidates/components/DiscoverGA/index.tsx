@@ -4,13 +4,13 @@ import {
   DiscoverImagesWrapper,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
-} from './style';
-import Uan from '@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp'
-import Manu from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp'
-import Hands from '@/../public/assets/Photos-Main-Page/high-five.webp'
+} from "../../../../styles/candidates/components/DiscoverGA/index.styles";
+import Uan from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
+import Manu from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
+import Hands from "@/../public/assets/Photos-Main-Page/high-five.webp";
 import TwoColorTitle from "@components/two-color-title";
-import StdParagraqh from '@/components/generics/StdParagraqh/StdParagraqh';
-import StdButton from '@/components/generics/StdButton/StdButton';
+import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 export default function DiscoverGA() {
   return (
@@ -24,7 +24,7 @@ export default function DiscoverGA() {
 
       <DiscoverContent>
         <DiscoverReadMoreWrapper>
-          <StdParagraqh style={{color: 'white', textAlign: 'justify'}}>
+          <StdParagraqh style={{ color: "white", textAlign: "justify" }}>
             Our goal is to help skilled people from all of the world to get
             their dream job in Germany or Europe.
             <br />
@@ -41,7 +41,7 @@ export default function DiscoverGA() {
             costumers to show their full potential.
           </StdParagraqh>
 
-          <StdButton style={{fontSize: '20px'}}>Read More</StdButton>
+          <StdButton style={{ fontSize: "20px" }}>Read More</StdButton>
         </DiscoverReadMoreWrapper>
 
         <DiscoverImagesWrapper>

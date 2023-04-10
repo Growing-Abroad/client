@@ -1,19 +1,19 @@
-import styled from 'styled-components'
-import {variables} from "@styles/global-variables";
+import styled from "styled-components";
+import { variables } from "@styles/global-variables";
 
 export const Container = styled.div`
-  width: min( 100%, ${variables.sizes.maxWidthAll});
+  width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
   justify-content: center;
   height: 100%;
-  
+
   .swiper-container {
     list-style: none;
     width: 100%;
     overflow: hidden;
     padding: 0 50px;
-    
-    @media(max-width: ${variables.sizes.mediaQuery}) {
+
+    @media (max-width: ${variables.sizes.mediaQuery}) {
       padding: 0 36px;
     }
   }
@@ -39,8 +39,7 @@ export const Container = styled.div`
     left: 0px;
   }
 
-  .swiper-pagination{
+  .swiper-pagination {
     bottom: 0;
   }
-
-`
+`;

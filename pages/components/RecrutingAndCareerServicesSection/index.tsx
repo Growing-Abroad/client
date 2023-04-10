@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import TwoColorTitle from '@/components/two-color-title';
-import Company from '@/../public/assets/Photos-Main-Page/building.webp';
-import Interview from '@/../public/assets/Photos-Main-Page/meeting.webp';
+import TwoColorTitle from "@/components/two-color-title";
+import Company from "@/../public/assets/Photos-Main-Page/building.webp";
+import Interview from "@/../public/assets/Photos-Main-Page/meeting.webp";
 
 import {
   CardsContainer,
@@ -11,9 +11,9 @@ import {
   Subtitle,
   TitlesContainer,
   SubtitleContainer,
-} from './styles';
-import { CardWithImage } from '@/components';
-import useAppContext from '@/hooks/useAppContext';
+} from "../../../styles/components/RecrutingAndCareerServicesSection/index.styles";
+import { CardWithImage } from "@/components";
+import useAppContext from "@/hooks/useAppContext";
 
 function RecruitingAndCareerServicesSection() {
   const {

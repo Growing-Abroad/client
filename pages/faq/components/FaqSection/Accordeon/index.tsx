@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   AccordeonHeader,
   AccordeonButton,
   AccordeonContent,
   AccordeonTitle,
   AccordeonWrapper,
-} from './style';
+} from "../../../../../styles/faq/FaqSection/Accordeon/index.styles";
 interface AccordeonProps {
   title: string;
   content: string;
@@ -19,10 +19,8 @@ function Accordeon({ title, content }: AccordeonProps) {
 
   return (
     <AccordeonWrapper isOpen={isOpen}>
-      <AccordeonHeader  isOpen={isOpen}>
-        <AccordeonTitle>
-        {title}
-        </AccordeonTitle>
+      <AccordeonHeader isOpen={isOpen}>
+        <AccordeonTitle>{title}</AccordeonTitle>
         {isOpen ? (
           <AccordeonButton bgColor="#05335B" onClick={toggleContent}>
             <svg
@@ -36,7 +34,7 @@ function Accordeon({ title, content }: AccordeonProps) {
                 d="M1.40039 1.39062L9.65698 9.6099L17.9136 1.39062"
                 stroke="white"
                 strokeWidth={2}
-                strokeLinecap='round'
+                strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
@@ -54,18 +52,14 @@ function Accordeon({ title, content }: AccordeonProps) {
                 d="M1.54688 17.916L9.76615 9.65943L1.54688 1.40284"
                 stroke="#05335B"
                 strokeWidth={2}
-                strokeLinecap='round'
+                strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
           </AccordeonButton>
         )}
       </AccordeonHeader>
-      {isOpen && (
-        <AccordeonContent>
-         {content}
-        </AccordeonContent>
-      )}
+      {isOpen && <AccordeonContent>{content}</AccordeonContent>}
     </AccordeonWrapper>
   );
 }
