@@ -4,7 +4,7 @@ import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import styled from "styled-components";
-import { HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/style";
+import { HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/index.styles";
 
 const ContainerWrapper = styled.div`
   height: 233px;

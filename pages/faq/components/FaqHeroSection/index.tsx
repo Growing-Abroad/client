@@ -10,7 +10,7 @@ import {
   Container,
   ContentHero,
   SubheadingHero,
-} from "../../../../styles/faq/FaqHeroSection/style";
+} from "../../../../styles/faq/FaqHeroSection/index.styles";
 import NavHero from "@/components/NavHero";
 import Link from "next/link";
 

@@ -7,7 +7,7 @@ import {
   CvForm,
   UploadCvDetails,
   UploadCvWrapper,
-} from "@/../styles/jobs/components/upload-cv-section/style";
+} from "styles/jobs/components/upload-cv-section/index.styles";
 import { useTheme } from "styled-components";
 import { Checkbox } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -5,7 +5,7 @@ import {
   AccordeonContent,
   AccordeonTitle,
   AccordeonWrapper,
-} from "../../../../../styles/faq/FaqSection/Accordeon/style";
+} from "../../../../../styles/faq/FaqSection/Accordeon/index.styles";
 interface AccordeonProps {
   title: string;
   content: string;

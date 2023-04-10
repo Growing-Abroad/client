@@ -4,7 +4,7 @@ import Image from "next/image";
 import {
   Social,
   SocialText,
-} from "../../../../../styles/candidates/components/Community/SocialCard/styles";
+} from "../../../../../styles/candidates/components/Community/SocialCard/index.styles";
 
 export default function SocialCard(social: ISocial) {
   const { isMobile } = useAppContext();

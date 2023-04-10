@@ -1,4 +1,4 @@
-import * as S from "../../../../styles/candidates/components/CallToAction/styles";
+import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
 import gaCoaches from "@/../public/assets/cta-img.svg";
 import ctaMask from "@/../public/assets/pages/main-page/hero-section-mask.svg";
 import ctaMaskMobile from "@/../public/assets/pages/main-page/hero-section-mask.svg";

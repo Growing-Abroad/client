@@ -1,4 +1,4 @@
-import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesCard/styles";
+import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesCard/index.styles";
 import { AiFillStar } from "react-icons/ai";
 import Image from "next/image";
 import { IService } from "@utils/services";

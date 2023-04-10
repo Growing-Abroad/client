@@ -2,7 +2,7 @@ import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
 import {
   SuccessSubtitle,
   SucessStoriesWrapper,
-} from "../../../../styles/candidates/components/Success-stories/style";
+} from "../../../../styles/candidates/components/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import FancyCarousel from "@components/Fancy-carousel";
 

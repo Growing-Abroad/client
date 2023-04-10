@@ -15,7 +15,7 @@ import {
   TextsContainer,
   CallToAction,
   Span,
-} from "../../../styles/components/MeetTheFoundersSection/styles";
+} from "../../../styles/components/MeetTheFoundersSection/index.styles";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 

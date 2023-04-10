@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../../../../styles/about-us/components/ShareValues/styles";
+import * as S from "../../../../styles/about-us/components/ShareValues/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";

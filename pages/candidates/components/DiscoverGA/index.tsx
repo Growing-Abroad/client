@@ -4,7 +4,7 @@ import {
   DiscoverImagesWrapper,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
-} from "../../../../styles/candidates/components/DiscoverGA/style";
+} from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import Uan from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
 import Manu from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
 import Hands from "@/../public/assets/Photos-Main-Page/high-five.webp";

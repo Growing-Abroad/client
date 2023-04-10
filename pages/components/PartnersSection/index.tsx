@@ -17,7 +17,7 @@ import {
   ImageContainerA,
   ImageContainerB,
   TitleContainer,
-} from "../../../styles/components/PartnersSection/styles";
+} from "../../../styles/components/PartnersSection/index.styles";
 import Image from "next/image";
 import useAppContext from "@/hooks/useAppContext";
 

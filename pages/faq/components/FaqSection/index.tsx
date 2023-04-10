@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container } from "../../../../styles/faq/FaqSection/style";
+import { Container } from "../../../../styles/faq/FaqSection/index.styles";
 import Accordeon from "./Accordeon";
 
 function FaqSection() {

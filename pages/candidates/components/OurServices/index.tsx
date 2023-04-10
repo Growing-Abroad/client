@@ -1,4 +1,4 @@
-import * as S from "../../../../styles/candidates/components/OurServices/styles";
+import * as S from "../../../../styles/candidates/components/OurServices/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import OurServicesSwiper from "./OurServicesSwiper";
 

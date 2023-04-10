@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from "../../../../styles/about-us/components/About/styles";
+import * as S from "../../../../styles/about-us/components/About/index.styles";
 import { aboutUs } from "@utils/mock-ups/about-us.mock";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";

@@ -1,5 +1,5 @@
 import "swiper/swiper-bundle.css";
-import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesSwiper/styles";
+import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesSwiper/index.styles";
 import { services } from "@utils/services";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import OurServicesCard from "../OurServicesCard";

@@ -1,7 +1,7 @@
 import {
   Container,
   ContentBlogCardSection,
-} from "../../../../styles/career-blog/components/BlogCardSection/style";
+} from "../../../../styles/career-blog/components/BlogCardSection/index.styles";
 import { Wrapper } from "@/components/Wrapper";
 import Card from "@/components/Card";
 import Pagination from "../Pagination";

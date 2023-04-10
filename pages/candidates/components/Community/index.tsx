@@ -3,7 +3,7 @@ import {
   Container,
   ContainerWrapper,
   Socials,
-} from "../../../../styles/candidates/components/Community/styles";
+} from "../../../../styles/candidates/components/Community/index.styles";
 import { socials1, socials2 } from "@utils/socials";
 import TwoColorTitle from "@components/two-color-title";
 import SocialCard from "./SocialCard";

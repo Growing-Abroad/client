@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import {
   FooterLinks,
   SocialMedia,
-} from "../../../../styles/contact-us/components/ContactSection/style";
+} from "../../../../styles/contact-us/components/ContactSection/index.styles";
 import styles from "@pages/contact-us/components/ContactSection/index.module.css";
 import { Wrapper } from "@/components/Wrapper";
 import Image from "next/image";

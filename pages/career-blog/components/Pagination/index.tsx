@@ -1,7 +1,7 @@
 import {
   Button,
   ContentPagination,
-} from "../../../../styles/career-blog/components/Pagination/style";
+} from "../../../../styles/career-blog/components/Pagination/index.styles";
 
 interface IPaginationProps {
   indexes: number;

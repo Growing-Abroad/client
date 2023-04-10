@@ -1,17 +1,16 @@
-import TwoColorTitle from '@components/two-color-title';
-import React from 'react';
-import UanAndManu from '@assets/pages/about-us/about-us-coaches.webp';
-import Image from 'next/image';
-import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
-import classes from './style.module.css';
-import { Montserrat } from 'next/font/google';
-import * as S from './styles';
-import useAppContext from '@/hooks/useAppContext';
+import TwoColorTitle from "@components/two-color-title";
+import React from "react";
+import UanAndManu from "@assets/pages/about-us/about-us-coaches.webp";
+import Image from "next/image";
+import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
+import classes from "./style.module.css";
+import { Montserrat } from "next/font/google";
+import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
+import useAppContext from "@/hooks/useAppContext";
 
 const font = Montserrat({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
-
 function WhoWeAre() {
   const { isMobile } = useAppContext();
 
@@ -22,9 +21,9 @@ function WhoWeAre() {
         text2="We Are"
         hasSpaceBtw
         wrapperStyles={{
-          width: '100%',
-          justifyContent: 'center',
-          height: `${isMobile ? '44px' : 'auto'}`,
+          width: "100%",
+          justifyContent: "center",
+          height: `${isMobile ? "44px" : "auto"}`,
         }}
         as="h2"
       />
@@ -41,7 +40,7 @@ function WhoWeAre() {
           <Image
             src={YoutubeplayButton}
             alt="youtube play button"
-            className={classes.youtubePlayButton + ' ' + classes.blurbRippleOut}
+            className={classes.youtubePlayButton + " " + classes.blurbRippleOut}
           ></Image>
         </div>
       </S.ImageContainer>

@@ -2,7 +2,7 @@ import {
   Container,
   BlogCard,
   SubHeadingBlog,
-} from "../../../../../styles/candidates/components/Blog/BlogSection/styles";
+} from "../../../../../styles/candidates/components/Blog/BlogSection/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import Card from "@components/Card";
 import StdButton from "@/components/generics/StdButton/StdButton";
