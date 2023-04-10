@@ -1,11 +1,11 @@
 import React from "react";
-import HeroSection from "./components/HeroSection";
+import HeroSection from "@/../components/HeroSection";
 import { ReactElement } from "react";
-import ConsultingGmbHSection from "./components/ConsultingGmbHSection";
-import RecruitingAndCareerServicesSection from "./components/RecrutingAndCareerServicesSection";
-import PartnersSection from "./components/PartnersSection";
-import SectionDivider from "./components/SectionDivider";
-import { MeetTheFoundersSection } from "./components/MeetTheFoundersSection";
+import ConsultingGmbHSection from "@/../components/ConsultingGmbHSection";
+import RecruitingAndCareerServicesSection from "@/../components/RecrutingAndCareerServicesSection";
+import PartnersSection from "@/../components/PartnersSection";
+import SectionDivider from "@/../components/SectionDivider";
+import { MeetTheFoundersSection } from "@/../components/MeetTheFoundersSection";
 import { NextPageWithLayout } from "@pages/_app";
 import PageLayout from "@components/PageLayout";
 import { IntlProvider } from "react-intl";

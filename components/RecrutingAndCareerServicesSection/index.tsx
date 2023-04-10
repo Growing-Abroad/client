@@ -11,7 +11,7 @@ import {
   Subtitle,
   TitlesContainer,
   SubtitleContainer,
-} from "../../../styles/components/RecrutingAndCareerServicesSection/index.styles";
+} from "@/../styles/components/RecrutingAndCareerServicesSection/index.styles";
 import { CardWithImage } from "@/components";
 import useAppContext from "@/hooks/useAppContext";
 

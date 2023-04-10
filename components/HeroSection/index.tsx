@@ -12,7 +12,7 @@ import {
   VideoContainer,
   VideoContent,
   VideoBackgroundOpacity,
-} from "../../../styles/components/HeroSection/index.styles";
+} from "@/../styles/components/HeroSection/index.styles";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import MainHeroPhoto from "@/../public/assets/main-hero-photo.webp";
