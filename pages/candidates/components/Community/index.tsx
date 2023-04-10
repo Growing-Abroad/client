@@ -1,4 +1,9 @@
-import {CardsWrapper, Container, ContainerWrapper, Socials} from "./styles";
+import {
+  CardsWrapper,
+  Container,
+  ContainerWrapper,
+  Socials,
+} from "../../../../styles/candidates/components/Community/styles";
 import { socials1, socials2 } from "@utils/socials";
 import TwoColorTitle from "@components/two-color-title";
 import SocialCard from "./SocialCard";
@@ -16,10 +21,14 @@ function CommunitySection() {
         />
         <Socials>
           <CardsWrapper>
-            {socials1.map(social => (<SocialCard {...social} key={social.socialLink} />))}
+            {socials1.map((social) => (
+              <SocialCard {...social} key={social.socialLink} />
+            ))}
           </CardsWrapper>
           <CardsWrapper>
-            {socials2.map(social => (<SocialCard {...social} key={social.socialLink} />))}
+            {socials2.map((social) => (
+              <SocialCard {...social} key={social.socialLink} />
+            ))}
           </CardsWrapper>
         </Socials>
       </Container>

@@ -1,11 +1,11 @@
-import 'swiper/swiper-bundle.css';
-import * as S from './styles';
-import { posts, IPost } from '@utils/blog_posts';
-import SwiperCore, { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useState } from 'react';
-import useAppContext from '@/hooks/useAppContext';
-import BlogCard from '../BlogCard';
+import "swiper/swiper-bundle.css";
+import * as S from "../../../../../styles/candidates/components/Blog/BlogSwiper/styles";
+import { posts, IPost } from "@utils/blog_posts";
+import SwiperCore, { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import useAppContext from "@/hooks/useAppContext";
+import BlogCard from "../BlogCard";
 
 export default function BlogSwiper() {
   SwiperCore.use([Navigation]);
@@ -41,7 +41,7 @@ export default function BlogSwiper() {
         }}
         navigation
         loop
-        style={{ padding: '0 60px' }}
+        style={{ padding: "0 60px" }}
       >
         {posts_?.map((post) => (
           <SwiperSlide key={post.id} zoom>
