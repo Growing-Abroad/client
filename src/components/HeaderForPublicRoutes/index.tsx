@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import GrowingAbroadBWImage from "@/../public/assets/pages/growing-abroad-images/white-logo.png";
 import {
   Container,
   LogoContainer,
@@ -59,7 +60,11 @@ function HeaderForPublicRoutes() {
         itsOpen={itsOpen}
       >
         <LogoContainer>
-          <Logo src={GrowingAbroadImage.src} />
+          {showSecondaryDesktopMenu ? (
+            <Logo src={GrowingAbroadImage.src} />
+          ) : (
+            <Logo src={GrowingAbroadBWImage.src} />
+          )}
           {isMobile && (
             <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
               <FontAwesomeIcon

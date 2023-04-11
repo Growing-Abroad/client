@@ -63,7 +63,7 @@ export const Container = styled.div<ContainerProps>`
   z-index: 120;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
@@ -85,6 +85,8 @@ export const Container = styled.div<ContainerProps>`
         1% {
           position: fixed;
           top: -90px;
+
+          padding: 0 25%;
         }
         100% {
           top: 0;
@@ -94,6 +96,11 @@ export const Container = styled.div<ContainerProps>`
       background-color: ${theme.colors.white};
       min-width: 100%;
       justify-content: center;
+      align-items: center;
+
+      @media (min-width: 1960px) {
+        padding: 0 25%;
+      }
     `}
 
   ${({ theme, itsOpen }) => css`
