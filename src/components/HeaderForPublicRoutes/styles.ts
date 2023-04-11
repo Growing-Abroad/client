@@ -72,7 +72,6 @@ export const Container = styled.div<ContainerProps>`
   ${({ theme, showSecondaryDesktopMenu }) =>
     showSecondaryDesktopMenu &&
     css`
-      transition: all 1.5s;
       animation: drop-down 0.5s ease-out forwards;
 
       @keyframes drop-down {
@@ -81,12 +80,13 @@ export const Container = styled.div<ContainerProps>`
           top: 0;
           left: 0;
           right: 0;
+          @media (min-width: 1960px) {
+            padding: 0 25%;
+          }
         }
         1% {
           position: fixed;
           top: -90px;
-
-          padding: 0 25%;
         }
         100% {
           top: 0;
