@@ -190,16 +190,18 @@ export const Button = styled.button`
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.colors.blue700};
-
-  ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      color: ${theme.colors.white};
-    }
-  `}
-
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      color: ${theme.colors.blue700};
+      :hover {
+        color: ${({ theme }) => theme.colors.white};
+      }
+    }
+  `}
 `;
 
 export const IconsContainer = styled.div`
