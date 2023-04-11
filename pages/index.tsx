@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "@/../components/HeroSection";
 import { ReactElement } from "react";
-import ConsultingGmbHSection from "@/../components/ConsultingGmbHSection/index";
+import ConsultingGmbHSection from "@/../components/ConsultingGmbHSection";
 import RecruitingAndCareerServicesSection from "@/../components/RecrutingAndCareerServicesSection";
 import PartnersSection from "@/../components/PartnersSection";
 import SectionDivider from "@/../components/SectionDivider";
