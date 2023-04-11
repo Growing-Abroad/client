@@ -1,5 +1,5 @@
 import { variables } from "@styles/global-variables";
-import styled, { css, CSSProperties } from "styled-components";
+import styled, { css } from "styled-components";
 import {Montserrat} from "next/font/google";
 
 const montserrat = Montserrat({

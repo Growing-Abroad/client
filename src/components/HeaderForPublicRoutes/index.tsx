@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
-import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
-
+import React, { useEffect, useRef, useState } from "react";
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import GrowingAbroadBWImage from "@/../public/assets/pages/growing-abroad-images/white-logo.png";
 import {
   Container,
   LogoContainer,
@@ -16,23 +10,52 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  Icon,
   StyledBurger,
-} from './styles';
-import { useTheme } from 'styled-components';
-import useAppContext from '@/hooks/useAppContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+} from "./styles";
+import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
+  const [showSecondaryDesktopMenu, setShowSecondaryDesktopMenu] =
+    useState(false);
 
-  const {
-    colors: { primaryBlue },
-  } = useTheme();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const { isMobile } = useAppContext();
-  console.log({ isMobile });
+
+  const router = useRouter();
+
+  const {
+    colors: { white },
+  } = useTheme();
+
+  useEffect(() => {
+    const height = containerRef.current?.offsetHeight ?? 0;
+    function handleScroll() {
+      if (window.scrollY > height) {
+        setShowSecondaryDesktopMenu(true);
+      } else {
+        setShowSecondaryDesktopMenu(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleGoToCompaniesScreen = () => router.push("/companies");
+
+  const handleGoToCandidatesScreen = () => router.push("/candidates");
+
+  const handleGoToMain = () => router.push("/");
+
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
@@ -40,32 +63,51 @@ function HeaderForPublicRoutes() {
         <div></div>
         <div></div>
       </StyledBurger>
-      <Container itsOpen={itsOpen}>
-        <LogoContainer>
-          <Logo src={GrowingAbroadImage.src} />
+      <Container
+        ref={containerRef}
+        showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+        itsOpen={itsOpen}
+      >
+        <LogoContainer onClick={handleGoToMain}>
+          {showSecondaryDesktopMenu ? (
+            <Logo src={GrowingAbroadImage.src} />
+          ) : (
+            <Logo src={GrowingAbroadBWImage.src} />
+          )}
           {isMobile && (
-            <IconButton>
+            <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
-                style={{ color: primaryBlue }}
+                style={{ color: white }}
               />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>For companies</Button>
-            <Button>For candidates</Button>
+            <Button
+              onClick={handleGoToCompaniesScreen}
+              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+            >
+              For companies
+            </Button>
+            <Button
+              onClick={handleGoToCandidatesScreen}
+              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+            >
+              For candidates
+            </Button>
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <IconButton>
+                <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
                   <FontAwesomeIcon
+                    className="icon"
                     icon={faGlobe}
                     size="2xl"
-                    style={{ color: primaryBlue }}
+                    // style={{ color: white }}
                   />
                 </IconButton>
               </>

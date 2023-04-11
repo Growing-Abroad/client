@@ -44,6 +44,10 @@ export const CardContent = styled.div`
     }
   `}
 
+  @media (max-width: 420px) {
+    padding: 25px 25px 0 25px;
+  }
+
   h3 {
     font-size: 2rem;
     font-weight: 600;

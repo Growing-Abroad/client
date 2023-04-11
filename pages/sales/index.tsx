@@ -23,6 +23,7 @@ import img3a from '../../public/assets/pages/sales/img3.png'
 import img4 from '../../public/assets/pages/sales/img4.png'
 import img5 from '../../public/assets/pages/sales/img5.png'
 import img6 from '../../public/assets/pages/sales/img6.png'
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
 export default function Sales() {
     return (
@@ -397,5 +398,5 @@ export default function Sales() {
 }
 
 Sales.getLayout = function getLayout(page: ReactElement) {
-    return <PageLayout>{page}</PageLayout>;
+    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
 };

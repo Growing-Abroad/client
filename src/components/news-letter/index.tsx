@@ -8,14 +8,11 @@ import {
   SubscribeWrapper,
   TitleNewsLetter,
 } from './style';
-import { removePxFromCssValue } from '@utils/scripts/general-utility';
-import { variables } from '@styles/global-variables';
 import useAppContext from '@/hooks/useAppContext';
 import StdButton from '../generics/StdButton/StdButton';
 
 export default function NewsLetter() {
   const {
-    windowSize: { width },
     isMobile
   } = useAppContext();
 

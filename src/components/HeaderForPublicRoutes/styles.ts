@@ -1,14 +1,18 @@
-import styled, { css } from 'styled-components';
-import Image from 'next/image';
-import { ComponentPropsWithoutRef } from 'react';
+import styled, { css } from "styled-components";
+import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
 
-interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
+interface BurgerProps extends ComponentPropsWithoutRef<"div"> {
   open: boolean;
 }
 
 interface ContainerProps {
   itsOpen: boolean;
+  showSecondaryDesktopMenu: boolean;
 }
+
+interface ButtonProps
+  extends Pick<ContainerProps, "showSecondaryDesktopMenu"> {}
 
 export const StyledBurger = styled.div<BurgerProps>`
   width: 2rem;
@@ -30,14 +34,14 @@ export const StyledBurger = styled.div<BurgerProps>`
     transition: all 0.3s;
 
     &:nth-child(1) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
     }
     &:nth-child(2) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
       opacity: ${(props) => (props.open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 
@@ -52,17 +56,56 @@ export const StyledBurger = styled.div<BurgerProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
   max-width: ${({ theme }) => theme.sizes.maxWidthAll};
 
+  ${({ theme, showSecondaryDesktopMenu }) =>
+    showSecondaryDesktopMenu &&
+    css`
+      animation: drop-down 0.5s ease-out forwards;
+
+      @keyframes drop-down {
+        0% {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          @media (min-width: 1960px) {
+            padding: 0 25%;
+          }
+        }
+        1% {
+          position: fixed;
+          top: -90px;
+        }
+        100% {
+          top: 0;
+        }
+      }
+      position: fixed;
+      background-color: ${theme.colors.white};
+      min-width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width: 1960px) {
+        padding: 0 25%;
+      }
+    `}
+
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      display: ${itsOpen ? 'flex' : 'none'};
+      display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
       height: 100vh;
       position: fixed;
@@ -70,7 +113,7 @@ export const Container = styled.div<ContainerProps>`
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.secondaryBlue};
+      background-color: ${theme.colors.blue400};
     }
   `}
 `;
@@ -80,13 +123,20 @@ export const LogoContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   background-color: transparent;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
-  alt: '',
-})``;
+  alt: "",
+})`
+  width: 200px;
+  height: auto;
+`;
 
 export const Content = styled.div`
   width: 100%;
@@ -120,9 +170,9 @@ export const ButtonsContainer = styled.div`
   `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
   background-color: transparent;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -135,7 +185,18 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.white};
+  ${({ theme, showSecondaryDesktopMenu }) =>
+    showSecondaryDesktopMenu &&
+    css`
+      @media (min-width: ${theme.sizes.mediaQuery}) {
+        color: ${theme.colors.blue700};
+      }
+    `};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+  }
 
   /* ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -159,8 +220,21 @@ export const IconsContainer = styled.div`
   `};
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled.button<ButtonProps>`
   background-color: transparent;
+
+  .icon {
+    color: ${({ theme }) => theme.colors.white};
+
+    ${({ theme, showSecondaryDesktopMenu }) =>
+      showSecondaryDesktopMenu &&
+      css`
+        color: ${theme.colors.blue700};
+      `}
+    :hover {
+      color: ${({ theme }) => theme.colors.blue400};
+    }
+  }
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -178,6 +252,6 @@ export const IconButton = styled.button`
 export const Icon = styled(Image).attrs({
   width: 31,
   height: 32,
-  alt: '',
-  href: '',
+  alt: "",
+  href: "",
 })``;

@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components';
-import Image from 'next/image';
-import { ComponentPropsWithoutRef } from 'react';
+import styled, { css } from "styled-components";
+import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
+interface BurgerProps extends ComponentPropsWithoutRef<"div"> {
   open: boolean;
 }
 
@@ -21,6 +22,10 @@ export const StyledBurger = styled.div<BurgerProps>`
   flex-flow: column nowrap;
   z-index: 120;
 
+  :hover {
+    cursor: pointer;
+  }
+
   div {
     width: 2rem;
     height: 0.25rem;
@@ -30,14 +35,14 @@ export const StyledBurger = styled.div<BurgerProps>`
     transition: all 0.3s;
 
     &:nth-child(1) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
     }
     &:nth-child(2) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
       opacity: ${(props) => (props.open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 
@@ -61,7 +66,7 @@ export const Container = styled.div<ContainerProps>`
 
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      display: ${itsOpen ? 'flex' : 'none'};
+      display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
       height: 100vh;
       position: fixed;
@@ -69,7 +74,7 @@ export const Container = styled.div<ContainerProps>`
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.secondaryBlue};
+      background-color: ${theme.colors.blue400};
     }
   `}
 `;
@@ -84,7 +89,7 @@ export const LogoContainer = styled.button`
 export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
-  alt: '',
+  alt: "",
 })``;
 
 export const Content = styled.div`
@@ -120,7 +125,7 @@ export const ButtonsContainer = styled.div`
 
 export const Button = styled.button`
   background-color: transparent;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -133,13 +138,19 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
-  /* ${({ theme }) => css`
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+  }
+
+  ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      color: ${theme.colors.white};
+      :hover {
+        c olor: ${theme.colors.white};
+      }
     }
-  `} */
+  `}
 `;
 
 export const IconsContainer = styled.div`
@@ -159,6 +170,7 @@ export const IconsContainer = styled.div`
 
 export const IconButton = styled.div`
   background-color: transparent;
+  color: white;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -176,6 +188,26 @@ export const IconButton = styled.div`
 export const Icon = styled(Image).attrs({
   width: 31,
   height: 32,
-  alt: '',
-  href: '',
+  alt: "",
+  href: "",
 })``;
+
+export const AwesomeIcon = styled(FontAwesomeIcon).attrs({
+  size: "2xl",
+})`
+  color: ${({ theme }) => theme.colors.blue700};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.blue400};
+    cursor: pointer;
+  }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      :hover {
+        color: ${({ theme }) => theme.colors.white};
+        cursor: pointer;
+      }
+    }
+  `}
+`;

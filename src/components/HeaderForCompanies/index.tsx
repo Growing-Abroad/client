@@ -1,13 +1,5 @@
-import React, { useState } from 'react';
-
-import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
-
+import React, { useState } from "react";
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
 import {
   Container,
   LogoContainer,
@@ -17,23 +9,42 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  Icon,
   StyledBurger,
-} from './styles';
-import StdButton from '../generics/StdButton/StdButton';
-import { useTheme } from 'styled-components';
-import useAppContext from '@/hooks/useAppContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+  AwesomeIcon,
+} from "./styles";
+import StdButton from "../generics/StdButton/StdButton";
+import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+
+enum PagesNamesEnum {
+  DEFAULT = "",
+  OUR_SERVICES = "our-services",
+  ABOUT_US = "about-us",
+  FOR_CANDIDATES = "candidates",
+}
 
 function HeaderForCompanies() {
   const [itsOpen, setItsOpen] = useState(false);
 
   const {
-    colors: { white, primaryBlue, yellow400 },
+    colors: { white, blue700, blue400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();
+
+  const route = useRouter();
+
+  const goToNextPage = (page: PagesNamesEnum) => route.push(`/${page}`);
+
+  const goToMain = () => goToNextPage(PagesNamesEnum.DEFAULT);
+
+  const goToOurServices = () => goToNextPage(PagesNamesEnum.OUR_SERVICES);
+
+  const goToAboutUs = () => goToNextPage(PagesNamesEnum.ABOUT_US);
+
+  const goToForCandidates = () => goToNextPage(PagesNamesEnum.FOR_CANDIDATES);
 
   return (
     <>
@@ -43,45 +54,43 @@ function HeaderForCompanies() {
         <div></div>
       </StyledBurger>
       <Container itsOpen={itsOpen}>
-        <LogoContainer>
+        <LogoContainer onClick={goToMain}>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
-              <FontAwesomeIcon
-                icon={faGlobe}
-                size="2xl"
-                style={{ color: primaryBlue }}
-              />
+              <AwesomeIcon icon={faGlobe} />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>our services</Button>
-            <Button>about us</Button>
-            {isMobile && <Button>For Candidates</Button>}
+            <Button onClick={goToOurServices}>our services</Button>
+            <Button onClick={goToAboutUs}>about us</Button>
+            {isMobile && (
+              <Button onClick={goToForCandidates}>For Candidates</Button>
+            )}
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
                 <IconButton>
-                  <FontAwesomeIcon
-                    icon={faGlobe}
-                    size="2xl"
-                    style={{ color: primaryBlue }}
-                  />
+                  <AwesomeIcon icon={faGlobe} />
                 </IconButton>
                 <StdButton
                   style={{
                     width: 195,
                     height: 32,
                     fontSize: 18,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     borderRadius: 8,
-                    backgroundColor: !isMobile ? primaryBlue : white,
-                    color: !isMobile ? white : primaryBlue,
+                    color: !isMobile ? white : blue700,
+                  }}
+                  backgroundColor={!isMobile ? blue700 : white}
+                  hover={{
+                    backgroundColor: blue400,
+                    color: white,
                   }}
                 >
                   For Candidates

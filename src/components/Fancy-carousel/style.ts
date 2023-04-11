@@ -21,7 +21,7 @@ interface ImageBackgroundContentProps
   extends Omit<FlexboxSlideProps, 'isSmall'> {}
 
 const {
-  colors: { primaryBlue, blue500 },
+  colors: { blue700, blue500 },
 } = theme;
 const {
   sizes: { mediaQuery },
@@ -153,7 +153,7 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
     display: block;
     width: 100%;
     height: 100%;
-    background-color: ${primaryBlue};
+    background-color: ${blue700};
     z-index: 2;
     opacity: 0;
   }
@@ -389,6 +389,10 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
         line-height: 17.07px;
       }
     }
+
+    @media (max-width: 365px) {
+      padding-bottom: 5px;
+    }
   `}
 `;
 
@@ -406,6 +410,19 @@ export const LinkedinIcon = styled(Image).attrs({
       height: 30px;
       /* top: auto;
       bottom: 21%; */
+    }
+  `}
+`;
+
+export const StdButtonContainer = styled.div`
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin: 36px 0;
+    }
+
+    @media (max-width: 405px) {
+      margin-top: 30px;
+      margin-bottom: 90px;
     }
   `}
 `;

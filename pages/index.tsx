@@ -1,47 +1,36 @@
-import CallToAction from './components/CallToAction/CallToAction';
-import WorkIn from '@pages/components/WorkIn/WorkIn';
-import OurServicesSection from '@pages/components/OurServices';
-import SuccessStories from '@pages/components/Success-stories';
-import CommunitySection from '@pages/components/Community';
-import BlogSection from '@pages/components/Blog/BlogSection';
-import { ReactElement } from 'react';
-
-import { NextPageWithLayout } from '@pages/_app';
-import PageLayout from '@components/PageLayout';
-import DiscoverGA from '@pages/components/DiscoverGA';
-import { useRouter } from 'next/router';
-import { IntlProvider } from 'react-intl';
-import de from '../lang/de.json';
-import en from '../lang/en.json';
-import pt from '../lang/pt.json';
-import { ChosenHeader } from '@/components/PageLayout/PageLayout';
+import React from "react";
+import HeroSection from "@/../components/HeroSection";
+import { ReactElement } from "react";
+import ConsultingGmbHSection from "@/../components/ConsultingGmbHSection";
+import RecruitingAndCareerServicesSection from "@/../components/RecrutingAndCareerServicesSection";
+import PartnersSection from "@/../components/PartnersSection";
+import SectionDivider from "@/../components/SectionDivider";
+import { MeetTheFoundersSection } from "@/../components/MeetTheFoundersSection";
+import { NextPageWithLayout } from "@pages/_app";
+import PageLayout from "@components/PageLayout";
+import { IntlProvider } from "react-intl";
+import { ChosenHeader } from "@/components/PageLayout/PageLayout";
+import _useLocale from "@/hooks/useLocale";
 
 const Page: NextPageWithLayout = () => {
   return (
     <>
-      <CallToAction />
-      <WorkIn />
-      <DiscoverGA />
-      <OurServicesSection />
-      <SuccessStories />
-      <CommunitySection />
-      <BlogSection />
+      <HeroSection />
+      <ConsultingGmbHSection />
+      <RecruitingAndCareerServicesSection />
+      <PartnersSection />
+      <SectionDivider />
+      <MeetTheFoundersSection />
     </>
   );
 };
 
-export const languages = {
-  de,
-  en,
-  pt,
-};
-
 Page.getLayout = function getLayout(page: ReactElement) {
-  const { locale } = useRouter();
+  const { locale, messages } = _useLocale();
 
   return (
-    <IntlProvider locale={locale!} messages={languages[locale]}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.DEFAULT}>{page}</PageLayout>
     </IntlProvider>
   );
 };

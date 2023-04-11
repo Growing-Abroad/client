@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme } from './theme';
 
 const {
-  colors: { primaryYellow,primaryBlue, secondaryBlue, gray1, blue700 },
+  colors: { yellow400, blue400, gray1, blue700 },
 } = theme;
 
 export const GlobalStyles = createGlobalStyle`
@@ -50,17 +50,17 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Input = styled.input`
   padding: 12px 16px;
-  outline: 1.5px solid ${primaryBlue};
+  outline: 1.5px solid ${blue700};
   border-radius: 4px;
   font-size: 1rem;
 
   &:focus {
-    outline: 2px solid ${secondaryBlue};
+    outline: 2px solid ${blue400};
   }
 
   ::placeholder {
     font-weight: 500;
-    color: ${gray1}
+    color: ${gray1};
   }
 `;
 
@@ -72,7 +72,7 @@ interface IButtonProps {
   height?: string;
 }
 export const Button = styled.button<IButtonProps>`
-  background-color: ${primaryYellow};
+  background-color: ${yellow400};
   color: ${blue700};
   border-radius: ${(props) => (props.square ? '4px' : '50px')};
   padding: ${(props) => props.padding || '8px 28px'};
@@ -80,5 +80,5 @@ export const Button = styled.button<IButtonProps>`
   cursor: pointer;
   width: ${(props) => props.width || 'min-content'};
   font-size: ${(props) => props.fontSize || '1rem'};
-  height: ${(props) => props.height || '59px'}
+  height: ${(props) => props.height || '59px'};
 `;

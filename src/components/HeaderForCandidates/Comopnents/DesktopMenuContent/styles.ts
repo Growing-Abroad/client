@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import type { ContainerProps } from '../../styles';
-import { theme } from '@/styles/theme';
 
 interface LiProps {
   isLit?: boolean;
@@ -16,12 +15,12 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
   height: 110vh;
   padding: 0 140px;
-  background-color: ${({ theme }) => theme.colors.primaryBlue};
+  background-color: ${({ theme }) => theme.colors.blue700};
   border-radius: 0 0 20px 20px;
   z-index: 115;
   overflow: hidden;
-  transition: all 1400ms;
-  transition-delay: 0.25s;
+  transition: all 500ms;
+  transition-delay: 0.025s;
   ${({ itsOpen }) =>
     itsOpen &&
     css`
@@ -46,13 +45,13 @@ export const CloseButton = styled.button`
   height: 3rem;
   border-radius: 1.5rem;
   background-color: ${({ theme }) => theme.colors.yellow400};
-  color: ${({ theme }) => theme.colors.primaryBlue};
+  color: ${({ theme }) => theme.colors.blue700};
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 54px;
+  font-size: 66px;
 `;
 
 export const Content = styled.div`

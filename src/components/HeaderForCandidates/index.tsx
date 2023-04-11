@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from "react";
 
-import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import GrowingAbroadImageBW from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
-import GrowingAbroadImageWhite from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
-import GrowingAbroadImageSubWhite from '@/../public/assets/pages/growing-abroad-images/sub-white-logo.png';
-import GlobeIcon from '@/../public/assets/globe-icon.svg';
-import GlobeIconWhite from '@/../public/assets/globe-icon-white.svg';
-import BurgerIcon from '@/../public/assets/burger-icon.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Container,
@@ -20,67 +14,106 @@ import {
   IconsContainer,
   IconButton,
   StyledBurger,
-} from './styles';
-import StdButton from '../generics/StdButton/StdButton';
-import { useTheme } from 'styled-components';
-import useAppContext from '@/hooks/useAppContext';
-import { DesktopMenuContent } from './Comopnents/DesktopMenuContent';
+  AwesomeIcon,
+  Header,
+} from "./styles";
+import StdButton from "../generics/StdButton/StdButton";
+import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
+import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
+import { useRouter } from "next/router";
+
+enum CandidatesMenuPages {
+  ONLINE_COURSE = "online-course",
+  COACHING = "coaching",
+  JOBS = "jobs",
+  LOGIN = "login",
+  FOR_COMPANIES = "for-companies",
+  DEFAULT = "",
+}
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
   const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
 
+  const router = useRouter();
+
   const {
-    colors: { white, primaryBlue, yellow400 },
+    colors: { white, blue700, blue400 },
   } = useTheme();
 
   const { isMobile } = useAppContext();
 
+  const onGoToNextScreen = useCallback(
+    (page: CandidatesMenuPages) => {
+      router.push(`/${page}`);
+    },
+    [router]
+  );
+
+  const handleGoToOnlineCourse = () =>
+    onGoToNextScreen(CandidatesMenuPages.ONLINE_COURSE);
+
+  const handleGoToCoaching = () =>
+    onGoToNextScreen(CandidatesMenuPages.COACHING);
+
+  const handleGoToJobs = () => onGoToNextScreen(CandidatesMenuPages.JOBS);
+
+  const handleGoToLogin = () => onGoToNextScreen(CandidatesMenuPages.LOGIN);
+
+  const handleGoToForCompanies = () =>
+    onGoToNextScreen(CandidatesMenuPages.FOR_COMPANIES);
+
+  const handleGoToMain = () => onGoToNextScreen(CandidatesMenuPages.DEFAULT);
+
   return (
     <>
-      <StyledBurger
-        open={itsMobileMenuOpen}
-        onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
-      >
-        <div></div>
-        <div></div>
-        <div></div>
-      </StyledBurger>
-      <Container itsOpen={itsMobileMenuOpen}>
+      <Header>
         <LogoContainer>
+          <Logo src={GrowingAbroadImage.src} />
+        </LogoContainer>
+        <StyledBurger
+          open={itsMobileMenuOpen}
+          onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
+          hasALitBackground
+          bg={blue700}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </StyledBurger>
+      </Header>
+      <Container itsOpen={itsMobileMenuOpen}>
+        <LogoContainer onClick={handleGoToMain}>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
-                style={{ color: primaryBlue }}
+                style={{ color: blue700 }}
               />
             </IconButton>
           )}
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>Online course</Button>
-            <Button>Coaching</Button>
-            <Button>Jobs</Button>
+            <Button onClick={handleGoToOnlineCourse}>Online course</Button>
+            <Button onClick={handleGoToCoaching}>Coaching</Button>
+            <Button onClick={handleGoToJobs}>Jobs</Button>
             {isMobile && (
               <>
-                <Button>Login</Button>
-                <Button>For Companies</Button>
+                <Button onClick={handleGoToLogin}>Login</Button>
+                <Button onClick={handleGoToForCompanies}>For Companies</Button>
               </>
             )}
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <Button>Login</Button>
+                <Button onClick={handleGoToLogin}>Login</Button>
                 <IconButton>
-                  <FontAwesomeIcon
-                    icon={faGlobe}
-                    size="2xl"
-                    style={{ color: primaryBlue }}
-                  />
+                  <AwesomeIcon icon={faGlobe} size="2xl" />
                 </IconButton>
                 <StyledBurger
                   open={itsDesktopMenuOpen}
@@ -96,12 +129,18 @@ function HeaderForCandidates() {
                     width: 195,
                     height: 32,
                     fontSize: 18,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     borderRadius: 8,
-                    backgroundColor: !isMobile ? primaryBlue : white,
-                    color: !isMobile ? white : primaryBlue,
+                    boxShadow: "none",
+                  }}
+                  onClick={handleGoToForCompanies}
+                  backgroundColor={!isMobile ? blue700 : white}
+                  color={!isMobile ? white : blue700}
+                  hover={{
+                    backgroundColor: blue400,
+                    color: white,
                   }}
                 >
                   For Companies
