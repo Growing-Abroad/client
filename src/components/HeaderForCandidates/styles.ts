@@ -123,6 +123,10 @@ export const LogoContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   background-color: transparent;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Logo = styled(Image).attrs({
