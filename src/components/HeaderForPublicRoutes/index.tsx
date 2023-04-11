@@ -16,6 +16,7 @@ import { useTheme } from "styled-components";
 import useAppContext from "@/hooks/useAppContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
@@ -25,6 +26,8 @@ function HeaderForPublicRoutes() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { isMobile } = useAppContext();
+
+  const router = useRouter();
 
   const {
     colors: { white },
@@ -47,6 +50,12 @@ function HeaderForPublicRoutes() {
     };
   }, []);
 
+  const handleGoToCompaniesScreen = () => router.push("/companies");
+
+  const handleGoToCandidatesScreen = () => router.push("/candidates");
+
+  const handleGoToMain = () => router.push("/");
+
   return (
     <>
       <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
@@ -59,7 +68,7 @@ function HeaderForPublicRoutes() {
         showSecondaryDesktopMenu={showSecondaryDesktopMenu}
         itsOpen={itsOpen}
       >
-        <LogoContainer>
+        <LogoContainer onClick={handleGoToMain}>
           {showSecondaryDesktopMenu ? (
             <Logo src={GrowingAbroadImage.src} />
           ) : (
@@ -77,10 +86,16 @@ function HeaderForPublicRoutes() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
+            <Button
+              onClick={handleGoToCompaniesScreen}
+              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+            >
               For companies
             </Button>
-            <Button showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
+            <Button
+              onClick={handleGoToCandidatesScreen}
+              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+            >
               For candidates
             </Button>
           </ButtonsContainer>
