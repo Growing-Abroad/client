@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
-import Image from 'next/image';
-import { ComponentPropsWithoutRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled, { css } from "styled-components";
+import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
+interface BurgerProps extends ComponentPropsWithoutRef<"div"> {
   open: boolean;
   isForDesktop?: boolean;
   hasALitBackground?: boolean;
@@ -22,7 +22,7 @@ export const StyledBurger = styled.div<BurgerProps>`
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
-  z-index: 120;
+  z-index: 115;
   :hover {
     cursor: pointer;
 
@@ -47,20 +47,19 @@ export const StyledBurger = styled.div<BurgerProps>`
     transition: all 0.3s;
 
     &:nth-child(1) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
     }
     &:nth-child(2) {
-      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
       opacity: ${(props) => (props.open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
+      transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 
   ${({ theme }) => css`
     @media (min-width: ${theme.sizes.mediaQuery}) {
-
       div {
         background-color: ${({ theme }) => theme.colors.blue700};
       }
@@ -82,15 +81,16 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 export const Header = styled.div`
-  width: 100%;
-  height: 60px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 18px;
+  display: none;
   ${({ theme }) => css`
-    @media (min-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 100%;
+      height: 60px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 18px;
     }
   `};
 `;
@@ -105,7 +105,7 @@ export const Container = styled.div<ContainerProps>`
 
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      display: ${itsOpen ? 'flex' : 'none'};
+      display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
       height: 100vh;
       position: fixed;
@@ -123,12 +123,16 @@ export const LogoContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   background-color: transparent;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Logo = styled(Image).attrs({
   width: 150,
   height: 45,
-  alt: '',
+  alt: "",
 })`
   width: 200px;
   height: auto;
@@ -171,7 +175,7 @@ export const ButtonsContainer = styled.div`
 
 export const Button = styled.button`
   background-color: transparent;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -239,6 +243,6 @@ export const IconButton = styled.button`
 export const Icon = styled(Image).attrs({
   width: 31,
   height: 32,
-  alt: '',
-  href: '',
+  alt: "",
+  href: "",
 })``;
