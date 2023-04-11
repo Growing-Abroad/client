@@ -8,7 +8,7 @@ import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 
-const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
+const { sizes: { globalHorizontalPadding, mediaQuery}} = variables;
 const { colors: {blue700} } = theme; 
 
 const Service = styled.div`
@@ -162,8 +162,8 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                     />
                     
                     <ul className="services-list" >
-                        {info.map((info: string) => (
-                            <li className="list-item">
+                        {info.map((info: string, i) => (
+                            <li className="list-item" key={info+i}>
                                 <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
                                 <StdParagraqh className="paragraqh">
                                     {info}

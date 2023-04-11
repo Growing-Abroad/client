@@ -23,7 +23,6 @@ import wave from "../../../public/assets/wave-desktop.svg"
 
 export default function Footer() {
   const {
-    windowSize: { width },
     isMobile,
   } = useAppContext();
 
@@ -61,11 +60,11 @@ export default function Footer() {
               <StdButton
                 style={{
                   display: 'flex',
-                  alignItems: `${isMobile ?'center' :''}`,
-                  justifyContent: `${isMobile ?'center' :''}`,
-                  width: `${isMobile ?'143px' : '210px'}`,
+                  alignItems: `${isMobile ? 'center' : ''}`,
+                  justifyContent: `${isMobile ? 'center' : ''}`,
+                  width: `${isMobile ? '143px' : '210px'}`,
                   padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
-                  fontSize: `${isMobile ?'12px' : '16px'}`,
+                  fontSize: `${isMobile ? '12px' : '16px'}`,
                 }}
                 icon={faEnvelope}
               >

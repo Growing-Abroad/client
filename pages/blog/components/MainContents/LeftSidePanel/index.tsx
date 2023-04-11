@@ -25,7 +25,7 @@ function LeftSidePanel() {
                     job you admire.
                 </p>
 
-                <Image src={blogImage.src} width="100%" height="auto"></Image>
+                <Image src={blogImage.src} alt="blog image" width="100%" height="auto"></Image>
 
                 <p className={classes.para}>
                     Growing abroad helps qualified people that dream to live andwork abroad, but have no clue on where to start in order to achieve that.

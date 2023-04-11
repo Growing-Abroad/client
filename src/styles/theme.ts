@@ -4,17 +4,9 @@ const { sizes } = variables;
 
 export const theme = {
   colors: {
-    primaryBlue: '#05335b',
-    primaryYellow: '#FFDB5C',
-    secondaryBlue: '#4a9afd',
-    terciaryBlue: '#EDF5FF',
-    fourthBlue: '#1E80C1',
     gray1: '#9DA5AF',
-    white:'#FFFFFF',
-    backgroundBlue: '#128FC8',
-    
-    themeBlue: '#0073CF',
-    
+    white: '#FFFFFF',
+    blue300: '#EDF5FF',
     blue400: '#4A9AFD',
     blue500: '#0073CF',
     blue600: '#128FC8',
