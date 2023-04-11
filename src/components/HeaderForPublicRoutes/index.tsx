@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
+import React, { useEffect, useRef, useState } from "react";
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
 import {
   Container,
   LogoContainer,
@@ -10,19 +10,41 @@ import {
   IconsContainer,
   IconButton,
   StyledBurger,
-} from './styles';
-import { useTheme } from 'styled-components';
-import useAppContext from '@/hooks/useAppContext';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+} from "./styles";
+import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 function HeaderForPublicRoutes() {
   const [itsOpen, setItsOpen] = useState(false);
+  const [showSecondaryDesktopMenu, setShowSecondaryDesktopMenu] =
+    useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const { isMobile } = useAppContext();
 
   const {
     colors: { white },
   } = useTheme();
+
+  useEffect(() => {
+    const height = containerRef.current?.offsetHeight ?? 0;
+    function handleScroll() {
+      if (window.scrollY > height) {
+        setShowSecondaryDesktopMenu(true);
+      } else {
+        setShowSecondaryDesktopMenu(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -31,11 +53,15 @@ function HeaderForPublicRoutes() {
         <div></div>
         <div></div>
       </StyledBurger>
-      <Container itsOpen={itsOpen}>
+      <Container
+        ref={containerRef}
+        showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+        itsOpen={itsOpen}
+      >
         <LogoContainer>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
-            <IconButton>
+            <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
               <FontAwesomeIcon
                 icon={faGlobe}
                 size="2xl"
@@ -46,13 +72,17 @@ function HeaderForPublicRoutes() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button>For companies</Button>
-            <Button>For candidates</Button>
+            <Button showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
+              For companies
+            </Button>
+            <Button showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
+              For candidates
+            </Button>
           </ButtonsContainer>
           <IconsContainer>
             {!isMobile && (
               <>
-                <IconButton>
+                <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
                   <FontAwesomeIcon
                     className="icon"
                     icon={faGlobe}
