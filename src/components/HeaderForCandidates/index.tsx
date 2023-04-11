@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from "react";
 
-import GrowingAbroadImage from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Container,
@@ -16,19 +16,20 @@ import {
   StyledBurger,
   AwesomeIcon,
   Header,
-} from './styles';
-import StdButton from '../generics/StdButton/StdButton';
-import { useTheme } from 'styled-components';
-import useAppContext from '@/hooks/useAppContext';
-import { DesktopMenuContent } from './Comopnents/DesktopMenuContent';
-import { useRouter } from 'next/router';
+} from "./styles";
+import StdButton from "../generics/StdButton/StdButton";
+import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
+import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
+import { useRouter } from "next/router";
 
 enum CandidatesMenuPages {
-  ONLINE_COURSE = 'online-course',
-  COACHING = 'coaching',
-  JOBS = 'jobs',
-  LOGIN = 'login',
-  FOR_COMPANIES = 'for-companies',
+  ONLINE_COURSE = "online-course",
+  COACHING = "coaching",
+  JOBS = "jobs",
+  LOGIN = "login",
+  FOR_COMPANIES = "for-companies",
+  DEFAULT = "",
 }
 
 function HeaderForCandidates() {
@@ -47,7 +48,7 @@ function HeaderForCandidates() {
     (page: CandidatesMenuPages) => {
       router.push(`/${page}`);
     },
-    [router],
+    [router]
   );
 
   const handleGoToOnlineCourse = () =>
@@ -62,6 +63,8 @@ function HeaderForCandidates() {
 
   const handleGoToForCompanies = () =>
     onGoToNextScreen(CandidatesMenuPages.FOR_COMPANIES);
+
+  const handleGoToMain = () => onGoToNextScreen(CandidatesMenuPages.DEFAULT);
 
   return (
     <>
@@ -81,7 +84,7 @@ function HeaderForCandidates() {
         </StyledBurger>
       </Header>
       <Container itsOpen={itsMobileMenuOpen}>
-        <LogoContainer>
+        <LogoContainer onClick={handleGoToMain}>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
@@ -126,11 +129,11 @@ function HeaderForCandidates() {
                     width: 195,
                     height: 32,
                     fontSize: 18,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     borderRadius: 8,
-                    boxShadow: 'none',
+                    boxShadow: "none",
                   }}
                   onClick={handleGoToForCompanies}
                   backgroundColor={!isMobile ? blue700 : white}
