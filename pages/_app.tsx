@@ -4,8 +4,8 @@ import {AppProps} from "next/app";
 import {MyThemeProvider} from "@styles/MyThemeProvider";
 import ContextProvider from "@/context/ContextProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './custom.css';
 import useWithAuth from "@/components/DevAuth";
+import './custom.css';
 
 
 
@@ -29,12 +29,13 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <MyThemeProvider>
           {getLayout(
             <>
-              <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-                body {
-                  font-family: 'Montserrat', sans-serif;
-                }
-                `}</style>
+
+            {/* <style>{`
+              @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+              body {
+                font-family: 'Montserrat', sans-serif;
+              }
+            `}</style> */}
               <Component {...pageProps} />
             </>,
           )}
