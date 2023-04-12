@@ -15,14 +15,9 @@ export const BackgroudCTA = styled.section`
   padding: 0 ${globalHorizontalPadding};
   height: 90vh;
   min-height: 650px;
-  max-height: 740px;
+  max-height: 800px;
   overflow: hidden;
   position: relative;
-
-  @media (max-width: ${mediaQuery}) {
-    padding: 0;
-    max-height: 80vh;
-  }
 
   .cta-mask {
     position: absolute;
@@ -45,6 +40,18 @@ export const BackgroudCTA = styled.section`
     background-color: white;
     position: absolute;
     bottom: -1px;
+  }
+  @media (max-width: ${mediaQuery}) {
+    padding: 0;
+    max-height: 80vh;
+    .cta-mask{
+      padding-bottom:40px;
+      border:none;
+      background-color:#fff;
+      img{
+        bottom:39px;
+      }
+    }
   }
 `
 
@@ -88,59 +95,20 @@ export const Container = styled.section`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 170px;
-
+    gap: 90px;
     width: 800px;
     padding: 80px 32px 80px 0;
 
     h1 {
       color: #fff;
-      font-size: 5.4rem;
+      font-size: 74px;
       line-height: 6.25rem;
       font-weight: 500;
-              
-      .title-change {
-        font-weight: 600;
-        animation-iteration-count: 1;
-        position: relative;
-        left: -200px;
-        opacity: 0;
-        animation-fill-mode: both;
-        display: inline-block;
-        color: ${blue500};
-        animation: text-enter-germany 3000ms ease;
-
-        @keyframes text-enter-germany {
-          0% {
-            left: -200px;
-            color: ${blue500};
-            visibility: hidden;
-            opacity: 0;
-          }
-          20% {
-            left: 0;
-            visibility: visible;
-            color: ${blue700};
-            
-          }
-          40% {
-            color: ${yellow400};
-            opacity:1;
-          }
-          80% {
-            left: 0;
-            visibility: visible;
-            color: ${yellow400};
-            opacity:1;
-          }
-          100% {
-            left: 200px;
-            visibility: hidden;
-            opacity: 0;
-            color: ${blue500};
-          }
-        }
+      max-width:662px;
+      span{
+        color:#FFDB5C;
       }
+
     }
   }
 
@@ -156,7 +124,7 @@ export const Container = styled.section`
 
     .right-side-img-container {
       position: absolute;
-      bottom: 0px;
+      bottom: 70px;
       left: 40px;
           
       img {

@@ -18,7 +18,7 @@ function CTAction() {
     <S.BackgroudCTA>
       <S.Container>
         <section className="left-side" >
-          <h1>Get the best online course for your child
+          <h1>Land your Dream Job in <span>Germany</span> or <span>Europe</span>
           </h1>
           <StdButton icon={faPlay} >
             Buy Online Course Now
@@ -31,7 +31,7 @@ function CTAction() {
         </section>
       </S.Container>
       <div className="cta-mask" >
-        <Image src={isMobile ? ctaMaskMobile : border} alt="styled mask" width={width} />
+        <Image src={isMobile ? border : border} alt="styled mask" width={width} />
         <div className="white-line"></div>
       </div>
     </S.BackgroudCTA>

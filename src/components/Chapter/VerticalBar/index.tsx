@@ -7,13 +7,13 @@ const VerticalBar: React.FC = () => {
   const propsBar = [
     {
       index: 1,
-      height: '547px',
+      height: '576px',
     },
-    { index: 2, height:'594px' },
-    { index: 3, height: '758px' },
-    { index: 4, height: '904px' },
-    { index: 5, height: '788px' },
-    { index: 6, height: '897px' },
+    { index: 2, height:'600px' },
+    { index: 3, height: '820px' },
+    { index: 4, height: '850px' },
+    { index: 5, height: '930px' },
+    { index: 6, height: '910px' },
     { index: 7, height: '' },
   ];
   const [barColor, setBarColor] = useState<string>('#0073CF');
@@ -39,10 +39,8 @@ const VerticalBar: React.FC = () => {
     let requestId: number;
 
     const animateFill = () => {
-      const fillPercentage = Math.min(scrollPercentage / 100, 1); // Define a porcentagem de preenchimento, limitando-a a no máximo 100%
-
-      const newColor = `#0073CF`; // Define a nova cor com base no valor de azul
-
+      const fillPercentage = Math.min(scrollPercentage / 100, 1); 
+      const newColor = `#0073CF`;
       setBarColor(newColor);
 
       if (requestId) {
@@ -52,7 +50,6 @@ const VerticalBar: React.FC = () => {
       requestId = requestAnimationFrame(animateFill);
 
       if (fillPercentage === 1) {
-        // Define a cor da barra para a cor original quando o preenchimento estiver completo
         setBarColor('red');
         cancelAnimationFrame(requestId);
       }

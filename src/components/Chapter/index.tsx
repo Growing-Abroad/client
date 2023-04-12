@@ -1,14 +1,21 @@
 import * as S from './style';
 import VerticalBar from './VerticalBar';
 import Image from 'next/image';
-import index1 from '@/../public/assets/index-1.png';
+import index1 from '@/../public/assets/Germany11.webp';
+import index2 from '@/../public/assets/Germany12.webp';
+import index3 from '@/../public/assets/Germany13.webp';
+import index4 from '@/../public/assets/Germany14.webp';
+import index5 from '@/../public/assets/Germany15.webp';
 import useAppContext from '@/hooks/useAppContext';
+import TwoColorTitle from '../two-color-title';
 
 export function Chapter() {
   const {isMobile} = useAppContext();
   return (
     <S.Container>
+      <TwoColorTitle text1='What you can expect' text2='in this Course' hasSpaceBtw/>
       <S.Content>
+        
       <S.Title>Chapter</S.Title>
       <VerticalBar/>
         <S.ContainerCards>
@@ -66,7 +73,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index2} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Process of getting
 a VISA</S.CardTitle>
@@ -120,7 +127,7 @@ a VISA</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Optimizing
 your application
@@ -175,7 +182,7 @@ documents</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index4} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Job Search
 Strategy to find
@@ -246,7 +253,7 @@ in Germany</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index5} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Discover the research process of the company and the hiring managers</S.CardTitle>
               <div>
@@ -314,7 +321,7 @@ in Germany</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard  reverse>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Rock your job interview and land your dream job</S.CardTitle>
               <div>
