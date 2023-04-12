@@ -83,7 +83,7 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
 export const Header = styled.div`
   display: none;
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: 1160px) {
       width: 100%;
       height: 60px;
       background-color: white;
@@ -99,12 +99,13 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1514px;
   height: 90px;
-  padding: 22px 64px;
+  padding: 22px 50px;
   margin: 0;
 
   ${({ theme, itsOpen }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: 1160px) {
       display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
       height: 100vh;
@@ -121,7 +122,7 @@ export const Container = styled.div<ContainerProps>`
 export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   background-color: transparent;
 
   :hover {
@@ -141,7 +142,7 @@ export const Logo = styled(Image).attrs({
 export const Content = styled.div`
   width: 100%;
   display: flex;
-  padding-left: 80px;
+  padding-left: 158px;
   flex: 1;
   justify-content: space-around;
 
@@ -161,7 +162,7 @@ export const ButtonsContainer = styled.div`
   width: 100%;
   display: flex;
   flex: 5;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 37px;
 
   ${({ theme }) => css`
