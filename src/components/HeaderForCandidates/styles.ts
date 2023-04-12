@@ -3,8 +3,13 @@ import Image from "next/image";
 import { ComponentPropsWithoutRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface BurgerProps extends ComponentPropsWithoutRef<"div"> {
+interface BurgerContainerProps {
   open: boolean;
+}
+
+interface BurgerProps
+  extends ComponentPropsWithoutRef<"div">,
+    BurgerContainerProps {
   isForDesktop?: boolean;
   hasALitBackground?: boolean;
   bg?: string;
@@ -15,7 +20,29 @@ export interface ContainerProps {
   itsOpen: boolean;
 }
 
+export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 115;
+
+  ${({ theme, open }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+
+      background-color: ${open ? theme.colors.yellow400 : "transparent"};
+      padding-left: ${open ? "0.5rem" : 0};
+    }
+  `}
+`;
+
 export const StyledBurger = styled.div<BurgerProps>`
+  position: relative;
   width: 2rem;
   height: 2rem;
 
@@ -65,9 +92,9 @@ export const StyledBurger = styled.div<BurgerProps>`
       }
     }
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      position: fixed;
+      /* position: fixed;
       top: 15px;
-      right: 20px;
+      right: 20px; */
     }
   `}
 `;
@@ -167,6 +194,7 @@ export const ButtonsContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
+      padding-top: 50px;
       flex-direction: column;
       align-items: flex-start;
       flex: 2;

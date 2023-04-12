@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
+import styled from "styled-components";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
 
 const {
   colors: { yellow400, blue700, blue500, white },
@@ -121,7 +121,7 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
   width: 246px;
   gap: 10px;
   color: ${white};
-  align-items: ${(props) => props.alignItems || 'center'};
+  align-items: ${(props) => props.alignItems || "center"};
   &:first-child {
     width: 402px;
     padding-left: 0px;
@@ -143,10 +143,18 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
   & li {
     font-size: 16px;
     white-space: nowrap;
+
+    :hover {
+      cursor: pointer;
+    }
   }
   & p {
     font-size: 20px;
     margin-bottom: 18px;
+
+    :hover {
+      cursor: pointer;
+    }
   }
   & p > span {
     color: ${yellow400};

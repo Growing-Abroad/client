@@ -16,21 +16,14 @@ import {
   StyledBurger,
   AwesomeIcon,
   Header,
+  StyledBurgerContainer,
 } from "./styles";
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
 import useAppContext from "@/hooks/useAppContext";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
-
-enum CandidatesMenuPages {
-  ONLINE_COURSE = "online-course",
-  COACHING = "coaching",
-  JOBS = "jobs",
-  LOGIN = "login",
-  FOR_COMPANIES = "for-companies",
-  DEFAULT = "",
-}
+import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -44,27 +37,31 @@ function HeaderForCandidates() {
 
   const { isMobile } = useAppContext();
 
-  const onGoToNextScreen = useCallback(
-    (page: CandidatesMenuPages) => {
+  const onGoToScreen = useCallback(
+    (page: PagesNamesEnum) => {
       router.push(`/${page}`);
     },
     [router]
   );
 
   const handleGoToOnlineCourse = () =>
-    onGoToNextScreen(CandidatesMenuPages.ONLINE_COURSE);
+    onGoToScreen(PagesNamesEnum.ONLINE_COURSE);
 
-  const handleGoToCoaching = () =>
-    onGoToNextScreen(CandidatesMenuPages.COACHING);
+  const handleGoToCoaching = () => onGoToScreen(PagesNamesEnum.COACHING);
 
-  const handleGoToJobs = () => onGoToNextScreen(CandidatesMenuPages.JOBS);
+  const handleGoToJobs = () => onGoToScreen(PagesNamesEnum.JOBS);
 
-  const handleGoToLogin = () => onGoToNextScreen(CandidatesMenuPages.LOGIN);
+  const handleGoToLogin = () => onGoToScreen(PagesNamesEnum.LOGIN);
 
-  const handleGoToForCompanies = () =>
-    onGoToNextScreen(CandidatesMenuPages.FOR_COMPANIES);
+  const handleGoToForCompanies = () => onGoToScreen(PagesNamesEnum.COMPANIES);
 
-  const handleGoToMain = () => onGoToNextScreen(CandidatesMenuPages.DEFAULT);
+  const handleGoToMain = () => onGoToScreen(PagesNamesEnum.DEFAULT);
+
+  const handleGoAboutUs = () => onGoToScreen(PagesNamesEnum.ABOUT_US);
+
+  const handleGoToCareer = () => onGoToScreen(PagesNamesEnum.CAREER_BLOG);
+
+  const handleGoToFaq = () => onGoToScreen(PagesNamesEnum.FAQ);
 
   return (
     <>
@@ -72,16 +69,18 @@ function HeaderForCandidates() {
         <LogoContainer>
           <Logo src={GrowingAbroadImage.src} />
         </LogoContainer>
-        <StyledBurger
-          open={itsMobileMenuOpen}
-          onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
-          hasALitBackground
-          bg={blue700}
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </StyledBurger>
+        <StyledBurgerContainer open={itsMobileMenuOpen}>
+          <StyledBurger
+            open={itsMobileMenuOpen}
+            onClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
+            hasALitBackground
+            bg={blue700}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </StyledBurger>
+        </StyledBurgerContainer>
       </Header>
       <Container itsOpen={itsMobileMenuOpen}>
         <LogoContainer onClick={handleGoToMain}>
@@ -103,8 +102,9 @@ function HeaderForCandidates() {
             <Button onClick={handleGoToJobs}>Jobs</Button>
             {isMobile && (
               <>
-                <Button onClick={handleGoToLogin}>Login</Button>
-                <Button onClick={handleGoToForCompanies}>For Companies</Button>
+                <Button onClick={handleGoAboutUs}>About Us</Button>
+                <Button onClick={handleGoToCareer}>Career Blog</Button>
+                <Button onClick={handleGoToFaq}>FAQ</Button>
               </>
             )}
           </ButtonsContainer>

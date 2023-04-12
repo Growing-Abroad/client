@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { Input } from '@/styles/global-styles';
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
+import styled from "styled-components";
+import { Input } from "@/styles/global-styles";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
 
 const {
   colors: { blue500, white },
@@ -26,7 +26,7 @@ export const NewsLetterContainer = styled.div`
 export const TitleNewsLetter = styled.h2`
   font-size: 36px;
   text-align: center;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: ${white};
   @media (max-width: ${mediaQuery}) {
     width: 200px;
@@ -106,7 +106,7 @@ export const CheckboxWrapper = styled.label`
   span {
     position: absolute;
     top: ${10}px;
-    left: '10px';
+    left: "10px";
     height: ${boxSize}px;
     width: ${boxSize}px;
     background-color: transparent;
@@ -123,7 +123,7 @@ export const CheckboxWrapper = styled.label`
     background-color: ${blue500};
   }
   & span:after {
-    content: '';
+    content: "";
     position: absolute;
     display: none;
   }
