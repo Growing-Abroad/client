@@ -1,7 +1,7 @@
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
-import Image, { ImageProps } from 'next/image';
-import styled, { css } from 'styled-components';
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
+import Image, { ImageProps } from "next/image";
+import styled, { css } from "styled-components";
 
 interface FlexboxSliderProps {
   isSmall?: boolean;
@@ -11,14 +11,16 @@ interface FlexboxSliderProps {
 
 interface FlexboxSlideProps extends FlexboxSliderProps {
   isActive: boolean;
+  haveMaxWidth: boolean;
 }
 
-interface ImageBackgroundProps extends Omit<FlexboxSlideProps, 'isSmall'> {
+interface ImageBackgroundProps
+  extends Omit<FlexboxSlideProps, "isSmall" | "haveMaxWidth"> {
   src: string;
 }
 
 interface ImageBackgroundContentProps
-  extends Omit<FlexboxSlideProps, 'isSmall'> {}
+  extends Omit<FlexboxSlideProps, "isSmall" | "haveMaxWidth"> {}
 
 const {
   colors: { blue700, blue500 },
@@ -126,8 +128,15 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
   transition-timing-function: linear;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
-  width: 50px;
-  min-width: 114px;
+
+  ${({ haveMaxWidth }) =>
+    haveMaxWidth
+      ? css`
+          width: 856px;
+        `
+      : css`
+          min-width: 124px;
+        `}
 
   ${({ isSmall }) =>
     !isSmall
@@ -149,7 +158,7 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
     position: absolute;
     top: 0;
     left: 0;
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 100%;
@@ -322,7 +331,7 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
 
 
   h3 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     line-height: 39px;
@@ -335,7 +344,7 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   }
 
   h4 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     line-height: 24.38px;
@@ -351,11 +360,11 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   .paragraph-container {
     margin-top: 50px;
     margin-bottom: ${({ isIntroducingAPerson }) =>
-      isIntroducingAPerson ? '0px' : '23px'};
+      isIntroducingAPerson ? "0px" : "23px"};
   }
 
   p {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

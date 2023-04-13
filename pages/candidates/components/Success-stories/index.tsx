@@ -15,7 +15,7 @@ export default function SuccessStories() {
         With our help customers from all over the world land their dream jobs -
         from innovative start ups to the worlds leading companies
       </SuccessSubtitle>
-      <FancyCarousel dataArray={successStoriesData} />
+      <FancyCarousel haveMaxWidth dataArray={successStoriesData} />
     </SucessStoriesWrapper>
   );
 }
