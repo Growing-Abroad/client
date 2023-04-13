@@ -1,5 +1,5 @@
 import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesCard/index.styles";
-import { AiFillStar } from "react-icons/ai";
+import { BsCheckLg } from "react-icons/bs";
 import Image from "next/image";
 import { IService } from "@utils/services";
 
@@ -32,7 +32,7 @@ export default function OurServicesCard({
         <S.CardDescriptions>
           {descriptions.map((description) => (
             <div key={description.id}>
-              <AiFillStar className="star" />
+              <BsCheckLg className="star" />
               <span>{description.content}</span>
             </div>
           ))}

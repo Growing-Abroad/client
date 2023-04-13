@@ -72,8 +72,8 @@ export const CardDescriptions = styled.div`
   .star {
     flex-shrink: 0;
     color: yellow;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
     color: ${theme.colors.yellow400};
   }
 `;
