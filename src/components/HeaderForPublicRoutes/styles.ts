@@ -62,12 +62,12 @@ export const Container = styled.div<ContainerProps>`
   right: 0;
   z-index: 120;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
-  max-width: ${({ theme }) => theme.sizes.maxWidthAll};
 
   ${({ theme, showSecondaryDesktopMenu }) =>
     showSecondaryDesktopMenu &&
@@ -94,13 +94,9 @@ export const Container = styled.div<ContainerProps>`
       }
       position: fixed;
       background-color: ${theme.colors.white};
-      min-width: 100%;
+      /* min-width: 100%; */
       justify-content: center;
       align-items: center;
-
-      @media (min-width: 1960px) {
-        padding: 0 25%;
-      }
     `}
 
   ${({ theme, itsOpen }) => css`
@@ -116,6 +112,12 @@ export const Container = styled.div<ContainerProps>`
       background-color: ${theme.colors.blue400};
     }
   `}
+`;
+
+export const SubContainer = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1514px;
 `;
 
 export const LogoContainer = styled.div`

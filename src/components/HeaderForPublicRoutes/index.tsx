@@ -11,6 +11,7 @@ import {
   IconsContainer,
   IconButton,
   StyledBurger,
+  SubContainer,
 } from "./styles";
 import { useTheme } from "styled-components";
 import useAppContext from "@/hooks/useAppContext";
@@ -68,52 +69,56 @@ function HeaderForPublicRoutes() {
         showSecondaryDesktopMenu={showSecondaryDesktopMenu}
         itsOpen={itsOpen}
       >
-        <LogoContainer onClick={handleGoToMain}>
-          {showSecondaryDesktopMenu ? (
-            <Logo src={GrowingAbroadImage.src} />
-          ) : (
-            <Logo src={GrowingAbroadBWImage.src} />
-          )}
-          {isMobile && (
-            <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
-              <FontAwesomeIcon
-                icon={faGlobe}
-                size="2xl"
-                style={{ color: white }}
-              />
-            </IconButton>
-          )}
-        </LogoContainer>
-        <Content>
-          <ButtonsContainer>
-            <Button
-              onClick={handleGoToCompaniesScreen}
-              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
-            >
-              For companies
-            </Button>
-            <Button
-              onClick={handleGoToCandidatesScreen}
-              showSecondaryDesktopMenu={showSecondaryDesktopMenu}
-            >
-              For candidates
-            </Button>
-          </ButtonsContainer>
-          <IconsContainer>
-            {!isMobile && (
-              <>
-                <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
-                  <FontAwesomeIcon
-                    className="icon"
-                    icon={faGlobe}
-                    size="2xl"
-                    // style={{ color: white }}
-                  />
-                </IconButton>
-              </>
+        <SubContainer>
+          <LogoContainer onClick={handleGoToMain}>
+            {showSecondaryDesktopMenu ? (
+              <Logo src={GrowingAbroadImage.src} />
+            ) : (
+              <Logo src={GrowingAbroadBWImage.src} />
             )}
-          </IconsContainer>
-        </Content>
+            {isMobile && (
+              <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
+                <FontAwesomeIcon
+                  icon={faGlobe}
+                  size="2xl"
+                  style={{ color: white }}
+                />
+              </IconButton>
+            )}
+          </LogoContainer>
+          <Content>
+            <ButtonsContainer>
+              <Button
+                onClick={handleGoToCompaniesScreen}
+                showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+              >
+                For companies
+              </Button>
+              <Button
+                onClick={handleGoToCandidatesScreen}
+                showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+              >
+                For candidates
+              </Button>
+            </ButtonsContainer>
+            <IconsContainer>
+              {!isMobile && (
+                <>
+                  <IconButton
+                    showSecondaryDesktopMenu={showSecondaryDesktopMenu}
+                  >
+                    <FontAwesomeIcon
+                      className="icon"
+                      icon={faGlobe}
+                      size="2xl"
+                      // style={{ color: white }}
+                    />
+                  </IconButton>
+                </>
+              )}
+            </IconsContainer>
+          </Content>
+        </SubContainer>
       </Container>
     </>
   );
