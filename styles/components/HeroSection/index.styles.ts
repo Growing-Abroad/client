@@ -30,8 +30,9 @@ export const Content = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  max-width: ${({theme} )=> theme.sizes.maxWidthAll};
   width: 100%;
-  padding: 170px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
+  padding: 60px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
     ${({ theme }) => theme.sizes.globalHorizontalPadding};
   z-index: 15;
 
@@ -60,7 +61,7 @@ export const TextsContainer = styled.div`
       max-height: 100%;
       justify-content: center;
       align-items: center;
-      padding-bottom: 30px;
+      padding-bottom: 60px;
     }
   `}
 `;
@@ -68,6 +69,7 @@ export const TextsContainer = styled.div`
 export const Title: TitleProps = {
   Container: styled.div`
     width: 100%;
+    margin-bottom: 50px;
     /* padding: 0 30px 0 30px; */
 
     ${({ theme }) => css`
@@ -76,6 +78,8 @@ export const Title: TitleProps = {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0;
+        margin-top: 100px;
       }
     `}
   `,
