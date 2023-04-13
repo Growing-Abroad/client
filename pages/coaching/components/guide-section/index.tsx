@@ -8,6 +8,7 @@ import Image from "next/image";
 import { theme } from "@/styles/theme";
 import useAppContext from "@/hooks/useAppContext";
 import { variables } from "@/styles/global-variables";
+import FlipCard from "@/components/generics/FlipCard";
 
 const { colors: {blue700} } = theme; 
 const {sizes: { mediaQuery }} = variables;
@@ -21,54 +22,7 @@ export const CardsWrapper = styled.div`
     margin: 36px 0 83px;
 `
 
-export const WrapperFlip = styled.div`
-    .flip-card {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    transform-style: preserve-3d;
 
-    }
-
-    .flip-card-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateY(0deg);
-
-    }
-
-    .flip-card:hover .flip-card-inner {
-    transform: rotateX(360deg) rotateY(360deg);
-    }
-    
-    .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: visible;
-    }
-    .flip-card-front{
-        /* background-color: chartreuse; */
-    }
-
-    .flip-card-back {
-        /* background-color: aliceblue; */
-        transform: rotateX(180deg) rotateY(180deg);
-        visibility: hidden;
-    }
-
-    .flip-card:hover .flip-card-back {
-        transform: rotateX(0deg) rotateY(0deg);
-        visibility: visible;
-    }
-    .flip-card:hover .flip-card-front {
-        visibility: hidden;
-    }
-
-`
 
 export const Card = styled.div`
     box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
@@ -132,17 +86,5 @@ export default function GuideSection() {
         )}
         
     </CardsWrapper>
-    <WrapperFlip>
-        <div className="flip-card">
-            <div className="flip-card-inner">
-                <div className="flip-card-front">
-                    Conteudo da frente
-                </div>
-                <div className="flip-card-back">
-                    Conteudo de trás
-                </div>
-            </div>
-        </div>
-    </WrapperFlip>
 </CenteredSection>
 }
