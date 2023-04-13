@@ -63,11 +63,10 @@ export const Container = styled.div<ContainerProps>`
   z-index: 120;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   height: 90px;
   padding: 22px 64px;
   margin: 0;
-  max-width: ${({ theme }) => theme.sizes.maxWidthAll};
 
   ${({ theme, showSecondaryDesktopMenu }) =>
     showSecondaryDesktopMenu &&
@@ -80,9 +79,9 @@ export const Container = styled.div<ContainerProps>`
           top: 0;
           left: 0;
           right: 0;
-          @media (min-width: 1960px) {
+          /* @media (min-width: 1960px) {
             padding: 0 25%;
-          }
+          } */
         }
         1% {
           position: fixed;
@@ -98,9 +97,9 @@ export const Container = styled.div<ContainerProps>`
       justify-content: center;
       align-items: center;
 
-      @media (min-width: 1960px) {
+      /* @media (min-width: 1960px) {
         padding: 0 25%;
-      }
+      } */
     `}
 
   ${({ theme, itsOpen }) => css`
