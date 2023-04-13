@@ -75,13 +75,20 @@ export const StyledBurger = styled.div<BurgerProps>`
 
     &:nth-child(1) {
       transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
+      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
+      margin-top: ${({ open }) => (open ? "0.25rem" : "0")};
+      margin-left: ${({ open }) => (open ? "0.25rem" : "0")};
     }
     &:nth-child(2) {
       transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
       opacity: ${(props) => (props.open ? 0 : 1)};
+      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
     }
     &:nth-child(3) {
       transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
+      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
+      margin-left: ${({ open }) => (open ? "0.25rem" : "0")};
+      margin-bottom: ${({ open }) => (open ? "0.25rem" : "0")};
     }
   }
 
@@ -164,6 +171,12 @@ export const Logo = styled(Image).attrs({
 })`
   width: 200px;
   height: auto;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 150px;
+    }
+  `};
 `;
 
 export const Content = styled.div`
