@@ -79,6 +79,7 @@ export const FooterBottomWrapper = styled.div`
   width: 100%;
   max-width: ${maxWidthAll};
   padding: 24px 74px;
+  font-size: 12px;
   span {
     white-space: nowrap;
   }
