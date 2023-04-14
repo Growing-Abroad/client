@@ -8,7 +8,7 @@ export const Container = styled.div`
   min-width: 255px;
   display: flex;
   flex-direction: column;
-  outline: 2px solid lightgray;
+  outline: 2px solid ${({ theme }) => theme.colors.blue400};
   border-radius: 8px;
   text-align: center;
   color: ${theme.colors.blue700};
