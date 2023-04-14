@@ -118,6 +118,14 @@ export const SubContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 1514px;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      height: 100%;
+      flex-direction: column;
+      gap: 50px;
+    }
+  `};
 `;
 
 export const LogoContainer = styled.div`
@@ -200,11 +208,15 @@ export const Button = styled.button<ButtonProps>`
     color: ${({ theme }) => theme.colors.blue400};
   }
 
-  /* ${({ theme }) => css`
+  ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      color: ${theme.colors.white};
+      color: ${theme.colors.blue700};
+
+      :hover {
+        color: ${theme.colors.white};
+      }
     }
-  `} */
+  `};
 `;
 
 export const IconsContainer = styled.div`

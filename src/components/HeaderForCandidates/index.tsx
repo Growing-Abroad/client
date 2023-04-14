@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,6 +28,9 @@ import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
   const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
+  const localMobileSize = 1160;
+  const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
+    useState(false);
 
   const router = useRouter();
 
@@ -35,14 +38,30 @@ function HeaderForCandidates() {
     colors: { white, blue700, blue400 },
   } = useTheme();
 
-  const { isMobile } = useAppContext();
-
   const onGoToScreen = useCallback(
     (page: PagesNamesEnum) => {
       router.push(`/${page}`);
     },
     [router]
   );
+
+  useEffect(() => {
+    function checkIfShouldHaveMobileBehavior() {
+      if (window.innerWidth < localMobileSize) {
+        setShouldHaveMobileBehavior(true);
+      } else {
+        setShouldHaveMobileBehavior(false);
+      }
+    }
+
+    checkIfShouldHaveMobileBehavior();
+
+    window.addEventListener("resize", checkIfShouldHaveMobileBehavior);
+
+    return () => {
+      window.removeEventListener("resize", checkIfShouldHaveMobileBehavior);
+    };
+  }, []);
 
   const handleGoToOnlineCourse = () =>
     onGoToScreen(PagesNamesEnum.ONLINE_COURSE);
@@ -85,7 +104,7 @@ function HeaderForCandidates() {
       <Container itsOpen={itsMobileMenuOpen}>
         <LogoContainer onClick={handleGoToMain}>
           <Logo src={GrowingAbroadImage.src} />
-          {isMobile && (
+          {shouldHaveMobileBehavior && (
             <IconButton>
               <FontAwesomeIcon
                 icon={faGlobe}
@@ -100,7 +119,7 @@ function HeaderForCandidates() {
             <Button onClick={handleGoToOnlineCourse}>Online course</Button>
             <Button onClick={handleGoToCoaching}>Coaching</Button>
             <Button onClick={handleGoToJobs}>Jobs</Button>
-            {isMobile && (
+            {shouldHaveMobileBehavior && (
               <>
                 <Button onClick={handleGoAboutUs}>About Us</Button>
                 <Button onClick={handleGoToCareer}>Career Blog</Button>
@@ -109,7 +128,7 @@ function HeaderForCandidates() {
             )}
           </ButtonsContainer>
           <IconsContainer>
-            {!isMobile && (
+            {!shouldHaveMobileBehavior && (
               <>
                 <Button onClick={handleGoToLogin}>Login</Button>
                 <IconButton>
@@ -136,8 +155,8 @@ function HeaderForCandidates() {
                     boxShadow: "none",
                   }}
                   onClick={handleGoToForCompanies}
-                  backgroundColor={!isMobile ? blue700 : white}
-                  color={!isMobile ? white : blue700}
+                  backgroundColor={!shouldHaveMobileBehavior ? blue700 : white}
+                  color={!shouldHaveMobileBehavior ? white : blue700}
                   hover={{
                     backgroundColor: blue400,
                     color: white,

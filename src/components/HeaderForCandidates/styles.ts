@@ -20,6 +20,8 @@ export interface ContainerProps {
   itsOpen: boolean;
 }
 
+const localMobileSize = "1160px";
+
 export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
   width: 2.5rem;
   height: 2.5rem;
@@ -30,7 +32,7 @@ export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
   z-index: 115;
 
   ${({ theme, open }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       position: fixed;
       top: 10px;
       right: 10px;
@@ -93,12 +95,12 @@ export const StyledBurger = styled.div<BurgerProps>`
   }
 
   ${({ theme }) => css`
-    @media (min-width: ${theme.sizes.mediaQuery}) {
+    @media (min-width: ${localMobileSize}) {
       div {
         background-color: ${({ theme }) => theme.colors.blue700};
       }
     }
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       /* position: fixed;
       top: 15px;
       right: 20px; */
@@ -117,7 +119,7 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
 export const Header = styled.div`
   display: none;
   ${({ theme }) => css`
-    @media (max-width: 1160px) {
+    @media (max-width: ${localMobileSize}) {
       width: 100%;
       height: 60px;
       background-color: white;
@@ -139,7 +141,7 @@ export const Container = styled.div<ContainerProps>`
   margin: 0;
 
   ${({ theme, itsOpen }) => css`
-    @media (max-width: 1160px) {
+    @media (max-width: ${localMobileSize}) {
       display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
       height: 100vh;
@@ -173,7 +175,7 @@ export const Logo = styled(Image).attrs({
   height: auto;
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       width: 150px;
     }
   `};
@@ -191,7 +193,7 @@ export const Content = styled.div`
   }
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       padding: 0;
       flex-direction: column;
     }
@@ -206,7 +208,7 @@ export const ButtonsContainer = styled.div`
   gap: 37px;
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       padding-top: 50px;
       flex-direction: column;
       align-items: flex-start;
@@ -237,7 +239,7 @@ export const Button = styled.button`
   }
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       color: ${theme.colors.blue700};
       :hover {
         color: ${({ theme }) => theme.colors.white};
@@ -261,7 +263,7 @@ export const IconsContainer = styled.div`
   }
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       flex-direction: column;
       justify-content: flex-end;
     }
@@ -272,7 +274,7 @@ export const IconButton = styled.button`
   background-color: transparent;
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
+    @media (max-width: ${localMobileSize}) {
       width: 32px;
       height: 32px;
       border-radius: 16px;
