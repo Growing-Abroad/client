@@ -1,18 +1,29 @@
 import {
   DiscoverContent,
-  DiscoverGaImg,
-  DiscoverImagesWrapper,
+  RIContainer,
+  RIImage,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
 } from "../../../../styles/candidates/components/DiscoverGA/index.styles";
-import Uan from "@/../public/assets/Photos-Main-Page/Uan-Business_Canva.webp";
-import Manu from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
-import Hands from "@/../public/assets/Photos-Main-Page/high-five.webp";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
+import ImagesList from "@/utils/mock-ups/home-discover-carousel";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import Carousel from "@/components/Carousel";
+import { StaticImageData } from "next/image";
+
+interface ItemProps {
+  image: StaticImageData;
+  alt: string;
+}
 
 export default function DiscoverGA() {
+  const renderItem = ({ image, alt }: ItemProps) => (
+    <RIContainer key={alt}>
+      <RIImage src={image.src} />
+    </RIContainer>
+  );
+
   return (
     <DiscoverWrapper>
       <TwoColorTitle
@@ -43,12 +54,12 @@ export default function DiscoverGA() {
 
           <StdButton style={{ fontSize: "20px" }}>Read More</StdButton>
         </DiscoverReadMoreWrapper>
-
-        <DiscoverImagesWrapper>
-          <DiscoverGaImg url={Uan.src} />
-          <DiscoverGaImg url={Hands.src} />
-          <DiscoverGaImg url={Manu.src} />
-        </DiscoverImagesWrapper>
+        <Carousel<ItemProps>
+          visibleItems={3}
+          data={ImagesList}
+          renderItem={renderItem}
+          itemWidth={205}
+        />
       </DiscoverContent>
     </DiscoverWrapper>
   );

@@ -1,7 +1,11 @@
-import styled from 'styled-components';
-import { ComponentPropsWithoutRef } from 'react';
-import { theme } from '@styles/theme';
-import { variables } from '@styles/global-variables';
+import styled from "styled-components";
+import { ComponentPropsWithoutRef } from "react";
+import { theme } from "@styles/theme";
+import { variables } from "@styles/global-variables";
+
+interface BgImageProps {
+  src: string;
+}
 
 const {
   colors: { blue400, blue500 },
@@ -66,7 +70,7 @@ export const DiscoverImagesWrapper = styled.div`
   width: 100%;
 `;
 
-export interface IDiscoverImgProps extends ComponentPropsWithoutRef<'div'> {
+export interface IDiscoverImgProps extends ComponentPropsWithoutRef<"div"> {
   url: string;
 }
 export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
@@ -86,4 +90,15 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   :nth-child(3) {
     height: 70%;
   }
+`;
+
+export const RIContainer = styled.div``;
+
+export const RIImage = styled.div<BgImageProps>`
+  width: 205px;
+  height: 465px;
+  background-image: url(${({ src }) => src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
