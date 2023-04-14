@@ -34,17 +34,17 @@ export const services: IService[] = [
       {
         id: "9",
         content:
-          "Guideline and Workbook to perfectly prepare for your job interview",
+          "<strong>Guideline and Workbook</strong> to perfectly prepare for your job interview",
       },
       {
         id: "99",
         content:
-          "Feedback with Video Analysis on how to improve your appearance",
+          "<strong>Feedback</strong> with <strong>Video Analysis</strong> on how to improve your appearance",
       },
       {
         id: "999",
         content:
-          "Templates with the most asked interview questions and how to prepare for them",
+          "Templates with the <strong>most asked interview questions</strong> and how to prepare for them",
       },
     ],
     hasMoreInfo: false,
@@ -61,17 +61,17 @@ export const services: IService[] = [
       {
         id: "1",
         content:
-          "Learn all the steps you have to take to land your DREAM JOB in GERMANY",
+          "Learn all the steps you have to take to land your <strong>Dream Job in Europe or Germany</strong>",
       },
       {
         id: "12",
         content:
-          "Access to 50+ Videos, Workbook, Community, Templates and much more",
+          "Access to <strong>50+ Videos, Workbook, Community templates</strong> and much more",
       },
       {
         id: "123",
         content:
-          "Lifetime access to the entire online course to build a successful career abroad",
+          "<strong>Lifetime access</strong> to the entire online course to build a successful career abroad",
       },
     ],
     hasMoreInfo: true,
@@ -88,17 +88,17 @@ export const services: IService[] = [
       {
         id: "4",
         content:
-          "Guideline and Workbook how to effectively optimize your CV for the German market",
+          "<strong>Guideline and Workbook</strong> how to effectively optimize your CV for the German market",
       },
       {
         id: "45",
         content:
-          "Personal Feedback rounds and insider tips to elevate your CV from all the others",
+          "<strong>Personal Feedback</strong> rounds and insider tips to elevate your CV from all the others",
       },
       {
         id: "456",
         content:
-          "Final corrections to have a perfectly optimized CV to get every job interview",
+          "Final corrections to have a <strong>perfectly optimized CV</strong> to get every job interview",
       },
     ],
     hasMoreInfo: false,
@@ -151,6 +151,33 @@ export const services: IService[] = [
       },
       {
         id: "890",
+        content:
+          "Lifetime access to the entire online course to build a successful career abroad",
+      },
+    ],
+    hasMoreInfo: true,
+  },
+  {
+    id: "123456",
+    title: "LinkedIn Optimization",
+    subtitle: "To get contacted by german recruiters",
+    image: {
+      src: CurriculumVitae.src,
+      alt: "Online Course",
+    },
+    descriptions: [
+      {
+        id: "10",
+        content:
+          "Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market",
+      },
+      {
+        id: "1011",
+        content:
+          "Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview",
+      },
+      {
+        id: "101112",
         content:
           "Lifetime access to the entire online course to build a successful career abroad",
       },

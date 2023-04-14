@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { theme } from '@styles/theme';
-import { variables } from '@/styles/global-variables';
+import styled from "styled-components";
+import { theme } from "@styles/theme";
+import { variables } from "@/styles/global-variables";
 
 export const Container = styled.div`
   width: 100%;
@@ -32,11 +32,12 @@ export const Container = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: flex-end;
+  /* gap: 1.5rem; */
   padding: 1.5rem 1rem;
 `;
 

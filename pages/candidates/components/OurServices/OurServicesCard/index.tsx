@@ -2,6 +2,7 @@ import * as S from "../../../../../styles/candidates/components/OurServices/OurS
 import { BsCheckLg } from "react-icons/bs";
 import Image from "next/image";
 import { IService } from "@utils/services";
+import { useTheme } from "styled-components";
 
 export default function OurServicesCard({
   id,
@@ -12,6 +13,9 @@ export default function OurServicesCard({
   hasMoreInfo,
 }: IService) {
   // const navigate = useNavigate()
+  const {
+    colors: { blue700, yellow400 },
+  } = useTheme();
 
   const handleRedirect = (id: string) => {
     // navigate('services/' + id)
@@ -33,13 +37,21 @@ export default function OurServicesCard({
           {descriptions.map((description) => (
             <div key={description.id}>
               <BsCheckLg className="star" />
-              <span>{description.content}</span>
+              <span dangerouslySetInnerHTML={{ __html: description.content }} />
             </div>
           ))}
         </S.CardDescriptions>
 
-        <div>
-          <S.Button onClick={() => handleRedirect(id)}>
+        <div className="lastDiv">
+          <S.Button
+            style={{
+              width: 196,
+              borderRadius: 50,
+              backgroundColor: yellow400,
+              color: blue700,
+            }}
+            onClick={() => handleRedirect(id)}
+          >
             {hasMoreInfo ? "More Info" : "Book Now"}
           </S.Button>
         </div>
