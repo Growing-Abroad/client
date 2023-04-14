@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Container } from "../../../../styles/faq/FaqSection/index.styles";
+import { Container, Content } from "../../../../styles/faq/FaqSection/index.styles";
 import Accordeon from "./Accordeon";
 
 function FaqSection() {
@@ -27,15 +26,17 @@ function FaqSection() {
   ];
   return (
     <Container>
-      {accordeons.map((accordeon, index) => {
-        return (
-          <Accordeon
+      <Content>
+        {accordeons.map((accordeon, index) => {
+          return (
+            <Accordeon
             title={accordeon.title}
             content={accordeon.content}
             key={index}
-          />
-        );
-      })}
+            />
+            );
+        })}
+      </Content>
     </Container>
   );
 }

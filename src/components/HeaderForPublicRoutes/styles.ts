@@ -80,9 +80,9 @@ export const Container = styled.div<ContainerProps>`
           top: 0;
           left: 0;
           right: 0;
-          @media (min-width: 1960px) {
+          /* @media (min-width: 1960px) {
             padding: 0 25%;
-          }
+          } */
         }
         1% {
           position: fixed;
@@ -94,7 +94,7 @@ export const Container = styled.div<ContainerProps>`
       }
       position: fixed;
       background-color: ${theme.colors.white};
-      /* min-width: 100%; */
+
       justify-content: center;
       align-items: center;
     `}

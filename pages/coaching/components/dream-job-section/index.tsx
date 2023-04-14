@@ -8,7 +8,7 @@ import cvOptimization from '@assets/pages/coaching/cv-optimization.png';
 import coverLetter from '@assets/pages/coaching/cover-letter-optimization.png';
 import jobInterviewPrep from '@assets/pages/coaching/job-interview.png';
 import jobSearchStrategy from '@assets/pages/coaching/job-searching-strategy.png';
-import linkedinOpt from '@assets/pages/coaching/linkedin-optimization.png';
+import linkedinOpt from '@assets/pages/coaching/linkedIn-optimization.png';
 import useAppContext from "@/hooks/useAppContext";
 
 
