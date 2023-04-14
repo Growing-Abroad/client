@@ -59,7 +59,7 @@ function Accordeon({ title, content }: AccordeonProps) {
           </AccordeonButton>
         )}
       </AccordeonHeader>
-      {isOpen && <AccordeonContent>{content}</AccordeonContent>}
+      {isOpen && <AccordeonContent isOpen={isOpen}>{content}</AccordeonContent>}
     </AccordeonWrapper>
   );
 }
