@@ -1,13 +1,17 @@
-
-import styled from 'styled-components';
-import {theme} from "@styles/theme";
-import {variables} from "@styles/global-variables";
+import styled from "styled-components";
+import { theme } from "@styles/theme";
+import { variables } from "@styles/global-variables";
 
 const {
   colors: { blue700 },
 } = theme;
 const {
-  sizes: { mediaQuery, globalHorizontalPadding, maxWidthAll, globalHorizontalPaddingMobile },
+  sizes: {
+    mediaQuery,
+    globalHorizontalPadding,
+    maxWidthAll,
+    globalHorizontalPaddingMobile,
+  },
 } = variables;
 
 export const SucessStoriesWrapper = styled.section`
@@ -19,8 +23,7 @@ export const SucessStoriesWrapper = styled.section`
   width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-  padding: 80px ${globalHorizontalPaddingMobile};
-    
+    padding: 80px ${globalHorizontalPaddingMobile};
   }
 `;
 
@@ -29,7 +32,7 @@ export const SuccessSubtitle = styled.p`
   max-width: 604px;
   font-size: 1.5rem;
   line-height: 38px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   margin-top: 9px;
   margin-bottom: 30px;

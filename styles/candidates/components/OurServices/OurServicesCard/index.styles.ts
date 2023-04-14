@@ -6,9 +6,10 @@ export const Container = styled.div`
   width: 100%;
   max-width: 400px;
   min-width: 255px;
+  height: 758px;
   display: flex;
   flex-direction: column;
-  outline: 2px solid ${({ theme }) => theme.colors.blue400};
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   text-align: center;
   color: ${theme.colors.blue700};
@@ -19,7 +20,7 @@ export const Container = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    outline: 7px solid ${theme.colors.blue400};
+    outline: 7px solid ${theme.colors.blue700};
   }
 
   .card-image {
@@ -47,7 +48,7 @@ export const CardHeader = styled.div`
   gap: 0.75rem;
   font-size: 1.5rem;
   h2 {
-    font-weight: 700;
+    font-weight: 600;
   }
   h3 {
     font-size: 1rem;
@@ -55,19 +56,31 @@ export const CardHeader = styled.div`
   }
 `;
 export const CardDescriptions = styled.div`
+  font-family: "Montserrat";
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 14px;
+  line-height: 17px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 4%;
   flex-grow: 1;
+  margin-top: 48px;
 
   > div {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+    p {
+      margin: 0;
+      padding: 0;
+
+      span {
+        font-weight: 500;
+      }
+    }
   }
 
   .star {

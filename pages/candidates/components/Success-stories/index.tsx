@@ -12,8 +12,8 @@ export default function SuccessStories() {
       {/* eslint-disable-next-line react/jsx-no-undef */}
       <TwoColorTitle text1="Success" text2="Stories" hasSpaceBtw as="h2" />
       <SuccessSubtitle>
-        With our help customers from all over the world land their dream jobs -
-        from innovative start ups to the worlds leading companies
+        customers from all over the world land their dream jobs - from
+        innovative start ups to the worlds leading companies
       </SuccessSubtitle>
       <FancyCarousel haveMaxWidth dataArray={successStoriesData} />
     </SucessStoriesWrapper>

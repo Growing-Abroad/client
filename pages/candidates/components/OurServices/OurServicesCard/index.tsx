@@ -37,7 +37,7 @@ export default function OurServicesCard({
           {descriptions.map((description) => (
             <div key={description.id}>
               <BsCheckLg className="star" />
-              <span dangerouslySetInnerHTML={{ __html: description.content }} />
+              <p dangerouslySetInnerHTML={{ __html: description.content }} />
             </div>
           ))}
         </S.CardDescriptions>

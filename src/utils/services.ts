@@ -34,17 +34,17 @@ export const services: IService[] = [
       {
         id: "9",
         content:
-          "<strong>Guideline and Workbook</strong> to perfectly prepare for your job interview",
+          "<span>Guideline and Workbook</span> to perfectly prepare for your job interview",
       },
       {
         id: "99",
         content:
-          "<strong>Feedback</strong> with <strong>Video Analysis</strong> on how to improve your appearance",
+          "<span>Feedback</span> with <span>Video Analysis</span> on how to improve your appearance",
       },
       {
         id: "999",
         content:
-          "Templates with the <strong>most asked interview questions</strong> and how to prepare for them",
+          "Templates with the <span>most asked interview questions</span> and how to prepare for them",
       },
     ],
     hasMoreInfo: false,
@@ -61,17 +61,17 @@ export const services: IService[] = [
       {
         id: "1",
         content:
-          "Learn all the steps you have to take to land your <strong>Dream Job in Europe or Germany</strong>",
+          "Learn all the steps you have to take to land your <span>Dream Job in Europe or Germany</span>",
       },
       {
         id: "12",
         content:
-          "Access to <strong>50+ Videos, Workbook, Community templates</strong> and much more",
+          "Access to <span>50+ Videos, Workbook, Community templates</span> and much more",
       },
       {
         id: "123",
         content:
-          "<strong>Lifetime access</strong> to the entire online course to build a successful career abroad",
+          "<span>Lifetime access</span> to the entire online course to build a successful career abroad",
       },
     ],
     hasMoreInfo: true,
@@ -88,17 +88,17 @@ export const services: IService[] = [
       {
         id: "4",
         content:
-          "<strong>Guideline and Workbook</strong> how to effectively optimize your CV for the German market",
+          "<span>Guideline and Workbook</span> how to effectively optimize your CV for the German market",
       },
       {
         id: "45",
         content:
-          "<strong>Personal Feedback</strong> rounds and insider tips to elevate your CV from all the others",
+          "<span>Personal Feedback</span> rounds and insider tips to elevate your CV from all the others",
       },
       {
         id: "456",
         content:
-          "Final corrections to have a <strong>perfectly optimized CV</strong> to get every job interview",
+          "Final corrections to have a <span>perfectly optimized CV</span> to get every job interview",
       },
     ],
     hasMoreInfo: false,
