@@ -267,6 +267,10 @@ export const TextBlockH3 = styled.h3`
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
+
+    .watch-video-btn {
+      padding: 8px 20px;
+    }
   }
 `;
 
@@ -283,8 +287,7 @@ export const FromWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     gap: 10.15px;
     margin-top: auto;
-    margin-bottom: 8px;
-
+    margin-bottom: 16px;
   }
 `;
 
