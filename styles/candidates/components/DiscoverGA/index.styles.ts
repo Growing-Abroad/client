@@ -28,7 +28,6 @@ export const DiscoverWrapper = styled.div`
   width: 100%;
   max-width: ${maxWidthAll};
 
-
   @media (max-width: ${mediaQuery}) {
     padding: 80px 0;
     gap: 32px;
@@ -37,7 +36,7 @@ export const DiscoverWrapper = styled.div`
     .discover-wrapper {
       max-width: 100%;
       padding-inline: 36px;
-    } 
+    }
 
     .discover-title {
       flex-wrap: wrap;
@@ -128,4 +127,9 @@ export const RIImage = styled.div<BgImageProps>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+`;
+
+export const CarouselContainer = styled.div`
+  width: 100%;
+  padding: 0 36px;
 `;

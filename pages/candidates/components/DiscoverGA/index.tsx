@@ -4,6 +4,7 @@ import {
   RIImage,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
+  CarouselContainer,
 } from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
@@ -41,7 +42,7 @@ export default function DiscoverGA() {
 
       <DiscoverContent>
         <DiscoverReadMoreWrapper>
-          <StdParagraqh className="discover-text" >
+          <StdParagraqh className="discover-text">
             Our goal is to help skilled people from all of the world to get
             their dream job in Germany or Europe.
             <br />
@@ -58,16 +59,20 @@ export default function DiscoverGA() {
             costumers to show their full potential.
           </StdParagraqh>
 
-          <StdButton className="read-more-btn" >
-            <Link href="/about-us" style={{all: 'unset'}}>Read More</Link>
+          <StdButton className="read-more-btn">
+            <Link href="/about-us" style={{ all: "unset" }}>
+              Read More
+            </Link>
           </StdButton>
         </DiscoverReadMoreWrapper>
-        <Carousel<ItemProps>
-          visibleItems={3}
-          data={ImagesList}
-          renderItem={renderItem}
-          itemWidth={205}
-        />
+        <CarouselContainer>
+          <Carousel<ItemProps>
+            visibleItems={3}
+            data={ImagesList}
+            renderItem={renderItem}
+            itemWidth={205}
+          />
+        </CarouselContainer>
       </DiscoverContent>
     </DiscoverWrapper>
   );
