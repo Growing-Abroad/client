@@ -23,6 +23,7 @@ import { useTheme } from "styled-components";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
 import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
+import useAppContext from "@/hooks/useAppContext";
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -30,6 +31,8 @@ function HeaderForCandidates() {
   const localMobileSize = 1160;
   const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
     useState(false);
+
+  const { isMobile } = useAppContext();
 
   const router = useRouter();
 
@@ -85,7 +88,15 @@ function HeaderForCandidates() {
     <>
       <Header>
         <LogoContainer>
-          <Logo src={GrowingAbroadImage.src} />
+          <Logo src={GrowingAbroadImage.src} onClick={handleGoToMain} />
+          <IconButton withoutPadding>
+            <FontAwesomeIcon
+              icon={faGlobe}
+              size="2xl"
+              style={{ color: blue700 }}
+              className="global-icon"
+            />
+          </IconButton>
         </LogoContainer>
         <StyledBurgerContainer open={itsMobileMenuOpen}>
           <StyledBurger
@@ -101,18 +112,11 @@ function HeaderForCandidates() {
         </StyledBurgerContainer>
       </Header>
       <Container itsOpen={itsMobileMenuOpen}>
-        <LogoContainer onClick={handleGoToMain}>
-          <Logo src={GrowingAbroadImage.src} />
-          {shouldHaveMobileBehavior && (
-            <IconButton>
-              <FontAwesomeIcon
-                icon={faGlobe}
-                size="2xl"
-                style={{ color: blue700 }}
-              />
-            </IconButton>
-          )}
-        </LogoContainer>
+        {!isMobile && (
+          <LogoContainer>
+            <Logo src={GrowingAbroadImage.src} onClick={handleGoToMain} />
+          </LogoContainer>
+        )}
         <Content>
           <ButtonsContainer>
             <Button onClick={handleGoToOnlineCourse}>Online course</Button>

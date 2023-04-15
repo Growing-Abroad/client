@@ -20,6 +20,10 @@ export interface ContainerProps {
   itsOpen: boolean;
 }
 
+interface IconButtonProps {
+  withoutPadding?: boolean;
+}
+
 const localMobileSize = "1160px";
 
 export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
@@ -35,7 +39,7 @@ export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
     @media (max-width: ${localMobileSize}) {
       position: fixed;
       top: 10px;
-      right: 10px;
+      right: 25px;
 
       background-color: ${open ? theme.colors.yellow400 : "transparent"};
       padding-left: ${open ? "0.5rem" : 0};
@@ -118,17 +122,17 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
 
 export const Header = styled.div`
   display: none;
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      width: 100%;
-      height: 60px;
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 18px;
-    }
-  `};
+  @media (max-width: ${localMobileSize}) {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+    z-index: 230;
+  }
 `;
 
 export const Container = styled.div<ContainerProps>`
@@ -139,18 +143,20 @@ export const Container = styled.div<ContainerProps>`
   height: 90px;
   padding: 22px 50px;
   margin: 0;
+  transition: all 0.5s ease-in-out;
+  animation: drop-down;
 
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${localMobileSize}) {
-      display: ${itsOpen ? "flex" : "none"};
       flex-direction: column;
-      height: 100vh;
+      overflow: hidden;
+      height: ${!itsOpen ? 0 : "100vh"};
       position: fixed;
       top: 0;
       left: 0;
       z-index: 110;
       padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.blue400};
+      background-color: ${theme.colors.blue700};
     }
   `}
 `;
@@ -161,11 +167,10 @@ export const LogoContainer = styled.div`
   align-items: center;
   background-color: transparent;
 
-  ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      align-items: flex-start;
-    }
-  `};
+  @media (max-width: ${localMobileSize}) {
+    width: 80%;
+    align-items: center;
+  }
 
   :hover {
     cursor: pointer;
@@ -215,7 +220,7 @@ export const ButtonsContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${localMobileSize}) {
-      padding-top: 50px;
+      padding-top: 110px;
       flex-direction: column;
       align-items: flex-start;
       flex: 2;
@@ -246,9 +251,9 @@ export const Button = styled.button`
 
   ${({ theme }) => css`
     @media (max-width: ${localMobileSize}) {
-      color: ${theme.colors.blue700};
+      color: ${theme.colors.white};
       :hover {
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.blue400};
       }
     }
   `}
@@ -268,28 +273,25 @@ export const IconsContainer = styled.div`
     flex: 1;
   }
 
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-  `}
+  @media (max-width: ${localMobileSize}) {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled.button<IconButtonProps>`
   background-color: transparent;
 
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      width: 32px;
-      height: 32px;
-      border-radius: 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 50px;
-    }
-  `}
+  @media (max-width: ${localMobileSize}) {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: ${({ withoutPadding }) => (withoutPadding ? 0 : "50px")};
+    z-index: 300;
+  }
 `;
 
 export const Icon = styled(Image).attrs({

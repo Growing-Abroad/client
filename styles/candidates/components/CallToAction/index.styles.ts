@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import manuUanHappy from "@/../public/assets/Photos-Main-Page/uan-manu-happy.webp";
-import {variables} from "@styles/global-variables";
-import {theme} from "@styles/theme";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
 
-const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
-const { colors: { blue400, blue500, blue700, yellow400 } } = theme;
+const {
+  sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile },
+} = variables;
+const {
+  colors: { blue400, blue500, blue700, yellow400 },
+} = theme;
 
 export const BackgroudCTA = styled.section`
   width: 100%;
@@ -20,7 +24,7 @@ export const BackgroudCTA = styled.section`
   position: relative;
 
   @media (max-width: ${mediaQuery}) {
-    padding: 0;
+    padding: 60px 0 0 0;
     max-height: 80vh;
   }
 
@@ -46,7 +50,7 @@ export const BackgroudCTA = styled.section`
     position: absolute;
     bottom: -1px;
   }
-`
+`;
 
 export const CtaButton = styled.button`
   padding: 18px 46px;
@@ -64,16 +68,16 @@ export const CtaButton = styled.button`
   align-items: center;
 
   &:hover {
-      cursor: pointer; 
-      background-color: ${blue700};
-      color: ${yellow400};
+    cursor: pointer;
+    background-color: ${blue700};
+    color: ${yellow400};
   }
 
   @media (max-width: ${mediaQuery}) {
     padding: 16px 40px;
     font-size: 1.125rem;
   }
-`
+`;
 
 export const Container = styled.section`
   width: 100%;
@@ -81,7 +85,7 @@ export const Container = styled.section`
   max-width: ${variables.sizes.maxWidthAll};
 
   background-color: ${blue500};
-  
+
   position: relative;
 
   .left-side {
@@ -98,7 +102,7 @@ export const Container = styled.section`
       font-size: 5.4rem;
       line-height: 6.25rem;
       font-weight: 500;
-              
+
       .title-change {
         font-weight: 600;
         animation-iteration-count: 1;
@@ -121,17 +125,16 @@ export const Container = styled.section`
             left: 0;
             visibility: visible;
             color: ${blue700};
-            
           }
           40% {
             color: ${yellow400};
-            opacity:1;
+            opacity: 1;
           }
           80% {
             left: 0;
             visibility: visible;
             color: ${yellow400};
-            opacity:1;
+            opacity: 1;
           }
           100% {
             left: 200px;
@@ -158,7 +161,7 @@ export const Container = styled.section`
       position: absolute;
       bottom: 0px;
       left: 40px;
-          
+
       img {
         bottom: 10px;
         position: absolute;
@@ -166,18 +169,17 @@ export const Container = styled.section`
       }
     }
   }
-    
+
   @media (max-width: ${mediaQuery}) {
     /* background-image: url(${manuUanHappy.src}); */
     background-size: 130%;
     background-repeat: no-repeat;
     background-position: bottom;
-    
 
     .left-side {
       width: 100%;
       padding: 46px ${globalHorizontalPaddingMobile};
-      
+
       gap: 25px;
 
       h1 {
@@ -191,11 +193,11 @@ export const Container = styled.section`
 
     .right-side {
       left: -25px;
-      transform: scale(.63);
+      transform: scale(0.63);
 
       .right-side-img-container {
-        left: 0
+        left: 0;
       }
     }
   }
-`
+`;
