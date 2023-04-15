@@ -20,10 +20,9 @@ const DreamJobSubtitle = styled.p`
     color: ${blue700};
     font-size: 1.5rem;
     line-height: 38px;
-    font-weight: 600;
+    font-weight: 400;
     max-width: 708px;
     margin-top: 44px;
-    margin-bottom: 90px;
     text-align: center;
 
     @media (max-width: ${mediaQuery}) {

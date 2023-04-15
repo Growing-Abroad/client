@@ -24,6 +24,7 @@ import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
 import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
 import useAppContext from "@/hooks/useAppContext";
+import { dividerClasses } from "@mui/material";
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -111,6 +112,7 @@ function HeaderForCandidates() {
           </StyledBurger>
         </StyledBurgerContainer>
       </Header>
+      {isMobile && <div style={{width: '100%', height: '60px'}}></div>}
       <Container itsOpen={itsMobileMenuOpen}>
         {!isMobile && (
           <LogoContainer>
