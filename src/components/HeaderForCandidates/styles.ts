@@ -161,6 +161,12 @@ export const LogoContainer = styled.div`
   align-items: center;
   background-color: transparent;
 
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      align-items: flex-start;
+    }
+  `};
+
   :hover {
     cursor: pointer;
   }

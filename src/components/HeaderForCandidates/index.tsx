@@ -20,7 +20,6 @@ import {
 } from "./styles";
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
-import useAppContext from "@/hooks/useAppContext";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
 import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
