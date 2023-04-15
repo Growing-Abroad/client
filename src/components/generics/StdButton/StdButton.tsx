@@ -58,7 +58,7 @@ export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
 }
 
 export default function StdButton({
-  children: text,
+  children,
   className,
   icon,
   style,
@@ -79,7 +79,7 @@ export default function StdButton({
       onClick={onClick}
     >
       {icon && <FontAwesomeIcon icon={icon} size={isMobile ? 'sm': undefined} style={isMobile ? {marginRight: '8px'} : {marginRight: '16px'}}/>}
-      {text}
+      {children}
     </StyledStdBtn>
   );
 }

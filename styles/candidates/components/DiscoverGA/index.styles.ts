@@ -28,9 +28,16 @@ export const DiscoverWrapper = styled.div`
   width: 100%;
   max-width: ${maxWidthAll};
 
+
   @media (max-width: ${mediaQuery}) {
-    padding: 80px ${globalHorizontalPaddingMobile};
+    padding: 80px 0;
     gap: 32px;
+    max-width: 100%;
+
+    .discover-title {
+      max-width: 100%;
+      padding-inline: 36px;
+    } 
   }
 `;
 
@@ -39,7 +46,7 @@ export const DiscoverContent = styled.div`
   align-items: center;
   gap: 36px;
   min-height: 450px;
-
+  max-width: 100%;
   @media (max-width: ${mediaQuery}) {
     flex-direction: column-reverse;
     gap: 24px;
@@ -55,9 +62,23 @@ export const DiscoverReadMoreWrapper = styled.div`
   align-items: flex-start;
   max-width: 50%;
 
+  .discover-text {
+    color: white;
+    text-align: justify;
+    font-weight: 500;
+  }
+  .read-more-btn {
+    padding-inline: 40px;
+    font-weight: 600;
+  }
+
   @media (max-width: ${mediaQuery}) {
-    width: 100%;
     min-width: 100%;
+    padding: 36px;
+
+    .read-more-btn {
+      padding-inline: 26px;
+    }
   }
 `;
 

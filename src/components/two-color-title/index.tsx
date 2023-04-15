@@ -17,6 +17,7 @@ export interface TwoColorTitleParameters extends IText {
   breakingLine?: boolean;
   color1?: string;
   color2?: string;
+  wrapperClassName?: string
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
@@ -30,10 +31,11 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   styles,
   color1,
   color2,
+  wrapperClassName,
   ...rest
 }) => {
   return (
-    <TwoColorTitleWrapper style={wrapperStyles}>
+    <TwoColorTitleWrapper style={wrapperStyles} className={wrapperClassName}>
       {text1 && (
         <Text
           color={color1 ? color1 : blue700}
