@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   AccordeonHeader,
-  AccordeonButton,
   AccordeonContent,
   AccordeonTitle,
   AccordeonWrapper,
@@ -26,7 +25,7 @@ function Accordeon({ title, content }: AccordeonProps) {
     <AccordeonWrapper isOpen={isOpen}>
       <AccordeonHeader isOpen={isOpen} onClick={toggleContent}>
         <AccordeonTitle>{title}</AccordeonTitle>
-        <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronLeft} size="lg" className={"accordeon-icon" + isOpen && ' open'} style={{marginTop: '6px'}} />
+        <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronLeft} size="lg" className={"accordeon-icon" + isOpen && ' open'} style={{marginTop: '6px', width: '20px'}} />
       </AccordeonHeader>
       {isOpen && <AccordeonContent isOpen={isOpen}>{content}</AccordeonContent>}
     </AccordeonWrapper>

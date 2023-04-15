@@ -34,7 +34,7 @@ export const AccordeonWrapper = styled.div<AccordeonWrapperProps>`
   width: 100%;
   gap: 24px;
   border-radius: 14px;
-  padding:${props => props.isOpen ? "40px 40px" : '40px 40px'};
+  padding: 40px;
   background-color: ${white};
   border: ${props => props.isOpen ? `2px solid ${blue700}` : '2px solid transparent'};
   box-shadow:0px 6px 16px 0px rgba(74, 58, 255, 0.19);
@@ -64,7 +64,6 @@ export const AccordeonTitle = styled.h3`
   font-weight: 600;
   line-height: 32px;
   color: ${blue700};
-  max-width:670px;
   padding:0;
   margin:0;
 
@@ -77,28 +76,6 @@ interface AccordeonButtonProps {
   bgColor: string
 }
 
-export const AccordeonButton = styled.button<AccordeonButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 51px;
-  height:51px;
-  border-radius: 50%;
-  background-color: ${props => props.bgColor};
-  border: none;
-  cursor: pointer;
-  box-shadow: 0px 5px 16px rgba(8, 15, 52, 0.06);
-
-  @media (max-width: ${mediaQuery}) {
-    width: 40px;
-    height:40px;
-    img{
-      width: 13px;
-      height:6px;
-    }
-  }
-`
-
 export const AccordeonContent = styled.p<AccordeonWrapperProps>`
   display: flex;
   flex-direction: column;
@@ -108,7 +85,8 @@ export const AccordeonContent = styled.p<AccordeonWrapperProps>`
   font-size:16px;
   font-weight:500;
   margin:0;
-  max-width:723px;
+  max-width: 723px;
+  width: 100%;
   transition: opacity 2s ease-in-out;
   animation: slideIn 0.4s ease-in-out;
 
