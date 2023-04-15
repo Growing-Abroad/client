@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: 758px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   text-align: center;
   color: ${theme.colors.blue700};
