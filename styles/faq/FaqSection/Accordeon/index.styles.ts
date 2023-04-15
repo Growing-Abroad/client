@@ -49,8 +49,12 @@ export const AccordeonHeader = styled.div<AccordeonWrapperProps>`
   flex-direction: row;
   align-items: start;
   justify-content: space-between;
+  gap: 16px;
   width: 100%;
+  cursor: pointer;
 
+  .accordeon-icon {
+  }
   @media (max-width: ${mediaQuery}) {
     gap:10px;
   }

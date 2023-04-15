@@ -69,7 +69,7 @@ export default function CoachingHeroSection() {
                 : { textTransform: "uppercase", fontWeight: "800" }
             }
           >
-            Book a Coaching Now
+            {isMobile ? 'Book Now' : 'Book a Coaching Now'}
           </StdButton>
         </HeroTitleWrapper>
       </ContainerHero>

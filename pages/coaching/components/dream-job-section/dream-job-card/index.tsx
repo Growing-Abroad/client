@@ -18,6 +18,7 @@ const Service = styled.div`
     display: flex;
     justify-content: end;
     gap: 40px;
+    box-shadow: 0px 5px 10px -2px rgba(0,0,0,0.2);
 
     &.reversed {
         flex-direction: row-reverse;
