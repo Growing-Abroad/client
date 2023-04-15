@@ -4,8 +4,10 @@ import worldPicture from "@/../public/assets/world-icon.svg";
 import expertPicture from "@/../public/assets/person-icon.svg";
 import WorkInCard from "./WorkInCard";
 import TwoColorTitle from "@/components/two-color-title";
+import useAppContext from "@/hooks/useAppContext";
 
 function WorkIn() {
+  const { isMobile } = useAppContext();
   return (
     <S.Container>
       <TwoColorTitle
@@ -13,13 +15,14 @@ function WorkIn() {
         text2="Germany"
         hasSpaceBtw
         as="h2"
+        wrapperStyles={{maxWidth: '100%'}}
       />
 
       <S.CardSpace>
         <WorkInCard
           title="Student or professional"
           photo={studentHat}
-          imgStyles={{ maxWidth: "175px", maxHeight: "101px" }}
+          imgStyles={isMobile ? { maxWidth: "120px", maxHeight: "101px"  } : { maxWidth: "175px", maxHeight: "101px" }}
           description="No matter if you have a higher education degree or you are still studying , we will make it possible for you to get your dream job."
         />
         <WorkInCard

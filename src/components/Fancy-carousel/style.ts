@@ -216,8 +216,8 @@ export const TextBlock = styled.div`
   left: 0;
   bottom: 0;
   top: 0;
-  max-width: 58%;
-  width: 58%;
+  max-width: 66%;
+  width: 66%;
   padding: 44px 30px;
   background-color: ${blue500};
   color: #fff;
@@ -230,7 +230,7 @@ export const TextBlock = styled.div`
   p {
     font-size: 1.125rem;
     line-height: 1.125rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   p,
@@ -274,9 +274,17 @@ export const FromWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-bottom: auto;
+  p { 
+    letter-spacing: 1.3px;
+    margin: 0;
+  }
 
   @media (max-width: ${mediaQuery}) {
     gap: 10.15px;
+    margin-top: auto;
+    margin-bottom: 8px;
+
   }
 `;
 
@@ -344,7 +352,6 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   }
 
   h4 {
-    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     line-height: 24.38px;
@@ -364,7 +371,6 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   }
 
   p {
-    font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

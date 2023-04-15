@@ -1,14 +1,12 @@
 import { useState } from "react";
 
 import Image, { StaticImageData } from "next/image";
-
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import useAppContext from "@/hooks/useAppContext";
 import StdButton from "../generics/StdButton/StdButton";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import LinkedinImage from "@/../public/assets/icons/linkedin.webp";
-
 import {
   FlexboxSlide,
   FlexboxSlider,
@@ -117,7 +115,7 @@ export default function FancyCarousel(props: Props) {
               <StdButton
                 icon={faPlay}
                 className="watch-video-btn"
-                style={{ marginTop: "auto", width: "max-content" }}
+                style={{ width: "max-content" }}
               >
                 Watch Video
               </StdButton>
@@ -159,9 +157,9 @@ export default function FancyCarousel(props: Props) {
                       style={{
                         // marginTop: `${isMobile ? '6px' : 'auto'}`,
                         // marginBottom: `${isMobile ? '35%' : 'auto'}`,
-                        width: `${isMobile ? "100%" : "max-content"}`,
-                        height: `${isMobile ? "80%" : "auto"}`,
-                        fontSize: `${isMobile ? "14px" : "19px"}`,
+                        width: isMobile ? "100%" : "max-content",
+                        height: isMobile ? "80%" : "auto",
+                        fontSize: isMobile ? "14px" : "19px",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",

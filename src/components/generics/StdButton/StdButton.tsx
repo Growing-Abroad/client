@@ -34,6 +34,8 @@ const StyledStdBtn = styled.button<StyledStdBtnProps>`
   transition: 350ms;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 
   &:hover {
     background-color: ${({ theme, hover }) =>
@@ -76,7 +78,7 @@ export default function StdButton({
       style={style}
       onClick={onClick}
     >
-      {icon && <FontAwesomeIcon icon={icon} style={isMobile ? {marginRight: '8px'} : {marginRight: '16px'}}/>}
+      {icon && <FontAwesomeIcon icon={icon} size={isMobile ? 'sm': undefined} style={isMobile ? {marginRight: '8px'} : {marginRight: '16px'}}/>}
       {text}
     </StyledStdBtn>
   );

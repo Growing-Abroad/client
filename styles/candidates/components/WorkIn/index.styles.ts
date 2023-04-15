@@ -15,7 +15,8 @@ const {
 } = theme;
 
 export const Container = styled.section`
-  width: min(100%, ${maxWidthAll});
+  max-width: ${maxWidthAll};
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +26,7 @@ export const Container = styled.section`
   color: ${theme.colors.blue700};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px ${globalHorizontalPaddingMobile};
+    padding: 80px 36px;
   }
 `;
 export const CardSpace = styled.section`
@@ -34,6 +35,7 @@ export const CardSpace = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 38px;
   margin-top: 48px;
 
@@ -49,14 +51,16 @@ export const Card = styled.article`
   border-radius: 8px;
 
   border: 3px solid transparent;
-  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
-  transition: 500ms;
-  padding: 77px 50px;
+  transition: 400ms;
+  padding: 50px;
+  max-width: 450px;
+  height: 500px;
 
   &:hover {
     border: 3px solid ${blue700};
-    transform: translateY(-20px);
+    transform: scale(1.1);
   }
 
   h3 {
@@ -85,10 +89,19 @@ export const Card = styled.article`
     font-size: 1rem;
     line-height: 1.5rem;
     color: ${blue700};
+    font-weight: 400;
+
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     width: 100%;
     text-align: center;
+    padding: 50px;
+    height: unset;
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+    }
   }
 `;
