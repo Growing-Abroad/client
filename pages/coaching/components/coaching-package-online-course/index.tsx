@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { theme } from "@/styles/theme";
+import { yellow } from "@mui/material/colors";
 
 const {colors: { yellow400, blue700 }} = theme;
 
@@ -46,7 +47,8 @@ const PackageCourseContent = styled.div`
         }
         .price-wrapper {
             right: unset;
-            left: 52px;
+            left: 23px;
+
         }
     }
 
@@ -58,8 +60,8 @@ const PackageCourseContent = styled.div`
         p {
             margin: 0;
             font-weight: 600;
-            font-size: 1.25rem;
-            line-height: 1.5rem;
+            font-size: 1.5rem;
+            line-height: 1.875rem;
             text-align: justify;
         }
         ul {
@@ -106,7 +108,7 @@ const PackageCourseContent = styled.div`
 
             .price-wrapper {
                 right: unset;
-                left: 35px;
+                left: 30px;;
             }
         }
         
@@ -156,8 +158,8 @@ const ImageWrapper = styled.div`
     .price-wrapper {
         position: absolute;
         z-index: 2;
-        right: 52px;
-        top: 121px;
+        right: 23px;
+        top: 28%;
         gap: 12px;
         display: flex;
         flex-direction: column;
@@ -177,6 +179,11 @@ const ImageWrapper = styled.div`
             &.new-price {
                 font-size: 3rem;
                 line-height: 3.688rem;
+                color: ${yellow400};
+            }
+            &.heading {
+                font-size: 2rem;
+                color: ${yellow400};
             }
         }
     }
@@ -185,9 +192,9 @@ const ImageWrapper = styled.div`
         height: 268px;
         
         .price-wrapper {
-            top: 90px;
+            top: 20%;
             gap: 18px;
-            right: 35px;
+            right: 30px;
 
             .price {
 
@@ -200,6 +207,12 @@ const ImageWrapper = styled.div`
                 &.new-price {
                     font-size: 1.5rem;
                     line-height: 1.813rem;
+                }
+
+                &.heading {
+                    font-size: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
                 }
             }
         }
@@ -229,6 +242,7 @@ export default function CoachingPackageOnlineCourseSection() {
                     <Image src={CoachingPackage} alt='coaching package' style={{width: '100%', height: '100%'}} />
                     <Image src={isMobile ? LeftMobile : LeftRetangle} alt='blue retangle to frame the price' className="blue-retangle" />
                     <div className="price-wrapper">
+                        <span className="price heading">Best <span>Offer</span></span>
                         <span className="price old-price">1597 €</span>
                         <span className="price new-price">597 €</span>
                     </div>
@@ -259,6 +273,7 @@ export default function CoachingPackageOnlineCourseSection() {
                     <Image src={OnlineCourse} alt='Online Course' style={{width: '100%', height: '100%'}} />
                     <Image src={isMobile ? RightMobile : RightRetangle} alt='blue retangle to frame the price' className="blue-retangle" />
                     <div className="price-wrapper">
+                        <span className="price heading">Best <span>Offer</span></span>
                         <span className="price old-price">1597 €</span>
                         <span className="price new-price">597 €</span>
                     </div>
