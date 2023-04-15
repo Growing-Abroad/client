@@ -35,7 +35,8 @@ export default function DiscoverGA() {
         text2="Growing Abroad"
         hasSpaceBtw
         as="h2"
-        wrapperClassName="discover-title"
+        wrapperClassName="discover-wrapper"
+        className="discover-title"
       />
 
       <DiscoverContent>

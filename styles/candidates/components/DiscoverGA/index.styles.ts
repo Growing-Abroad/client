@@ -34,10 +34,16 @@ export const DiscoverWrapper = styled.div`
     gap: 32px;
     max-width: 100%;
 
-    .discover-title {
+    .discover-wrapper {
       max-width: 100%;
       padding-inline: 36px;
     } 
+
+    .discover-title {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+    }
   }
 `;
 
