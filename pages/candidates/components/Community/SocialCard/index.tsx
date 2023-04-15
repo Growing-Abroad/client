@@ -1,27 +1,43 @@
+import { useCallback, useEffect, useState } from "react";
 import useAppContext from "@/hooks/useAppContext";
 import { ISocial } from "@/utils/socials";
 import Image from "next/image";
 import {
   Social,
   SocialText,
-} from "../../../../../styles/candidates/components/Community/SocialCard/index.styles";
+  MyCounter,
+} from "@/../styles/candidates/components/Community/SocialCard/index.styles";
 
-export default function SocialCard(social: ISocial) {
+interface ImageSizeProps {
+  mobile: number;
+  desktop: number;
+}
+
+interface Props extends ISocial {
+  counterOn: boolean;
+}
+
+export default function SocialCard(props: Props) {
+  const imageSize: ImageSizeProps = {
+    desktop: 120,
+    mobile: 30,
+  };
+
   const { isMobile } = useAppContext();
 
   return (
     <Social>
-      <a href={social.socialLink} target="_blank" rel="noreferrer">
+      <a href={props.socialLink} target="_blank" rel="noreferrer">
         <Image
-          src={social.source}
-          alt={social.name}
-          width={isMobile ? 60 : 120}
-          height={isMobile ? 60 : 120}
+          src={props.source}
+          alt={props.name}
+          width={imageSize[isMobile ? "mobile" : "desktop"]}
+          height={imageSize[isMobile ? "mobile" : "desktop"]}
         />
       </a>
       <SocialText>
-        <p>+{social.followNumber.toLocaleString("en").replace(/,/g, ",")}</p>
-        <span>{social.followType}</span>
+        <p>+{props.counterOn ? <MyCounter end={props.followNumber} /> : "0"}</p>
+        <span>{props.followType}</span>
       </SocialText>
     </Social>
   );
