@@ -20,7 +20,7 @@ function CTAction() {
         <section className="left-side" >
           <h1>Land your Dream Job in <span>Germany</span> or <span>Europe</span>
           </h1>
-          <StdButton icon={faPlay} >
+          <StdButton >
             Buy Online Course Now
           </StdButton>
         </section>

@@ -78,10 +78,37 @@ export const ContainerCards = styled.div`
   height: 100%;
   background-color: white;
   padding-top:152px;
+  .bonus{
+    padding-left:100px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+
+
+    h3{
+      width:529px;
+      text-align:left;
+      margin-left: 550px;
+      margin-top:-50px;
+
+   
+    }
+  }
   @media (max-width: 768px) {
     padding-left:60px;
     padding-top:95px;
     gap:90px;
+    .bonus{
+      margin-top:-60px;
+      padding:0;
+      padding-left:20px;
+      justify-content:flex-start;
+      h3{
+        margin:0;
+        font-size:32px;
+        width:273px;
+      }
+    }
   }
 `;
 interface ContentCardProps{

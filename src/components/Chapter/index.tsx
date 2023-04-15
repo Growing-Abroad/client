@@ -10,17 +10,17 @@ import useAppContext from '@/hooks/useAppContext';
 import TwoColorTitle from '../two-color-title';
 
 export function Chapter() {
-  const {isMobile} = useAppContext();
+  const { isMobile } = useAppContext();
   return (
     <S.Container>
-      <TwoColorTitle text1='What you can expect' text2='in this Course' hasSpaceBtw/>
+      <TwoColorTitle text1='What you can expect' text2='in this Course' hasSpaceBtw />
       <S.Content>
-        
-      <S.Title>Chapter</S.Title>
-      <VerticalBar/>
+
+        <S.Title>Chapter</S.Title>
+        <VerticalBar />
         <S.ContainerCards>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -73,10 +73,10 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index2} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index2} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Process of getting
-a VISA</S.CardTitle>
+                a VISA</S.CardTitle>
               <div>
                 <S.CardText>
                   <span><svg
@@ -127,11 +127,11 @@ a VISA</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Optimizing
-your application
-documents</S.CardTitle>
+                your application
+                documents</S.CardTitle>
               <div>
                 <S.CardText>
                   <span><svg
@@ -182,12 +182,12 @@ documents</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index4} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index4} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Job Search
-Strategy to find
-the right jobs
-in Germany</S.CardTitle>
+                Strategy to find
+                the right jobs
+                in Germany</S.CardTitle>
               <div>
                 <S.CardText>
                   <span><svg
@@ -253,7 +253,7 @@ in Germany</S.CardTitle>
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index5} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+            <Image src={index5} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Discover the research process of the company and the hiring managers</S.CardTitle>
               <div>
@@ -320,8 +320,8 @@ in Germany</S.CardTitle>
               </div>
             </S.CardInfo>
           </S.ContentCard>
-          <S.ContentCard  reverse>
-            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={ isMobile ? 188 : 373} />
+          <S.ContentCard reverse>
+            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Rock your job interview and land your dream job</S.CardTitle>
               <div>
@@ -387,9 +387,12 @@ in Germany</S.CardTitle>
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>
+          </S.ContentCard>   
 
-          {/* <ScrollBar /> */}
+          <div  className='bonus'>
+         <S.CardTitle>
+          Bonus Chapter with Expert Interviews
+        </S.CardTitle></div>  
         </S.ContainerCards>
       </S.Content>
     </S.Container>
