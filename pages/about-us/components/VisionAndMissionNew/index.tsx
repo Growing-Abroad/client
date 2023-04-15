@@ -10,7 +10,7 @@ function VisionAndMissionNew() {
     <>
       <Container className={classes.sectionContainer}>
         <Row className={classes.section}>
-          <Col lg="6" className={classes.missionBg} style={{ backgroundImage: 'url(' + VisionAndMissionBackground.src + ')' }}>
+          <Col lg="6" className={classes.missionBg} style={{ backgroundImage: 'url(' + VisionAndMissionBackground.src + ')', backgroundPosition: 'left' }}>
             <div className={classes.missionContainer}>
               <div className={classes.missionInner}>
                 <h3>Goal</h3>
