@@ -60,4 +60,4 @@ export const socials2: ISocial[] = [
     followNumber: 300,
     followType: FollowType.courseStudents,
   },
-]
+];

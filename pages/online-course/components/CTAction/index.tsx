@@ -1,4 +1,4 @@
-import * as S from "./styles"
+import * as S from "../../../../styles/online-course/components/CTActions/styles"
 import gaCoaches from '@/../public/assets/cta-img.svg';
 import border from '@/../public/assets/border-bottom.webp';
 import ctaMaskMobile from '@/../public/assets/pages/main-page/hero-section-mask.svg';

@@ -1,32 +1,47 @@
 import { useState } from "react";
-import {
-  FlexboxSlide,
-  FlexboxSlider,
-  FromWrapper,
-  TextBlock,
-  TextBlockH3,
-} from "./style";
+
 import Image, { StaticImageData } from "next/image";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import useAppContext from "@/hooks/useAppContext";
 import StdButton from "../generics/StdButton/StdButton";
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import LinkedinImage from "@/../public/assets/icons/linkedin.webp";
+import {
+  FlexboxSlide,
+  FlexboxSlider,
+  FromWrapper,
+  ImageBackground,
+  ImageBackgroundContent,
+  LinkedinIcon,
+  TextBlock,
+  TextBlockH3,
+  StdButtonContainer,
+} from "./style";
 
-export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
   title: string;
+  subtitle?: string;
   from: string;
+  texts: string[];
   countryFlag: string;
   href: string;
 }
 export interface Props {
-  dataArray: TCarouselData;
+  dataArray: ICarouselData[];
+  haveSmallsSlides?: boolean;
+  isIntroducingAPerson?: boolean;
+  initialSlideIndex?: number;
+  IsCentralized?: boolean;
+  haveMaxWidth?: boolean;
 }
 
 export default function FancyCarousel(props: Props) {
-  const {windowSize: {width}, isMobile} = useAppContext();
+  const {
+    windowSize: { width },
+    isMobile,
+  } = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -34,6 +49,7 @@ export default function FancyCarousel(props: Props) {
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
   function initialSlide(): number {
+    if (props.initialSlideIndex) return props.initialSlideIndex;
     if (width > mediaQueryNumber && props.dataArray.length > 2) {
       return 2;
     } else {
@@ -62,39 +78,102 @@ export default function FancyCarousel(props: Props) {
     return "";
   }
 
+  const isActive = (i: number) => selectedSlide === i;
+
   return (
-    <FlexboxSlider className="flexbox-slider my-flexbox-slider">
-      {props.dataArray.map((item, i) => (
-        <FlexboxSlide
-          className={handleSlideClasses(i)}
-          key={i + "-" + item.title}
-          onClick={() => setSelectedSlide(i)}
-        >
-          <TextBlock className="text-block">
+    <FlexboxSlider
+      className="flexbox-slider my-flexbox-slider"
+      isSmall={props.haveSmallsSlides}
+      isIntroducingAPerson={props.isIntroducingAPerson}
+      isCentralized={props.IsCentralized}
+    >
+      {props.dataArray.map((item, i) =>
+        !props.haveSmallsSlides ? (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + "-" + item.title}
+            onClick={() => setSelectedSlide(i)}
+            isActive={isActive(i)}
+            isSmall={props.haveSmallsSlides}
+            isIntroducingAPerson={props.isIntroducingAPerson}
+            haveMaxWidth={props.haveMaxWidth ?? false}
+          >
+            <TextBlock className="text-block">
+              <TextBlockH3>{item.title}</TextBlockH3>
 
-            <TextBlockH3>{item.title}</TextBlockH3>
+              <FromWrapper>
+                <p>{item.from}</p>
+                <Image
+                  src={`countries-flags/${item.countryFlag}.svg`}
+                  alt={`flag of ${item.countryFlag}`}
+                  width={isMobile ? 25 : 64}
+                  height={isMobile ? 17.58 : 45}
+                  className="country-flag"
+                />
+              </FromWrapper>
 
-            <FromWrapper>
-              <p>{item.from}</p>
-              <Image 
-              src={`countries-flags/${item.countryFlag}.svg`} 
-              alt={`flag of ${item.countryFlag}`} 
-              width={isMobile ? 25 : 64} height={isMobile ? 17.58 : 45} 
-              className="country-flag" />
-            </FromWrapper>
-
-            <StdButton 
-            icon={faPlay} 
-            className="watch-video-btn" 
-            style={{marginTop: 'auto', width: 'max-content'}}
+              <StdButton
+                icon={faPlay}
+                className="watch-video-btn"
+                style={{ width: "max-content", padding: isMobile ? '8px 20px' : '20px 40px' }}
+              >
+                Watch Video
+              </StdButton>
+            </TextBlock>
+            <Image src={item.imgSrc} alt="Slide Image" className="slide-img" />
+          </FlexboxSlide>
+        ) : (
+          <FlexboxSlide
+            className={handleSlideClasses(i)}
+            key={i + "-" + item.title}
+            onClick={() => setSelectedSlide(i)}
+            isSmall
+            isActive={isActive(i)}
+            isIntroducingAPerson={props.isIntroducingAPerson}
+            haveMaxWidth={props.haveMaxWidth ?? false}
+          >
+            <ImageBackground
+              src={item.imgSrc.src}
+              isIntroducingAPerson={props.isIntroducingAPerson}
+              isActive={isActive(i)}
             >
-              Watch Video
-            </StdButton>
-          </TextBlock>
-
-          <Image src={item.imgSrc} alt="Slide Image" className="slide-img"/>
-        </FlexboxSlide>
-      ))}
+              <ImageBackgroundContent
+                isIntroducingAPerson={props.isIntroducingAPerson}
+                isActive={isActive(i)}
+              >
+                {props.isIntroducingAPerson && isActive(i) && (
+                  <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
+                )}
+                <h3>{item.title}</h3>
+                {item.subtitle && <h4>{item.subtitle}</h4>}
+                <div className="paragraph-container">
+                  <p>{item.from}</p>
+                  {item.texts.length &&
+                    item.texts.map((text, i) => <p key={i}>{text}</p>)}
+                </div>
+                {!props.isIntroducingAPerson && (
+                  <StdButtonContainer>
+                    <StdButton
+                      style={{
+                        // marginTop: `${isMobile ? '6px' : 'auto'}`,
+                        // marginBottom: `${isMobile ? '35%' : 'auto'}`,
+                        width: isMobile ? "100%" : "max-content",
+                        height: isMobile ? "80%" : "auto",
+                        fontSize: isMobile ? "14px" : "19px",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      Find Experts Now
+                    </StdButton>
+                  </StdButtonContainer>
+                )}
+              </ImageBackgroundContent>
+            </ImageBackground>
+          </FlexboxSlide>
+        )
+      )}
     </FlexboxSlider>
   );
 }

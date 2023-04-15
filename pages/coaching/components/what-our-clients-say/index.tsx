@@ -17,7 +17,7 @@ const WrapperSection = styled.section`
     align-items: center;
     gap: 73px;
 
-    @media screen {
+    @media (max-width: ${mediaQuery}) {
         padding: 138px ${globalHorizontalPaddingMobile} 133px;  
         gap: 30px;
     }

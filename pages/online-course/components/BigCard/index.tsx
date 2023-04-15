@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as S from './styles';
+import * as S from '../../../../styles/online-course/components/BigCard/styles';
 import onlineCourse from '@/../public/assets/Photos-Main-Page/online-course-success.webp';
 import StdButton from '@/components/generics/StdButton/StdButton';
 import useAppContext from '@/hooks/useAppContext';

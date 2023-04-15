@@ -239,8 +239,8 @@ export default function CoachingPackageOnlineCourseSection() {
                         Get our Premium offer with all the Coaching Sessions from above and save more than 250€
                     </p>
                     <ul>
-                        {detailsContent.map((liText) => (
-                            <li>
+                        {detailsContent.map((liText, i) => (
+                            <li key={i}>
                                 <FontAwesomeIcon className="check-icon" icon={faCheck} color={yellow400} size={"xl"} />
                                 {liText}
                             </li>
@@ -269,8 +269,8 @@ export default function CoachingPackageOnlineCourseSection() {
                         Get our absolute special offer. The Online Course "How to land your dream job in Germany or Europe"
                     </p>
                     <ul>
-                        {detailsContent.map((liText) => (
-                            <li>
+                        {detailsContent.map((liText, i) => (
+                            <li key={i}>
                                 <FontAwesomeIcon className="check-icon" icon={faCheck} color={yellow400} fontWeight={900} />
                                 {liText}
                             </li>

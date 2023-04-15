@@ -1,41 +1,37 @@
-import TwoColorTitle from '@components/two-color-title';
-import { socials2 } from '@utils/socials';
-import React from 'react';
-import UanAndManu from '@assets/pages/about-us/about-us-coaches.webp';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { theme } from '@styles/theme';
-import YoutubeplayButton from 'public/assets/youtube-play-btn.webp';
-import { Col, Container, Row } from 'react-bootstrap';
-import classes from './style.module.css';
-import { Montserrat } from '@next/font/google';
-import * as S from './styles';
-import useAppContext from '@/hooks/useAppContext';
+import TwoColorTitle from "@components/two-color-title";
+import React from "react";
+import UanAndManu from "@assets/pages/about-us/about-us-coaches.webp";
+import Image from "next/image";
+import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
+import classes from "./style.module.css";
+import { Montserrat } from "next/font/google";
+import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
+import useAppContext from "@/hooks/useAppContext";
 
 const font = Montserrat({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
-
 function WhoWeAre() {
-  const youtube = socials2?.find((social) => social.name === 'youtube');
-  const {isMobile} = useAppContext();
-  const {
-    colors: { secondaryBlue },
-  } = theme;
+  const { isMobile } = useAppContext();
 
   return (
-    <S.Container >
+    <S.Container>
       <TwoColorTitle
         text1="Who"
         text2="We Are"
         hasSpaceBtw
-        wrapperStyles={{ width: '100%', justifyContent: 'center', height:`${isMobile ? '44px' : 'auto'}` }}
+        wrapperStyles={{
+          width: "100%",
+          justifyContent: "center",
+          height: `${isMobile ? "44px" : "auto"}`,
+        }}
         as="h2"
       />
 
       <S.ImageContainer className={classes.imageContainer}>
-        <Image width={1128} height={628}
+        <Image
+          width={1128}
+          height={628}
           src={UanAndManu}
           alt="uan and manu"
           className={classes.youtubeImage}
@@ -44,7 +40,7 @@ function WhoWeAre() {
           <Image
             src={YoutubeplayButton}
             alt="youtube play button"
-            className={classes.youtubePlayButton + ' ' + classes.blurbRippleOut}
+            className={classes.youtubePlayButton + " " + classes.blurbRippleOut}
           ></Image>
         </div>
       </S.ImageContainer>

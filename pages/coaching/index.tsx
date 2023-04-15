@@ -6,7 +6,8 @@ import DreamJobSection from "./components/dream-job-section";
 import VisionAndMissionNew from "@pages/about-us/components/VisionAndMissionNew";
 import CoachingPackageOnlineCourseSection from "./components/coaching-package-online-course";
 import WhatOurClientsSay from "./components/what-our-clients-say";
-import FaqSection from "@pages/faq/components/FaqSection";
+import ReusedFaq from "@/components/reused-faq";
+import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 
 export default function Coaching() {
     return <>
@@ -16,10 +17,10 @@ export default function Coaching() {
         <DreamJobSection />
         <CoachingPackageOnlineCourseSection />
         <WhatOurClientsSay />
-        <FaqSection />
+        <ReusedFaq />
     </>
 }
 
 Coaching.getLayout = function getLayout(page: ReactElement) {
-    return <PageLayout>{page}</PageLayout>;
+    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
   };

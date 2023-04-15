@@ -1,7 +1,7 @@
 import StdButton from '@/components/generics/StdButton/StdButton';
 import threePersons from '@/../public/assets/pages/online-course/three-persons.png';
 import Image from 'next/image';
-import * as S from './style';
+import * as S from '../../../../styles/online-course/components/WhyBuyCourse/style';
 import useAppContext from '@/hooks/useAppContext';
 
 export function WhyBuyCourse() {

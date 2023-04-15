@@ -3,7 +3,7 @@ import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
 
 const {
-  colors: { primaryYellow, primaryBlue,secondaryBlue, blue500, white },
+  colors: {blue700,blue400 },
 } = theme;
 const {
   sizes: {
@@ -65,7 +65,7 @@ export const Title = styled.h5`
   top: 0;
   left:50%;
   margin-left:-56px;
-  color:${secondaryBlue};
+  color:${blue400};
 `;
 
 export const ContainerCards = styled.div`
@@ -156,7 +156,7 @@ font-size:32px;
 width:506px;
 letter-spacing:1.3px;
 font-weight: 600;
-color:${primaryBlue};
+color:${blue700};
 @media (max-width: ${mediaQuery}) {
     white-space: normal;
     width:327px;
@@ -172,7 +172,7 @@ height:36px;
 font-size: 16px;
 letter-spacing: 0.04em;
 gap:26px;
-color:${primaryBlue};
+color:${blue700};
 @media (max-width: ${mediaQuery}) {
   height:auto;
   width:300px;

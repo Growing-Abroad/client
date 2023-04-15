@@ -14,12 +14,12 @@ interface IContainerProps{
   backgroundImage:string
 }
 
-export const Container = styled.section<IContainerProps>`
+export const Container = styled.div<IContainerProps>`
   width: 100%;
   background-image: url('${({backgroundImage})=>backgroundImage}');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position:left;
+  background-position: right;
   height: 40rem;
   display: flex;
   gap: 2rem;
@@ -27,11 +27,13 @@ export const Container = styled.section<IContainerProps>`
   align-items: center;
   position: relative;
 
+  @media (max-width: ${mediaQuery}) {
+      background-position: center;
+      
+    }
 
   .border-image{
     width: 100%;
-    height: 154px;
-
     left: 0;
     bottom: 0;
     position: absolute;
@@ -39,9 +41,12 @@ export const Container = styled.section<IContainerProps>`
 
     @media (max-width: 1513px) {
       height: calc(9.625rem + ((1vw - 15.13px) * 8.0332));
+      background-position: center;
+      
     }
     @media (max-width: 430px) {
       height: 67px;
+      background-position: center;
     }
  
   }
