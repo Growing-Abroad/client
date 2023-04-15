@@ -34,6 +34,7 @@ export const Container = styled.div<IContainerProps>`
 
   .border-image{
     width: 100%;
+    height: 154px;
     left: 0;
     bottom: 0;
     position: absolute;

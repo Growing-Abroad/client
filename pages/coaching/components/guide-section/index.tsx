@@ -8,7 +8,6 @@ import Image from "next/image";
 import { theme } from "@/styles/theme";
 import useAppContext from "@/hooks/useAppContext";
 import { variables } from "@/styles/global-variables";
-import FlipCard from "@/components/generics/FlipCard";
 
 const { colors: {blue700} } = theme; 
 const {sizes: { mediaQuery }} = variables;
@@ -20,6 +19,11 @@ export const CardsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin: 36px 0 83px;
+
+    @media (max-width: ${mediaQuery}) {
+        gap: 14px;
+        margin-bottom: 45px;
+    }
 `
 
 
@@ -40,16 +44,16 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    /* transition: 500ms; */
+    transition: 500ms;
     border: 3px solid transparent;
 
-    /* &:hover {
+    &:hover {
     border: 3px solid ${blue700};
     transform: scale(1.1);
-    } */
+    }
 
     @media (max-width: ${mediaQuery}) {
-        min-height: 134px;
+        min-height: unset;
         width: 102px;
         font-size: 16px;
         line-height: 20px;
@@ -67,24 +71,31 @@ export default function GuideSection() {
         {text: '+ Your Friend', icon: yourFriend},
     ]
 
-    return <CenteredSection contentStyles={isMobile ? {padding: '16px 36px 0', paddingInline: '36px'} : {paddingTop: '24px', paddingBottom: '0'}}>
-    <TwoColorTitle 
-    as="h2"
-    text1="We guide you to get your dream job in" 
-    text2="Germany or Europe as" 
-    hasSpaceBtw 
-    wrapperStyles={{flexDirection: `column`, maxWidth: '100%', width: '100%'}} 
-    styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.5rem'}}
-    />
-    <CardsWrapper className="flip-card">
-        {cardsContent1.map((content,i) => 
-                <Card className="flip-card-front" key={content.text + i}>
-                    <Image src={content.icon} alt={content.text + " icon"} height={isMobile ? 32 : 70} width={isMobile ? 32 : 70}  />
-                    {content.text}
-                </Card>
+    return(
+        <CenteredSection 
+            contentStyles={isMobile 
+                ? {padding: '16px 36px 0', paddingInline: '36px'} 
+                : {paddingTop: '24px', paddingBottom: '0'}}
+            >
+            <TwoColorTitle 
+            as="h2"
+            text1="We guide you to get your dream job in" 
+            text2="Germany or Europe as" 
+            hasSpaceBtw 
+            wrapperStyles={{flexDirection: `column`, maxWidth: '100%', width: '100%'}} 
+            styles={isMobile ? {fontSize: '1.5rem', lineHeight: '1.875rem'} : {fontSize: '3.5rem'}}
+        />
+            <CardsWrapper className="flip-card">
+                {cardsContent1.map((content,i) => 
+                    <Card className="flip-card-front" key={content.text + i}>
+                        <Image 
+                        src={content.icon} alt={content.text + " icon"} height={isMobile ? 36 : 70} 
+                        width={isMobile ? 36 : 70}  />
+                        {content.text}
+                    </Card>
+                )}
                 
-        )}
-        
-    </CardsWrapper>
-</CenteredSection>
+            </CardsWrapper>
+        </CenteredSection>
+    )
 }
