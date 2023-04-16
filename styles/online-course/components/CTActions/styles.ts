@@ -32,6 +32,7 @@ export const BackgroudCTA = styled.section`
       left: 0;
       right: 0;
       position: absolute;
+
     }
   }
   .white-line {
@@ -43,13 +44,12 @@ export const BackgroudCTA = styled.section`
   }
   @media (max-width: ${mediaQuery}) {
     padding: 0;
-    max-height: 80vh;
+    height:700px;
     .cta-mask{
-      padding-bottom:40px;
       border:none;
       background-color:#fff;
       img{
-        bottom:39px;
+        bottom:0px;
       }
     }
   }
@@ -71,7 +71,7 @@ export const CtaButton = styled.button`
   align-items: center;
 
   &:hover {
-      cursor: pointer; 
+      cursor: pointer;
       background-color: ${blue700};
       color: ${yellow400};
   }
@@ -88,7 +88,7 @@ export const Container = styled.section`
   max-width: ${variables.sizes.maxWidthAll};
 
   background-color: ${blue500};
-  
+
   position: relative;
 
   .left-side {
@@ -126,7 +126,7 @@ export const Container = styled.section`
       position: absolute;
       bottom: 70px;
       left: 40px;
-          
+
       img {
         bottom: 10px;
         position: absolute;
@@ -134,19 +134,18 @@ export const Container = styled.section`
       }
     }
   }
-    
+
   @media (max-width: ${mediaQuery}) {
     /* background-image: url(${manuUanHappy.src}); */
     background-size: 130%;
     background-repeat: no-repeat;
     background-position: bottom;
-    
+
 
     .left-side {
       width: 100%;
       padding: 46px ${globalHorizontalPaddingMobile};
-      
-      gap: 25px;
+      gap: 24px;
 
       h1 {
         font-size: 44px;
@@ -162,7 +161,8 @@ export const Container = styled.section`
       transform: scale(.63);
 
       .right-side-img-container {
-        left: 0
+        left: 0;
+        bottom: 0;
       }
     }
   }

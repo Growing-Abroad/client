@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import Image from 'next/image';
 
 const {
   colors: {blue700,blue400 },
@@ -20,7 +21,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  :nth-child(1n){ 
+  :nth-child(1n){
     h1{
       text-align:center;
       display:flex;
@@ -29,10 +30,10 @@ export const Container = styled.div`
     }
   }
 
-  
+
   @media (max-width: ${mediaQuery}) {
     padding-bottom:93px;
-    :nth-child(1n){ 
+    :nth-child(1n){
       h1{
         width:361px;
         padding-bottom:33px;
@@ -91,7 +92,7 @@ export const ContainerCards = styled.div`
       margin-left: 550px;
       margin-top:-50px;
 
-   
+
     }
   }
   @media (max-width: 768px) {
@@ -120,12 +121,21 @@ height: auto;
 display: flex;
 flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
 gap:116px;
+@media(min-width:769px) and (max-width:1513px){
+  .image{
+    width:600px;
+  }
+ justify-content:space-between;
+ padding-left:${props => props.reverse? '100px' : '0px'};
+ padding-right:${props => props.reverse? '0' : '100px'};
+}
 @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap:18px;
     height:auto;
+    align-items:center;
 }
-@media (min-width:1520px) {
+@media (min-width:1800px) {
   gap:500px;
 }
 `
@@ -143,11 +153,12 @@ div{
   flex-direction: column;
   gap:29px;
 }
+
 @media (max-width: ${mediaQuery}) {
     gap:20px;
     width:372px;
     height:auto;
-    justify-content: flex-start;  
+    justify-content: flex-start;
 }
 `
 export const CardTitle = styled.h3`

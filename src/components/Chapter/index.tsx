@@ -20,7 +20,7 @@ export function Chapter() {
         <VerticalBar />
         <S.ContainerCards>
           <S.ContentCard reverse={false}>
-            <Image src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image  className="image" src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Germany the land of possibilities</S.CardTitle>
               <div>
@@ -73,7 +73,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index2} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image src={index2} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Process of getting
                 a VISA</S.CardTitle>
@@ -127,7 +127,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image src={index3} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Optimizing
                 your application
@@ -182,7 +182,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index4} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image src={index4} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Job Search
                 Strategy to find
@@ -253,7 +253,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse={false}>
-            <Image src={index5} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image src={index5} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Discover the research process of the company and the hiring managers</S.CardTitle>
               <div>
@@ -321,7 +321,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ContentCard>
           <S.ContentCard reverse>
-            <Image src={index3} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
+            <Image src={index3} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Rock your job interview and land your dream job</S.CardTitle>
               <div>
@@ -387,12 +387,12 @@ export function Chapter() {
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>   
+          </S.ContentCard>
 
           <div  className='bonus'>
          <S.CardTitle>
           Bonus Chapter with Expert Interviews
-        </S.CardTitle></div>  
+        </S.CardTitle></div>
         </S.ContainerCards>
       </S.Content>
     </S.Container>
