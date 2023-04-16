@@ -128,6 +128,7 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
   transition-timing-function: linear;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+  min-width: calc(0.625rem + ((1vw - 2px) * 3.7037));
 
   ${({ haveMaxWidth }) =>
     haveMaxWidth
@@ -262,6 +263,10 @@ export const TextBlockH3 = styled.h3`
   gap: 8px;
   opacity: 0;
 
+  @media (min-width: 200px) and (max-width: 1280px) {
+    font-size: calc(1.125rem + ((1vw - 7.68px) * 1.8767));
+  }
+
   @media (max-width: ${mediaQuery}) {
     font-size: 1.125rem;
     line-height: 1.625rem;
@@ -274,14 +279,38 @@ export const TextBlockH3 = styled.h3`
   }
 `;
 
+export const ImageFlag = styled(Image).attrs({
+  width: 64,
+  height: 45,
+})`
+  width: 64px;
+  height: 45px;
+
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1280px) {
+      width: calc(1.5625rem + ((1vw - 4.3px) * 3.5978));
+      height: calc(1.09875rem + ((1vw - 4.3px) * 2.5295));
+    }
+
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 25px;
+      height: 17.58px;
+    }
+  `}
+`;
+
 export const FromWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
   margin-bottom: auto;
-  p { 
+  p {
     letter-spacing: 1.3px;
     margin: 0;
+  }
+
+  @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
+    font-size: calc(0.875rem + ((1vw - 4.3px) * 0.5535));
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -443,4 +472,12 @@ export const StdButtonContainer = styled.div`
       margin-bottom: 90px;
     }
   `}
+  .watch-video-btn {
+    @media (min-width: 430px) and (max-width: 1280px) {
+      min-width: 150px;
+      width: calc(7.375rem + ((1vw - 7.68px) * 17.9625));
+      font-size: calc(0.625rem + ((1vw - 4.32px) * 0.5545));
+      padding: 8px 15px;
+    }
+  }
 `;
