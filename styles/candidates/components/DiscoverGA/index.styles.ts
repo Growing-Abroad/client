@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ComponentPropsWithoutRef } from "react";
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
@@ -121,6 +121,7 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
 export const RIContainer = styled.div`
   width: 205px;
   min-width: 123px;
+  padding: 0 5px;
 `;
 
 export const RIImage = styled.div<BgImageProps>`
@@ -132,6 +133,16 @@ export const RIImage = styled.div<BgImageProps>`
 `;
 
 export const CarouselContainer = styled.div`
-  width: 100%;
-  padding: 0 36px;
+  max-width: 587px;
+  max-height: 465px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      max-width: 100%;
+      padding: 0 36px;
+    }
+  `}
 `;

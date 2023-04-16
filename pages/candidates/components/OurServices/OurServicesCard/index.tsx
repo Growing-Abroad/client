@@ -3,6 +3,7 @@ import { BsCheckLg } from "react-icons/bs";
 import Image from "next/image";
 import { IService } from "@utils/services";
 import { useTheme } from "styled-components";
+import useAppContext from "@/hooks/useAppContext";
 
 export default function OurServicesCard({
   id,
@@ -16,6 +17,7 @@ export default function OurServicesCard({
   const {
     colors: { blue700, yellow400 },
   } = useTheme();
+  const { isMobile } = useAppContext();
 
   const handleRedirect = (id: string) => {
     // navigate('services/' + id)
@@ -43,15 +45,7 @@ export default function OurServicesCard({
         </S.CardDescriptions>
 
         <div className="lastDiv">
-          <S.Button
-            style={{
-              width: 196,
-              borderRadius: 50,
-              backgroundColor: yellow400,
-              color: blue700,
-            }}
-            onClick={() => handleRedirect(id)}
-          >
+          <S.Button onClick={() => handleRedirect(id)}>
             {hasMoreInfo ? "More Info" : "Book Now"}
           </S.Button>
         </div>
@@ -59,3 +53,4 @@ export default function OurServicesCard({
     </S.Container>
   );
 }
+k;

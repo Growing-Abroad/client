@@ -15,6 +15,7 @@ import { StaticImageData } from "next/image";
 import useAppContext from "@/hooks/useAppContext";
 import Link from "next/link";
 import KeenSlider from "@/components/KeenSlider";
+import AliceCarouselComp from "@/components/AliceCarousel";
 
 interface ItemProps {
   image: StaticImageData;
@@ -73,7 +74,8 @@ export default function DiscoverGA() {
             renderItem={renderItem}
             itemWidth={205}
           /> */}
-          <KeenSlider data={ImagesList} renderItem={renderItem} />
+          {/* <KeenSlider data={ImagesList} renderItem={renderItem} /> */}
+          <AliceCarouselComp data={ImagesList} renderItem={renderItem} />
         </CarouselContainer>
       </DiscoverContent>
     </DiscoverWrapper>
