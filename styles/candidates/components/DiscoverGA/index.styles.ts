@@ -118,10 +118,12 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   }
 `;
 
-export const RIContainer = styled.div``;
+export const RIContainer = styled.div`
+  width: 205px;
+  min-width: 123px;
+`;
 
 export const RIImage = styled.div<BgImageProps>`
-  width: 205px;
   height: 465px;
   background-image: url(${({ src }) => src});
   background-repeat: no-repeat;
@@ -131,4 +133,5 @@ export const RIImage = styled.div<BgImageProps>`
 
 export const CarouselContainer = styled.div`
   width: 100%;
+  padding: 0 36px;
 `;

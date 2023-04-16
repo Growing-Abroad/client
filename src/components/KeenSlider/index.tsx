@@ -1,31 +1,38 @@
-import React from "react";
+import * as React from "react";
+import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react"; // import from 'keen-slider/react.es' for to get an ES module
+import { Slider } from "./styles";
 
-interface Props {
-  data: string[];
+interface Props<T> {
+  data: T[];
+  renderItem: React.FC<T>;
 }
 
-function KeenSlider({ data }: Props) {
-  const [sliderRef, instanceRef] = useKeenSlider(
-    {
-      loop: true,
-      animationStarted: () => true,
+const animation = { duration: 5000, easing: (t: number) => t };
+
+function KeenSlider<T>({ data, renderItem }: Props<T>) {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    renderMode: "performance",
+    drag: false,
+    slides: {
+      perView: 3,
     },
-    [
-      // add plugins here
-    ]
-  );
+    created(s) {
+      s.moveToIdx(2, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 2, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 2, true, animation);
+    },
+  });
 
   return (
-    <div ref={sliderRef} className="keen-slider">
-      {data.length &&
-        data.map((item) => (
-          <div key={item} className="keen-slider__slide">
-            {item}
-          </div>
-        ))}
-    </div>
+    <Slider ref={sliderRef} className="keen-slider">
+      {data.length && data.map(renderItem)}
+    </Slider>
   );
 }
 

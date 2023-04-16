@@ -15,4 +15,16 @@ export default [
     image: img3,
     alt: "Manu",
   },
+  {
+    image: img1,
+    alt: "Uan",
+  },
+  {
+    image: img2,
+    alt: "High five",
+  },
+  {
+    image: img3,
+    alt: "Manu",
+  },
 ];

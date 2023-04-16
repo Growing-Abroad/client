@@ -25,7 +25,7 @@ export default function DiscoverGA() {
   const { isMobile } = useAppContext();
 
   const renderItem = ({ image, alt }: ItemProps) => (
-    <RIContainer key={alt}>
+    <RIContainer key={alt} className="keen-slider__slide">
       <RIImage src={image.src} />
     </RIContainer>
   );
@@ -67,12 +67,13 @@ export default function DiscoverGA() {
           </StdButton>
         </DiscoverReadMoreWrapper>
         <CarouselContainer>
-          <Carousel<ItemProps>
+          {/* <Carousel<ItemProps>
             visibleItems={3}
             data={ImagesList}
             renderItem={renderItem}
             itemWidth={205}
-          />
+          /> */}
+          <KeenSlider data={ImagesList} renderItem={renderItem} />
         </CarouselContainer>
       </DiscoverContent>
     </DiscoverWrapper>
