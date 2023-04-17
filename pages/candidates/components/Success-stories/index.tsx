@@ -5,6 +5,7 @@ import {
 } from "../../../../styles/candidates/components/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import FancyCarousel from "@components/Fancy-carousel";
+import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 
 export default function SuccessStories() {
   return (
@@ -15,7 +16,7 @@ export default function SuccessStories() {
         customers from all over the world land their dream jobs - from
         innovative start ups to the worlds leading companies
       </SuccessSubtitle>
-      <FancyCarousel haveMaxWidth dataArray={successStoriesData} />
+      <OriginalFancyCarousel dataArray={successStoriesData} />
     </SucessStoriesWrapper>
   );
 }
