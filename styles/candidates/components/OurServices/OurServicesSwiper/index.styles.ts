@@ -11,7 +11,7 @@ export const Container = styled.div`
     list-style: none;
     width: 100%;
     overflow: hidden;
-    padding: 0 50px;
+    padding: 0 40px;
 
     @media (max-width: ${variables.sizes.mediaQuery}) {
       padding: 0 36px;
