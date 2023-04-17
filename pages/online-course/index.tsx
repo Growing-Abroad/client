@@ -12,6 +12,7 @@ import TwoCards from './components/TwoCards';
 import FaqSection from '@pages/faq/components/FaqSection';
 import TwoColorTitle from '@/components/two-color-title';
 import useAppContext from '@/hooks/useAppContext';
+import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
  export const Wrapper = styled.div`
   width:100%;
@@ -38,5 +39,5 @@ export default function OnlineCourse() {
 }
 
 OnlineCourse.getLayout = function getLayout(page: ReactElement) {
-  return <PageLayout>{page}</PageLayout>;
+  return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
 };
