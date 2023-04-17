@@ -14,7 +14,7 @@ import Carousel from "@/components/Carousel";
 import { StaticImageData } from "next/image";
 import useAppContext from "@/hooks/useAppContext";
 import Link from "next/link";
-import KeenSlider from "@/components/KeenSlider";
+
 import AliceCarouselComp from "@/components/AliceCarousel";
 
 interface ItemProps {
