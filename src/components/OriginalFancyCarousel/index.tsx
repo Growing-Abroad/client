@@ -90,7 +90,7 @@ export default function OriginalFancyCarousel(props: Props) {
             <StdButton
               icon={faPlay}
               className="watch-video-btn"
-              style={{ marginTop: "auto", width: "max-content" }}
+                style={{ width: "max-content", padding: isMobile ? '8px 20px' : '20px 40px' }}
             >
               Watch Video
             </StdButton>
