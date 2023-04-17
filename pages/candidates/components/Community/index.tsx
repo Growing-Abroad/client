@@ -8,10 +8,12 @@ import { socials1, socials2 } from "@utils/socials";
 import TwoColorTitle from "@components/two-color-title";
 import SocialCard from "./SocialCard";
 import { useCallback, useEffect, useRef, useState } from "react";
+import useAppContext from "@/hooks/useAppContext";
 
 function CommunitySection() {
   const [counterOn, setCounterOn] = useState(false);
   const componentRef = useRef<HTMLDivElement>(null);
+  const { isMobile } = useAppContext();
 
   function isComponentVisible() {
     const rect = componentRef?.current?.getBoundingClientRect();
@@ -51,10 +53,11 @@ function CommunitySection() {
           hasSpaceBtw
           color="#ffffff"
           as="h2"
+          breakingLine={isMobile}
         />
         <Socials>
           <CardsWrapper>
-            {socials1.map((social) => (
+            {socials1.concat(socials2).map((social) => (
               <SocialCard
                 counterOn={counterOn}
                 {...social}
@@ -62,7 +65,7 @@ function CommunitySection() {
               />
             ))}
           </CardsWrapper>
-          <CardsWrapper>
+          {/* <CardsWrapper>
             {socials2.map((social) => (
               <SocialCard
                 counterOn={counterOn}
@@ -70,7 +73,7 @@ function CommunitySection() {
                 key={social.socialLink}
               />
             ))}
-          </CardsWrapper>
+          </CardsWrapper> */}
         </Socials>
       </Container>
     </ContainerWrapper>

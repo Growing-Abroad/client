@@ -1,6 +1,8 @@
-import styled from 'styled-components';
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
+import styled, { css } from "styled-components";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
+import Image from "next/image";
+import PropTypes from "prop-types";
 
 const {
   colors: { blue500 },
@@ -52,7 +54,11 @@ export const CardsWrapper = styled.div`
   overflow-y: hidden;
   flex-shrink: 0;
 
+  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1280px) {
+    gap: calc(1rem + ((1vw - 4.3px) * 7.7491));
+  }
+
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    gap: 42px;
+    gap: 16px;
   }
 `;
