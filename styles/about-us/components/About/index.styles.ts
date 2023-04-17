@@ -42,9 +42,9 @@ export const TextContainer = styled.div`
   @media (max-width: 5580px) {
     flex-direction: initial;
   }
-  @media (max-width: 580px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     justify-content: space-between;
-    gap: 50px;
+    gap: 25px;
     #box0 {
       h3,
       h4 {
@@ -117,6 +117,9 @@ export const Text = styled.div<TextProps>`
       white-space: initial;
     }
     h4 {
+      font-size: 14px;
+    }
+    p {
       font-size: 14px;
     }
   }
