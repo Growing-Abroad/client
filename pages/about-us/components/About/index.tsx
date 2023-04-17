@@ -18,7 +18,7 @@ function About() {
         {aboutUs.map((section, i) => (
           <S.Text isOpen={isOpen} key={section.title} id={"box" + i}>
             <h3>{section.title}</h3>
-            <h4>{section.subtitle}</h4>
+            <p>{section.subtitle}</p>
 
             <div className="paragraph-container">
               {section.paragraphs.map((p, i) => (
