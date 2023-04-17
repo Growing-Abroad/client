@@ -1,11 +1,15 @@
-import styled from 'styled-components';
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
-import { open } from '@styles/animations';
-import { Montserrat } from '@next/font/google';
+import styled, { css } from "styled-components";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
+import { open } from "@styles/animations";
+import { Montserrat } from "@next/font/google";
+
+interface TextProps {
+  isOpen: boolean;
+}
 
 const font = Montserrat({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 export const Container = styled.section`
   width: 100%;
@@ -59,13 +63,24 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const Text = styled.div`
+export const Text = styled.div<TextProps>`
   width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
+
+  .paragraph-container {
+    overflow: hidden;
+    height: 0;
+
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        height: 100%;
+      `}
+  }
 
   h3 {
     font-weight: 600;
@@ -87,8 +102,6 @@ export const Text = styled.div`
   }
 
   p {
-    animation: ${open} 0.5s linear;
-    transition: all 0.5s ease;
   }
 
   @media (max-width: 580px) {
@@ -126,4 +139,17 @@ export const More = styled.div`
       transform: scale(1.05);
     }
   }
+`;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  /* @media (min-width: 1280px) {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    right: 0;
+  } */
 `;
