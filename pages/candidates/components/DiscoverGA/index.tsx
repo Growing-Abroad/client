@@ -4,6 +4,7 @@ import {
   RIImage,
   DiscoverReadMoreWrapper,
   DiscoverWrapper,
+  CarouselContainer,
 } from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
@@ -13,6 +14,8 @@ import Carousel from "@/components/Carousel";
 import { StaticImageData } from "next/image";
 import useAppContext from "@/hooks/useAppContext";
 import Link from "next/link";
+import KeenSlider from "@/components/KeenSlider";
+import AliceCarouselComp from "@/components/AliceCarousel";
 
 interface ItemProps {
   image: StaticImageData;
@@ -23,7 +26,7 @@ export default function DiscoverGA() {
   const { isMobile } = useAppContext();
 
   const renderItem = ({ image, alt }: ItemProps) => (
-    <RIContainer key={alt}>
+    <RIContainer key={alt} className="keen-slider__slide">
       <RIImage src={image.src} />
     </RIContainer>
   );
@@ -41,7 +44,7 @@ export default function DiscoverGA() {
 
       <DiscoverContent>
         <DiscoverReadMoreWrapper>
-          <StdParagraqh className="discover-text" >
+          <StdParagraqh className="discover-text">
             Our goal is to help skilled people from all of the world to get
             their dream job in Germany or Europe.
             <br />
@@ -58,16 +61,22 @@ export default function DiscoverGA() {
             costumers to show their full potential.
           </StdParagraqh>
 
-          <StdButton className="read-more-btn" >
-            <Link href="/about-us" style={{all: 'unset'}}>Read More</Link>
+          <StdButton className="read-more-btn">
+            <Link href="/about-us" style={{ all: "unset" }}>
+              Read More
+            </Link>
           </StdButton>
         </DiscoverReadMoreWrapper>
-        <Carousel<ItemProps>
-          visibleItems={3}
-          data={ImagesList}
-          renderItem={renderItem}
-          itemWidth={205}
-        />
+        <CarouselContainer>
+          {/* <Carousel<ItemProps>
+            visibleItems={3}
+            data={ImagesList}
+            renderItem={renderItem}
+            itemWidth={205}
+          /> */}
+          {/* <KeenSlider data={ImagesList} renderItem={renderItem} /> */}
+          <AliceCarouselComp data={ImagesList} renderItem={renderItem} />
+        </CarouselContainer>
       </DiscoverContent>
     </DiscoverWrapper>
   );

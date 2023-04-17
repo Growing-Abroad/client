@@ -1,6 +1,8 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import VisionAndMissionBackground from "../../../../public/assets/puzzle.webp"
+// import VisionAndMissionBackground from "../../../../public/assets/puzzle.webp"
+import VisionAndMissionBackground from "../../../../public/assets/pages/coaching/career-coaches.webp"
+
 import classes from "./style.module.css"
 
 function VisionAndMissionNew() {
@@ -8,21 +10,21 @@ function VisionAndMissionNew() {
     <>
       <Container className={classes.sectionContainer}>
         <Row className={classes.section}>
-          <Col lg="6" className={classes.missionBg} style={{ backgroundImage: 'url(' + VisionAndMissionBackground.src + ')' }}>
+          <Col lg="6" className={classes.missionBg} style={{ backgroundImage: 'url(' + VisionAndMissionBackground.src + ')', backgroundPosition: 'left' }}>
             <div className={classes.missionContainer}>
               <div className={classes.missionInner}>
-                <h3>Mission</h3>
+                <h3>Goal</h3>
                 <p>
-                  Our Mission is to show people how to grow and rise up to their full potential to make their dreams come true.
+                  With our Coaching session you will be perfectly prepared for the german market and will have the best chances to land your dream job
                 </p>
               </div>
             </div>
           </Col>
           <Col lg="6" className={classes.visionCol}>
             <div className={classes.visionContainer}>
-              <h3>Vision</h3>
+              <h3>Experts</h3>
               <p>
-                Our Vision is to create a platform that brings people together as a community with similar goals, where people can share their stories and inspire others.
+                All your Coaches are proven experts from Germany and will guide you through every step of your journey to land your dream job abraod.
               </p>
             </div>
           </Col>

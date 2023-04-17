@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ComponentPropsWithoutRef } from "react";
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
@@ -28,7 +28,6 @@ export const DiscoverWrapper = styled.div`
   width: 100%;
   max-width: ${maxWidthAll};
 
-
   @media (max-width: ${mediaQuery}) {
     padding: 80px 0;
     gap: 32px;
@@ -37,7 +36,7 @@ export const DiscoverWrapper = styled.div`
     .discover-wrapper {
       max-width: 100%;
       padding-inline: 36px;
-    } 
+    }
 
     .discover-title {
       flex-wrap: wrap;
@@ -119,13 +118,31 @@ export const DiscoverGaImg = styled.div<IDiscoverImgProps>`
   }
 `;
 
-export const RIContainer = styled.div``;
+export const RIContainer = styled.div`
+  width: 205px;
+  min-width: 123px;
+  padding: 0 5px;
+`;
 
 export const RIImage = styled.div<BgImageProps>`
-  width: 205px;
   height: 465px;
   background-image: url(${({ src }) => src});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+`;
+
+export const CarouselContainer = styled.div`
+  max-width: 587px;
+  max-height: 465px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      max-width: 100%;
+      padding: 0 36px;
+    }
+  `}
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "@styles/theme";
 import { variables } from "@/styles/global-variables";
 
@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: 758px;
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   text-align: center;
   color: ${theme.colors.blue700};
@@ -98,12 +98,14 @@ export const PostText = styled.p`
 `;
 
 export const Button = styled.button`
-  background: ${theme.colors.blue400};
-  color: white;
+  width: 196px;
+  height: 59px;
+  background: ${theme.colors.yellow400};
+  color: ${({ theme }) => theme.colors.blue700};
   font-weight: 700;
   font-size: 1rem;
-  padding: 16px 24px;
-  border-radius: 8px;
+  padding: 20px 40px;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: auto;
 
@@ -111,4 +113,13 @@ export const Button = styled.button`
     opacity: 0.9;
     transform: scale(1.02);
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 105px;
+      height: 35px;
+      padding: 8px 15px;
+      font-size: 0.813rem;
+    }
+  `}
 `;

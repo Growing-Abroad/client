@@ -7,11 +7,11 @@ import styled from "styled-components";
 import { HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/index.styles";
 
 const ContainerWrapper = styled.div`
-  height: 233px;
+  height: 250px;
   width: 100%;
 
   @media (min-width: 430px) {
-    height: calc(14.5625rem + ((1vw - 4.3px) * 32.0406));
+    height: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
   }
   @media (min-width: 1513px) {
     height: 580px;
@@ -62,14 +62,14 @@ export default function CoachingHeroSection() {
             style={
               isMobile
                 ? {
-                    padding: "8px 15px",
+                    padding: "8px 24px",
                     textTransform: "uppercase",
                     fontWeight: "800",
                   }
                 : { textTransform: "uppercase", fontWeight: "800" }
             }
           >
-            Book a Coaching Now
+            {isMobile ? 'Book Now' : 'Book a Coaching Now'}
           </StdButton>
         </HeroTitleWrapper>
       </ContainerHero>

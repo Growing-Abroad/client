@@ -10,6 +10,7 @@ export const Container = styled.div`
   justify-content: center;
   justify-items: center;
   max-width: ${maxWidthAll};
+  width: 100%;
   height: 100%;
   gap: 29px;
   padding: 125px ${globalHorizontalPadding};
