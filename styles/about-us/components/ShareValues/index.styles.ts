@@ -16,8 +16,8 @@ export const Container = styled.section`
   padding: 80px ${variables.sizes.globalHorizontalPadding};
   color: ${theme.colors.blue700};
 
-  @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding-inline: ${variables.sizes.globalHorizontalPaddingMobile};
+  @media (max-width: 1280px) {
+    padding: 0;
   }
 
   @media (max-width: 580px) {
@@ -28,12 +28,28 @@ export const Container = styled.section`
 export const TitleContainer = styled.div`
   width: 100%;
   /* padding: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Row = styled.div`
+  display: flex;
+
+  @media (max-width: 1280px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
@@ -53,8 +69,8 @@ export const Card = styled.div`
     transform: scale(1.02);
   }
 
-  @media (max-width: 992px) {
-    max-width: 100%;
+  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1200px) {
+    min-width: 376px;
   }
 `;
 

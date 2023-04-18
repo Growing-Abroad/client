@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "../../../../styles/about-us/components/ShareValues/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import { sharedValues } from "utils/mock/shared_values";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import useAppContext from "@/hooks/useAppContext";
@@ -26,9 +26,19 @@ function ShareValues() {
       </S.TitleContainer>
 
       <Container>
-        <Row>
+        <S.Row>
           {sharedValues.map((sharedValue, index) => (
-            <Col lg="4" md="12" style={{ paddingBottom: "56px" }} key={index}>
+            <Col
+              lg="4"
+              md="12"
+              style={{
+                paddingBottom: "56px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              key={index}
+            >
               <S.Card key={index}>
                 <Image
                   src={sharedValue.image}
@@ -44,7 +54,7 @@ function ShareValues() {
               </S.Card>
             </Col>
           ))}
-        </Row>
+        </S.Row>
       </Container>
     </S.Container>
   );
