@@ -56,18 +56,14 @@ export const FlexboxSlider = styled.div`
         transition-duration: 0.2s;
         -webkit-transition-timing-function: linear;
         transition-timing-function: linear;
-        -webkit-transition-delay: 0.3s;
-        transition-delay: 0.3s;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
         opacity: 1;
       }
       /* .watch-video-btn {
         -webkit-transition-delay: 0s;
         transition-delay: 0s;
       } */
-      .watch-video-btn:hover {
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-      }
     }
   }
 
@@ -135,8 +131,8 @@ export const TextBlock = styled.div`
   left: 0;
   bottom: 0;
   top: 0;
-  max-width: 58%;
-  width: 58%;
+  max-width: 66%;
+  width: 66%;
   padding: 44px 30px;
   background-color: ${blue500};
   color: #fff;
@@ -149,7 +145,7 @@ export const TextBlock = styled.div`
   p {
     font-size: 1.125rem;
     line-height: 1.125rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   p,
@@ -186,6 +182,10 @@ export const TextBlockH3 = styled.h3`
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
+
+    .watch-video-btn {
+      padding: 8px 20px;
+    }
   }
 `;
 
@@ -193,8 +193,16 @@ export const FromWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-bottom: auto;
+
+  p { 
+    letter-spacing: 1.3px;
+    margin: 0;
+  }
 
   @media (max-width: ${mediaQuery}) {
     gap: 10.15px;
+    margin-top: auto;
+    margin-bottom: 16px;
   }
 `;
