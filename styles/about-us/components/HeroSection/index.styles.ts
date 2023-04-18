@@ -56,6 +56,7 @@ export const ImagesContainer = styled.div`
   }
 
   @media (max-width: 768px) {
+    gap: 2rem;
     flex-direction: initial;
     width: 100vw;
   }
