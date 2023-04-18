@@ -11,7 +11,7 @@ interface Props
   src: string;
   type: string;
   isPlaying: boolean;
-  // ref: RefObject<HTMLVideoElement>;s
+  // ref: RefObject<HTMLVideoElement>;
 }
 
 function VideoComponent({ src, type, isPlaying, ...rest }: Props) {
@@ -27,7 +27,7 @@ function VideoComponent({ src, type, isPlaying, ...rest }: Props) {
   }, [isPlaying]);
 
   return (
-    <StyledVideo ref={videoRef} {...rest}>
+    <StyledVideo {...rest} ref={videoRef}>
       <source src={src} type={type} />
     </StyledVideo>
   );
