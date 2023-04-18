@@ -4,19 +4,9 @@ import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import styled from "styled-components";
-import { HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/index.styles";
+import { ContainerWrapper, HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/index.styles";
 
-const ContainerWrapper = styled.div`
-  height: 250px;
-  width: 100%;
 
-  @media (min-width: 430px) {
-    height: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
-  }
-  @media (min-width: 1513px) {
-    height: 580px;
-  }
-`;
 
 export default function CoachingHeroSection() {
   const { isMobile } = useAppContext();
@@ -41,33 +31,15 @@ export default function CoachingHeroSection() {
       >
         <HeroTitleWrapper>
           <TwoColorTitle
-            text1="1:1"
+            text1="Personal"
             text2="Coaching"
             hasSpaceBtw
-            wrapperStyles={
-              isMobile ? { padding: `0 0 14px` } : { padding: `0 0 35px` }
-            }
-            styles={
-              isMobile
-                ? {
-                    marginBottom: "0",
-                    fontSize: "44px",
-                    flexDirection: "column",
-                    display: "flex",
-                  }
-                : { marginBottom: "0" }
-            }
+            wrapperClassName="coaching-title-wrapper"
+            className="coaching-title"
+            color1="white"
           />
           <StdButton
-            style={
-              isMobile
-                ? {
-                    padding: "8px 24px",
-                    textTransform: "uppercase",
-                    fontWeight: "800",
-                  }
-                : { textTransform: "uppercase", fontWeight: "800" }
-            }
+            className="coaching-hero-cta"
           >
             {isMobile ? 'Book Now' : 'Book a Coaching Now'}
           </StdButton>
