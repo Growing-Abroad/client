@@ -22,7 +22,7 @@ export function TwoCards() {
             alt=""
             width={isMobile ? 383 : 454}
             height={isMobile ? 194 : 265}
-            style={{ borderRadius: '10px' }}
+            style={{ borderRadius:`${isMobile ?'0' : '10px'}`}}
           />
           <h3>
             <svg
@@ -139,6 +139,7 @@ export function TwoCards() {
             alt=""
             width={isMobile ? 383 : 454}
             height={isMobile ? 194 : 265}
+            style={{ borderRadius:`${isMobile ?'0' : '10px'}`}}
           />
           <h3>
             {' '}
@@ -228,7 +229,7 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
       </S.ContentTwoCards>
-      <StdButton style={{ width: '181px' }}>Buy Now</StdButton>
+      <StdButton style={{ width:'auto', display:'flex', justifyContent:'center'}}>Buy Now</StdButton>
     </S.Container>
   );
 }

@@ -42,6 +42,14 @@ export const ContentTwoCards = styled.div`
         padding: 26px 31px 40px 42px;
       }
     }
+    .right-card{
+
+      h3{
+        svg{
+          margin-bottom:-15px;
+        }
+      }
+    }
   }
 `;
 export const TwoCardsWrapper = styled.div`
@@ -70,6 +78,7 @@ export const TwoCardsWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 48px 59px 33px;
+    letter-spacing: 1.3px;
   }
   p {
     font-size: 24px;
@@ -92,6 +101,7 @@ export const TwoCardsWrapper = styled.div`
       margin: 0;
     }
   }
+
   @media (max-width: ${mediaQuery}) {
     width:383px;
     height:auto;
@@ -100,9 +110,13 @@ export const TwoCardsWrapper = styled.div`
     }
     h3{
       padding: 26px 62px 36px 0px;
+      gap:0px;
+      svg{
+        margin-top:-10px;
+      }
     }
 
-  }
+    }
 `;
 export const CardText = styled.li`
   padding: 0px;
@@ -124,7 +138,8 @@ export const CardText = styled.li`
     height: 20px;
   }
   @media (max-width: ${mediaQuery}) {
-    max-width:350px;
+    max-width:360px;
     height:auto;
+    font-weight:500;
   }
 `;
