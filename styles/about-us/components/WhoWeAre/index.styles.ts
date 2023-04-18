@@ -1,6 +1,6 @@
-import { theme } from '@styles/theme';
-import { variables } from '@styles/global-variables';
-import styled from 'styled-components';
+import { theme } from "@styles/theme";
+import { variables } from "@styles/global-variables";
+import styled from "styled-components";
 
 const {
   colors: { blue700 },
@@ -48,13 +48,15 @@ export const Paragraph = styled.div`
   align-items: center;
   gap: 1rem;
   color: ${blue700};
+  max-width: 100%;
   font: 400 0.8rem;
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
     font-size: 1rem;
   }
-  @media (max-width: 580px) {
-    width: 100%;
+
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    text-align: justify;
   }
 `;
 
@@ -69,7 +71,7 @@ export const p = styled.p`
     padding-right: 40px;
   }
 
-  @media (max-width: 580px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     font-size: 16px;
     line-height: 30px;
     text-align: justify;
