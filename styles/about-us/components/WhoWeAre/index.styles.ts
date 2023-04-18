@@ -1,6 +1,7 @@
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 import styled from "styled-components";
+import Image from "next/image";
 
 const {
   colors: { blue700 },
@@ -98,7 +99,30 @@ export const ImageContainer = styled.div`
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (max-width: 580px) {
     padding: 0 10px;
+  }
+`;
+
+export const Player = styled(Image).attrs({
+  alt: "youtube play button",
+})`
+  :hover {
+    cursor: pointer;
+    transform: scale(1.1);
   }
 `;

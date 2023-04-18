@@ -28,7 +28,7 @@ function WhoWeAre() {
         as="h2"
       />
 
-      <S.ImageContainer className={classes.imageContainer}>
+      <S.ImageContainer>
         <Image
           width={1128}
           height={628}
@@ -36,12 +36,8 @@ function WhoWeAre() {
           alt="uan and manu"
           className={classes.youtubeImage}
         ></Image>
-        <div className={classes.ripplesContainer}>
-          <Image
-            src={YoutubeplayButton}
-            alt="youtube play button"
-            className={classes.youtubePlayButton + " " + classes.blurbRippleOut}
-          ></Image>
+        <div>
+          <S.Player src={YoutubeplayButton}></S.Player>
         </div>
       </S.ImageContainer>
 
