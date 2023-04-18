@@ -23,6 +23,12 @@ export const Container = styled.section`
   }
 `;
 
+export const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const VideoPlayButtonWrapper = styled.div`
   position: absolute;
   left: calc(50% - 20px / 2);
