@@ -1,3 +1,9 @@
+
+
+.sectionContainer {
+    margin-bottom: 160px;
+}
+
 .section {
     box-shadow: 0px 10px 10px #efefef;
     margin-top: 93px;
@@ -5,20 +11,22 @@
 
 .missionBg {
     height: 748px;
-    background-position: right;
+    background-position: left top;
     background-size: cover;
     position: relative;
 }
 
 .missionContainer {
     position: absolute;
-    justify-content:start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     width: 100%;
     left: 0;
     bottom: 0;
-    padding: 109px 0 138px 0;
+    /* padding: 109px 0 138px 0; */
     background: #0073CFEB;
+    height: 45%;
 }
 
 .missionInner {
@@ -40,10 +48,10 @@
 .missionInner p,
 .visionContainer p {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
-    text-align: justify;
+    text-align: left;
 
 }
 .visionContainer p, .visionContainer h3 {
@@ -59,16 +67,14 @@
 }
 
 .visionContainer {
-  padding-left: 79px;
-  width: 100%;
-
+    padding-left: 79px;
+    width: 100%;
 }
 
 @media (max-width: 992px) {
     .visionContainer {
         padding-top: 109px;
         padding-bottom: 138px;
-        padding-left:0;
         max-width: 420px;
     }
     .missionContainer {
@@ -92,21 +98,21 @@
 
     .sectionContainer {
         padding: 0;
-        margin-top: 93px;
+        margin-bottom: 80px;
     }
 
     .visionContainer {
         padding-left: 0;
         max-width: 420px;
-        padding: 36px 0 34px 0 ;
+        padding: 44px 0;
     }
 
     .missionContainer {
-        padding: 36px 0 34px 0 ;
+        padding: 36px;
     }
 
     .missionBg {
-        height: 420px;
+        height: 700px;
     }
 
 
@@ -114,7 +120,7 @@
 
 @media (max-width: 580px) {
     .visionContainer {
-		padding:0;
+		/* padding:0; */
 	}
 }
 
@@ -136,11 +142,11 @@
     }
 
     .missionBg {
-        height: 350px;
+        height: 600px;
     }
 
     .missionContainer {
-        padding: 29px 40px 20px 46px;
+        padding: 24px;
     }
 
     .section {
@@ -152,11 +158,10 @@
 
     .visionCol {
         box-shadow: 10px -4px 6px #c6c6c6;
-        padding: 36px 40px 34px 46px;
     }
 
     .sectionContainer {
         padding: 0;
-        margin-top: 93px;
+        margin-bottom: 80px;
     }
 }
