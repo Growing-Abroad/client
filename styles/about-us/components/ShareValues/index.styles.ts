@@ -1,6 +1,6 @@
-import { variables } from '@styles/global-variables';
-import { theme } from '@styles/theme';
-import styled from 'styled-components';
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
+import styled from "styled-components";
 
 const {
   colors: { blue700 },
@@ -72,7 +72,8 @@ export const CardContent = styled.div`
 
   > p {
     color: ${theme.colors.blue700};
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
