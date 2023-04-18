@@ -25,6 +25,11 @@ export const Container = styled.section`
   }
 `;
 
+export const TitleContainer = styled.div`
+  width: 100%;
+  /* padding: 10px; */
+`;
+
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
