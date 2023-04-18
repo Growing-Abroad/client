@@ -33,7 +33,7 @@ export const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 293px;
+  gap: 243px;
 
   @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1280px) {
     gap: 140px;

@@ -1,6 +1,6 @@
-import { theme } from '@styles/theme';
-import styled from 'styled-components';
-import { variables } from '@styles/global-variables';
+import { theme } from "@styles/theme";
+import styled from "styled-components";
+import { variables } from "@styles/global-variables";
 
 interface IContainer {
   backgroundImg: string;
@@ -47,6 +47,9 @@ export const ImagesContainer = styled.div`
   width: 95vw;
   display: flex;
   flex-direction: column;
+  margin-bottom: -12px;
+  gap: 160px;
+
   @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
     justify-content: space-between;
@@ -220,11 +223,14 @@ export const BigQuote = styled.span`
 export const TextLeft = styled.span`
   text-align: left;
   left: 0;
+  width: 90%;
 
   font-size: 2rem;
   line-height: 39px;
   letter-spacing: 1.3px;
   font-weight: 600;
+  white-space: pre-wrap;
+
   @media (max-width: 1024px) {
     font-size: 1.3rem;
     line-height: 25px;

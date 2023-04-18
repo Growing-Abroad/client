@@ -3,7 +3,7 @@ import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
 import TwoColorTitle from "@components/two-color-title";
 import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";
-import Manu from "@/../public/assets/pages/about-us/manu-career-coach.webp";
+import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
 
