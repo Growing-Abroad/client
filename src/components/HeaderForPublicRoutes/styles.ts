@@ -153,7 +153,7 @@ export const Content = styled.div`
   display: flex;
   padding-left: 80px;
   flex: 1;
-  justify-content: space-around;
+  justify-content: space-between;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -222,7 +222,7 @@ export const Button = styled.button<ButtonProps>`
 export const IconsContainer = styled.div`
   display: flex;
   flex: 2;
-  justify-content: space-around;
+  justify-content: flex-end;
   padding-left: 80px;
 
   ${({ theme }) => css`
