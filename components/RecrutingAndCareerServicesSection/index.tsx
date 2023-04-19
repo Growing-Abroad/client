@@ -28,24 +28,11 @@ function RecruitingAndCareerServicesSection() {
     <Container>
       <TitlesContainer>
         <TwoColorTitle
-          text1="Recruiting and"
-          text2="Career Services "
+          text1="Learn more about"
+          text2="Our Services"
           hasSpaceBtw={!shouldBreakLine}
           breakingLine={shouldBreakLine}
         />
-        {!isMobile ? (
-          <SubtitleContainer>
-            <Subtitle>
-              Are you a candidate and want to land your dream job in Germany?
-            </Subtitle>
-            <Subtitle>
-              Are you not finding the right candidates and struggling to attract
-              talents to your company?
-            </Subtitle>
-          </SubtitleContainer>
-        ) : (
-          <Subtitle>Recruiting, Career Coach & Development Services</Subtitle>
-        )}
       </TitlesContainer>
       <CardsContainer>
         <CardWithImage
