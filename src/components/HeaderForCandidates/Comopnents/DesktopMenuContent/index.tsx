@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useCallback } from "react";
 
-import LogoImage from '@/../public/assets/pages/growing-abroad-images/white-logo.png';
+import LogoImage from "@/../public/assets/pages/growing-abroad-images/white-logo.png";
 
-import { useTheme } from 'styled-components';
+import { useTheme } from "styled-components";
 import {
   Container,
   Header,
@@ -20,9 +20,11 @@ import {
   Divider,
   MenuItemContainer,
   AwesomeIcon,
-} from './styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+} from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
 
 interface Props {
   itsOpen: boolean;
@@ -33,6 +35,24 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
   const {
     colors: { blue400 },
   } = useTheme();
+
+  const route = useRouter();
+
+  const onGoToScreen = useCallback(
+    (page: PagesNamesEnum) => {
+      route.push(`/${page}`);
+      setItsOpen(false);
+    },
+    [route, setItsOpen]
+  );
+
+  const handleGoToCourse = () => onGoToScreen(PagesNamesEnum.ONLINE_COURSE);
+  const handleGoToCoaching = () => onGoToScreen(PagesNamesEnum.COACHING);
+  const handleGoToJobs = () => onGoToScreen(PagesNamesEnum.JOBS);
+  const handleGoToAboutUs = () => onGoToScreen(PagesNamesEnum.ABOUT_US);
+  const handleGoToBlog = () => onGoToScreen(PagesNamesEnum.BLOG);
+  const handleGoToFaq = () => onGoToScreen(PagesNamesEnum.FAQ);
+  const handleGotoContactUs = () => onGoToScreen(PagesNamesEnum.CONTACT_US);
 
   return (
     <Container itsOpen={itsOpen}>
@@ -45,16 +65,16 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
       <Content>
         <LeftSideContainer>
           <LeftSideContent>
-            <MenuItemContainer>
-              <RSMenuItem>Online Course{'\xa0'}</RSMenuItem>
+            <MenuItemContainer onClick={handleGoToCourse}>
+              <RSMenuItem>Online Course{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
-            <MenuItemContainer>
-              <RSMenuItem>Coaching{'\xa0'}</RSMenuItem>
+            <MenuItemContainer onClick={handleGoToCoaching}>
+              <RSMenuItem>Coaching{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
-            <MenuItemContainer>
-              <RSMenuItem>Jobs{'\xa0'}</RSMenuItem>
+            <MenuItemContainer onClick={handleGoToJobs}>
+              <RSMenuItem>Jobs{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
           </LeftSideContent>
@@ -62,15 +82,17 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
         <RightSideContainer>
           <RightSideContent>
             <MenuItemContainer>
-              <LSMenuItem>About Us{'\xa0'}</LSMenuItem>
+              <LSMenuItem onClick={handleGoToAboutUs}>
+                About Us{"\xa0"}
+              </LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer>
-              <LSMenuItem>Blog{'\xa0'}</LSMenuItem>
+              <LSMenuItem onClick={handleGoToBlog}>Blog{"\xa0"}</LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer>
-              <LSMenuItem>FAQ{'\xa0'}</LSMenuItem>
+              <LSMenuItem onClick={handleGoToFaq}>FAQ{"\xa0"}</LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <Divider />
@@ -79,8 +101,8 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
             <Description>
               Inquiries, questions or direct contact? Contact us:
             </Description>
-            <MenuItemContainer>
-              <LSMenuItem isLit>Contact Us{'\xa0'}</LSMenuItem>
+            <MenuItemContainer onClick={handleGotoContactUs}>
+              <LSMenuItem isLit>Contact Us{"\xa0"}</LSMenuItem>
               <FontAwesomeIcon icon={faArrowRight} size="lg" color={blue400} />
             </MenuItemContainer>
           </RightSideContent>

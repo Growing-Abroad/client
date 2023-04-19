@@ -33,7 +33,11 @@ export const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 293px;
+  gap: 243px;
+
+  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1280px) {
+    gap: 140px;
+  }
 
   @media (min-width: ${variables.sizes.mediaQuery}) {
     flex-direction: row;
@@ -42,15 +46,15 @@ export const TextContainer = styled.div`
   @media (max-width: 5580px) {
     flex-direction: initial;
   }
-  @media (max-width: 580px) {
+  @media (max-width: ${variables.sizes.mediaQuery}) {
     justify-content: space-between;
-    gap: 50px;
+    gap: 25px;
     #box0 {
       h3,
       h4 {
         text-align: left;
       }
-      align-items: start;
+      align-items: end;
     }
 
     #box1 {
@@ -92,7 +96,7 @@ export const Text = styled.div<TextProps>`
   }
 
   h4 {
-    text-align: justify;
+    text-align: center;
     font-family: ${font.style.fontFamily};
     font-weight: 400;
     font-size: 1rem;
@@ -111,12 +115,15 @@ export const Text = styled.div<TextProps>`
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    max-width: 160px;
+    /* max-width: 160px; */
     h3 {
       font-size: 24px;
       white-space: initial;
     }
     h4 {
+      font-size: 14px;
+    }
+    p {
       font-size: 14px;
     }
   }

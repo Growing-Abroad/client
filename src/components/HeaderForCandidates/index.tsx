@@ -112,7 +112,7 @@ function HeaderForCandidates() {
           </StyledBurger>
         </StyledBurgerContainer>
       </Header>
-      {isMobile && <div style={{width: '100%', height: '60px'}}></div>}
+      {isMobile && <div style={{ width: "100%", height: "60px" }}></div>}
       <Container itsOpen={itsMobileMenuOpen}>
         {!isMobile && (
           <LogoContainer>

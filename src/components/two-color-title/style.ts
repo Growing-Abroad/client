@@ -1,10 +1,10 @@
 import { variables } from "@styles/global-variables";
 import styled, { css } from "styled-components";
-import {Montserrat} from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
-  subsets: ['latin']
-})
+  subsets: ["latin"],
+});
 const {
   sizes: { mediaQuery },
 } = variables;
@@ -14,11 +14,11 @@ export const TwoColorTitleWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: max-content;
-  
+
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
   }
-  `;
+`;
 
 export interface IText {
   color?: string;
@@ -29,13 +29,15 @@ export const Text = styled.h1<IText>`
   ${(props) => {
     const { color } = props;
     return css`
-    display: inline-block;
-    color: ${color};
-    font-family: ${montserrat.style.fontFamily};
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 1.3px;
-  `}}
+      display: inline-block;
+      color: ${color};
+      font-family: ${montserrat.style.fontFamily};
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1.3px;
+      max-width: 100%;
+    `;
+  }}
 
   ${(props) => {
     switch (props.as) {
@@ -93,7 +95,7 @@ export const ColoredSpan = styled.span<IText>`
   ${(props) => {
     const { color } = props;
     return css`
-      color: ${color}
-    `
+      color: ${color};
+    `;
   }}
-`
+`;

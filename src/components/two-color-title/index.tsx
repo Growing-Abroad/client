@@ -1,6 +1,6 @@
-import { theme } from '@/styles/theme';
-import { CSSProperties } from 'styled-components';
-import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from './style';
+import { theme } from "@/styles/theme";
+import { CSSProperties } from "styled-components";
+import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from "./style";
 
 const {
   colors: { blue700, blue400 },
@@ -17,7 +17,7 @@ export interface TwoColorTitleParameters extends IText {
   breakingLine?: boolean;
   color1?: string;
   color2?: string;
-  wrapperClassName?: string
+  wrapperClassName?: string;
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
@@ -41,10 +41,10 @@ const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
           color={color1 ? color1 : blue700}
           className={className}
           style={{ ...styles, ...rest }}
-          as={as || 'h1'}
+          as={as || "h1"}
         >
           {text1}
-          {hasSpaceBtw ? '\xa0' : ''}
+          {hasSpaceBtw ? "\xa0" : ""}
           {breakingLine && <br />}
           <ColoredSpan
             color={color2 ? color2 : blue400}

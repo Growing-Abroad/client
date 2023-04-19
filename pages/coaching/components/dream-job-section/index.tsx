@@ -22,7 +22,7 @@ const DreamJobSubtitle = styled.p`
     line-height: 38px;
     font-weight: 400;
     max-width: 708px;
-    margin-top: 44px;
+    margin-top: 32px;
     text-align: center;
 
     @media (max-width: ${mediaQuery}) {
@@ -113,10 +113,23 @@ export default function DreamJobSection() {
     const { isMobile } = useAppContext();
     return (
         <>
-            <CenteredSection contentStyles={{paddingTop: '160px'}}>
-                <TwoColorTitle text1="Ready for your" text2="Dream Job?" as="h2" hasSpaceBtw wrapperStyles={isMobile ? {flexDirection: 'column'} : undefined} styles={isMobile ? {lineHeight: '44px', flexDirection: 'column', display: 'flex'} : undefined} />
+            <CenteredSection contentStyles={isMobile ? {paddingTop: '40px', paddingBottom: '40px'} : {}}>
+                <TwoColorTitle 
+                    as="h2"
+                    text1="Ready for your" 
+                    text2="Dream Job in Germany?" 
+                    hasSpaceBtw 
+                    wrapperStyles={isMobile 
+                        ? {flexDirection: 'column', width: '100%'} 
+                        : {width: '100%'}
+                    } 
+                    styles={isMobile 
+                        ? {lineHeight: '44px' } 
+                        : {display: 'flex', flexDirection: 'column'}
+                    } 
+                />
                 <DreamJobSubtitle>
-                    Choose one of our individual Coaching Services to prepare you for your journey to Germany and Europe
+                    Choose one of our individual Coaching Services
                 </DreamJobSubtitle>
             </CenteredSection>
             <CardsWrapper>
