@@ -30,15 +30,14 @@ function ConsultingGmbHSection() {
         <TitlesContainer>
           <TwoColorTitle
             text1="Growing Abroad"
-            text2="Consulting GmbH"
+            text2="GmbH"
             fontSize={!isMobile ? "60px" : "36px"}
             hasSpaceBtw={!shouldBreakLine}
             breakingLine={shouldBreakLine}
           />
           {!isMobile ? (
             <Subtitle>
-              Your Recruiting agency offering Career Coach & Development
-              Services in the Europen and German job Market
+              Recruiting and Career Services for International Talents
             </Subtitle>
           ) : (
             <Subtitle>Recruiting, Career Coach & Development Services</Subtitle>
@@ -47,28 +46,33 @@ function ConsultingGmbHSection() {
         <Content>
           <ParagraphsContainer>
             <Paragraph>
-              We founded Growing Abroad Consulting to match international
-              talents with companies with the fast growing demand of jobs in
-              Germany and Europe.
+              At Growing Abroad we are committed to match international skilled
+              talents with companies that have a growing demand for jobs in the
+              German and European job market.
             </Paragraph>
             <Paragraph>
-              We offer Career development and Consulting for anbitional students
-              and professionals looking to settle in Germany as well as HR
-              services to match the best talents for German Companies.
+              We are specialized not only in providing career development and
+              consulting services to ambitious students and professionals
+              seeking to establish themselves in Germany and Europe but also
+              offer HR services for German companies matching international
+              talents and candidates to fulfill their growing demand of jobs.
             </Paragraph>
             <Paragraph>
-              <strong>We have experience in different industries:</strong>
+              <strong>Business Experts:</strong>
               <br />
-              Financial Service, Management and Consulting, Tech, Automotive and
-              Industry 4.0
+              +10 years experience in Tech, Engineering, Consulting and IT
+              Project Management
             </Paragraph>
             <Paragraph>
-              <strong>
-                We have a pool of talents in different areas of business:
-              </strong>
+              <strong>Trusted Career Coaches:</strong>
               <br />
-              IT, Engineers, Web, Data and Analytics, Business and Project
-              Management
+              90% Success Rate for our qualified international talents to get
+              hired
+            </Paragraph>
+            <Paragraph>
+              <strong>Talent Reach:</strong>
+              <br />
+              60.000+ Talents on our Social Media Platforms
             </Paragraph>
           </ParagraphsContainer>
           <CarouselContainer>

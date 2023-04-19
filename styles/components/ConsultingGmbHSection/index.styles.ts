@@ -1,8 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const SupraContainer = styled.div`
   width: 100vw;
-  padding: 163px 140px;
+  height: 110vh;
+  padding: 163px 0;
 
   display: flex;
   flex-direction: column;
@@ -19,7 +20,14 @@ export const SupraContainer = styled.div`
 `;
 
 export const Container = styled.div`
-  max-width: 1514px;
+  min-width: 100%;
+  padding-left: 140px;
+  height: 100%;
+
+  @media (min-width: 1514px) {
+    min-width: 1514px;
+    max-width: 1514px;
+  }
 `;
 
 export const TitlesContainer = styled.div`
@@ -32,7 +40,7 @@ export const TitlesContainer = styled.div`
 `;
 
 export const Subtitle = styled.h1`
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -58,6 +66,9 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
 
   @media (max-width: 1395px) {
     flex-direction: column;
@@ -79,7 +90,7 @@ export const ParagraphsContainer = styled.div`
 `;
 
 export const Paragraph = styled.p`
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -92,8 +103,10 @@ export const Paragraph = styled.p`
 export const CarouselContainer = styled.div`
   display: flex;
   width: 100%;
-  max-height: 100%;
-  margin-left: 19px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 19px; */
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
