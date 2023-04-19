@@ -23,7 +23,7 @@ function HeroSection() {
       <VideoContainer>
         <VideoContent>
           <Video autoPlay loop muted>
-            <source src="assets/videos/header-video.mp4" type="video/mp4" />
+            <source src="assets/videos/new-header-video.mp4" type="video/mp4" />
           </Video>
         </VideoContent>
         <VideoBackgroundOpacity />
