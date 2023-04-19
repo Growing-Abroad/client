@@ -33,7 +33,7 @@ function HeroSection() {
           {!isMobile ? (
             <Title.Container>
               <Title.GeneralColor>
-                Matching the best International
+                We match skilled International
                 {"\xa0"}
                 <Title.FirstColor>TALENTS{"\xa0"}</Title.FirstColor>
               </Title.GeneralColor>
@@ -44,8 +44,8 @@ function HeroSection() {
             </Title.Container>
           ) : (
             <Title.Container>
-              <Title.GeneralColor>Matching</Title.GeneralColor>
-              <Title.GeneralColor>the best</Title.GeneralColor>
+              <Title.GeneralColor>We match</Title.GeneralColor>
+              <Title.GeneralColor>skilled</Title.GeneralColor>
               <Title.GeneralColor>International</Title.GeneralColor>
               <Title.GeneralColor>
                 <Title.FirstColor>TALENTS{"\xa0"}</Title.FirstColor>
@@ -58,15 +58,12 @@ function HeroSection() {
             </Title.Container>
           )}
           {!isMobile ? (
-            <Subtitle>
-              Are you looking for an English Speaking Job in Germany or talents
-              for your open positions?
-            </Subtitle>
+            <Subtitle>Recruiting and Career Coach company in Germany</Subtitle>
           ) : (
             <SubtitleContainer>
-              <Subtitle>Are you looking for an English</Subtitle>
-              <Subtitle>Speaking Job in Germany or talents</Subtitle>
-              <Subtitle>for your open positions?</Subtitle>
+              <Subtitle>Recruiting and Career</Subtitle>
+              <Subtitle>Coach company in Germany</Subtitle>
+              {/* <Subtitle>for your open positions?</Subtitle>    */}
             </SubtitleContainer>
           )}
           <ButtonsContainer>
@@ -84,7 +81,7 @@ function HeroSection() {
                 marginBottom: `${isMobile ? "19px" : "0px"}`,
               }}
             >
-              Find experts now
+              For Companies
             </StdButton>
             <StdButton
               style={{
@@ -100,7 +97,7 @@ function HeroSection() {
               }}
               className="find-job-btn"
             >
-              Find A Job Now
+              For Candidates
             </StdButton>
           </ButtonsContainer>
         </TextsContainer>
