@@ -81,6 +81,7 @@ function ConsultingGmbHSection() {
               haveSmallsSlides
               dataArray={consultingGmbhMock}
               IsCentralized
+              isIntroducingAPerson
             />
           </CarouselContainer>
         </Content>

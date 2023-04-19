@@ -10,13 +10,17 @@ export const SupraContainer = styled.div`
   align-items: center;
   z-index: 15;
   background-color: ${({ theme }) => theme.colors.white};
-
   ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1395px) {
+      margin-bottom: 50vh;
+    }
+
     @media (max-width: ${theme.sizes.mediaQuery}) {
       min-height: 100vh;
       padding: 50px 20px 300px 20px;
+      margin-bottom: 10vh;
     }
-  `}
+  `};
 `;
 
 export const Container = styled.div`
