@@ -47,6 +47,7 @@ export const TextsContainer = styled.div`
   width: 100%;
   height: 100%;
   justify-content: flex-start;
+  margin-top: 150px;
   padding-bottom: 170px;
   /* z-index: 999; */
 
@@ -126,7 +127,7 @@ export const SubtitleContainer = styled.div`
   align-items: center;
   text-align: center;
 
-  margin-top: 13.56px;
+  /* margin-top: 13.56px; */
   margin-bottom: 27.73px;
 `;
 
@@ -134,7 +135,7 @@ export const Subtitle = styled.h2`
   /* Subheading */
 
   width: 650px;
-  height: 114px;
+  height: 74px;
 
   font-family: "Montserrat";
   font-style: normal;
@@ -200,7 +201,7 @@ export const VideoContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      height: 75.5%;
+      min-height: 100vh;
     }
   `}
 `;
