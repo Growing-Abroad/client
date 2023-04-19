@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 interface ContentProps {
   isMobile: boolean;
@@ -19,7 +19,7 @@ export const Container = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  padding: 0 100px;
+  padding: 0;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -30,12 +30,12 @@ export const TitleContainer = styled.div`
 
 export const ImageContainerA = styled.div`
   display: grid;
-  grid-area: 'AreaA';
+  grid-area: "AreaA";
 `;
 
 export const ImageContainerB = styled.div`
   display: grid;
-  grid-area: 'AreaB';
+  grid-area: "AreaB";
 `;
 
 export const Content = styled.div<ContentProps>`
@@ -51,17 +51,17 @@ export const Content = styled.div<ContentProps>`
     isMobile
       ? css`
           grid-template-areas:
-            'AreaA AreaA'
-            'AreaA AreaA'
-            'AreaA AreaA'
-            'AreaB AreaB'
-            'AreaB AreaB'
-            'AreaB AreaB';
+            "AreaA AreaA"
+            "AreaA AreaA"
+            "AreaA AreaA"
+            "AreaB AreaB"
+            "AreaB AreaB"
+            "AreaB AreaB";
           /* grid-gap: 5px; */
         `
       : css`
           grid-template-areas:
-            'AreaA AreaA AreaA AreaA AreaA'
-            'AreaB AreaB AreaB AreaB AreaB';
+            "AreaA AreaA AreaA AreaA AreaA"
+            "AreaB AreaB AreaB AreaB AreaB";
         `}
 `;

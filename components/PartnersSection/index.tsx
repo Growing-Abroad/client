@@ -10,6 +10,11 @@ import RedBookIcon from "@/../public/assets/partners-icons/red-book.svg";
 import SelfIcon from "@/../public/assets/partners-icons/self.svg";
 import BuzzFeedIcon from "@/../public/assets/partners-icons/buzz-feed.svg";
 import WomansWorldIcon from "@/../public/assets/partners-icons/womans-world.svg";
+import Rammlerbau from "@/../public/assets/partners-icons/rammlerbräu_1.webp";
+import AlineCeli from "@/../public/assets/partners-icons/Aline Celi Logo.webp";
+import Eletrovorteil from "@/../public/assets/partners-icons/Elektrovorteil.webp";
+import Flexpress from "@/../public/assets/partners-icons/Flexpress.webp";
+import Kickbase from "@/../public/assets/partners-icons/Kickbase-logo_1.webp";
 
 import {
   Container,
@@ -131,7 +136,7 @@ function PartnersSection() {
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={ParadeIcon}
-            alt="Parade"
+            alt="arade"
           />
         </ImageContainerB>
         <ImageContainerB>
