@@ -130,6 +130,7 @@ justify-content:space-between;
     gap:18px;
     height:auto;
     align-items:center;
+    padding:0;
     .image{transform:${(props) => (props.reverse ? "" : "scaleX(-1)")};}
 }
 @media (min-width:1600px) and (max-width:1800px) {
