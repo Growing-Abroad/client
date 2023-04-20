@@ -2,20 +2,28 @@ import React from "react";
 import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
 import TwoColorTitle from "@components/two-color-title";
-import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";
-import Manu from "@/../public/assets/pages/about-us/manu-career-coach.webp";
+import Uan from "@/../public/assets/Uan-Career-Coach-1.webp";
+import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
+import useAppContext from "@/hooks/useAppContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
 function HeroSection() {
+  const { isMobile } = useAppContext();
+
   return (
     <S.Container backgroundImg={HeroBackground.src}>
       <S.ContentWrapper>
-        <TwoColorTitle text1="Discover" text2="Growing Abroad" hasSpaceBtw />
+        <TwoColorTitle
+          breakingLine={isMobile}
+          text1="Discover"
+          text2="Growing Abroad"
+          hasSpaceBtw
+        />
         <p
           style={{ maxWidth: "80vw", fontFamily: montserrat.style.fontFamily }}
           className={classes.para}

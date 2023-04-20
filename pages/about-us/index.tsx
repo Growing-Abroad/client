@@ -7,6 +7,7 @@ import TeamMembers from "./components/TeamMembers";
 import About from "./components/About";
 import PageLayout from "../../src/components/PageLayout";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
+import visionAndMissionMock from "@/utils/mock-ups/vision-and-mission.mock";
 
 export default function AboutUs() {
   return (
@@ -14,7 +15,11 @@ export default function AboutUs() {
       <HeroSection />
       <About />
       <WhoWeAre />
-      <VisionAndMissionNew />
+      <VisionAndMissionNew
+        backgroundSrc={visionAndMissionMock.backgroundSrc}
+        text1={visionAndMissionMock.text1}
+        text2={visionAndMissionMock.text2}
+      />
       <ShareValues />
       <TeamMembers />
     </>

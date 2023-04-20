@@ -1,5 +1,5 @@
 import TwoColorTitle from "@components/two-color-title";
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import UanAndManu from "@assets/pages/about-us/about-us-coaches.webp";
 import Image from "next/image";
 import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
@@ -7,12 +7,28 @@ import classes from "./style.module.css";
 import { Montserrat } from "next/font/google";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
 import useAppContext from "@/hooks/useAppContext";
+import VideoComponent from "@/components/VideoComponent";
 
 const font = Montserrat({
   subsets: ["latin"],
 });
+
+type ControllerType = "play" | "pause";
+
 function WhoWeAre() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { isMobile } = useAppContext();
+
+  const handlePlay = useCallback(() => {
+    setIsVideoPlaying(true);
+  }, [setIsVideoPlaying]);
+
+  const handlePause = useCallback(() => {
+    if (isVideoPlaying) {
+      setIsVideoPlaying(false);
+    }
+  }, [isVideoPlaying, setIsVideoPlaying]);
 
   return (
     <S.Container>
@@ -28,21 +44,28 @@ function WhoWeAre() {
         as="h2"
       />
 
-      <S.ImageContainer className={classes.imageContainer}>
-        <Image
-          width={1128}
-          height={628}
-          src={UanAndManu}
-          alt="uan and manu"
-          className={classes.youtubeImage}
-        ></Image>
-        <div className={classes.ripplesContainer}>
+      <S.ImageContainer onClick={handlePause}>
+        {!isVideoPlaying ? (
           <Image
-            src={YoutubeplayButton}
-            alt="youtube play button"
-            className={classes.youtubePlayButton + " " + classes.blurbRippleOut}
+            width={1128}
+            height={628}
+            src={UanAndManu}
+            alt="uan and manu"
+            className={classes.youtubeImage}
           ></Image>
-        </div>
+        ) : (
+          <VideoComponent
+            isPlaying={isVideoPlaying}
+            src="assets/videos/header-video.mp4"
+            type="video/mp4"
+            controls
+          />
+        )}
+        {!isVideoPlaying && (
+          <div>
+            <S.Player onClick={handlePlay} src={YoutubeplayButton}></S.Player>
+          </div>
+        )}
       </S.ImageContainer>
 
       <S.Paragraph>
