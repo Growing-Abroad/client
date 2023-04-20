@@ -5,9 +5,6 @@ import styles from './index.module.css'
 import Image from "next/image";
 import main__logo from '../../public/assets/cta-img.svg'
 import bottom__svg from '../../public/assets/border-bottom.webp'
-import img1 from '../../public/assets/img1.png'
-import img2 from '../../public/assets/img2.png'
-import img3 from '../../public/assets/img3.png'
 import sad from '../../public/assets/sad.png'
 import officeman from '../../public/assets/pages/sales/officeman.png'
 import rectangle from '../../public/assets/pages/sales/rectangle.png'
@@ -59,9 +56,7 @@ export default function Sales() {
                 </span>
                 <div className={styles.app__sales__body__wrapper}>
                     <div className={styles.app__sales__body__image__wrapper}>
-                        <Image src={img3} className={`${styles.app__sales__body__image} ${styles.image__1}`} alt=""></Image>
-                        <Image src={img2} className={`${styles.app__sales__body__image} ${styles.image__2}`} alt=""></Image>
-                        <Image src={img1} className={`${styles.app__sales__body__image} ${styles.image__3}`} alt=""></Image>
+                        <Image alt="" className={styles.app__sales__body__image} src={sad}></Image>
                     </div>
                     <div className={styles.app__sales__body__points__wrapper}>
                         <div className={styles.app__sales__point}>
