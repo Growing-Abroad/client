@@ -36,6 +36,7 @@ const StyledStdBtn = styled.button<StyledStdBtnProps>`
   white-space: nowrap;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: ${({ theme, hover }) =>

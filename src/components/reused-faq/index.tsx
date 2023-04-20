@@ -1,6 +1,7 @@
 import useAppContext from "@/hooks/useAppContext";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "../two-color-title";
+import { GeneralFaqMockUp } from "./faq-mock-ups";
 
 
 export default function ReusedFaq() {
@@ -8,16 +9,16 @@ export default function ReusedFaq() {
 
     return (
         <>
-            <TwoColorTitle 
+            <TwoColorTitle
             as="h2" hasSpaceBtw
-            text1="Frequently" text2="Asked Questions"  
-            wrapperStyles={{marginBottom: isMobile ? '-40px' : '-25px'}} 
+            text1="Frequently" text2="Asked Questions"
+            wrapperStyles={{marginBottom: isMobile ? '-40px' : '-25px'}}
             styles={isMobile ? {
                 display: 'flex',
                 flexDirection: "column"
             } : undefined}
             />
-            <FaqSection />
-        </>    
+            <FaqSection accordeons={GeneralFaqMockUp} />
+        </>
     )
 }

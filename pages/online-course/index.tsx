@@ -13,6 +13,7 @@ import FaqSection from '@pages/faq/components/FaqSection';
 import TwoColorTitle from '@/components/two-color-title';
 import useAppContext from '@/hooks/useAppContext';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
+import { OnlineCourseFaqMockUp } from '@/components/reused-faq/faq-mock-ups';
 
  export const Wrapper = styled.div`
   width:100%;
@@ -33,7 +34,7 @@ export default function OnlineCourse() {
     <SuccessStoriesSection />
     <TwoCards />
     <TwoColorTitle text1="Frequently " text2="Asked Questions"  styles={{ width:`${isMobile?'387px' :''}`}}/>
-    <FaqSection/>
+    <FaqSection accordeons={OnlineCourseFaqMockUp}/>
     </Wrapper>
   );
 }

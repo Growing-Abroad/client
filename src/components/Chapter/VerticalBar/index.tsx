@@ -7,14 +7,13 @@ const VerticalBar: React.FC = () => {
   const propsBar = [
     {
       index: 1,
-      height: '576px',
+      height: '730px',
     },
-    { index: 2, height:'600px' },
-    { index: 3, height: '820px' },
-    { index: 4, height: '850px' },
-    { index: 5, height: '930px' },
-    { index: 6, height: '910px' },
-    { index: 7, height: '' },
+    { index: 2, height: '910px' },
+    { index: 3, height: '830px' },
+    { index: 4, height: '870px' },
+    { index: 5, height: '860px' },
+    { index: 6, height: '' },
   ];
   const [barColor, setBarColor] = useState<string>('#0073CF');
   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
@@ -39,7 +38,7 @@ const VerticalBar: React.FC = () => {
     let requestId: number;
 
     const animateFill = () => {
-      const fillPercentage = Math.min(scrollPercentage / 100, 1); 
+      const fillPercentage = Math.min(scrollPercentage / 100, 1);
       const newColor = `#0073CF`;
       setBarColor(newColor);
 
@@ -84,7 +83,7 @@ const VerticalBar: React.FC = () => {
             <S.IndexCircle>
               {prop.index}
               <S.IndexCircleProgress
-                backgroundColor={barColor}
+                // backgroundColor={barColor}
               ></S.IndexCircleProgress>
             </S.IndexCircle>
             <S.VerticalBar height={prop.height}>

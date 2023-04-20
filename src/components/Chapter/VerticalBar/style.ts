@@ -45,12 +45,13 @@ export const IndexCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   position:relative;
   @media(max-width:758px){
     width:40px;
     height:40px;
+    font-size: 20px;
   }
 `;
 export const IndexCircleProgress= styled.div<VerticalBarProps>`
@@ -62,8 +63,13 @@ color: black;
 display: flex;
 justify-content: center;
 align-items: center;
-font-size: 20px;
+font-size: 30px;
 font-weight: bold;
 position:absolute;
+@media(max-width:758px){
+  width:40px;
+  height:40px;
+  font-size: 20px;
+}
 
 `

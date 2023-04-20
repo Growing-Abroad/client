@@ -17,10 +17,10 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding: 89px 140px 262px 0px;
+  padding: 89px 0px 262px 0px;
   gap: 81px;
   @media (max-width: ${mediaQuery}) {
-    padding: 47px 0 51px;
+    padding: 47px 0 141px;
   }
 `;
 export const Content = styled.div`
@@ -41,17 +41,21 @@ export const Content = styled.div`
 `;
 export const RightContent = styled.div`
   width: 613px;
-  height: 648px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 61px;
+  margin-right:140px;
+  gap: 50px;
   @media (max-width: ${mediaQuery}) {
     width:430px;
     padding: 46px;
+    margin-right:0px;
     p{
       font-size:16px;
     }
+  }
+  @media (min-width:759px) and (max-width:1400px){
+   gap:80px;
   }
 `;
 export const TextWrapper = styled.div`

@@ -134,8 +134,12 @@ gap:116px;
     gap:18px;
     height:auto;
     align-items:center;
+    .image{transform:${props => props.reverse?'':'scaleX(-1)'};}
 }
-@media (min-width:1800px) {
+@media (min-width:1600px) and (max-width:1800px) {
+  gap:300px;
+}
+@media (min-width:1801px) {
   gap:500px;
 }
 `
@@ -159,6 +163,7 @@ div{
     width:372px;
     height:auto;
     justify-content: flex-start;
+    padding-left:20px;
 }
 `
 export const CardTitle = styled.h3`

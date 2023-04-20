@@ -105,6 +105,7 @@ export const Container = styled.section`
       line-height: 6.25rem;
       font-weight: 500;
       max-width:662px;
+      z-index:5;
       span{
         color:#FFDB5C;
       }
@@ -124,11 +125,11 @@ export const Container = styled.section`
 
     .right-side-img-container {
       position: absolute;
-      bottom: 70px;
+      bottom: 80px;
       left: 40px;
 
       img {
-        bottom: 10px;
+        bottom: -30px;
         position: absolute;
         z-index: 3;
       }
@@ -150,6 +151,7 @@ export const Container = styled.section`
       h1 {
         font-size: 44px;
         line-height: 54px;
+        width:279px;
       }
       button {
         font-size: 1rem;
@@ -157,8 +159,9 @@ export const Container = styled.section`
     }
 
     .right-side {
-      left: -25px;
+      left: -20px;
       transform: scale(.63);
+      bottom:20px;
 
       .right-side-img-container {
         left: 0;
