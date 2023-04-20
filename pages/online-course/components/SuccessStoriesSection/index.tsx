@@ -1,4 +1,4 @@
-import FancyCarousel from "@/components/Fancy-carousel";
+import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { variables } from "@/styles/global-variables"
@@ -30,7 +30,7 @@ export default function SuccessStoriesSection() {
     return (
         <WrapperSection>
             <TwoColorTitle as="h2" text1="Success" text2="Stories" hasSpaceBtw wrapperStyles={{maxWidth: '100%'}} styles={isMobile ? {lineHeight: '2.75rem'} : {}} />
-            <FancyCarousel dataArray={successStoriesData} />
+            <OriginalFancyCarousel dataArray={successStoriesData} />
         </WrapperSection>
     )
 }
