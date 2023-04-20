@@ -1,17 +1,18 @@
-import { ComponentPropsWithoutRef } from 'react';
-import Footer from '../Footer';
-import HeaderForCandidates from '../HeaderForCandidates';
-import HeaderForCompanies from '../HeaderForCompanies';
-import HeaderForPublicRoutes from '../HeaderForPublicRoutes';
+import { ComponentPropsWithoutRef } from "react";
+import Footer from "../Footer";
+import HeaderForCandidates from "../HeaderForCandidates";
+import HeaderForCompanies from "../HeaderForCompanies";
+import HeaderForPublicRoutes from "../HeaderForPublicRoutes";
 
 export enum ChosenHeader {
-  DEFAULT = 'DEFAULT',
-  FOR_CANDIDATES = 'FOR_CANDIDATES',
-  FOR_COMPANIES = 'FOR_COMPANIES',
+  DEFAULT = "DEFAULT",
+  FOR_CANDIDATES = "FOR_CANDIDATES",
+  FOR_COMPANIES = "FOR_COMPANIES",
 }
 
-interface Props extends ComponentPropsWithoutRef<'body'> {
+interface Props extends ComponentPropsWithoutRef<"body"> {
   chosenHeader: ChosenHeader;
+  doesNotHaveAFooter?: boolean;
 }
 
 interface HeaderProps {
@@ -37,7 +38,7 @@ function PageLayout(props: Props) {
     <>
       <Header chosenHeader={chosenHeader} />
       {children}
-      <Footer />
+      {!props.doesNotHaveAFooter && <Footer />}
     </>
   );
 }

@@ -136,7 +136,7 @@ function PartnersSection() {
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
             src={ParadeIcon}
-            alt="arade"
+            alt="Parade"
           />
         </ImageContainerB>
         <ImageContainerB>
