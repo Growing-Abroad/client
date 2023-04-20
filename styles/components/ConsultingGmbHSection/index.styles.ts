@@ -25,10 +25,10 @@ export const SupraContainer = styled.div`
 
 export const Container = styled.div`
   min-width: 100%;
-  padding-left: 140px;
   height: 100%;
 
-  @media (min-width: 1514px) {
+  @media (min-width: 1395px) {
+    padding-left: 140px;
     min-width: 1514px;
     max-width: 1514px;
   }
@@ -88,7 +88,8 @@ export const ParagraphsContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 23px 40px;
+      padding: 23px 0px;
+      width: 100%;
     }
   `}
 `;
