@@ -4,12 +4,13 @@ import { Wrapper } from '@/components/Wrapper';
 import FaqHeroSection from './components/FaqHeroSection';
 import FaqSection from './components/FaqSection';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
+import { GeneralFaqMockUp } from '@/components/reused-faq/faq-mock-ups';
 
 export default function FAQ() {
   return (
     <Wrapper>
       <FaqHeroSection />
-      <FaqSection />
+      <FaqSection  accordeons={GeneralFaqMockUp}/>
     </Wrapper>
   );
 }
