@@ -186,7 +186,7 @@ export const Button = styled.button<ButtonProps>`
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 12px;
+  line-height: 20px;
   /* or 60% */
 
   display: flex;
