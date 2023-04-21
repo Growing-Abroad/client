@@ -88,7 +88,7 @@ export function Chapter() {
               </div>
             </S.CardInfo>
           </S.ContentCard>
-          <S.ContentCard reverse={false}>
+          <S.ContentCard reverse>
             <Image src={index3} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Optimizing
@@ -158,7 +158,7 @@ export function Chapter() {
               </div>
             </S.CardInfo>
           </S.ContentCard>
-          <S.ContentCard reverse>
+          <S.ContentCard reverse={false}>
             <Image src={index4} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Find the right jobs in Germany
@@ -227,7 +227,7 @@ export function Chapter() {
               </div>
             </S.CardInfo>
           </S.ContentCard>
-          <S.ContentCard reverse={false}>
+          <S.ContentCard reverse>
             <Image src={index5} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Preparation for your job interview
@@ -296,7 +296,7 @@ export function Chapter() {
               </div>
             </S.CardInfo>
           </S.ContentCard>
-          <S.ContentCard reverse>
+          <S.ContentCard reverse={false}>
             <Image src={index6} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Land your dream job</S.CardTitle>
