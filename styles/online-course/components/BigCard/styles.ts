@@ -16,7 +16,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 87px 0 200px 0;
+  padding: 87px 0 150px 0;
   @media (max-width: ${mediaQuery}) {
     padding: 87px 23px 71px;
   }
@@ -120,6 +120,7 @@ export const CardText = styled.li`
   font-size: 16px;
   letter-spacing: 0.04em;
   gap: 26px;
+  color:#05335B;
   @media (max-width: ${mediaQuery}) {
     width:320px;
 

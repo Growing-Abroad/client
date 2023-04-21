@@ -15,7 +15,6 @@ export const BackgroudCTA = styled.section`
   padding: 0 ${globalHorizontalPadding};
   height: 90vh;
   min-height: 650px;
-  max-height: 800px;
   overflow: hidden;
   position: relative;
 

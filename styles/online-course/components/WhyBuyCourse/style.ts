@@ -20,7 +20,8 @@ export const Wrapper = styled.div`
   padding: 89px 0px 262px 0px;
   gap: 81px;
   @media (max-width: ${mediaQuery}) {
-    padding: 47px 0 141px;
+    padding: 47px 0 161px;
+    gap:12px;
   }
 `;
 export const Content = styled.div`
@@ -45,7 +46,7 @@ export const RightContent = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin-right:140px;
-  gap: 50px;
+  gap: 20px;
   @media (max-width: ${mediaQuery}) {
     width:430px;
     padding: 46px;
@@ -63,8 +64,7 @@ export const TextWrapper = styled.div`
   width: 100%;
   gap: 32px;
   align-items: center;
-  justify-content: center;
-  height: 52px;
+  justify-content: flex-start;
 `;
 export const BoldSpan = styled.span`
   font-weight: 600;

@@ -27,9 +27,9 @@ export function TwoCards() {
           <Image
             src={thumbsUp}
             alt=""
-            width={isMobile ? 383 : 454}
-            height={isMobile ? 194 : 265}
-            style={{ borderRadius: `${isMobile ? "0" : "10px"}` }}
+            width={isMobile ? 350 : 430}
+            height={isMobile ? 194 : 205}
+            style={{ borderRadius: `${isMobile ? "0" : "10px"}` , objectFit:"cover"}}
           />
           <h3>
             <svg
@@ -143,9 +143,9 @@ export function TwoCards() {
           <Image
             src={thumbsDown}
             alt=""
-            width={isMobile ? 383 : 454}
-            height={isMobile ? 194 : 265}
-            style={{ borderRadius: `${isMobile ? "0" : "10px"}` }}
+            width={isMobile ? 350 : 430}
+            height={isMobile ? 194 : 205}
+            style={{ borderRadius: `${isMobile ? "0" : "10px"}` , objectFit:"cover"}}
           />
           <h3>
             {" "}

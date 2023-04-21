@@ -26,7 +26,7 @@ export const ContentTwoCards = styled.div`
   gap: 186px;
   align-items: center;
   justify-content: center;
-  padding: 89px 200px 76px;
+  padding: 49px 100px 46px;
   .right-card {
     div {
       gap: 30px;
@@ -34,12 +34,12 @@ export const ContentTwoCards = styled.div`
   }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
-    gap: 52px;
+    gap: 42px;
     padding:50px 200px 76px;
     .right-card{
       h3{
-        gap:7px;
-        padding: 26px 31px 40px 42px;
+        font-size: 30px;
+        padding: 26px 31px 40px 32px;
       }
     }
     .right-card{
@@ -53,15 +53,15 @@ export const ContentTwoCards = styled.div`
   }
 `;
 export const TwoCardsWrapper = styled.div`
-  width: 454px;
-  height: 731px;
+  width: 430px;
+  height: auto;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding-bottom:55px;
   margin: 0;
   h3,
   span,
@@ -74,7 +74,7 @@ export const TwoCardsWrapper = styled.div`
   h3 {
     font-size: 32px;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     padding: 48px 59px 33px;
@@ -92,7 +92,7 @@ export const TwoCardsWrapper = styled.div`
     align-items: start;
     justify-content: center;
     width: 100%;
-    gap: 22px;
+    gap: 30px;
     padding: 0 38px;
     svg {
       width: 26px;
@@ -103,7 +103,7 @@ export const TwoCardsWrapper = styled.div`
   }
 
   @media (max-width: ${mediaQuery}) {
-    width:383px;
+    width:350px;
     height:auto;
     div{
       gap:36px;
@@ -111,6 +111,7 @@ export const TwoCardsWrapper = styled.div`
     h3{
       padding: 26px 62px 36px 0px;
       gap:0px;
+      font-size:30px;
       svg{
         margin-top:-10px;
       }
@@ -140,6 +141,6 @@ export const CardText = styled.li`
   @media (max-width: ${mediaQuery}) {
     max-width:360px;
     height:auto;
-    font-weight:500;
+    font-weight:400;
   }
 `;

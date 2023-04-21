@@ -13,7 +13,8 @@ export function BigCard() {
           src={onlineCourse}
           alt=""
           width={isMobile ? 383 : 705}
-          height={isMobile ? 241 : 515}
+          height={isMobile ? 241 : 395}
+          style={{ objectFit: "cover", objectPosition: `${isMobile ? " ":"50% 15%"}`}}
         />
         <h1>Online Course</h1>
         <h2>Land your Dream Job in Germany or Europe</h2>

@@ -32,7 +32,7 @@ export const Container = styled.div`
 
 
   @media (max-width: ${mediaQuery}) {
-    padding-bottom:93px;
+    padding-bottom:33px;
     :nth-child(1n){
       h1{
         width:361px;

@@ -61,7 +61,7 @@ export const AccordeonHeader = styled.div<AccordeonWrapperProps>`
 `
 export const AccordeonTitle = styled.h3`
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 32px;
   color: ${blue700};
   padding:0;

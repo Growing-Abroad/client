@@ -3,7 +3,7 @@ import styled from 'styled-components';
 interface VerticalBarProps{
 backgroundColor?: string;
 color?: string;
-height?: string;
+height?: number;
 }
 export const VerticalBar = styled.div<VerticalBarProps>`
   width: 10px;
@@ -18,13 +18,13 @@ export const VerticalBar = styled.div<VerticalBarProps>`
     height:0;
   }
   @media(max-width:758px){
-    height:${props => props.height};
+    height:${props => `${props.height}px`};
   }
 `;
 export const VerticaProgressBar = styled.div<VerticalBarProps>`
 width: 10px;
   background-color:${props => props.backgroundColor};
-  height:446px;
+  height:${props => `${props.height}px`};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,14 +58,15 @@ export const IndexCircleProgress= styled.div<VerticalBarProps>`
 width: 80px;
 border-radius: 50%;
 background-color:${props => props.backgroundColor};
-height:${props => props.height};
-color: black;
+height:80px;
+color: white;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 30px;
 font-weight: bold;
 position:absolute;
+opacity:0;
 @media(max-width:758px){
   width:40px;
   height:40px;
