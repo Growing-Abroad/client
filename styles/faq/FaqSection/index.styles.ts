@@ -17,7 +17,7 @@ export const Container = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     max-width: 100%;
-    padding: 65px 16px 233px;
+    padding: 65px 16px 50px;
   }
 `
 export const Content = styled.div`
@@ -29,7 +29,7 @@ export const Content = styled.div`
   background-color:#F7F7FB;
   border-radius: 20px;
   gap: 16px;
-  padding: 100px 172px;
+  padding: 50px 172px;
 
   @media (max-width: ${mediaQuery}) {
     padding: 44px 28px 80px;
