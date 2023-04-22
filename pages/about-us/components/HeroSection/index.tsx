@@ -28,9 +28,9 @@ function HeroSection() {
           style={{ maxWidth: "80vw", fontFamily: montserrat.style.fontFamily }}
           className={classes.para}
         >
-          We, Uan from Brazil and Manu from Germany, put together our skills and
-          knowledge to create a unique platform for foreigners to help to make
-          your dream to live and work in Germany or Europe come true.
+          Uan from Brazil and Manu from Germany created a unique platform for
+          foreigners to make their dream of living and working in Germany or
+          Europe a reality
         </p>
 
         <S.ImagesContainer>
@@ -51,7 +51,7 @@ function HeroSection() {
             <S.TextsWrapper className="reverse">
               <S.Quote className={classes.quotes}>”</S.Quote>
               <S.TextRight className="text-right">
-                You just have this one life.
+                You just have this one life. So start living.
               </S.TextRight>
             </S.TextsWrapper>
           </S.ImagesWrapper>
