@@ -19,8 +19,6 @@ const Page: NextPageWithLayout = () => {
       <ConsultingGmbHSection />
       <RecruitingAndCareerServicesSection />
       <PartnersSection />
-      <SectionDivider />
-      <MeetTheFoundersSection />
     </>
   );
 };
@@ -30,7 +28,9 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.DEFAULT}>{page}</PageLayout>
+      <PageLayout doesNotHaveAFooter chosenHeader={ChosenHeader.DEFAULT}>
+        {page}
+      </PageLayout>
     </IntlProvider>
   );
 };

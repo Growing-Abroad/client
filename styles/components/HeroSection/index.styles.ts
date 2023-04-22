@@ -1,4 +1,4 @@
-import styled, { css, StyledProps } from 'styled-components';
+import styled, { css, StyledProps } from "styled-components";
 
 interface TitleProps {
   Container: StyledProps<any>;
@@ -23,14 +23,13 @@ export const Container = styled.div`
   min-width: 100%;
   max-height: 4992px;
   height: 50%;
-  background-color: ${({ theme }) => theme.colors.blue700};
 `;
 
 export const Content = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  max-width: ${({theme} )=> theme.sizes.maxWidthAll};
+  max-width: ${({ theme }) => theme.sizes.maxWidthAll};
   width: 100%;
   padding: 60px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
     ${({ theme }) => theme.sizes.globalHorizontalPadding};
@@ -48,6 +47,7 @@ export const TextsContainer = styled.div`
   width: 100%;
   height: 100%;
   justify-content: flex-start;
+  margin-top: 150px;
   padding-bottom: 170px;
   /* z-index: 999; */
 
@@ -87,7 +87,7 @@ export const Title: TitleProps = {
     display: inline-block;
     text-align: left;
     max-width: 100%;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     font-size: 62px;
@@ -127,17 +127,17 @@ export const SubtitleContainer = styled.div`
   align-items: center;
   text-align: center;
 
-  margin-top: 13.56px;
+  /* margin-top: 13.56px; */
   margin-bottom: 27.73px;
 `;
 
 export const Subtitle = styled.h2`
   /* Subheading */
 
-  width: 580px;
-  height: 114px;
+  width: 650px;
+  height: 74px;
 
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -181,15 +181,13 @@ export const ButtonsContainer = styled.div`
   `}
 
   .find-job-btn {
-    background-color: ${({theme}) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.white};
 
     &:hover {
-      background-color: ${({theme}) => theme.colors.blue700};
-      color: ${({theme}) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.blue700};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
-  
-  
 `;
 
 export const VideoContainer = styled.div`
@@ -203,7 +201,7 @@ export const VideoContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      height: 75.5%;
+      min-height: 100vh;
     }
   `}
 `;

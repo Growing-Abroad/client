@@ -343,14 +343,14 @@ export const ImageBackgroundContent = styled.div<ImageBackgroundContentProps>`
   height: 100%;
   width: 100%;
   z-index: 1;
-  padding: 152px 0px 18px 23px;
+  padding: 25px 0px 18px 23px;
 
   ${({ isIntroducingAPerson, theme }) =>
     isIntroducingAPerson
       ? css`
           background-color: rgba(0, 0, 0, 0.25);
 
-          justify-content: flex-end;
+          justify-content: space-between;
 
           @media (max-width: ${theme.sizes.mediaQuery}) {
             /* position: relative; */
@@ -450,6 +450,11 @@ export const LinkedinIcon = styled(Image).attrs({
   position: absolute;
   top: 6px;
   right: 6px;
+  z-index: 1250;
+
+  :hover {
+    cursor: pointer;
+  }
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

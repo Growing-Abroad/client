@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ export const CardContent = styled.div`
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  padding: 30px 140px 0 140px;
+  padding: 30px 70px 0 70px;
   height: 100%;
   position: relative;
   text-align: justify;
@@ -38,14 +38,14 @@ export const CardContent = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       max-width: 350px;
-      padding: 25px 72px 0px 72px;
+      padding: 25px 50px 0px 50px;
       z-index: 10;
       justify-content: flex-start;
     }
   `}
 
   @media (max-width: 420px) {
-    padding: 25px 25px 0 25px;
+    padding: 25px 5px 0 5px;
   }
 
   h3 {
@@ -68,6 +68,11 @@ export const CardContent = styled.div`
     text-align: center;
     margin: 0;
     padding: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* specify the maximum number of lines here */
+    -webkit-box-orient: vertical;
+    /* overflow: hidden; */
+
     ${({ theme }) => css`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         font-size: 14px;

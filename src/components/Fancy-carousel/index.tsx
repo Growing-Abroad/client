@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import Image, { StaticImageData } from "next/image";
 import { variables } from "@styles/global-variables";
@@ -19,6 +19,7 @@ import {
   StdButtonContainer,
   ImageFlag,
 } from "./style";
+import { useRouter } from "next/router";
 
 export interface ICarouselData {
   imgSrc: StaticImageData;
@@ -81,6 +82,10 @@ export default function FancyCarousel(props: Props) {
 
   const isActive = (i: number) => selectedSlide === i;
 
+  const handleGoToLinkedin = useCallback((url: string) => {
+    window.open(url, "_blank");
+  }, []);
+
   return (
     <FlexboxSlider
       className="flexbox-slider my-flexbox-slider"
@@ -138,13 +143,12 @@ export default function FancyCarousel(props: Props) {
                 isIntroducingAPerson={props.isIntroducingAPerson}
                 isActive={isActive(i)}
               >
-                {props.isIntroducingAPerson && isActive(i) && (
-                  <LinkedinIcon src={LinkedinImage.src} alt="Linkedin" />
-                )}
-                <h3>{item.title}</h3>
-                {item.subtitle && <h4>{item.subtitle}</h4>}
-                <div className="paragraph-container">
+                <div>
+                  <h3>{item.title}</h3>
+                  {item.subtitle && <h4>{item.subtitle}</h4>}
                   <p>{item.from}</p>
+                </div>
+                <div className="paragraph-container">
                   {item.texts.length &&
                     item.texts.map((text, i) => <p key={i}>{text}</p>)}
                 </div>
@@ -167,6 +171,13 @@ export default function FancyCarousel(props: Props) {
                   </StdButtonContainer>
                 )}
               </ImageBackgroundContent>
+              {props.isIntroducingAPerson && isActive(i) && (
+                <LinkedinIcon
+                  onClick={() => handleGoToLinkedin(item.href)}
+                  src={LinkedinImage.src}
+                  alt="Linkedin"
+                />
+              )}
             </ImageBackground>
           </FlexboxSlide>
         )
