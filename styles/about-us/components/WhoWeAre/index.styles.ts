@@ -68,10 +68,16 @@ export const Paragraph = styled.div`
 `;
 
 export const p = styled.p`
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: ${({ theme }) => theme.colors.blue700};
+
+  display: flex;
   text-align: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     padding-left: 40px;
@@ -80,10 +86,7 @@ export const p = styled.p`
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     font-size: 16px;
-    line-height: 30px;
-    text-align: justify;
     padding: 0 15px;
-    letter-spacing: 1.3px;
   }
 `;
 
