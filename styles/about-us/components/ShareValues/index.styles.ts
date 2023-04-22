@@ -58,6 +58,7 @@ export const CardContainer = styled.div`
 `;
 export const Card = styled.div`
   width: 100%;
+  height: 600px;
   max-width: 376px;
   display: flex;
   flex-direction: column;
