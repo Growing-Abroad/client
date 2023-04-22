@@ -9,7 +9,7 @@ export interface ContainerHeroParameters{
   backgroundImageDesktop: string,
   backgroundImageMobile: string,
   styles?: CSSProperties,
-  children: React.ReactNode,
+  children?: React.ReactNode,
 }
 const ContainerHero:React.FC<ContainerHeroParameters> = ({backgroundImageDesktop, backgroundImageMobile,styles, children})=>{
   const {isMobile} = useAppContext();

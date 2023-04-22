@@ -8,8 +8,12 @@ const {
 
 export const ContainerWrapper = styled.div`
   height: 250px;
+  margin-top: 90px;
   width: 100%;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
   
 
   @media (min-width: 430px) {

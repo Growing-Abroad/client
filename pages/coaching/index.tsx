@@ -8,8 +8,15 @@ import WhatOurClientsSay from "./components/what-our-clients-say";
 import ReusedFaq from "@/components/reused-faq";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.webp"
+import ContainerHero from "@/components/ContainerHero";
+import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
+import useAppContext from "@/hooks/useAppContext";
+import { PageBody } from "styles/coaching";
+
 
 export default function Coaching() {
+  const { isMobile } = useAppContext();
+
     const text1: IText = {
         heading: 'Goal',
         description: 'Our coaching sessions give you the confidence and skills to present yourself in the best light and convince during a job interview. Our personalized coaching approach will help you to identify and showcase your unique strengths and overcome any weaknesses to land your dream job in Germany or Europe.'
@@ -21,11 +28,32 @@ export default function Coaching() {
 
     return <>
         <CoachingHeroSection />
-        <DreamJobSection />
-        <VisionAndMissionNew backgroundSrc={VisionAndMissionBackground.src} text1={text1} text2={text2}/>
-        <CoachingPackageOnlineCourseSection />
-        <WhatOurClientsSay />
-        <ReusedFaq />
+        <PageBody className="page__body">
+
+            <ContainerHero
+            backgroundImageDesktop={''}
+            backgroundImageMobile={''}
+            styles={
+                isMobile
+                ? {
+                    height: "100%",
+                    justifyContent: "flex-start",
+                    backgroundPosition: "-155px",
+                }
+                : {
+                    height: "150px",
+                    justifyContent: "flex-start",
+                    position: "absolute",
+                    top: '-150px'
+                }
+            }
+            ></ContainerHero>
+            <DreamJobSection />
+            <VisionAndMissionNew backgroundSrc={VisionAndMissionBackground.src} text1={text1} text2={text2}/>
+            <CoachingPackageOnlineCourseSection />
+            <WhatOurClientsSay />
+            <ReusedFaq />
+        </PageBody>
     </>
 }
 
