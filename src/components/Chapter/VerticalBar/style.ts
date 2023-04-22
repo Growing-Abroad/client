@@ -14,6 +14,7 @@ export const VerticalBar = styled.div<VerticalBarProps>`
   justify-content: center;
   align-items: center;
   position:relative;
+  margin: -3px 0;
   :last-child{
     height:0;
   }
@@ -27,9 +28,11 @@ width: 10px;
   height:${props => `${props.height}px`};
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
   position:absolute;
+  margin: -3px 0;
   top:0;
   left:0;
 
@@ -48,6 +51,7 @@ export const IndexCircle = styled.div`
   font-size: 30px;
   font-weight: bold;
   position:relative;
+  z-index:2;
   @media(max-width:758px){
     width:40px;
     height:40px;
@@ -65,8 +69,10 @@ justify-content: center;
 align-items: center;
 font-size: 30px;
 font-weight: bold;
+z-index:2;
 position:absolute;
 opacity:0;
+
 @media(max-width:758px){
   width:40px;
   height:40px;

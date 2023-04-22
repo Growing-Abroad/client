@@ -18,7 +18,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 87px 0 150px 0;
   @media (max-width: ${mediaQuery}) {
-    padding: 87px 23px 71px;
+    padding: 87px 23px 0px;
   }
 `;
 export const BigCardWrapper = styled.div`
@@ -63,7 +63,7 @@ export const BigCardWrapper = styled.div`
     padding: 24px 56px 55px 91px;
   }
   @media (max-width: ${mediaQuery}) {
-    width: 383px;
+    max-width: 383px;
     justify-content: flex-start;
     h1,
     h2,
