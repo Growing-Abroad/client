@@ -26,7 +26,7 @@ export const Container = styled.section`
 `;
 
 export const TitleContainer = styled.div`
-  width: 100%;
+  max-width: 100%;
   /* padding: 10px; */
   display: flex;
   justify-content: center;
