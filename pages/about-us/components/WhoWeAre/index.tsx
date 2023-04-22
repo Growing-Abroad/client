@@ -70,22 +70,17 @@ function WhoWeAre() {
 
       <S.Paragraph>
         <S.p style={{ fontFamily: font.style.fontFamily }}>
-          Growing abroad helps qualified people that dream to live and work
-          abroad, but have no clue on where to start in order to achieve that.
-          These are people who speak English, have either a University degree or
-          a completed vocational training and don’t see many opportunities in
-          their home country.
+          Let us help you realize your dream of working abroad!
         </S.p>
         <S.p style={{ fontFamily: font.style.fontFamily }}>
-          We will be with you through the whole application process and help you
-          to optimize your CV and application documents into German standards,
-          help you to look for adequate jobs, help you to rock your job
-          interview to get the job you admire.
+          Growing Abroad will guide you through the entire process: from
+          optimizing your CV for German standards to acing job interviews and
+          finding the perfect job. You don't have to go alone - we'll be with
+          you every step of the way!
         </S.p>
         <S.p style={{ fontFamily: font.style.fontFamily }}>
-          We provide a life-changing experience where you will learn a different
-          language, get to know a new culture and have a different perspective
-          in your life.
+          Start your life-changing experience today and embrace a new language,
+          culture, and perspective!
         </S.p>
       </S.Paragraph>
     </S.Container>
