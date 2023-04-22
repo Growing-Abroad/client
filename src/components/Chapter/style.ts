@@ -48,6 +48,7 @@ export const Content = styled.div`
   padding-bottom: 150px;
   @media (max-width: ${mediaQuery}) {
     min-width: 430px;
+    padding-bottom: 20px;
   }
 `;
 

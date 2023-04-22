@@ -119,7 +119,7 @@ const VerticalBar: React.FC = () => {
           top: "0",
           left: `${isMobile ? "26px" : "50%"}`,
           display: "flex",
-          marginLeft: `${isMobile ? "0" : "-40px"}`,
+          marginLeft: `${isMobile ? "0" : "-60px"}`,
           flexDirection: "column",
           alignItems: "center",
           zIndex:10,

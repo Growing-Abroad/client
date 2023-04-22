@@ -17,7 +17,7 @@ export const Container = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     max-width: 100%;
-    padding: 65px 16px 133px;
+    padding: 65px 16px 83px;
   }
 `
 export const Content = styled.div`
@@ -32,6 +32,6 @@ export const Content = styled.div`
   padding: 50px 172px;
 
   @media (max-width: ${mediaQuery}) {
-    padding: 44px 28px 80px;
+    padding: 44px 28px 40px;
   }
 `
