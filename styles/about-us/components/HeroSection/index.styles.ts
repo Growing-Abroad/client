@@ -174,7 +174,7 @@ export const BlueSquare = styled.div`
 
   @media (max-width: 520px) {
     --blueSquareOffset: -25vw;
-    width: 55vw;
+    width: 45vw;
   }
 
   @media (max-width: 480px) {
