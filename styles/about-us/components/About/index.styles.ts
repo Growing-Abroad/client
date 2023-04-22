@@ -80,11 +80,35 @@ export const Text = styled.div<TextProps>`
     height: 0;
     transition: all 1.5s;
 
-    ${({ isOpen }) =>
+    ${({ isOpen, theme }) =>
       isOpen &&
       css`
-        height: 75vh;
+        height: 120vh;
         overflow: :visible;
+
+        @media (max-width: 1125px) {
+          height: 150vh;
+        }
+
+        @media (max-width: 1050px) {
+          height: 175vh;
+        }
+
+        @media (max-width: ${theme.sizes.mediaQuery}) {
+          height: 150vh;
+        }
+
+        @media (max-width: 535px) {
+          height: 175vh;
+        }
+
+        @media (max-width: 470px) {
+          height: 200vh;
+        }
+
+        @media (max-width: 430px) {
+          height: 250vh;
+        }
       `}
   }
 
