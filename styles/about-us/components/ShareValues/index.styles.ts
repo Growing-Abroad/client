@@ -1,6 +1,6 @@
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const {
   colors: { blue700 },

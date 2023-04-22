@@ -13,7 +13,7 @@ function About() {
   }, [setIsOpen]);
 
   return (
-    <S.Container>
+    <S.Container isOpen={isOpen}>
       <S.TextContainer>
         {aboutUs.map((section, i) => (
           <S.Text isOpen={isOpen} key={section.title} id={"box" + i}>
