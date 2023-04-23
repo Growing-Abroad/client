@@ -10,7 +10,10 @@ export interface IText {
 export interface IVisionAndMission {
   text1: IText;
   text2: IText;
-  backgroundSrc: string;
+  backgroundSrc: {
+    desktop: string;
+    mobile: string;
+  };
 }
 
 function VisionAndMissionNew({
@@ -18,7 +21,17 @@ function VisionAndMissionNew({
   text1,
   text2,
 }: IVisionAndMission) {
+  const [backgroundImg, setBackgroundImg] = useState<string>("");
+
   const { isMobile } = useAppContext();
+
+  useEffect(() => {
+    if (isMobile) {
+      setBackgroundImg(backgroundSrc.mobile);
+      return;
+    }
+    setBackgroundImg(backgroundSrc.desktop);
+  }, [isMobile]);
 
   return (
     <>
@@ -28,7 +41,7 @@ function VisionAndMissionNew({
             lg="6"
             className={classes.missionBg}
             style={{
-              backgroundImage: "url(" + backgroundSrc + ")",
+              backgroundImage: "url(" + backgroundImg + ")",
             }}
           >
             <div className={classes.missionContainer}>

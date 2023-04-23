@@ -28,7 +28,10 @@ export default function Coaching() {
       <CoachingHeroSection />
       <DreamJobSection />
       <VisionAndMissionNew
-        backgroundSrc={VisionAndMissionBackground.src}
+        backgroundSrc={{
+          mobile: VisionAndMissionBackground.src,
+          desktop: VisionAndMissionBackground.src,
+        }}
         text1={text1}
         text2={text2}
       />
