@@ -62,6 +62,9 @@ export const TwoCardsWrapper = styled.div`
   justify-content: start;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  &:hover {
+    transform: scale(1.1);
+  }
   margin: 0;
   h3,
   span,

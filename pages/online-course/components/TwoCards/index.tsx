@@ -29,7 +29,7 @@ export function TwoCards() {
             alt=""
             width={isMobile ? 350 : 430}
             height={isMobile ? 194 : 205}
-            style={{ borderRadius: `${isMobile ? "0" : "10px"}` , objectFit:"cover"}}
+            style={{ borderRadius: `${isMobile ? "10px" : "10px"}` , objectFit:"cover"}}
           />
           <h3>
             <svg
@@ -145,7 +145,7 @@ export function TwoCards() {
             alt=""
             width={isMobile ? 350 : 430}
             height={isMobile ? 194 : 205}
-            style={{ borderRadius: `${isMobile ? "0" : "10px"}` , objectFit:"cover"}}
+            style={{ borderRadius: `${isMobile ? "10px" : "10px"}` , objectFit:"cover"}}
           />
           <h3>
             {" "}

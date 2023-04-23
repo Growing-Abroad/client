@@ -14,7 +14,7 @@ export const BackgroudCTA = styled.section`
   background-color: ${blue500};
   padding: 0 ${globalHorizontalPadding};
   height: 90vh;
-  min-height: 650px;
+  min-height: 750px;
   overflow: hidden;
   position: relative;
 
@@ -51,6 +51,9 @@ export const BackgroudCTA = styled.section`
         bottom:0px;
       }
     }
+  }
+  @media(min-width:1800px) {
+    max-height:650px
   }
 `
 

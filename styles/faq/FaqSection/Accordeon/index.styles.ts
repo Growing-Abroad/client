@@ -61,7 +61,7 @@ export const AccordeonHeader = styled.div<AccordeonWrapperProps>`
 `
 export const AccordeonTitle = styled.h3`
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 32px;
   color: ${blue700};
   padding:0;
@@ -83,7 +83,7 @@ export const AccordeonContent = styled.p<AccordeonWrapperProps>`
   color: ${blue700};
   justify-content: start;
   font-size:16px;
-  font-weight:500;
+  font-weight:400;
   margin:0;
   max-width: 723px;
   width: 100%;

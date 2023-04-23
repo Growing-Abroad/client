@@ -14,7 +14,7 @@ export function BigCard() {
           alt=""
           width={isMobile ? 383 : 705}
           height={isMobile ? 241 : 395}
-          style={{ objectFit: "cover", objectPosition: `${isMobile ? " ":"50% 15%"}`}}
+          style={{ objectFit: "cover", objectPosition: `${isMobile ? " ":"50% 15%"}`, borderRadius: "10px" }}
         />
         <h1>Online Course</h1>
         <h2>Land your Dream Job in Germany or Europe</h2>
