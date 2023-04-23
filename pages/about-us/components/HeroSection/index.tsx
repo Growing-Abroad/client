@@ -22,6 +22,9 @@ function HeroSection() {
           breakingLine={isMobile}
           text1="Discover"
           text2="Growing Abroad"
+          wrapperStyles={{
+            maxWidth: "100vw",
+          }}
           hasSpaceBtw
         />
         <p
