@@ -1,8 +1,10 @@
 import { useState } from "react";
 import {
+  ButtonContainer,
   FlexboxSlide,
   FlexboxSlider,
   FromWrapper,
+  ImageFlag,
   TextBlock,
   TextBlockH3,
 } from "./styles";
@@ -78,22 +80,26 @@ export default function OriginalFancyCarousel(props: Props) {
 
             <FromWrapper>
               <p>{item.from}</p>
-              <Image
+              <ImageFlag
                 src={`countries-flags/${item.countryFlag}.svg`}
                 alt={`flag of ${item.countryFlag}`}
-                width={isMobile ? 25 : 64}
-                height={isMobile ? 17.58 : 45}
                 className="country-flag"
               />
             </FromWrapper>
 
-            <StdButton
-              icon={faPlay}
-              className="watch-video-btn"
-                style={{ width: "max-content", padding: isMobile ? '8px 20px' : '20px 40px' }}
-            >
-              Watch Video
-            </StdButton>
+            <ButtonContainer>
+              <StdButton
+                icon={faPlay}
+                className="watch-video-btn"
+                style={{
+                  width: "100%",
+                  padding: isMobile ? "8px 20px" : "20px 40px",
+                  fontSize: "calc(0.875rem + ((1vw - 4.3px) * 0.5535))",
+                }}
+              >
+                Watch Video
+              </StdButton>
+            </ButtonContainer>
           </TextBlock>
 
           <Image src={item.imgSrc} alt="Slide Image" className="slide-img" />
