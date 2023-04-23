@@ -11,7 +11,7 @@ interface TextProps {
 const font = Montserrat({
   subsets: ["latin"],
 });
-export const Container = styled.section`
+export const Container = styled.section<TextProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,6 @@ export const Container = styled.section`
   font: 400 1rem;
   padding-bottom: 100px;
   border-bottom: 1px solid #05335b;
-
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding: 30px 40px 60px 40px;
   }
@@ -79,11 +78,37 @@ export const Text = styled.div<TextProps>`
     margin-top: 0;
     overflow: hidden;
     height: 0;
+    transition: all 1.5s;
 
-    ${({ isOpen }) =>
+    ${({ isOpen, theme }) =>
       isOpen &&
       css`
-        height: 100%;
+        height: 120vh;
+        overflow: :visible;
+
+        @media (max-width: 1125px) {
+          height: 150vh;
+        }
+
+        @media (max-width: 1050px) {
+          height: 175vh;
+        }
+
+        @media (max-width: ${theme.sizes.mediaQuery}) {
+          height: 150vh;
+        }
+
+        @media (max-width: 535px) {
+          height: 175vh;
+        }
+
+        @media (max-width: 470px) {
+          height: 200vh;
+        }
+
+        @media (max-width: 430px) {
+          height: 250vh;
+        }
       `}
   }
 

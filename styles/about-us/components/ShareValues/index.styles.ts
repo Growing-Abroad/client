@@ -1,6 +1,6 @@
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const {
   colors: { blue700 },
@@ -26,7 +26,7 @@ export const Container = styled.section`
 `;
 
 export const TitleContainer = styled.div`
-  width: 100%;
+  max-width: 100%;
   /* padding: 10px; */
   display: flex;
   justify-content: center;
@@ -58,6 +58,7 @@ export const CardContainer = styled.div`
 `;
 export const Card = styled.div`
   width: 100%;
+  height: 600px;
   max-width: 376px;
   display: flex;
   flex-direction: column;

@@ -3,6 +3,7 @@ import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
 import TwoColorTitle from "@components/two-color-title";
 import Uan from "@/../public/assets/Uan-Career-Coach-1.webp";
+import Uan2 from "@/../public/assets/Uan-Career-Coach-11.webp";
 import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
@@ -13,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 function HeroSection() {
-  const { isMobile } = useAppContext();
+  const { isMobile, windowSize } = useAppContext();
 
   return (
     <S.Container backgroundImg={HeroBackground.src}>
@@ -22,19 +23,24 @@ function HeroSection() {
           breakingLine={isMobile}
           text1="Discover"
           text2="Growing Abroad"
+          wrapperStyles={{
+            maxWidth: "100vw",
+          }}
           hasSpaceBtw
         />
         <p
           style={{ maxWidth: "80vw", fontFamily: montserrat.style.fontFamily }}
           className={classes.para}
         >
-          We, Uan from Brazil and Manu from Germany, put together our skills and
-          knowledge to create a unique platform for foreigners to help to make
-          your dream to live and work in Germany or Europe come true.
+          Uan from Brazil and Manu from Germany created a unique platform for
+          foreigners to make their dream of living and working in Germany or
+          Europe a reality
         </p>
 
         <S.ImagesContainer>
-          <S.ImagesWrapper background={Uan.src}>
+          <S.ImagesWrapper
+            background={windowSize.width >= 1100 ? Uan.src : Uan2.src}
+          >
             <S.BlueSquare />
 
             <S.TextsWrapper>
@@ -51,7 +57,7 @@ function HeroSection() {
             <S.TextsWrapper className="reverse">
               <S.Quote className={classes.quotes}>”</S.Quote>
               <S.TextRight className="text-right">
-                You just have this one life.
+                You just have this one life. So start living.
               </S.TextRight>
             </S.TextsWrapper>
           </S.ImagesWrapper>

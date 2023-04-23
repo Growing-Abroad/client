@@ -1,5 +1,6 @@
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import Image from "next/image";
 import styled from "styled-components";
 
 const {
@@ -154,6 +155,14 @@ export const TextBlock = styled.div`
     opacity: 0;
   }
 
+  @media (min-width: 1200px) and (max-width: 1280px) {
+    padding: 44px 15px;
+  }
+
+  @media (min-width: ${mediaQuery}) and (max-width: 1200px) {
+    padding: 0 0 30px 5px;
+  }
+
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
     max-width: 75%;
@@ -177,6 +186,10 @@ export const TextBlockH3 = styled.h3`
   gap: 8px;
   opacity: 0;
 
+  @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
+    font-size: calc(1.125rem + ((1vw - 4.3px) * 1.2915));
+  }
+
   @media (max-width: ${mediaQuery}) {
     font-size: 1.125rem;
     line-height: 1.625rem;
@@ -195,14 +208,44 @@ export const FromWrapper = styled.div`
   gap: 32px;
   margin-bottom: auto;
 
-  p { 
+  p {
     letter-spacing: 1.3px;
     margin: 0;
+
+    @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
+      font-size: calc(0.875rem + ((1vw - 4.3px) * 0.5535));
+    }
   }
 
   @media (max-width: ${mediaQuery}) {
     gap: 10.15px;
     margin-top: auto;
     margin-bottom: 16px;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  width: max-content;
+  @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
+    width: calc(7.375rem + ((1vw - 4.3px) * 12.3616));
+    height: calc(2.1875rem + ((1vw - 4.3px) * 2.214));
+  }
+`;
+
+export const ImageFlag = styled(Image).attrs({
+  width: 64,
+  height: 45,
+})`
+  width: 64px;
+  height: 45px;
+
+  @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
+    width: calc(1.5625rem + ((1vw - 4.3px) * 3.5978));
+    height: calc(1.09875rem + ((1vw - 4.3px) * 2.5295));
+  }
+
+  @media (max-width: ${mediaQuery}) {
+    width: 25px;
+    height: 17.58px;
   }
 `;

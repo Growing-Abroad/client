@@ -18,7 +18,6 @@ function ShareValues() {
           text2="Values?"
           hasSpaceBtw
           as="h2"
-          breakingLine={isMobile}
           wrapperStyles={{
             maxWidth: "100%",
           }}

@@ -174,7 +174,7 @@ export const BlueSquare = styled.div`
 
   @media (max-width: 520px) {
     --blueSquareOffset: -25vw;
-    width: 55vw;
+    width: 45vw;
   }
 
   @media (max-width: 480px) {
@@ -196,6 +196,10 @@ export const TextsWrapper = styled.div`
 
   &.reverse {
     align-items: flex-end;
+  }
+
+  @media (min-width: 1025px) and (max-width: 1305px) {
+    padding: 0;
   }
 
   @media (max-width: 1024px) {
@@ -231,6 +235,10 @@ export const TextLeft = styled.span`
   letter-spacing: 1.3px;
   font-weight: 600;
   white-space: pre-wrap;
+
+  @media (min-width: 1025px) and (max-width: 1305px) {
+    width: auto;
+  }
 
   @media (max-width: 1024px) {
     font-size: 1.3rem;

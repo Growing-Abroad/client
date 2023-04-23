@@ -1,8 +1,12 @@
-import PuzzleImage from "@/../public/assets/puzzle.webp";
+import PuzzleImageDesktop from "@/../public/assets/vision-mission2-desktop.png";
+import PuzzleImageMobile from "@/../public/assets/vision-mission2-mobile.png";
 import { IVisionAndMission } from "@pages/about-us/components/VisionAndMissionNew";
 
 export default {
-  backgroundSrc: PuzzleImage.src,
+  backgroundSrc: {
+    desktop: PuzzleImageDesktop.src,
+    mobile: PuzzleImageMobile.src,
+  },
   text1: {
     heading: "Mission",
     description:
