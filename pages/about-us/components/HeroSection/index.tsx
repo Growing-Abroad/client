@@ -3,6 +3,7 @@ import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
 import TwoColorTitle from "@components/two-color-title";
 import Uan from "@/../public/assets/Uan-Career-Coach-1.webp";
+import Uan2 from "@/../public/assets/Uan-Career-Coach-11.webp";
 import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
@@ -13,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 function HeroSection() {
-  const { isMobile } = useAppContext();
+  const { isMobile, windowSize } = useAppContext();
 
   return (
     <S.Container backgroundImg={HeroBackground.src}>
@@ -37,7 +38,9 @@ function HeroSection() {
         </p>
 
         <S.ImagesContainer>
-          <S.ImagesWrapper background={Uan.src}>
+          <S.ImagesWrapper
+            background={windowSize.width >= 1100 ? Uan.src : Uan2.src}
+          >
             <S.BlueSquare />
 
             <S.TextsWrapper>
