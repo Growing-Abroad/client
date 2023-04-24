@@ -104,7 +104,7 @@ export const ul = styled.ul`
 export const ImageContainer = styled.div`
   border-radius: 5px;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;
