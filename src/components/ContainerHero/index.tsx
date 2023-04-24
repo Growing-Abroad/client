@@ -17,11 +17,11 @@ const ContainerHero:React.FC<ContainerHeroParameters> = ({backgroundImageDesktop
     <Container
       backgroundImage={isMobile ? backgroundImageMobile : backgroundImageDesktop}
      style={{...styles}}>
-      <Image
+      {/* <Image
         src={border}
         className="border-image"
         alt="white border"
-      />
+      /> */}
       {children}
     </Container>
   );

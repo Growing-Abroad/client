@@ -12,6 +12,7 @@ import ContainerHero from "@/components/ContainerHero";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import useAppContext from "@/hooks/useAppContext";
 import { PageBody } from "styles/coaching";
+import Wave from "@/components/Wave";
 
 
 export default function Coaching() {
@@ -30,9 +31,10 @@ export default function Coaching() {
         <CoachingHeroSection />
         <PageBody className="page__body">
 
-            <ContainerHero
-            backgroundImageDesktop={''}
-            backgroundImageMobile={''}
+            <Wave
+            type={1}
+            height={isMobile? '100%' : '100%'}
+            className="border-image"
             styles={
                 isMobile
                 ? {
@@ -47,7 +49,7 @@ export default function Coaching() {
                     top: '-150px'
                 }
             }
-            ></ContainerHero>
+            ></Wave>
             <DreamJobSection />
             <VisionAndMissionNew backgroundSrc={VisionAndMissionBackground.src} text1={text1} text2={text2}/>
             <CoachingPackageOnlineCourseSection />
