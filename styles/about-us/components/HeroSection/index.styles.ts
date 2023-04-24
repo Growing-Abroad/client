@@ -64,11 +64,11 @@ export const ImagesContainer = styled.div`
     flex-direction: initial;
     width: 100vw;
   }
-  @media (max-width: 588px) {
+  /* @media (max-width: 588px) {
     margin-top: -66px;
-  }
+  } */
   @media (max-width: 480px) {
-    margin-top: -115px;
+    margin-top: -66px;
   }
 `;
 
