@@ -14,7 +14,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding} 0
+  padding: 0 ${variables.sizes.globalHorizontalPadding} 0
     ${variables.sizes.globalHorizontalPadding};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
