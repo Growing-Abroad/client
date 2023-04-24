@@ -21,7 +21,7 @@ export const Container = styled.section`
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 990px) {
-    padding-top: 180px;
+    padding-top: 280px;
   }
 
   @media (max-width: 580px) {
