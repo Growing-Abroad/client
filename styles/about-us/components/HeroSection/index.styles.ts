@@ -29,6 +29,10 @@ export const Container = styled.section<IContainer>`
     max-width: 850px;
     padding-inline: 1rem;
   }
+
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    padding-top: 20px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -36,7 +40,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
 
   > p {
     padding-inline: 1rem;
