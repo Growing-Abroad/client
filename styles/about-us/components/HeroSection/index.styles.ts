@@ -186,6 +186,7 @@ export const BlueSquare = styled.div`
     bottom: -370px;
   }
 `;
+
 export const TextsWrapper = styled.div`
   width: 28vw;
   position: absolute;
@@ -221,6 +222,9 @@ export const TextsWrapper = styled.div`
 
   @media (max-width: 480px) {
     width: 43vw;
+    height: 200px;
+    justify-content: space-between;
+    padding: 5.5rem 1.2rem 5px;
   }
 `;
 
