@@ -122,6 +122,10 @@ export const ImageContainer = styled.div`
     align-items: center;
   }
 
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    width: 100%;
+  }
+
   @media (max-width: 580px) {
     padding: 0 10px;
   }
@@ -133,5 +137,10 @@ export const Player = styled(Image).attrs({
   :hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    width: 25%;
+    height: auto;
   }
 `;
