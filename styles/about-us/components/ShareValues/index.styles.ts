@@ -20,6 +20,10 @@ export const Container = styled.section`
     padding: 0;
   }
 
+  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 990px) {
+    padding-top: 180px;
+  }
+
   @media (max-width: 580px) {
     padding: 72px 42px 2px;
   }
