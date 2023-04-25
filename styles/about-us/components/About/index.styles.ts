@@ -137,6 +137,10 @@ export const Text = styled.div<TextProps>`
     text-align: justify;
     font-weight: 400;
     margin-top: 0;
+
+    :hover {
+      cursor: default;
+    }
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
