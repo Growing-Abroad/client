@@ -14,7 +14,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 80px ${variables.sizes.globalHorizontalPadding} 0
+  padding: 0 ${variables.sizes.globalHorizontalPadding} 0
     ${variables.sizes.globalHorizontalPadding};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
@@ -104,7 +104,7 @@ export const ul = styled.ul`
 export const ImageContainer = styled.div`
   border-radius: 5px;
   overflow: hidden;
-  width: 100%;
+  width: 80%;
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;
@@ -122,6 +122,10 @@ export const ImageContainer = styled.div`
     align-items: center;
   }
 
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    width: 100%;
+  }
+
   @media (max-width: 580px) {
     padding: 0 10px;
   }
@@ -133,5 +137,10 @@ export const Player = styled(Image).attrs({
   :hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    width: 25%;
+    height: auto;
   }
 `;

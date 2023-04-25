@@ -29,6 +29,10 @@ export const Container = styled.section<IContainer>`
     max-width: 850px;
     padding-inline: 1rem;
   }
+
+  @media (max-width: ${variables.sizes.mediaQuery}) {
+    padding-top: 20px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -36,7 +40,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
 
   > p {
     padding-inline: 1rem;
@@ -60,11 +64,11 @@ export const ImagesContainer = styled.div`
     flex-direction: initial;
     width: 100vw;
   }
-  @media (max-width: 588px) {
+  /* @media (max-width: 588px) {
     margin-top: -66px;
-  }
+  } */
   @media (max-width: 480px) {
-    margin-top: -115px;
+    margin-top: -66px;
   }
 `;
 
@@ -182,6 +186,7 @@ export const BlueSquare = styled.div`
     bottom: -370px;
   }
 `;
+
 export const TextsWrapper = styled.div`
   width: 28vw;
   position: absolute;
@@ -217,6 +222,9 @@ export const TextsWrapper = styled.div`
 
   @media (max-width: 480px) {
     width: 43vw;
+    height: 200px;
+    justify-content: space-between;
+    padding: 5.5rem 1.2rem 5px;
   }
 `;
 

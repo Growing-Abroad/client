@@ -1,14 +1,15 @@
 .sectionContainer {
-  margin-bottom: 160px;
+  margin-bottom: 60px;
 }
 
 .section {
+  height: 748px;
   box-shadow: 0px 10px 10px #efefef;
   margin-top: 93px;
 }
 
 .missionBg {
-  height: 748px;
+  height: 100%;
   background-position: left top;
   background-size: cover;
   position: relative;
@@ -65,6 +66,12 @@
 .visionContainer {
   padding-left: 79px;
   width: 100%;
+}
+
+@media (max-height: 748px) {
+  .section {
+    height: 548px;
+  }
 }
 
 @media (max-width: 992px) {

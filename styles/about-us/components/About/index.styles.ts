@@ -20,7 +20,7 @@ export const Container = styled.section<TextProps>`
   color: ${theme.colors.blue700};
   font: 400 1rem;
   padding-bottom: 100px;
-  border-bottom: 1px solid #05335b;
+
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding: 30px 40px 60px 40px;
   }
@@ -137,6 +137,10 @@ export const Text = styled.div<TextProps>`
     text-align: justify;
     font-weight: 400;
     margin-top: 0;
+
+    :hover {
+      cursor: default;
+    }
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {

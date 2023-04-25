@@ -22,7 +22,11 @@ function About() {
 
             <div className="paragraph-container">
               {section.paragraphs.map((p, i) => (
-                <p className="more-text" key={i}>
+                <p
+                  onClick={handleSwitchParagraph}
+                  className="more-text"
+                  key={i}
+                >
                   {p}
                 </p>
               ))}

@@ -13,11 +13,15 @@ export const Container = styled.section`
   align-items: center;
   justify-items: center;
   gap: 50px;
-  padding: 80px ${variables.sizes.globalHorizontalPadding};
+  padding: 0 ${variables.sizes.globalHorizontalPadding};
   color: ${theme.colors.blue700};
 
   @media (max-width: 1280px) {
     padding: 0;
+  }
+
+  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 990px) {
+    padding-top: 280px;
   }
 
   @media (max-width: 580px) {
