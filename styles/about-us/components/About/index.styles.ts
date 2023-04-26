@@ -4,14 +4,18 @@ import { theme } from "@styles/theme";
 import { open } from "@styles/animations";
 import { Montserrat } from "@next/font/google";
 
-interface TextProps {
+interface ContainerProps {
   isOpen: boolean;
+}
+
+interface TextProps extends ContainerProps {
+  textHeight: number;
 }
 
 const font = Montserrat({
   subsets: ["latin"],
 });
-export const Container = styled.section<TextProps>`
+export const Container = styled.section<ContainerProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -80,38 +84,21 @@ export const Text = styled.div<TextProps>`
     height: 0;
     transition: all 1.5s;
 
-    ${({ isOpen, theme }) =>
+    ${({ isOpen, textHeight }) =>
       isOpen &&
       css`
-        height: 120vh;
+        height: ${textHeight}px;
         overflow: :visible;
 
-        @media (max-width: 1125px) {
-          height: 150vh;
+        /* @media (max-width: 1185px) or (max-height: 635px) {
+          height: ${textHeight}px;
         }
 
-        @media (max-width: 1050px) {
-          height: 175vh;
-        }
-
-        @media (max-width: ${theme.sizes.mediaQuery}) {
-          height: 150vh;
-        }
-
-        @media (max-width: 535px) {
-          height: 175vh;
-        }
-
-        @media (max-width: 470px) {
-          height: 200vh;
-        }
-
-        @media (max-width: 430px) {
-          height: 250vh;
-        }
+        @media (max-width: 1075px) or (max-height: 565px) {
+          height: ${textHeight}px;
+        } */
       `}
   }
-
   h3 {
     font-weight: 600;
     font-size: 2rem;
