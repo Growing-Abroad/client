@@ -31,7 +31,7 @@ export const Container = styled.section`
 
 export const TitleContainer = styled.div`
   max-width: 100%;
-  /* padding: 10px; */
+  padding-top: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
