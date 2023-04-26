@@ -20,11 +20,13 @@ export default function CoachingHeroSection() {
           isMobile
             ? {
                 height: "100%",
+                marginTop:"0px",
                 justifyContent: "flex-start",
                 backgroundPosition: "-155px",
               }
             : {
                 height: "100%",
+                marginTop:"0px",
                 justifyContent: "flex-start",
               }
         }

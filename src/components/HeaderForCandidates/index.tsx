@@ -113,71 +113,82 @@ function HeaderForCandidates() {
         </StyledBurgerContainer>
       </Header>
       {isMobile && <div style={{ width: "100%", height: "60px" }}></div>}
-      <Container itsOpen={itsMobileMenuOpen}>
-        {!isMobile && (
-          <LogoContainer>
-            <Logo src={GrowingAbroadImage.src} onClick={handleGoToMain} />
-          </LogoContainer>
-        )}
-        <Content>
-          <ButtonsContainer>
-            <Button onClick={handleGoToOnlineCourse}>Online course</Button>
-            <Button onClick={handleGoToCoaching}>Coaching</Button>
-            <Button onClick={handleGoToJobs}>Jobs</Button>
-            {shouldHaveMobileBehavior && (
-              <>
-                <Button onClick={handleGoAboutUs}>About Us</Button>
-                <Button onClick={handleGoToCareer}>Career Blog</Button>
-                <Button onClick={handleGoToFaq}>FAQ</Button>
-              </>
-            )}
-          </ButtonsContainer>
-          <IconsContainer>
-            {!shouldHaveMobileBehavior && (
-              <>
-                <Button onClick={handleGoToLogin}>Login</Button>
-                <IconButton>
-                  <AwesomeIcon icon={faGlobe} size="2xl" />
-                </IconButton>
-                <StyledBurger
-                  open={itsDesktopMenuOpen}
-                  onClick={() => setItsDesktopMenuOpen(!itsDesktopMenuOpen)}
-                  isForDesktop
-                >
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </StyledBurger>
-                <StdButton
-                  style={{
-                    width: 195,
-                    height: 32,
-                    fontSize: 18,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: 8,
-                    boxShadow: "none",
-                  }}
-                  onClick={handleGoToForCompanies}
-                  backgroundColor={!shouldHaveMobileBehavior ? blue700 : white}
-                  color={!shouldHaveMobileBehavior ? white : blue700}
-                  hover={{
-                    backgroundColor: blue400,
-                    color: white,
-                  }}
-                >
-                  For Companies
-                </StdButton>
-              </>
-            )}
-          </IconsContainer>
-        </Content>
-        <DesktopMenuContent
-          itsOpen={itsDesktopMenuOpen}
-          setItsOpen={setItsDesktopMenuOpen}
-        />
-      </Container>
+      <div style={{
+        width: "100%",
+        height: '90px', 
+        backgroundColor: 'white', 
+        display: 'flex', 
+        justifyContent: 'center',
+        position: "fixed",
+        zIndex: 122
+      }}>
+        <Container itsOpen={itsMobileMenuOpen}>
+          {!isMobile && (
+            <LogoContainer>
+              <Logo src={GrowingAbroadImage.src} onClick={handleGoToMain} />
+            </LogoContainer>
+          )}
+          <Content>
+            <ButtonsContainer>
+              <Button onClick={handleGoToOnlineCourse}>Online course</Button>
+              <Button onClick={handleGoToCoaching}>Coaching</Button>
+              <Button onClick={handleGoToJobs}>Jobs</Button>
+              {shouldHaveMobileBehavior && (
+                <>
+                  <Button onClick={handleGoAboutUs}>About Us</Button>
+                  <Button onClick={handleGoToCareer}>Career Blog</Button>
+                  <Button onClick={handleGoToFaq}>FAQ</Button>
+                </>
+              )}
+            </ButtonsContainer>
+            <IconsContainer>
+              {!shouldHaveMobileBehavior && (
+                <>
+                  <Button onClick={handleGoToLogin}>Login</Button>
+                  <IconButton>
+                    <AwesomeIcon icon={faGlobe} size="2xl" />
+                  </IconButton>
+                  <StyledBurger
+                    open={itsDesktopMenuOpen}
+                    onClick={() => setItsDesktopMenuOpen(!itsDesktopMenuOpen)}
+                    isForDesktop
+                  >
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </StyledBurger>
+                  <StdButton
+                    style={{
+                      width: 195,
+                      height: 32,
+                      fontSize: 18,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: 8,
+                      boxShadow: "none",
+                    }}
+                    onClick={handleGoToForCompanies}
+                    backgroundColor={!shouldHaveMobileBehavior ? blue700 : white}
+                    color={!shouldHaveMobileBehavior ? white : blue700}
+                    hover={{
+                      backgroundColor: blue400,
+                      color: white,
+                    }}
+                  >
+                    For Companies
+                  </StdButton>
+                </>
+              )}
+            </IconsContainer>
+          </Content>
+          <DesktopMenuContent
+            itsOpen={itsDesktopMenuOpen}
+            setItsOpen={setItsDesktopMenuOpen}
+          />
+        </Container>
+      </div>
+
     </>
   );
 }

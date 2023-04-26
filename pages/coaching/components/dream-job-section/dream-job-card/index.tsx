@@ -64,6 +64,7 @@ const ServiceData = styled.div`
                 margin: 0 0 0 32px;
                 font-weight: 400;
                 line-height: 1.25rem;
+                color: ${({theme}) => theme.colors.blue700};
             }
         }
     }
@@ -155,11 +156,17 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
             <Service className={classes}>
                 <ServiceData>
 
-                    <TwoColorTitle text1={title} text2="" as="h3" styles={isMobile ? {fontWeight: '700', fontSize: '2rem', lineHeight: '2.5rem'} : {fontWeight: '700'}} wrapperStyles={{width: isMobile? '100%': 'max-content'}}/>
+                    <TwoColorTitle 
+                        text1={title} text2="" as="h3" 
+                        styles={isMobile 
+                            ? { fontWeight: '700', fontSize: '2rem', lineHeight: '2.5rem' } 
+                            : { fontWeight: '700', fontSize: '2.5rem', lineHeight: '3rem' }
+                        } 
+                        wrapperStyles={{width: isMobile? '100%': 'max-content'}}/>
                    
                     <TwoColorTitle 
                     wrapperStyles={isMobile ? {margin: '32px 0', width: '100%'} :{width: '100%', margin: '20px 0 42px', justifyContent: "left"}} 
-                    styles={isMobile ? {fontSize: '1rem', lineHeight: '1.625rem', marginBottom: '0px'} : {textAlign: 'justify'}} text1={description} text2="" as="h4" 
+                    styles={isMobile ? {fontSize: '1rem', lineHeight: '1.625rem', marginBottom: '0px'} : {textAlign: 'left'}} text1={description} text2="" as="h4" 
                     />
                     
                     <ul className="services-list" >

@@ -145,7 +145,10 @@ export const Container = styled.div<ContainerProps>`
   margin: 0;
   transition: all 0.5s ease-in-out;
   animation: drop-down;
-
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  
   ${({ theme, itsOpen }) => css`
     @media (max-width: ${localMobileSize}) {
       flex-direction: column;
