@@ -12,11 +12,11 @@ export const PageBody = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    @media (min-width: 430px) {
+
+    @media (max-width: 758px) {
         margin-top: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
     }
-    @media (min-width: 1513px) {
+    @media (min-width: 800px) {
         margin-top: calc(580px + 90px);
     }
 `

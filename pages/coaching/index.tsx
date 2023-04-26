@@ -29,21 +29,20 @@ export default function Coaching() {
 
     return <>
         <CoachingHeroSection />
-        <PageBody className="page__body">
+        <PageBody className="page__body" >
 
             <Wave
             type={1}
-            height={isMobile? '100%' : '100%'}
+            height={isMobile? '210px' : '150px'}
             className="border-image"
             styles={
                 isMobile
                 ? {
-                    height: "100%",
+
                     justifyContent: "flex-start",
                     backgroundPosition: "-155px",
                 }
                 : {
-                    height: "150px",
                     justifyContent: "flex-start",
                     position: "absolute",
                     top: '-150px'

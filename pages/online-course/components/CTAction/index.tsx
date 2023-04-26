@@ -30,10 +30,6 @@ function CTAction() {
           </div>
         </section>
       </S.Container>
-      <div className="cta-mask" >
-        <Image src={isMobile ? border : border} alt="styled mask" width={width} />
-        <div className="white-line"></div>
-      </div>
     </S.BackgroudCTA>
   )
 }

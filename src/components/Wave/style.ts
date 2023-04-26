@@ -5,17 +5,37 @@ interface WrapperProps {
 }
 export const Wrapper = styled.div<WrapperProps>`
 width: 100%;
-  height: 40rem;
+  height: ${props => props.height};
   display: flex;
   gap: 2rem;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: flex-start;
+  position: absolute;
+  top:-150px;
   .border-image{
     width: 100%;
   }
+  .candidates-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    @media  (min-width: 1530px) {
+      height: 220px;
+      padding-bottom:50px;
+    }
+    @media  (max-width: 758px) {
+      height: 240px;
+      object-fit: contain;
+      margin-top: 40px;
+    }
+  }
 
-  @media (max-width: 430px) {
+  @media (max-width: 758px) {
+    background-position: -155px;
+    justify-content: center;
+    align-items: 'flex-start';
+
   .border-image{
     width: 100%;
     height: 154px;
@@ -23,26 +43,18 @@ width: 100%;
     bottom: 0;
     position: absolute;
     z-index: 1;
+    img{
+      width: 100%;
+    }
 
-    @media (max-width: 1513px) {
+    @media (min-width: 1513px) {
       height: calc(9.625rem + ((1vw - 15.13px) * 8.0332));
       background-position: center;
 
     }
-    @media (max-width: 430px) {
-      height: 67px;
-      background-position: center;
-    }
-
-  }
-
-  @media (max-width: 430px) {
-    justify-content: center;
-    align-items: 'flex-start';
-    height: 14rem;
 
   }
 @media (min-width: 1513px) {
   height: ${(props) => props.height}px;
 }
-`;
+  }`

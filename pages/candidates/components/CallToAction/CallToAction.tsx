@@ -74,14 +74,14 @@ function CallToAction() {
           </div>
         </section>
       </S.Container>
-      <div className="cta-mask">
+      {/* <div className="cta-mask">
         <Image
           src={isMobile ? ctaMaskMobile : ctaMask}
           alt="styled mask"
           width={width}
         />
         <div className="white-line"></div>
-      </div>
+      </div> */}
     </S.BackgroudCTA>
   );
 }
