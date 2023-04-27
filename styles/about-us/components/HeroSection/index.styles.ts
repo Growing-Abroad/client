@@ -139,56 +139,56 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   }
 `;
 
-export const BlueSquare = styled.div`
-  --blueSquareOffset: -16vw;
-  background: ${theme.colors.blue500};
-  width: 46vw;
-  height: 500px;
-  position: absolute;
-  bottom: -240px;
-  left: var(--blueSquareOffset);
-  transform: rotate(25deg);
+// export const BlueSquare = styled.div`
+//   --blueSquareOffset: -16vw;
+//   background: ${theme.colors.blue500};
+//   width: 46vw;
+//   height: 500px;
+//   position: absolute;
+//   bottom: -240px;
+//   left: var(--blueSquareOffset);
+//   transform: rotate(25deg);
 
-  &.right-image {
-    left: unset;
-    right: var(--blueSquareOffset);
-    transform: rotate(-26.08deg);
-  }
+//   &.right-image {
+//     left: unset;
+//     right: var(--blueSquareOffset);
+//     transform: rotate(-26.08deg);
+//   }
 
-  @media (max-width: 1400px) {
-    bottom: -240px;
-    --blueSquareOffset: -16vw;
-    width: 46vw;
-  }
+//   @media (max-width: 1400px) {
+//     bottom: -240px;
+//     --blueSquareOffset: -16vw;
+//     width: 46vw;
+//   }
 
-  @media (max-width: 1024px) {
-    bottom: -260px;
-    --blueSquareOffset: -34vw;
-    width: 68vw;
-  }
+//   @media (max-width: 1024px) {
+//     bottom: -260px;
+//     --blueSquareOffset: -34vw;
+//     width: 68vw;
+//   }
 
-  @media (max-width: 769px) {
-    width: 60vw;
-  }
-  @media (max-width: 700px) {
-    --blueSquareOffset: -20vw;
-    bottom: -325px;
-    width: 50vw;
-  }
+//   @media (max-width: 769px) {
+//     width: 60vw;
+//   }
+//   @media (max-width: 700px) {
+//     --blueSquareOffset: -20vw;
+//     bottom: -325px;
+//     width: 50vw;
+//   }
 
-  @media (max-width: 520px) {
-    --blueSquareOffset: -25vw;
-    width: 45vw;
-  }
+//   @media (max-width: 520px) {
+//     --blueSquareOffset: -25vw;
+//     width: 45vw;
+//   }
 
-  @media (max-width: 480px) {
-    --blueSquareOffset: -30vw;
-    bottom: -370px;
-  }
-`;
+//   @media (max-width: 480px) {
+//     --blueSquareOffset: -30vw;
+//     bottom: -370px;
+//   }
+// `;
 
 export const TextsWrapper = styled.div`
-  width: 28vw;
+  width: 75%;
   position: absolute;
   bottom: 0;
   color: white;

@@ -8,6 +8,7 @@ import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
 import useAppContext from "@/hooks/useAppContext";
+import BlueSquare from "./components/BlueSqare";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -41,25 +42,21 @@ function HeroSection() {
           <S.ImagesWrapper
             background={windowSize.width >= 1100 ? Uan.src : Uan2.src}
           >
-            <S.BlueSquare />
-
-            <S.TextsWrapper>
+            <BlueSquare type="left-square">
               <S.Quote className={classes.quotes}>“</S.Quote>
               <S.TextLeft className="text-left">
                 If you don't believe in yourself, nobody else will.
               </S.TextLeft>
-            </S.TextsWrapper>
+            </BlueSquare>
           </S.ImagesWrapper>
 
           <S.ImagesWrapper className="right-wrapper" background={Manu.src}>
-            <S.BlueSquare className="right-image" />
-
-            <S.TextsWrapper className="reverse">
+            <BlueSquare type="right-square">
               <S.Quote className={classes.quotes}>”</S.Quote>
               <S.TextRight className="text-right">
                 You just have this one life. So start living.
               </S.TextRight>
-            </S.TextsWrapper>
+            </BlueSquare>
           </S.ImagesWrapper>
         </S.ImagesContainer>
       </S.ContentWrapper>
