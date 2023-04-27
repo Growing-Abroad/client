@@ -18,38 +18,19 @@ export const BackgroudCTA = styled.section`
   background-color: ${blue500};
   padding: 0 ${globalHorizontalPadding};
   height: 90vh;
-  min-height: 650px;
+  top: 0;
+  left: 0;
+  min-height: 660px;
   max-height: 740px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  z-index: -1;
 
   @media (max-width: ${mediaQuery}) {
     padding: 60px 0 0 0;
     max-height: 80vh;
   }
 
-  .cta-mask {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    width: 100%;
-
-    img {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-    }
-  }
-  .white-line {
-    height: 5px;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    bottom: -1px;
-  }
 `;
 
 export const CtaButton = styled.button`
@@ -93,9 +74,10 @@ export const Container = styled.section`
     align-items: flex-start;
     flex-direction: column;
     gap: 90px;
-
     width: 800px;
-    padding: 80px 32px 80px 0;
+    padding: 130px 12px 10px 0;
+    margin-left: -20px;
+    z-index: 3;
 
     h1 {
       color: #fff;
@@ -157,9 +139,10 @@ export const Container = styled.section`
     justify-content: space-between;
     flex-wrap: nowrap;
 
+
     .right-side-img-container {
       position: absolute;
-      bottom: 0px;
+      bottom: 10px;
       left: 40px;
 
       img {

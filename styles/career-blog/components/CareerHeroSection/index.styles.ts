@@ -9,12 +9,18 @@ const {
   sizes: { mediaQuery },
 } = variables;
 export const Container = styled.div`
+ height: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   justify-items: center;
   min-width: 100%;
+  height:650px;
   @media (max-width: ${mediaQuery}) {
     max-width: 430px;
   }

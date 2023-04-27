@@ -24,7 +24,7 @@ export default function FaqHeroSection() {
           <ContainerHero
             backgroundImageDesktop={background.src}
             backgroundImageMobile={backgroundMobile.src}
-            styles={{}}
+            styles={{height:'300px'}}
           >
             <ContentHero>
               <TwoColorTitle
@@ -42,11 +42,7 @@ export default function FaqHeroSection() {
               />
             </ContentHero>
           </ContainerHero>
-          <SubheadingHero>
-            Got a question? We're here to answer ! If you don't see your
-            question here, drop us a line on or{" "}
-            <Link href="#">contact page.</Link>
-          </SubheadingHero>
+
         </>
       ) : (
         <ContainerHero
@@ -69,7 +65,6 @@ export default function FaqHeroSection() {
           </ContentHero>
         </ContainerHero>
       )}
-      <NavHero />
     </Container>
   );
 }

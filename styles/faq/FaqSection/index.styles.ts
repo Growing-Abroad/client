@@ -17,7 +17,11 @@ export const Container = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     max-width: 100%;
+<<<<<<< HEAD
     padding: 27px 16px 83px;
+=======
+    padding: 65px 16px 50px;
+>>>>>>> 5df65ebd2a62f3eb608c98b397e58d91272e460f
   }
 `
 export const Content = styled.div`
