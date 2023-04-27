@@ -44,7 +44,7 @@ function HeroSection() {
           >
             <BlueSquare type="left-square">
               <S.Quote className={classes.quotes}>“</S.Quote>
-              <S.TextLeft className="text-left">
+              <S.TextLeft>
                 If you don't believe in yourself, nobody else will.
               </S.TextLeft>
             </BlueSquare>
@@ -53,7 +53,7 @@ function HeroSection() {
           <S.ImagesWrapper className="right-wrapper" background={Manu.src}>
             <BlueSquare type="right-square">
               <S.Quote className={classes.quotes}>”</S.Quote>
-              <S.TextRight className="text-right">
+              <S.TextRight>
                 You just have this one life. So start living.
               </S.TextRight>
             </BlueSquare>

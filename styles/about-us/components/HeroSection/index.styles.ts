@@ -248,20 +248,20 @@ export const TextLeft = styled.span`
     width: auto;
   }
 
-  @media (max-width: 1024px) {
-    font-size: 1.1rem;
-    line-height: 25px;
-  }
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1514px) {
+      font-size: calc(12px + (32 - 12) * ((100vw - 768px) / (1514 - 768)));
+      line-height: calc(
+        14.63px + (39.01 - 14.63) * ((100vw - 768px) / (1514 - 768))
+      );
+    }
 
-  @media (max-width: 700px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  @media (max-width: 575px) {
-    font-size: 12px;
-    line-height: 16px;
-  }
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 100%;
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+  `}
 `;
 
 export const TextRight = styled.span`
@@ -273,20 +273,23 @@ export const TextRight = styled.span`
   letter-spacing: 1.3px;
   font-weight: 600;
 
-  @media (max-width: 1024px) {
-    font-size: 1.1rem;
-    line-height: 25px;
+  @media (min-width: 1025px) and (max-width: 1305px) {
+    width: auto;
   }
 
-  @media (max-width: 700px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1514px) {
+      font-size: calc(12px + (32 - 12) * ((100vw - 768px) / (1514 - 768)));
+      line-height: calc(
+        14.63px + (39.01 - 14.63) * ((100vw - 768px) / (1514 - 768))
+      );
+    }
 
-  @media (max-width: 575px) {
-    font-size: 12px;
-    line-height: 16px;
-  }
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+  `}
 `;
 
 export const Quote = styled.div`

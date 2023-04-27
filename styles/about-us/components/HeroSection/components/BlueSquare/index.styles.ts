@@ -19,19 +19,49 @@ export const Square = styled.div<SquareProps>`
   position: absolute;
   bottom: -35%;
 
+  @media (min-width: 1000px) and (max-width: 1180px) {
+    bottom: -45%;
+  }
+
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1000px) {
+      bottom: -55%;
+    }
+
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      bottom: -55%;
+      padding-bottom: 55%;
+    }
+  `}
+
   ${({ theme, type }) =>
     type === "left-square" &&
     css`
       transform: rotate(25deg);
       left: -35%;
       justify-content: flex-end;
+
+      @media (min-width: 1000px) and (max-width: 1180px) {
+        left: -25%;
+      }
+
+      @media (max-width: ${theme.sizes.mediaQuery}) {
+        left: -40%;
+      }
     `}
-  ${({ theme, type }) =>
+      ${({ theme, type }) =>
     type === "right-square" &&
     css`
       transform: rotate(-25deg);
       right: -35%;
-      justify-content: flex-start;
+
+      @media (min-width: 1000px) and (max-width: 1180px) {
+        right: -25%;
+      }
+
+      @media (max-width: ${theme.sizes.mediaQuery}) {
+        right: -40%;
+      }
     `};
 `;
 
@@ -42,6 +72,21 @@ export const Content = styled.div<SquareProps>`
   flex-direction: column;
   color: ${({ theme }) => theme.colors.white};
   justify-content: space-between;
+  margin-top: 10%;
+
+  @media (max-width: 1180px) {
+    gap: 15%;
+    justify-content: flex-start;
+  }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      /* gap: 5%; */
+      height: 50%;
+      justify-content: space-between;
+      padding-bottom: 8px;
+    }
+  `};
 
   ${({ theme, type }) =>
     type === "left-square" &&
@@ -56,6 +101,13 @@ export const Content = styled.div<SquareProps>`
       transform: rotate(25deg);
       padding-right: 35%;
       align-items: flex-end;
+
+      @media (min-width: 1000px) and (max-width: 1320px) {
+        padding-right: 50%;
+      }
+
+      @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1000px) {
+        padding-right: 55%;
+      }
     `}
-      margin-top: 10%;
 `;
