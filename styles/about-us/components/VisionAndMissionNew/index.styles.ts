@@ -12,6 +12,7 @@ const {
 
 export const Container = styled.section<IContainer>`
   width: 100%;
+  max-width: 1514px;
   height: 600px;
   display: flex;
   flex-direction: row;
@@ -31,7 +32,6 @@ export const Container = styled.section<IContainer>`
     margin-top: 50%;
     flex-direction: column-reverse;
 
-    background-color: red;
     background-position: center;
     background-size: cover;
   }
