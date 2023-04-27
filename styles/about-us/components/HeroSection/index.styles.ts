@@ -1,5 +1,5 @@
 import { theme } from "@styles/theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 
 interface IContainer {
@@ -249,7 +249,7 @@ export const TextLeft = styled.span`
   }
 
   @media (max-width: 1024px) {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 25px;
   }
 
@@ -258,7 +258,7 @@ export const TextLeft = styled.span`
     line-height: 20px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 575px) {
     font-size: 12px;
     line-height: 16px;
   }
@@ -274,7 +274,7 @@ export const TextRight = styled.span`
   font-weight: 600;
 
   @media (max-width: 1024px) {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 25px;
   }
 
@@ -283,7 +283,7 @@ export const TextRight = styled.span`
     line-height: 20px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 575px) {
     font-size: 12px;
     line-height: 16px;
   }
@@ -299,8 +299,16 @@ export const Quote = styled.div`
     font-size: 6rem;
   }
 
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 4rem;
+      letter-spacing: 0;
+      line-height: 0.5rem;
+    }
+  `};
+
   @media (max-width: 520px) {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   @media (max-width: 480px) {
