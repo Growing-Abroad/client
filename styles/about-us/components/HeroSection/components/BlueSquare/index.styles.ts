@@ -19,6 +19,12 @@ export const Square = styled.div<SquareProps>`
   position: absolute;
   bottom: -35%;
 
+  @media (min-width: 1900px) {
+    min-width: 1000px;
+    min-height: 475px;
+    padding-bottom: 5%;
+  }
+
   @media (min-width: 1000px) and (max-width: 1180px) {
     bottom: -45%;
   }
