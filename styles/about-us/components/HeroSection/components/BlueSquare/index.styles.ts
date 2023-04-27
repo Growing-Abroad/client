@@ -54,6 +54,10 @@ export const Square = styled.div<SquareProps>`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         left: -40%;
       }
+
+      @media (max-width: 380px) {
+        left: -45%;
+      }
     `}
       ${({ theme, type }) =>
     type === "right-square" &&
@@ -68,6 +72,9 @@ export const Square = styled.div<SquareProps>`
       @media (max-width: ${theme.sizes.mediaQuery}) {
         right: -40%;
       }
+      @media (max-width: 380px) {
+        right: -45%;
+      }
     `};
 `;
 
@@ -81,7 +88,7 @@ export const Content = styled.div<SquareProps>`
   margin-top: 10%;
 
   @media (max-width: 1180px) {
-    gap: 15%;
+    gap: 25%;
     justify-content: flex-start;
   }
 
@@ -93,6 +100,11 @@ export const Content = styled.div<SquareProps>`
       padding-bottom: 8px;
     }
   `};
+
+  @media (max-width: 410px) {
+    gap: 5%;
+    justify-content: flex-start;
+  }
 
   ${({ theme, type }) =>
     type === "left-square" &&
@@ -109,11 +121,11 @@ export const Content = styled.div<SquareProps>`
       align-items: flex-end;
 
       @media (min-width: 1000px) and (max-width: 1320px) {
-        padding-right: 50%;
+        padding-right: 45%;
       }
 
       @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1000px) {
-        padding-right: 55%;
+        padding-right: 50%;
       }
     `}
 `;
