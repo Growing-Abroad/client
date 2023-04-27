@@ -4,6 +4,7 @@ import {
   Square,
   Content,
   TypeOfBlueSquare,
+  SquareContainer,
 } from "@/../../styles/about-us/components/HeroSection/components/BlueSquare/index.styles";
 
 interface Props {
@@ -13,9 +14,11 @@ interface Props {
 
 function BlueSquare({ children, type }: Props) {
   return (
-    <Square type={type}>
-      <Content type={type}>{children}</Content>
-    </Square>
+    <SquareContainer type={type}>
+      <Square type={type}>
+        <Content type={type}>{children}</Content>
+      </Square>
+    </SquareContainer>
   );
 }
 

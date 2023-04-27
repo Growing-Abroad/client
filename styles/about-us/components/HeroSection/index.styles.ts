@@ -48,7 +48,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ImagesContainer = styled.div`
-  width: 95vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   margin-bottom: -12px;
