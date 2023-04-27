@@ -67,18 +67,15 @@ function WhoWeAre() {
           </div>
         )}
       </S.ImageContainer>
-
       <S.Paragraph>
-        <S.p style={{ fontFamily: font.style.fontFamily }}>
-          Let us help you realize your dream of working abroad!
-        </S.p>
-        <S.p style={{ fontFamily: font.style.fontFamily }}>
+        <S.p> Let us help you realize your dream of working abroad!</S.p>
+        <S.p>
           Growing Abroad will guide you through the entire process: from
           optimizing your CV for German standards to acing job interviews and
           finding the perfect job. You don't have to go alone - we'll be with
           you every step of the way!
         </S.p>
-        <S.p style={{ fontFamily: font.style.fontFamily }}>
+        <S.p>
           Start your life-changing experience today and embrace a new language,
           culture, and perspective!
         </S.p>
