@@ -1,5 +1,5 @@
 import PuzzleImageDesktop from "@/../public/assets/vision-mission2-desktop.png";
-import PuzzleImageMobile from "@/../public/assets/vision-mission2-mobile.png";
+import PuzzleImageMobile from "@/../public/assets/vision-mission2-mobile2.png";
 import { IVisionAndMission } from "@pages/about-us/components/VisionAndMissionNew";
 
 export default {

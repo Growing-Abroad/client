@@ -23,7 +23,6 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  /* padding: 109px 0 138px 0; */
   background: #0073cfeb;
   height: 45%;
 }
@@ -118,12 +117,6 @@
   }
 }
 
-@media (max-width: 580px) {
-  .visionContainer {
-    /* padding:0; */
-  }
-}
-
 @media (max-width: 500px) {
   .missionInner h3,
   .visionContainer h3 {
@@ -158,10 +151,5 @@
 
   .visionCol {
     box-shadow: 10px -4px 6px #c6c6c6;
-  }
-
-  .sectionContainer {
-    padding: 0;
-    margin-bottom: 80px;
   }
 }
