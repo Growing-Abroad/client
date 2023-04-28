@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { variables } from "../../../../src/styles/global-variables";
-import { theme } from "../../../../src/styles/theme";
 
 interface IContainer {
   backgroundImg: string;
@@ -34,6 +33,10 @@ export const Container = styled.section<IContainer>`
 
     background-position: center;
     background-size: cover;
+  }
+
+  @media (max-width: 520px) {
+    margin-top: 75%;
   }
 `;
 
@@ -78,6 +81,14 @@ export const TextContainer = styled.div<{
         left: 0;
       }
     `}
+
+  @media (max-width: 520px) {
+    padding: 2rem 5rem;
+  }
+
+  @media (max-width: 430px) {
+    padding: 2rem 3rem;
+  }
 
   > h3 {
     font-weight: 600;
