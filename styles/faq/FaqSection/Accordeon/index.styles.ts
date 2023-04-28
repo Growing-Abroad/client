@@ -83,11 +83,7 @@ export const AccordeonContent = styled.p<AccordeonWrapperProps>`
   color: ${blue700};
   justify-content: start;
   font-size:16px;
-<<<<<<< HEAD
-  font-weight:400;
-=======
   font-weight: 400;
->>>>>>> 5df65ebd2a62f3eb608c98b397e58d91272e460f
   margin:0;
   max-width: 723px;
   width: 100%;

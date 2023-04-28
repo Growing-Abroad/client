@@ -12,7 +12,7 @@ export default function ReusedFaq() {
             <TwoColorTitle
             as="h2" hasSpaceBtw
             text1="Frequently" text2="Asked Questions"
-            wrapperStyles={{marginBottom: isMobile ? '-40px' : '-80px'}}
+            wrapperStyles={{marginBottom: isMobile ? '' : ''}}
             styles={isMobile ? {
                 display: 'flex',
                 flexDirection: "column"
