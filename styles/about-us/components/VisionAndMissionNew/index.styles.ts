@@ -80,9 +80,13 @@ export const TextContainer = styled.div<{
         top: -45%;
         left: 0;
       }
+      @media (max-width: 550px) {
+        top: auto;
+        bottom: 105%;
+      }
     `}
 
-  @media (max-width: 520px) {
+  @media (max-width: 550px) {
     padding: 2rem 5rem;
   }
 
