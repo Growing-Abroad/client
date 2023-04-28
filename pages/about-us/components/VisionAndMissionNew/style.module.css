@@ -134,25 +134,16 @@
 
   .missionInner p,
   .visionContainer p {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 14px;        
+    font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
   }
 
-<<<<<<< HEAD
   .missionBg {
     height: 600px;
   }
-=======
-    .missionInner p, .visionContainer p  {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
->>>>>>> 5df65ebd2a62f3eb608c98b397e58d91272e460f
 
   .missionContainer {
     padding: 24px;
