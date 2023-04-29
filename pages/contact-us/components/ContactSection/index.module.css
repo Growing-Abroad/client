@@ -208,6 +208,7 @@
 @media only screen and (max-width: 768px) {
     .app__contact__wrapper {
         margin-top: 32px;
+        padding-bottom: 140px;
     }
 
     .app__contact__header__color {
@@ -260,6 +261,11 @@
 }
 
 @media only screen and (max-width: 425px) {
+    .app__contact__wrapper {
+        margin-top: 32px;
+        padding-bottom: 120px;
+    }
+
     .app__contact__header__color {
         font-size: 44px;
     }
