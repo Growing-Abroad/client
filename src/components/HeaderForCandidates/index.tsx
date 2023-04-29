@@ -22,7 +22,7 @@ import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
-import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import useAppContext from "@/hooks/useAppContext";
 import { dividerClasses } from "@mui/material";
 
@@ -42,7 +42,7 @@ function HeaderForCandidates() {
   } = useTheme();
 
   const onGoToScreen = useCallback(
-    (page: PagesNamesEnum) => {
+    (page: EPagesNames) => {
       router.push(`/${page}`);
     },
     [router]
@@ -67,23 +67,23 @@ function HeaderForCandidates() {
   }, []);
 
   const handleGoToOnlineCourse = () =>
-    onGoToScreen(PagesNamesEnum.ONLINE_COURSE);
+    onGoToScreen(EPagesNames.ONLINE_COURSE);
 
-  const handleGoToCoaching = () => onGoToScreen(PagesNamesEnum.COACHING);
+  const handleGoToCoaching = () => onGoToScreen(EPagesNames.COACHING);
 
-  const handleGoToJobs = () => onGoToScreen(PagesNamesEnum.JOBS);
+  const handleGoToJobs = () => onGoToScreen(EPagesNames.JOBS);
 
-  const handleGoToLogin = () => onGoToScreen(PagesNamesEnum.LOGIN);
+  const handleGoToLogin = () => onGoToScreen(EPagesNames.LOGIN);
 
-  const handleGoToForCompanies = () => onGoToScreen(PagesNamesEnum.COMPANIES);
+  const handleGoToForCompanies = () => onGoToScreen(EPagesNames.COMPANIES);
 
-  const handleGoToMain = () => onGoToScreen(PagesNamesEnum.DEFAULT);
+  const handleGoToMain = () => onGoToScreen(EPagesNames.DEFAULT);
 
-  const handleGoAboutUs = () => onGoToScreen(PagesNamesEnum.ABOUT_US);
+  const handleGoAboutUs = () => onGoToScreen(EPagesNames.ABOUT_US);
 
-  const handleGoToCareer = () => onGoToScreen(PagesNamesEnum.CAREER_BLOG);
+  const handleGoToCareer = () => onGoToScreen(EPagesNames.CAREER_BLOG);
 
-  const handleGoToFaq = () => onGoToScreen(PagesNamesEnum.FAQ);
+  const handleGoToFaq = () => onGoToScreen(EPagesNames.FAQ);
 
   return (
     <>

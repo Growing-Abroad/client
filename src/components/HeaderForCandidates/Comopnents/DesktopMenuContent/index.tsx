@@ -24,7 +24,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 
 interface Props {
   itsOpen: boolean;
@@ -39,20 +39,20 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
   const route = useRouter();
 
   const onGoToScreen = useCallback(
-    (page: PagesNamesEnum) => {
+    (page: EPagesNames) => {
       route.push(`/${page}`);
       setItsOpen(false);
     },
     [route, setItsOpen]
   );
 
-  const handleGoToCourse = () => onGoToScreen(PagesNamesEnum.ONLINE_COURSE);
-  const handleGoToCoaching = () => onGoToScreen(PagesNamesEnum.COACHING);
-  const handleGoToJobs = () => onGoToScreen(PagesNamesEnum.JOBS);
-  const handleGoToAboutUs = () => onGoToScreen(PagesNamesEnum.ABOUT_US);
-  const handleGoToBlog = () => onGoToScreen(PagesNamesEnum.BLOG);
-  const handleGoToFaq = () => onGoToScreen(PagesNamesEnum.FAQ);
-  const handleGotoContactUs = () => onGoToScreen(PagesNamesEnum.CONTACT_US);
+  const handleGoToCourse = () => onGoToScreen(EPagesNames.ONLINE_COURSE);
+  const handleGoToCoaching = () => onGoToScreen(EPagesNames.COACHING);
+  const handleGoToJobs = () => onGoToScreen(EPagesNames.JOBS);
+  const handleGoToAboutUs = () => onGoToScreen(EPagesNames.ABOUT_US);
+  const handleGoToBlog = () => onGoToScreen(EPagesNames.BLOG);
+  const handleGoToFaq = () => onGoToScreen(EPagesNames.FAQ);
+  const handleGotoContactUs = () => onGoToScreen(EPagesNames.CONTACT_US);
 
   return (
     <Container itsOpen={itsOpen}>

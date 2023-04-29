@@ -1,4 +1,4 @@
-export enum PagesNamesEnum {
+export enum EPagesNames {
   DEFAULT = "",
   ABOUT_US = "about-us",
   BLOG = "blog",
