@@ -1,20 +1,6 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
-import { ComponentPropsWithoutRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-interface BurgerContainerProps {
-  open: boolean;
-}
-
-interface BurgerProps
-  extends ComponentPropsWithoutRef<"div">,
-    BurgerContainerProps {
-  isForDesktop?: boolean;
-  hasALitBackground?: boolean;
-  bg?: string;
-  hoveredBG?: string;
-}
 
 export interface ContainerProps {
   itsOpen: boolean;
@@ -26,92 +12,6 @@ interface IconButtonProps {
 
 const localMobileSize = "1160px";
 
-export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 115;
-
-  ${({ theme, open }) => css`
-    @media (max-width: ${localMobileSize}) {
-      position: fixed;
-      top: 10px;
-      right: 25px;
-
-      background-color: ${open ? theme.colors.yellow400 : "transparent"};
-      padding-left: ${open ? "0.5rem" : 0};
-    }
-  `}
-`;
-
-export const StyledBurger = styled.div<BurgerProps>`
-  position: relative;
-  width: 2rem;
-  height: 2rem;
-
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 115;
-  :hover {
-    cursor: pointer;
-
-    div {
-      background-color: ${({ theme, bg }) => bg ?? theme.colors.blue400};
-    }
-  }
-
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    ${({ theme, hasALitBackground }) =>
-      !hasALitBackground
-        ? css`
-            background-color: ${theme.colors.white};
-          `
-        : css`
-            background-color: ${theme.colors.blue700};
-          `};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all 0.3s;
-
-    &:nth-child(1) {
-      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
-      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
-      margin-top: ${({ open }) => (open ? "0.25rem" : "0")};
-      margin-left: ${({ open }) => (open ? "0.25rem" : "0")};
-    }
-    &:nth-child(2) {
-      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
-      opacity: ${(props) => (props.open ? 0 : 1)};
-      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
-    }
-    &:nth-child(3) {
-      transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
-      width: ${({ open }) => (open ? "1.5rem" : "2rem")};
-      margin-left: ${({ open }) => (open ? "0.25rem" : "0")};
-      margin-bottom: ${({ open }) => (open ? "0.25rem" : "0")};
-    }
-  }
-
-  ${({ theme }) => css`
-    @media (min-width: ${localMobileSize}) {
-      div {
-        background-color: ${({ theme }) => theme.colors.blue700};
-      }
-    }
-    @media (max-width: ${localMobileSize}) {
-      /* position: fixed;
-      top: 15px;
-      right: 20px; */
-    }
-  `}
-`;
-
 export const AwesomeIcon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.blue700};
 
@@ -121,17 +21,18 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 export const Header = styled.div`
-  display: none;
-  @media (max-width: ${localMobileSize}) {
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 18px;
-    z-index: 230;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  z-index: 230;
+  
+  @media (min-width: ${localMobileSize}) {
+    display: none;
   }
 `;
 
@@ -168,11 +69,13 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  width: 80%;
+  
   background-color: transparent;
 
-  @media (max-width: ${localMobileSize}) {
-    width: 80%;
-    align-items: center;
+  @media (min-width: ${localMobileSize}) {
+    width: 100%;
   }
 
   :hover {
@@ -185,50 +88,45 @@ export const Logo = styled(Image).attrs({
   height: 45,
   alt: "",
 })`
-  width: 200px;
-  height: auto;
-
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      width: 150px;
-    }
-  `};
+  width: 150px;
+  
+  @media (min-width: ${localMobileSize}) {
+    width: 200px;
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
-  width: 100%;
   display: flex;
-  padding-left: 158px;
-  flex: 1;
-  justify-content: space-around;
+  flex-direction: column;
 
+  padding: 0;
+  
   @media (min-width: 1750px) {
     justify-content: flex-end;
   }
-
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      padding: 0;
-      flex-direction: column;
-    }
-  `}
+  
+  @media (min-width: ${localMobileSize}) {
+    margin-left: auto;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
-  width: 100%;
   display: flex;
-  flex: 5;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 37px;
 
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      padding-top: 110px;
-      flex-direction: column;
-      align-items: flex-start;
-      flex: 2;
-    }
-  `}
+  margin-left: 37px;
+  padding-top: 110px;
+  
+  @media (min-width: ${localMobileSize}) {
+    padding-top: initial;
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const Button = styled.button`
@@ -237,15 +135,18 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 12px;
-
+  line-height: 1;
+  
   /* or 60% */
-
+  
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   letter-spacing: 1.3px;
   text-transform: uppercase;
+
+  white-space: nowrap;
 
   color: ${({ theme }) => theme.colors.blue700};
   :hover {
@@ -264,11 +165,9 @@ export const Button = styled.button`
 
 export const IconsContainer = styled.div`
   display: flex;
-  flex: 3;
-  justify-content: space-around;
   align-items: center;
   gap: 37px;
-  padding-left: 37px;
+  margin-left: 37px;
 
   @media (min-width: 1750px) {
     gap: 37px;
