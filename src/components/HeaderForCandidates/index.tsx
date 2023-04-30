@@ -20,7 +20,7 @@ import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
 import { useRouter } from "next/router";
-import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
 
@@ -37,7 +37,7 @@ function HeaderForCandidates() {
     colors: { white, blue700, blue400 },
   } = useTheme();
 
-  const pushTo = (page: PagesNamesEnum) => () => router.push(`/${page}`);
+  const pushTo = (page: EPagesNames) => () => router.push(`/${page}`);
 
   useEffect(() => {
     function checkIfShouldHaveMobileBehavior() {
@@ -63,7 +63,7 @@ function HeaderForCandidates() {
         <LogoContainer>
           <Logo
             src={GrowingAbroadImage.src}
-            onClick={pushTo(PagesNamesEnum.DEFAULT)}
+            onClick={pushTo(EPagesNames.DEFAULT)}
           />
         </LogoContainer>
         <IconButton withoutPadding>
@@ -98,35 +98,35 @@ function HeaderForCandidates() {
             <LogoContainer>
               <Logo
                 src={GrowingAbroadImage.src}
-                onClick={pushTo(PagesNamesEnum.DEFAULT)}
+                onClick={pushTo(EPagesNames.DEFAULT)}
               />
             </LogoContainer>
           )}
           <Content>
             <ButtonsContainer>
-              <Button onClick={pushTo(PagesNamesEnum.ONLINE_COURSE)}>
+              <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
                 Online course
               </Button>
-              <Button onClick={pushTo(PagesNamesEnum.COACHING)}>
+              <Button onClick={pushTo(EPagesNames.COACHING)}>
                 Coaching
               </Button>
-              <Button onClick={pushTo(PagesNamesEnum.JOBS)}>Jobs</Button>
+              <Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button>
               {shouldHaveMobileBehavior && (
                 <>
-                  <Button onClick={pushTo(PagesNamesEnum.ABOUT_US)}>
+                  <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
                     About Us
                   </Button>
-                  <Button onClick={pushTo(PagesNamesEnum.CAREER_BLOG)}>
+                  <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
                     Career Blog
                   </Button>
-                  <Button onClick={pushTo(PagesNamesEnum.FAQ)}>FAQ</Button>
+                  <Button onClick={pushTo(EPagesNames.FAQ)}>FAQ</Button>
                 </>
               )}
             </ButtonsContainer>
             {!shouldHaveMobileBehavior && (
               <IconsContainer>
                 <>
-                  <Button onClick={pushTo(PagesNamesEnum.LOGIN)}>Login</Button>
+                  <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
                   <IconButton>
                     <AwesomeIcon icon={faGlobe} size="2xl" />
                   </IconButton>
@@ -148,7 +148,7 @@ function HeaderForCandidates() {
                       borderRadius: 8,
                       boxShadow: "none",
                     }}
-                    onClick={pushTo(PagesNamesEnum.COMPANIES)}
+                    onClick={pushTo(EPagesNames.COMPANIES)}
                     backgroundColor={
                       !shouldHaveMobileBehavior ? blue700 : white
                     }
