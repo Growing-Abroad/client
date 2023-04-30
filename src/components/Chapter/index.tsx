@@ -8,11 +8,12 @@ import index5 from '@/../public/assets/job-interview-preparation.webp';
 import index6 from '@/../public/assets/job-interview-success.webp';
 import useAppContext from '@/hooks/useAppContext';
 import TwoColorTitle from '../two-color-title';
+import StdButton from '../generics/StdButton/StdButton';
 
 export function Chapter() {
   const { isMobile } = useAppContext();
   return (
-    <S.Container>
+    <S.Container  style={{paddingBottom: `${isMobile ? ' ': '140px'}`}}>
       <TwoColorTitle text1='What you can expect' text2='in this Course' hasSpaceBtw />
       <S.Content>
 
@@ -370,6 +371,7 @@ export function Chapter() {
          Bonus chapter with expert interviews        </S.CardTitle></div>
         </S.ContainerCards>
       </S.Content>
+      <StdButton style={{marginTop:`${isMobile ? '40px' : '0'}`}}> Buy Online Course Now</StdButton>
     </S.Container>
   );
 }
