@@ -19,10 +19,10 @@ import {
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
 import { DesktopMenuContent } from "./Comopnents/DesktopMenuContent";
-import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
+import { useRouter } from "@/hooks/useRouter";
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -31,13 +31,17 @@ function HeaderForCandidates() {
   const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
     useState(false);
 
-  const router = useRouter();
+  const closeMenus = () => {
+    setItsDesktopMenuOpen(false)
+    setItsMobileMenuOpen(false)
+  }
+
+  const { pushTo } = useRouter(closeMenus)
 
   const {
     colors: { white, blue700, blue400 },
   } = useTheme();
 
-  const pushTo = (page: EPagesNames) => () => router.push(`/${page}`);
 
   useEffect(() => {
     function checkIfShouldHaveMobileBehavior() {

@@ -11,7 +11,7 @@ const {
 } = theme;
 
 export const BackgroudCTA = styled.section`
-  margin-top: 90px;
+  margin-top: 60px;
   width: 100%;
   position: fixed;
   top: 0;

@@ -10,7 +10,7 @@ const {
   sizes: { mediaQuery },
 } = variables;
 export const Container = styled.div`
-  margin-top: 90px;
+  margin-top: 60px;
   width: 100%;
   position: fixed;
   top: 0;

@@ -44,11 +44,10 @@ export const Container = styled.div<ContainerProps>`
   position: fixed;
   z-index: 110;
   top: 0;
-  left: 0;
   
   width: 100%;
   max-width: 1514px;
-  margin: 0;
+  margin: 0 auto;
   padding: 15px 90px 32px 22px;
   
   overflow: hidden;

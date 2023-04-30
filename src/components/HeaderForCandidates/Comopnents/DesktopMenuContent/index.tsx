@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 
 import LogoImage from "@/../public/assets/pages/growing-abroad-images/white-logo.png";
 
@@ -23,8 +23,8 @@ import {
 } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
+import { useRouter } from "@/hooks/useRouter";
 
 interface Props {
   itsOpen: boolean;
@@ -36,23 +36,9 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
     colors: { blue400 },
   } = useTheme();
 
-  const route = useRouter();
+  const closeMenu = () => setItsOpen(false)
 
-  const onGoToScreen = useCallback(
-    (page: EPagesNames) => {
-      route.push(`/${page}`);
-      setItsOpen(false);
-    },
-    [route, setItsOpen]
-  );
-
-  const handleGoToCourse = () => onGoToScreen(EPagesNames.ONLINE_COURSE);
-  const handleGoToCoaching = () => onGoToScreen(EPagesNames.COACHING);
-  const handleGoToJobs = () => onGoToScreen(EPagesNames.JOBS);
-  const handleGoToAboutUs = () => onGoToScreen(EPagesNames.ABOUT_US);
-  const handleGoToBlog = () => onGoToScreen(EPagesNames.BLOG);
-  const handleGoToFaq = () => onGoToScreen(EPagesNames.FAQ);
-  const handleGotoContactUs = () => onGoToScreen(EPagesNames.CONTACT_US);
+  const { pushTo } = useRouter(closeMenu)
 
   return (
     <Container itsOpen={itsOpen}>
@@ -60,20 +46,20 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
         <LogoContainer>
           <Logo alt="" src={LogoImage.src} width={205} height={71} />
         </LogoContainer>
-        <CloseButton onClick={() => setItsOpen(false)}>&times;</CloseButton>
+        <CloseButton onClick={closeMenu}>&times;</CloseButton>
       </Header>
       <Content>
         <LeftSideContainer>
           <LeftSideContent>
-            <MenuItemContainer onClick={handleGoToCourse}>
+            <MenuItemContainer onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
               <RSMenuItem>Online Course{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
-            <MenuItemContainer onClick={handleGoToCoaching}>
+            <MenuItemContainer onClick={pushTo(EPagesNames.COACHING)}>
               <RSMenuItem>Coaching{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
-            <MenuItemContainer onClick={handleGoToJobs}>
+            <MenuItemContainer onClick={pushTo(EPagesNames.JOBS)}>
               <RSMenuItem>Jobs{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
@@ -82,17 +68,17 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
         <RightSideContainer>
           <RightSideContent>
             <MenuItemContainer>
-              <LSMenuItem onClick={handleGoToAboutUs}>
+              <LSMenuItem onClick={pushTo(EPagesNames.ABOUT_US)}>
                 About Us{"\xa0"}
               </LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer>
-              <LSMenuItem onClick={handleGoToBlog}>Blog{"\xa0"}</LSMenuItem>
+              <LSMenuItem onClick={pushTo(EPagesNames.BLOG)}>Blog{"\xa0"}</LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer>
-              <LSMenuItem onClick={handleGoToFaq}>FAQ{"\xa0"}</LSMenuItem>
+              <LSMenuItem onClick={pushTo(EPagesNames.FAQ)}>FAQ{"\xa0"}</LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <Divider />
@@ -101,7 +87,7 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
             <Description>
               Inquiries, questions or direct contact? Contact us:
             </Description>
-            <MenuItemContainer onClick={handleGotoContactUs}>
+            <MenuItemContainer onClick={pushTo(EPagesNames.CONTACT_US)}>
               <LSMenuItem isLit>Contact Us{"\xa0"}</LSMenuItem>
               <FontAwesomeIcon icon={faArrowRight} size="lg" color={blue400} />
             </MenuItemContainer>
