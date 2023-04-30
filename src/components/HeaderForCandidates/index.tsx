@@ -65,15 +65,15 @@ function HeaderForCandidates() {
             src={GrowingAbroadImage.src}
             onClick={pushTo(PagesNamesEnum.DEFAULT)}
           />
-          <IconButton withoutPadding>
-            <FontAwesomeIcon
-              icon={faGlobe}
-              size="2xl"
-              style={{ color: blue700 }}
-              className="global-icon"
-            />
-          </IconButton>
         </LogoContainer>
+        <IconButton withoutPadding>
+          <FontAwesomeIcon
+            icon={faGlobe}
+            size="2xl"
+            style={{ color: blue700 }}
+            className="global-icon"
+          />
+        </IconButton>
         <StyledBurgerContainer open={itsMobileMenuOpen}>
           <Burger
             bgColor={blue700}

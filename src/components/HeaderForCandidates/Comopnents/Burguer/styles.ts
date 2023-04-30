@@ -5,35 +5,35 @@ const localMobileSize = "1160px";
 
 interface BurgerContainerProps {
     open: boolean;
-  }
-  
-  interface BurgerProps
+}
+
+interface BurgerProps
     extends ComponentPropsWithoutRef<"div">,
-      BurgerContainerProps {
+    BurgerContainerProps {
     isForDesktop?: boolean;
     hasALitBackground?: boolean;
     bg?: string;
     hoveredBG?: string;
-  }
+}
 
 export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  
+  position: fixed;
+  top: 10px;
+  right: 18px;
   z-index: 115;
+  
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
 
   ${({ theme, open }) => css`
-    @media (max-width: ${localMobileSize}) {
-      position: fixed;
-      top: 10px;
-      right: 25px;
-
-      background-color: ${open ? theme.colors.yellow400 : "transparent"};
-      padding-left: ${open ? "0.5rem" : 0};
-    }
+    background-color: ${open ? theme.colors.yellow400 : "transparent"};
+    padding-left: ${open ? "0.5rem" : 0};
   `}
 `;
 
@@ -58,11 +58,11 @@ export const StyledBurger = styled.div<BurgerProps>`
     width: 2rem;
     height: 0.25rem;
     ${({ theme, hasALitBackground }) =>
-      !hasALitBackground
-        ? css`
+        !hasALitBackground
+            ? css`
             background-color: ${theme.colors.white};
           `
-        : css`
+            : css`
             background-color: ${theme.colors.blue700};
           `};
     border-radius: 10px;

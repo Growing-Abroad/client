@@ -28,7 +28,7 @@ export const Header = styled.div`
   background-color: white;
   justify-content: space-between;
   align-items: center;
-  padding: 0 18px;
+  padding: 0 78px 0 18px;
   z-index: 230;
   
   @media (min-width: ${localMobileSize}) {
@@ -38,29 +38,33 @@ export const Header = styled.div`
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  left: 0;
+  
   width: 100%;
   max-width: 1514px;
-  height: 90px;
-  padding: 22px 50px;
   margin: 0;
+  padding: 15px 90px 32px 22px;
+  
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
   animation: drop-down;
-  position: fixed;
-  z-index: 100;
-  background-color: white;
   
   ${({ theme, itsOpen }) => css`
-    @media (max-width: ${localMobileSize}) {
-      flex-direction: column;
-      overflow: hidden;
-      height: ${!itsOpen ? 0 : "100vh"};
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 110;
-      padding: 15px 90px 32px 22px;
-      background-color: ${theme.colors.blue700};
+    height: ${!itsOpen ? 0 : "100vh"};
+    background-color: ${theme.colors.blue700};
+    
+    @media (min-width: ${localMobileSize}) {
+      flex-direction: row;
+      height: 90px;
+      
+      background-color: white;
+      padding: 22px 50px;
     }
   `}
 `;
@@ -70,13 +74,9 @@ export const LogoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   
-  width: 80%;
+  width: fit-content;
   
   background-color: transparent;
-
-  @media (min-width: ${localMobileSize}) {
-    width: 100%;
-  }
 
   :hover {
     cursor: pointer;
@@ -135,9 +135,6 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 1;
-  
-  /* or 60% */
   
   display: flex;
   flex-direction: column;
@@ -146,53 +143,50 @@ export const Button = styled.button`
   letter-spacing: 1.3px;
   text-transform: uppercase;
 
-  white-space: nowrap;
+  color: ${({ theme }) => theme.colors.white};
 
-  color: ${({ theme }) => theme.colors.blue700};
+  ${({ theme }) => css`
+    @media (min-width: ${localMobileSize}) {
+      color: ${theme.colors.blue700};
+    }
+  `}
+ 
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
   }
-
-  ${({ theme }) => css`
-    @media (max-width: ${localMobileSize}) {
-      color: ${theme.colors.white};
-      :hover {
-        color: ${({ theme }) => theme.colors.blue400};
-      }
-    }
-  `}
 `;
 
 export const IconsContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   gap: 37px;
   margin-left: 37px;
 
   @media (min-width: 1750px) {
-    gap: 37px;
-    justify-content: flex-start;
     flex: 1;
   }
-
-  @media (max-width: ${localMobileSize}) {
-    flex-direction: column;
-    justify-content: flex-end;
+  
+  @media (min-width: ${localMobileSize}) {
+    justify-content: flex-start;
+    flex-direction: row;
   }
 `;
 
 export const IconButton = styled.button<IconButtonProps>`
   background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: ${({ withoutPadding }) => (withoutPadding ? 0 : "50px")};
+  z-index: 300;
 
-  @media (max-width: ${localMobileSize}) {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: ${({ withoutPadding }) => (withoutPadding ? 0 : "50px")};
-    z-index: 300;
+  @media (min-width: ${localMobileSize}) {
+    margin-bottom: initial;
   }
 `;
 
