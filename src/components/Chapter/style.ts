@@ -27,6 +27,7 @@ export const Container = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     padding-bottom:8px;
+    padding-top:115px;
     :nth-child(1n){
       h1{
         width:361px;
@@ -45,7 +46,7 @@ export const Content = styled.div`
   width: 100%;
   min-width: 1280px;
   background-color: white;
-  padding-bottom: 150px;
+  padding-bottom: 40px;
   @media (max-width: ${mediaQuery}) {
     min-width: 430px;
     padding-bottom: 20px;
@@ -141,6 +142,7 @@ justify-content:space-between;
   justify-content:space-between;
   padding-left:${(props) => (props.reverse ? "100px" : "0px")};
   padding-right:${(props) => (props.reverse ? "0" : "100px")};
+}
 `;
 export const CardInfo = styled.div`
   width: 500px;

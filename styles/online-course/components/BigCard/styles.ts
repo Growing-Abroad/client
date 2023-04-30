@@ -16,13 +16,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 87px 0 150px 0;
+  padding: 87px 0 146px 0;
   @media (max-width: ${mediaQuery}) {
-    padding: 87px 23px 0px;
+    padding: 87px 23px 81px;
   }
 `;
 export const BigCardWrapper = styled.div`
-  width: 705px;
+  width: 750px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,7 @@ export const BigCardWrapper = styled.div`
   justify-content: center;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  padding-bottom:56px;
   h1,
   h2,
   span,
@@ -45,7 +46,7 @@ export const BigCardWrapper = styled.div`
     padding-top: 18px;
   }
   h2 {
-    font-size: 32px;
+    font-size: 20px;
     padding: 0 70px 36px;
   }
   p {
@@ -56,8 +57,9 @@ export const BigCardWrapper = styled.div`
   }
   div {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 26px;
     padding: 24px 56px 55px 91px;
@@ -90,6 +92,7 @@ export const BigCardWrapper = styled.div`
       }
     }
     div {
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -103,6 +106,7 @@ export const PriceSpan = styled.span`
   font-size: 60px;
   text-align: center;
   width: 100%;
+  font-weight: 700;
   @media (max-width: ${mediaQuery}) {
     font-size: 40px;
   }
@@ -112,6 +116,7 @@ export const CardText = styled.li`
   padding: 0px;
   margin: 0px;
   display: flex;
+  width:100%;
   align-items: center;
   justify-content: start;
   text-align: left;
@@ -121,8 +126,14 @@ export const CardText = styled.li`
   letter-spacing: 0.04em;
   gap: 26px;
   color:#05335B;
+  .priceSpan{
+    font-weight: 700;
+    width:70px;
+    white-space:nowrap;
+  }
   @media (max-width: ${mediaQuery}) {
     width:320px;
+    font-weight: 500;
 
   }
 `;

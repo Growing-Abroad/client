@@ -17,10 +17,10 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding: 89px 0px 262px 0px;
+  padding: 89px 0px 146px 0px;
   gap: 81px;
   @media (max-width: ${mediaQuery}) {
-    padding: 47px 0 161px;
+    padding: 47px 0 120px;
     gap:12px;
   }
 `;
@@ -38,6 +38,7 @@ export const Content = styled.div`
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     min-width: 430px;
+    gap:0px;
   }
 `;
 export const RightContent = styled.div`
@@ -51,6 +52,7 @@ export const RightContent = styled.div`
     width:430px;
     padding: 46px;
     margin-right:0px;
+    padding-top:49px;
     p{
       font-size:16px;
     }
