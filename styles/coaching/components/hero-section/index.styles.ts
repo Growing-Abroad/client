@@ -21,7 +21,7 @@ export const ContainerWrapper = styled.div`
   }
   @media (min-width: 800px) {
     height: 580px;
-    margin-top: 90px;
+    margin-top: 60px;
   }
 `;
 

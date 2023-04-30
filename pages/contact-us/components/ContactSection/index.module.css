@@ -8,6 +8,7 @@
     flex-direction: column;
     padding-bottom: 150px;
     padding-top: 15px;
+    margin-top: 150px;
 }
 
 .app__contact__header__color {
@@ -25,7 +26,7 @@
 
 .app__contact__form__wrapper {
     margin-top: 27.5px;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 90%;
     max-width: 1280px;
     background-color: #0073CF;
@@ -42,7 +43,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    height: 100%;
+    height: 500px;
     padding: 26px 0 0 60px;
 }
 
@@ -75,6 +76,7 @@
 
 .app__contact__form__social {
     margin-bottom: 100px;
+    margin-top: auto;     
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -137,6 +139,10 @@
 
 @media only screen and (max-width: 1024px) {
 
+    .app__contact__wrapper {
+        margin-top: 100px;
+    }
+
     .app__contact__header__color {
         font-size: 64px;
     }
@@ -149,6 +155,7 @@
         padding-left: 14px;
         padding-right: 14px;
         width: 50%;
+        height: unset;
     }
 
     .app__contact__left__form__header {
@@ -165,10 +172,12 @@
     }
 
     .app__contact__form__social {
-        margin-bottom: 50px;        
+        margin-bottom: 0;   
+        margin-top: 0;
+        
     }
 
-      .app__contact__left__form__body {
+    .app__contact__left__form__body {
         font-size: 14px;
         margin-top: 20px;
         line-height: 25px;
@@ -197,6 +206,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .app__contact__wrapper {
+        margin-top: 32px;
+        padding-bottom: 140px;
+    }
+
     .app__contact__header__color {
         font-size: 54px;
     }
@@ -217,6 +231,11 @@
         font-size: 12px;
         margin-top: 20px;
         line-height: 20px;
+    }
+
+    .app__contact__form__social {
+        /* bottom: 50px; */
+        margin-bottom: 32px;
     }
 
     .app__contact__form__social__icon {
@@ -242,6 +261,11 @@
 }
 
 @media only screen and (max-width: 425px) {
+    .app__contact__wrapper {
+        margin-top: 32px;
+        padding-bottom: 120px;
+    }
+
     .app__contact__header__color {
         font-size: 44px;
     }
@@ -252,7 +276,6 @@
 
     .app__contact__form__social {
         /* bottom: 50px; */
-        margin-bottom: 50px;
     }
 
     .app__contact__left__form {
