@@ -20,7 +20,7 @@ import FollowDreams from "./components/FollowDream";
 import WhatYouGet from "./components/WhatYouGet";
 import Investiment from "./components/Investiment";
 import CareerExperts from "./components/CareerExperts";
-import { TextMockup } from "./mockup-texts";
+import { TextMockup } from "../../src/utils/mock-ups/mockup-texts";
 import BigCard from "@pages/online-course/components/BigCard";
 
 export const Wrapper = styled.div`
