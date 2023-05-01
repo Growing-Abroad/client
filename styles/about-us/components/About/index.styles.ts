@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import { open } from "@styles/animations";
-import { Montserrat } from "@next/font/google";
+import { Montserrat } from "next/font/google";
 
 interface TextProps {
   isOpen: boolean;
