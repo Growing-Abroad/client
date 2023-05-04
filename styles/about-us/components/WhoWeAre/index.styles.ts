@@ -74,9 +74,11 @@ export const p = styled.p`
   line-height: 24px;
   letter-spacing: 0px;
   color: ${({ theme }) => theme.colors.blue700};
+  width: 100%;
+  margin: 0;
 
   display: flex;
-  text-align: center;
+  text-align: justify;
   align-items: center;
 
   @media (max-width: 768px) {

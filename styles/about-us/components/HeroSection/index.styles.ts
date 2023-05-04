@@ -1,5 +1,5 @@
 import { theme } from "@styles/theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 
 interface IContainer {
@@ -48,7 +48,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ImagesContainer = styled.div`
-  width: 95vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   margin-bottom: -12px;
@@ -139,56 +139,56 @@ export const ImagesWrapper = styled.div<IImagesWrapper>`
   }
 `;
 
-export const BlueSquare = styled.div`
-  --blueSquareOffset: -16vw;
-  background: ${theme.colors.blue500};
-  width: 46vw;
-  height: 500px;
-  position: absolute;
-  bottom: -240px;
-  left: var(--blueSquareOffset);
-  transform: rotate(25deg);
+// export const BlueSquare = styled.div`
+//   --blueSquareOffset: -16vw;
+//   background: ${theme.colors.blue500};
+//   width: 46vw;
+//   height: 500px;
+//   position: absolute;
+//   bottom: -240px;
+//   left: var(--blueSquareOffset);
+//   transform: rotate(25deg);
 
-  &.right-image {
-    left: unset;
-    right: var(--blueSquareOffset);
-    transform: rotate(-26.08deg);
-  }
+//   &.right-image {
+//     left: unset;
+//     right: var(--blueSquareOffset);
+//     transform: rotate(-26.08deg);
+//   }
 
-  @media (max-width: 1400px) {
-    bottom: -240px;
-    --blueSquareOffset: -16vw;
-    width: 46vw;
-  }
+//   @media (max-width: 1400px) {
+//     bottom: -240px;
+//     --blueSquareOffset: -16vw;
+//     width: 46vw;
+//   }
 
-  @media (max-width: 1024px) {
-    bottom: -260px;
-    --blueSquareOffset: -34vw;
-    width: 68vw;
-  }
+//   @media (max-width: 1024px) {
+//     bottom: -260px;
+//     --blueSquareOffset: -34vw;
+//     width: 68vw;
+//   }
 
-  @media (max-width: 769px) {
-    width: 60vw;
-  }
-  @media (max-width: 700px) {
-    --blueSquareOffset: -20vw;
-    bottom: -325px;
-    width: 50vw;
-  }
+//   @media (max-width: 769px) {
+//     width: 60vw;
+//   }
+//   @media (max-width: 700px) {
+//     --blueSquareOffset: -20vw;
+//     bottom: -325px;
+//     width: 50vw;
+//   }
 
-  @media (max-width: 520px) {
-    --blueSquareOffset: -25vw;
-    width: 45vw;
-  }
+//   @media (max-width: 520px) {
+//     --blueSquareOffset: -25vw;
+//     width: 45vw;
+//   }
 
-  @media (max-width: 480px) {
-    --blueSquareOffset: -30vw;
-    bottom: -370px;
-  }
-`;
+//   @media (max-width: 480px) {
+//     --blueSquareOffset: -30vw;
+//     bottom: -370px;
+//   }
+// `;
 
 export const TextsWrapper = styled.div`
-  width: 28vw;
+  width: 75%;
   position: absolute;
   bottom: 0;
   color: white;
@@ -248,20 +248,20 @@ export const TextLeft = styled.span`
     width: auto;
   }
 
-  @media (max-width: 1024px) {
-    font-size: 1.3rem;
-    line-height: 25px;
-  }
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1514px) {
+      font-size: calc(12px + (32 - 12) * ((100vw - 768px) / (1514 - 768)));
+      line-height: calc(
+        14.63px + (39.01 - 14.63) * ((100vw - 768px) / (1514 - 768))
+      );
+    }
 
-  @media (max-width: 700px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 12px;
-    line-height: 16px;
-  }
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      width: 100%;
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+  `}
 `;
 
 export const TextRight = styled.span`
@@ -273,20 +273,23 @@ export const TextRight = styled.span`
   letter-spacing: 1.3px;
   font-weight: 600;
 
-  @media (max-width: 1024px) {
-    font-size: 1.3rem;
-    line-height: 25px;
+  @media (min-width: 1025px) and (max-width: 1305px) {
+    width: auto;
   }
 
-  @media (max-width: 700px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
+  ${({ theme }) => css`
+    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1514px) {
+      font-size: calc(12px + (32 - 12) * ((100vw - 768px) / (1514 - 768)));
+      line-height: calc(
+        14.63px + (39.01 - 14.63) * ((100vw - 768px) / (1514 - 768))
+      );
+    }
 
-  @media (max-width: 480px) {
-    font-size: 12px;
-    line-height: 16px;
-  }
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 12px;
+      line-height: 14.63px;
+    }
+  `}
 `;
 
 export const Quote = styled.div`
@@ -299,8 +302,16 @@ export const Quote = styled.div`
     font-size: 6rem;
   }
 
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 4rem;
+      letter-spacing: 0;
+      line-height: 0.5rem;
+    }
+  `};
+
   @media (max-width: 520px) {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   @media (max-width: 480px) {
