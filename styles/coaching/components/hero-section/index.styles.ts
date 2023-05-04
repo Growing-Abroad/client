@@ -61,3 +61,27 @@ export const HeroTitleWrapper = styled.div`
     }
   }
 `;
+
+export const TitlesContainer = styled.div`
+  margin-bottom: 7.5%;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin: 0;
+    }
+  `}
+`;
+
+export const Subtitle = styled.p`
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
+  ${({ theme }) => css`
+    color: ${theme.colors.blue700};
+
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 12px;
+      line-height: 24px;
+      max-width: 50vw;
+  }
+`;
