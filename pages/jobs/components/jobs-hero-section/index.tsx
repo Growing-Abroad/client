@@ -36,7 +36,7 @@ export const HeroTitleWrapper = styled.div`
 
     .upload-cv-btn {
         margin-top: 24px;
-        text-transform: uppercase; 
+        text-transform: uppercase;
         font-weight: 800;
     }
 
@@ -56,50 +56,50 @@ export const HeroTitleWrapper = styled.div`
         }
     }
 `
-        
-    
+
+
 
 export default function JobsHeroSection() {
     const { isMobile } = useAppContext();
 
     return <>
         <ContainerWrapper>
-            <ContainerHero 
-                backgroundImageDesktop={JobsHeroBg.src}  
+            <ContainerHero
+                backgroundImageDesktop={JobsHeroBg.src}
                 backgroundImageMobile={JobsHeroMobile.src}
                 styles={isMobile ? {
-                    height: '100%', 
-                    justifyContent: 'flex-start', 
+                    height: '100%',
+                    justifyContent: 'flex-start',
                     gap: '4px'
-                } 
+                }
                 : {
-                    height: '100%', 
+                    height: '100%',
                     justifyContent: 'flex-start',
                     gap: '4px',
                 }}
             >
                 <HeroTitleWrapper>
                     <div style={{maxWidth: '740px'}}>
-                        <TwoColorTitle 
-                        text1="Get your Dream Job in" 
-                        text2="Germany" 
+                        <TwoColorTitle
+                        text1="Get your Dream Job in"
+                        text2="Germany"
                         hasSpaceBtw
                         color1={blue700}
                         color2={yellow400}
                         className="jobs-title"
                         wrapperStyles={{maxWidth: '100%', justifyContent: 'flex-start'}}
                         />
-                        {!isMobile && <TwoColorTitle 
-                        text1="or" 
-                        text2="Europe" 
+                        {!isMobile && <TwoColorTitle
+                        text1="or"
+                        text2="Europe"
                         hasSpaceBtw
                         color1={blue700}
                         color2={yellow400}
-                        />}  
+                        />}
 
                         <StdButton className="upload-cv-btn" >
-                            Upload your CV NOW    
-                        </StdButton>  
+                            Upload your CV NOW
+                        </StdButton>
                     </div>
                 </HeroTitleWrapper>
             </ContainerHero>

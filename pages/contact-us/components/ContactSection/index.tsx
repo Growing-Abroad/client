@@ -12,8 +12,11 @@ import InstagramIcon from "@assets/icons/instagram.svg";
 import TikTokIcon from "@assets/icons/tiktok.svg";
 import YoutubeIcon from "@assets/icons/youtube-icon.svg";
 import StdButton from "@components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
 
 export default function Contact() {
+  const { isMobile } = useAppContext();
+
   return (
     <Wrapper>
       <div className={styles.app__contact__wrapper}>
@@ -31,8 +34,11 @@ export default function Contact() {
             <span className={styles.app__contact__left__form__header}>
               Get in touch with us
             </span>
-            <FooterLinks width="500px" alignItems="start">
-              <p>
+            <FooterLinks width="100%" style={{maxWidth: '100%'}} alignItems="start">
+              <p style={isMobile 
+                ? {fontWeight: 500, fontSize: '1rem'}
+                : {fontWeight: 500, fontSize: '1.25rem'}}
+              >
                 Also check out the section{" "}
                 <span>"Frequently asked questions"</span> and{" "}
                 <span>"Career Blogs"</span>. Maybe your question is already
@@ -40,11 +46,11 @@ export default function Contact() {
               </p>
             </FooterLinks>
             <div className={styles.app__contact__form__social}>
-              <span className={styles.app__contact__left__form__header}>
+              <span className={styles.app__contact__left__form__header__second}>
                 Social Media
               </span>
               <div>
-                <SocialMedia>
+                <SocialMedia gap={"27px"}>
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={InstagramIcon}
@@ -111,12 +117,7 @@ export default function Contact() {
               className={styles.app__contact__form__textarea}
               placeholder="Message"
             ></textarea>
-            <StdButton
-              style={{
-                position: "relative",
-                right: "23%",
-              }}
-            >
+            <StdButton>
               Send Message
             </StdButton>
           </div>

@@ -10,6 +10,13 @@ const {
   sizes: { mediaQuery },
 } = variables;
 export const Container = styled.div`
+  margin-top: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height:650px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +25,8 @@ export const Container = styled.div`
   min-width: 100%;
   @media (max-width: ${mediaQuery}) {
     max-width: 430px;
+    margin-top:0px;
+    height:450px;
   }
 `;
 export const ContentHero = styled.div`
@@ -28,11 +37,18 @@ export const ContentHero = styled.div`
   justify-content: center;
   align-items: start;
   gap: 33px;
+  div > h1{
+    display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: transparent;
+  }
 
   @media (max-width: ${mediaQuery}) {
     padding: 25px 20px 0 25px;;
     min-width: 430px;
-    height: 100%;
+    height: 400px;
     justify-content:start;
     align-items: start;
     position: relative;
@@ -43,14 +59,18 @@ export const ContentHero = styled.div`
       text-align: start;
       align-items: start;
       position:absolute;
-      top:26;
+      margin-top:30px;
     }
     div > h1 {
       font-size: 44px;
       margin: 0;
+
       &:nth-child(2n) {
         padding-left: 0;
         text-align:start;
+      }
+      span{
+        text-align:left;
       }
     }
   }

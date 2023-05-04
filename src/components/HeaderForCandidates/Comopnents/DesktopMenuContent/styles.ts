@@ -109,7 +109,6 @@ export const RSMenuItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
   :hover {
     color: ${({ theme }) => theme.colors.blue400};

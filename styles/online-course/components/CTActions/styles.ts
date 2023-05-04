@@ -1,61 +1,39 @@
 import styled from "styled-components";
 import manuUanHappy from "@/../public/assets/Photos-Main-Page/uan-manu-happy.webp";
-import {variables} from "@styles/global-variables";
-import {theme} from "@styles/theme";
+import { variables } from "@styles/global-variables";
+import { theme } from "@styles/theme";
 
-const { sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile } } = variables;
-const { colors: { blue400, blue500, blue700, yellow400 } } = theme;
+const {
+  sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile },
+} = variables;
+const {
+  colors: { blue400, blue500, blue700, yellow400 },
+} = theme;
 
 export const BackgroudCTA = styled.section`
+  margin-top: 60px;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 800px;
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
   align-items: center;
-  background-color: ${blue500};
-  padding: 0 ${globalHorizontalPadding};
-  height: 90vh;
-  min-height: 750px;
+  justify-content: flex-start;
+  min-height: 650px;
+  max-height: 800px;
   overflow: hidden;
-  position: relative;
 
-  .cta-mask {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    width: 100%;
-
-    img {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-
-    }
-  }
-  .white-line {
-    height: 5px;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    bottom: -1px;
-  }
   @media (max-width: ${mediaQuery}) {
-    padding: 0;
-    height:700px;
-    .cta-mask{
-      border:none;
-      background-color:#fff;
-      img{
-        bottom:0px;
-      }
-    }
+    background-position: -155px;
+    justify-content: flex-start;
   }
-  @media(min-width:1800px) {
-    max-height:650px
-  }
-`
+  background-color: ${blue500};
+
+`;
 
 export const CtaButton = styled.button`
   padding: 18px 46px;
@@ -73,16 +51,16 @@ export const CtaButton = styled.button`
   align-items: center;
 
   &:hover {
-      cursor: pointer;
-      background-color: ${blue700};
-      color: ${yellow400};
+    cursor: pointer;
+    background-color: ${blue700};
+    color: ${yellow400};
   }
 
   @media (max-width: ${mediaQuery}) {
     padding: 16px 40px;
     font-size: 1.125rem;
   }
-`
+`;
 
 export const Container = styled.section`
   width: 100%;
@@ -98,20 +76,19 @@ export const Container = styled.section`
     align-items: flex-start;
     flex-direction: column;
     gap: 90px;
-    width: 800px;
-    padding: 80px 32px 80px 0;
+    width: 900px;
+    padding: 120px 102px 80px 0;
 
     h1 {
       color: #fff;
       font-size: 74px;
       line-height: 6.25rem;
       font-weight: 500;
-      max-width:662px;
-      z-index:5;
-      span{
-        color:#FFDB5C;
+      max-width: 662px;
+      z-index: 5;
+      span {
+        color: #ffdb5c;
       }
-
     }
   }
 
@@ -144,7 +121,6 @@ export const Container = styled.section`
     background-repeat: no-repeat;
     background-position: bottom;
 
-
     .left-side {
       width: 100%;
       padding: 46px ${globalHorizontalPaddingMobile};
@@ -153,7 +129,7 @@ export const Container = styled.section`
       h1 {
         font-size: 44px;
         line-height: 54px;
-        width:279px;
+        width: 279px;
       }
       button {
         font-size: 1rem;
@@ -162,8 +138,8 @@ export const Container = styled.section`
 
     .right-side {
       left: -20px;
-      transform: scale(.63);
-      bottom:20px;
+      transform: scale(0.63);
+      bottom: 20px;
 
       .right-side-img-container {
         left: 0;
@@ -171,4 +147,4 @@ export const Container = styled.section`
       }
     }
   }
-`
+`;

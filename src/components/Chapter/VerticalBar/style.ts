@@ -3,12 +3,12 @@ import styled from 'styled-components';
 interface VerticalBarProps{
 backgroundColor?: string;
 color?: string;
-height?: number;
+height?: string;
 }
 export const VerticalBar = styled.div<VerticalBarProps>`
+  background-color: ${props => props.backgroundColor || 'transparent'};
   width: 10px;
-  background-color: #ccc;
-  height:446px;
+height: 443px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,13 +19,13 @@ export const VerticalBar = styled.div<VerticalBarProps>`
     height:0;
   }
   @media(max-width:758px){
-    height:${props => `${props.height}px`};
+    height:${props => `${props.height}`};
   }
 `;
 export const VerticaProgressBar = styled.div<VerticalBarProps>`
 width: 10px;
   background-color:${props => props.backgroundColor};
-  height:${props => `${props.height}px`};
+  height:${props => `${props.height}`};
   display: flex;
   flex-direction: column;
 
@@ -39,11 +39,11 @@ width: 10px;
 `
 
 
-export const IndexCircle = styled.div`
+export const IndexCircle = styled.div<VerticalBarProps>`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color:${props => props.backgroundColor};
   color: black;
   display: flex;
   justify-content: center;
