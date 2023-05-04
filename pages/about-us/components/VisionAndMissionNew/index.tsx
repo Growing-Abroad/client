@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import classes from "./style.module.css";
 import useAppContext from "@/hooks/useAppContext";
-
-import {
-  Container,
-  TextContainer,
-} from "@/../styles/about-us/components/VisionAndMissionNew/index.styles";
-import { useTheme } from "styled-components";
 
 export interface IText {
   heading: string;
@@ -29,10 +25,6 @@ function VisionAndMissionNew({
 
   const { isMobile } = useAppContext();
 
-  const {
-    colors: { blue500, blue700 },
-  } = useTheme();
-
   useEffect(() => {
     if (isMobile) {
       setBackgroundImg(backgroundSrc.mobile);
@@ -42,32 +34,32 @@ function VisionAndMissionNew({
   }, [isMobile]);
 
   return (
-    <Container backgroundImg={backgroundImg}>
-      <TextContainer
-        bgColor={`${blue500}f0`}
-        left="0"
-        top="auto"
-        bottom="0"
-        color="primary"
-        blueArea
-      >
-        <div>
-          <h3>{text1.heading}</h3>
-          <p>{text1.description}</p>
-        </div>
-      </TextContainer>
-      <TextContainer
-        bgColor="primary"
-        left="50%"
-        top="25%"
-        bottom="auto"
-        onTheTop
-        color={blue700}
-      >
-        <h3>{text2.heading}</h3>
-        <p>{text2.description}</p>
-      </TextContainer>
-    </Container>
+    <>
+      <Container className={classes.sectionContainer}>
+        <Row className={classes.section}>
+          <Col
+            lg="6"
+            className={classes.missionBg}
+            style={{
+              backgroundImage: "url(" + backgroundImg + ")",
+            }}
+          >
+            <div className={classes.missionContainer}>
+              <div className={classes.missionInner}>
+                <h3>{text1.heading}</h3>
+                <p>{text1.description}</p>
+              </div>
+            </div>
+          </Col>
+          <Col lg="6" className={classes.visionCol}>
+            <div className={classes.visionContainer}>
+              <h3>{text2.heading}</h3>
+              <p>{text2.description}</p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 
