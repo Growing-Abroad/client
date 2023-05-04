@@ -29,6 +29,7 @@ const DreamJobSubtitle = styled.p`
         font-size: 1rem;
         line-height: 1.625rem;
         margin-bottom: 0;
+        margin-top: 14px;
     }
 `
 
@@ -48,62 +49,62 @@ const CardsWrapper = styled.div`
 const mockupDreamJobCard: IDramJobCardProps[] = [
     {
         title: 'CV Optimization',
-        description: "Your CV is your Business Card. Without an optimized Resume into German standards, you won't be considered.",
+        description: "Your CV is your Business Card. Without an optimized Resume into German or European standards, you won't be considered.",
         info: [
-            'Guideline and Workbook how to effectively optimize your CV for the German market', 
-            'Personal Feedback rounds and insider tips to elevate your CV from all the others', 
-            'Final corrections to have a perfectly optimized CV to get every job interview'
+            'Guideline, Workbook and Videos on how to effectively optimize your CV for the German and European Job market.', 
+            'Personal Feedback rounds on the content strategy to capture your main strengths, key tasks, achievements and impress recruiters.', 
+            'Final corrections to have a perfectly optimized CV (ATS friendly, German & European standards) to get every job interview.'
         ],
-        deprecatedPrice: '297 €',
-        actualPrice: '177 €',
+        deprecatedPrice: '260 €',
+        actualPrice: '130 €',
         img: cvOptimization
     },
     {
         title: 'Cover Letter Optimization',
-        description: "Your Cover Letter shows your motivation and strengths. This is next to the CV one of the most important documents for recruiters.",
+        description: "Your Cover Letter shows your motivation and strengths. Next to your resume, this is one of the most important documents for recruiters.",
         info: [
-            'Guideline and Workbook how to effectively optimize your Cover Letter for the German market', 
-            'Personal Feedback rounds and insider tips to elevate your Cover Letter from all the others', 
-            'Final corrections to have a perfectly optimized Cover Letter to get every job interview'
+            "Guideline, Workbook and Videos on how to effectively optimize your Cover Letter for the German and European Job market.", 
+            "Personal Feedback rounds and insider tips on Storytelling to elevate the content of your Cover Letter and catch recruiter's attention.", 
+            "Final corrections to have a perfectly optimized Cover Letter (ATS friendly, German & European standards) with meaningful and exciting content."    
         ],
-        deprecatedPrice: '297 €',
-        actualPrice: '177 €',
+        deprecatedPrice: '260 €',
+        actualPrice: '130 €',
         img: coverLetter
     },
     {
         title: 'LinkedIn Optimization',
-        description: "With an optimized LinkedIn Profile you don't even have to apply for jobs. Recruiters will contact you for jobs.",
+        description: "With an optimized LinkedIn Profile you don’t have to apply for jobs any more. Recruiters will contact you for their open positions.",
         info: [
-            'Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market', 
-            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile from all the others', 
-            'Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview'
+            'Guideline and Videos on how to effectively optimize your LinkedIn Profile for the German and European Job market.', 
+            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile, build a personal brand and get more visualization from recruiters and LinkedIn users.', 
+            'Final corrections to have a perfectly optimized LinkedIn Profile to to get 5 times more job requests and interviews from recruiters.'
         ],
-        deprecatedPrice: '297 €',
-        actualPrice: '177 €',
+        deprecatedPrice: '220 €',
+        actualPrice: '110 €',
         img: linkedinOpt
     },
     {
         title: 'Job Search Strategy',
-        description: "With our Job Search Strategy you will focus on your strengths and know exactly where to find the right jobs for you",
+        description: "With our Job Search Strategy you will focus on your strengths and skilly and know exactly where to find the right jobs for you.",
         info: [
-            'Guideline and Workbook how to effectively search for jobs on the German market', 
-            'Personal Feedback to develop your individual Job Search Strategy based on your strengths and goals', 
+            'Guideline and Workbook on how to effectively search for jobs in the German Job market.', 
+            'Individual Coaching Session to develop your individual Job Search Strategy based on your strenghts and goals.', 
             'Templates with the most used Job Platforms, Companies which hire English speakers and your personal Application tracker'
         ],
-        deprecatedPrice: '297 €',
-        actualPrice: '177 €',
+        deprecatedPrice: '220 €',
+        actualPrice: '97 €',
         img: jobSearchStrategy
     },
     {
         title: 'Job Interview Preparation',
-        description: "When you know how to convince in job interviews and present yourself with all your strengths you will be unstoppable",
+        description: "The most important part is the job interview. When you know how to convince German and European recruiters and present yourself with all your strengths you will be unstoppable.",
         info: [
-            'Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market', 
-            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile from all the others', 
-            'Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview'
+            'Guideline, Workbook and Videos on how to effectively prepare for your job interview.', 
+            'Individual Coaching Session with Mock up interview and Video Analysis to improve your overall appearance.', 
+            'Templates with the most asked interview questions and how to answer them.'
         ],
-        deprecatedPrice: '297 €',
-        actualPrice: '177 €',
+        deprecatedPrice: '400 €',
+        actualPrice: '100 €',
         img: jobInterviewPrep
     }
 ]

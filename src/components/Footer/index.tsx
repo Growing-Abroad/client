@@ -21,30 +21,30 @@ import StdButton from "../generics/StdButton/StdButton";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
-import { PagesNamesEnum } from "@/utils/enums/pagesNames.enum";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 
 export default function Footer() {
   const route = useRouter();
 
   const { isMobile } = useAppContext();
 
-  const onGoToNextPage = (page: PagesNamesEnum) => route.push(`/${page}`);
+  const onGoToNextPage = (page: EPagesNames) => route.push(`/${page}`);
 
-  const handleGoToFaq = () => onGoToNextPage(PagesNamesEnum.FAQ);
+  const handleGoToFaq = () => onGoToNextPage(EPagesNames.FAQ);
 
-  const handleGoToCareerBlog = () => onGoToNextPage(PagesNamesEnum.CAREER_BLOG);
+  const handleGoToCareerBlog = () => onGoToNextPage(EPagesNames.CAREER_BLOG);
 
-  const handleGoToAboutUs = () => onGoToNextPage(PagesNamesEnum.ABOUT_US);
+  const handleGoToAboutUs = () => onGoToNextPage(EPagesNames.ABOUT_US);
 
-  const handleGoToServices = () => onGoToNextPage(PagesNamesEnum.SERVICES);
+  const handleGoToServices = () => onGoToNextPage(EPagesNames.SERVICES);
 
-  const handleGoToJobs = () => onGoToNextPage(PagesNamesEnum.JOBS);
+  const handleGoToJobs = () => onGoToNextPage(EPagesNames.JOBS);
 
-  const handleGoToLegal = () => onGoToNextPage(PagesNamesEnum.LEGAL_NOTICE);
+  const handleGoToLegal = () => onGoToNextPage(EPagesNames.LEGAL_NOTICE);
 
-  const handleGoToPrivacy = () => onGoToNextPage(PagesNamesEnum.PRIVACY_POLICY);
+  const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
 
-  const handleGoToTerms = () => onGoToNextPage(PagesNamesEnum.TERMS);
+  const handleGoToTerms = () => onGoToNextPage(EPagesNames.TERMS);
 
   return (
     <>
@@ -52,7 +52,7 @@ export default function Footer() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 -40 1440 320"
-          style={{ marginBottom: "-10px" }}
+          style={{ marginBottom: "-10px", backgroundColor: 'white' }}
         >
           <path
             fill="#0073CF"

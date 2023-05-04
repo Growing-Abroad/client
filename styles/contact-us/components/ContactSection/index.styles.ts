@@ -9,9 +9,12 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-export const SocialMedia = styled.div`
+export interface ISocialMediaProps {
+  gap?: string
+}
+export const SocialMedia = styled.div<ISocialMediaProps>`
   display: flex;
-  gap: 11px;
+  gap: ${({gap})=> gap || '11px' };
 `;
 
 interface IMedia {

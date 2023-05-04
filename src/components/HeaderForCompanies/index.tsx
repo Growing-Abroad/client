@@ -18,7 +18,7 @@ import useAppContext from "@/hooks/useAppContext";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 
-enum PagesNamesEnum {
+enum PageName {
   DEFAULT = "",
   OUR_SERVICES = "our-services",
   ABOUT_US = "about-us",
@@ -36,15 +36,7 @@ function HeaderForCompanies() {
 
   const route = useRouter();
 
-  const goToNextPage = (page: PagesNamesEnum) => route.push(`/${page}`);
-
-  const goToMain = () => goToNextPage(PagesNamesEnum.DEFAULT);
-
-  const goToOurServices = () => goToNextPage(PagesNamesEnum.OUR_SERVICES);
-
-  const goToAboutUs = () => goToNextPage(PagesNamesEnum.ABOUT_US);
-
-  const goToForCandidates = () => goToNextPage(PagesNamesEnum.FOR_CANDIDATES);
+  const pushTo = (page: PageName) => () => route.push(`/${page}`);
 
   return (
     <>
@@ -54,7 +46,7 @@ function HeaderForCompanies() {
         <div></div>
       </StyledBurger>
       <Container itsOpen={itsOpen}>
-        <LogoContainer onClick={goToMain}>
+        <LogoContainer onClick={pushTo(PageName.DEFAULT)}>
           <Logo src={GrowingAbroadImage.src} />
           {isMobile && (
             <IconButton>
@@ -64,10 +56,10 @@ function HeaderForCompanies() {
         </LogoContainer>
         <Content>
           <ButtonsContainer>
-            <Button onClick={goToOurServices}>our services</Button>
-            <Button onClick={goToAboutUs}>about us</Button>
+            <Button onClick={pushTo(PageName.OUR_SERVICES)}>our services</Button>
+            <Button onClick={pushTo(PageName.ABOUT_US)}>about us</Button>
             {isMobile && (
-              <Button onClick={goToForCandidates}>For Candidates</Button>
+              <Button onClick={pushTo(PageName.FOR_CANDIDATES)}>For Candidates</Button>
             )}
           </ButtonsContainer>
           <IconsContainer>

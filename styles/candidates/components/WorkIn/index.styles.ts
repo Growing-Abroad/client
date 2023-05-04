@@ -22,7 +22,6 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   padding: 80px ${globalHorizontalPadding};
-  margin-top: 20px;
   color: ${theme.colors.blue700};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
