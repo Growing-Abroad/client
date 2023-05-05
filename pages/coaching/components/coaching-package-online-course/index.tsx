@@ -2,13 +2,10 @@ import TwoColorTitle from "@/components/two-color-title";
 import { variables } from "@/styles/global-variables";
 import Image from "next/image";
 import styled from "styled-components";
-import OnlineCourse from "@assets/pages/coaching/online-course.webp";
 import CoachingPackage from "@assets/pages/coaching/coaching-package.webp";
 import useAppContext from "@/hooks/useAppContext";
 import LeftRetangle from "@assets/pages/coaching/left-retangle.png";
-import RightRetangle from "@assets/pages/coaching/right-retangle.png";
 import LeftMobile from "@assets/pages/coaching/left-mobile.png";
-import RightMobile from "@assets/pages/coaching/right-mobile.png";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
