@@ -34,6 +34,7 @@ const PackageCourseWrapper = styled.section`
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 120px;
+    padding: 0 24px;
   }
 `;
 
@@ -123,21 +124,18 @@ const PackageCourseContent = styled.div`
     }
 
     .package-course-details {
-      padding-inline: 40px;
-      margin-top: 29px;
-
       p {
-        font-size: 1rem;
-        line-height: 1.75rem;
+        font-size: 16px;
+        line-height: 20px;
       }
 
       ul {
-        gap: 32px;
+        gap: 20px;
         margin: 30px 0 27px 0;
 
         li {
-          font-size: 0.875rem;
-          line-height: 1.5rem;
+          font-size: 12px;
+          line-height: 16px
           gap: 14px;
         }
       }
@@ -145,6 +143,15 @@ const PackageCourseContent = styled.div`
       .book-now-btn {
         margin-bottom: 20px;
         padding: 8px 15px;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .package-course-details {
+      ul {
+        /* gap: 20px; */
+        margin: 16px 0;
       }
     }
   }
