@@ -2,13 +2,10 @@ import TwoColorTitle from "@/components/two-color-title";
 import { variables } from "@/styles/global-variables";
 import Image from "next/image";
 import styled from "styled-components";
-import OnlineCourse from "@assets/pages/coaching/online-course.webp";
 import CoachingPackage from "@assets/pages/coaching/coaching-package.webp";
 import useAppContext from "@/hooks/useAppContext";
 import LeftRetangle from "@assets/pages/coaching/left-retangle.png";
-import RightRetangle from "@assets/pages/coaching/right-retangle.png";
 import LeftMobile from "@assets/pages/coaching/left-mobile.png";
-import RightMobile from "@assets/pages/coaching/right-mobile.png";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -155,6 +152,16 @@ const PackageCourseContent = styled.div`
       }
     }
   }
+
+  @media (max-width: 415px) {
+    .package-course-details {
+      ul {
+        gap: 10px;
+        margin: 5px 0;
+      }
+    }
+  }
+
 `;
 
 const Card = styled.div`
@@ -259,7 +266,10 @@ const ButtonContainer = styled.div`
 `;
 
 export default function CoachingPackageOnlineCourseSection() {
-  const { isMobile } = useAppContext();
+  const {
+    isMobile,
+    windowSize: { width },
+  } = useAppContext();
   const twoColorFontSize = isMobile ? "2rem" : "3.438rem";
 
   const detailsContent = [
@@ -315,7 +325,7 @@ export default function CoachingPackageOnlineCourseSection() {
                     className="check-icon"
                     icon={faCheck}
                     color={yellow400}
-                    size={"xl"}
+                    size={isMobile ? "xl" : "sm"}
                   />
                   {liText}
                 </li>
