@@ -155,6 +155,16 @@ const PackageCourseContent = styled.div`
       }
     }
   }
+
+  @media (max-width: 415px) {
+    .package-course-details {
+      ul {
+        gap: 10px;
+        margin: 5px 0;
+      }
+    }
+  }
+
 `;
 
 const Card = styled.div`
@@ -259,7 +269,10 @@ const ButtonContainer = styled.div`
 `;
 
 export default function CoachingPackageOnlineCourseSection() {
-  const { isMobile } = useAppContext();
+  const {
+    isMobile,
+    windowSize: { width },
+  } = useAppContext();
   const twoColorFontSize = isMobile ? "2rem" : "3.438rem";
 
   const detailsContent = [
@@ -315,7 +328,7 @@ export default function CoachingPackageOnlineCourseSection() {
                     className="check-icon"
                     icon={faCheck}
                     color={yellow400}
-                    size={"xl"}
+                    size={isMobile ? "xl" : "sm"}
                   />
                   {liText}
                 </li>
