@@ -29,7 +29,7 @@ function FollowDreams() {
   }, [isVideoPlaying, setIsVideoPlaying]);
 
   return (
-    <S.Container style={{gap:'42px', paddingBottom:`${isMobile ? '0px':''}`}}>
+    <S.Container style={{gap:'20px', paddingBottom:`${isMobile ? '0px':''}`}}>
       <TwoColorTitle
         text1="It is time to start your journey and"
         text2="Follow your Dream!"
@@ -48,7 +48,7 @@ function FollowDreams() {
         {!isVideoPlaying ? (
           <Image
             width={804}
-            height={438}
+            height={isMobile ?250 : 438}
             src={videoBackground}
             alt="uan and manu"
             className={classes.youtubeImage}

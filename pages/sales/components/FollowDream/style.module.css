@@ -8,7 +8,6 @@
 }
 .youtubeImage {
     width: 100%;
-    height: auto;
 }
 
 .ripplesContainer {
@@ -192,6 +191,7 @@
   font-weight: 600;
   color:#05335B;
   text-align: center;
+  line-height: 38px;
 
 
 }
@@ -199,5 +199,8 @@
   .resume{
     font-size: 20px;
     width:340px;
+  }
+  .youtubeImage{
+    margin-top:30px;
   }
 }

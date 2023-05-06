@@ -9,18 +9,20 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhatYouGet() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{paddingBottom:`${isMobile ?'90px' : ''}`,paddingTop:`0px`}}>
+    <S.Wrapper style={{paddingBottom:`${isMobile ?'30px' : '120px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
       <TwoColorTitle
         className={classes.title}
         text1="What you get out of"
         text2="this Online Course"
         hasSpaceBtw
+        styles={{marginBottom:`${isMobile ?'' : '0px'}`, width:`${isMobile ? "380px" : "auto"}`}}
+        fontSize={isMobile ?"" :"60px"}
       />
-      <S.Content style={{ flexDirection: `${isMobile ? "column" : "row-reverse"}` }}>
+      <S.Content style={{ flexDirection: `${isMobile ? "column" : "row-reverse"}`, paddingLeft:`${isMobile ? "" : "0"}` }}>
         <Image
           src={Benefits}
-          width={isMobile ? 430 : 549}
-          height={isMobile ? 340 : 600}
+          width={isMobile ? 400 : 549}
+          height={isMobile ? 320 : 600}
           alt=""
         />
         <S.RightContent

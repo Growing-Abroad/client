@@ -1,44 +1,49 @@
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
 import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.webp";
+import discount from "@/../public/assets/discount.svg"
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import TwoColorTitle from "@/components/two-color-title";
 
 export function BigCard() {
   const { isMobile } = useAppContext();
   return (
     <S.Container>
+      <TwoColorTitle
+        text1="Get the Online Course now and join the"
+        text2="Growing Abroad Community"
+        styles={{
+          width: `${isMobile ? "400px " : "920px"}`,
+          flexDirection: "column",
+          display: "flex",
+          marginBottom: `${isMobile ? "20px" : "40px"}`,
+        }}
+        fontSize={isMobile ? "" : "60px"}
+        hasSpaceBtw
+      />
       <S.BigCardWrapper>
+        <Image src={discount}  alt="discount" width={153} height={103} style={{position:"absolute", top:`${isMobile ? "380px" :"450px"}`, right:`${isMobile ? "-20px" :"70px"}`}}/>
         <Image
           src={onlineCourse}
           alt=""
-          width={isMobile ? 383 : 750}
-          height={isMobile ? 241 : 515}
+          width={isMobile ? 383 : 705}
+          height={isMobile ? 241 : 294}
           style={{
             objectFit: "cover",
-            objectPosition: `${isMobile ? " " : "50% 15%"}`,
+            objectPosition: `${isMobile ? " " : "50% 40%"}`,
             borderRadius: "10px",
           }}
         />
-        <h1>
-          Online <span style={{ color: "#4A9AFD" }}>Course</span>
-        </h1>
+        <h1>Online Course</h1>
         <h2>
           Land your Dream Job in{" "}
           <span style={{ color: "#4A9AFD" }}>Germany or Europe</span>
         </h2>
-        <span
-          style={{
-            fontSize: "16px",
-            width: "109px",
-            textAlign: "left",
-            fontWeight: "700",
-            borderBottom: "3px solid #05335B",
-            alignSelf:'end',
-          }}
-        >
-          Value
-        </span>
+        <p className="discount">
+          Instead Of <span>1360 €</span> Only
+        </p>
+        <S.PriceSpan>397 €</S.PriceSpan>
         <div>
           <S.CardText>
             <span>
@@ -57,7 +62,6 @@ export function BigCard() {
             </span>
             50+ video sessions to learn step by step how to land your dream job
             in Germany or Europe
-            <span className="priceSpan">737 €</span>
           </S.CardText>
           <S.CardText>
             <span>
@@ -76,7 +80,6 @@ export function BigCard() {
             </span>
             Interactive Workbook with more than 200 pages and Coaching tasks to
             guide you through the entire application process
-            <span className="priceSpan">179 €</span>
           </S.CardText>
           <S.CardText>
             <span>
@@ -96,7 +99,6 @@ export function BigCard() {
             Bonus chapter with expert interviews of different areas. (Hiring
             Managers, HR Recruiters, Salary negotiating Coach, Successful
             foreigners)
-            <span className="priceSpan">189 €</span>
           </S.CardText>
           <S.CardText>
             <span>
@@ -117,7 +119,6 @@ export function BigCard() {
             interview questions, List of most popular job seeking platforms,
             List of companies who hire English speakers, Job application
             tracker, Email templates, and many more
-            <span className="priceSpan">127 €</span>
           </S.CardText>
           <S.CardText>
             <span>
@@ -136,27 +137,20 @@ export function BigCard() {
             </span>
             Access to the exclusive Growing Abroad Community Group with
             motivated foreigners with the same goals
-            <span className="priceSpan">27 €</span>
           </S.CardText>
-
         </div>
-        <p className="descount">
-          Instead Of <span>1360 €</span> Only
-        </p>
-        <S.PriceSpan>297 €</S.PriceSpan>
         <StdButton
-            style={{
-              textAlign: `center`,
-              width: `${isMobile ? "238px" : "365px"}`,
-              padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-              marginRight: `${isMobile ? "0" : "30px"}`,
-              marginTop: `${isMobile ? "20px" : "48px"}`,
-            }}
-          >
-            Get Access Now
-          </StdButton>
+          style={{
+            textAlign: `center`,
+            width: `${isMobile ? "238px" : "365px"}`,
+            padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
+            marginRight: `${isMobile ? "0" : "30px"}`,
+            marginTop: `${isMobile ? "20px" : "0px"}`,
+          }}
+        >
+          Get Access Now
+        </StdButton>
       </S.BigCardWrapper>
-
     </S.Container>
   );
 }

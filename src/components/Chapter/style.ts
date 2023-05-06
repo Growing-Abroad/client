@@ -21,12 +21,12 @@ export const Container = styled.div`
       text-align: center;
       display: flex;
       flex-direction: column;
-      padding-bottom: 104px;
+      padding-bottom: 30px;
     }
   }
 
   @media (max-width: ${mediaQuery}) {
-    padding-bottom:8px;
+    padding-bottom:40px;
     padding-top:115px;
     :nth-child(1n){
       h1{
@@ -44,7 +44,7 @@ export const Content = styled.div`
   justify-content: center;
   position: relative;
   width: 100%;
-  min-width: 1280px;
+ max-width: 1513px;
   background-color: white;
   padding-bottom: 40px;
   @media (max-width: ${mediaQuery}) {

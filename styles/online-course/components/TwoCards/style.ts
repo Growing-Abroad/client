@@ -16,6 +16,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 1280px;
   padding-bottom: 160px;
 `;
 export const ContentTwoCards = styled.div`
@@ -29,7 +30,7 @@ export const ContentTwoCards = styled.div`
   padding: 49px 100px 46px;
   .right-card {
     div {
-      gap: 30px;
+      gap: 26.5px;
     }
   }
   @media (max-width: ${mediaQuery}) {
@@ -39,7 +40,7 @@ export const ContentTwoCards = styled.div`
     .right-card{
       h3{
         font-size: 30px;
-        padding: 26px 31px 40px 32px;
+        padding: 26px 31px 30px 32px;
       }
     }
     .right-card{
@@ -55,7 +56,7 @@ export const ContentTwoCards = styled.div`
 export const TwoCardsWrapper = styled.div`
   width: 430px;
   height: auto;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +81,7 @@ export const TwoCardsWrapper = styled.div`
     gap: 10px;
     align-items: center;
     justify-content: center;
-    padding: 48px 59px 33px;
+    padding: 28px 59px 18px;
     letter-spacing: 1.3px;
   }
   p {

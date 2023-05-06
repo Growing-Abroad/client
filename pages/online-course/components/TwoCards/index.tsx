@@ -28,7 +28,7 @@ export function TwoCards() {
             src={thumbsUp}
             alt=""
             width={isMobile ? 350 : 430}
-            height={isMobile ? 194 : 205}
+            height={isMobile ? 194 : 170}
             style={{ borderRadius: `${isMobile ? "10px" : "10px"}` , objectFit:"cover"}}
           />
           <h3>
@@ -144,7 +144,7 @@ export function TwoCards() {
             src={thumbsDown}
             alt=""
             width={isMobile ? 350 : 430}
-            height={isMobile ? 194 : 205}
+            height={isMobile ? 194 : 170}
             style={{ borderRadius: `${isMobile ? "10px" : "10px"}` , objectFit:"cover"}}
           />
           <h3>

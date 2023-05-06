@@ -16,13 +16,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 87px 0 146px 0;
+  padding: 27px 0 0 0;
   @media (max-width: ${mediaQuery}) {
     padding: 87px 23px 81px;
   }
 `;
 export const BigCardWrapper = styled.div`
-  width: 750px;
+position: relative;
+  width: 705px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,7 @@ export const BigCardWrapper = styled.div`
   justify-content: center;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding-bottom:56px;
+  padding-bottom:26px;
   h1,
   h2,
   span,
@@ -42,12 +43,12 @@ export const BigCardWrapper = styled.div`
   }
   h1 {
     font-size: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     padding-top: 18px;
   }
   h2 {
     font-size: 20px;
-    padding: 0 70px 36px;
+    padding: 0 70px 16px;
   }
   p {
     font-size: 24px;
@@ -98,7 +99,7 @@ export const BigCardWrapper = styled.div`
       align-items: center;
       justify-content: center;
       gap: 26px;
-      padding: 40px 33px 55px 33px;
+      padding: 40px 33px 40px 33px;
     }
   }
 `;
@@ -126,11 +127,6 @@ export const CardText = styled.li`
   letter-spacing: 0.04em;
   gap: 26px;
   color:#05335B;
-  .priceSpan{
-    font-weight: 700;
-    width:70px;
-    white-space:nowrap;
-  }
   @media (max-width: ${mediaQuery}) {
     width:320px;
     font-weight: 500;

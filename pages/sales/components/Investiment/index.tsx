@@ -17,22 +17,32 @@ const font = Montserrat({
 function Investiment() {
   const { isMobile } = useAppContext();
   return (
-    <S.Container style={{paddingBottom:'146px'}}>
-
-      <S.ImageContainer >
+    <S.Container style={{ paddingBottom: "130px" }}>
+      <S.ImageContainer>
         <Image
           width={868}
-          height={536}
+          height={436}
           src={computers}
           alt="devices"
           className={classes.youtubeImage}
         ></Image>
       </S.ImageContainer>
 
-      <S.Paragraph style={{fontSize:`${isMobile ?'32px' :'60px'}`, textAlign:'center', fontWeight:'600', marginTop:'32px'}}>
-      This course is an investment
-in your <span style={{color:'#4A9AFD'}}>Successful Future </span>     </S.Paragraph>
-      <StdButton style={{marginTop:'36px'}}>Get your Lifetime Access Now</StdButton>
+      <S.Paragraph
+        style={{
+          width: `${isMobile ? "32px" : "1500px"}`,
+          fontSize: `${isMobile ? "32px" : "60px"}`,
+          textAlign: "center",
+          fontWeight: "600",
+          marginTop: "0px",
+          lineHeight:`${isMobile ? "" : "73px"}`,
+        }}
+      >
+        This course is an investment  <span>in your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>{" "}
+      </S.Paragraph>
+      <StdButton style={{ marginTop: "0px" }}>
+        Get your Lifetime Access Now
+      </StdButton>
     </S.Container>
   );
 }
