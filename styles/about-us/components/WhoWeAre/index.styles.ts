@@ -16,6 +16,7 @@ export const Container = styled.section`
   gap: 2rem;
   padding: 0 ${variables.sizes.globalHorizontalPadding} 0
     ${variables.sizes.globalHorizontalPadding};
+  max-width: 1280px;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding: 20px 40px 0 40px;

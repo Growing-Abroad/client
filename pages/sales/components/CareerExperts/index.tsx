@@ -26,6 +26,7 @@ const ActiveImage = styled.img`
   width: 380px;
   height: 485px;
   object-fit: cover;
+
   @media(max-width: 768px) {
     width:396px;
     height: 328px;
@@ -38,6 +39,7 @@ const SmallImage = styled.img`
   height: 405px;
   object-fit: cover;
   object-position: 55% 10%;
+  opacity: 0.5;
 `;
 
 interface Props {
@@ -56,7 +58,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
   return (
     <DiscoverWrapper style={{ paddingTop: `${isMobile ?"96px" :"146px"}`, paddingBottom:`${isMobile ?"0px" :"146px"}`}}>
       <TwoColorTitle
-        text1={isMobile ?"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uan & Manu" : "We are Uan & Manu"}
+        text1={isMobile ?"We are Uan & Manu" : "We are Uan & Manu"}
         text2="your Career Experts"
         hasSpaceBtw
         as="h2"

@@ -8,14 +8,14 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{paddingBottom:`${isMobile ? '20px':'147px'}`}}>
+    <S.Wrapper style={{paddingBottom:`${isMobile ? '20px':'120px'}`}}>
       <TwoColorTitle text1="Does this sound" text2="Familiar...?"  styles={{width:`${isMobile ? '350px':''}`, display:'flex',flexDirection:`${isMobile ? 'column':'row'}`}} hasSpaceBtw/>
       <S.Content>
 
           <Image
             src={unhappy}
-            width={isMobile ? 430 : 648}
-            height={isMobile ? 390 : 558}
+            width={isMobile ? 400 : 838}
+            height={isMobile ? 317 : 558}
             alt=""
           />
 

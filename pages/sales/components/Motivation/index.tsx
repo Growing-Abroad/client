@@ -8,20 +8,21 @@ import TwoColorTitle from "@/components/two-color-title";
 export function Motivation() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper>
+    <S.Wrapper style={{gap:`${isMobile ? '' : "0px"}`}}>
       <TwoColorTitle
-        styles={{ width: `${isMobile ? "340px" : "1194px"}` }}
-        text1="... Then join our Online Course for"
+        styles={{ width: `${isMobile ? "340px" : "1400px"}` , paddingBottom: `${isMobile ? '' : "40px"}`, lineHeight: `${isMobile ?'53px' : '72px'}` }}
+        text1="... Then join our Online Course for "
         text2="Successful Motivated Foreigners to ..."
         hasSpaceBtw
+        fontSize={isMobile ? "":"60px" }
       />
       <S.Content>
-        <Image
+        {isMobile ? (<> </>) : (<Image
           src={threePersons}
           width={isMobile ? 460 : 748}
           height={isMobile ? 390 : 558}
           alt=""
-        />
+        />)}
         <S.RightContent>
           <S.TextWrapper>
             <S.Icon>
@@ -148,7 +149,7 @@ export function Motivation() {
           </S.TextWrapper>
         </S.RightContent>
       </S.Content>
-      <StdButton>Buy Online Course Now</StdButton>
+      <StdButton style={{marginTop:`${isMobile ? '' : "25px"}`}}>Buy Online Course Now</StdButton>
     </S.Wrapper>
   );
 }

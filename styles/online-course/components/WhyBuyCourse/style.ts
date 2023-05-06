@@ -19,17 +19,20 @@ export const Wrapper = styled.div`
   background-color: white;
   padding: 89px 0px 146px 0px;
   gap: 81px;
+  min-width: 1280px;
   @media (max-width: ${mediaQuery}) {
     padding: 47px 0 120px;
     gap:12px;
+    min-width: 430px;
   }
 `;
 export const Content = styled.div`
   width: 100%;
   min-width: 1280px;
   display: flex;
-  gap: 72px;
+  gap: 100px;
   align-items: center;
+  padding-right:40px;
   justify-content: space-between;
   &:first-child {
     top: 0;
@@ -39,18 +42,21 @@ export const Content = styled.div`
     flex-direction: column;
     min-width: 430px;
     gap:0px;
+    padding-right:0px;
+  }
+  @media (min-width: 1530px) {
+    max-width: 1513px;
   }
 `;
 export const RightContent = styled.div`
-  width: 613px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-right:140px;
+  min-width: 613px;
   gap: 20px;
   @media (max-width: ${mediaQuery}) {
-    width:430px;
-    padding: 46px;
+    min-width:420px;
+    padding: 0 30px;
     margin-right:0px;
     padding-top:49px;
     p{
