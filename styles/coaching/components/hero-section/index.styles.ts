@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variables } from "@/styles/global-variables";
 
 const {
   sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery },
 } = variables;
-
 
 export const ContainerWrapper = styled.div`
   height: 250px;
@@ -14,7 +13,6 @@ export const ContainerWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
-
 
   @media (max-width: 758px) {
     height: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
@@ -56,8 +54,33 @@ export const HeroTitleWrapper = styled.div`
       }
 
       .coaching-hero-cta {
-        padding: "8px 24px",
+        padding: "8px 24px";
       }
     }
   }
+`;
+
+export const TitlesContainer = styled.div`
+  margin-bottom: 7.5%;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin: 0;
+    }
+  `}
+`;
+
+export const Subtitle = styled.p`
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
+  ${({ theme }) => css`
+    color: ${theme.colors.blue700};
+
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      font-size: 12px;
+      line-height: 24px;
+      max-width: 50vw;
+    }
+  `}
 `;

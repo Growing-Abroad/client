@@ -21,17 +21,17 @@ export const Container = styled.section`
   }
 
   @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 990px) {
-    padding-top: 280px;
+    padding-top: 80px;
   }
 
   @media (max-width: 580px) {
-    padding: 72px 42px 2px;
+    padding: 0 42px 2px;
   }
 `;
 
 export const TitleContainer = styled.div`
   max-width: 100%;
-  /* padding: 10px; */
+  padding-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

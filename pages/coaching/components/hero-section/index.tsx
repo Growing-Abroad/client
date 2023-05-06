@@ -4,9 +4,12 @@ import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import styled from "styled-components";
-import { ContainerWrapper, HeroTitleWrapper } from "../../../../styles/coaching/components/hero-section/index.styles";
-
-
+import {
+  ContainerWrapper,
+  HeroTitleWrapper,
+  Subtitle,
+  TitlesContainer,
+} from "../../../../styles/coaching/components/hero-section/index.styles";
 
 export default function CoachingHeroSection() {
   const { isMobile } = useAppContext();
@@ -20,30 +23,33 @@ export default function CoachingHeroSection() {
           isMobile
             ? {
                 height: "100%",
-                marginTop:"0px",
+                marginTop: "0px",
                 justifyContent: "flex-start",
                 backgroundPosition: "-155px",
               }
             : {
                 height: "100%",
-                marginTop:"0px",
+                marginTop: "0px",
                 justifyContent: "flex-start",
               }
         }
       >
         <HeroTitleWrapper>
-          <TwoColorTitle
-            text1="Personal"
-            text2="Coaching"
-            hasSpaceBtw
-            wrapperClassName="coaching-title-wrapper"
-            className="coaching-title"
-            color1="white"
-          />
-          <StdButton
-            className="coaching-hero-cta"
-          >
-            {isMobile ? 'Book Now' : 'Book a Coaching Now'}
+          <TitlesContainer>
+            <TwoColorTitle
+              text1="Personal"
+              text2="Coaching"
+              hasSpaceBtw
+              wrapperClassName="coaching-title-wrapper"
+              className="coaching-title"
+              color1="white"
+            />
+            <Subtitle>
+              Let us coach you towards a successful career in Germany
+            </Subtitle>
+          </TitlesContainer>
+          <StdButton className="coaching-hero-cta">
+            {isMobile ? "Book Now" : "Book a Coaching Now"}
           </StdButton>
         </HeroTitleWrapper>
       </ContainerHero>
