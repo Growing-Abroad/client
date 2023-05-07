@@ -30,28 +30,27 @@ export default function OnlineCourse() {
   return (
     <Wrapper>
      <CTAction />
-     <PageBody style={{marginTop: `${isMobile ? '850px':'850px'}`}}>
+     <PageBody style={{marginTop: `${isMobile ? '770px':'800px'}`}}>
      <Wave
-            type={1}
-            height={isMobile? '100%' : '100%'}
-            className="border-image"
-            styles={
-                isMobile
-                ? {
-                    height: "100%",
-                    justifyContent: "flex-start",
-                    backgroundPosition: "-155px",
+          type={1}
+          height={isMobile ? "100%" : "100%"}
+          className="border-image"
+          styles={
+            isMobile
+              ? {
+                  height: "154px",
+                  justifyContent: "flex-start",
+                  top:'-100px',
                 }
-                : {
+              : {
                   width: "100%",
-                    height: "150px",
-                    justifyContent: "flex-start",
-                    position: "absolute",
-                    top: '-100px',
-
+                  height: "150px",
+                  justifyContent: "flex-start",
+                  position: "absolute",
+                  top: "-100px",
                 }
-            }
-            ></Wave>
+          }
+        ></Wave>
 
     <WhyBuyCourse />
     <Chapter/>

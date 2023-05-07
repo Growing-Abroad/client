@@ -36,7 +36,7 @@ export default function OnlineCourse() {
   return (
     <Wrapper>
       <CTAction />
-      <PageBody style={{ marginTop: `${isMobile ? "850px" : "850px"}` }}>
+      <PageBody style={{ marginTop: `${isMobile ? "850px" : "830px"}` }}>
         <Wave
           type={1}
           height={isMobile ? "100%" : "100%"}

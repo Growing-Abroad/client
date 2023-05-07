@@ -30,6 +30,7 @@ export const BackgroudCTA = styled.section`
   @media (max-width: ${mediaQuery}) {
     background-position: -155px;
     justify-content: flex-start;
+    max-height:700px;
   }
   background-color: ${blue500};
 

@@ -26,7 +26,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${mediaQuery}) {
-    padding-bottom:40px;
+    padding-bottom:20px;
     padding-top:115px;
     :nth-child(1n){
       h1{

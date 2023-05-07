@@ -35,6 +35,7 @@ function FollowDreams() {
         text2="Follow your Dream!"
         hasSpaceBtw
         className={classes.followDreamsTitle}
+        fontSize={isMobile ?"36px" :"60px"}
         wrapperStyles={{
           width:`${isMobile ? '350px':'1160px'}`,
           flexDirection:"column",

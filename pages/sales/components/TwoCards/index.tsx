@@ -20,6 +20,7 @@ export function TwoCards() {
           justifyContent: "center",
         }}
         text2="Online Course for?"
+        fontSize={isMobile ?"36px" :"60px"}
         hasSpaceBtw
       />
       <S.ContentTwoCards>

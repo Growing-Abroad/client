@@ -15,12 +15,12 @@ function CTAction() {
 
 
   return (
-    <S.BackgroudCTA>
+    <S.BackgroudCTA style={{maxHeight:`${isMobile ?'830px' :''}`}}>
       <S.Container >
         <section className="left-side" style={{gap:'23px', paddingLeft:"60px"}} >
           <h1>Land your Dream Job in <span>Germany</span> or <span>Europe</span>
           </h1>
-          <h2 style={{color:'white', fontSize:`${isMobile ?'16px' :'24px'}`, lineHeight:'24px', width:`${isMobile ?'323px' :'523px'}`}}>Build a successful career abroad with this amazing ONLINE COURSE</h2>
+          <span style={{color:'white', fontSize:`${isMobile ?'16px' :'24px'}`, fontWeight:400, lineHeight:'38px', width:`${isMobile ?'323px' :'523px'}`}}>Build a successful career abroad with this amazing ONLINE COURSE</span>
           <StdButton >
             Buy Online Course Now
           </StdButton>

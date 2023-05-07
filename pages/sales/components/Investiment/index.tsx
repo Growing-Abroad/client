@@ -17,7 +17,7 @@ const font = Montserrat({
 function Investiment() {
   const { isMobile } = useAppContext();
   return (
-    <S.Container style={{ paddingBottom: "130px" }}>
+    <S.Container style={{ paddingBottom: "146px" }}>
       <S.ImageContainer>
         <Image
           width={868}

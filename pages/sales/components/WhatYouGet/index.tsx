@@ -9,25 +9,25 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhatYouGet() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{paddingBottom:`${isMobile ?'30px' : '120px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
+    <S.Wrapper style={{paddingBottom:`${isMobile ?'0px' : '146px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
       <TwoColorTitle
         className={classes.title}
-        text1="What you get out of"
+        text1="What you get out of   "
         text2="this Online Course"
         hasSpaceBtw
-        styles={{marginBottom:`${isMobile ?'' : '0px'}`, width:`${isMobile ? "380px" : "auto"}`}}
-        fontSize={isMobile ?"" :"60px"}
+        styles={{marginBottom:`${isMobile ?'' : '0px'}`, width:`${isMobile ? "341px" : "auto"}`, whiteSpace:`${isMobile ? "normal" : "normal"}`, textAlign:`center`}}
+        fontSize={isMobile ?"36px" :"60px"}
       />
       <S.Content style={{ flexDirection: `${isMobile ? "column" : "row-reverse"}`, paddingLeft:`${isMobile ? "" : "0"}` }}>
         <Image
           src={Benefits}
-          width={isMobile ? 400 : 549}
-          height={isMobile ? 320 : 600}
+          width={isMobile ? 400 : 600}
+          height={isMobile ? 320 : 518}
           alt=""
         />
         <S.RightContent
           className={classes.text}
-          style={{ marginLeft:`${isMobile ? '0px': "140px"}`, height: "579px", gap:`${isMobile ?'0px' : '44px'}` }}
+          style={{ marginLeft:`${isMobile ? '0px': "140px"}`, gap:`${isMobile ?'41px' : '30px'}` }}
         >
           <S.TextWrapper>
             <S.Icon>

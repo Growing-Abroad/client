@@ -18,7 +18,7 @@ export const Container = styled.div`
   justify-content: center;
   padding: 27px 0 0 0;
   @media (max-width: ${mediaQuery}) {
-    padding: 87px 23px 81px;
+    padding: 87px 23px 0px;
   }
 `;
 export const BigCardWrapper = styled.div`

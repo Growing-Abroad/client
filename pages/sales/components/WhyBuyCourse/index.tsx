@@ -8,21 +8,29 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{paddingBottom:`${isMobile ? '20px':'120px'}`}}>
-      <TwoColorTitle text1="Does this sound" text2="Familiar...?"  styles={{width:`${isMobile ? '350px':''}`, display:'flex',flexDirection:`${isMobile ? 'column':'row'}`}} hasSpaceBtw/>
+    <S.Wrapper style={{ paddingBottom: `${isMobile ? "20px" : "120px"}` }}>
+      <TwoColorTitle
+        text1="Does this sound"
+        text2="Familiar...?"
+        styles={{
+          width: `${isMobile ? "350px" : ""}`,
+          display: "flex",
+          flexDirection: `${isMobile ? "column" : "row"}`,
+        }}
+        fontSize={isMobile ? "36px" : "60px"}
+        hasSpaceBtw
+      />
       <S.Content>
+        <Image
+          src={unhappy}
+          width={isMobile ? 400 : 838}
+          height={isMobile ? 317 : 558}
+          alt=""
+        />
 
-          <Image
-            src={unhappy}
-            width={isMobile ? 400 : 838}
-            height={isMobile ? 317 : 558}
-            alt=""
-          />
-
-        <S.RightContent style={{gap:`${isMobile ? '30px':'73px'}`}}>
+        <S.RightContent style={{ gap: `${isMobile ? "51px" : "73px"}` }}>
           <S.TextWrapper>
-
-          <span>
+            <span>
               <svg
                 width="63"
                 height="62"
@@ -35,17 +43,14 @@ export function WhyBuyCourse() {
                   fill="#05335B"
                 />
               </svg>
-
             </span>
 
-            <S.Text style={{fontWeight:'500'}}>
-            You feel like that there is more you can achieve in your life?
-
+            <S.Text style={{ fontWeight: "500" }}>
+              You feel like that there is more you can achieve in your life?
             </S.Text>
           </S.TextWrapper>
           <S.TextWrapper>
-
-          <span>
+            <span>
               <svg
                 width="63"
                 height="62"
@@ -58,15 +63,15 @@ export function WhyBuyCourse() {
                   fill="#05335B"
                 />
               </svg>
-
             </span>
 
-            <S.Text style={{fontWeight:'500'}}>
-            You have no idea how and where to start to build a career in Europe or Germany?
+            <S.Text style={{ fontWeight: "500" }}>
+              You have no idea how and where to start to build a career in
+              Europe or Germany?
             </S.Text>
           </S.TextWrapper>
           <S.TextWrapper>
-          <span>
+            <span>
               <svg
                 width="63"
                 height="62"
@@ -79,10 +84,9 @@ export function WhyBuyCourse() {
                   fill="#05335B"
                 />
               </svg>
-
             </span>
-            <S.Text style={{fontWeight:'500'}}>
-            You are very qualified but still don't earn enough money?
+            <S.Text style={{ fontWeight: "500" }}>
+              You are very qualified but still don't earn enough money?
             </S.Text>
           </S.TextWrapper>
         </S.RightContent>

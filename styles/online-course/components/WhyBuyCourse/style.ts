@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
   gap: 81px;
   min-width: 1280px;
   @media (max-width: ${mediaQuery}) {
-    padding: 47px 0 120px;
+    padding: 47px 0 0px;
     gap:12px;
     min-width: 430px;
   }

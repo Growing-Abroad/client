@@ -15,8 +15,8 @@ function CTAction() {
 
 
   return (
-    <S.BackgroudCTA>
-      <S.Container>
+    <S.BackgroudCTA >
+      <S.Container style={{paddingLeft:`${isMobile ? "20px" : "140px"}`}}>
         <section className="left-side" >
           <h1>Land your Dream Job in <span>Germany</span> or <span>Europe</span>
           </h1>

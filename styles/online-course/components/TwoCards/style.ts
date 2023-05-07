@@ -17,7 +17,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 1280px;
-  padding-bottom: 160px;
+  padding-bottom: 80px;
 `;
 export const ContentTwoCards = styled.div`
   width: 100%;
@@ -56,7 +56,8 @@ export const ContentTwoCards = styled.div`
 export const TwoCardsWrapper = styled.div`
   width: 430px;
   height: auto;
-  padding-bottom: 20px;
+  padding-bottom: 29px;
+  gap:22px;
   display: flex;
   flex-direction: column;
   align-items: center;

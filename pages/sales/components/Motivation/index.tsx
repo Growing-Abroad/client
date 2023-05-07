@@ -8,13 +8,13 @@ import TwoColorTitle from "@/components/two-color-title";
 export function Motivation() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{gap:`${isMobile ? '' : "0px"}`}}>
+    <S.Wrapper style={{gap:`${isMobile ? '' : "0px"}`, paddingBottom:`${isMobile ?'100px' :''}`}}>
       <TwoColorTitle
         styles={{ width: `${isMobile ? "340px" : "1400px"}` , paddingBottom: `${isMobile ? '' : "40px"}`, lineHeight: `${isMobile ?'53px' : '72px'}` }}
         text1="... Then join our Online Course for "
         text2="Successful Motivated Foreigners to ..."
         hasSpaceBtw
-        fontSize={isMobile ? "":"60px" }
+        fontSize={isMobile ?"36px" :"60px"}
       />
       <S.Content>
         {isMobile ? (<> </>) : (<Image
