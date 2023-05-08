@@ -2,21 +2,23 @@ import styled from "styled-components";
 import { breakpoints } from "utils/constants";
 
 export const Container = styled.div`
-    position: relative;
     width: 100%;
-
+    
     background: #128FC8;
-`;
+    `;
 
 export const Wrapper = styled.div`
+    position: relative;
+
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     gap: 1rem;
 
     width: 100%;
-    max-width: 1225px;
+    max-width: 1414px;
     padding-top: 50px;
+    margin: 0 auto;
 
     background: #128FC8;
 
@@ -94,6 +96,7 @@ export const Button = styled.button`
 export const ImageBox = styled.div`
     position: relative;
     width: 100%;
+    max-width: 650px;
     aspect-ratio: 1.4;
 
     overflow: hidden;
@@ -103,8 +106,7 @@ export const ImageBox = styled.div`
         bottom: 0;
         right: -5px;
 
-        width: calc(100% - 600px);
-
-        max-height: 560px;
+        width: calc(100% - 500px);
+        max-width: 784px;
     }
 `;

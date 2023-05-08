@@ -15,7 +15,7 @@ export const Container = styled.main`
         padding: 0 40px;
 
         @media (min-width: ${breakpoints.desktop.max}px) {
-            padding: 0 125px;
+            padding: 0 50px;
         }
     }
 
