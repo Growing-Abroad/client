@@ -76,7 +76,7 @@ const PackageCourseContent = styled.div`
       }
     }
     ul {
-      margin: 32px 0 54px;
+      margin: 32px 0 42px;
       padding-left: 0;
       display: flex;
       flex-direction: column;
@@ -132,7 +132,7 @@ const PackageCourseContent = styled.div`
 
       ul {
         gap: 20px;
-        margin: 32px 0 40px 0;
+        margin: 32px 0 32px 0;
 
         li {
           font-size: 12px;
@@ -186,7 +186,7 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 260px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   overflow: hidden;
 
   .card-image {
