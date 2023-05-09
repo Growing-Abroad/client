@@ -13,11 +13,11 @@ import VisionAndMissionBackground from "../../public/assets/pages/coaching/caree
 import ContainerHero from "@/components/ContainerHero";
 import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import useAppContext from "@/hooks/useAppContext";
-import { PageBody } from "styles/coaching";
 import Wave from "@/components/Wave";
+import PageBody from "@/components/generics/PageBody";
 
 export default function Coaching() {
-  const { isMobile } = useAppContext();
+  const { isMobile, windowSize: {width} } = useAppContext();
 
   const text1: IText = {
     heading: "Goal",
@@ -30,27 +30,24 @@ export default function Coaching() {
       "Our coaching team consists of experts with extensive knowledge of the German job market and culture. We will provide you with insider tips and tricks, teach you how to ace job interviews and assessments, and guide you through the entire application process.",
   };
 
+  function getDistanceFromTop(): string {
+    if (width <= 430) {
+      return '340px';
+    }
+    if (width > 430 && width <= 1513) {
+      return 'calc(21.25rem + ((1vw - 4.3px) * 22.1607))';
+    }
+    if (width > 1513) {
+      return '580px';
+    }
+    return '';
+  }
+
   return (
     <>
-      <CoachingHeroSection />
-      <PageBody className="page__body">
-        <Wave
-          type={1}
-          height={isMobile ? "210px" : "150px"}
-          className="border-image"
-          styles={
-            isMobile
-              ? {
-                  justifyContent: "flex-start",
-                  backgroundPosition: "-155px",
-                }
-              : {
-                  justifyContent: "flex-start",
-                  position: "absolute",
-                  top: "-150px",
-                }
-          }
-        ></Wave>
+      <CoachingHeroSection distanceFromTop={getDistanceFromTop()} />
+      <PageBody distanceFromTop={getDistanceFromTop()}>
+     
         <DreamJobSection />
         <VisionAndMissionNew
           backgroundSrc={{

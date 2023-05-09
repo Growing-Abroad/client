@@ -4,8 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import CoachingPackage from "@assets/pages/coaching/coaching-package.webp";
 import useAppContext from "@/hooks/useAppContext";
-import LeftRetangle from "@assets/pages/coaching/left-retangle.png";
-import LeftMobile from "@assets/pages/coaching/left-mobile.png";
+import LeftRetangle from "@assets/pages/coaching/left-blue-400.webp";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -74,7 +73,7 @@ const PackageCourseContent = styled.div`
       }
     }
     ul {
-      margin: 45px 0 16px 0;
+      margin: 45px 0 32px 0;
       padding-left: 0;
       display: flex;
       flex-direction: column;
@@ -121,6 +120,8 @@ const PackageCourseContent = styled.div`
     }
 
     .package-course-details {
+      padding: 24px;
+
       p {
         font-size: 16px;
         line-height: 20px;
@@ -132,7 +133,7 @@ const PackageCourseContent = styled.div`
 
         li {
           font-size: 12px;
-          line-height: 16px
+          line-height: 16px;
           gap: 14px;
         }
       }
@@ -166,9 +167,14 @@ const PackageCourseContent = styled.div`
 
 const Card = styled.div`
   max-width: 652px;
-  max-height: 661px;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  margin-top: 40px;
+  
+  @media (max-width: ${mediaQuery}){
+    margin-top: 16px;
+  
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -189,13 +195,14 @@ const ImageWrapper = styled.div`
     bottom: 0%;
     z-index: 1;
     height: 100%;
+    width: 250px;
   }
 
   .price-wrapper {
     position: absolute;
     z-index: 2;
     right: 23px;
-    bottom: 35%;
+    top: 25%;
     gap: 12px;
     display: flex;
     flex-direction: column;
@@ -227,14 +234,18 @@ const ImageWrapper = styled.div`
   }
 
   @media (max-width: ${mediaQuery}) {
-    height: 268px;
+    height: 221px;
 
     .card-image {
       padding-right: 100px;
     }
 
+    .blue-retangle {
+      width: 170px;
+    }
+
     .price-wrapper {
-      bottom: 20%;
+      top: 30%;
       gap: 18px;
       right: 30px;
 
@@ -245,8 +256,8 @@ const ImageWrapper = styled.div`
         }
 
         &.new-price {
-          font-size: 1.5rem;
-          line-height: 1.813rem;
+          font-size: 2rem;
+          line-height: 2.25rem;
         }
 
         &.heading {
@@ -277,11 +288,6 @@ export default function CoachingPackageOnlineCourseSection() {
     "Individual Job Search Strategy with the focus on your strengths and goals",
     "Individual Job Interview Coaching, Mock up Interview and Video Analysis to get every job you wish for",
   ];
-  const detailsContent2 = [
-    "Learn all the steps you have to take to land your dream job in Germany or Europe",
-    "Access to 50+ Videos, Workbook, Community, Templates and much more",
-    "Instant access to the entire online course where we share all our insights and tips how land your dream job abraod",
-  ];
 
   return (
     <PackageCourseWrapper>
@@ -303,7 +309,7 @@ export default function CoachingPackageOnlineCourseSection() {
               className="card-image"
             />
             <Image
-              src={isMobile ? LeftMobile : LeftRetangle}
+              src={LeftRetangle}
               alt="blue retangle to frame the price"
               className="blue-retangle"
             />

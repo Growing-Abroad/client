@@ -1,35 +1,52 @@
 import styled, { css } from "styled-components";
 import { variables } from "@/styles/global-variables";
+import { IStyledPageBody } from "@/components/generics/PageBody";
 
 const {
   sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery },
 } = variables;
 
-export const ContainerWrapper = styled.div`
-  height: 250px;
-  margin-top: 65px;
+interface IContainerProps extends IStyledPageBody {
+  backgroundImage: string;
+}
+
+export const ContainerWrapper = styled.div<IContainerProps>`
+  /* height: 340px; */
+  height: ${({distanceFromTop}) => distanceFromTop};
+  margin-top: 60px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
 
-  @media (max-width: 758px) {
-    height: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
-  }
-  @media (min-width: 800px) {
-    height: 580px;
+  display: flex;
+  justify-content: center;
+
+  background-image: url('${({backgroundImage})=> backgroundImage}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+
+  @media (min-width: 430px) {
+    /* height: calc(21.25rem + ((1vw - 4.3px) * 22.1607)); */
+    height: ${({distanceFromTop}) => distanceFromTop};
     margin-top: 60px;
+  }
+  @media (min-width: 1513px) {
+    /* height: 580px; */
+    height: ${({distanceFromTop}) => distanceFromTop};
+    margin-top: 90px;
   }
 `;
 
 export const HeroTitleWrapper = styled.div`
-  padding: 108px 0px 0px ${globalHorizontalPadding};
+  padding: 80px 0px 0px ${globalHorizontalPadding};
   max-width: ${maxWidthAll};
   width: 100%;
 
   .coaching-title-wrapper {
-    padding: 0 0 35px;
+    padding: 0 0 16px;
 
     .coaching-title {
       margin-bottom: 0;
@@ -61,7 +78,7 @@ export const HeroTitleWrapper = styled.div`
 `;
 
 export const TitlesContainer = styled.div`
-  margin-bottom: 7.5%;
+  margin-bottom: 6%;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
