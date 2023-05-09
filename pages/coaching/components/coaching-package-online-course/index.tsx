@@ -26,11 +26,14 @@ const PackageCourseWrapper = styled.section`
   justify-content: center;
   align-items: center;
   gap: 130px;
+  margin-bottom: 130px;
 
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 120px;
-    padding: 0 24px;
+    padding: 0 16px;
+    margin-bottom: 80px;
+
   }
 `;
 
@@ -58,9 +61,9 @@ const PackageCourseContent = styled.div`
   }
 
   .package-course-details {
-    max-width: 555px;
     color: ${blue700};
-    padding: 34px;
+    padding: 38px 32px 54px;
+
 
     p {
       margin: 0;
@@ -73,7 +76,7 @@ const PackageCourseContent = styled.div`
       }
     }
     ul {
-      margin: 45px 0 32px 0;
+      margin: 32px 0 54px;
       padding-left: 0;
       display: flex;
       flex-direction: column;
@@ -120,7 +123,7 @@ const PackageCourseContent = styled.div`
     }
 
     .package-course-details {
-      padding: 24px;
+      padding: 42px 24px;
 
       p {
         font-size: 16px;
@@ -129,7 +132,7 @@ const PackageCourseContent = styled.div`
 
       ul {
         gap: 20px;
-        margin: 30px 0 27px 0;
+        margin: 32px 0 40px 0;
 
         li {
           font-size: 12px;
@@ -147,18 +150,20 @@ const PackageCourseContent = styled.div`
 
   @media (max-width: 450px) {
     .package-course-details {
+
       ul {
-        /* gap: 20px; */
-        margin: 16px 0;
+        /* gap: 20px;
+        margin: 16px 0; */
       }
     }
   }
 
   @media (max-width: 415px) {
     .package-course-details {
+
       ul {
         gap: 10px;
-        margin: 5px 0;
+        /* margin: 5px 0; */
       }
     }
   }
@@ -167,9 +172,9 @@ const PackageCourseContent = styled.div`
 
 const Card = styled.div`
   max-width: 652px;
-  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
   border-radius: 10px;
-  margin-top: 40px;
+  margin-top: 70px;
   
   @media (max-width: ${mediaQuery}){
     margin-top: 16px;
@@ -180,7 +185,7 @@ const Card = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 221px;
+  height: 260px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 
@@ -281,7 +286,7 @@ export default function CoachingPackageOnlineCourseSection() {
     isMobile,
     windowSize: { width },
   } = useAppContext();
-  const twoColorFontSize = isMobile ? "2rem" : "3.438rem";
+  const twoColorFontSize = isMobile ? "2rem" : "3.75rem";
 
   const detailsContent = [
     "CV, Cover Letter and LinkedIn Optimization for the German and European Job market",

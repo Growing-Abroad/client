@@ -49,6 +49,7 @@ export default function Coaching() {
       <PageBody distanceFromTop={getDistanceFromTop()}>
      
         <DreamJobSection />
+        <CoachingPackageOnlineCourseSection />
         <VisionAndMissionNew
           backgroundSrc={{
             desktop: VisionAndMissionBackground.src,
@@ -57,7 +58,6 @@ export default function Coaching() {
           text1={text1}
           text2={text2}
         />
-        <CoachingPackageOnlineCourseSection />
         <WhatOurClientsSay />
         <ReusedFaq />
       </PageBody>

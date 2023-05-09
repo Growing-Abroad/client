@@ -88,7 +88,7 @@ export const TitlesContainer = styled.div`
 `;
 
 export const Subtitle = styled.p`
-  font-weight: 500;
+  font-weight: 400;
   font-size: 24px;
   line-height: 38px;
   ${({ theme }) => css`

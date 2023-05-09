@@ -9,7 +9,7 @@ import styled from "styled-components"
 const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHorizontalPaddingMobile}} = variables;
 
 const WrapperSection = styled.section`
-    padding: 210px ${globalHorizontalPadding} 184px;
+    padding: 0px ${globalHorizontalPadding} 184px;
     max-width: ${maxWidthAll};
     width: 100%;
     
@@ -19,7 +19,7 @@ const WrapperSection = styled.section`
     gap: 73px;
 
     @media (max-width: ${mediaQuery}) {
-        padding: 138px ${globalHorizontalPaddingMobile} 133px;  
+        padding: 0px ${globalHorizontalPaddingMobile} 133px;  
         gap: 30px;
     }
 
