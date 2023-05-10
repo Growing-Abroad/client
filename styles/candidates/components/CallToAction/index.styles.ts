@@ -16,7 +16,6 @@ export const BackgroudCTA = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${blue500};
-  padding: 0 ${globalHorizontalPadding};
   height: 90vh;
   top: 0;
   left: 0;
@@ -60,10 +59,11 @@ export const CtaButton = styled.button`
   }
 `;
 
-export const Container = styled.section`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   max-width: ${variables.sizes.maxWidthAll};
+  padding: 0 ${globalHorizontalPadding};
 
   background-color: ${blue500};
 
