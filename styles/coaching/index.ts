@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 
+
 export const PageBody = styled.div`
     position: relative;
-    margin-top: 250px;
     z-index: 2;
-    top: 0;
+    margin-top: calc(250px + 60px);
     left: 0;
     width: 100%;
     background-color: white;
@@ -13,10 +13,10 @@ export const PageBody = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media (max-width: 758px) {
-        margin-top: calc(15.625rem + ((1vw - 4.3px) * 30.4709));
+    @media (min-width: 430px) {
+        margin-top: calc((15.625rem + ((1vw - 4.3px) * 30.4709) + 60px));
     }
-    @media (min-width: 800px) {
+    @media (min-width: 1513px) {
         margin-top: calc(580px + 90px);
     }
 `

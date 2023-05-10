@@ -47,7 +47,6 @@ export const TextsContainer = styled.div`
   width: 100%;
   height: 100%;
   justify-content: flex-start;
-  margin-top: 150px;
   padding-bottom: 170px;
   /* z-index: 999; */
 

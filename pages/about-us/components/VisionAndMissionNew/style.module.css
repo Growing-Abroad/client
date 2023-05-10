@@ -8,7 +8,7 @@
 }
 
 .missionBg {
-  height: 748px;
+  height: 700px;
   background-position: left top;
   background-size: cover;
   position: relative;
@@ -27,7 +27,7 @@
 }
 
 .missionInner {
-  max-width: 420px;
+  max-width: 470px;
   color: white;
 }
 
@@ -38,6 +38,7 @@
   line-height: 49px;
   letter-spacing: 1.3px;
   text-align: left;
+  margin-bottom: 16px;
 }
 
 .missionInner p,
@@ -46,11 +47,11 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0em;
-  text-align: left;
+  text-align: justify;
 }
 .visionContainer p,
 .visionContainer h3 {
-  max-width: 400px;
+  max-width: 470px;
   color: #05335b;
 }
 
@@ -88,7 +89,7 @@
   }
 
   .visionCol {
-    box-shadow: 10px -4px 6px #c6c6c6;
+    box-shadow: 3px 0px 9px #c6c6c6;
   }
 
   .sectionContainer {
@@ -144,7 +145,7 @@
   }
 
   .visionCol {
-    box-shadow: 10px -4px 6px #c6c6c6;
+    /* box-shadow: 3px 0px 9px #c6c6c6; */
   }
 
   .sectionContainer {
