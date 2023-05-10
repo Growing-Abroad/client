@@ -76,7 +76,6 @@ export const Container = styled.section`
     gap: 90px;
     width: 800px;
     padding: 130px 12px 10px 0;
-    margin-left: -20px;
     z-index: 3;
 
     h1 {

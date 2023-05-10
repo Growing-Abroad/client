@@ -8,6 +8,8 @@ import {
   FooterBottomRight,
   FooterBottomContainer,
   Links,
+  FooterContainer,
+  IFooter,
 } from "./style";
 import LinkedInIcon from "@/../public/assets/icons/linkedin.webp";
 import FacebookIcon from "@/../public/assets/icons/facebook.webp";
@@ -23,7 +25,7 @@ import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 
-export default function Footer() {
+export default function Footer({usePageBody}: IFooter) {
   const route = useRouter();
 
   const { isMobile } = useAppContext();
@@ -47,7 +49,7 @@ export default function Footer() {
   const handleGoToTerms = () => onGoToNextPage(EPagesNames.TERMS);
 
   return (
-    <>
+    <FooterContainer usePageBody={usePageBody}>
       {isMobile && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -158,6 +160,6 @@ export default function Footer() {
           </FooterBottomWrapper>
         </FooterBottomContainer>
       </StyledFooter>
-    </>
+    </FooterContainer>
   );
 }

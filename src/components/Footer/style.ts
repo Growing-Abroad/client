@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 
@@ -9,7 +9,25 @@ const {
   sizes: { maxWidthAll, mediaQuery },
 } = variables;
 
-export const StyledFooter = styled.footer`
+export interface IFooter {
+  usePageBody?: boolean;
+}
+
+export const FooterContainer = styled.footer<IFooter>`
+  width: 100%;
+
+  ${({usePageBody})=> {
+    if (usePageBody) {
+      return css`
+        /* position: relative;
+        bottom: -740px;
+        z-index: 2; */
+      `
+    }
+  }}
+`
+
+export const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${blue500};

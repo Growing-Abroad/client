@@ -11,10 +11,10 @@ import DiscoverGA from "./components/DiscoverGA";
 import { IntlProvider } from "react-intl";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import _useLocale from "@/hooks/useLocale";
-import { PageBody } from "styles/coaching";
-import Wave from "@/components/Wave";
+import Wave, { EWaveType } from "@/components/Wave";
 import useAppContext from "@/hooks/useAppContext";
 import { bottomNavigationActionClasses } from "@mui/material";
+import PageBody from "@/components/generics/PageBody";
 
 const Page: NextPageWithLayout = () => {
   const {isMobile} = useAppContext();
@@ -22,8 +22,8 @@ const Page: NextPageWithLayout = () => {
   return (
     <>
       <CallToAction />
-      <PageBody style={{marginTop: `${isMobile ? '570px':'720px'}`}}>
-        <Wave type={2} height={'720px'}
+      <PageBody distanceFromTop={'630px'} waveType={EWaveType.curly}>
+        {/* <Wave type={2} height={'720px'}
         className="candidates-img" styles={
                 isMobile
                 ? {
@@ -37,13 +37,13 @@ const Page: NextPageWithLayout = () => {
                     top: '-150px',
 
                 }
-            }></Wave>
-      <WorkIn />
-      <DiscoverGA />
-      <OurServicesSection />
-      <SuccessStories />
-      <CommunitySection />
-      <BlogSection />
+            }></Wave> */}
+        <WorkIn />
+        <DiscoverGA />
+        <OurServicesSection />
+        <SuccessStories />
+        <CommunitySection />
+        <BlogSection />
       </PageBody>
     </>
   );
@@ -54,7 +54,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} usePageBody={true} >{page}</PageLayout>
     </IntlProvider>
   );
 };

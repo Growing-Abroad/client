@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Wave from "@/components/Wave";
+import Wave, { EWaveType } from "@/components/Wave";
 import styled, { css } from "styled-components";
 
 export interface IStyledPageBody {
@@ -31,12 +31,13 @@ const PageBody_ = styled.div<IStyledPageBody>`
     }
 `
 export interface IPageBody extends PropsWithChildren, IStyledPageBody {
+    waveType?: EWaveType,
 }
 
-export default function PageBody({children, distanceFromTop}: IPageBody) {
+export default function PageBody({children, distanceFromTop, waveType}: IPageBody) {
     return (
         <PageBody_ distanceFromTop={distanceFromTop}>
-            <Wave type={1} className="border-image" />
+            <Wave type={waveType} className="border-image" />
             {children}
         </PageBody_>
     )

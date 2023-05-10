@@ -13,6 +13,7 @@ export enum ChosenHeader {
 interface Props extends ComponentPropsWithoutRef<"body"> {
   chosenHeader: ChosenHeader;
   doesNotHaveAFooter?: boolean;
+  usePageBody?: boolean;
 }
 
 interface HeaderProps {
@@ -33,12 +34,11 @@ function Header({ chosenHeader }: HeaderProps) {
 
 function PageLayout(props: Props) {
   const { children, chosenHeader } = props;
-
   return (
     <>
       <Header chosenHeader={chosenHeader} />
       {children}
-      {!props.doesNotHaveAFooter && <Footer />}
+      {!props.doesNotHaveAFooter && <Footer usePageBody={props.usePageBody} />}
     </>
   );
 }
