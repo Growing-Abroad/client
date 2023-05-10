@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { ComponentPropsWithoutRef } from "react";
+import { breakpoints } from "utils/constants";
 
 const localMobileSize = "1160px";
 
@@ -23,7 +24,7 @@ export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
   gap: 20px;
   
   position: fixed;
-  top: 10px;
+  top: 30px;
   right: 18px;
   z-index: 115;
   
@@ -31,10 +32,16 @@ export const StyledBurgerContainer = styled.div<BurgerContainerProps>`
   height: 2.5rem;
   border-radius: 1.25rem;
 
+  translate: 0 -50%;
+
   ${({ theme, open }) => css`
     background-color: ${open ? theme.colors.yellow400 : "transparent"};
     padding-left: ${open ? "0.5rem" : 0};
   `}
+
+  @media (min-width: ${breakpoints.tablet.max}px) {
+    top: 45px;
+  }
 `;
 
 export const StyledBurger = styled.div<BurgerProps>`

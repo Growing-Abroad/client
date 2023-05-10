@@ -106,6 +106,7 @@ export const RSMenuItem = styled.li`
   height: 100%;
   font-family: 'Montserrat';
   font-size: 72px;
+  line-height: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,6 +139,8 @@ export const RightSideContent = styled.ul`
 export const LSMenuItem = styled.li<LiProps>`
   font-family: 'Montserrat';
   font-size: 36px;
+  line-height: 1;
+
   ${({ isLit, theme }) =>
     isLit &&
     css`

@@ -23,13 +23,14 @@ import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
 import { useRouter } from "@/hooks/useRouter";
+import { breakpoints } from "utils/constants";
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
   const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
-  const localMobileSize = 1160;
   const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
     useState(false);
+  const [showButtons, setShowButtons] = useState(true);
 
   const closeMenus = () => {
     setItsDesktopMenuOpen(false)
@@ -44,20 +45,32 @@ function HeaderForCandidates() {
 
 
   useEffect(() => {
-    function checkIfShouldHaveMobileBehavior() {
-      if (window.innerWidth < localMobileSize) {
-        setShouldHaveMobileBehavior(true);
-      } else {
-        setShouldHaveMobileBehavior(false);
+    function checkShowButtons() {
+      if (window.innerWidth < breakpoints.desktop.max) {
+        return setShowButtons(false);
       }
+
+      setShowButtons(true);
     }
 
-    checkIfShouldHaveMobileBehavior();
+    function checkIfShouldHaveMobileBehavior() {
+      if (window.innerWidth < breakpoints.laptop.max) {
+        return setShouldHaveMobileBehavior(true);
+      }
 
-    window.addEventListener("resize", checkIfShouldHaveMobileBehavior);
+      setShouldHaveMobileBehavior(false);
+    }
+
+    function checkAll() {
+      checkIfShouldHaveMobileBehavior();
+      checkShowButtons();
+    }
+
+
+    window.addEventListener("resize", checkAll);
 
     return () => {
-      window.removeEventListener("resize", checkIfShouldHaveMobileBehavior);
+      window.removeEventListener("resize", checkAll);
     };
   }, []);
 
@@ -108,15 +121,21 @@ function HeaderForCandidates() {
           )}
           <Content>
             <ButtonsContainer>
-              <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+              { showButtons &&
+                (<><Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
                 Online course
-              </Button>
-              <Button onClick={pushTo(EPagesNames.COACHING)}>
-                Coaching
-              </Button>
-              <Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button>
+              </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
+                  Coaching
+                </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button></>)
+              }
               {shouldHaveMobileBehavior && (
                 <>
+                  <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                    Online course
+                  </Button>
+                  <Button onClick={pushTo(EPagesNames.COACHING)}>
+                    Coaching
+                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button>
                   <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
                     About Us
                   </Button>

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { breakpoints } from "utils/constants";
 
 export interface ContainerProps {
   itsOpen: boolean;
@@ -9,8 +10,6 @@ export interface ContainerProps {
 interface IconButtonProps {
   withoutPadding?: boolean;
 }
-
-const localMobileSize = "1160px";
 
 export const AwesomeIcon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.blue700};
@@ -31,7 +30,11 @@ export const Header = styled.div`
   padding: 0 78px 0 18px;
   z-index: 230;
   
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.tablet.max}px) {
+    height: 90px;
+  }
+
+  @media (min-width: ${breakpoints.laptop.max}px) {
     display: none;
   }
 `;
@@ -58,7 +61,7 @@ export const Container = styled.div<ContainerProps>`
     height: ${!itsOpen ? 0 : "100vh"};
     background-color: ${theme.colors.blue700};
     
-    @media (min-width: ${localMobileSize}) {
+    @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
       height: 90px;
       
@@ -89,7 +92,7 @@ export const Logo = styled(Image).attrs({
 })`
   width: 150px;
   
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.laptop.max}px) {
     width: 200px;
     height: auto;
   }
@@ -101,11 +104,7 @@ export const Content = styled.div`
 
   padding: 0;
   
-  @media (min-width: 1750px) {
-    justify-content: flex-end;
-  }
-  
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.laptop.max}px) {
     margin-left: auto;
     flex-direction: row;
     justify-content: flex-end;
@@ -116,12 +115,12 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 37px;
+  gap: 32px;
 
-  margin-left: 37px;
+  margin-left: 32px;
   padding-top: 110px;
   
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.laptop.max}px) {
     padding-top: initial;
     flex-direction: row;
     align-items: center;
@@ -133,7 +132,7 @@ export const Button = styled.button`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   
   display: flex;
   flex-direction: column;
@@ -145,7 +144,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.white};
 
   ${({ theme }) => css`
-    @media (min-width: ${localMobileSize}) {
+    @media (min-width: ${breakpoints.laptop.max}px) {
       color: ${theme.colors.blue700};
     }
   `}
@@ -167,7 +166,7 @@ export const IconsContainer = styled.div`
     flex: 1;
   }
   
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.laptop.max}px) {
     justify-content: flex-start;
     flex-direction: row;
   }
@@ -184,7 +183,7 @@ export const IconButton = styled.button<IconButtonProps>`
   margin-bottom: ${({ withoutPadding }) => (withoutPadding ? 0 : "50px")};
   z-index: 300;
 
-  @media (min-width: ${localMobileSize}) {
+  @media (min-width: ${breakpoints.laptop.max}px) {
     margin-bottom: initial;
   }
 `;
