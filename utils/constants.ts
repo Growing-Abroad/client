@@ -8,8 +8,12 @@ export const breakpoints = {
         min: 481,
         max: 768,
     },
-    desktop: {
+    laptop: {
         min: 769,
+        max: 1024,
+    },
+    desktop: {
+        min: 1025,
         max: 1160,
     },
     larger: 1161
