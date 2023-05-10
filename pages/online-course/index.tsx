@@ -14,7 +14,7 @@ import TwoColorTitle from '@/components/two-color-title';
 import useAppContext from '@/hooks/useAppContext';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 import { OnlineCourseFaqMockUp } from '@/components/reused-faq/faq-mock-ups';
-import Wave from '@/components/Wave';
+import Wave, { EWaveType } from '@/components/Wave';
 import { PageBody } from 'styles/coaching';
 
  export const Wrapper = styled.div`
@@ -32,7 +32,7 @@ export default function OnlineCourse() {
      <CTAction />
      <PageBody style={{marginTop: `${isMobile ? '770px':'800px'}`}}>
      <Wave
-          type={1}
+          type={EWaveType.linear}
           height={isMobile ? "100%" : "100%"}
           className="border-image"
           styles={

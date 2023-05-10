@@ -6,7 +6,7 @@ import FaqSection from "./components/FaqSection";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { GeneralFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { PageBody } from "styles/coaching";
-import Wave from "@/components/Wave";
+import Wave, { EWaveType } from "@/components/Wave";
 import useAppContext from "@/hooks/useAppContext";
 import NavHero from "@/components/NavHero";
 import { SubheadingHero } from "styles/faq/FaqHeroSection/index.styles";
@@ -20,7 +20,7 @@ export default function FAQ() {
       <FaqHeroSection />
       <PageBody style={{ marginTop: `${isMobile ? "300px" : "750px"}` }}>
         <Wave
-          type={1}
+          type={EWaveType.linear}
           height={isMobile ? "150px" : "100%"}
           className="border-image"
           styles={

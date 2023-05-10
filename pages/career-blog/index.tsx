@@ -5,7 +5,7 @@ import BlogCardSection from "./components/BlogCardSection";
 import CareerHeroSection from "./components/CareerHeroSection";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { PageBody } from "styles/coaching";
-import Wave from "@/components/Wave";
+import Wave, { EWaveType } from "@/components/Wave";
 import NavHero from "@/components/NavHero";
 import useAppContext from "@/hooks/useAppContext";
 
@@ -16,7 +16,7 @@ export default function CareerBlog() {
       <CareerHeroSection />
       <PageBody style={{ marginTop: `${isMobile ? "650px" : "650px"}` }}>
         <Wave
-          type={1}
+          type={EWaveType.linear}
           height="auto"
           styles={{
             height: `${isMobile ? "150px" : "650px"}`,

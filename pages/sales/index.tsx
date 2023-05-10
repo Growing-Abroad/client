@@ -13,7 +13,7 @@ import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
-import Wave from "@/components/Wave";
+import Wave, { EWaveType } from "@/components/Wave";
 import { PageBody } from "styles/coaching";
 import Motivation from "./components/Motivation";
 import FollowDreams from "./components/FollowDream";
@@ -38,7 +38,7 @@ export default function OnlineCourse() {
       <CTAction />
       <PageBody style={{ marginTop: `${isMobile ? "850px" : "830px"}` }}>
         <Wave
-          type={1}
+          type={EWaveType.linear}
           height={isMobile ? "100%" : "100%"}
           className="border-image"
           styles={
