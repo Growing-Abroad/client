@@ -1,21 +1,16 @@
 import {
-  DiscoverContent,
-  RIContainer,
-  RIImage,
   DiscoverReadMoreWrapper,
-  DiscoverWrapper,
-  CarouselContainer,
+  DiscoverGrowingAbroadSection,
 } from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
-import ImagesList from "@/utils/mock-ups/home-discover-carousel";
 import StdButton from "@/components/generics/StdButton/StdButton";
-import Carousel from "@/components/Carousel";
 import { StaticImageData } from "next/image";
 import useAppContext from "@/hooks/useAppContext";
 import Link from "next/link";
+import BlueSquareWithCarousel from "@/components/BlueSquareWithCaroulsel";
+import candidatesDiscoverMockup from "@/utils/mock-ups/candidates-discover-section";
 
-import AliceCarouselComp from "@/components/AliceCarousel";
 
 interface ItemProps {
   image: StaticImageData;
@@ -25,14 +20,9 @@ interface ItemProps {
 export default function DiscoverGA() {
   const { isMobile } = useAppContext();
 
-  const renderItem = ({ image, alt }: ItemProps) => (
-    <RIContainer key={alt} className="keen-slider__slide">
-      <RIImage src={image.src} />
-    </RIContainer>
-  );
 
   return (
-    <DiscoverWrapper>
+    <DiscoverGrowingAbroadSection>
       <TwoColorTitle
         text1="Discover"
         text2="Growing Abroad"
@@ -41,8 +31,7 @@ export default function DiscoverGA() {
         wrapperClassName="discover-wrapper"
         className="discover-title"
       />
-
-      <DiscoverContent>
+      <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup}>
         <DiscoverReadMoreWrapper>
           <StdParagraqh className="discover-text">
             Our goal is to help skilled people from all of the world to get
@@ -67,17 +56,9 @@ export default function DiscoverGA() {
             </Link>
           </StdButton>
         </DiscoverReadMoreWrapper>
-        <CarouselContainer>
-          {/* <Carousel<ItemProps>
-            visibleItems={3}
-            data={ImagesList}
-            renderItem={renderItem}
-            itemWidth={205}
-          /> */}
-          {/* <KeenSlider data={ImagesList} renderItem={renderItem} /> */}
-          <AliceCarouselComp data={ImagesList} renderItem={renderItem} />
-        </CarouselContainer>
-      </DiscoverContent>
-    </DiscoverWrapper>
+
+      </BlueSquareWithCarousel>
+      
+    </DiscoverGrowingAbroadSection>
   );
 }

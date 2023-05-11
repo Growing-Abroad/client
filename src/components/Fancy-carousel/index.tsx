@@ -30,16 +30,21 @@ export interface ICarouselData {
   countryFlag: string;
   href: string;
 }
-export interface Props {
+
+export type index = number;
+
+export interface IFancyCarouselProps {
   dataArray: ICarouselData[];
   haveSmallsSlides?: boolean;
   isIntroducingAPerson?: boolean;
   initialSlideIndex?: number;
   IsCentralized?: boolean;
   haveMaxWidth?: boolean;
+  changeOnHover?: boolean;
+  onSlideClickCallback?(index: index): void;
 }
 
-export default function FancyCarousel(props: Props) {
+export default function FancyCarousel(props: IFancyCarouselProps) {
   const {
     windowSize: { width },
     isMobile,
@@ -86,12 +91,19 @@ export default function FancyCarousel(props: Props) {
     window.open(url, "_blank");
   }, []);
 
+  function onSlideClick(i: index) {
+    setSelectedSlide(i);
+    props.onSlideClickCallback?.(i);
+  }
+
   return (
     <FlexboxSlider
       className="flexbox-slider my-flexbox-slider"
       isSmall={props.haveSmallsSlides}
       isIntroducingAPerson={props.isIntroducingAPerson}
       isCentralized={props.IsCentralized}
+      useHover={props.changeOnHover}
+
     >
       {props.dataArray.map((item, i) =>
         !props.haveSmallsSlides ? (
@@ -128,11 +140,12 @@ export default function FancyCarousel(props: Props) {
           <FlexboxSlide
             className={handleSlideClasses(i)}
             key={i + "-" + item.title}
-            onClick={() => setSelectedSlide(i)}
+            onClick={() => onSlideClick(i)}
             isSmall
             isActive={isActive(i)}
             isIntroducingAPerson={props.isIntroducingAPerson}
             haveMaxWidth={props.haveMaxWidth ?? false}
+            useHover={props.changeOnHover}
           >
             <ImageBackground
               src={item.imgSrc.src}

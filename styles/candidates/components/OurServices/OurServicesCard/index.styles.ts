@@ -20,7 +20,7 @@ export const Container = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    outline: 7px solid ${theme.colors.blue700};
+    outline: 3px solid ${theme.colors.blue700};
   }
 
   .card-image {

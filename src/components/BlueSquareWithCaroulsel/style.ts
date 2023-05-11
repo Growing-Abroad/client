@@ -19,7 +19,7 @@ const {
   },
 } = variables;
 
-export const DiscoverGrowingAbroadSection = styled.section`
+export const BlueCarouselSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,47 +32,32 @@ export const DiscoverGrowingAbroadSection = styled.section`
     padding: 80px 0;
     gap: 32px;
     max-width: 100%;
-
-    .discover-wrapper {
-      max-width: 100%;
-      padding-inline: 36px;
-    }
-
-    .discover-title {
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: center;
-    }
   }
 `;
 
-export const DiscoverReadMoreWrapper = styled.div`
-  background-color: ${blue500};
+export const DiscoverContent = styled.div`
   display: flex;
-  flex-direction: column;
-  padding: 50px;
-  gap: 32px;
-  align-items: flex-start;
-  max-width: 50%;
-
-  .discover-text {
-    color: white;
-    text-align: justify;
-    font-weight: 500;
-  }
-  .read-more-btn {
-    padding-inline: 40px;
-    font-weight: 600;
-  }
+  align-items: center;
+  gap: 36px;
+  min-height: 450px;
+  max-width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-    min-width: 100%;
-    padding: 36px;
-
-    .read-more-btn {
-      padding-inline: 26px;
-    }
+    flex-direction: column-reverse;
+    gap: 24px;
   }
 `;
 
+export const CarouselContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 
+  ${({ theme }) => css`
+    @media (max-width: ${theme.sizes.mediaQuery}) {
+      margin: 30px 0 0 0;
+    }
+  `}
+`;

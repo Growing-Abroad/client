@@ -13,8 +13,9 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import _useLocale from "@/hooks/useLocale";
 import Wave, { EWaveType } from "@/components/Wave";
 import useAppContext from "@/hooks/useAppContext";
-import { bottomNavigationActionClasses } from "@mui/material";
 import PageBody from "@/components/generics/PageBody";
+import BlueSquareWithCarousel from "@/components/BlueSquareWithCaroulsel";
+import candidatesDiscoverMockup from "@/utils/mock-ups/candidates-discover-section";
 
 const Page: NextPageWithLayout = () => {
   const {isMobile, windowSize: { width }} = useAppContext();
@@ -24,11 +25,7 @@ const Page: NextPageWithLayout = () => {
       return '650px';
     }
 
-    if (isMobile) {
-      return '680px';
-    } else {
-      return '680px';
-    }
+    return '680px';
   }
 
   return (

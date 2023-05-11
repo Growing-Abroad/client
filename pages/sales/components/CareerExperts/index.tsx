@@ -9,7 +9,7 @@ import manu from "@/../public/assets/pages/sales/manu.webp";
 import {
   DiscoverContent,
   DiscoverReadMoreWrapper,
-  DiscoverWrapper,
+  DiscoverGrowingAbroadSection,
 } from "styles/candidates/components/DiscoverGA/index.styles";
 
 const Container = styled.div`
@@ -56,7 +56,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
   };
 
   return (
-    <DiscoverWrapper style={{ paddingTop: `${isMobile ?"96px" :"146px"}`, paddingBottom:`${isMobile ?"0px" :"146px"}`}}>
+    <DiscoverGrowingAbroadSection style={{ paddingTop: `${isMobile ?"96px" :"146px"}`, paddingBottom:`${isMobile ?"0px" :"146px"}`}}>
       <TwoColorTitle
         text1={isMobile ?"We are Uan & Manu" : "We are Uan & Manu"}
         text2="your Career Experts"
@@ -196,6 +196,6 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
           </Container>
         </DiscoverContent>
       )}
-    </DiscoverWrapper>
+    </DiscoverGrowingAbroadSection>
   );
 }
