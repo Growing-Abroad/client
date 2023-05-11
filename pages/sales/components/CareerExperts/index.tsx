@@ -7,10 +7,10 @@ import type { StaticImageData } from "next/image";
 import uan from "@/../public/assets/pages/sales/uan.png";
 import manu from "@/../public/assets/pages/sales/manu.webp";
 import {
-  DiscoverContent,
   DiscoverReadMoreWrapper,
   DiscoverGrowingAbroadSection,
 } from "styles/candidates/components/DiscoverGA/index.styles";
+import { DiscoverContent } from "@/components/BlueSquareWithCaroulsel/style";
 
 const Container = styled.div`
   width: 587px;
