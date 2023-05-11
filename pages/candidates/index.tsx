@@ -17,12 +17,24 @@ import { bottomNavigationActionClasses } from "@mui/material";
 import PageBody from "@/components/generics/PageBody";
 
 const Page: NextPageWithLayout = () => {
-  const {isMobile} = useAppContext();
+  const {isMobile, windowSize: { width }} = useAppContext();
+
+  function getDistanceFromTop(): string {
+    if (width >= 1513) {
+      return '650px';
+    }
+
+    if (isMobile) {
+      return '680px';
+    } else {
+      return '680px';
+    }
+  }
 
   return (
     <>
       <CallToAction />
-      <PageBody distanceFromTop={isMobile ? '680px' : '660px'} waveType={EWaveType.curly}>
+      <PageBody distanceFromTop={getDistanceFromTop()} waveType={EWaveType.curly}>
         <WorkIn />
         <DiscoverGA />
         <OurServicesSection />
