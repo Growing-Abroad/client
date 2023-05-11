@@ -91,7 +91,7 @@ export default function FancyCarousel(props: IFancyCarouselProps) {
     window.open(url, "_blank");
   }, []);
 
-  function onSlideClick(i: index) {
+  function changeSlide(i: index) {
     setSelectedSlide(i);
     props.onSlideClickCallback?.(i);
   }
@@ -102,8 +102,6 @@ export default function FancyCarousel(props: IFancyCarouselProps) {
       isSmall={props.haveSmallsSlides}
       isIntroducingAPerson={props.isIntroducingAPerson}
       isCentralized={props.IsCentralized}
-      useHover={props.changeOnHover}
-
     >
       {props.dataArray.map((item, i) =>
         !props.haveSmallsSlides ? (
@@ -140,19 +138,20 @@ export default function FancyCarousel(props: IFancyCarouselProps) {
           <FlexboxSlide
             className={handleSlideClasses(i)}
             key={i + "-" + item.title}
-            onClick={() => onSlideClick(i)}
+            onClick={() => !props.changeOnHover && changeSlide(i)}
             isSmall
             isActive={isActive(i)}
             isIntroducingAPerson={props.isIntroducingAPerson}
             haveMaxWidth={props.haveMaxWidth ?? false}
-            useHover={props.changeOnHover}
+            onMouseEnter={() => props.changeOnHover && changeSlide(i)}
           >
             <ImageBackground
               src={item.imgSrc.src}
               isIntroducingAPerson={props.isIntroducingAPerson}
               isActive={isActive(i)}
-            >
+              >
               <ImageBackgroundContent
+                className="background-content"
                 isIntroducingAPerson={props.isIntroducingAPerson}
                 isActive={isActive(i)}
               >

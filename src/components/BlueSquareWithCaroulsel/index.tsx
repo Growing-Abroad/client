@@ -8,9 +8,10 @@ import { PropsWithChildren } from 'react';
 export interface IBlueSquareProps extends PropsWithChildren {
     carouselData: ICarouselData[];
     onSlideClickCallback?(index: index): void;
+    changeOnHover?: boolean;
 }
 
-export default function BlueSquareWithCarousel({ carouselData, children, onSlideClickCallback }: IBlueSquareProps) {
+export default function BlueSquareWithCarousel({ carouselData, children, changeOnHover, onSlideClickCallback }: IBlueSquareProps) {
 
     return (
         <DiscoverContent>
@@ -24,7 +25,7 @@ export default function BlueSquareWithCarousel({ carouselData, children, onSlide
                     IsCentralized
                     isIntroducingAPerson
                     onSlideClickCallback={onSlideClickCallback}
-                    changeOnHover={true}
+                    changeOnHover={changeOnHover}
                 />
             </CarouselContainer>
         </DiscoverContent>

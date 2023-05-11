@@ -26,7 +26,7 @@ const Page: NextPageWithLayout = () => {
     }
 
     return '680px';
-  }
+    }
 
   return (
     <>

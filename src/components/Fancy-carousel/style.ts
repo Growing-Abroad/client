@@ -7,7 +7,6 @@ interface FlexboxSliderProps {
   isSmall?: boolean;
   isIntroducingAPerson?: boolean;
   isCentralized?: boolean;
-  useHover?: boolean;
 }
 
 interface FlexboxSlideProps extends FlexboxSliderProps {
@@ -73,49 +72,47 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   }
 
   .short {
-    height: 90%;
+    /* height: 90%; */
   }
 
-  ${({useHover}) => !useHover && css`
-    .selected-slide {
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-      flex-grow: 1;
-      height: 100%;
+  .selected-slide {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    flex-grow: 1;
+    height: 100%;
+    cursor: default;
+    
+    .text-block {
+      bottom: 0;
+      top: 0;
+      left: 0;
+      visibility: visible;
       cursor: default;
       
-      .text-block {
-        bottom: 0;
-        top: 0;
-        left: 0;
-        visibility: visible;
-        cursor: default;
-        
-        h3,
-        p,
-        .country-flag,
-        .watch-video-btn {
-          -webkit-transition-property: all;
-          transition-property: all;
-          -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-          -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-          -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-          opacity: 1;
-        }
-        /* .watch-video-btn {
-          -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-        } */
-        .watch-video-btn:hover {
-          -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-        }
+      h3,
+      p,
+      .country-flag,
+      .watch-video-btn {
+        -webkit-transition-property: all;
+        transition-property: all;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+        opacity: 1;
+      }
+      /* .watch-video-btn {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+      } */
+      .watch-video-btn:hover {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
       }
     }
-  `}
+  }
   
   .dontShow {
     display: none;
@@ -125,8 +122,8 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
 export const FlexboxSlide = styled.div<FlexboxSlideProps>`
   -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
   -webkit-transition-delay: 0s;
@@ -183,47 +180,6 @@ export const FlexboxSlide = styled.div<FlexboxSlideProps>`
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-
-  ${({useHover}) => useHover && css`
-    &:hover {
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-      flex-grow: 1;
-      height: 100%;
-
-      .text-block {
-        bottom: 0;
-        top: 0;
-        left: 0;
-        visibility: visible;
-        cursor: default;
-
-        h3,
-        p,
-        .country-flag,
-        .watch-video-btn {
-          -webkit-transition-property: all;
-          transition-property: all;
-          -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-          -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-          -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-          opacity: 1;
-        }
-        /* .watch-video-btn {
-          -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-        } */
-        .watch-video-btn:hover {
-          -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-        }
-      }
-    }
-  `}
-
 
   @media (min-width: 200px) and (max-width: 1280px) {
     width: calc(0.625rem + ((1vw - 2px) * 3.7037));
