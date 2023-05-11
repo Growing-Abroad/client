@@ -23,7 +23,7 @@ export const SucessStoriesWrapper = styled.section`
   width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-    padding: 80px ${globalHorizontalPaddingMobile};
+    padding: 40px ${globalHorizontalPaddingMobile};
   }
 `;
 

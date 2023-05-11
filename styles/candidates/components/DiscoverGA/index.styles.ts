@@ -29,8 +29,8 @@ export const DiscoverGrowingAbroadSection = styled.section`
   max-width: ${maxWidthAll};
 
   @media (max-width: ${mediaQuery}) {
-    padding: 80px 0;
-    gap: 32px;
+    padding: 40px 0;
+    gap: 0px;
     max-width: 100%;
 
     .discover-wrapper {
@@ -52,7 +52,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   flex-direction: column;
   padding: 50px;
   gap: 32px;
-  align-items: flex-start;
+  align-items: center;
   max-width: 50%;
 
   .discover-text {

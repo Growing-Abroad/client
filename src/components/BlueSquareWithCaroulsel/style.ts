@@ -58,6 +58,7 @@ export const CarouselContainer = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       margin: 30px 0 0 0;
+      padding: 0 36px;
     }
   `}
 `;
