@@ -28,6 +28,7 @@ export const Container = styled.section`
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding: 58px ${variables.sizes.globalHorizontalPaddingMobile} 70px;
+    gap: 32px;
   }
 `;
 

@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 import Image from "next/image";
 
 export const Social = styled.div`
-  /* width: min-content; */
+  width: min-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@ export const Social = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       max-width: 100px;
-      gap: 0;
+      gap: 12px;
       justify-content: flex-start;
     }
   `}
@@ -42,6 +42,7 @@ export const SocialText = styled.div`
 
   > p {
     font-size: 2.25rem;
+    margin: 0;
   }
 
   > span {
@@ -55,7 +56,6 @@ export const SocialText = styled.div`
       font-weight: 300;
     }
 
-    p,
     span {
       line-height: 1.5rem;
     }
@@ -71,15 +71,16 @@ export const SocialText = styled.div`
     p {
       font-size: 0.75rem;
       font-weight: 300;
+      line-height: 1rem;
+      margin-bottom: 4px;
     }
 
-    p,
     span {
-      line-height: 1.5rem;
     }
-
+    
     > span {
       font-size: 0.75rem;
+      line-height: 1rem;
       font-weight: 300;
       white-space: pre-wrap;
     }
@@ -123,8 +124,8 @@ export const IconImage = styled(Image).attrs({
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
   `}
 `;
