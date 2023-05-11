@@ -16,18 +16,18 @@ export const BackgroudCTA = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${blue500};
-  height: 90vh;
+  height: 760px;
   top: 0;
   left: 0;
   min-height: 660px;
-  max-height: 740px;
   overflow: hidden;
   position: fixed;
   z-index: -1;
 
   @media (max-width: ${mediaQuery}) {
     padding: 60px 0 0 0;
-    max-height: 80vh;
+    height: 760px;
+
   }
 
 `;
@@ -157,6 +157,7 @@ export const Container = styled.div`
     background-size: 130%;
     background-repeat: no-repeat;
     background-position: bottom;
+    padding: 0;
 
     .left-side {
       width: 100%;

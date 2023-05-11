@@ -22,22 +22,7 @@ const Page: NextPageWithLayout = () => {
   return (
     <>
       <CallToAction />
-      <PageBody distanceFromTop={'630px'} waveType={EWaveType.curly}>
-        {/* <Wave type={2} height={'720px'}
-        className="candidates-img" styles={
-                isMobile
-                ? {
-                    height: "210px",
-                    justifyContent: "flex-start",
-                    backgroundPosition: "-155px",
-                }
-                : {
-                    justifyContent: "flex-start",
-                    position: "absolute",
-                    top: '-150px',
-
-                }
-            }></Wave> */}
+      <PageBody distanceFromTop={isMobile ? '680px' : '660px'} waveType={EWaveType.curly}>
         <WorkIn />
         <DiscoverGA />
         <OurServicesSection />
