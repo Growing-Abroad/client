@@ -7,13 +7,17 @@ import TwoColorTitle from "@components/two-color-title";
 import Card from "@components/Card";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import puzzleImg from "@assets/puzzle.webp"
+import blogImg2 from "@assets/online-course-success.webp"
+import blogImg3 from "@assets/faqs.webp"
+import blogImg4 from "@assets/job-interview-coach.webp"
 
 export default function BlogSection() {
   const { isMobile } = useAppContext();
 
   const cards = [
     {
-      src: "/../public/assets/puzzle.webp",
+      src: puzzleImg.src,
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -21,7 +25,7 @@ export default function BlogSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/online-course-success.webp",
+      src: blogImg2.src,
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -29,7 +33,7 @@ export default function BlogSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/faqs.webp",
+      src: blogImg3.src,
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -37,7 +41,7 @@ export default function BlogSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/job-interview-coach.webp",
+      src: blogImg4.src,
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",

@@ -33,9 +33,11 @@ export const SubHeadingBlog = styled.h4`
   letter-spacing: 1.3px;
   text-align: center;
   margin-bottom: 32px;
+  font-weight: 400;
+  
+
   @media (max-width: ${mediaQuery}) {
     width: 204px;
-    font-weight: 600;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 1.3px;

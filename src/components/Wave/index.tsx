@@ -19,6 +19,7 @@ export interface WaveParameters {
   height?: string;
   className?: string;
 }
+
 const Wave: React.FC<WaveParameters> = ({ height, styles, type = EWaveType.linear,className }) => {
   const {isMobile} = useAppContext();
   const [typeWave, setTypeWave] = useState("");
