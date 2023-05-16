@@ -28,7 +28,6 @@ export const TitlesContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      margin-top: 90px;
     }
   `}
 `;

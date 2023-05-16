@@ -78,7 +78,6 @@ function HeroSection() {
                 letterSpacing: "1.3px",
                 whiteSpace: "nowrap",
                 fontSize: `${isMobile ? "16px" : "20px"}`,
-                marginBottom: `${isMobile ? "19px" : "0px"}`,
               }}
             >
               For Companies
