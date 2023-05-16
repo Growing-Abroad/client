@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const SupraContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 110vh;
   padding: 163px 0;
 
@@ -74,7 +74,7 @@ export const Content = styled.div`
   align-items: center;
   min-height: 100%;
 
-  @media (max-width: 1395px) {
+  @media (max-width: 960px) {
     flex-direction: column;
     margin-top: 0;
     padding-bottom: 120%;

@@ -5,10 +5,7 @@ import useAppContext from '@/hooks/useAppContext';
 const VerticalBar: React.FC = () => {
   const { isMobile } = useAppContext();
   const propsBar = [
-    {
-      index: 1,
-      height: '730px',
-    },
+    { index: 1, height: '750px' },
     { index: 2, height: '910px' },
     { index: 3, height: '830px' },
     { index: 4, height: '870px' },
@@ -19,28 +16,25 @@ const VerticalBar: React.FC = () => {
   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+  const handleScroll = () => {
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const fullHeight = document.body.clientHeight;
+    const newScrollPercentage = (scrollPosition / (fullHeight - windowHeight)) * 100;
+
+    setScrollPercentage(newScrollPercentage);
+
+    const newActiveIndex = propsBar.findIndex(prop => {
+      const element = document.getElementById(`progress-bar-${prop.index}`);
+      if (!element) return false;
+      const rect = element.getBoundingClientRect();
+      return rect.top < windowHeight && rect.bottom >= 0;
+    });
+    setActiveIndex(newActiveIndex);
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.body.clientHeight;
-      const newScrollPercentage =
-        (scrollPosition / (fullHeight - windowHeight)) * 100;
-
-      setScrollPercentage(newScrollPercentage);
-      console.log(newScrollPercentage);
-
-      const newActiveIndex = propsBar.findIndex(prop => {
-        const element = document.getElementById(`progress-bar-${prop.index}`);
-        if (!element) return false;
-        const rect = element.getBoundingClientRect();
-        return rect.top < windowHeight && rect.bottom >= 0;
-      });
-      setActiveIndex(newActiveIndex);
-    };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -49,7 +43,7 @@ const VerticalBar: React.FC = () => {
 
     const animateFill = () => {
       const fillPercentage = Math.min(scrollPercentage / 100, 1);
-      const newColor = `#656C8C`;
+      const newColor = fillPercentage === 1 ? '#4A9AFD' : '#D9D9D9';
       setBarColor(newColor);
 
       if (requestId) {
@@ -73,6 +67,9 @@ const VerticalBar: React.FC = () => {
     };
   }, [scrollPercentage]);
 
+
+
+
   return (
     <div
       style={{
@@ -86,21 +83,24 @@ const VerticalBar: React.FC = () => {
         paddingTop: '75px',
       }}
     >
-      {propsBar.map((prop) => {
-        return (
-          <React.Fragment key={prop.index}>
-            <S.IndexCircle backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}>
-              {prop.index}
-              <S.IndexCircleProgress
-                backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}
-              />
-            </S.IndexCircle>
-            <S.VerticalBar backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor} height={prop.height}>
-              <S.VerticaProgressBar id={`progress-bar-${prop.index}`} />
-            </S.VerticalBar>
-          </React.Fragment>
-        );
-      })}
+      {propsBar.map((prop) => (
+        <React.Fragment key={prop.index}>
+          <S.IndexCircle backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}>
+            {prop.index}
+            <S.IndexCircleProgress
+              backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}
+            />
+          </S.IndexCircle>
+
+            <S.VerticalBar
+              backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}
+              height={prop.height}
+            >
+            <S.VerticaProgressBar id={`progress-bar-${prop.index}`} />
+
+          </S.VerticalBar>
+        </React.Fragment>
+      ))}
     </div>
   );
 };

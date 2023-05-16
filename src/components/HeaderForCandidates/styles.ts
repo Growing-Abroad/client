@@ -19,17 +19,17 @@ export const AwesomeIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 66px;
   background-color: white;
   justify-content: space-between;
   align-items: center;
   padding: 0 78px 0 18px;
   z-index: 230;
-  
+
   @media (min-width: ${breakpoints.tablet.max}px) {
     height: 90px;
   }
@@ -43,28 +43,28 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   position: fixed;
   z-index: 110;
   top: 0;
-  
+
   width: 100%;
   max-width: 1514px;
   margin: 0 auto;
   padding: 15px 90px 32px 22px;
-  
+
   overflow: hidden;
   transition: all 0.5s ease-in-out;
   animation: drop-down;
-  
+
   ${({ theme, itsOpen }) => css`
     height: ${!itsOpen ? 0 : "100vh"};
     background-color: ${theme.colors.blue700};
-    
+
     @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
       height: 90px;
-      
+
       background-color: white;
       padding: 22px 50px;
     }
@@ -75,9 +75,9 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   width: fit-content;
-  
+
   background-color: transparent;
 
   :hover {
@@ -91,7 +91,7 @@ export const Logo = styled(Image).attrs({
   alt: "",
 })`
   width: 150px;
-  
+
   @media (min-width: ${breakpoints.laptop.max}px) {
     width: 200px;
     height: auto;
@@ -103,7 +103,7 @@ export const Content = styled.div`
   flex-direction: column;
 
   padding: 0;
-  
+
   @media (min-width: ${breakpoints.laptop.max}px) {
     margin-left: auto;
     flex-direction: row;
@@ -119,7 +119,7 @@ export const ButtonsContainer = styled.div`
 
   margin-left: 32px;
   padding-top: 110px;
-  
+
   @media (min-width: ${breakpoints.laptop.max}px) {
     padding-top: initial;
     flex-direction: row;
@@ -133,7 +133,7 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   font-size: 1.25rem;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,7 +148,7 @@ export const Button = styled.button`
       color: ${theme.colors.blue700};
     }
   `}
- 
+
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
   }
@@ -165,7 +165,7 @@ export const IconsContainer = styled.div`
   @media (min-width: 1750px) {
     flex: 1;
   }
-  
+
   @media (min-width: ${breakpoints.laptop.max}px) {
     justify-content: flex-start;
     flex-direction: row;

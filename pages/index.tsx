@@ -28,7 +28,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout doesNotHaveAFooter chosenHeader={ChosenHeader.DEFAULT}>
+      <PageLayout chosenHeader={ChosenHeader.DEFAULT}>
         {page}
       </PageLayout>
     </IntlProvider>

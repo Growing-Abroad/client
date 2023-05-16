@@ -102,9 +102,9 @@ function HeaderForCandidates() {
       <div
         style={{
           width: "100%",
-          height: shouldHaveMobileBehavior ? "60px" : "90px",
           backgroundColor: "white",
           display: "flex",
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
           justifyContent: "center",
           position: "fixed",
           zIndex: 122,
