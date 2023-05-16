@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import { open } from "@styles/animations";
 import { Montserrat } from "next/font/google";
 
 interface ContainerProps {
@@ -19,7 +18,7 @@ export const Container = styled.section<ContainerProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.25rem;
   padding: 40px ${variables.sizes.globalHorizontalPadding} 0;
   color: ${theme.colors.blue700};
   font: 400 1rem;
@@ -87,7 +86,7 @@ export const Text = styled.div<TextProps>`
     ${({ isOpen, textHeight }) =>
       isOpen &&
       css`
-        height: ${textHeight}px;
+        height: 100%;
         overflow: :visible;
 
         /* @media (max-width: 1185px) or (max-height: 635px) {
