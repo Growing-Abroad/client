@@ -27,13 +27,15 @@ export const Container = styled.section`
   text-align: center;
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding: 58px ${variables.sizes.globalHorizontalPaddingMobile} 70px;
+    padding: 58px 20px 70px;
     gap: 32px;
   }
 `;
 
 export const Socials = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 100px;
 
   ::-webkit-scrollbar {
@@ -41,8 +43,6 @@ export const Socials = styled.div`
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    gap: 42px;
-    flex-direction: column;
   }
 `;
 
@@ -51,15 +51,16 @@ export const CardsWrapper = styled.div`
   justify-content: center;
   gap: 100px;
   color: ${theme.colors.blue700};
-  overflow-x: auto;
-  overflow-y: hidden;
   flex-shrink: 0;
+  flex-wrap: wrap;
+  width: 100%;
 
   @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1280px) {
     gap: calc(1rem + ((1vw - 4.3px) * 7.7491));
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    gap: 16px;
+    column-gap: 16px;
+    row-gap: 30px
   }
 `;

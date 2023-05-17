@@ -68,7 +68,7 @@ export const DiscoverReadMoreWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     min-width: 100%;
-    padding: 36px;
+    padding: 36px 24px;
 
     .read-more-btn {
       padding-inline: 26px;

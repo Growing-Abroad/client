@@ -37,9 +37,18 @@ const Wave: React.FC<WaveParameters> = ({ height, styles, type = EWaveType.linea
     }
   }, [type]);
 
+  function getWaveType() {
+    if (type === EWaveType.linear) {
+      return isMobile ? curvedMobile.src : curved.src
+    } 
+    if (type === EWaveType.curly) {
+      return isMobile ? undulatedMobile.src : curlyWave.src
+    }
+  }
+
   return (
     <Wrapper height={height} style={{ ...styles }} waveType={type} >
-      <Image src={typeWave} style={{bottom: '-2px'}} className={className} alt="white border" fill={true} />
+      <Image src={getWaveType()} style={{bottom: '-2px'}} className={className} alt="white border" fill={true} />
     </Wrapper>
   );
 };
