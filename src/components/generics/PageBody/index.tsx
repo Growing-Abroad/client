@@ -8,7 +8,7 @@ export interface IStyledPageBody {
 
 const PageBody_ = styled.div<IStyledPageBody>`
     position: relative;
-    z-index: 2;
+    z-index: 1;
     margin-top: calc(
         ${({distanceFromTop}) => distanceFromTop} + 60px
     );
