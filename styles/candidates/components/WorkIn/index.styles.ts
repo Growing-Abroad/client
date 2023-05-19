@@ -25,7 +25,7 @@ export const Container = styled.section`
   color: ${theme.colors.blue700};
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px 36px;
+    padding: 80px 24px;
   }
 `;
 export const CardSpace = styled.section`
@@ -53,9 +53,9 @@ export const Card = styled.article`
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   transition: 400ms;
-  padding: 50px;
-  max-width: 450px;
-  height: 500px;
+  padding: 50px 24px;
+  min-height: 470px;
+  flex-grow: 1;
 
   &:hover {
     border: 3px solid ${blue700};
@@ -82,7 +82,8 @@ export const Card = styled.article`
   }
 
   .workin-description {
-    width: 260px;
+    width: 100%;
+    max-width: 260px;
     text-align: center;
     margin-bottom: 12px;
     font-size: 1rem;
@@ -95,8 +96,9 @@ export const Card = styled.article`
   @media (max-width: ${variables.sizes.mediaQuery}) {
     width: 100%;
     text-align: center;
-    padding: 50px;
+    padding: 42px 16px;
     height: unset;
+    min-height: 350px;
 
     h3 {
       font-size: 1.5rem;

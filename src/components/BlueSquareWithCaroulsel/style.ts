@@ -35,7 +35,10 @@ export const BlueCarouselSection = styled.section`
   }
 `;
 
-export const DiscoverContent = styled.div`
+export interface IContentProps {
+  columnReversed?: boolean;
+}
+export const DiscoverContent = styled.div<IContentProps>`
   display: flex;
   align-items: center;
   gap: 36px;
@@ -43,7 +46,7 @@ export const DiscoverContent = styled.div`
   max-width: 100%;
 
   @media (max-width: ${mediaQuery}) {
-    flex-direction: column-reverse;
+    flex-direction: ${({columnReversed}) => columnReversed ? 'column-reverse' : 'column'};
     gap: 24px;
   }
 `;
@@ -58,7 +61,7 @@ export const CarouselContainer = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       margin: 30px 0 0 0;
-      padding: 0 36px;
+      padding: 0 24px;
     }
   `}
 `;

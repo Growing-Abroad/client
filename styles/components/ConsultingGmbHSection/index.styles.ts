@@ -1,36 +1,26 @@
+import { variables } from "@/styles/global-variables";
 import styled, { css } from "styled-components";
 
 export const SupraContainer = styled.div`
   width: 100%;
   height: 110vh;
   padding: 163px 0;
+`
+const { sizes: { maxWidthAll, mediaQuery, globalHorizontalPadding }} = variables;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 15;
-  background-color: ${({ theme }) => theme.colors.white};
-  ${({ theme }) => css`
-    @media (min-width: ${theme.sizes.mediaQuery}) and (max-width: 1395px) {
-      margin-bottom: 50vh;
-    }
 
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      min-height: 100vh;
-      padding: 50px 20px 300px 20px;
-      margin-bottom: 10vh;
-    }
-  `};
-`;
 
 export const Container = styled.div`
-  min-width: 100%;
-  height: 100%;
+  max-width: ${maxWidthAll};
+  margin: 163px 0;
+  padding: 0 ${globalHorizontalPadding};
+  width: 100%;
 
-  @media (min-width: 1395px) {
-    padding-left: 140px;
-    min-width: 1514px;
-    max-width: 1514px;
+  @media (max-width: ${mediaQuery}) {
+    max-width: 100%;
+    margin: 50px 0;
+    padding: 0 24px;
+
   }
 `;
 
@@ -41,6 +31,12 @@ export const TitlesContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
+
+  @media (max-width: ${mediaQuery}) {
+    margin-bottom: 24px;
+
+  }
 `;
 
 export const Subtitle = styled.h1`
@@ -58,7 +54,7 @@ export const Subtitle = styled.h1`
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       font-size: 16px;
-      padding: 0 77px;
+      padding: 0 24px;
       text-align: center;
       margin-top: 30px;
     }
@@ -96,7 +92,7 @@ export const ParagraphsContainer = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 23px 0px;
+      padding: 23px 0px 0;
       width: 100%;
     }
   `}

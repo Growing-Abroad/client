@@ -53,7 +53,8 @@ export const DiscoverReadMoreWrapper = styled.div`
   padding: 50px;
   gap: 32px;
   align-items: center;
-  max-width: 50%;
+  max-width: 100%;
+  width: 100%;
 
   .discover-text {
     color: white;
@@ -67,7 +68,7 @@ export const DiscoverReadMoreWrapper = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     min-width: 100%;
-    padding: 36px;
+    padding: 36px 24px;
 
     .read-more-btn {
       padding-inline: 26px;

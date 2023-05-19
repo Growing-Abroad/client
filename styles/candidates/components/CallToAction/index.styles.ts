@@ -22,7 +22,7 @@ export const BackgroudCTA = styled.section`
   min-height: 660px;
   overflow: hidden;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
 
   @media (max-width: ${mediaQuery}) {
     padding: 60px 0 0 0;

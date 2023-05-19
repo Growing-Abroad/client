@@ -66,7 +66,7 @@ export const CardDescriptions = styled.div`
   font-weight: 400;
   letter-spacing: 4%;
   flex-grow: 1;
-  margin-top: 48px;
+  margin-top: 32px;
 
   > div {
     display: flex;

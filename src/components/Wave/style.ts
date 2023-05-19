@@ -49,14 +49,24 @@ export const Wrapper = styled.div<WrapperProps>`
   
   img {
     width: 100%;
+    height: var(--desktopOffset);
   }
 
   @media (max-width: 1513px) {
       height: var(--dynamicOffset);
       top:  calc(-1 * (var(--dynamicOffset)) + 2px);
+      
+      img {
+        height: var(--dynamicOffset);
+      }
     }
     @media (max-width: 430px) {
       height: var(--mobileYoffset);
       top:  calc(-1 * (var(--mobileYoffset)) + 2px);
+      
+      img {
+        height: var(--mobileYoffset);
+      }
     }
+
 `

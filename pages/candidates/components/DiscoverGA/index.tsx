@@ -31,7 +31,7 @@ export default function DiscoverGA() {
         wrapperClassName="discover-wrapper"
         className="discover-title"
       />
-      <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover>
+      <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover columnReversed>
         <DiscoverReadMoreWrapper>
           <StdParagraqh className="discover-text">
             Our goal is to help skilled people from all of the world to get

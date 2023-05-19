@@ -18,7 +18,7 @@ export const Social = styled.div`
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
-      max-width: 100px;
+      width: 25%;
       gap: 12px;
       justify-content: flex-start;
     }

@@ -19,10 +19,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-width: 100%;
   max-height: 4992px;
-  height: 50%;
+  height: 100vh;
 `;
 
 export const Content = styled.div`
@@ -31,9 +31,10 @@ export const Content = styled.div`
   align-items: center;
   max-width: ${({ theme }) => theme.sizes.maxWidthAll};
   width: 100%;
-  padding: 60px ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
+  padding: 0 ${({ theme }) => theme.sizes.globalHorizontalPadding} 0
     ${({ theme }) => theme.sizes.globalHorizontalPadding};
   z-index: 15;
+  margin-top: 5vh;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -43,7 +44,7 @@ export const Content = styled.div`
 `;
 
 export const TextsContainer = styled.div`
-  max-width: 752px;
+  max-width: 1000px;
   width: 100%;
   height: 100%;
   justify-content: flex-start;
@@ -89,8 +90,8 @@ export const Title: TitleProps = {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
-    font-size: 62px;
-    line-height: 80px;
+    font-size: 5.4rem;
+    line-height: 6.25rem;
     color: ${({ theme }) => theme.colors.white};
 
     ${({ theme }) => css`
@@ -170,12 +171,15 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 80%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 42px;
+
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       width: 100%;
       flex-direction: column;
       align-items: center;
+      gap: 20px;
     }
   `}
 
