@@ -8,7 +8,7 @@ import TwoColorTitle from "@/components/two-color-title";
 export function Motivation() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{gap:`${isMobile ? '' : "0px"}`, paddingBottom:`${isMobile ?'100px' :''}`}}>
+    <S.WrapperWhyBuyCourse style={{gap:`${isMobile ? '' : "0px"}`, paddingBottom:`${isMobile ?'100px' :''}`}}>
       <TwoColorTitle
         styles={{ width: `${isMobile ? "340px" : "1400px"}` , paddingBottom: `${isMobile ? '' : "40px"}`, lineHeight: `${isMobile ?'53px' : '72px'}` }}
         text1="... Then join our Online Course for "
@@ -16,16 +16,16 @@ export function Motivation() {
         hasSpaceBtw
         fontSize={isMobile ?"36px" :"60px"}
       />
-      <S.Content>
+      <S.ContentWhyBuyCourse>
         {isMobile ? (<> </>) : (<Image
           src={threePersons}
           width={isMobile ? 460 : 748}
           height={isMobile ? 390 : 558}
           alt=""
         />)}
-        <S.RightContent>
-          <S.TextWrapper>
-            <S.Icon>
+        <S.RightContentWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -38,15 +38,15 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Learn all the steps you have to take to land your{" "}
-              <S.BoldSpan>DREAM JOB</S.BoldSpan> in{" "}
-              <S.BoldSpan>GERMANY</S.BoldSpan> or Europe
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+              <S.BoldSpanWhyBuyCourse>DREAM JOB</S.BoldSpanWhyBuyCourse> in{" "}
+              <S.BoldSpanWhyBuyCourse>GERMANY</S.BoldSpanWhyBuyCourse> or Europe
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -59,14 +59,14 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              Discover <S.BoldSpan>SECRET METHODS </S.BoldSpan>and Job Search
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Discover <S.BoldSpanWhyBuyCourse>SECRET METHODS </S.BoldSpanWhyBuyCourse>and Job Search
               strategies to get multiple job interviews
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -79,15 +79,15 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              Create a<S.BoldSpan> UNIQUE APPLICATION </S.BoldSpan>in German and
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Create a<S.BoldSpanWhyBuyCourse> UNIQUE APPLICATION </S.BoldSpanWhyBuyCourse>in German and
               European standards which stands out of all the other candidates in
               the market
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -100,15 +100,15 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Create a professional Business Profile to{" "}
-              <S.BoldSpan>ATTRACT RECRUITERS </S.BoldSpan>and{" "}
-              <S.BoldSpan>CEOs</S.BoldSpan>
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+              <S.BoldSpanWhyBuyCourse>ATTRACT RECRUITERS </S.BoldSpanWhyBuyCourse>and{" "}
+              <S.BoldSpanWhyBuyCourse>CEOs</S.BoldSpanWhyBuyCourse>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -121,15 +121,15 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              <S.BoldSpan>CONVINCE</S.BoldSpan> in every single
-              <S.BoldSpan> JOB INTERVIEW </S.BoldSpan>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              <S.BoldSpanWhyBuyCourse>CONVINCE</S.BoldSpanWhyBuyCourse> in every single
+              <S.BoldSpanWhyBuyCourse> JOB INTERVIEW </S.BoldSpanWhyBuyCourse>
               with your unique personality
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -142,15 +142,15 @@ export function Motivation() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              Land your <S.BoldSpan>DREAM JOB</S.BoldSpan> in Germany or Europe
-            </S.Text>
-          </S.TextWrapper>
-        </S.RightContent>
-      </S.Content>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Land your <S.BoldSpanWhyBuyCourse>DREAM JOB</S.BoldSpanWhyBuyCourse> in Germany or Europe
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+        </S.RightContentWhyBuyCourse>
+      </S.ContentWhyBuyCourse>
       <StdButton style={{marginTop:`${isMobile ? '' : "25px"}`}}>Buy Online Course Now</StdButton>
-    </S.Wrapper>
+    </S.WrapperWhyBuyCourse>
   );
 }
 

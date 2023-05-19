@@ -13,9 +13,9 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import _useLocale from "@/hooks/useLocale";
 import Wave, { EWaveType } from "@/components/Wave";
 import useAppContext from "@/hooks/useAppContext";
-import PageBody from "@/components/generics/PageBody";
 import BlueSquareWithCarousel from "@/components/BlueSquareWithCaroulsel";
 import candidatesDiscoverMockup from "@/utils/mock-ups/candidates-discover-section";
+import PageBodyLayout from "@/components/generics/PageBody";
 
 const Page: NextPageWithLayout = () => {
   const {isMobile, windowSize: { width }} = useAppContext();
@@ -31,14 +31,17 @@ const Page: NextPageWithLayout = () => {
   return (
     <>
       <CallToAction />
-      <PageBody distanceFromTop={getDistanceFromTop()} waveType={EWaveType.curly}>
+      <PageBodyLayout
+        id="page-candidates"
+        distanceFromTop={getDistanceFromTop()}
+        waveType={EWaveType.curly}>
         <WorkIn />
         <DiscoverGA />
         <OurServicesSection />
         <SuccessStories />
         <CommunitySection />
         <BlogSection />
-      </PageBody>
+      </PageBodyLayout>
     </>
   );
 };

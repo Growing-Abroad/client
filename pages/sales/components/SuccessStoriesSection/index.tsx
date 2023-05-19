@@ -7,7 +7,7 @@ import styled from "styled-components"
 
 const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery, globalHorizontalPaddingMobile}} = variables;
 
-const WrapperSection = styled.section`
+const SuccessStoriesSectionWrapper = styled.section`
     padding: 180px ${globalHorizontalPadding} 180px;
     max-width: ${maxWidthAll};
     width: 100%;
@@ -28,9 +28,9 @@ export default function SuccessStoriesSection() {
     const { isMobile } = useAppContext();
 
     return (
-        <WrapperSection>
+        <SuccessStoriesSectionWrapper>
             <TwoColorTitle as="h2" text1="Success" text2="Stories" hasSpaceBtw wrapperStyles={{maxWidth: '100%'}} styles={isMobile ? {lineHeight: '2.75rem'} : {}} fontSize={isMobile ?"36px" :"60px"}/>
             <OriginalFancyCarousel dataArray={successStoriesData} />
-        </WrapperSection>
+        </SuccessStoriesSectionWrapper>
     )
 }

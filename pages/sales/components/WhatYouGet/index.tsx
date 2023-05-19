@@ -9,7 +9,7 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhatYouGet() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper style={{paddingBottom:`${isMobile ?'0px' : '146px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
+    <S.WrapperWhyBuyCourse style={{paddingBottom:`${isMobile ?'0px' : '146px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
       <TwoColorTitle
         className={classes.title}
         text1="What you get out of   "
@@ -18,19 +18,19 @@ export function WhatYouGet() {
         styles={{marginBottom:`${isMobile ?'' : '0px'}`, width:`${isMobile ? "341px" : "auto"}`, whiteSpace:`${isMobile ? "normal" : "normal"}`, textAlign:`center`}}
         fontSize={isMobile ?"36px" :"60px"}
       />
-      <S.Content style={{ flexDirection: `${isMobile ? "column" : "row-reverse"}`, paddingLeft:`${isMobile ? "" : "0"}` }}>
+      <S.ContentWhyBuyCourse style={{ flexDirection: `${isMobile ? "column" : "row-reverse"}`, paddingLeft:`${isMobile ? "" : "0"}` }}>
         <Image
           src={Benefits}
           width={isMobile ? 400 : 600}
           height={isMobile ? 320 : 518}
           alt=""
         />
-        <S.RightContent
+        <S.RightContentWhyBuyCourse
           className={classes.text}
           style={{ marginLeft:`${isMobile ? '0px': "140px"}`, gap:`${isMobile ?'41px' : '30px'}` }}
         >
-          <S.TextWrapper>
-            <S.Icon>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -43,14 +43,14 @@ export function WhatYouGet() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               <span>50+ video sessions</span> to learn step by step how to land
               your dream job in Germany or Europe
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -63,14 +63,14 @@ export function WhatYouGet() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Interactive <span>Workbook</span> and <span>Coaching</span> tasks
               to guide you through the whole process
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -83,15 +83,15 @@ export function WhatYouGet() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               <span>Bonus chapter</span> with expert interviews for different
               topics (CEOs, Hiring Managers, HR Recruiter, Salary negotiating
               coach, ...)
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -104,15 +104,15 @@ export function WhatYouGet() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               <span>Bonus material:</span> CV Templates, List of typical
               interview questions, List of most popular job seeking platforms,
               List of companies who hire English speakers, ...
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -125,19 +125,19 @@ export function WhatYouGet() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Access to the exclusive <span>Growing Abroad Community</span>{" "}
               Group with motivated foreigners who all want to achieve more in
               life
-            </S.Text>
-          </S.TextWrapper>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
           <StdButton style={{ width: "181px", margin: " 10px   auto 10px" }}>
             Buy Now
           </StdButton>
-        </S.RightContent>
-      </S.Content>
-    </S.Wrapper>
+        </S.RightContentWhyBuyCourse>
+      </S.ContentWhyBuyCourse>
+    </S.WrapperWhyBuyCourse>
   );
 }
 

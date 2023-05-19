@@ -20,43 +20,27 @@ import FollowDreams from "./components/FollowDream";
 import WhatYouGet from "./components/WhatYouGet";
 import Investiment from "./components/Investiment";
 import CareerExperts from "./components/CareerExperts";
-import { TextMockup } from "../../src/utils/mock-ups/mockup-texts";
 import BigCard from "@pages/online-course/components/BigCard";
+import PageBodyLayout from "@/components/generics/PageBody";
 
-export const Wrapper = styled.div`
+export const SalesWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export default function OnlineCourse() {
+export default function Sales() {
   const { isMobile } = useAppContext();
 
   return (
-    <Wrapper>
+    <SalesWrapper>
       <CTAction />
-      <PageBody style={{ marginTop: `${isMobile ? "850px" : "830px"}` }}>
-        <Wave
-          type={EWaveType.linear}
-          height={isMobile ? "100%" : "100%"}
-          className="border-image"
-          styles={
-            isMobile
-              ? {
-                  height: "154px",
-                  justifyContent: "flex-start",
-                  top:'-100px'
-                }
-              : {
-                  width: "100%",
-                  height: "150px",
-                  justifyContent: "flex-start",
-                  position: "absolute",
-                  top: "-100px",
-                }
-          }
-        ></Wave>
+      <PageBodyLayout
+        id="page-sales"
+        distanceFromTop={isMobile ? "850px" : "780px"}
+        waveType={EWaveType.linear}
+      >
 
         <WhyBuyCourse />
         <Motivation />
@@ -74,12 +58,12 @@ export default function OnlineCourse() {
           styles={{ width: `${isMobile ? "387px" : ""}` }}
         />
         <FaqSection accordeons={OnlineCourseFaqMockUp} />
-      </PageBody>
-    </Wrapper>
+      </PageBodyLayout>
+    </SalesWrapper>
   );
 }
 
-OnlineCourse.getLayout = function getLayout(page: ReactElement) {
+Sales.getLayout = function getLayout(page: ReactElement) {
   return (
     <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
   );
