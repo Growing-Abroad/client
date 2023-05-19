@@ -1,5 +1,5 @@
 import StdButton from "@/components/generics/StdButton/StdButton";
-import threePersons from "@/../public/assets/online-course-fun.webp";
+import threePersons from "@/../public/assets/images/card-online-course-goals.webp"
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
@@ -7,17 +7,17 @@ import useAppContext from "@/hooks/useAppContext";
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
-    <S.Wrapper>
-      <S.Content>
-      {isMobile?(<></>): ( <Image
-          src={ threePersons}
+    <S.WrapperWhyBuyCourse>
+      <S.ContentWhyBuyCourse>
+        <Image
+          src={threePersons}
           width={isMobile ? 520 : 748}
           height={isMobile ? 390 : 558}
-          alt=""
-        />)}
-        <S.RightContent>
-          <S.TextWrapper>
-            <S.Icon>
+          alt="Why buy course banner"
+        />
+        <S.RightContentWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -30,15 +30,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Learn all the steps you have to take to land your{" "}
-              <S.BoldSpan>DREAM JOB</S.BoldSpan> in{" "}
-              <S.BoldSpan>GERMANY</S.BoldSpan> or Europe
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+              <S.BoldSpanWhyBuyCourse>DREAM JOB</S.BoldSpanWhyBuyCourse> in{" "}
+              <S.BoldSpanWhyBuyCourse>GERMANY</S.BoldSpanWhyBuyCourse> or Europe
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -51,14 +51,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              Discover <S.BoldSpan>SECRET METHODS </S.BoldSpan>and Job Search
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Discover
+              <S.BoldSpanWhyBuyCourse>SECRET METHODS </S.BoldSpanWhyBuyCourse>and Job Search
               strategies to get multiple job interviews
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -71,13 +72,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-            Create a<S.BoldSpan> UNIQUE APPLICATION </S.BoldSpan>in German and European standards which stands out of all the other candidates in the market
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Create a<S.BoldSpanWhyBuyCourse> UNIQUE APPLICATION </S.BoldSpanWhyBuyCourse>in German and
+              European standards which stands out of all the other candidates in
+              the market
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -90,15 +93,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
               Create a professional Business Profile to{" "}
-              <S.BoldSpan>ATTRACT RECRUITERS </S.BoldSpan>and{" "}
-              <S.BoldSpan>CEOs</S.BoldSpan>
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+              <S.BoldSpanWhyBuyCourse>ATTRACT RECRUITERS </S.BoldSpanWhyBuyCourse>and{" "}
+              <S.BoldSpanWhyBuyCourse>CEOs</S.BoldSpanWhyBuyCourse>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -111,15 +114,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-              <S.BoldSpan>CONVINCE</S.BoldSpan> in every single
-              <S.BoldSpan>  JOB INTERVIEW </S.BoldSpan>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              <S.BoldSpanWhyBuyCourse>CONVINCE</S.BoldSpanWhyBuyCourse> in every single
+              <S.BoldSpanWhyBuyCourse> JOB INTERVIEW </S.BoldSpanWhyBuyCourse>
               with your unique personality
-            </S.Text>
-          </S.TextWrapper>
-          <S.TextWrapper>
-            <S.Icon>
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+          <S.TextWrapperWhyBuyCourse>
+            <S.IconWhyBuyCourse>
               <svg
                 width="26"
                 height="19"
@@ -132,16 +135,15 @@ export function WhyBuyCourse() {
                   fill="#FFDB5C"
                 />
               </svg>
-            </S.Icon>
-            <S.Text>
-            Land your <S.BoldSpan>DREAM JOB</S.BoldSpan> in Germany or Europe
-            </S.Text>
-          </S.TextWrapper>
-        </S.RightContent>
-
-      </S.Content>
+            </S.IconWhyBuyCourse>
+            <S.TextWhyBuyCourse>
+              Land your <S.BoldSpanWhyBuyCourse>DREAM JOB</S.BoldSpanWhyBuyCourse> in Germany or Europe
+            </S.TextWhyBuyCourse>
+          </S.TextWrapperWhyBuyCourse>
+        </S.RightContentWhyBuyCourse>
+      </S.ContentWhyBuyCourse>
       <StdButton>Buy Online Course Now</StdButton>
-    </S.Wrapper>
+    </S.WrapperWhyBuyCourse>
   );
 }
 
