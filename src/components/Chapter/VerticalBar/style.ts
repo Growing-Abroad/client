@@ -10,7 +10,7 @@ export const VerticalBar = styled.div<VerticalBarProps>`
   background-color: ${(props) => props.backgroundColor || "transparent"};
   transition: all 0.4s ease-in-out;
   width: 10px;
-  height: 443px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -74,17 +74,25 @@ export const Content = styled.div`
   align-items: center;
   min-height: 100%;
 
+  justify-content: space-between;
+  gap: 3rem;
+
   @media (max-width: 960px) {
     flex-direction: column;
     margin-top: 0;
     padding-bottom: 120%;
     align-items: center;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 40px;
+  }
 `;
 
 export const ParagraphsContainer = styled.div`
   padding-top: 32px;
-  max-width: 473px;
+  /* max-width: 473px; */
+  width: 50%;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -107,7 +115,7 @@ export const Paragraph = styled.p`
 
 export const CarouselContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 50%;
   height: 100%;
   justify-content: center;
   align-items: center;

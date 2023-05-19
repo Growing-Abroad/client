@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { variables } from '@/styles/global-variables';
 const { sizes: { mediaQuery, maxWidthAll, globalHorizontalPadding }} = variables;
 
-export const Container = styled.div`
+export const FaqSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@ export const Container = styled.div`
     padding: 27px 16px 83px;
   }
 `
-export const Content = styled.div`
+export const FaqSectionContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +30,7 @@ export const Content = styled.div`
   border-radius: 20px;
   gap: 16px;
   padding: 50px 172px;
+  zoom: 0.75;
 
   @media (max-width: ${mediaQuery}) {
     padding: 44px 28px 40px;

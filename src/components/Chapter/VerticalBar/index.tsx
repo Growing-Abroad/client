@@ -43,7 +43,7 @@ const VerticalBar: React.FC = () => {
 
     const animateFill = () => {
       const fillPercentage = Math.min(scrollPercentage / 100, 1);
-      const newColor = fillPercentage === 1 ? '#4A9AFD' : '#D9D9D9';
+      const newColor = fillPercentage === 1 ? '#4A9AFD' : '#4A9AFD';
       setBarColor(newColor);
 
       if (requestId) {

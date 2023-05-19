@@ -60,6 +60,7 @@ export const Container = styled.div<ContainerProps>`
   ${({ theme, itsOpen }) => css`
     height: ${!itsOpen ? 0 : "100vh"};
     background-color: ${theme.colors.blue700};
+    position: relative;
 
     @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
@@ -132,7 +133,7 @@ export const Button = styled.button`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: .875rem;
 
   display: flex;
   flex-direction: column;

@@ -13,18 +13,18 @@ import StdButton from '../generics/StdButton/StdButton';
 export function Chapter() {
   const { isMobile } = useAppContext();
   return (
-    <S.Container  style={{paddingBottom: `${isMobile ? ' ': '140px'}`}}>
+    <S.ChapterContainer  style={{paddingBottom: `${isMobile ? ' ': '140px'}`}}>
       <TwoColorTitle text1='What you can expect' text2='in this Course' hasSpaceBtw />
-      <S.Content>
+      <S.ChapterContent>
 
-        <S.Title>Chapter</S.Title>
+        <S.ChapterTitle>Chapter</S.ChapterTitle>
         <VerticalBar />
-        <S.ContainerCards>
-          <S.ContentCard reverse={false}>
+        <S.ChapterContainerCards>
+          <S.ChapterContentCard reverse={false}>
             <Image  className="image" src={index1} alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Getting a VISA for Germany</S.CardTitle>
-              <div>
+              <div className='card-texts'>
                 <S.CardText>
                   <span><svg
                     width="20"
@@ -88,8 +88,8 @@ export function Chapter() {
 
               </div>
             </S.CardInfo>
-          </S.ContentCard>
-          <S.ContentCard reverse>
+          </S.ChapterContentCard>
+          <S.ChapterContentCard reverse>
             <Image src={index3} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Optimizing
@@ -158,8 +158,8 @@ export function Chapter() {
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>
-          <S.ContentCard reverse={false}>
+          </S.ChapterContentCard>
+          <S.ChapterContentCard reverse={false}>
             <Image src={index4} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Find the right jobs in Germany
@@ -227,8 +227,8 @@ export function Chapter() {
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>
-          <S.ContentCard reverse>
+          </S.ChapterContentCard>
+          <S.ChapterContentCard reverse>
             <Image src={index5} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Preparation for your job interview
@@ -296,8 +296,8 @@ export function Chapter() {
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>
-          <S.ContentCard reverse={false}>
+          </S.ChapterContentCard>
+          <S.ChapterContentCard reverse={false}>
             <Image src={index6} className="image" alt="Germany Flag" width={isMobile ? 372 : 700} height={isMobile ? 188 : 373} />
             <S.CardInfo>
               <S.CardTitle>Land your dream job</S.CardTitle>
@@ -364,14 +364,14 @@ export function Chapter() {
                 </S.CardText>
               </div>
             </S.CardInfo>
-          </S.ContentCard>
+          </S.ChapterContentCard>
 
           <div  className='bonus'>
          <S.CardTitle>
          Bonus chapter with expert interviews        </S.CardTitle></div>
-        </S.ContainerCards>
-      </S.Content>
+        </S.ChapterContainerCards>
+      </S.ChapterContent>
       <StdButton style={{marginTop:`${isMobile ? '40px' : '0'}`}}> Buy Online Course Now</StdButton>
-    </S.Container>
+    </S.ChapterContainer>
   );
 }

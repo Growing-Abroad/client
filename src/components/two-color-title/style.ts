@@ -43,7 +43,7 @@ export const Text = styled.h1<IText>`
     switch (props.as) {
       case "h1":
         return css`
-          font-size: 4.625rem;
+          font-size: 52px;
           line-height: 5.625rem;
         `;
       case "h2":
