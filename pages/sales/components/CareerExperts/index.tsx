@@ -3,7 +3,6 @@ import styled from "styled-components";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import useAppContext from "@/hooks/useAppContext";
-import type { StaticImageData } from "next/image";
 import uan from "@/../public/assets/pages/sales/uan.png";
 import manu from "@/../public/assets/pages/sales/manu.webp";
 import {

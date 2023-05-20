@@ -20,7 +20,7 @@ export const WrapperWhyBuyCourse = styled.div`
   padding: 89px 0px 146px 0px;
   gap: 81px;
   min-width: 1280px;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 
   padding: 47px 0 0px;
 
@@ -110,6 +110,7 @@ export const BoldSpanWhyBuyCourse = styled.span`
 export const TextWhyBuyCourse = styled.p`
   font-size: 18px;
   color: ${blue700};
+  margin-bottom: 0;
 `;
 
 export const IconWhyBuyCourse = styled.span`

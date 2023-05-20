@@ -108,6 +108,7 @@ export const ImageContainer = styled.div`
   border-radius: 5px;
   overflow: hidden;
   width: 80%;
+  zoom: 80%;
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;

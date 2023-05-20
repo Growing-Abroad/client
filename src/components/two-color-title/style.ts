@@ -25,7 +25,7 @@ export interface IText {
   as?: keyof JSX.IntrinsicElements;
 }
 
-export const Text = styled.h1<IText>`
+export const Text: any = styled.h1<IText>`
   ${(props) => {
     const { color } = props;
     return css`

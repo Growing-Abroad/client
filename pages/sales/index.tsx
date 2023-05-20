@@ -28,6 +28,16 @@ export const SalesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #page-sales {
+    @media screen and (min-width: 1024px) {
+      margin-top: calc( 780px + -2rem );
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-top: calc( 780px + 4rem );
+    }
+  }
 `;
 
 export default function Sales() {

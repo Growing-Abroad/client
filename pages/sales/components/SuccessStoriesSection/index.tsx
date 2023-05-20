@@ -17,6 +17,9 @@ const SuccessStoriesSectionWrapper = styled.section`
     align-items: center;
     gap: 73px;
 
+    zoom: 80%;
+    transform: scale(.9);
+
     @media(max-width:430px) {
         padding: 80px ${globalHorizontalPaddingMobile} 133px;
         gap: 30px;
