@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import TwoColorTitle from "@components/two-color-title";
-import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import useAppContext from "@/hooks/useAppContext";
 import uan from "@/../public/assets/pages/sales/uan.png";
 import manu from "@/../public/assets/pages/sales/manu.webp";
@@ -18,7 +17,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
-
 `;
 
 const ActiveImage = styled.img`
@@ -26,8 +24,8 @@ const ActiveImage = styled.img`
   height: 485px;
   object-fit: cover;
 
-  @media(max-width: 768px) {
-    width:396px;
+  @media (max-width: 768px) {
+    width: 396px;
     height: 328px;
   }
 `;
@@ -40,6 +38,11 @@ const SmallImage = styled.img`
   object-position: 55% 10%;
   opacity: 0.5;
 `;
+
+const BoxDiscover = styled.div`
+  width: 100%;
+  height: 100%;
+`
 
 interface Props {
   activeImage: string;
@@ -55,28 +58,47 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
   };
 
   return (
-    <DiscoverGrowingAbroadSection style={{ paddingTop: `${isMobile ?"96px" :"146px"}`, paddingBottom:`${isMobile ?"0px" :"146px"}`}}>
+    <DiscoverGrowingAbroadSection
+      style={{
+        paddingTop: `${isMobile ? "96px" : "146px"}`,
+        paddingBottom: `${isMobile ? "0px" : "146px"}`,
+      }}
+    >
       <TwoColorTitle
-        text1={isMobile ?"We are Uan & Manu" : "We are Uan & Manu"}
+        text1={isMobile ? "We are Uan & Manu" : "We are Uan & Manu"}
         text2="your Career Experts"
         hasSpaceBtw
         as="h2"
         wrapperClassName="discover-wrapper"
         className="discover-title"
-        styles={{ width:`${isMobile ?"340px" :""}`, display: "flex", flexDirection: "column", gap: "0" }}
+        styles={{
+          width: `${isMobile ? "340px" : ""}`,
+          display: "flex",
+          flexDirection: "column",
+          gap: "0",
+        }}
       />
 
       {isMobile ? (
         <>
-          <DiscoverContent style={{display:'flex', flexDirection:'column', margin:'26px 22px 48px 22px'}}>
-          <ActiveImage
-                src={uan.src}
-                alt={smallImage}
-              />
+          <DiscoverContent
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "26px 22px 48px 22px",
+            }}
+          >
+            <ActiveImage src={uan.src} alt={smallImage} />
             <DiscoverReadMoreWrapper>
-
-              <StdParagraqh>
-                <p style={{color:'white', fontSize:'14px', fontWeight:'600', textAlign:'justify'}}>
+              <BoxDiscover>
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    textAlign: "justify",
+                  }}
+                >
                   <span style={{ fontSize: "32px" }}>UAN</span> is the perfect
                   example of a successful foreigner who was able to build an
                   outstanding life and career in Germany. Growing up in a small
@@ -95,19 +117,32 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
                   In this Online Course he will show you all the steps he took
                   to have a successful career in Europe.{" "}
                 </p>
-              </StdParagraqh>
+              </BoxDiscover>
             </DiscoverReadMoreWrapper>
           </DiscoverContent>
-          <DiscoverContent style={{display:'flex', flexDirection:'column', margin:'26px 22px 48px 22px'}}>
+          <DiscoverContent
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: "26px 22px 48px 22px",
+            }}
+          >
             <ActiveImage
               src={manu.src}
               alt={smallImage}
-              style={{objectPosition:'150%'}}
+              style={{ objectPosition: "150%" }}
               className="manu-image"
             />
-            <DiscoverReadMoreWrapper style={{margin:'26px 22px 48px 22px'}} >
-              <StdParagraqh>
-                <p style={{color:'white', fontSize:'14px', fontWeight:'600', textAlign:'justify'}}>
+            <DiscoverReadMoreWrapper style={{ margin: "26px 22px 48px 22px" }}>
+              <BoxDiscover>
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    textAlign: "justify",
+                  }}
+                >
                   <span style={{ fontSize: "32px" }}>MANU</span> brings the
                   German perspective and mentality. As a professional Coach,
                   Trainer and Actor, he knows exactly how to present yourself
@@ -126,14 +161,14 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
                   job application process and teach you the best techniques and
                   tricks you can have in the German market.
                 </p>
-              </StdParagraqh>
+              </BoxDiscover>
             </DiscoverReadMoreWrapper>
           </DiscoverContent>{" "}
         </>
       ) : (
         <DiscoverContent>
           <DiscoverReadMoreWrapper>
-            <StdParagraqh className="discover-text">
+            <BoxDiscover className="discover-text">
               {activeImageId === "uan" ? (
                 <p>
                   <span style={{ fontSize: "32px" }}>UAN</span> is the perfect
@@ -175,7 +210,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
                   tricks you can have in the German market.
                 </p>
               )}
-            </StdParagraqh>
+            </BoxDiscover>
           </DiscoverReadMoreWrapper>
           <Container>
             <ActiveImage
