@@ -41,47 +41,27 @@ export default function NewsLetter() {
               <InputNewsLetter placeholder="Enter Your E-mail Adress" />
             </InputWrapper>
             <div
-            style={{
-              gap: `${isMobile ?"8px" :"0px"}`,
-              display: "flex",
-              alignItems: "start",
-            }}
-          >
-            <Checkbox
-              className="declaration-checkbox"
-              sx={{
-                "& .MuiSvgIcon-root": isMobile ? { width: 30, height: 30 } : {  width: 40, height: 40} ,
-                color: white,
-                "&.Mui-checked": {
-                  color: white,
-                },
-              }}
-            />
-            <p  className="paragraph" style={{color:"white"}}>
-            By clicking you are agreeing  with the growing abroad rules and policy
-            </p>
-          </div>
-            {/* <div
               style={{
-                gap: '8px',
-
+                gap: `${isMobile ?"8px" :"0px"}`,
+                display: "flex",
+                alignItems: "center",
               }}
             >
-              <CheckboxWrapper>
-                <input onClick={(e) => handleCheckBox(e)} type="checkbox" />
-                <span></span>
-              </CheckboxWrapper>
-              <p
-                style={{
-                  marginLeft: '40px',
-                  fontSize: '.750rem',
-                  color: 'white',
+              <Checkbox
+                className="declaration-checkbox"
+                sx={{
+                  "& .MuiSvgIcon-root": isMobile ? { width: 30, height: 30 } : {  width: 24, height:24} ,
+                  color: white,
+                  "&.Mui-checked": {
+                    color: white,
+                  },
                 }}
-              >
-                Yes, I would like to sign up for the Growing Abroad Newsletter
-                and I accept the websites Privacy Policy.
+              />
+              <p  className="paragraph" style={{color:"white"}}>
+                By clicking you are agreeing  with the Growing Abroad rules and policy
               </p>
-            </div> */}
+            </div>
+            
           </SubscribeWrapper>
           <StdButton
             style={{

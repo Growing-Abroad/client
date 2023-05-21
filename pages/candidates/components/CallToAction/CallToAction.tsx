@@ -49,7 +49,7 @@ function CallToAction() {
   return (
     <S.BackgroudCTA>
       <S.Container>
-        <section className="left-side">
+        <div className="left-side">
           <h1>
             <>
               {t("page.home.callToAction") + " "}
@@ -62,8 +62,8 @@ function CallToAction() {
           >
             Watch Free Masterclass
           </StdButton>
-        </section>
-        <section className="right-side">
+        </div>
+        <div className="right-side">
           <div className="right-side-img-container">
             <Image
               src={gaCoaches}
@@ -72,7 +72,7 @@ function CallToAction() {
               style={{ objectFit: "contain" }}
             />
           </div>
-        </section>
+        </div>
       </S.Container>
       {/* <div className="cta-mask">
         <Image

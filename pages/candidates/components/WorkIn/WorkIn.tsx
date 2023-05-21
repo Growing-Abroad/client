@@ -20,17 +20,17 @@ function WorkIn() {
 
       <S.CardSpace>
         <WorkInCard
-          title="Student or professional"
+          title="Student or Professional"
           photo={studentHat}
           description="No matter if you have a higher education degree or you are still studying , we will make it possible for you to get your dream job."
         />
         <WorkInCard
-          title="Start your new life in Europe"
+          title="Start Your New Life in Europe"
           photo={worldPicture}
           description="For people who are already in Germany or Europe and also for people who are not and want to relocate."
         />
         <WorkInCard
-          title="High qualified experts"
+          title="High Qualified Experts"
           photo={expertPicture}
           description="As German experts with over 10 years experience on the European market, we guide you through the whole application process."
         />

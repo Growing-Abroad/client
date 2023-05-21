@@ -37,7 +37,7 @@ export const SubHeadingBlog = styled.h4`
   
 
   @media (max-width: ${mediaQuery}) {
-    width: 204px;
+    width: 300px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 1.3px;

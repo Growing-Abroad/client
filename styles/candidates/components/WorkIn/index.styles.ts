@@ -78,7 +78,6 @@ export const Card = styled.article`
 
     display: flex;
     align-items: center;
-    text-transform: capitalize;
   }
 
   .workin-description {

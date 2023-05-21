@@ -12,7 +12,7 @@ export const Container = styled.section`
   height: 1050px;
 
   @media(max-width: ${variables.sizes.mediaQuery}) {
-    padding: 80px 6px;
+    padding: 80px 6px 30px;
 
     .ourservices-title-wrapper {
       max-width: 100%;

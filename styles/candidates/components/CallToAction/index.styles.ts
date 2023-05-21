@@ -16,7 +16,7 @@ export const BackgroudCTA = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${blue500};
-  height: 760px;
+  height: 810px;
   top: 0;
   left: 0;
   min-height: 660px;
@@ -75,7 +75,7 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 90px;
     width: 800px;
-    padding: 130px 12px 10px 0;
+    padding: 180px 12px 10px 0;
     z-index: 3;
 
     h1 {
