@@ -12,7 +12,6 @@ export enum ChosenHeader {
 
 interface Props extends ComponentPropsWithoutRef<"body"> {
   chosenHeader: ChosenHeader;
-  doesNotHaveAFooter?: boolean;
   usePageBody?: boolean;
 }
 
@@ -38,7 +37,7 @@ function PageLayout(props: Props) {
     <>
       <Header chosenHeader={chosenHeader} />
       {children}
-      {!props.doesNotHaveAFooter && <Footer usePageBody={props.usePageBody} />}
+      <Footer usePageBody={props.usePageBody} />
     </>
   );
 }

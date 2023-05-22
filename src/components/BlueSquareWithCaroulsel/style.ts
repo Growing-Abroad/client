@@ -45,6 +45,9 @@ export const DiscoverContent = styled.div<IContentProps>`
   min-height: 450px;
   max-width: 100%;
 
+  transform: scale(.95);
+  zoom: 90%;
+
   @media (max-width: ${mediaQuery}) {
     flex-direction: ${({columnReversed}) => columnReversed ? 'column-reverse' : 'column'};
     gap: 24px;

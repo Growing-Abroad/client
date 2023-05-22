@@ -13,11 +13,11 @@ const {
 export const BackgroudCTA = styled.section`
   margin-top: 60px;
   width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
-  height: 800px;
   display: flex;
   gap: 2rem;
   flex-direction: column;
@@ -76,14 +76,15 @@ export const Container = styled.section`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 90px;
-    width: 900px;
+    gap: 60px;
+    width: 70%;
     padding: 120px 102px 80px 0;
+    position: absolute;
 
     h1 {
       color: #fff;
-      font-size: 74px;
-      line-height: 6.25rem;
+      font-size: 72px;
+      line-height: 5rem;
       font-weight: 500;
       max-width: 662px;
       z-index: 5;

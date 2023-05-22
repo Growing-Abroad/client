@@ -11,6 +11,7 @@ import useAppContext from "@/hooks/useAppContext";
 import NavHero from "@/components/NavHero";
 import { SubheadingHero } from "styles/faq/FaqHeroSection/index.styles";
 import Link from "next/link";
+import PageBodyLayout from "@/components/generics/PageBody";
 
 export default function FAQ() {
   const { isMobile } = useAppContext();
@@ -18,25 +19,11 @@ export default function FAQ() {
   return (
     <Wrapper>
       <FaqHeroSection />
-      <PageBody style={{ marginTop: `${isMobile ? "300px" : "750px"}` }}>
-        <Wave
-          type={EWaveType.linear}
-          height={isMobile ? "150px" : "100%"}
-          className="border-image"
-          styles={
-            isMobile
-              ? {
-                  marginTop: "45px",
-                  justifyContent: "flex-start",
-                  backgroundPosition: "-155px",
-                }
-              : {
-                  justifyContent: "flex-start",
-                  position: "absolute",
-                  top: "-150px",
-                }
-          }
-        ></Wave>
+      <PageBodyLayout
+        id="page-faq"
+        distanceFromTop={isMobile ? "770px" : "800px"}
+        waveType={EWaveType.linear}
+      >
 
         {isMobile ? (
           <SubheadingHero>
@@ -49,7 +36,7 @@ export default function FAQ() {
         )}
         <NavHero />
         <FaqSection accordeons={GeneralFaqMockUp} />
-      </PageBody>
+      </PageBodyLayout>
     </Wrapper>
   );
 }

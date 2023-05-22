@@ -50,11 +50,12 @@ export const DiscoverReadMoreWrapper = styled.div`
   background-color: ${blue500};
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 3rem 2rem 2rem;
   gap: 32px;
   align-items: center;
   max-width: 100%;
   width: 100%;
+  height: 35rem;
 
   .discover-text {
     color: white;

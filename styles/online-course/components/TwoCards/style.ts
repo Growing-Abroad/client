@@ -28,11 +28,20 @@ export const ContentTwoCards = styled.div`
   align-items: center;
   justify-content: center;
   padding: 49px 100px 46px;
+  zoom: 1;
+  margin-bottom: 2.5rem;
+
+  @media  screen and (min-width: 1024px) {
+    zoom: 0.75;
+  }
+
+
   .right-card {
     div {
       gap: 26.5px;
     }
   }
+
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 42px;
@@ -53,21 +62,30 @@ export const ContentTwoCards = styled.div`
     }
   }
 `;
+
 export const TwoCardsWrapper = styled.div`
-  width: 430px;
+  width: 520px;
   height: auto;
   padding-bottom: 29px;
-  gap:22px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  &:hover {
-    transform: scale(1.1);
-  }
+  transition: 0.3s ease-in-out;
   margin: 0;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+  }
+
   h3,
   span,
   p {

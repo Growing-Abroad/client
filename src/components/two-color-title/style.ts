@@ -25,7 +25,7 @@ export interface IText {
   as?: keyof JSX.IntrinsicElements;
 }
 
-export const Text = styled.h1<IText>`
+export const Text: any = styled.h1<IText>`
   ${(props) => {
     const { color } = props;
     return css`
@@ -43,7 +43,7 @@ export const Text = styled.h1<IText>`
     switch (props.as) {
       case "h1":
         return css`
-          font-size: 4.625rem;
+          font-size: 52px;
           line-height: 5.625rem;
         `;
       case "h2":

@@ -15,6 +15,7 @@ import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import useAppContext from "@/hooks/useAppContext";
 import Wave from "@/components/Wave";
 import PageBody from "@/components/generics/PageBody";
+import PageBodyLayout from "@/components/generics/PageBody";
 
 export default function Coaching() {
   const { isMobile, windowSize: {width} } = useAppContext();
@@ -35,7 +36,7 @@ export default function Coaching() {
       return '340px';
     }
     if (width > 430 && width <= 1513) {
-      return 'calc(21.25rem + ((1vw - 4.3px) * 22.1607))';
+      return 'calc(21.25rem + ((1vw - 2.3px) * 22.1607))';
     }
     if (width > 1513) {
       return '580px';
@@ -46,8 +47,11 @@ export default function Coaching() {
   return (
     <>
       <CoachingHeroSection distanceFromTop={getDistanceFromTop()} />
-      <PageBody distanceFromTop={getDistanceFromTop()}>
-     
+      <PageBodyLayout
+        id="page-coaching"
+        distanceFromTop={getDistanceFromTop()}
+      >
+
         <DreamJobSection />
         <CoachingPackageOnlineCourseSection />
         <VisionAndMissionNew
@@ -60,7 +64,7 @@ export default function Coaching() {
         />
         <WhatOurClientsSay />
         <ReusedFaq />
-      </PageBody>
+      </PageBodyLayout>
     </>
   );
 }

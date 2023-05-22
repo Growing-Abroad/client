@@ -9,7 +9,7 @@ const {
 
 export const StyledHeader = styled.header`
   width: 100%;
-  height: 65px;
+  height: 66px;
   padding: 0 ${variables.sizes.globalHorizontalPadding};
   display: flex;
   justify-content: center;

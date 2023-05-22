@@ -1,6 +1,11 @@
 import { variables } from "@/styles/global-variables";
 import styled, { css } from "styled-components";
 
+export const SupraContainer = styled.div`
+  width: 100%;
+  height: 110vh;
+  padding: 163px 0;
+`
 const { sizes: { maxWidthAll, mediaQuery, globalHorizontalPadding }} = variables;
 
 
@@ -8,13 +13,13 @@ const { sizes: { maxWidthAll, mediaQuery, globalHorizontalPadding }} = variables
 export const Container = styled.div`
   max-width: ${maxWidthAll};
   margin: 163px 0;
-  padding: 0 ${globalHorizontalPadding}; 
+  padding: 0 ${globalHorizontalPadding};
   width: 100%;
 
   @media (max-width: ${mediaQuery}) {
     max-width: 100%;
     margin: 50px 0;
-    padding: 0 24px; 
+    padding: 0 24px;
 
   }
 `;
@@ -65,17 +70,25 @@ export const Content = styled.div`
   align-items: center;
   min-height: 100%;
 
-  @media (max-width: 1395px) {
+  justify-content: space-between;
+  gap: 3rem;
+
+  @media (max-width: 960px) {
     flex-direction: column;
     margin-top: 0;
     padding-bottom: 120%;
     align-items: center;
   }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 40px;
+  }
 `;
 
 export const ParagraphsContainer = styled.div`
   padding-top: 32px;
-  max-width: 473px;
+  /* max-width: 473px; */
+  width: 50%;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -98,7 +111,7 @@ export const Paragraph = styled.p`
 
 export const CarouselContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 50%;
   height: 100%;
   justify-content: center;
   align-items: center;

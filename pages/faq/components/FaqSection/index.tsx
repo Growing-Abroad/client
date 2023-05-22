@@ -1,4 +1,4 @@
-import { Container, Content } from "../../../../styles/faq/FaqSection/index.styles";
+import * as S from "../../../../styles/faq/FaqSection/index.styles";
 import Accordeon from "./Accordeon";
 
 
@@ -13,8 +13,8 @@ type FaqSectionProps = {
 
 function FaqSection({ accordeons }: FaqSectionProps) {
   return (
-    <Container>
-      <Content>
+    <S.FaqSectionContainer>
+      <S.FaqSectionContent>
         {accordeons.map((accordeon, index) => {
           return (
             <Accordeon
@@ -24,8 +24,8 @@ function FaqSection({ accordeons }: FaqSectionProps) {
             />
           );
         })}
-      </Content>
-    </Container>
+      </S.FaqSectionContent>
+    </S.FaqSectionContainer>
   );
 }
 

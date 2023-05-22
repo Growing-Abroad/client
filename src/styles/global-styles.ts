@@ -13,12 +13,26 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
     list-style: none;
     letter-spacing: 0.025rem;
-      }
+  }
+
+
+  html {
+    @media screen and (max-width: 720px) {
+      font-size: 85.5%;
+    }
+
+    @media screen and (max-width: 1080px) {
+      font-size: 92.75%;
+    }
+
+    @media screen and (max-width: 1366px) {
+      font-size: 100%;
+    }
+  }
 
   body {
 
@@ -27,7 +41,6 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
       align-items:center;
       width: 100%;
-
     }
   }
 
