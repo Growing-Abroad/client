@@ -24,10 +24,13 @@ export const BackgroudCTA = styled.section`
   position: fixed;
   z-index: 0;
 
+  @media screen and (min-width: 64rem) {
+    zoom: 80%;
+  }
+
   @media (max-width: ${mediaQuery}) {
     padding: 60px 0 0 0;
     height: 760px;
-
   }
 
 `;

@@ -21,6 +21,7 @@ export const OnlineCourseWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   zoom: 90%;
+  z-index: 1;
 
 
   @media screen and (min-width: 1513px)  {
