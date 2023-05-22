@@ -13,8 +13,7 @@ export default function SuccessStories() {
       {/* eslint-disable-next-line react/jsx-no-undef */}
       <TwoColorTitle text1="Success" text2="Stories" hasSpaceBtw as="h2" />
       <SuccessSubtitle>
-        customers from all over the world land their dream jobs - from
-        innovative start ups to the worlds leading companies
+        Customers from all over the world landed their dream job in Germany and many other countries in Europe
       </SuccessSubtitle>
       <OriginalFancyCarousel dataArray={successStoriesData} />
     </SucessStoriesWrapper>

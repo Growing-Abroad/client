@@ -53,7 +53,7 @@ export default function BlogSection() {
     <Container>
       <TwoColorTitle
         text1="Latest"
-        text2="Blog"
+        text2="Blogs"
         hasSpaceBtw
         as="h2"
         styles={{ margin: "0", height: `${isMobile ? "43px" : "73px"}` }}

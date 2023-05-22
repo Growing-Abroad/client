@@ -57,6 +57,8 @@ export const InputNewsLetter = styled(Input)`
     width: 312px;
     max-height: 32px;
     font-size: 12px;
+    padding: 8px 16px;
+
   }
 `;
 
@@ -65,6 +67,7 @@ export const ContentInputNewsLetter = styled.div`
   flex-direction: row;
   gap: 12px;
   width: 100%;
+  
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     align-items: flex-start;
@@ -76,22 +79,24 @@ export const SubscribeWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
+  padding-left: 20px;
+
   .declaration-checkbox{
     margin-left:-5px;
   }
   .paragraph{
-    font-size:22px;
-    padding-top:12px;
+    margin: 0;
+    font-size: 16px;
     
   }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 22px;
     align-items: start;
+    padding-left: 0px;
+
     .paragraph{
       font-size:12px;
-      padding-top:8px;
     }
   }
   

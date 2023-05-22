@@ -62,7 +62,7 @@ export const FooterContentWrapper = styled.div`
   @media (max-width: ${mediaQuery}) {
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 56px 67px;
+    padding: 70px 32px 56px;
   }
 `;
 

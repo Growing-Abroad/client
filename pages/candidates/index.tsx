@@ -22,7 +22,7 @@ const Page: NextPageWithLayout = () => {
 
   function getDistanceFromTop(): string {
     if (width >= 1513) {
-      return '650px';
+      return '700px';
     }
 
     return '680px';
