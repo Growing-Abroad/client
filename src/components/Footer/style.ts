@@ -15,6 +15,7 @@ export interface IFooter {
 
 export const FooterContainer = styled.footer<IFooter>`
   width: 100%;
+  z-index: 200;
 
   ${({usePageBody})=> {
     if (usePageBody) {

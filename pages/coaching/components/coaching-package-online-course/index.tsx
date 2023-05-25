@@ -175,10 +175,10 @@ const Card = styled.div`
   box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
   border-radius: 10px;
   margin-top: 70px;
-  
+
   @media (max-width: ${mediaQuery}){
     margin-top: 16px;
-  
+
   }
 `;
 
@@ -286,7 +286,7 @@ export default function CoachingPackageOnlineCourseSection() {
     isMobile,
     windowSize: { width },
   } = useAppContext();
-  const twoColorFontSize = isMobile ? "2rem" : "3.75rem";
+  const twoColorFontSize = isMobile ? "2rem" : "3.25rem";
 
   const detailsContent = [
     "CV, Cover Letter and LinkedIn Optimization for the German and European Job market",

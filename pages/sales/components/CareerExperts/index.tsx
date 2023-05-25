@@ -10,8 +10,8 @@ import {
 } from "styles/candidates/components/DiscoverGA/index.styles";
 import { DiscoverContent } from "@/components/BlueSquareWithCaroulsel/style";
 
-const Container = styled.div`
-  width: 587px;
+const CareerExpertsContainer = styled.div`
+  width: 60%;
   height: 510px;
   display: flex;
   justify-content: center;
@@ -61,7 +61,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
     <DiscoverGrowingAbroadSection
       style={{
         paddingTop: `${isMobile ? "96px" : "146px"}`,
-        paddingBottom: `${isMobile ? "0px" : "146px"}`,
+        paddingBottom: `${isMobile ? "0px" : "20px"}`,
       }}
     >
       <TwoColorTitle
@@ -212,7 +212,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
               )}
             </BoxDiscover>
           </DiscoverReadMoreWrapper>
-          <Container>
+          <CareerExpertsContainer>
             <ActiveImage
               src={activeImageId === "manu" ? smallImage : activeImage}
               alt={smallImage}
@@ -227,7 +227,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
                 handleImageClick(activeImageId === "uan" ? "manu" : "uan")
               }
             />
-          </Container>
+          </CareerExpertsContainer>
         </DiscoverContent>
       )}
     </DiscoverGrowingAbroadSection>

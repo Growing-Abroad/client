@@ -8,7 +8,7 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
-    <S.WrapperWhyBuyCourse style={{ paddingBottom: `${isMobile ? "20px" : "120px"}` }}>
+    <S.WrapperWhyBuyCourse style={{ paddingBottom: "20px" }}>
       <TwoColorTitle
         text1="Does this sound"
         text2="Familiar...?"

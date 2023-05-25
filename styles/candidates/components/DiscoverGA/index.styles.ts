@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { ComponentPropsWithoutRef } from "react";
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 
@@ -54,7 +53,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   gap: 32px;
   align-items: center;
   max-width: 100%;
-  width: 100%;
+  width: 40%;
   height: 35rem;
 
   .discover-text {
