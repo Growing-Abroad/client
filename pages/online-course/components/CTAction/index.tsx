@@ -9,7 +9,7 @@ function CTAction() {
 
   return (
     <S.BackgroudCTA >
-      <S.Container style={{paddingLeft:`${isMobile ? "20px" : "140px"}`}}>
+      <S.BannerMainContainer>
         <section className="left-side" >
           <h1>Land your Dream Job in <span>Germany</span> or <span>Europe</span>
           </h1>
@@ -23,11 +23,11 @@ function CTAction() {
               src={gaCoaches}
               alt="growing abroad coaches"
               width={616}
-              style={{objectFit: 'contain'}}
+              style={{objectFit: 'contain', border: "1px solid transparent"}}
             />
           </div>
         </section>
-      </S.Container>
+      </S.BannerMainContainer>
     </S.BackgroudCTA>
   )
 }

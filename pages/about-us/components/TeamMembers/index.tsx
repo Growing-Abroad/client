@@ -1,7 +1,7 @@
 import TwoColorTitle from "@components/two-color-title";
-import { successStoriesData } from "@utils/mock-ups/success-stories-mock";
 import * as S from "../../../../styles/about-us/components/TeamMembers/index.styles";
 import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
+import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 
 function TeamMembers() {
   return (

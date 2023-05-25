@@ -42,7 +42,7 @@ position: relative;
     color: ${blue700};
   }
   h1 {
-    font-size: 60px;
+    font-size: 52px;
     padding-bottom: 20px;
     padding-top: 18px;
   }
@@ -104,7 +104,7 @@ position: relative;
   }
 `;
 export const PriceSpan = styled.span`
-  font-size: 60px;
+  font-size: 52px;
   text-align: center;
   width: 100%;
   font-weight: 700;

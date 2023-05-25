@@ -1,15 +1,13 @@
 import Image from "next/image";
 import { Wrapper } from "./style";
 import { CSSProperties } from "styled-components";
-import curved from "@/../public/assets/border-bottom.webp"
-import curvedMobile from "@/../public/assets/wave-mobile.svg"
-import curlyWave from "@/../public/assets/images/components/PageBody/curly-wave.webp"
-import undulatedMobile from "@/../public/assets/wave-undulated-mobile.svg";
+import curved from "@/../public/assets/border-bottom.webp";
+import curlyWave from "@/../public/assets/images/components/PageBody/curly-wave.webp";
 import useAppContext from "@/hooks/useAppContext";
 
 export enum EWaveType {
-  linear = 'linear',
-  curly = 'curly'
+  linear = "linear",
+  curly = "curly",
 }
 
 export interface WaveParameters {
@@ -19,22 +17,35 @@ export interface WaveParameters {
   className?: string;
 }
 
-const Wave: React.FC<WaveParameters> = ({ height, styles, type = EWaveType.linear,className }) => {
-  const {isMobile} = useAppContext();
+const Wave: React.FC<WaveParameters> = ({
+  height,
+  styles,
+  type = EWaveType.linear,
+  className,
+}) => {
+  const { isMobile } = useAppContext();
 
   function getWaveType() {
     if (type === EWaveType.linear) {
-      return isMobile ? curved.src : curved.src
-    } 
+      return isMobile ? curved.src : curved.src;
+    }
     if (type === EWaveType.curly) {
-      return isMobile ? curlyWave.src : curlyWave.src
+      return isMobile ? curlyWave.src : curlyWave.src;
     }
     return curved.src;
   }
 
   return (
-    <Wrapper height={height} style={{ ...styles }} waveType={type} >
-      <Image src={getWaveType()} style={{bottom: '-2px'}} className={className} alt="white border" fill={true} />
+    <Wrapper height={height} style={{ ...styles }} waveType={type}>
+      {!isMobile && (
+        <Image
+          src={getWaveType()}
+          style={{ bottom: "-2px" }}
+          className={className}
+          alt="white border"
+          fill={true}
+        />
+      )}
     </Wrapper>
   );
 };

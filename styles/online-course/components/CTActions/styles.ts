@@ -63,7 +63,7 @@ export const CtaButton = styled.button`
   }
 `;
 
-export const Container = styled.section`
+export const BannerMainContainer = styled.section`
   width: 100%;
   height: 100%;
   max-width: ${variables.sizes.maxWidthAll};
@@ -80,6 +80,11 @@ export const Container = styled.section`
     width: 70%;
     padding: 120px 102px 80px 0;
     position: absolute;
+    padding-left: 140px;
+
+    @media (min-width: 520px) and (max-width: 820px) {
+      padding: 6rem 2rem 2rem;
+    }
 
     h1 {
       color: #fff;
@@ -90,6 +95,11 @@ export const Container = styled.section`
       z-index: 5;
       span {
         color: #ffdb5c;
+      }
+
+      @media (min-width: 520px) and (max-width: 820px) {
+        font-size: 3rem;
+        line-height: 3rem;
       }
     }
   }
@@ -110,9 +120,14 @@ export const Container = styled.section`
       left: 40px;
 
       img {
-        bottom: -30px;
+        bottom: -40px;
         position: absolute;
         z-index: 3;
+
+        @media (min-width: 520px) and (max-width: 820px) {
+          left: -12rem;
+          height: 28rem;
+        }
       }
     }
   }

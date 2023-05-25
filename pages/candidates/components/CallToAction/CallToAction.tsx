@@ -69,7 +69,7 @@ function CallToAction() {
               src={gaCoaches}
               alt="growing abroad coaches"
               width={616}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", border: "1px solid transparent", }}
             />
           </div>
         </div>

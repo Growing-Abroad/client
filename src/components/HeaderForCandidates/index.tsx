@@ -107,7 +107,7 @@ function HeaderForCandidates() {
           boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
           justifyContent: "center",
           position: "fixed",
-          zIndex: 122,
+          zIndex: 999,
         }}
       >
         <Container itsOpen={itsMobileMenuOpen}>

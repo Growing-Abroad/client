@@ -22,7 +22,7 @@ import {
 import { useRouter } from "next/router";
 
 export interface ICarouselData {
-  imgSrc: StaticImageData;
+  imgSrc: StaticImageData
   title: string;
   subtitle?: string;
   from: string;

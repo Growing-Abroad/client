@@ -48,7 +48,7 @@ export const Text: any = styled.h1<IText>`
         `;
       case "h2":
         return css`
-          font-size: 3.75rem;
+          font-size: 3.25rem;
           line-height: 4.625rem;
         `;
       case "h3":

@@ -16,7 +16,7 @@ export const FlexboxSlider = styled.div`
   display: flex;
   gap: 36px;
   width: 100%;
-  height: 571px;
+  height: 600px;
   visibility: hidden;
   align-items: baseline;
 
@@ -106,8 +106,9 @@ export const FlexboxSlide = styled.div`
   .slide-img {
     position: absolute;
     top: 50%;
-    left: 75%;
+    left: 80%;
     height: 100%;
+    object-fit: contain;
     width: auto;
     min-width: 50%;
     min-height: 100%;
@@ -122,7 +123,7 @@ export const FlexboxSlide = styled.div`
     min-height: 0;
 
     .slide-img {
-      left: 85%;
+      left: 78%;
     }
   }
 `;
@@ -176,8 +177,8 @@ export const TextBlock = styled.div`
 `;
 
 export const TextBlockH3 = styled.h3`
-  font-size: 2rem;
-  line-height: 2.438rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
   letter-spacing: 1.3px;
   font-weight: 600;
   margin-bottom: 32px;
@@ -186,8 +187,8 @@ export const TextBlockH3 = styled.h3`
   gap: 8px;
   opacity: 0;
 
-  @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
-    font-size: calc(1.125rem + ((1vw - 4.3px) * 1.2915));
+  @media (min-width: ${mediaQuery}){
+    font-size: 1.4rem;
   }
 
   @media (max-width: ${mediaQuery}) {

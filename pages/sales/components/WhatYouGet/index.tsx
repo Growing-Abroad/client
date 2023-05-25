@@ -9,7 +9,7 @@ import TwoColorTitle from "@/components/two-color-title";
 export function WhatYouGet() {
   const { isMobile } = useAppContext();
   return (
-    <S.WrapperWhyBuyCourse style={{paddingBottom:`${isMobile ?'0px' : '146px'}`,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
+    <S.WrapperWhyBuyCourse style={{paddingBottom:0 ,paddingTop:`0px`, gap:`${isMobile ?'' : '40px'}`}}>
       <TwoColorTitle
         className={classes.title}
         text1="What you get out of   "

@@ -4,7 +4,7 @@ import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
 import BigCard from "./components/BigCard";
-import SuccessStoriesSection from "./components/SuccessStoriesSection";
+import SuccessStoriesSection from "../../src/components/SuccessStoriesSection";
 import styled from "styled-components";
 import TwoCards from "./components/TwoCards";
 import FaqSection from "@pages/faq/components/FaqSection";

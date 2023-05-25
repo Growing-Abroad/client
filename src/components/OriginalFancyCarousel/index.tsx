@@ -81,7 +81,7 @@ export default function OriginalFancyCarousel(props: Props) {
             <FromWrapper>
               <p>{item.from}</p>
               <ImageFlag
-                src={`countries-flags/${item.countryFlag}.svg`}
+                src={item.countryFlag}
                 alt={`flag of ${item.countryFlag}`}
                 className="country-flag"
               />

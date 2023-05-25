@@ -3,7 +3,7 @@ import { breakpoints } from "utils/constants";
 
 export const Container = styled.div`
     width: 100%;
-    
+
     background: #128FC8;
     `;
 
@@ -52,7 +52,7 @@ export const Title = styled.h1`
     @media (min-width: ${breakpoints.desktop.max}px) {
         text-align: left;
         max-width: 800px;
-        font-size: 3.75rem;
+        font-size: 3.25rem;
     }
 `;
 
