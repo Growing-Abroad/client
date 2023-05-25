@@ -3,7 +3,6 @@ import { PageLayout } from "@/components";
 import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
-import SuccessStoriesSection from "./components/SuccessStoriesSection";
 import uan from "@/../public/assets/pages/sales/uan.png";
 import manu from "@/../public/assets/pages/sales/manu.webp";
 import styled from "styled-components";
@@ -21,12 +20,15 @@ import Investiment from "./components/Investiment";
 import CareerExperts from "./components/CareerExperts";
 import BigCard from "@pages/online-course/components/BigCard";
 import PageBodyLayout from "@/components/generics/PageBody";
+import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 
 export const SalesWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  zoom: 95%;
+  z-index: 1;
 
   #page-sales {
     @media screen and (min-width: 1024px) {
