@@ -18,7 +18,8 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 export type TCarouselData = Array<ICarouselData>;
 export interface ICarouselData {
   imgSrc: StaticImageData;
-  title: string;
+  fullTitle: string;
+  mobileTitle: string;
   from: string;
   countryFlag: string;
   href: string;
@@ -85,11 +86,13 @@ export default function OriginalFancyCarousel({
       {dataArray.map((item, i) => (
         <FlexboxSlide
           className={handleSlideClasses(i)}
-          key={i + "-" + item.title}
+          key={i + "-" + item.fullTitle}
           onClick={() => setSelectedSlide(i)}
         >
           <TextBlock className="text-block">
-            <TextBlockH3>{item.title}</TextBlockH3>
+            <TextBlockH3>
+              {isMobile ? item.mobileTitle : item.fullTitle}
+            </TextBlockH3>
 
             <FromWrapper>
               <p>{item.from}</p>

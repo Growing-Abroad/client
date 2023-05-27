@@ -81,14 +81,14 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
     flex-grow: 1;
     height: 100%;
     cursor: default;
-    
+
     .text-block {
       bottom: 0;
       top: 0;
       left: 0;
       visibility: visible;
       cursor: default;
-      
+
       h3,
       p,
       .country-flag,
@@ -113,7 +113,7 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
       }
     }
   }
-  
+
   .dontShow {
     display: none;
   }
@@ -228,6 +228,11 @@ export const TextBlock = styled.div`
   flex-direction: column;
   visibility: hidden;
 
+  @media screen and (max-width: 375px) {
+    max-width: 64%;
+    width: 64%;
+  }
+
   p {
     font-size: 1.125rem;
     line-height: 1.125rem;
@@ -243,7 +248,7 @@ export const TextBlock = styled.div`
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
     max-width: 75%;
-    width: 75%;
+    /* width: 75%; */
 
     p {
       font-size: 0.875rem;
@@ -258,20 +263,18 @@ export const TextBlockH3 = styled.h3`
   letter-spacing: 1.3px;
   font-weight: 600;
   margin-bottom: 32px;
-  max-width: 386px;
   display: flex;
   gap: 8px;
   opacity: 0;
-
-  @media (min-width: 200px) and (max-width: 1280px) {
-    font-size: calc(1.125rem + ((1vw - 7.68px) * 1.8767));
-  }
+  font-size: 2rem;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 1.125rem;
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
+    width: 92%;
+    max-width: 386px;
 
     .watch-video-btn {
       padding: 8px 20px;
@@ -304,9 +307,17 @@ export const FromWrapper = styled.div`
   align-items: center;
   gap: 32px;
   margin-bottom: auto;
+
   p {
+    font-size: .75rem;
     letter-spacing: 1.3px;
     margin: 0;
+    width: calc(100% - 64px);
+
+    @media screen and (min-width: 64rem) {
+      font-size: 1.25rem;
+      width: auto;
+    }
   }
 
   @media (min-width: ${mediaQuery}) and (max-width: 1280px) {
