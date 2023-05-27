@@ -1,12 +1,15 @@
+import {
+  SuccessSubtitle,
+  SucessStoriesWrapper,
+} from "../../../../styles/candidates/components/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
-import * as S from "../../../../styles/about-us/components/TeamMembers/index.styles";
 import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { useState } from "react";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
 
-export const TeamMembers = () => {
+export const StoriesPageCandidates = () => {
   const [isModalVisible, handleModal]: ModalHook = useModal();
   const [dataVideo, setDataVideo] = useState();
 
@@ -17,17 +20,22 @@ export const TeamMembers = () => {
         onClose={handleModal}
         dataVideo={dataVideo}
       />
-      <S.Container>
-        <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw as="h2" />
+      <SucessStoriesWrapper>
+        {/* eslint-disable-next-line react/jsx-no-undef */}
+        <TwoColorTitle text1="Success" text2="Stories" hasSpaceBtw as="h2" />
+        <SuccessSubtitle>
+          Customers from all over the world landed their dream job in Germany
+          and many other countries in Europe
+        </SuccessSubtitle>
         <OriginalFancyCarousel
           dataArray={successStoriesData}
           openModal={handleModal}
           visibleModal={isModalVisible}
           getDataVideo={setDataVideo}
         />
-      </S.Container>
+      </SucessStoriesWrapper>
     </>
   );
-}
+};
 
-export default TeamMembers;
+export default StoriesPageCandidates;

@@ -25,9 +25,17 @@ export interface ICarouselData {
 }
 export interface Props {
   dataArray: TCarouselData;
+  openModal: (value: boolean) => void;
+  visibleModal: boolean;
+  getDataVideo: (value: any) => void;
 }
 
-export default function OriginalFancyCarousel(props: Props) {
+export default function OriginalFancyCarousel({
+  dataArray,
+  openModal,
+  visibleModal,
+  getDataVideo,
+}: Props) {
   const {
     windowSize: { width },
     isMobile,
@@ -38,8 +46,13 @@ export default function OriginalFancyCarousel(props: Props) {
   const mediaQueryNumber = removePxFromCssValue(mediaQuery);
   const [selectedSlide, setSelectedSlide] = useState<number>(initialSlide());
 
+  const handleOpenModal = ({ video }: any) => {
+    getDataVideo(video);
+    openModal(!visibleModal);
+  };
+
   function initialSlide(): number {
-    if (width > mediaQueryNumber && props.dataArray.length > 2) {
+    if (width > mediaQueryNumber && dataArray.length > 2) {
       return 2;
     } else {
       return 0;
@@ -69,7 +82,7 @@ export default function OriginalFancyCarousel(props: Props) {
 
   return (
     <FlexboxSlider className="flexbox-slider my-flexbox-slider">
-      {props.dataArray.map((item, i) => (
+      {dataArray.map((item, i) => (
         <FlexboxSlide
           className={handleSlideClasses(i)}
           key={i + "-" + item.title}
@@ -91,6 +104,7 @@ export default function OriginalFancyCarousel(props: Props) {
               <StdButton
                 icon={faPlay}
                 className="watch-video-btn"
+                onClick={() => handleOpenModal(item)}
                 style={{
                   width: "100%",
                   padding: isMobile ? "8px 20px" : "20px 40px",

@@ -18,7 +18,10 @@ export const successStoriesData = [
     from: `Bianca from Brazil`,
     href: "",
     countryFlag: flagBrasil,
-    texts: []
+    video : {
+      titleVideo: "Bianca from Brazil",
+      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+    }
   },
   {
     imgSrc: profileAcheampong,
@@ -26,7 +29,10 @@ export const successStoriesData = [
     from: `Acheampong from Ghana`,
     href: "",
     countryFlag: flagGana,
-    texts: []
+    video : {
+      titleVideo: "Acheampong from Ghana",
+      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+    }
   },
   {
     imgSrc: profileAmna,
@@ -34,7 +40,10 @@ export const successStoriesData = [
     from: `Amna from Pakistan`,
     href: "",
     countryFlag: flagPakistan,
-    texts: []
+    video : {
+      titleVideo: "Amna from Pakistan",
+      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+    }
   },
   {
     imgSrc: profileJason,
@@ -42,7 +51,10 @@ export const successStoriesData = [
     from: `Jason from Ghana`,
     href: "",
     countryFlag: flagGana,
-    texts: []
+    video : {
+      titleVideo: "Jason from Ghana",
+      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+    }
   },
   {
     imgSrc: profileSaransh,
@@ -50,7 +62,10 @@ export const successStoriesData = [
     from: `Saransh from India`,
     href: "",
     countryFlag: flagIndia,
-    texts: []
+    video : {
+      titleVideo: "Saransh from India",
+      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+    }
   },
   {
     imgSrc: profileZeid,
@@ -58,7 +73,10 @@ export const successStoriesData = [
     from: `Zeid from Jordan`,
     href: "",
     countryFlag: flagJordan,
-    texts: []
+    video : {
+      titleVideo: "Zeid from Jordan",
+      urlVideo: "https://www.youtube.com/embed/eWCBG4nX84o",
+    }
   }
 
 ];
