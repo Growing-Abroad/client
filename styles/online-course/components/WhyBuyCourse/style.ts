@@ -35,24 +35,39 @@ export const WrapperWhyBuyCourse = styled.div`
 
     gap:12px;
     min-width: 430px;
-    margin-top: -50px;
     padding-top: 0;
   }
 `;
 
 export const ContentWhyBuyCourse = styled.div`
   width: 100%;
-  min-width: 1280px;
+  min-width: 1366px;
   display: flex;
-  gap: 100px;
+  gap: 50px;
   align-items: center;
-  /* padding-right:40px; */
+  margin-top: 2rem;
   justify-content: space-between;
+
+
+  .img-thinkinh-job-germany,
+  .img-benefits {
+    width: 570px;
+    height: 320px;
+
+    @media screen and (min-width: 64rem) {
+      width: 780px;
+      height: 560px;
+    }
+  }
 
   @media screen and (max-width: 1440px) {
     transform-box: view-box;
     transform: scale(.9);
     transform-origin: top;
+  }
+
+  @media screen and (min-width: 64rem) {
+    zoom: 90%;
   }
 
   &:first-child {
@@ -78,15 +93,17 @@ export const RightContentWhyBuyCourse = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   min-width: 613px;
-  gap: 20px;
+  gap: 3rem;
 
   padding: 0 30px;
+
 
   @media (max-width: ${mediaQuery}) {
     min-width:420px;
     padding: 0;
     margin-right:0px;
-    padding-top:49px;
+    margin-top: 60px;
+
 
     p {
       font-size:16px;
@@ -108,9 +125,13 @@ export const BoldSpanWhyBuyCourse = styled.span`
 `;
 
 export const TextWhyBuyCourse = styled.p`
-  font-size: 18px;
+  font-size: 22px !important;
   color: ${blue700};
   margin-bottom: 0;
+
+  @media screen and (min-width: 64rem) {
+    font-size: 1.375rem;
+  }
 `;
 
 export const IconWhyBuyCourse = styled.span`

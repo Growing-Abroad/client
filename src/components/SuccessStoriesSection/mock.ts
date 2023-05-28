@@ -61,7 +61,7 @@ export const successStoriesData = [
     countryFlag: flagGana,
     video : {
       titleVideo: "Jason from Ghana",
-      urlVideo: "",
+      urlVideo: "https://www.youtube.com/embed/fRztFTpbJoY",
     }
   },
   {

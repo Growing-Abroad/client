@@ -20,9 +20,6 @@ export const FooterContainer = styled.footer<IFooter>`
   ${({usePageBody})=> {
     if (usePageBody) {
       return css`
-        /* position: relative;
-        bottom: -740px;
-        z-index: 2; */
       `
     }
   }}
@@ -49,6 +46,11 @@ export const StyledFooter = styled.div`
 
     width: 100%;
     height: 200px;
+
+    @media screen and (min-width: 64rem) {
+      top: -20px;
+      border-top: 5rem solid #fff;
+    }
   }
 `;
 

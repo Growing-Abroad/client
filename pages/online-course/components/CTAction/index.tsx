@@ -2,10 +2,8 @@ import * as S from "../../../../styles/online-course/components/CTActions/styles
 import gaCoaches from '@/../public/assets/cta-img.svg';
 import Image from 'next/image'
 import StdButton from "@/components/generics/StdButton/StdButton";
-import useAppContext from "@/hooks/useAppContext";
 
 function CTAction() {
-  const {isMobile} = useAppContext();
 
   return (
     <S.BackgroudCTA >

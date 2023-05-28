@@ -1,20 +1,16 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 
-interface BgImageProps {
-  src: string;
-}
 
 const {
-  colors: { blue400, blue500 },
+  colors: { blue500 },
 } = theme;
 const {
   sizes: {
     globalHorizontalPadding,
     maxWidthAll,
     mediaQuery,
-    globalHorizontalPaddingMobile,
   },
 } = variables;
 
@@ -49,7 +45,7 @@ export const DiscoverReadMoreWrapper = styled.div`
   background-color: ${blue500};
   display: flex;
   flex-direction: column;
-  padding: 3rem 2rem 2rem;
+  padding: 2rem;
   gap: 32px;
   align-items: center;
   max-width: 100%;

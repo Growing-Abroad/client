@@ -1,7 +1,7 @@
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
 import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.webp";
-import discount from "@/../public/assets/discount.svg"
+import discount from "@/../public/assets/discount.svg";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";
@@ -23,7 +23,18 @@ export function BigCard() {
         hasSpaceBtw
       />
       <S.BigCardWrapper>
-        <Image src={discount}  alt="discount" width={153} height={103} style={{position:"absolute", top:`${isMobile ? "380px" :"450px"}`, right:`${isMobile ? "-20px" :"70px"}`}}/>
+        <Image
+          src={discount}
+          alt="discount"
+          width={153}
+          height={103}
+          style={{
+            position: "absolute",
+            top: `${isMobile ? "380px" : "450px"}`,
+            right: `${isMobile ? "-20px" : "70px"}`,
+            transform: 'scale(1.5)'
+          }}
+        />
         <Image
           src={onlineCourse}
           alt=""
@@ -144,7 +155,7 @@ export function BigCard() {
             textAlign: `center`,
             width: `${isMobile ? "238px" : "365px"}`,
             padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-            marginRight: `${isMobile ? "0" : "30px"}`,
+            marginRight: '0',
             marginTop: `${isMobile ? "20px" : "0px"}`,
           }}
         >

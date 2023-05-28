@@ -166,11 +166,11 @@ export const Container = styled.div`
       width: 100%;
       padding: 46px ${globalHorizontalPaddingMobile};
 
-      gap: 25px;
+      gap: 7px !important;
 
       h1 {
-        font-size: 44px;
-        line-height: 54px;
+        font-size: 40px;
+        line-height: 1.2;
       }
       button {
         font-size: 1rem;

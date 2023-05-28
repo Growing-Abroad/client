@@ -3,10 +3,10 @@ import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
 
 const {
-  colors: { blue700, blue500, white },
+  colors: { blue700 },
 } = theme;
 const {
-  sizes: { maxWidthAll, mediaQuery },
+  sizes: { mediaQuery },
 } = variables;
 
 export const Container = styled.div`
@@ -18,6 +18,10 @@ export const Container = styled.div`
   justify-content: center;
   max-width: 1280px;
   padding-bottom: 80px;
+
+  @media screen and (min-width: 64rem) {
+    padding-bottom: 120px
+  }
 `;
 export const ContentTwoCards = styled.div`
   width: 100%;
@@ -45,7 +49,7 @@ export const ContentTwoCards = styled.div`
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 42px;
-    padding:50px 200px 76px;
+    padding:50px 100px 20px;
     .right-card{
       h3{
         font-size: 30px;

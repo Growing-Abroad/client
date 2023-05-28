@@ -28,11 +28,16 @@ export const OnlineCourseWrapper = styled.div`
   z-index: 1;
 
 
-  @media screen and (min-width: 1513px)  {
-    div#page-onlie-course {
+  div#page-onlie-course {
+
+    margin-top: calc( 720px + 60px );
+
+    @media screen and (min-width: 1513px)  {
       margin-top: calc( 800px + 4rem );
     }
   }
+
+
 `;
 
 export default function OnlineCourse() {

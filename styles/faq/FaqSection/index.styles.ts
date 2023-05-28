@@ -13,7 +13,7 @@ export const FaqSectionContainer = styled.div`
   width: 100%;
   height: 100%;
   gap: 29px;
-  padding: 75px ${globalHorizontalPadding};
+  padding: 40px ${globalHorizontalPadding};
 
   @media (max-width: ${mediaQuery}) {
     max-width: 100%;

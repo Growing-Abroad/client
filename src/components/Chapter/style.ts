@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import Image from "next/image";
 
 const {
   colors: { blue700, blue400 },
 } = theme;
 const {
-  sizes: { maxWidthAll, mediaQuery },
+  sizes: {  mediaQuery },
 } = variables;
 
 export const ChapterContainer = styled.div`
@@ -16,6 +15,10 @@ export const ChapterContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    margin-top: -8rem;
+  }
 
   :nth-child(1n) {
     h1 {
@@ -51,7 +54,7 @@ export const ChapterContent = styled.div`
   max-width: 1513px;
   background-color: white;
   padding-bottom: 40px;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 
   @media (max-width: ${mediaQuery}) {
     min-width: 430px;

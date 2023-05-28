@@ -50,26 +50,10 @@ export default function Footer({usePageBody}: IFooter) {
 
   return (
     <FooterContainer usePageBody={usePageBody}>
-      {/* {isMobile && (
-        <svg
-          className="wave"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 -40 1440 320"
-          style={{ marginBottom: "-10px", backgroundColor: 'white' }}
-        >
-          <path
-            fill="#0073CF"
-            fillOpacity="10"
-            d="M0,128L48,122.7C96,117,192,107,288,138.7C384,171,480,245,576,245.3C672,245,768,171,864,117.3C960,64,1056,32,1152,37.3C1248,43,1344,85,1392,106.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      )} */}
       <StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
-        {/* {!isMobile && (
-        )} */}
         <div
           style={{ backgroundImage: `url(${wave.src})` }}
-          className="wave"
+          className="wave wave-desktop"
         ></div>
         <FooterContentWrapper>
           <NewsLetter />

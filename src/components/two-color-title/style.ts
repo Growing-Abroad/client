@@ -15,6 +15,17 @@ export const TwoColorTitleWrapper = styled.div`
   justify-content: center;
   width: max-content;
 
+.title-why-buy-course {
+
+  @media screen and (max-width: 32rem) {
+    margin-top: -10rem;
+  }
+
+  @media (min-width: 33rem) and (max-width: 64rem) {
+    margin-top: -6rem;
+  }
+}
+
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
   }
