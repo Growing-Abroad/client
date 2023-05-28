@@ -28,7 +28,7 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 78px 0 18px;
-  z-index: 230;
+  z-index: 600;
 
   @media (min-width: ${breakpoints.tablet.max}px) {
     height: 90px;

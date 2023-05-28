@@ -1,18 +1,13 @@
 import TwoColorTitle from "@components/two-color-title";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import videoBackground from "@assets/pages/sales/Online-Course-Dream.webp";
 import Image from "next/image";
 import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
 import classes from "./style.module.css";
-import { Montserrat } from "next/font/google";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
 import useAppContext from "@/hooks/useAppContext";
 import VideoComponent from "@/components/VideoComponent";
 import StdButton from "@/components/generics/StdButton/StdButton";
-
-const font = Montserrat({
-  subsets: ["latin"],
-});
 
 function FollowDreams() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -29,13 +24,13 @@ function FollowDreams() {
   }, [isVideoPlaying, setIsVideoPlaying]);
 
   return (
-    <S.Container style={{gap:'20px', paddingBottom:`${isMobile ? '0px':''}`}}>
+    <S.Container style={{gap:'40px', paddingBottom:`${isMobile ? '0px':''}`}}>
       <TwoColorTitle
-        text1="It is time to start your journey and"
+        text1="Start your journey and Follow your Dream!"
         text2="Follow your Dream!"
         hasSpaceBtw
         className={classes.followDreamsTitle}
-        fontSize={isMobile ?"36px" :"52px"}
+        fontSize={isMobile ?"32px" :"52px"}
         wrapperStyles={{
           width:`${isMobile ? '350px':'1160px'}`,
           flexDirection:"column",

@@ -10,15 +10,11 @@ import WhatOurClientsSay from "./components/what-our-clients-say";
 import ReusedFaq from "@/components/reused-faq";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.webp";
-import ContainerHero from "@/components/ContainerHero";
-import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
 import useAppContext from "@/hooks/useAppContext";
-import Wave from "@/components/Wave";
-import PageBody from "@/components/generics/PageBody";
 import PageBodyLayout from "@/components/generics/PageBody";
 
 export default function Coaching() {
-  const { isMobile, windowSize: {width} } = useAppContext();
+  const { windowSize: {width} } = useAppContext();
 
   const text1: IText = {
     heading: "Goal",

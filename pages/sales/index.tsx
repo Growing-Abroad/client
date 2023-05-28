@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import { PageLayout } from "@/components";
 import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
@@ -20,7 +20,11 @@ import Investiment from "./components/Investiment";
 import CareerExperts from "./components/CareerExperts";
 import BigCard from "@pages/online-course/components/BigCard";
 import PageBodyLayout from "@/components/generics/PageBody";
-import SuccessStoriesSection from "@/components/SuccessStoriesSection";
+import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
+import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
+import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
+import { ModalLayout } from "@/components/ModalLayout";
+import useModal, { ModalHook } from "@/hooks/useModal";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -32,45 +36,68 @@ export const SalesWrapper = styled.div`
 
   #page-sales {
     @media screen and (min-width: 1024px) {
-      margin-top: calc( 780px + -2rem );
+      margin-top: calc(780px + -2rem);
     }
 
     @media screen and (min-width: 1440px) {
-      margin-top: calc( 780px + 4rem );
+      margin-top: calc(780px + 4rem);
     }
   }
 `;
 
 export default function Sales() {
   const { isMobile } = useAppContext();
+  const [isModalVisible, handleModal]: ModalHook = useModal();
+  const [dataVideo, setDataVideo] = useState();
 
   return (
-    <SalesWrapper>
-      <CTAction />
-      <PageBodyLayout
-        id="page-sales"
-        distanceFromTop={isMobile ? "850px" : "780px"}
-        waveType={EWaveType.linear}
-      >
-
-        <WhyBuyCourse />
-        <Motivation />
-        <FollowDreams />
-        <CareerExperts activeImage={uan.src} smallImage={manu.src} />
-        <WhatYouGet />
-        <Chapter  />
-        <BigCard />
-        <SuccessStoriesSection />
-        <TwoCards />
-        <Investiment />
-        <TwoColorTitle
-          text1="Frequently "
-          text2="Asked Questions"
-          styles={{ width: `${isMobile ? "387px" : ""}` }}
-        />
-        <FaqSection accordeons={OnlineCourseFaqMockUp} />
-      </PageBodyLayout>
-    </SalesWrapper>
+    <>
+      <ModalLayout
+        visible={isModalVisible}
+        onClose={handleModal}
+        dataVideo={dataVideo}
+      />
+      <SalesWrapper>
+        <CTAction />
+        <PageBodyLayout
+          id="page-sales"
+          distanceFromTop={isMobile ? "850px" : "780px"}
+          waveType={EWaveType.linear}
+        >
+          <WhyBuyCourse />
+          <Motivation />
+          <FollowDreams />
+          <CareerExperts activeImage={uan.src} smallImage={manu.src} />
+          <WhatYouGet />
+          <Chapter />
+          <BigCard />
+          <SuccessStoriesSection>
+            <TwoColorTitle
+              as="h2"
+              text1="Success"
+              text2="Stories"
+              hasSpaceBtw
+              wrapperStyles={{ maxWidth: "100%" }}
+              styles={isMobile ? { lineHeight: "2.75rem" } : {}}
+            />
+            <OriginalFancyCarousel
+              dataArray={successStoriesData}
+              openModal={handleModal}
+              visibleModal={isModalVisible}
+              getDataVideo={setDataVideo}
+            />
+          </SuccessStoriesSection>
+          <TwoCards />
+          <Investiment />
+          <TwoColorTitle
+            text1="Frequently "
+            text2="Asked Questions"
+            styles={{ width: `${isMobile ? "387px" : ""}` }}
+          />
+          <FaqSection accordeons={OnlineCourseFaqMockUp} />
+        </PageBodyLayout>
+      </SalesWrapper>
+    </>
   );
 }
 

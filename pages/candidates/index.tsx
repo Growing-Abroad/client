@@ -1,7 +1,7 @@
 import CallToAction from "./components/CallToAction/CallToAction";
 import WorkIn from "./components/WorkIn/WorkIn";
 import OurServicesSection from "./components/OurServices";
-import SuccessStories from "./components/Success-stories";
+import { StoriesPageCandidates } from "./components/StoriesPageCandidates";
 import CommunitySection from "./components/Community";
 import BlogSection from "./components/Blog/BlogSection";
 import { ReactElement } from "react";
@@ -56,7 +56,7 @@ const Candidates: NextPageWithLayout = () => {
         <WorkIn />
         <DiscoverGA />
         <OurServicesSection />
-        <SuccessStories />
+        <StoriesPageCandidates />
         <CommunitySection />
         <BlogSection />
       </PageBodyLayout>

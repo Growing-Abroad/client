@@ -9,7 +9,7 @@ const VerticalBar: React.FC = () => {
     { index: 2, height: '910px' },
     { index: 3, height: '830px' },
     { index: 4, height: '870px' },
-    { index: 5, height: '860px' },
+    { index: 5, height: '462px' },
     { index: 6, height: '' },
   ];
   const [barColor, setBarColor] = useState<string>('#0073CF');

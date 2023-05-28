@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
+
 import TwoColorTitle from "@components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import uan from "@/../public/assets/pages/sales/uan.png";
@@ -10,7 +11,10 @@ import {
 } from "styles/candidates/components/DiscoverGA/index.styles";
 import { DiscoverContent } from "@/components/BlueSquareWithCaroulsel/style";
 
-const CareerExpertsContainer = styled.div`
+
+
+
+export const CareerExpertsContainer = styled.div`
   width: 60%;
   height: 510px;
   display: flex;
@@ -19,18 +23,18 @@ const CareerExpertsContainer = styled.div`
   gap: 30px;
 `;
 
-const ActiveImage = styled.img`
+export const ActiveImage = styled.img`
   width: 380px;
   height: 485px;
   object-fit: cover;
 
   @media (max-width: 768px) {
     width: 396px;
-    height: 328px;
+    height: 380px;
   }
 `;
 
-const SmallImage = styled.img`
+export const SmallImage = styled.img`
   cursor: pointer;
   width: 187px;
   height: 405px;
@@ -39,17 +43,19 @@ const SmallImage = styled.img`
   opacity: 0.5;
 `;
 
-const BoxDiscover = styled.div`
+export const BoxDiscover = styled.div`
   width: 100%;
   height: 100%;
 `
 
-interface Props {
+
+interface CareerExpertsProps {
   activeImage: string;
   smallImage: string;
 }
 
-export default function CareerExperts({ activeImage, smallImage }: Props) {
+
+export default function CareerExperts({ activeImage, smallImage }: CareerExpertsProps) {
   const { isMobile } = useAppContext();
   const [activeImageId, setActiveImageId] = useState<"uan" | "manu">("uan");
 
@@ -65,7 +71,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
       }}
     >
       <TwoColorTitle
-        text1={isMobile ? "We are Uan & Manu" : "We are Uan & Manu"}
+        text1={"“Uan & Manu your Career Experts”"}
         text2="your Career Experts"
         hasSpaceBtw
         as="h2"
@@ -75,6 +81,7 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
           width: `${isMobile ? "340px" : ""}`,
           display: "flex",
           flexDirection: "column",
+          fontSize: `${isMobile ? "32px" : "58px"}`,
           gap: "0",
         }}
       />
@@ -85,10 +92,10 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
             style={{
               display: "flex",
               flexDirection: "column",
-              margin: "26px 22px 48px 22px",
+              margin: "26px 22px 0 22px",
             }}
           >
-            <ActiveImage src={uan.src} alt={smallImage} />
+            <ActiveImage src={uan.src} alt={smallImage}  className="uan-image"/>
             <DiscoverReadMoreWrapper>
               <BoxDiscover>
                 <p
@@ -124,16 +131,16 @@ export default function CareerExperts({ activeImage, smallImage }: Props) {
             style={{
               display: "flex",
               flexDirection: "column",
-              margin: "26px 22px 48px 22px",
+              margin: "26px 22px 0 22px",
             }}
           >
             <ActiveImage
               src={manu.src}
               alt={smallImage}
-              style={{ objectPosition: "150%" }}
+              style={{ objectPosition: "120%" }}
               className="manu-image"
             />
-            <DiscoverReadMoreWrapper style={{ margin: "26px 22px 48px 22px" }}>
+            <DiscoverReadMoreWrapper style={{ margin: "26px 22px 0 22px" }}>
               <BoxDiscover>
                 <p
                   style={{
