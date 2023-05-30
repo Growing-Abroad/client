@@ -8,9 +8,7 @@ import {
   CardsContainer,
   CardSeparator,
   Container,
-  Subtitle,
   TitlesContainer,
-  SubtitleContainer,
 } from "@/../styles/components/RecrutingAndCareerServicesSection/index.styles";
 import { CardWithImage } from "@/components";
 import useAppContext from "@/hooks/useAppContext";
@@ -18,7 +16,6 @@ import useAppContext from "@/hooks/useAppContext";
 function RecruitingAndCareerServicesSection() {
   const {
     windowSize: { width },
-    isMobile,
     smallDesktopSize,
   } = useAppContext();
 

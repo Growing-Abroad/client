@@ -1,15 +1,8 @@
 import styled from 'styled-components';
-import { variables } from "@/styles/global-variables";
-
-const {
-  sizes: {
-    globalHorizontalPaddingMobile,
-  },
-} = variables;
 
 
 export const SuccessStoriesWrapperSection = styled.section`
-    padding: 120px 140px 120px;
+    padding: 80px 60px 80px;
     max-width: 1800px;
     width: 100%;
 
@@ -18,11 +11,11 @@ export const SuccessStoriesWrapperSection = styled.section`
     align-items: center;
     gap: 50px;
 
-    zoom: 85%;
-    transform: scale(.9);
+    zoom: 80%;
+    transform: scale(.85);
 
 
-    @media(max-width:430px) {
+    @media (max-width:430px) {
       padding: 80px 0 133px;
       gap: 30px;
     }

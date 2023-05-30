@@ -18,7 +18,7 @@ export const DiscoverGrowingAbroadSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px ${globalHorizontalPadding};
+  padding: 80px 20px;
   gap: 48px;
   width: 100%;
   max-width: ${maxWidthAll};

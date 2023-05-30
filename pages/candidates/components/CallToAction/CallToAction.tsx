@@ -1,7 +1,5 @@
 import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
-import gaCoaches from "@/../public/assets/cta-img.svg";
-import ctaMask from "@/../public/assets/pages/main-page/hero-section-mask.svg";
-import ctaMaskMobile from "@/../public/assets/pages/main-page/hero-section-mask.svg";
+import gaCoaches from "@/../public/assets/new-cta-img.webp";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";

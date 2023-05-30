@@ -120,16 +120,26 @@ export const CardText = styled.li`
   width:100%;
   align-items: center;
   justify-content: start;
-  text-align: left;
-  font-weight: 400;
-  line-height: 26px;
-  font-size: 16px;
-  letter-spacing: 0.04em;
   gap: 26px;
-  color:#05335B;
+
   @media (max-width: ${mediaQuery}) {
     width:320px;
-    font-weight: 500;
+  }
 
+  p {
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 16px;
+    text-align: left;
+    color:#05335B;
+    letter-spacing: 0.04em;
+
+    strong {
+      text-decoration: underline ${blue500};
+    }
+
+    @media (max-width: ${mediaQuery}) {
+      font-weight: 500;
+    }
   }
 `;

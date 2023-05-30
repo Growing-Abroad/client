@@ -26,7 +26,7 @@ function FollowDreams() {
   return (
     <S.Container style={{gap:'40px', paddingBottom:`${isMobile ? '0px':''}`}}>
       <TwoColorTitle
-        text1="Start your journey and Follow your Dream!"
+        text1="Start your journey!"
         text2="Follow your Dream!"
         hasSpaceBtw
         className={classes.followDreamsTitle}

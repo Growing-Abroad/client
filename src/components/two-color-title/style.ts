@@ -13,7 +13,7 @@ export const TwoColorTitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: max-content;
+  width: 95%;
 
 .title-why-buy-course {
 

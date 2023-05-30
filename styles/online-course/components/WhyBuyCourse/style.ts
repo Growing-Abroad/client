@@ -67,7 +67,7 @@ export const ContentWhyBuyCourse = styled.div`
   }
 
   @media screen and (min-width: 64rem) {
-    zoom: 90%;
+    zoom: 85%;
   }
 
   &:first-child {
@@ -92,7 +92,7 @@ export const RightContentWhyBuyCourse = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-width: 613px;
+  min-width: calc(90% - 570px);
   gap: 3rem;
 
   padding: 0 30px;

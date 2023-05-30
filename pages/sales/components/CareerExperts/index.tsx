@@ -71,7 +71,7 @@ export default function CareerExperts({ activeImage, smallImage }: CareerExperts
       }}
     >
       <TwoColorTitle
-        text1={"“Uan & Manu your Career Experts”"}
+        text1={"“Uan & Manu"}
         text2="your Career Experts"
         hasSpaceBtw
         as="h2"

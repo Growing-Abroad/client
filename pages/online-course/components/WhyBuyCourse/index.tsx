@@ -3,6 +3,7 @@ import threePersons from "@/../public/assets/images/card-online-course-goals.web
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
+import { IconCheck } from "@/components/Icons";
 
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
@@ -14,22 +15,12 @@ export function WhyBuyCourse() {
           width={isMobile ? 520 : 748}
           height={isMobile ? 390 : 558}
           alt="Why buy course banner"
+          priority
         />
         <S.RightContentWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Learn all the steps you have to take to land your{" "}
@@ -39,18 +30,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Discover
@@ -60,18 +40,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Create a<S.BoldSpanWhyBuyCourse> UNIQUE APPLICATION </S.BoldSpanWhyBuyCourse>in German and
@@ -81,18 +50,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Create a professional Business Profile to{" "}
@@ -102,18 +60,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               <S.BoldSpanWhyBuyCourse>CONVINCE</S.BoldSpanWhyBuyCourse> in every single
@@ -123,18 +70,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <S.IconWhyBuyCourse>
-              <svg
-                width="26"
-                height="19"
-                viewBox="0 0 26 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.10938 17.8252C9.57812 18.2939 10.375 18.2939 10.8438 17.8252L24.625 4.04395C25.0938 3.5752 25.0938 2.77832 24.625 2.30957L22.9375 0.62207C22.4688 0.15332 21.7188 0.15332 21.25 0.62207L10 11.8721L4.70312 6.62207C4.23438 6.15332 3.48438 6.15332 3.01562 6.62207L1.32812 8.30957C0.859375 8.77832 0.859375 9.5752 1.32812 10.0439L9.10938 17.8252Z"
-                  fill="#FFDB5C"
-                />
-              </svg>
+              <IconCheck/>
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Land your <S.BoldSpanWhyBuyCourse>DREAM JOB</S.BoldSpanWhyBuyCourse> in Germany or Europe

@@ -19,7 +19,7 @@ export function WhatYouGet() {
     >
       <TwoColorTitle
         className="discover-title"
-        text1="What you get in this Online Course   "
+        text1="What you get in"
         text2="this Online Course"
         hasSpaceBtw
         styles={{
