@@ -17,7 +17,7 @@ export const ChapterContainer = styled.div`
   width: 100%;
 
   @media screen and (max-width: 768px) {
-    margin-top: -8rem;
+    margin-top: -6rem;
   }
 
   :nth-child(1n) {

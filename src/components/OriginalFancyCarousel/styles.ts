@@ -20,10 +20,14 @@ export const FlexboxSlider = styled.div`
   visibility: hidden;
   align-items: baseline;
 
-  @media (min-width: 200px) and (max-width: 1280px) {
-    gap: calc(0.4375rem + ((1vw - 3.5px) * 3.1183));
-    height: calc(12.5rem + ((1vw - 2px) * 18.5185));
-    min-height: 0;
+  @media screen and (max-width: 438px) {
+    height: 260px;
+  }
+
+  @media (min-width: 440px) and (max-width: 1280px) {
+    gap: 20px;
+    height: 400px;
+    width: 100%;
   }
 
   .short {
@@ -118,9 +122,9 @@ export const FlexboxSlide = styled.div`
   }
 
   @media (min-width: 200px) and (max-width: 1280px) {
-    width: calc(0.625rem + ((1vw - 2px) * 3.7037));
-    min-width: calc(0.625rem + ((1vw - 2px) * 3.7037));
-    min-height: 0;
+    width: 50px;
+    min-width: 50px;
+    height: 100%;
 
     .slide-img {
       left: 78%;
@@ -166,7 +170,7 @@ export const TextBlock = styled.div`
   }
 
   @media (min-width: ${mediaQuery}) and (max-width: 1200px) {
-    padding: 0 0 30px 5px;
+    padding: 20px;
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -182,7 +186,7 @@ export const TextBlock = styled.div`
 `;
 
 export const TextBlockH3 = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: 1.3px;
   font-weight: 600;
@@ -193,10 +197,9 @@ export const TextBlockH3 = styled.h3`
   opacity: 0;
 
 
-  font-size: 2rem;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;

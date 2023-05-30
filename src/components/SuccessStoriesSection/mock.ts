@@ -37,7 +37,7 @@ export const successStoriesData = [
     countryFlag: flagGana,
     video : {
       titleVideo: "Acheampong from Ghana",
-      urlVideo: "",
+      urlVideo: "https://www.youtube.com/embed/Xhr0xu3gd0M",
     }
   },
   {
@@ -49,7 +49,7 @@ export const successStoriesData = [
     countryFlag: flagPakistan,
     video : {
       titleVideo: "Amna from Pakistan",
-      urlVideo: "",
+      urlVideo: "https://www.youtube.com/embed/aZj2r6J9OF0",
     }
   },
   {
@@ -90,7 +90,7 @@ export const successStoriesData = [
   },
   {
     imgSrc: profileMichaela,
-    fullTitle: "“TI was applying to many jobs and I was getting many rejections and after I met Growing Abroad, happily I succeeded.”",
+    fullTitle: "“I was applying to many jobs and I was getting many rejections and after I met Growing Abroad, happily I succeeded.”",
     mobileTitle: "“I was getting many rejections. After I met Growing Abroad I succeeded.”",
     from: `Michaela from Moldova`,
     href: "",

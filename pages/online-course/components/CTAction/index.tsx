@@ -1,5 +1,5 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles"
-import gaCoaches from '@/../public/assets/cta-img.svg';
+import gaCoaches from '@/../public/assets/new-cta-img.webp';
 import Image from 'next/image'
 import StdButton from "@/components/generics/StdButton/StdButton";
 
@@ -22,6 +22,8 @@ function CTAction() {
               alt="growing abroad coaches"
               width={616}
               style={{objectFit: 'contain', border: "1px solid transparent"}}
+              priority
+              quality={100}
             />
           </div>
         </section>

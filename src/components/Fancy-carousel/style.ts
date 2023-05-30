@@ -248,7 +248,6 @@ export const TextBlock = styled.div`
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
     max-width: 75%;
-    /* width: 75%; */
 
     p {
       font-size: 0.875rem;
@@ -258,7 +257,7 @@ export const TextBlock = styled.div`
 `;
 
 export const TextBlockH3 = styled.h3`
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 2.438rem;
   letter-spacing: 1.3px;
   font-weight: 600;
@@ -266,10 +265,9 @@ export const TextBlockH3 = styled.h3`
   display: flex;
   gap: 8px;
   opacity: 0;
-  font-size: 2rem;
 
   @media (max-width: ${mediaQuery}) {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
