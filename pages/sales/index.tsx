@@ -25,6 +25,8 @@ import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
+import _useLocale from "@/hooks/useLocale";
+import { IntlProvider } from "react-intl";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -102,7 +104,10 @@ export default function Sales() {
 }
 
 Sales.getLayout = function getLayout(page: ReactElement) {
+  const { locale, messages } = _useLocale();
   return (
-    <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    </IntlProvider>
   );
 };

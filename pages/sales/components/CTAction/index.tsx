@@ -3,10 +3,23 @@ import gaCoaches from "@/../public/assets/new-cta-img.webp";
 import Image from "next/image";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import { TextChanger } from "components/TextChanger";
+import { useIntl } from "react-intl";
 
 function CTAction() {
   const { isMobile } = useAppContext();
 
+  const intl = useIntl()
+
+  const t = (id: string): string => {
+    return intl.formatMessage({ id });
+  };
+
+
+  const texts = [
+    "page.home.callToAction.germany",
+    "page.home.callToAction.europe",
+  ]
 
   return (
     <S.BackgroudCTA style={{ maxHeight: `${isMobile ? "830px" : ""}` }}>
@@ -16,7 +29,8 @@ function CTAction() {
           style={{ gap: "23px",  }}
         >
           <h1>
-            Land your Dream Job in <span>Germany</span> or <span>Europe</span>
+            {t("page.sales.callToAction") + " "}
+            <TextChanger texts={texts} duration={3000} />
           </h1>
           <span
             style={{
