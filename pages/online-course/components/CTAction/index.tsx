@@ -1,9 +1,15 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles"
 import gaCoaches from '@/../public/assets/new-cta-img.webp';
+import goCoachesMobile from '@/../public/assets/image-mainHero-mobile.png'
 import Image from 'next/image'
 import StdButton from "@/components/generics/StdButton/StdButton";
+import useAppContext from "@/hooks/useAppContext";
 
 function CTAction() {
+
+  const { isMobile } = useAppContext()
+
+  const imageSource = isMobile ? goCoachesMobile : gaCoaches
 
   return (
     <S.BackgroudCTA >
@@ -18,7 +24,7 @@ function CTAction() {
         <section className="right-side">
           <div className="right-side-img-container">
             <Image
-              src={gaCoaches}
+              src={imageSource}
               alt="growing abroad coaches"
               width={616}
               style={{objectFit: 'contain', border: "1px solid transparent"}}
