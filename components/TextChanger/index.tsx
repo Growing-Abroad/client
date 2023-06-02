@@ -39,6 +39,6 @@ export const TextChanger = ({ texts, duration }: TextChangerProps) => {
   }, [currentIndex, duration, textsTranslations.length])
 
   return (
-    <div key={currentName} className="title-change">{currentName}</div>
+    <span key={currentName} className="title-change">{currentName}</span>
   )
 }
