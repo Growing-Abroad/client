@@ -37,15 +37,13 @@ const Wave: React.FC<WaveParameters> = ({
 
   return (
     <Wrapper height={height} style={{ ...styles }} waveType={type}>
-      {!isMobile && (
-        <Image
-          src={getWaveType()}
-          style={{ bottom: "-2px" }}
-          className={className}
-          alt="white border"
-          fill={true}
-        />
-      )}
+      <Image
+        src={getWaveType()}
+        style={{ bottom: "-2px" }}
+        className={className}
+        alt="white border"
+        fill={true}
+      />
     </Wrapper>
   );
 };
