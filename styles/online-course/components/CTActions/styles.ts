@@ -73,6 +73,7 @@ export const BannerMainContainer = styled.section`
     align-items: flex-start;
     gap: 1.5rem;
     padding-top: 2.3125rem;
+    flex: 1;
     h1 {
       max-width: 17.4375rem;
       color: #fff;
@@ -141,19 +142,13 @@ export const BannerMainContainer = styled.section`
     }
 
     .right-side {
-      width: 100%;
+      width: auto;
       margin-top: 0;
 
       img {
         max-width: 41.0625rem;
         max-height: 36.0625rem;
       }
-    }
-  }
-
-  @media screen and (min-width: 1441px) {
-    .right-side {
-      width: 100%;
     }
   }
 `;

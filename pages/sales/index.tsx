@@ -37,12 +37,10 @@ export const SalesWrapper = styled.div`
   z-index: 1;
 
   #page-sales {
-    @media screen and (min-width: 1024px) {
-      margin-top: calc(780px + -2rem);
-    }
+    margin-top: calc( 720px + 60px );
 
-    @media screen and (min-width: 1440px) {
-      margin-top: calc(780px + 4rem);
+    @media screen and (min-width: 1513px)  {
+      margin-top: calc( 800px + 4rem );
     }
   }
 `;
