@@ -81,8 +81,46 @@ export const BannerMainContainer = styled.section`
       font-weight: 600;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-      span {
-        color: #ffdb5c;
+      .title-change {
+        font-weight: 600;
+        animation-iteration-count: 1;
+        position: relative;
+        left: -200px;
+        opacity: 0;
+        animation-fill-mode: both;
+        display: inline-block;
+        color: ${blue500};
+        animation: text-enter-germany 3000ms ease;
+
+        @keyframes text-enter-germany {
+          0% {
+            left: -200px;
+            color: ${blue500};
+            visibility: hidden;
+            opacity: 0;
+          }
+          20% {
+            left: 0;
+            visibility: visible;
+            color: ${blue700};
+          }
+          40% {
+            color: ${yellow400};
+            opacity: 1;
+          }
+          80% {
+            left: 0;
+            visibility: visible;
+            color: ${yellow400};
+            opacity: 1;
+          }
+          100% {
+            left: 200px;
+            visibility: hidden;
+            opacity: 0;
+            color: ${blue500};
+          }
+        }
       }
     }
   }
