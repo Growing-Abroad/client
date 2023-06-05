@@ -73,7 +73,7 @@ export const successStoriesData = [
     countryFlag: flagIndia,
     video : {
       titleVideo: "Saransh from India",
-      urlVideo: "",
+      urlVideo: "https://www.youtube.com/embed/cmRbJNa2KDw",
     }
   },
   {
@@ -97,7 +97,7 @@ export const successStoriesData = [
     countryFlag: flagMoldova,
     video : {
       titleVideo: "Michaela from Moldova",
-      urlVideo: "",
+      urlVideo: "https://www.youtube.com/embed/KVBaVE5f5Rg",
     }
   }
 
