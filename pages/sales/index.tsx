@@ -27,6 +27,8 @@ import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
 import _useLocale from "@/hooks/useLocale";
 import { IntlProvider } from "react-intl";
+import DiscoverGA from "./components/DiscoverGA";
+import { AboutCarousel } from "@/components/AboutCarousel";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -67,7 +69,8 @@ export default function Sales() {
           <WhyBuyCourse />
           <Motivation />
           <FollowDreams />
-          <CareerExperts activeImage={uan.src} smallImage={manu.src} />
+          <DiscoverGA />
+          <AboutCarousel imageContent1={uan} imageContent2={manu} slideContent1="ola mundo" slideContent2="ola mundo 2" />
           <WhatYouGet />
           <Chapter />
           <BigCard />

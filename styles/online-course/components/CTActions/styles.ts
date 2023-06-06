@@ -126,16 +126,13 @@ export const BannerMainContainer = styled.section`
   }
 
   .right-side {
-    margin-top: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     img {
       width: 100%;
       height: 100%;
-    }
-  }
-
-  @media screen and (max-width: 374px) {
-    .right-side {
-      margin-top: 34%;
     }
   }
 
@@ -152,6 +149,7 @@ export const BannerMainContainer = styled.section`
     }
 
     .right-side {
+      position: relative;
       width: 60%;
       display: flex;
       flex-direction: column;

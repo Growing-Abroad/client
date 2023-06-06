@@ -49,8 +49,9 @@ export const DiscoverReadMoreWrapper = styled.div`
   gap: 32px;
   align-items: center;
   max-width: 100%;
-  width: 40%;
+  width: 100%;
   height: 35rem;
+  border-radius: 10px;
 
   .discover-text {
     color: white;
