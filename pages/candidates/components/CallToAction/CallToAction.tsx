@@ -5,8 +5,12 @@ import { useIntl } from "react-intl";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { TextChanger } from "components/TextChanger";
+import useAppContext from "@/hooks/useAppContext";
 
 function CallToAction() {
+
+  const { isMobile } = useAppContext()
+
   const intl = useIntl();
 
   const t = (id: string): string => {
@@ -30,7 +34,7 @@ function CallToAction() {
           </h1>
           <StdButton
             icon={faPlay}
-            style={{ textTransform: "uppercase", fontWeight: "800" }}
+            style={{ textTransform: "uppercase", fontWeight: "800", fontSize: isMobile ? ".875rem" : "" }}
           >
             Watch Free Masterclass
           </StdButton>
@@ -46,14 +50,6 @@ function CallToAction() {
           </div>
         </div>
       </S.Container>
-      {/* <div className="cta-mask">
-        <Image
-          src={isMobile ? ctaMaskMobile : ctaMask}
-          alt="styled mask"
-          width={width}
-        />
-        <div className="white-line"></div>
-      </div> */}
     </S.BackgroudCTA>
   );
 }
