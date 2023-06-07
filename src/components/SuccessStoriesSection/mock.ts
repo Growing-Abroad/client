@@ -25,7 +25,7 @@ export const successStoriesData = [
     countryFlag: flagBrasil,
     video : {
       titleVideo: "Bianca from Brazil",
-      urlVideo: "https://www.youtube.com/embed/SgSwODLso0E",
+      urlVideo: "https://www.youtube-nocookie.com/embed/SgSwODLso0E",
     }
   },
   {
@@ -37,7 +37,7 @@ export const successStoriesData = [
     countryFlag: flagGana,
     video : {
       titleVideo: "Acheampong from Ghana",
-      urlVideo: "https://www.youtube.com/embed/Xhr0xu3gd0M",
+      urlVideo: "https://www.youtube-nocookie.com/embed/Xhr0xu3gd0M",
     }
   },
   {
@@ -49,7 +49,7 @@ export const successStoriesData = [
     countryFlag: flagPakistan,
     video : {
       titleVideo: "Amna from Pakistan",
-      urlVideo: "https://www.youtube.com/embed/aZj2r6J9OF0",
+      urlVideo: "https://www.youtube-nocookie.com/embed/aZj2r6J9OF0",
     }
   },
   {
@@ -61,7 +61,7 @@ export const successStoriesData = [
     countryFlag: flagGana,
     video : {
       titleVideo: "Jason from Ghana",
-      urlVideo: "https://www.youtube.com/embed/fRztFTpbJoY",
+      urlVideo: "https://www.youtube-nocookie.com/embed/fRztFTpbJoY",
     }
   },
   {
@@ -73,7 +73,7 @@ export const successStoriesData = [
     countryFlag: flagIndia,
     video : {
       titleVideo: "Saransh from India",
-      urlVideo: "https://www.youtube.com/embed/cmRbJNa2KDw",
+      urlVideo: "https://www.youtube-nocookie.com/embed/cmRbJNa2KDw",
     }
   },
   {
@@ -85,7 +85,7 @@ export const successStoriesData = [
     countryFlag: flagJordan,
     video : {
       titleVideo: "Zeid from Jordan",
-      urlVideo: "https://www.youtube.com/embed/eWCBG4nX84o",
+      urlVideo: "https://www.youtube-nocookie.com/embed/eWCBG4nX84o",
     }
   },
   {
@@ -97,7 +97,7 @@ export const successStoriesData = [
     countryFlag: flagMoldova,
     video : {
       titleVideo: "Michaela from Moldova",
-      urlVideo: "https://www.youtube.com/embed/KVBaVE5f5Rg",
+      urlVideo: "https://www.youtube-nocookie.com/embed/KVBaVE5f5Rg",
     }
   }
 

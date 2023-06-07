@@ -6,7 +6,7 @@ export const VideoIframe = ({ url, title }: T.VideoProps) => {
   return (
     <div className="box-content-video">
       {url ? (
-          <iframe
+        <iframe
           width="560"
           height="315"
           src={url}
@@ -16,12 +16,17 @@ export const VideoIframe = ({ url, title }: T.VideoProps) => {
           allowFullScreen
         ></iframe>
       ) : (
-       <div style={{width: '100%', height: '100%', backgroundColor: 'black'}}>
-          <p style={{color: 'white', textAlign: 'center', marginTop: '50%'}}>
+        <div
+          style={{ width: "100%", height: "100%", backgroundColor: "black" }}
+        >
+          <p style={{ color: "white", textAlign: "center", marginTop: "50%" }}>
             No video available
-            <span role="img" aria-label="sad face"> 😢</span>
+            <span role="img" aria-label="sad face">
+              {" "}
+              😢
+            </span>
           </p>
-       </div>
+        </div>
       )}
     </div>
   );
