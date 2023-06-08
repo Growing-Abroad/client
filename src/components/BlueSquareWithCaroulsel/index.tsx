@@ -1,34 +1,34 @@
 import {
-    CarouselContainer,
-    DiscoverContent,
-    IContentProps,
+  CarouselContainer,
+  DiscoverContent,
+  IContentProps,
 } from "@components/BlueSquareWithCaroulsel/style";
 import FancyCarousel, { ICarouselData, index } from "../Fancy-carousel";
 import { PropsWithChildren } from 'react';
 
 export interface IBlueSquareProps extends PropsWithChildren, IContentProps {
-    carouselData: ICarouselData[];
-    onSlideClickCallback?(index: index): void;
-    changeOnHover?: boolean;
+  carouselData: ICarouselData[];
+  onSlideChangeCallback?(index: index): void;
+  changeOnHover?: boolean;
 }
 
-export default function BlueSquareWithCarousel({ carouselData, children, changeOnHover, onSlideClickCallback, columnReversed }: IBlueSquareProps) {
+export default function BlueSquareWithCarousel({ carouselData, children, changeOnHover, onSlideChangeCallback, columnReversed }: IBlueSquareProps) {
 
-    return (
-        <DiscoverContent columnReversed={columnReversed} >
-            {children}
+  return (
+    <DiscoverContent columnReversed={columnReversed} >
+      {children}
 
-            <CarouselContainer>
-                <FancyCarousel
-                    initialSlideIndex={1}
-                    haveSmallsSlides
-                    dataArray={carouselData}
-                    IsCentralized
-                    isIntroducingAPerson
-                    onSlideClickCallback={onSlideClickCallback}
-                    changeOnHover={changeOnHover}
-                />
-            </CarouselContainer>
-        </DiscoverContent>
-    );
+      <CarouselContainer>
+        <FancyCarousel
+          initialSlideIndex={1}
+          haveSmallsSlides
+          dataArray={carouselData}
+          IsCentralized
+          isIntroducingAPerson
+          onSlideClickCallback={onSlideChangeCallback}
+          changeOnHover={changeOnHover}
+        />
+      </CarouselContainer>
+    </DiscoverContent>
+  );
 }
