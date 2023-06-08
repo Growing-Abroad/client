@@ -9,28 +9,19 @@ const {
   colors: { blue500, blue700, yellow400 },
 } = theme;
 
-export const BackgroudCTA = styled.section`
-  margin-top: 60px;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 650px;
-  max-height: 800px;
-  overflow: hidden;
+interface BackgroundCTAProps {
+  isMobile: boolean;
+}
 
-  @media (max-width: ${mediaQuery}) {
-    background-position: -155px;
-    justify-content: flex-start;
-    max-height: 700px;
-  }
+export const BackgroudCTA = styled.section<BackgroundCTAProps>`
+  margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
+  width: 100%;
+  max-height: ${({ isMobile }) =>
+    isMobile ? "776px" : "800px"};
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
   background-color: ${blue500};
 `;
 
@@ -62,24 +53,33 @@ export const CtaButton = styled.button`
 `;
 
 export const BannerMainContainer = styled.section`
-  width: 100%;
   max-width: ${variables.sizes.maxWidthAll};
-  padding: 0 1.75rem;
+  width: 100%;
+  padding: 1.5rem 1.125rem 0;
   background-color: ${blue500};
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.0625rem;
 
   .left-side {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding-top: 2.3125rem;
-    flex: 1;
+    gap: 1.4425rem;
+    width: 100%;
+
+    button {
+      max-width: 17.4375rem;
+    }
+
     h1 {
       max-width: 17.4375rem;
       color: #fff;
       font-size: 2.75rem;
       font-weight: 600;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: 0;
 
       .title-change {
         font-weight: 600;
@@ -126,64 +126,68 @@ export const BannerMainContainer = styled.section`
   }
 
   .right-side {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     img {
+      max-width: 375px;
       width: 100%;
       height: 100%;
     }
   }
 
+  @media screen and (min-width: 430px) {
+    .left-side {
+      align-items: center;
+    }
+  }
+
   @media screen and (min-width: ${mediaQuery}) {
-    padding: 1.875rem;
-    display: flex;
-    height: 100%;
+    padding-top: 5.3125rem;
 
     .left-side {
-      max-width: 26.4375rem;
+      align-items: center;
+
+      button {
+        max-width: 70%;
+        width: 100%;
+      }
+
       h1 {
+        max-width: 71%;
+        font-size: 3.75rem;
+      }
+    }
+
+    .right-side {
+      img {
+        max-width: 314px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    margin: 0 auto;
+    padding-top: 5.3125rem;
+    align-items: start;
+
+    .left-side {
+      align-items: start;
+      button {
+        width: 100%;
+        max-width: 21.9375rem;
+      }
+
+      h1 {
+        font-size: 4.625rem;
         max-width: 100%;
       }
     }
 
     .right-side {
-      position: relative;
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      margin-left: auto;
-      margin-bottom: -1.625rem;
-
       img {
-        margin-top: unset;
-      }
-    }
-  }
-
-  @media screen and (min-width: 1366px) {
-    display: flex;
-    padding: 5.3125rem;
-    padding-left: 4.4375rem;
-    padding-right: 0;
-
-    .left-side {
-      max-width: 42.375rem;
-      gap: 5.8125rem;
-      h1 {
-        font-size: 4.625rem;
-      }
-    }
-
-    .right-side {
-      width: auto;
-      margin-top: 0;
-
-      img {
-        max-width: 41.0625rem;
-        max-height: 36.0625rem;
+        max-width: 657px;
       }
     }
   }

@@ -23,8 +23,12 @@ function CTAction() {
     "page.home.callToAction.europe",
   ];
 
+  const onlineCourseCTARightSideResponsivity = {
+    marginTop: isMobile ? '1.5rem' : '3.5rem'
+  }
+
   return (
-    <S.BackgroudCTA>
+    <S.BackgroudCTA isMobile={isMobile}>
       <S.BannerMainContainer>
         <section className="left-side">
           <h1>
@@ -33,8 +37,8 @@ function CTAction() {
           </h1>
           <StdButton>Buy Online Course Now</StdButton>
         </section>
-        <section className="right-side">
-          <div className="right-side-img-container">
+        <section className="right-side" style={{ marginTop: '1.5rem'}}>
+          {/* <div className="right-side-img-container"> */}
             <Image
               src={imageSource}
               alt="growing abroad coaches"
@@ -43,7 +47,7 @@ function CTAction() {
               priority
               quality={100}
             />
-          </div>
+          {/* </div> */}
         </section>
       </S.BannerMainContainer>
     </S.BackgroudCTA>

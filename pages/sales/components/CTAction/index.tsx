@@ -22,12 +22,9 @@ function CTAction() {
   ]
 
   return (
-    <S.BackgroudCTA style={{ maxHeight: `${isMobile ? "830px" : ""}` }}>
+    <S.BackgroudCTA isMobile={isMobile} style={{ maxHeight: `${isMobile ? "830px" : ""}` }}>
       <S.BannerMainContainer>
-        <section
-          className="left-side"
-          style={{ gap: "23px",  }}
-        >
+        <section className="left-side">
           <h1>
             {t("page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
@@ -38,7 +35,7 @@ function CTAction() {
               fontSize: `${isMobile ? "16px" : "1.3rem"}`,
               fontWeight: 400,
               lineHeight: "38px",
-              width: `${isMobile ? "323px" : "30rem"}`,
+              maxWidth: `${isMobile ? "323px" : "30rem"}`,
             }}
           >
             Build a successful career abroad with this amazing ONLINE COURSE
@@ -46,16 +43,14 @@ function CTAction() {
           <StdButton>Buy Online Course Now</StdButton>
         </section>
         <section className="right-side">
-          <div className="right-side-img-container">
-            <Image
-              src={gaCoaches}
-              alt="growing abroad coaches"
-              width={616}
-              priority
-              style={{ objectFit: "contain", border: "1px solid transparent" }}
-              quality={100}
-            />
-          </div>
+          <Image
+            src={gaCoaches}
+            alt="growing abroad coaches"
+            width={616}
+            priority
+            style={{ objectFit: "contain", border: "1px solid transparent" }}
+            quality={100}
+          />
         </section>
       </S.BannerMainContainer>
     </S.BackgroudCTA>
