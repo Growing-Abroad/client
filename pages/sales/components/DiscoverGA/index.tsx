@@ -4,12 +4,14 @@ import {
 } from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
-import StdButton from "@/components/generics/StdButton/StdButton";
+// import StdButton from "@/components/generics/StdButton/StdButton";
 import { StaticImageData } from "next/image";
-import useAppContext from "@/hooks/useAppContext";
-import Link from "next/link";
+// import useAppContext from "@/hooks/useAppContext";
+// import Link from "next/link";
 import BlueSquareWithCarousel from "@/components/BlueSquareWithCaroulsel";
 import candidatesDiscoverMockup from "@/utils/mock-ups/candidates-discover-section";
+import { useState } from "react";
+import useAppContext from "@/hooks/useAppContext";
 
 
 interface ItemProps {
@@ -18,8 +20,13 @@ interface ItemProps {
 }
 
 export default function DiscoverGA() {
-  const { isMobile } = useAppContext();
+  const [activeIndex, setActiveIndex] = useState<number>(1)
 
+  const { isMobile } = useAppContext()
+
+  function onHoverChangeBoxText(index: number) {
+    setActiveIndex(index)
+  }
 
   return (
     <DiscoverGrowingAbroadSection>
@@ -32,17 +39,23 @@ export default function DiscoverGA() {
         wrapperClassName="discover-wrapper"
         className="discover-title"
       />
-      <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover columnReversed>
+      <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover columnReversed onSlideChangeCallback={(index) => onHoverChangeBoxText(index)}>
         <DiscoverReadMoreWrapper>
-          <StdParagraqh className="discover-text">
-            {isMobile ? "We help skilled foreigners from all over the world secure and land their dream job in Germany and Europe. As experts in the German and European job markets, we know what it takes to succeed.We provide comprehensive support and guidance in every step of the way. Our team will be your mentor, career advisor, coach, and motivator, helping you to navigate the complex job market in Germany and Europe. Whether you need help with building a CV on European standards, a cover letter or getting confidence and convincing the recruiters in the job interview, we're here to help.We value your unique experiences and personality, and we're committed to helping you showcase your full potential. We understand that moving to a new country can be overwhelming, which is why we're here to provide the support and guidance you need to make a successful career transition." : "Our goal is to help skilled people from all of the world to get their dream job in Germany or Europe. As experts on the German and European market, we know exactly what you need to bring in order to have a successful career abroad. We will be your mentor, your career advisor, your Coach, your friend and motivator."}
+          <StdParagraqh className="discover-text" style={{ fontSize: isMobile ? '.875rem' : '', fontWeight: 600 }}>
+            {activeIndex > 0 ? (
+              <>
+                <span style={{ fontSize: '2rem' }}>MANU</span>{" "}
+                brings the German perspective and mentality. As a professional Coach, Trainer and Actor, he knows exactly how to present yourself from your best side.<br /><br /> He has been coaching and training executives of international companies how to present themselves in a charismatic way and how to gain confidence and personal development.Besides that he is a professor for various Universities in Germany training students how to prepare and present themselves for job interviews and how to impact at the first impression.<br /><br /> With his knowledge and expertise he will guide you through the job application process and teach you the best techniques and tricks you can have in the German market.
+              </>
+            )
+              : (
+                <>
+                  <span style={{ fontSize: '2rem' }}>UAN</span>{" "}
+                  is the perfect example of a successful foreigner who was able to build an outstanding life and career in Germany. Growing up in a small village in Brazil, not coming from a rich family, life and job perspective were very limited. More than 10 years later he turned his life around graduated from a top university in Germany, having his German passport and having a management position. <br /><br /> Uan has done multiple interviews in his life, managed and recruited many people by himself and knows exactly what is needed and expected in order to fulfill the European standard.<br /><br /> In this Online Course he will show you all the steps he took to have a successful career in Europe.
+                </>
+              )
+            }
           </StdParagraqh>
-
-          <StdButton className="read-more-btn">
-            <Link href="/about-us" style={{ all: "unset" }}>
-              Read More
-            </Link>
-          </StdButton>
         </DiscoverReadMoreWrapper>
 
       </BlueSquareWithCarousel>

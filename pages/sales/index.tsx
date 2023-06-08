@@ -28,7 +28,6 @@ import useModal, { ModalHook } from "@/hooks/useModal";
 import _useLocale from "@/hooks/useLocale";
 import { IntlProvider } from "react-intl";
 import DiscoverGA from "./components/DiscoverGA";
-import { AboutCarousel } from "@/components/AboutCarousel";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -39,7 +38,7 @@ export const SalesWrapper = styled.div`
   z-index: 1;
 
   #page-sales {
-    margin-top: calc( 720px + 60px );
+    margin-top: calc( 720px + 17% );
 
     @media screen and (min-width: 1513px)  {
       margin-top: calc( 800px + 4rem );
@@ -70,7 +69,6 @@ export default function Sales() {
           <Motivation />
           <FollowDreams />
           <DiscoverGA />
-          <AboutCarousel imageContent1={uan} imageContent2={manu} slideContent1="ola mundo" slideContent2="ola mundo 2" />
           <WhatYouGet />
           <Chapter />
           <BigCard />
