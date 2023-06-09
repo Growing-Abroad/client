@@ -32,10 +32,18 @@ export const OnlineCourseWrapper = styled.div`
 
   div#page-onlie-course {
 
-    margin-top: calc( 720px + 4% );
+    margin-top: calc( 720px + 3%);
 
-    @media screen and (min-width: 1513px)  {
-      margin-top: calc( 800px + 2.3rem );
+    @media screen and (max-width: 360px) {
+      margin-top: calc(720px - 15%)
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: calc(800px - 10%);
+    }
+
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px + 1.3rem );
     }
   }
 

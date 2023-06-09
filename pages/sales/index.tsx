@@ -38,10 +38,18 @@ export const SalesWrapper = styled.div`
   z-index: 1;
 
   #page-sales {
-    margin-top: calc( 720px + 17% );
+    margin-top: calc( 720px + 13% );
 
-    @media screen and (min-width: 1513px)  {
-      margin-top: calc( 800px + 4rem );
+    @media screen and (min-width: 1000px) {
+      margin-top: calc( 800px - 4% );
+    }
+
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px - 2rem );
+    }
+
+    @media screen and (min-width: 1366px)  {
+      margin-top: calc( 800px + 1rem );
     }
   }
 `;

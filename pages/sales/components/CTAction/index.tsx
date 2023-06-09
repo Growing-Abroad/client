@@ -23,7 +23,7 @@ function CTAction() {
 
   return (
     <S.BackgroudCTA isMobile={isMobile} style={{ maxHeight: `${isMobile ? "830px" : ""}` }}>
-      <S.BannerMainContainer>
+      <S.BannerMainContainer id="">
         <section className="left-side">
           <h1>
             {t("page.sales.callToAction") + " "}

@@ -16,8 +16,9 @@ interface BackgroundCTAProps {
 export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
   width: 100%;
+  height: 100%;
   max-height: ${({ isMobile }) =>
-    isMobile ? "776px" : "800px"};
+    isMobile ? "776px" : "710px"};
   position: fixed;
   margin-left: auto;
   margin-right: auto;
@@ -55,6 +56,7 @@ export const CtaButton = styled.button`
 export const BannerMainContainer = styled.section`
   max-width: ${variables.sizes.maxWidthAll};
   width: 100%;
+  height: 90%;
   padding: 1.5rem 1.125rem 0;
   background-color: ${blue500};
 
@@ -160,6 +162,7 @@ export const BannerMainContainer = styled.section`
     }
 
     .right-side {
+      margin-top: auto;
       img {
         max-width: 314px;
       }
@@ -170,6 +173,7 @@ export const BannerMainContainer = styled.section`
     flex-direction: row;
     margin: 0 auto;
     padding-top: 5.3125rem;
+    padding-left: 7rem;
     align-items: start;
 
     .left-side {
