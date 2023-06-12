@@ -1,10 +1,11 @@
 {
-  
+
   "page.home.callToAction": "Get your Dream Job in",
   "page.home.callToAction.germany": " Germany",
   "page.home.callToAction.europe": " Europe",
   "page.home.head.title": "Next.js i18n example",
   "page.home.head.meta.description": "Next.js i18n example - English",
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
-  "page.home.description": "You are currently viewing the homepage in English 🚀"
+  "page.home.description": "You are currently viewing the homepage in English 🚀",
+  "page.sales.callToAction": "Land your Dream job in"
 }

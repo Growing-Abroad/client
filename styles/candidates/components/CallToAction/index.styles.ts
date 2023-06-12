@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import manuUanHappy from "@/../public/assets/Photos-Main-Page/uan-manu-happy.webp";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 
@@ -7,7 +6,7 @@ const {
   sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile },
 } = variables;
 const {
-  colors: { blue400, blue500, blue700, yellow400 },
+  colors: { blue500, blue700, yellow400 },
 } = theme;
 
 export const BackgroudCTA = styled.section`
@@ -156,7 +155,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${mediaQuery}) {
-    /* background-image: url(${manuUanHappy.src}); */
     background-size: 130%;
     background-repeat: no-repeat;
     background-position: bottom;

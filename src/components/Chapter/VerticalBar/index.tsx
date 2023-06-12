@@ -71,18 +71,7 @@ const VerticalBar: React.FC = () => {
 
 
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: '0',
-        left: `${isMobile ? '16px' : '50%'}`,
-        display: 'flex',
-        marginLeft: `${isMobile ? '0' : '-40px'}`,
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: '75px',
-      }}
-    >
+    <S.ProgressBar>
       {propsBar.map((prop) => (
         <React.Fragment key={prop.index}>
           <S.IndexCircle backgroundColor={activeIndex === prop.index ? '#4A9AFD' : barColor}>
@@ -101,7 +90,7 @@ const VerticalBar: React.FC = () => {
           </S.VerticalBar>
         </React.Fragment>
       ))}
-    </div>
+    </S.ProgressBar>
   );
 };
 

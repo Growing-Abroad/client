@@ -25,6 +25,9 @@ import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
+import _useLocale from "@/hooks/useLocale";
+import { IntlProvider } from "react-intl";
+import DiscoverGA from "./components/DiscoverGA";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -35,12 +38,18 @@ export const SalesWrapper = styled.div`
   z-index: 1;
 
   #page-sales {
-    @media screen and (min-width: 1024px) {
-      margin-top: calc(780px + -2rem);
+    margin-top: calc( 720px + 13% );
+
+    @media screen and (min-width: 1000px) {
+      margin-top: calc( 800px - 4% );
     }
 
-    @media screen and (min-width: 1440px) {
-      margin-top: calc(780px + 4rem);
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px - 2rem );
+    }
+
+    @media screen and (min-width: 1366px)  {
+      margin-top: calc( 800px + 1rem );
     }
   }
 `;
@@ -67,7 +76,7 @@ export default function Sales() {
           <WhyBuyCourse />
           <Motivation />
           <FollowDreams />
-          <CareerExperts activeImage={uan.src} smallImage={manu.src} />
+          <DiscoverGA />
           <WhatYouGet />
           <Chapter />
           <BigCard />
@@ -102,7 +111,10 @@ export default function Sales() {
 }
 
 Sales.getLayout = function getLayout(page: ReactElement) {
+  const { locale, messages } = _useLocale();
   return (
-    <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    </IntlProvider>
   );
 };

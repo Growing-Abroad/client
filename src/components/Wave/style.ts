@@ -8,9 +8,9 @@ interface WrapperProps {
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  
+
   ${({ waveType }) => {
-  
+
     if (waveType === EWaveType.curly) {
       return css`
         --mobileYoffset: 54px;
@@ -29,7 +29,7 @@ export const Wrapper = styled.div<WrapperProps>`
     }
   }}
 
-  
+
 
   display: flex;
   gap: 2rem;
@@ -38,15 +38,12 @@ export const Wrapper = styled.div<WrapperProps>`
   justify-content: flex-start;
   position: absolute;
   width: 100%;
-  
+
   top:  calc(-1 * (var(--desktopOffset)) + 2px);
   height: var(--desktopOffset);
 
-  /* background-image: url(${({backgroundSrc}) => backgroundSrc});
-  background-repeat: no-repeat;
-  background-size: cover; */
 
-  
+
   img {
     width: 100%;
     height: var(--desktopOffset);
@@ -55,7 +52,7 @@ export const Wrapper = styled.div<WrapperProps>`
   @media (max-width: 1513px) {
       height: var(--dynamicOffset);
       top:  calc(-1 * (var(--dynamicOffset)) + 2px);
-      
+
       img {
         height: var(--dynamicOffset);
       }
@@ -63,7 +60,7 @@ export const Wrapper = styled.div<WrapperProps>`
     @media (max-width: 430px) {
       height: var(--mobileYoffset);
       top:  calc(-1 * (var(--mobileYoffset)) + 2px);
-      
+
       img {
         height: var(--mobileYoffset);
       }

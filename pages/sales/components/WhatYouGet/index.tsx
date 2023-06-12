@@ -24,7 +24,7 @@ export function WhatYouGet() {
         hasSpaceBtw
         styles={{
           marginBottom: `${isMobile ? "" : "0px"}`,
-          width: `${isMobile ? "40%" : "70%"}`,
+          width: `${isMobile ? "100%" : "70%"}`,
           whiteSpace: `${isMobile ? "normal" : "normal"}`,
           textAlign: `center`,
         }}
