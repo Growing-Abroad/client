@@ -15,7 +15,6 @@ export function BigCard() {
         text1="Get the Online Course now and join the"
         text2="Growing Abroad Community"
         styles={{
-          width: `${isMobile ? "400px " : "100%"}`,
           flexDirection: "column",
           display: "flex",
           marginBottom: `${isMobile ? "20px" : "40px"}`,

@@ -11,7 +11,7 @@ const {
 } = variables;
 
 interface FlexboxSliderProps {
-  gap?: number;
+  gap?: number | undefined;
 }
 
 export const FlexboxSlider = styled.div<FlexboxSliderProps>`
@@ -25,7 +25,7 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   align-items: baseline;
 
   @media screen and (max-width: 438px) {
-    height: 267px;
+    height: 280px;
   }
 
   @media (min-width: 440px) and (max-width: 1280px) {
@@ -35,7 +35,9 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   }
 
   .short {
-    height: 90%;
+    @media screen and (max-width: 767px) {
+      height: 90%;
+    }
   }
 
   .selected-slide {

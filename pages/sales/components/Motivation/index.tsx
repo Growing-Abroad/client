@@ -14,6 +14,7 @@ export function Motivation() {
       style={{
         gap: `${isMobile ? "" : "0px"}`,
         paddingBottom: `${isMobile ? "20px" : ""}`,
+        transform: `${isMobile ? 'unset' : 'scale(.85)'}`
       }}
     >
       <TwoColorTitle
@@ -109,7 +110,7 @@ export function Motivation() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <StdButton style={{ margin: "15px 0 30px" }}>
+      <StdButton style={{ margin: `${isMobile ? "-50px 0 45px" : "15px 0 30px" }` }}>
         Buy Online Course Now
       </StdButton>
     </S.WrapperWhyBuyCourse>

@@ -15,6 +15,9 @@ export function WhatYouGet() {
         paddingBottom: 0,
         paddingTop: `0px`,
         gap: `${isMobile ? "" : "40px"}`,
+        transform: `${isMobile ? 'unset' : 'scale(.85)'}`,
+        marginTop: `${isMobile ? '75px' : '8px'}`,
+        marginBottom: `${isMobile ? '55px' : '16px'}`
       }}
     >
       <TwoColorTitle
@@ -34,6 +37,8 @@ export function WhatYouGet() {
         style={{
           flexDirection: `${isMobile ? "column" : "row-reverse"}`,
           paddingLeft: `${isMobile ? "" : "0"}`,
+          transform: 'unset',
+          marginBottom: `${isMobile ? '90px' : '0'}`       
         }}
       >
         <Image

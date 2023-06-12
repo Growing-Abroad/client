@@ -84,7 +84,7 @@ export default function OriginalFancyCarousel({
   }
 
   return (
-    <FlexboxSlider gap={columnGap} className="flexbox-slider my-flexbox-slider">
+    <FlexboxSlider gap={isMobile ? columnGap : undefined} className="flexbox-slider my-flexbox-slider">
       {dataArray.map((item, i) => (
         <FlexboxSlide
           className={handleSlideClasses(i)}

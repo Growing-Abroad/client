@@ -9,7 +9,7 @@ export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
     <S.WrapperWhyBuyCourse>
-      <S.ContentWhyBuyCourse>
+      <S.ContentWhyBuyCourse style={{transform: "unset"}}>
         <Image
           src={threePersons}
           width={isMobile ? 520 : 748}
@@ -78,7 +78,9 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <StdButton>Buy Online Course Now</StdButton>
+      <StdButton style={{
+        margin: `${isMobile ? "50px 0" : "0px"}`,
+      }}>Buy Online Course Now</StdButton>
     </S.WrapperWhyBuyCourse>
   );
 }
