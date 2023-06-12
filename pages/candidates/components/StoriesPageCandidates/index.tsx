@@ -28,6 +28,7 @@ export const StoriesPageCandidates = () => {
           and many other countries in Europe
         </SuccessSubtitle>
         <OriginalFancyCarousel
+          columnGap={8}
           dataArray={successStoriesData}
           openModal={handleModal}
           visibleModal={isModalVisible}
