@@ -90,6 +90,7 @@ export default function Sales() {
               styles={isMobile ? { lineHeight: "2.75rem" } : {}}
             />
             <OriginalFancyCarousel
+              columnGap={8}
               dataArray={successStoriesData}
               openModal={handleModal}
               visibleModal={isModalVisible}

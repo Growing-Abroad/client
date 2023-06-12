@@ -13,7 +13,7 @@ export const SuccessStoriesWrapperSection = styled.section`
 
 
     @media (max-width:430px) {
-      padding: 80px 0 133px;
+      padding: 80px 16px 133px;
       gap: 30px;
     }
 `;

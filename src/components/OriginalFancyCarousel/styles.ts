@@ -10,18 +10,22 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-export const FlexboxSlider = styled.div`
+interface FlexboxSliderProps {
+  gap?: number;
+}
+
+export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 36px;
+  gap: ${({ gap }) => gap ? `${gap}px` : '36px'};
   width: 100%;
   height: 600px;
   visibility: hidden;
   align-items: baseline;
 
   @media screen and (max-width: 438px) {
-    height: 260px;
+    height: 267px;
   }
 
   @media (min-width: 440px) and (max-width: 1280px) {
@@ -122,12 +126,12 @@ export const FlexboxSlide = styled.div`
   }
 
   @media (min-width: 200px) and (max-width: 1280px) {
-    width: 50px;
-    min-width: 50px;
-    height: 100%;
-
+    width: 21px;
+    min-width: 21px;
+    height: 86%;
+    margin: auto;
     .slide-img {
-      left: 78%;
+      left: 81%;
     }
   }
 `;
@@ -203,7 +207,7 @@ export const TextBlockH3 = styled.h3`
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
-    width: 92%;
+    width: 98%;
     max-width: 386px;
 
     .watch-video-btn {

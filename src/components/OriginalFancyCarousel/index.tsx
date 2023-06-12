@@ -29,6 +29,7 @@ export interface Props {
   openModal: (value: boolean) => void;
   visibleModal: boolean;
   getDataVideo: (value: any) => void;
+  columnGap?: number;
 }
 
 export default function OriginalFancyCarousel({
@@ -36,6 +37,7 @@ export default function OriginalFancyCarousel({
   openModal,
   visibleModal,
   getDataVideo,
+  columnGap
 }: Props) {
   const {
     windowSize: { width },
@@ -82,7 +84,7 @@ export default function OriginalFancyCarousel({
   }
 
   return (
-    <FlexboxSlider className="flexbox-slider my-flexbox-slider">
+    <FlexboxSlider gap={columnGap} className="flexbox-slider my-flexbox-slider">
       {dataArray.map((item, i) => (
         <FlexboxSlide
           className={handleSlideClasses(i)}
