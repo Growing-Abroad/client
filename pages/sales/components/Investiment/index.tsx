@@ -41,7 +41,7 @@ function Investiment() {
         This course is an investment  <span>in your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>{" "}
       </S.Paragraph>
       <StdButton style={{ marginTop: "0px" }}>
-        Get your Lifetime Access Now
+        Get your Acess Now
       </StdButton>
     </S.Container>
   );

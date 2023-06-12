@@ -20,6 +20,7 @@ import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
+import Investiment from "@pages/sales/components/Investiment";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -89,6 +90,7 @@ export default function OnlineCourse() {
           />
         </SuccessStoriesSection>
         <TwoCards />
+        <Investiment />
         <TwoColorTitle
           text1="Frequently "
           text2="Asked Questions"
