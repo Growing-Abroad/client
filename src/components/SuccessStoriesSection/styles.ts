@@ -11,9 +11,6 @@ export const SuccessStoriesWrapperSection = styled.section`
     align-items: center;
     gap: 50px;
 
-    zoom: 80%;
-    transform: scale(.85);
-
 
     @media (max-width:430px) {
       padding: 80px 0 133px;
