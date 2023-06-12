@@ -137,6 +137,7 @@ export const ChapterContentCard = styled.div<ContentCardProps>`
     transform: scaleX(-1);
   }
   @media (min-width: 769px) and (max-width: 1513px) {
+    gap: 10%;
     .image {
       width: 600px;
       height: auto;
@@ -187,6 +188,18 @@ export const CardInfo = styled.div`
     height: auto;
     justify-content: flex-start;
     padding-left: 20px;
+  }
+
+  @media screen and (min-width: ${mediaQuery}) {
+    width: auto;
+
+    h3 {
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 500px
   }
 `;
 export const CardTitle = styled.h3`

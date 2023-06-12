@@ -18,6 +18,8 @@ import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
 import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import useModal, { ModalHook } from "@/hooks/useModal";
+import { IntlProvider } from "react-intl";
+import _useLocale from "@/hooks/useLocale";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -30,10 +32,18 @@ export const OnlineCourseWrapper = styled.div`
 
   div#page-onlie-course {
 
-    margin-top: calc( 720px + 60px );
+    margin-top: calc( 720px + 3%);
 
-    @media screen and (min-width: 1513px)  {
-      margin-top: calc( 800px + 4rem );
+    @media screen and (max-width: 360px) {
+      margin-top: calc(720px - 15%)
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: calc(800px - 10%);
+    }
+
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px + 1.3rem );
     }
   }
 
@@ -91,7 +101,10 @@ export default function OnlineCourse() {
 }
 
 OnlineCourse.getLayout = function getLayout(page: ReactElement) {
+  const { locale, messages } = _useLocale();
   return (
-    <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+    </IntlProvider>
   );
 };

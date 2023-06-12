@@ -1,39 +1,29 @@
 import styled from "styled-components";
-import manuUanHappy from "@/../public/assets/Photos-Main-Page/uan-manu-happy.webp";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 
 const {
-  sizes: { globalHorizontalPadding, mediaQuery, globalHorizontalPaddingMobile },
+  sizes: { mediaQuery },
 } = variables;
 const {
-  colors: { blue400, blue500, blue700, yellow400 },
+  colors: { blue500, blue700, yellow400 },
 } = theme;
 
-export const BackgroudCTA = styled.section`
-  margin-top: 60px;
+interface BackgroundCTAProps {
+  isMobile: boolean;
+}
+
+export const BackgroudCTA = styled.section<BackgroundCTAProps>`
+  margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
   width: 100%;
   height: 100%;
+  max-height: ${({ isMobile }) =>
+    isMobile ? "776px" : "710px"};
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 650px;
-  max-height: 800px;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
-
-  @media (max-width: ${mediaQuery}) {
-    background-position: -155px;
-    justify-content: flex-start;
-    max-height:700px;
-  }
   background-color: ${blue500};
-
 `;
 
 export const CtaButton = styled.button`
@@ -64,103 +54,144 @@ export const CtaButton = styled.button`
 `;
 
 export const BannerMainContainer = styled.section`
-  width: 100%;
-  height: 100%;
   max-width: ${variables.sizes.maxWidthAll};
-
+  width: 100%;
+  height: 90%;
+  padding: 1.5rem 1.125rem 0;
   background-color: ${blue500};
 
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.0625rem;
 
   .left-side {
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
-    gap: 60px;
-    width: 70%;
-    padding: 120px 102px 80px 0;
-    position: absolute;
-    padding-left: 140px;
+    gap: 1.4425rem;
+    width: 100%;
 
-    @media (min-width: 520px) and (max-width: 820px) {
-      padding: 6rem 2rem 2rem;
+    button {
+      max-width: 17.4375rem;
     }
 
     h1 {
+      max-width: 17.4375rem;
       color: #fff;
-      font-size: 72px;
-      line-height: 5rem;
-      font-weight: 500;
-      max-width: 662px;
-      z-index: 5;
-      span {
-        color: #ffdb5c;
-      }
+      font-size: 2.75rem;
+      font-weight: 600;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: 0;
 
-      @media (min-width: 520px) and (max-width: 820px) {
-        font-size: 3rem;
-        line-height: 3rem;
-      }
-    }
-  }
+      .title-change {
+        font-weight: 600;
+        animation-iteration-count: 1;
+        position: relative;
+        left: -200px;
+        opacity: 0;
+        animation-fill-mode: both;
+        display: inline-block;
+        color: ${blue500};
+        animation: text-enter-germany 3000ms ease;
 
-  .right-side {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: min-content;
-    width: 50%;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-
-    .right-side-img-container {
-      position: absolute;
-      bottom: 80px;
-      left: 40px;
-
-      img {
-        bottom: -40px;
-        position: absolute;
-        z-index: 3;
-
-        @media (min-width: 520px) and (max-width: 820px) {
-          left: -12rem;
-          height: 28rem;
+        @keyframes text-enter-germany {
+          0% {
+            left: -200px;
+            color: ${blue500};
+            visibility: hidden;
+            opacity: 0;
+          }
+          20% {
+            left: 0;
+            visibility: visible;
+            color: ${blue700};
+          }
+          40% {
+            color: ${yellow400};
+            opacity: 1;
+          }
+          80% {
+            left: 0;
+            visibility: visible;
+            color: ${yellow400};
+            opacity: 1;
+          }
+          100% {
+            left: 200px;
+            visibility: hidden;
+            opacity: 0;
+            color: ${blue500};
+          }
         }
       }
     }
   }
 
-  @media (max-width: ${mediaQuery}) {
-    /* background-image: url(${manuUanHappy.src}); */
-    background-size: 130%;
-    background-repeat: no-repeat;
-    background-position: bottom;
+  .right-side {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 375px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 430px) {
+    .left-side {
+      align-items: center;
+    }
+  }
+
+  @media screen and (min-width: ${mediaQuery}) {
+    padding-top: 5.3125rem;
 
     .left-side {
-      width: 100%;
-      padding: 46px ${globalHorizontalPaddingMobile};
-      gap: 7px !important;
+      align-items: center;
+
+      button {
+        max-width: 70%;
+        width: 100%;
+      }
 
       h1 {
-        font-size: 40px;
-        line-height: 1.2;
-        width: 279px;
-      }
-      button {
-        font-size: 1rem;
+        max-width: 71%;
+        font-size: 3.75rem;
       }
     }
 
     .right-side {
-      left: -20px;
-      transform: scale(0.63);
-      bottom: 20px;
+      margin-top: auto;
+      img {
+        max-width: 314px;
+      }
+    }
+  }
 
-      .right-side-img-container {
-        left: 0;
-        bottom: 0;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    margin: 0 auto;
+    padding-top: 5.3125rem;
+    padding-left: 7rem;
+    align-items: start;
+
+    .left-side {
+      align-items: start;
+      button {
+        width: 100%;
+        max-width: 21.9375rem;
+      }
+
+      h1 {
+        font-size: 4.625rem;
+        max-width: 100%;
+      }
+    }
+
+    .right-side {
+      img {
+        max-width: 657px;
       }
     }
   }

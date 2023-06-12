@@ -1,48 +1,26 @@
 import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
 import gaCoaches from "@/../public/assets/new-cta-img.webp";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import { TextChanger } from "components/TextChanger";
 import useAppContext from "@/hooks/useAppContext";
 
 function CallToAction() {
-  const { isMobile } = useAppContext();
-  const [currentName, setCurrentName] = useState<string>(" Germany");
-  const [currentComponent, setCurrentComponent] = useState(
-    <div key={"first"} className="title-change">
-      {" "}
-      {currentName}
-    </div>
-  );
+
+  const { isMobile } = useAppContext()
+
   const intl = useIntl();
-  const {
-    windowSize: { width },
-  } = useAppContext();
 
   const t = (id: string): string => {
     return intl.formatMessage({ id });
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      const newName =
-        currentName === t("page.home.callToAction.germany")
-          ? t("page.home.callToAction.europe")
-          : t("page.home.callToAction.germany");
-      setCurrentName(newName);
-
-      const newComponent = (
-        <div key={currentName} className={"title-change"}>
-          {" "}
-          {currentName}
-        </div>
-      );
-
-      setCurrentComponent(newComponent);
-    }, 3000);
-  }, [currentComponent]);
+  const texts = [
+    "page.home.callToAction.germany",
+    "page.home.callToAction.europe",
+  ]
 
   return (
     <S.BackgroudCTA>
@@ -51,12 +29,12 @@ function CallToAction() {
           <h1>
             <>
               {t("page.home.callToAction") + " "}
-              {currentComponent}
+              <TextChanger texts={texts} duration={3000} />
             </>
           </h1>
           <StdButton
             icon={faPlay}
-            style={{ textTransform: "uppercase", fontWeight: "800" }}
+            style={{ textTransform: "uppercase", fontWeight: "800", fontSize: isMobile ? ".875rem" : "" }}
           >
             Watch Free Masterclass
           </StdButton>
@@ -72,14 +50,6 @@ function CallToAction() {
           </div>
         </div>
       </S.Container>
-      {/* <div className="cta-mask">
-        <Image
-          src={isMobile ? ctaMaskMobile : ctaMask}
-          alt="styled mask"
-          width={width}
-        />
-        <div className="white-line"></div>
-      </div> */}
     </S.BackgroudCTA>
   );
 }

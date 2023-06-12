@@ -6,6 +6,29 @@ interface VerticalBarProps {
   height?: string;
 }
 
+interface ProgressBar {
+  isMobile?: string
+}
+
+export const ProgressBar = styled.div<ProgressBar>`
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  left: 16%;
+  margin-left: ${({ isMobile }) => isMobile ? "0px" : "-40px"};
+  align-items: center;
+  padding-top: 75px;
+
+  @media screen and (min-width: 768px) {
+    left: 10%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    left: 50%;
+  }
+`;
+
 export const VerticalBar = styled.div<VerticalBarProps>`
   background-color: ${(props) => props.backgroundColor || "transparent"};
   transition: all 0.4s ease-in-out;
