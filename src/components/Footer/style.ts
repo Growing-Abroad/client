@@ -11,6 +11,7 @@ const {
 
 export interface IFooter {
   usePageBody?: boolean;
+  hideBlueSection?: boolean;
 }
 
 export const FooterContainer = styled.footer<IFooter>`
@@ -89,6 +90,7 @@ export const FooterBottomContainer = styled.div`
   background-color: ${white};
   color: white;
   width: 100%;
+  box-shadow: 0px 8px 10px 2px rgba(0, 0, 0, 0.3);
 `;
 
 export const FooterBottomWrapper = styled.div`

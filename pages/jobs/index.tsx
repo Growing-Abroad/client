@@ -36,5 +36,5 @@ export default function Jobs() {
 }
 
 Jobs.getLayout = function getLayout(page: ReactElement) {
-    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
+    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} hideBlueSection={true}>{page}</PageLayout>;
 }
