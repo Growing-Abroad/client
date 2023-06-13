@@ -45,6 +45,7 @@ export function WhatYouGet() {
           src={Benefits}
           className="img-benefits"
           alt=""
+          style={{width: `${isMobile ? "100%" : "780px"}`}}
         />
         <S.RightContentWhyBuyCourse
           className={classes.text}
