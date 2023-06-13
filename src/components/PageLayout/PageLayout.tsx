@@ -13,6 +13,7 @@ export enum ChosenHeader {
 interface Props extends ComponentPropsWithoutRef<"body"> {
   chosenHeader: ChosenHeader;
   usePageBody?: boolean;
+  hideBlueSection?: boolean;
 }
 
 interface HeaderProps {
@@ -37,7 +38,7 @@ function PageLayout(props: Props) {
     <>
       <Header chosenHeader={chosenHeader} />
       {children}
-      <Footer usePageBody={props.usePageBody} />
+      <Footer usePageBody={props.usePageBody} hideBlueSection={props.hideBlueSection} />
     </>
   );
 }

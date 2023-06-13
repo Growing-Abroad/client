@@ -64,6 +64,12 @@ export const CvForm = styled.form`
 
     }
 
+    .upload-cv-heading3-wrapper,
+    .upload-cv-heading4-wrapper {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
     .upload-cv-heading3 {
         font-size: 2rem;
         line-height: 2.438rem;
@@ -84,7 +90,13 @@ export const CvForm = styled.form`
         margin-bottom: 80px;
         align-items: end;
         
+        &.smaller-margin-bottom {
+            margin-bottom: 12px;
+        }
+    
     }
+
+
     .personal-info-inputs-wrapper {
     }
     .skills-wrapper {
@@ -164,20 +176,38 @@ export const CvForm = styled.form`
         width: 100%;
         max-width: ${maxWidthAll};
         padding-inline: ${globalHorizontalPadding};
-        margin: 77px 0;
+        margin-top: 24px;
         display: grid;
+
+        &.newsletter-check {
+            margin-top: 54px ;
+        }
+
+        .declarations {
+            margin-bottom: 0 !important;
+        }
 
         .declaration-checkbox {
         }
+
         .declaration-paragraqh {
             margin: 0;
-            font-size: 1.25rem;
-            line-height: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.25rem;
             color: ${blue700};
+            padding: 12px 0;
 
             .highlight {
                 color: ${blue400};
+                text-decoration: none;
             }
+
+        }
+        .required-field {
+            color: red;
+            margin-left: 12px;
+            margin-bottom: 0;
+            font-size: 0.875rem;
         }
     }
     

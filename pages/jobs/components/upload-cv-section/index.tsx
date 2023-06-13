@@ -13,6 +13,7 @@ import { Checkbox } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudUploadAlt, faUpload } from "@fortawesome/free-solid-svg-icons";
 import useAppContext from "@/hooks/useAppContext";
+import Link from 'next/link';
 
 export default function UploadCvSection() {
   const {
@@ -69,14 +70,27 @@ export default function UploadCvSection() {
             as="h3"
             text1="Personal Information"
             text2=""
+            wrapperClassName="upload-cv-heading3-wrapper"
             className="upload-cv-heading3"
-            wrapperStyles={{ maxWidth: "100%" }}
+            wrapperStyles={{ maxWidth: "100%", width: '100%' }}
           />
           <StdParagraqh className="personal-info-sub-heading">
             Enter your personal details below
           </StdParagraqh>
 
-          <div className="personal-info-inputs-wrapper">
+          <div className="personal-info-inputs-wrapper  smaller-margin-bottom">
+
+            <StdInput
+              label="How would you like to be addressed?"
+              name="Addressing"
+              required
+              onChange={(e) => {
+                console.log({ e });
+              }}
+              value=""
+            />
+          </div>
+          <div className="personal-info-inputs-wrapper  smaller-margin-bottom">
             <StdInput
               label="First Name"
               name="First Name"
@@ -97,7 +111,7 @@ export default function UploadCvSection() {
               value=""
             />
 
-            <StdInput
+            {/* <StdInput
               label="Email"
               name="Email"
               required
@@ -105,9 +119,9 @@ export default function UploadCvSection() {
                 console.log({ e });
               }}
               value=""
-            />
+            /> */}
 
-            <StdInput
+            {/* <StdInput
               label="Date of Birth"
               name="Date of Birth"
               required
@@ -120,16 +134,6 @@ export default function UploadCvSection() {
             <StdInput
               label="LinkedIn Profile"
               name="LinkedIn Profile"
-              onChange={(e) => {
-                console.log({ e });
-              }}
-              value=""
-            />
-
-            <StdInput
-              label="Telephone Number"
-              name="Telephone Number"
-              required
               onChange={(e) => {
                 console.log({ e });
               }}
@@ -174,18 +178,31 @@ export default function UploadCvSection() {
                 console.log({ e });
               }}
               value=""
-            />
+            /> */}
           </div>
+          <div className="personal-info-inputs-wrapper">
+            <StdInput
+                label="Telephone Number"
+                name="Telephone Number"
+                required
+                onChange={(e) => {
+                  console.log({ e });
+                }}
+                value=""
+              />
+          </div>
+
 
           <TwoColorTitle
             as="h3"
             text1="Other Information"
             text2=""
             className="upload-cv-heading3"
+            wrapperClassName="upload-cv-heading3-wrapper"
             wrapperStyles={
               isMobile
                 ? { textAlign: "center", width: "100%" }
-                : { maxWidth: "100%" }
+                : { maxWidth: "100%", width: "100%" }
             }
           />
 
@@ -194,16 +211,10 @@ export default function UploadCvSection() {
           </StdParagraqh>
 
           <div className="other-info-wrapper">
-            <StdInput
-              label="Area of Expertise"
-              name="Area of Expertise"
-              onChange={(e) => {
-                console.log({ e });
-              }}
-              value=""
-            />
+            
+            
 
-            <div className="language-wrapper">
+            {/* <div className="language-wrapper">
               <StdInput
                 label="Language"
                 name="Language"
@@ -222,9 +233,9 @@ export default function UploadCvSection() {
                 }}
                 value=""
               />
-            </div>
+            </div> */}
 
-            <StdInput
+            {/* <StdInput
               label="Art of Work"
               name="Art of Work"
               required
@@ -252,9 +263,9 @@ export default function UploadCvSection() {
                 console.log({ e });
               }}
               value=""
-            />
+            /> */}
 
-            <div className="skills-wrapper">
+            {/* <div className="skills-wrapper">
               <StdInput
                 label="Skills"
                 name="Work Experience*"
@@ -289,7 +300,7 @@ export default function UploadCvSection() {
                 }}
                 value=""
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="upload-docs-container">
@@ -299,7 +310,8 @@ export default function UploadCvSection() {
               text1="Documents"
               text2=""
               className="upload-cv-heading3"
-              wrapperStyles={{ maxWidth: "100%" }}
+              wrapperClassName="upload-cv-heading3-wrapper"
+              wrapperStyles={{ maxWidth: "100%", }}
             />
             <StdParagraqh className="personal-info-sub-heading">
               Accepted file formats: pdf, jpg, png, doc, docx, rtf, txt, odt
@@ -310,6 +322,7 @@ export default function UploadCvSection() {
               text1="CV Upload"
               text2=""
               className=""
+              wrapperClassName="upload-cv-heading4-wrapper"
               wrapperStyles={{ maxWidth: "100%", marginBottom: "20px" }}
               styles={
                 isMobile ? { fontSize: "1.5rem", lineHeight: "1.875rem" } : {}
@@ -331,7 +344,7 @@ export default function UploadCvSection() {
                   <span>
                     {isMobile
                       ? "Upaload you CV"
-                      : "Drag and drop a file here or click to select a file"}
+                      : "Drag resume in here or select"}
                   </span>
                 </div>
               ) : (
@@ -361,12 +374,49 @@ export default function UploadCvSection() {
             </StdParagraqh>
           </div>
         </div>
+        <div className="declaration-of-consent newsletter-check">
+          <TwoColorTitle
+            as="h3"
+            text1="Newsletter"
+            text2=""
+            wrapperClassName="upload-cv-heading3-wrapper"
+            className="upload-cv-heading3 declarations"
+            wrapperStyles={{ maxWidth: "100%" }}
+            styles={
+              isMobile ? { marginBottom: "24px" } : { marginBottom: "24px" }
+            }
+          />
+
+          <div
+            style={{
+              gap: "8px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Checkbox
+              className="declaration-checkbox"
+              sx={{
+                "& .MuiSvgIcon-root": { width: 30, height: 30 },
+                color: blue700,
+                "&.Mui-checked": {
+                  color: blue400,
+                },
+              }}
+            />
+            <p className="declaration-paragraqh">
+              Yes, I want to get updates, news and job openings of Growing Abroad
+            </p>
+          </div>
+
+        </div>
         <div className="declaration-of-consent">
           <TwoColorTitle
             as="h3"
             text1="Declaration of Consent"
             text2=""
-            className="upload-cv-heading3"
+            wrapperClassName="upload-cv-heading3-wrapper"
+            className="upload-cv-heading3 declarations"
             wrapperStyles={{ maxWidth: "100%" }}
             styles={
               isMobile ? { marginBottom: "24px" } : { marginBottom: "24px" }
@@ -392,19 +442,24 @@ export default function UploadCvSection() {
             />
             <p className="declaration-paragraqh">
               I agree to the{" "}
-              <span className="highlight">declaration of consent</span> and have
+              <Link href="/" className="highlight">declaration of consent</Link> and have
               read and understood the{" "}
-              <span className="highlight">revocation and privacy policy.</span>
+              <Link href="/" className="highlight">revocation and privacy policy.</Link>
+              * 
             </p>
           </div>
+          <p className="required-field">
+            This is a required field. Please fill in the required information.
+          </p>
 
-          <StdButton
-            style={{ justifySelf: "center", marginTop: "56px" }}
-            icon={faUpload}
-          >
-            Upload Now
-          </StdButton>
         </div>
+
+        <StdButton
+          style={{ justifySelf: "center", marginTop: "56px", marginBottom: '77px' }}
+          icon={faUpload}
+        >
+          Upload Now
+        </StdButton>
       </CvForm>
     </>
   );
