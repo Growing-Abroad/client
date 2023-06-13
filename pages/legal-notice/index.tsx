@@ -3,7 +3,6 @@ import PageLayout from "../../src/components/PageLayout";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import useAppContext from "@/hooks/useAppContext";
 import styled from "styled-components";
-import TwoColorTitle from "@/components/two-color-title";
 
 
 const LegalNoticeContainer = styled.div`
