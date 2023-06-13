@@ -73,7 +73,7 @@ export default function DataPrivacy() {
   return (
     <DataPrivacyContainer >
       <DataPrivacyContent>
-        <DataPrivacyTitle>Legal Notice</DataPrivacyTitle>        
+        <DataPrivacyTitle>Data Privacy</DataPrivacyTitle>        
 
         <DataPrivacyTitle2>Introduction</DataPrivacyTitle2>
         <DataPrivacyParagraph>With the following information we would like to you as the "data subject" an overview of how we process your of your personal data by us and your rights under the data protection laws. The use of our Internet pages is possible without entering personal data. Insofar as you special services of our enterprise via our website, however, the services of our company via our website, processing of personal of personal data may become necessary. If the processing of personal data is necessary and there is no legal basis for such a no legal basis for such processing, we will generally obtain your consent from you. <br /><br />
