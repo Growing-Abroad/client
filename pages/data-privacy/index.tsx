@@ -5,7 +5,7 @@ import useAppContext from "@/hooks/useAppContext";
 import styled from "styled-components";
 
 
-const LegalNoticeContainer = styled.div`
+const DataPrivacyContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -21,7 +21,7 @@ const LegalNoticeContainer = styled.div`
   }
 `
 
-const LegalNoticeContent = styled.div`
+const DataPrivacyContent = styled.div`
   flex-grow: 1;
   width: 100%;
   padding-inline: ${({theme}) => theme.sizes.globalHorizontalPadding};
@@ -33,7 +33,7 @@ const LegalNoticeContent = styled.div`
   }
 `
 
-const LegalNoticeTitle = styled.h1`
+const DataPrivacyTitle = styled.h1`
   color: ${({theme}) => theme.colors.blue700};
   font-size: 3rem;
   line-height: 3.75rem;
@@ -47,7 +47,7 @@ const LegalNoticeTitle = styled.h1`
   }
 `
 
-const LegalNoticeTitle2 = styled.h2`
+const DataPrivacyTitle2 = styled.h2`
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.875rem;
@@ -60,7 +60,7 @@ const LegalNoticeTitle2 = styled.h2`
   }
 `
 
-const LegalNoticeTitleParagraph = styled.p`
+const DataPrivacyParagraph = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -71,26 +71,26 @@ const LegalNoticeTitleParagraph = styled.p`
 export default function DataPrivacy() {
 
   return (
-    <LegalNoticeContainer >
-      <LegalNoticeContent>
-        <LegalNoticeTitle>Legal Notice</LegalNoticeTitle>        
+    <DataPrivacyContainer >
+      <DataPrivacyContent>
+        <DataPrivacyTitle>Legal Notice</DataPrivacyTitle>        
 
-        <LegalNoticeTitle2>Introduction</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>With the following information we would like to you as the "data subject" an overview of how we process your of your personal data by us and your rights under the data protection laws. The use of our Internet pages is possible without entering personal data. Insofar as you special services of our enterprise via our website, however, the services of our company via our website, processing of personal of personal data may become necessary. If the processing of personal data is necessary and there is no legal basis for such a no legal basis for such processing, we will generally obtain your consent from you. <br /><br />
-
-        The processing of personal data, for example your name, address or e-mail address, always takes place in accordance with the Data Protection Regulation (DS-GVO) and in compliance with the legal provisions applicable to "Growing Abroad GmbH" country-specific data protection regulations. Data Protection Provisions. By means of this privacy policy, we would like to inform you about the scope and purpose of the personal data we collect, use and processed personal data.<br /><br />
-
-        We have as responsible for the processing, we have implemented numerous technical and measures to ensure the most complete protection possible for the personal data  protection of personal data processed via this website. Nevertheless, Internet-based data transmissions may be subject to security vulnerabilities, so that an absolute protection cannot be guaranteed. For this reason you are free to transmit personal data to us by alternative means, for example by telephone or by mail.</LegalNoticeTitleParagraph>
-        
-        <LegalNoticeTitle2>Introduction</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>With the following information we would like to you as the "data subject" an overview of how we process your of your personal data by us and your rights under the data protection laws. The use of our Internet pages is possible without entering personal data. Insofar as you special services of our enterprise via our website, however, the services of our company via our website, processing of personal of personal data may become necessary. If the processing of personal data is necessary and there is no legal basis for such a no legal basis for such processing, we will generally obtain your consent from you. <br /><br />
+        <DataPrivacyTitle2>Introduction</DataPrivacyTitle2>
+        <DataPrivacyParagraph>With the following information we would like to you as the "data subject" an overview of how we process your of your personal data by us and your rights under the data protection laws. The use of our Internet pages is possible without entering personal data. Insofar as you special services of our enterprise via our website, however, the services of our company via our website, processing of personal of personal data may become necessary. If the processing of personal data is necessary and there is no legal basis for such a no legal basis for such processing, we will generally obtain your consent from you. <br /><br />
 
         The processing of personal data, for example your name, address or e-mail address, always takes place in accordance with the Data Protection Regulation (DS-GVO) and in compliance with the legal provisions applicable to "Growing Abroad GmbH" country-specific data protection regulations. Data Protection Provisions. By means of this privacy policy, we would like to inform you about the scope and purpose of the personal data we collect, use and processed personal data.<br /><br />
 
-        We have as responsible for the processing, we have implemented numerous technical and measures to ensure the most complete protection possible for the personal data  protection of personal data processed via this website. Nevertheless, Internet-based data transmissions may be subject to security vulnerabilities, so that an absolute protection cannot be guaranteed. For this reason you are free to transmit personal data to us by alternative means, for example by telephone or by mail.</LegalNoticeTitleParagraph>
+        We have as responsible for the processing, we have implemented numerous technical and measures to ensure the most complete protection possible for the personal data  protection of personal data processed via this website. Nevertheless, Internet-based data transmissions may be subject to security vulnerabilities, so that an absolute protection cannot be guaranteed. For this reason you are free to transmit personal data to us by alternative means, for example by telephone or by mail.</DataPrivacyParagraph>
         
-      </LegalNoticeContent>
-    </LegalNoticeContainer>
+        <DataPrivacyTitle2>Introduction</DataPrivacyTitle2>
+        <DataPrivacyParagraph>With the following information we would like to you as the "data subject" an overview of how we process your of your personal data by us and your rights under the data protection laws. The use of our Internet pages is possible without entering personal data. Insofar as you special services of our enterprise via our website, however, the services of our company via our website, processing of personal of personal data may become necessary. If the processing of personal data is necessary and there is no legal basis for such a no legal basis for such processing, we will generally obtain your consent from you. <br /><br />
+
+        The processing of personal data, for example your name, address or e-mail address, always takes place in accordance with the Data Protection Regulation (DS-GVO) and in compliance with the legal provisions applicable to "Growing Abroad GmbH" country-specific data protection regulations. Data Protection Provisions. By means of this privacy policy, we would like to inform you about the scope and purpose of the personal data we collect, use and processed personal data.<br /><br />
+
+        We have as responsible for the processing, we have implemented numerous technical and measures to ensure the most complete protection possible for the personal data  protection of personal data processed via this website. Nevertheless, Internet-based data transmissions may be subject to security vulnerabilities, so that an absolute protection cannot be guaranteed. For this reason you are free to transmit personal data to us by alternative means, for example by telephone or by mail.</DataPrivacyParagraph>
+        
+      </DataPrivacyContent>
+    </DataPrivacyContainer>
   );
 }
 

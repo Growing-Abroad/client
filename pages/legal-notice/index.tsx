@@ -60,7 +60,7 @@ const LegalNoticeTitle2 = styled.h2`
   }
 `
 
-const LegalNoticeTitleParagraph = styled.p`
+const LegalNoticeParagraph = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -77,37 +77,37 @@ export default function LegalNotice() {
         <LegalNoticeTitle>Legal Notice</LegalNoticeTitle>        
 
         <LegalNoticeTitle2>Information according to § 5 TMG</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>Growing Abroad GmbH</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>Jakob-Gelb-Platz 10</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>81543 Munich</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>Growing Abroad GmbH</LegalNoticeParagraph>
+        <LegalNoticeParagraph>Jakob-Gelb-Platz 10</LegalNoticeParagraph>
+        <LegalNoticeParagraph>81543 Munich</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Represented by</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>Manuel Josef Feneberg</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>Uanderson Caetano da Silva</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>Manuel Josef Feneberg</LegalNoticeParagraph>
+        <LegalNoticeParagraph>Uanderson Caetano da Silva</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Contact</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>team@growingabroad.de</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>team@growingabroad.de</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Registry Information</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>Registered at the Register Court: Munich</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>Registration Number: HRB 284545</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>Registered at the Register Court: Munich</LegalNoticeParagraph>
+        <LegalNoticeParagraph>Registration Number: HRB 284545</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>VAT Identification Number</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>VAT identification number according to §27a of the German Value Added Tax Act (Umsatzsteuergesetz): [Insert VAT ID here]</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>VAT identification number according to §27a of the German Value Added Tax Act (Umsatzsteuergesetz): [Insert VAT ID here]</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Responsible for content according to § 55 Abs. 2 RStV</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>Growing Abroad GmbH</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>Jakob-Gelb-Platz 10</LegalNoticeTitleParagraph>
-        <LegalNoticeTitleParagraph>81543 Munich</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>Growing Abroad GmbH</LegalNoticeParagraph>
+        <LegalNoticeParagraph>Jakob-Gelb-Platz 10</LegalNoticeParagraph>
+        <LegalNoticeParagraph>81543 Munich</LegalNoticeParagraph>
 
         <LegalNoticeTitle2 style={{marginTop: '78px'}}>Liability for Content</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>The contents of our pages have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages in accordance with § 7 Abs.1 TMG (German Telemedia Act) and general laws. According to §§ 8 to 10 TMG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the moment of knowledge of a specific infringement. Upon becoming aware of such infringements, we will remove the content immediately.</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>The contents of our pages have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages in accordance with § 7 Abs.1 TMG (German Telemedia Act) and general laws. According to §§ 8 to 10 TMG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the moment of knowledge of a specific infringement. Upon becoming aware of such infringements, we will remove the content immediately.</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Liability for Links</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>Our offer contains links to external websites of third parties, over whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, a permanent control of the content of the linked pages is not reasonable without concrete indications of an infringement. Upon becoming aware of any violations, we will remove such links immediately.</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>Our offer contains links to external websites of third parties, over whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, a permanent control of the content of the linked pages is not reasonable without concrete indications of an infringement. Upon becoming aware of any violations, we will remove such links immediately.</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Copyright</LegalNoticeTitle2>
-        <LegalNoticeTitleParagraph>The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of any infringements, we will remove such content immediately.</LegalNoticeTitleParagraph>
+        <LegalNoticeParagraph>The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon becoming aware of any infringements, we will remove such content immediately.</LegalNoticeParagraph>
 
       </LegalNoticeContent>
     </LegalNoticeContainer>
