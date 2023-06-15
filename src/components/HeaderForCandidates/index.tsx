@@ -170,6 +170,7 @@ function HeaderForCandidates() {
                       alignItems: "center",
                       borderRadius: 8,
                       boxShadow: "none",
+                      margin: "0"
                     }}
                     onClick={pushTo(EPagesNames.COMPANIES)}
                     backgroundColor={

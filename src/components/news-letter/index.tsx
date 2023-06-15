@@ -65,6 +65,7 @@ export default function NewsLetter() {
           </SubscribeWrapper>
           <StdButton
             style={{
+              margin: "0",
               display:'flex',
               alignItems: `${isMobile ? "flex-start" : "center"}`,
               justifyContent:`${isMobile ? "center" : "center"}`,

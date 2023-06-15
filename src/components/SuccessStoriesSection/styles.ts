@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const SuccessStoriesWrapperSection = styled.section`
     padding: 80px 60px 80px;
-    max-width: 1800px;
+    max-width: 1490px;
     width: 100%;
 
     display: flex;
@@ -12,8 +12,8 @@ export const SuccessStoriesWrapperSection = styled.section`
     gap: 50px;
 
 
-    @media (max-width:430px) {
-      padding: 80px 16px 133px;
+    @media (max-width: 768px) {
+      padding: 80px 16px 97px;
       gap: 30px;
     }
 `;

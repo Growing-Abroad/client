@@ -28,21 +28,12 @@ function Investiment() {
         ></Image>
       </S.ImageContainer>
 
-      <S.Paragraph
-        style={{
-          width: `${isMobile ? "32px" : "1500px"}`,
-          fontSize: `${isMobile ? "32px" : "60px"}`,
-          textAlign: "center",
-          fontWeight: "600",
-          marginTop: "0px",
-          lineHeight:`${isMobile ? "" : "73px"}`,
-        }}
-      >
-        This course is an investment  <span>in your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>{" "}
-      </S.Paragraph>
-      <StdButton style={{ marginTop: "0px" }}>
+      <S.ParagraphCustom>
+        This course is an investment in <span>your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>
+      </S.ParagraphCustom>
+      <S.StdButtonCustom>
         Get your Acess Now
-      </StdButton>
+      </S.StdButtonCustom>
     </S.Container>
   );
 }

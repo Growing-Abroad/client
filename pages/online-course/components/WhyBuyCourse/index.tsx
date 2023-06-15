@@ -1,4 +1,3 @@
-import StdButton from "@/components/generics/StdButton/StdButton";
 import threePersons from "@/../public/assets/images/card-online-course-goals.webp"
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
@@ -78,9 +77,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <StdButton style={{
-        margin: `${isMobile ? "50px 0" : "0px"}`,
-      }}>Buy Online Course Now</StdButton>
+      <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
     </S.WrapperWhyBuyCourse>
   );
 }

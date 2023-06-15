@@ -79,6 +79,7 @@ export default function Footer({usePageBody, hideBlueSection}: IFooter) {
                         width: `${isMobile ? "143px" : "210px"}`,
                         padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
                         fontSize: `${isMobile ? "12px" : "16px"}`,
+                        margin: "0"
                       }}
                       icon={faEnvelope}
                     >

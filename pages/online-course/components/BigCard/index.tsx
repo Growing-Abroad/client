@@ -2,49 +2,31 @@ import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
 import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.webp";
 import discount from "@/../public/assets/discount.svg";
-import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
-import TwoColorTitle from "@/components/two-color-title";
 import { IconCheckBlue } from "@/components/Icons";
 
 export function BigCard() {
   const { isMobile } = useAppContext();
   return (
     <S.Container>
-      <TwoColorTitle
+      <S.TwoColorTitleCustom
         text1="Get the Online Course now and join the"
         text2="Growing Abroad Community"
-        styles={{
-          flexDirection: "column",
-          display: "flex",
-          marginBottom: `${isMobile ? "20px" : "40px"}`,
-        }}
         fontSize={isMobile ? "" : "60px"}
         hasSpaceBtw
       />
       <S.BigCardWrapper>
-        <Image
+        <S.ImageFlagDiscount
           src={discount}
           alt="discount"
           width={153}
           height={103}
-          style={{
-            position: "absolute",
-            top: `${isMobile ? "380px" : "450px"}`,
-            right: `${isMobile ? "-20px" : "70px"}`,
-            transform: "scale(1.5)",
-          }}
         />
-        <Image
+        <S.ImageCustom
           src={onlineCourse}
           alt=""
           width={isMobile ? 383 : 705}
           height={isMobile ? 241 : 294}
-          style={{
-            objectFit: "cover",
-            objectPosition: `${isMobile ? " " : "50% 40%"}`,
-            borderRadius: "10px",
-          }}
         />
         <h1>Online Course</h1>
         <h2>
@@ -95,17 +77,9 @@ export function BigCard() {
             </p>
           </S.CardText>
         </div>
-        <StdButton
-          style={{
-            textAlign: `center`,
-            width: `${isMobile ? "238px" : "365px"}`,
-            padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-            marginRight: "0",
-            marginTop: `${isMobile ? "20px" : "0px"}`,
-          }}
-        >
+        <S.StdButtonCustom>
           Get Access Now
-        </StdButton>
+        </S.StdButtonCustom>
       </S.BigCardWrapper>
     </S.Container>
   );

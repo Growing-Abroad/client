@@ -2,6 +2,7 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import Image from "next/image";
 import styled from "styled-components";
+import StdButton from "../generics/StdButton/StdButton";
 
 const {
   colors: { blue700, blue500 },
@@ -24,7 +25,7 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   visibility: hidden;
   align-items: baseline;
 
-  @media screen and (max-width: 438px) {
+  @media screen and (max-width: 439px) {
     height: 280px;
   }
 
@@ -136,6 +137,11 @@ export const FlexboxSlide = styled.div`
       left: 81%;
     }
   }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    .slide-img {
+      left: 86%;
+    }
+  }
 `;
 
 export const TextBlock = styled.div`
@@ -182,12 +188,15 @@ export const TextBlock = styled.div`
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
     max-width: 75%;
-    /* width: 66%; */
 
     p {
       font-size: 0.875rem;
       line-height: 1.063rem;
     }
+  }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    width: 72%;
+    
   }
 `;
 
@@ -268,3 +277,14 @@ export const ImageFlag = styled(Image).attrs({
     height: 17.58px;
   }
 `;
+
+
+export const StdButtonCustom = styled(StdButton)`
+  width: 100%;
+  padding: 8px 20px;
+  margin: 0;
+  @media (min-width: 769px) {
+    padding: 20px 40px;
+  }
+  font-size: calc(0.875rem + ((1vw - 4.3px) * 0.5535));
+`

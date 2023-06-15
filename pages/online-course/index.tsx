@@ -4,7 +4,6 @@ import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
 import BigCard from "./components/BigCard";
-import styled from "styled-components";
 import TwoCards from "./components/TwoCards";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
@@ -21,35 +20,9 @@ import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
 import Investiment from "@pages/sales/components/Investiment";
+import * as S from './styles'
+import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 
-export const OnlineCourseWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  zoom: 90%;
-  z-index: 1;
-
-
-  div#page-onlie-course {
-
-    margin-top: calc( 720px + 3%);
-
-    @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%)
-    }
-
-    @media screen and (min-width: 1000px) {
-      margin-top: calc(800px - 10%);
-    }
-
-    @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px + 1.3rem );
-    }
-  }
-
-
-`;
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
@@ -63,7 +36,7 @@ export default function OnlineCourse() {
       onClose={handleModal}
       dataVideo={dataVideo}
     />
-    <OnlineCourseWrapper>
+    <S.OnlineCourseWrapper>
       <CTAction />
       <PageBodyLayout id="page-onlie-course"
         distanceFromTop={isMobile ? "770px" : "800px"}
@@ -72,23 +45,9 @@ export default function OnlineCourse() {
         <WhyBuyCourse />
         <Chapter />
         <BigCard />
-        <SuccessStoriesSection>
-          <TwoColorTitle
-            as="h2"
-            text1="Success"
-            text2="Stories"
-            hasSpaceBtw
-            wrapperStyles={{ maxWidth: "100%" }}
-            styles={isMobile ? { lineHeight: "2.75rem" } : {}}
-          />
-          <OriginalFancyCarousel
-            columnGap={8}
-            dataArray={successStoriesData}
-            openModal={handleModal}
-            visibleModal={isModalVisible}
-            getDataVideo={setDataVideo}
-          />
-        </SuccessStoriesSection>
+
+        <StoriesPageCandidates hasSubTitle={false} />
+
         <TwoCards />
         <Investiment />
         <TwoColorTitle
@@ -98,7 +57,7 @@ export default function OnlineCourse() {
         />
         <FaqSection accordeons={OnlineCourseFaqMockUp} />
       </PageBodyLayout>
-    </OnlineCourseWrapper>
+    </S.OnlineCourseWrapper>
    </>
   );
 }

@@ -20,8 +20,8 @@ export const ProgressBar = styled.div<ProgressBar>`
   align-items: center;
   padding-top: 75px;
 
-  @media screen and (min-width: 768px) {
-    left: 10%;
+  @media screen and (min-width: 769px) {
+    left: 49%;
   }
 
   @media screen and (min-width: 1024px) {
@@ -46,7 +46,7 @@ export const VerticalBar = styled.div<VerticalBarProps>`
     height: 0;
   }
 
-  @media (max-width: 758px) {
+  @media (max-width: 768px) {
     height: ${(props) => `${props.height}`};
   }
 `;
@@ -82,7 +82,7 @@ export const IndexCircle = styled.div<VerticalBarProps>`
   position: relative;
   z-index: 2;
 
-  @media (max-width: 758px) {
+  @media (max-width: 768px) {
     width: 40px;
     height: 40px;
     font-size: 20px;

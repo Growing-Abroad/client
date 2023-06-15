@@ -8,8 +8,14 @@ import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { useState } from "react";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
+import useAppContext from "@/hooks/useAppContext";
+import { SucessStoriesWrapperCustom } from "./styles";
 
-export const StoriesPageCandidates = () => {
+interface StoriesPageCandidatesProps {
+  hasSubTitle?: boolean
+}
+
+export const StoriesPageCandidates = ({hasSubTitle=true}: StoriesPageCandidatesProps) => {
   const [isModalVisible, handleModal]: ModalHook = useModal();
   const [dataVideo, setDataVideo] = useState();
 
@@ -20,13 +26,16 @@ export const StoriesPageCandidates = () => {
         onClose={handleModal}
         dataVideo={dataVideo}
       />
-      <SucessStoriesWrapper>
+      <SucessStoriesWrapperCustom hasSubTitle={hasSubTitle} >
         {/* eslint-disable-next-line react/jsx-no-undef */}
         <TwoColorTitle text1="Success" text2="Stories" hasSpaceBtw as="h2" />
-        <SuccessSubtitle>
-          Customers from all over the world landed their dream job in Germany
-          and many other countries in Europe
-        </SuccessSubtitle>
+        {hasSubTitle && 
+          <SuccessSubtitle>
+            Customers from all over the world landed their dream job in Germany
+            and many other countries in Europe
+          </SuccessSubtitle>
+        }
+        
         <OriginalFancyCarousel
           columnGap={8}
           dataArray={successStoriesData}
@@ -34,7 +43,7 @@ export const StoriesPageCandidates = () => {
           visibleModal={isModalVisible}
           getDataVideo={setDataVideo}
         />
-      </SucessStoriesWrapper>
+      </SucessStoriesWrapperCustom>
     </>
   );
 };
