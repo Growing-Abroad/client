@@ -217,3 +217,18 @@ export const FooterLinksContentWrapper = styled.div`
     gap: 43px;
   }
 `;
+
+
+export const ImgBG = styled.div`
+  &::before {
+    content: "";
+      width: 100%;
+      height: 5px;
+      background: #fff;
+      display: flex;
+      margin-top: -4px;
+    @media screen and (min-width: 1024px){
+      margin-top: -2px;
+    }
+  }
+` 
