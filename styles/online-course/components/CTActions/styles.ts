@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const {
   sizes: { mediaQuery },
@@ -12,6 +13,11 @@ const {
 interface BackgroundCTAProps {
   isMobile: boolean;
 }
+
+interface SubTitleProps {
+  isMobile: boolean
+}
+
 
 export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
@@ -196,3 +202,16 @@ export const BannerMainContainer = styled.section`
     }
   }
 `;
+
+export const SubTitle = styled.span<SubTitleProps>`
+  color: #fff;
+  font-size: ${({ isMobile }) => isMobile ? '20px' : '24px'}; 
+  font-weight: 400;
+  line-height:  ${({ isMobile }) => isMobile ? '30px' : '38px'}; ;
+  max-width: ${({ isMobile }) => isMobile ? '323px' : '30rem'};  
+`;
+
+
+export const StdButtonCustom = styled(StdButton)`
+  margin: 0;
+`

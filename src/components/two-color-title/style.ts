@@ -18,7 +18,7 @@ export const TwoColorTitleWrapper = styled.div`
 .title-why-buy-course {
 
   @media screen and (max-width: 32rem) {
-    margin-top: -10rem;
+    margin-top: 0;
   }
 
   @media (min-width: 33rem) and (max-width: 64rem) {

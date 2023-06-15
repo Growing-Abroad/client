@@ -55,6 +55,7 @@ export default function WhatOurClientsSay() {
           styles={isMobile ? { lineHeight: "2.75rem" } : {}}
         />
         <OriginalFancyCarousel
+          columnGap={8}
           dataArray={successStoriesData}
           openModal={handleModal}
           visibleModal={isModalVisible}

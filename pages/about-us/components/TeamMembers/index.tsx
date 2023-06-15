@@ -20,6 +20,7 @@ export const TeamMembers = () => {
       <S.Container>
         <TwoColorTitle text1="Team" text2="Members" hasSpaceBtw as="h2" />
         <OriginalFancyCarousel
+          columnGap={8}
           dataArray={successStoriesData}
           openModal={handleModal}
           visibleModal={isModalVisible}

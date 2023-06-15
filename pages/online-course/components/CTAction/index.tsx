@@ -2,7 +2,6 @@ import * as S from "../../../../styles/online-course/components/CTActions/styles
 import gaCoaches from "@/../public/assets/new-cta-img.webp";
 import goCoachesMobile from "@/../public/assets/image-mainHero-mobile.png";
 import Image from "next/image";
-import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import { useIntl } from "react-intl";
 import { TextChanger } from "components/TextChanger";
@@ -35,7 +34,7 @@ function CTAction() {
             {t("page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
           </h1>
-          <StdButton>Buy Online Course Now</StdButton>
+          <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
         </section>
         <section className="right-side" style={{ marginTop: '1.5rem'}}>
           {/* <div className="right-side-img-container"> */}

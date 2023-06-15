@@ -19,7 +19,6 @@ import {
   StdButtonContainer,
   ImageFlag,
 } from "./style";
-import { useRouter } from "next/router";
 
 export interface ICarouselData {
   imgSrc: StaticImageData

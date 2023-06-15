@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import StdButton from '@/components/generics/StdButton/StdButton';
+import TwoColorTitle from '@/components/two-color-title';
+import Image from 'next/image';
+
 
 const {
   colors: { blue700, blue500, white },
@@ -16,14 +20,13 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 27px 0 0 0;
-  @media (max-width: ${mediaQuery}) {
-    padding: 87px 23px 0px;
-  }
+  padding: 0 16px;
 `;
+
 export const BigCardWrapper = styled.div`
-position: relative;
-  width: 705px;
+  position: relative;
+  max-width: 705px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -143,3 +146,46 @@ export const CardText = styled.li`
     }
   }
 `;
+
+export const StdButtonCustom = styled(StdButton)`
+  text-align: center;
+  width: 238px;
+  padding: 8px 15px;
+  margin: 20px 0 0;
+  @media screen and (min-width: 768px) {
+    margin: 0px 0 0;
+    padding: 20px 40px;
+    width: 365px;
+  }
+  
+`
+
+export const TwoColorTitleCustom = styled(TwoColorTitle)`
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+`
+
+
+export const ImageCustom = styled(Image)`
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  @media screen and (min-width: 768px) {
+    object-position: 50% 40%;
+  }
+`
+
+export const ImageFlagDiscount = styled(Image)`
+  position: absolute;
+  top: 380px;
+  right: -20px;
+  transform: scale(1.5);
+  @media screen and (min-width: 768px) {
+    top: 450px;
+    right: 70px;
+  }
+`

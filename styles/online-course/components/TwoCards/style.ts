@@ -1,6 +1,18 @@
 import styled from 'styled-components';
+import Image from "next/image";
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import StdButton from '@/components/generics/StdButton/StdButton';
+import TwoColorTitle from '@/components/two-color-title';
+
+
+interface ImageCustomProps {
+  isMobile: boolean
+}
+
+interface TwoColorTitleCustomProps {
+  isMobile: boolean
+}
 
 const {
   colors: { blue700 },
@@ -17,10 +29,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 1280px;
-  padding-bottom: 80px;
 
   @media screen and (min-width: 64rem) {
-    padding-bottom: 120px
+    padding-bottom: 38px;
   }
 `;
 export const ContentTwoCards = styled.div`
@@ -34,7 +45,9 @@ export const ContentTwoCards = styled.div`
   padding: 49px 100px 46px;
   zoom: 1;
   margin-bottom: 2.5rem;
-
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+    gap: 22px;
+  }
   @media  screen and (min-width: 1024px) {
     zoom: 0.75;
   }
@@ -171,3 +184,30 @@ export const CardText = styled.li`
     font-weight:400;
   }
 `;
+
+
+export const StdButtonCustom = styled(StdButton)`
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 81px;
+`
+
+export const ImageCustom = styled(Image)<ImageCustomProps>`
+  border-radius: ${isMobile => isMobile ? "10px" : "10px"};
+  object-fit: cover;
+`
+
+export const TwoColorTitleCustom = styled(TwoColorTitle)<TwoColorTitleCustomProps>`
+  font-size: ${isMobile => isMobile ? "36px" : "60px"};
+  display: flex;
+  flex-wrap: wrap;
+  ${isMobile => isMobile && "width: 334px"};
+  justify-content: center;
+  margin-top: 60px;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+`

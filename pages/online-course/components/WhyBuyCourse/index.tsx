@@ -1,4 +1,3 @@
-import StdButton from "@/components/generics/StdButton/StdButton";
 import threePersons from "@/../public/assets/images/card-online-course-goals.webp"
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
@@ -9,7 +8,7 @@ export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
     <S.WrapperWhyBuyCourse>
-      <S.ContentWhyBuyCourse>
+      <S.ContentWhyBuyCourse style={{transform: "unset"}}>
         <Image
           src={threePersons}
           width={isMobile ? 520 : 748}
@@ -78,7 +77,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <StdButton>Buy Online Course Now</StdButton>
+      <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
     </S.WrapperWhyBuyCourse>
   );
 }

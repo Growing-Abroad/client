@@ -3,8 +3,6 @@ import { PageLayout } from "@/components";
 import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
-import uan from "@/../public/assets/pages/sales/uan.png";
-import manu from "@/../public/assets/pages/sales/manu.webp";
 import styled from "styled-components";
 import TwoCards from "./components/TwoCards";
 import FaqSection from "@pages/faq/components/FaqSection";
@@ -17,7 +15,6 @@ import Motivation from "./components/Motivation";
 import FollowDreams from "./components/FollowDream";
 import WhatYouGet from "./components/WhatYouGet";
 import Investiment from "./components/Investiment";
-import CareerExperts from "./components/CareerExperts";
 import BigCard from "@pages/online-course/components/BigCard";
 import PageBodyLayout from "@/components/generics/PageBody";
 import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
@@ -90,6 +87,7 @@ export default function Sales() {
               styles={isMobile ? { lineHeight: "2.75rem" } : {}}
             />
             <OriginalFancyCarousel
+              columnGap={8}
               dataArray={successStoriesData}
               openModal={handleModal}
               visibleModal={isModalVisible}

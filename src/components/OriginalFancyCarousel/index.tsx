@@ -1,18 +1,9 @@
 import { useState } from "react";
-import {
-  ButtonContainer,
-  FlexboxSlide,
-  FlexboxSlider,
-  FromWrapper,
-  ImageFlag,
-  TextBlock,
-  TextBlockH3,
-} from "./styles";
+import * as S from "./styles";
 import Image, { StaticImageData } from "next/image";
 import { variables } from "@styles/global-variables";
 import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import useAppContext from "@/hooks/useAppContext";
-import StdButton from "../generics/StdButton/StdButton";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 export type TCarouselData = Array<ICarouselData>;
@@ -29,6 +20,7 @@ export interface Props {
   openModal: (value: boolean) => void;
   visibleModal: boolean;
   getDataVideo: (value: any) => void;
+  columnGap?: number;
 }
 
 export default function OriginalFancyCarousel({
@@ -36,6 +28,7 @@ export default function OriginalFancyCarousel({
   openModal,
   visibleModal,
   getDataVideo,
+  columnGap
 }: Props) {
   const {
     windowSize: { width },
@@ -82,46 +75,41 @@ export default function OriginalFancyCarousel({
   }
 
   return (
-    <FlexboxSlider className="flexbox-slider my-flexbox-slider">
+    <S.FlexboxSlider gap={isMobile ? columnGap : undefined} className="flexbox-slider my-flexbox-slider">
       {dataArray.map((item, i) => (
-        <FlexboxSlide
+        <S.FlexboxSlide
           className={handleSlideClasses(i)}
           key={i + "-" + item.fullTitle}
           onClick={() => setSelectedSlide(i)}
         >
-          <TextBlock className="text-block">
-            <TextBlockH3>
+          <S.TextBlock className="text-block">
+            <S.TextBlockH3>
               {isMobile ? item.mobileTitle : item.fullTitle}
-            </TextBlockH3>
+            </S.TextBlockH3>
 
-            <FromWrapper>
+            <S.FromWrapper>
               <p>{item.from}</p>
-              <ImageFlag
+              <S.ImageFlag
                 src={item.countryFlag}
                 alt={`flag of ${item.countryFlag}`}
                 className="country-flag"
               />
-            </FromWrapper>
+            </S.FromWrapper>
 
-            <ButtonContainer>
-              <StdButton
+            <S.ButtonContainer>
+              <S.StdButtonCustom
                 icon={faPlay}
                 className="watch-video-btn"
                 onClick={() => handleOpenModal(item)}
-                style={{
-                  width: "100%",
-                  padding: isMobile ? "8px 20px" : "20px 40px",
-                  fontSize: "calc(0.875rem + ((1vw - 4.3px) * 0.5535))",
-                }}
               >
                 Watch Video
-              </StdButton>
-            </ButtonContainer>
-          </TextBlock>
+              </S.StdButtonCustom>
+            </S.ButtonContainer>
+          </S.TextBlock>
 
           <Image src={item.imgSrc} alt="Slide Image" className="slide-img" />
-        </FlexboxSlide>
+        </S.FlexboxSlide>
       ))}
-    </FlexboxSlider>
+    </S.FlexboxSlider>
   );
 }

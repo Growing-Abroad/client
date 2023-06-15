@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { variables } from '@styles/global-variables';
 import { theme } from '@styles/theme';
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const {
   colors: { blue700 },
@@ -26,7 +27,6 @@ export const WrapperWhyBuyCourse = styled.div`
 
 
   transform-box: view-box;
-  transform: scale(.85);
   gap: 1rem;
   padding-top: 0;
   margin-top: 8px;
@@ -143,3 +143,7 @@ export const IconWhyBuyCourse = styled.span`
   width: 24px;
   height: 24px;
 `;
+
+export const StdButtonCustom = styled(StdButton)`
+  margin: 70px 0 100px;
+`

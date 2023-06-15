@@ -2,6 +2,7 @@ import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 import styled from "styled-components";
 import Image from "next/image";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const {
   colors: { blue700 },
@@ -148,3 +149,21 @@ export const Player = styled(Image).attrs({
     height: auto;
   }
 `;
+
+
+export const ParagraphCustom = styled(Paragraph)`
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0;
+  gap: 0;
+  @media screen and (min-width: 768px) {
+    line-height: 73px;
+    width: 1500px;
+    font-size: 60px;
+  }
+`
+
+export const StdButtonCustom = styled(StdButton)`
+  margin: calc(70px - 1.5rem) 0 0;
+`

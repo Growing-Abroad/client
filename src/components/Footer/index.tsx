@@ -1,16 +1,4 @@
-import {
-  FooterContentWrapper,
-  FooterLinks,
-  FooterLinksContentWrapper,
-  StyledFooter,
-  SocialMedia,
-  FooterBottomWrapper,
-  FooterBottomRight,
-  FooterBottomContainer,
-  Links,
-  FooterContainer,
-  IFooter,
-} from "./style";
+import * as S from "./style";
 import LinkedInIcon from "@/../public/assets/icons/linkedin.webp";
 import FacebookIcon from "@/../public/assets/icons/facebook.webp";
 import InstagramIcon from "@/../public/assets/icons/instagram.webp";
@@ -25,7 +13,7 @@ import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 
-export default function Footer({usePageBody, hideBlueSection}: IFooter) {
+export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
   const route = useRouter();
 
   const { isMobile } = useAppContext();
@@ -49,19 +37,19 @@ export default function Footer({usePageBody, hideBlueSection}: IFooter) {
   const handleGoToTerms = () => onGoToNextPage(EPagesNames.TERMS);
 
   return (
-    <FooterContainer usePageBody={usePageBody}>
+    <S.FooterContainer usePageBody={usePageBody}>
         {!hideBlueSection 
           && 
           <>
-            <StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
-              <div
-              style={{ backgroundImage: `url(${wave.src})` }}
-              className="wave wave-desktop"
-              ></div>
-              <FooterContentWrapper>
+            <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
+              <S.ImgBG
+                style={{ backgroundImage: `url(${wave.src})` }}
+                className="wave wave-desktop"
+              ></S.ImgBG>
+              <S.FooterContentWrapper>
                 <NewsLetter />
-                <FooterLinksContentWrapper>
-                  <FooterLinks width="400px" alignItems="start">
+                <S.FooterLinksContentWrapper>
+                  <S.FooterLinks width="400px" alignItems="start">
                     <h3>Contact us</h3>
                     <p>
                       Also check out the section{" "}
@@ -79,30 +67,31 @@ export default function Footer({usePageBody, hideBlueSection}: IFooter) {
                         width: `${isMobile ? "143px" : "210px"}`,
                         padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
                         fontSize: `${isMobile ? "12px" : "16px"}`,
+                        margin: "0"
                       }}
                       icon={faEnvelope}
                     >
                       Contact Us
                     </StdButton>
-                  </FooterLinks>
-                  <FooterLinks>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
                     {" "}
                     <h3>Quick links</h3>
                     <li onClick={handleGoToAboutUs}>About Us</li>
                     <li onClick={handleGoToServices}>Services</li>
                     <li onClick={handleGoToJobs}>Jobs</li>
                     <li onClick={handleGoToCareerBlog}>Career Blog</li>
-                  </FooterLinks>
-                  <FooterLinks>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
                     <h3>Useful links</h3>
                     <li onClick={handleGoToLegal}>Legal notice</li>
                     <li onClick={handleGoToPrivacy}>Privacy Policy</li>
                     <li onClick={handleGoToTerms}>Terms and Conditions</li>
                     <li onClick={handleGoToFaq}>FAQ</li>
-                  </FooterLinks>
-                  <FooterLinks>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
                     <h3>Social media</h3>
-                    <SocialMedia>
+                    <S.SocialMedia>
                       <Image
                         src={InstagramIcon}
                         alt="instagram icon"
@@ -133,36 +122,36 @@ export default function Footer({usePageBody, hideBlueSection}: IFooter) {
                         height={26}
                         width={26}
                       />
-                    </SocialMedia>
-                  </FooterLinks>
-                </FooterLinksContentWrapper>
-              </FooterContentWrapper>
-              <FooterBottomContainer>
-                <FooterBottomWrapper>
+                    </S.SocialMedia>
+                  </S.FooterLinks>
+                </S.FooterLinksContentWrapper>
+              </S.FooterContentWrapper>
+              <S.FooterBottomContainer>
+                <S.FooterBottomWrapper>
                   <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
-                  <FooterBottomRight>
-                    <Links href="#">Legal Notice</Links>
-                    <Links href="#">Data Privacy</Links>
-                  </FooterBottomRight>
-                </FooterBottomWrapper>
-              </FooterBottomContainer>
-            </StyledFooter>
+                  <S.FooterBottomRight>
+                    <S.Links href="#">Legal Notice</S.Links>
+                    <S.Links href="#">Data Privacy</S.Links>
+                  </S.FooterBottomRight>
+                </S.FooterBottomWrapper>
+              </S.FooterBottomContainer>
+            </S.StyledFooter>
           </>
         }
         {
           hideBlueSection 
-          &&  <FooterBottomContainer>
-                <FooterBottomWrapper>
+          &&  <S.FooterBottomContainer>
+                <S.FooterBottomWrapper>
                   <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
-                  <FooterBottomRight>
-                    <Links href="#">Legal Notice</Links>
-                    <Links href="#">Data Privacy</Links>
-                  </FooterBottomRight>
-                </FooterBottomWrapper>
-              </FooterBottomContainer>
+                  <S.FooterBottomRight>
+                    <S.Links href="#">Legal Notice</S.Links>
+                    <S.Links href="#">Data Privacy</S.Links>
+                  </S.FooterBottomRight>
+                </S.FooterBottomWrapper>
+              </S.FooterBottomContainer>
         }
         
 
-    </FooterContainer>
+    </S.FooterContainer>
   );
 }
