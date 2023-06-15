@@ -1,6 +1,6 @@
 import {
   SuccessSubtitle,
-  SucessStoriesWrapper,
+  SucessStoriesWrapperCustom
 } from "../../../../styles/candidates/components/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
@@ -8,8 +8,6 @@ import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
 import { useState } from "react";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
-import useAppContext from "@/hooks/useAppContext";
-import { SucessStoriesWrapperCustom } from "./styles";
 
 interface StoriesPageCandidatesProps {
   hasSubTitle?: boolean

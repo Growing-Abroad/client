@@ -13,16 +13,39 @@ import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
 import { ModalLayout } from "@/components/ModalLayout";
-import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
-import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
-import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
 import Investiment from "@pages/sales/components/Investiment";
-import * as S from './styles'
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
+import styled from "styled-components";
 
+const OnlineCourseWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  zoom: 90%;
+  z-index: 1;
+
+
+  div#page-onlie-course {
+
+    margin-top: calc( 720px + 3%);
+
+    @media screen and (max-width: 360px) {
+      margin-top: calc(720px - 15%)
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: calc(800px - 10%);
+    }
+
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px + 1.3rem );
+    }
+  }
+`;
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
@@ -36,7 +59,7 @@ export default function OnlineCourse() {
       onClose={handleModal}
       dataVideo={dataVideo}
     />
-    <S.OnlineCourseWrapper>
+    <OnlineCourseWrapper>
       <CTAction />
       <PageBodyLayout id="page-onlie-course"
         distanceFromTop={isMobile ? "770px" : "800px"}
@@ -57,7 +80,7 @@ export default function OnlineCourse() {
         />
         <FaqSection accordeons={OnlineCourseFaqMockUp} />
       </PageBodyLayout>
-    </S.OnlineCourseWrapper>
+    </OnlineCourseWrapper>
    </>
   );
 }
