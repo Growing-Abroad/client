@@ -32,7 +32,7 @@ function CTAction() {
           <S.SubTitle isMobile={isMobile}>
             Build a successful career abroad with this amazing ONLINE COURSE
           </S.SubTitle>
-          <StdButton>Buy Online Course Now</StdButton>
+          <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
         </section>
         <section className="right-side">
           <Image

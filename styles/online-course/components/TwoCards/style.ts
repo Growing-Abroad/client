@@ -67,6 +67,7 @@ export const ContentTwoCards = styled.div`
       h3{
         font-size: 30px;
         padding: 26px 31px 30px 32px;
+        white-space: nowrap;
       }
     }
     .right-card{

@@ -47,7 +47,9 @@ export const ContentWhyBuyCourse = styled.div`
   align-items: center;
   margin-top: 2rem;
   justify-content: space-between;
-
+  @media screen and (min-width: 769px) and (max-width: 1023px){
+      flex-direction: column;
+    }
 
   .img-thinkinh-job-germany,
   .img-benefits {
@@ -92,7 +94,6 @@ export const RightContentWhyBuyCourse = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-width: calc(90% - 570px);
   gap: 3rem;
   margin-top: 3.125rem;
 
@@ -114,6 +115,11 @@ export const RightContentWhyBuyCourse = styled.div`
   @media screen and (min-width: 1081px) {
     margin-top: unset;
   }
+
+  @media screen and (min-width: 769px) and (max-width: 1023px){
+    width: 68%;
+  }
+
 `;
 
 export const TextWrapperWhyBuyCourse = styled.div`

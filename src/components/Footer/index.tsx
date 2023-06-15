@@ -7,7 +7,6 @@ import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
 import Image from "next/image";
 import NewsLetter from "../news-letter";
 import useAppContext from "@/hooks/useAppContext";
-import StdButton from "../generics/StdButton/StdButton";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
@@ -59,20 +58,11 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                       and <span onClick={handleGoToCareerBlog}>"Career Blogs"</span>.
                       Maybe your question is already answered there.
                     </p>
-                    <StdButton
-                      style={{
-                        display: "flex",
-                        alignItems: `${isMobile ? "center" : ""}`,
-                        justifyContent: `${isMobile ? "center" : ""}`,
-                        width: `${isMobile ? "143px" : "210px"}`,
-                        padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-                        fontSize: `${isMobile ? "12px" : "16px"}`,
-                        margin: "0"
-                      }}
+                    <S.StdButtonCustom
                       icon={faEnvelope}
                     >
                       Contact Us
-                    </StdButton>
+                    </S.StdButtonCustom>
                   </S.FooterLinks>
                   <S.FooterLinks>
                     {" "}

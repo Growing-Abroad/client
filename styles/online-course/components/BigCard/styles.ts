@@ -179,12 +179,18 @@ export const ImageCustom = styled(Image)`
   }
 `
 
-export const ImageFlagDiscount = styled(Image)`
+interface ImageFlagDiscountProps {
+  isIos: boolean
+}
+
+export const ImageFlagDiscount = styled(Image)<ImageFlagDiscountProps>`
   position: absolute;
-  top: 380px;
+
+  top: ${({ isIos }) => isIos ? '392px' : '382px'};
   right: -20px;
-  transform: scale(1.5);
+  transform: scale(1.2);
   @media screen and (min-width: 768px) {
+    transform: scale(1.5);
     top: 450px;
     right: 70px;
   }

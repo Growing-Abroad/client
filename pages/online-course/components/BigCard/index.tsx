@@ -4,9 +4,31 @@ import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-succ
 import discount from "@/../public/assets/discount.svg";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheckBlue } from "@/components/Icons";
+import { useEffect, useState } from 'react';
 
 export function BigCard() {
   const { isMobile } = useAppContext();
+  const [isIos, setIsIos] = useState<boolean>(false)
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+
+    const isAndroid = /Android/.test(userAgent);
+
+    if (isIOS && isMobile && isSafari) {
+      setIsIos(true)
+    }
+
+    if (isAndroid) {
+      setIsIos(false)
+    }
+  }, []);
+
+
   return (
     <S.Container>
       <S.TwoColorTitleCustom
@@ -17,6 +39,7 @@ export function BigCard() {
       />
       <S.BigCardWrapper>
         <S.ImageFlagDiscount
+          isIos={isIos}
           src={discount}
           alt="discount"
           width={153}
