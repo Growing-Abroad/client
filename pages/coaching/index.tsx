@@ -9,7 +9,7 @@ import CoachingPackageOnlineCourseSection from "./components/coaching-package-on
 import WhatOurClientsSay from "./components/what-our-clients-say";
 import ReusedFaq from "@/components/reused-faq";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.webp";
+import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import PageBodyLayout from "@/components/generics/PageBody";
 

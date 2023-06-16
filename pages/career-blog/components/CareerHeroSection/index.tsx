@@ -1,6 +1,6 @@
 import TwoColorTitle from "@components/two-color-title";
-import background from "@/../public/assets/pages/career-blog/background-hero.webp";
-import backgroundMobile from "@/../public/assets/pages/career-blog/background-hero-mobile.webp";
+import background from "@/../public/assets/pages/career-blog/background-hero.jpg";
+import backgroundMobile from "@/../public/assets/pages/career-blog/background-hero-mobile.jpg";
 
 import {
   Container,

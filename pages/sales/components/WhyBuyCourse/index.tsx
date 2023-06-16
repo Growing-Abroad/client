@@ -1,4 +1,4 @@
-import ImgThinking from "@/../public/assets/images/thinking-job-in-germany.webp";
+import ImgThinking from "@/../public/assets/images/thinking-job-in-germany.jpg";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";

@@ -1,5 +1,5 @@
 import StdButton from "@/components/generics/StdButton/StdButton";
-import Benefits from "@/../public/assets/images/get-job-benefits.webp";
+import Benefits from "@/../public/assets/images/get-job-benefits.jpg";
 import classes from "./style.module.css";
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
@@ -11,17 +11,17 @@ export function WhatYouGet() {
   return (
     <S.WrapperWhyBuyCourse className="what-you-get"
     >
-      <S.DiscoverTitle 
+      <S.DiscoverTitle
         className="discover-title"
         text1="What you get in"
         text2="this Online Course"
-        hasSpaceBtw        
+        hasSpaceBtw
       />
       <S.ContentWhyBuyCourse className="sales-course"
         style={{
           paddingLeft: `${isMobile ? "" : "0"}`,
           transform: 'unset',
-          marginBottom: `${isMobile ? '0' : '0'}`       
+          marginBottom: `${isMobile ? '0' : '0'}`
         }}
       >
         <S.ImageOnlineCourse

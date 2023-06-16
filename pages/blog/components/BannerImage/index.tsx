@@ -1,6 +1,6 @@
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import classes from './styles.module.css'
-import authorPicture from '../../../../public/assets/blog/uanderson.webp'; 
+import authorPicture from '../../../../public/assets/blog/uanderson.jpg';
 
 function BannerImage() {
     return (
