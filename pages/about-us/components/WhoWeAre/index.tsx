@@ -1,8 +1,8 @@
 import TwoColorTitle from "@components/two-color-title";
 import React, { useCallback, useRef, useState } from "react";
-import UanAndManu from "@assets/pages/about-us/about-us-coaches.webp";
+import UanAndManu from "@assets/pages/about-us/about-us-coaches.jpg";
 import Image from "next/image";
-import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
+import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
 import classes from "./style.module.css";
 import { Montserrat } from "next/font/google";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";

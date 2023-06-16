@@ -1,6 +1,6 @@
 import * as S from "../../../../styles/online-course/components/TwoCards/style";
-import thumbsUp from "@/../public/assets/thumbs-up.webp";
-import thumbsDown from "@/../public/assets/thumbs-down.webp";
+import thumbsUp from "@/../public/assets/thumbs-up.jpg";
+import thumbsDown from "@/../public/assets/thumbs-down.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import {
   IconCheckGreen,

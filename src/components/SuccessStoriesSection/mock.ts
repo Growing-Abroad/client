@@ -1,17 +1,17 @@
-import profileBianca from "@/../public/assets/sucession-case/bianca.webp";
-import profileAcheampong from "@/../public/assets/sucession-case/acheampong.webp";
-import profileAmna from "@/../public/assets/sucession-case/amna.webp";
-import profileJason from "@/../public/assets/sucession-case/Jason.webp";
-import profileSaransh from "@/../public/assets/sucession-case/saransh.webp";
-import profileZeid from "@/../public/assets/sucession-case/zeid.webp";
-import profileMichaela from "@/../public/assets/sucession-case/michaela.webp";
+import profileBianca from "@/../public/assets/sucession-case/bianca.jpg";
+import profileAcheampong from "@/../public/assets/sucession-case/acheampong.jpg";
+import profileAmna from "@/../public/assets/sucession-case/amna.jpg";
+import profileJason from "@/../public/assets/sucession-case/Jason.jpg";
+import profileSaransh from "@/../public/assets/sucession-case/saransh.jpg";
+import profileZeid from "@/../public/assets/sucession-case/zeid.jpg";
+import profileMichaela from "@/../public/assets/sucession-case/michaela.jpg";
 
 import flagBrasil from "@/../public/countries-flags/br.svg";
 import flagGana from "@/../public/countries-flags/gana.svg";
 import flagPakistan from "@/../public/countries-flags/pakistan.svg";
 import flagIndia from "@/../public/countries-flags/in.svg";
 import flagJordan from "@/../public/countries-flags/jo.png";
-import flagMoldova from "@/../public/countries-flags/moldova.webp";
+import flagMoldova from "@/../public/countries-flags/moldova.jpg";
 
 
 

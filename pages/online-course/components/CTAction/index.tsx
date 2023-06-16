@@ -1,5 +1,5 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
-import gaCoaches from "@/../public/assets/new-cta-img.webp";
+import gaCoaches from "@assets/new-cta-img.jpg";
 import goCoachesMobile from "@/../public/assets/image-mainHero-mobile.png";
 import Image from "next/image";
 import useAppContext from "@/hooks/useAppContext";

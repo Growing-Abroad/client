@@ -1,8 +1,8 @@
 import TwoColorTitle from "@components/two-color-title";
 import React, { useCallback, useState } from "react";
-import videoBackground from "@assets/pages/sales/Online-Course-Dream.webp";
+import videoBackground from "@assets/pages/sales/Online-Course-Dream.jpg";
 import Image from "next/image";
-import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
+import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
 import classes from "./style.module.css";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
 import useAppContext from "@/hooks/useAppContext";

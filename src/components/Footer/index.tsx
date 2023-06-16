@@ -1,8 +1,8 @@
 import * as S from "./style";
-import LinkedInIcon from "@/../public/assets/icons/linkedin.webp";
-import FacebookIcon from "@/../public/assets/icons/facebook.webp";
-import InstagramIcon from "@/../public/assets/icons/instagram.webp";
-import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import LinkedInIcon from "@/../public/assets/icons/linkedin.jpg";
+import FacebookIcon from "@/../public/assets/icons/facebook.jpg";
+import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
+import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
 import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
 import Image from "next/image";
 import NewsLetter from "../news-letter";
@@ -37,8 +37,8 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   return (
     <S.FooterContainer usePageBody={usePageBody}>
-        {!hideBlueSection 
-          && 
+        {!hideBlueSection
+          &&
           <>
             <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
               <S.ImgBG
@@ -129,7 +129,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
           </>
         }
         {
-          hideBlueSection 
+          hideBlueSection
           &&  <S.FooterBottomContainer>
                 <S.FooterBottomWrapper>
                   <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
@@ -140,7 +140,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                 </S.FooterBottomWrapper>
               </S.FooterBottomContainer>
         }
-        
+
 
     </S.FooterContainer>
   );

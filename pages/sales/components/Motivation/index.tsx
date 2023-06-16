@@ -1,5 +1,5 @@
 import StdButton from "@/components/generics/StdButton/StdButton";
-import threePersons from "@/../public/assets/images/card-online-course-goals.webp";
+import threePersons from "@/../public/assets/images/card-online-course-goals.jpg";
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
@@ -17,7 +17,7 @@ export function Motivation() {
         hasSpaceBtw
         className="title-why-buy-course"
       />
-        
+
       <WhyBuyCourse />
     </S.WrapperWhyBuyCourse>
   );

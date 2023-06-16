@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
-import inspiration from '@assets/pages/about-us/inspiration.webp';
-import trust from '@assets/pages/about-us/trust.webp';
-import customerCentric from '@assets/pages/about-us/customer-centric.webp';
+import inspiration from '@assets/pages/about-us/inspiration.jpg';
+import trust from '@assets/pages/about-us/trust.jpg';
+import customerCentric from '@assets/pages/about-us/customer-centric.jpg';
 
 
 interface ISharedValues {
