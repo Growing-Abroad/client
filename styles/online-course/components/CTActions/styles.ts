@@ -214,4 +214,7 @@ export const SubTitle = styled.span<SubTitleProps>`
 
 export const StdButtonCustom = styled(StdButton)`
   margin: 0;
+  @media screen and (min-width: 1024px) {
+    margin-top: 25px;
+  }
 `

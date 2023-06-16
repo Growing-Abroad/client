@@ -15,8 +15,8 @@ const VerticalBar: React.FC = () => {
 
     const isAndroid = /Android/.test(userAgent);
 
-    if (isIOS && isMobile && isSafari) {
-      setPhoneType('750px')
+    if (isIOS && isMobile ) {
+      setPhoneType('542px')
     }
 
     if (isAndroid) {

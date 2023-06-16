@@ -34,7 +34,7 @@ export function BigCard() {
       <S.TwoColorTitleCustom
         text1="Get the Online Course now and join the"
         text2="Growing Abroad Community"
-        fontSize={isMobile ? "" : "60px"}
+        fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
       <S.BigCardWrapper>

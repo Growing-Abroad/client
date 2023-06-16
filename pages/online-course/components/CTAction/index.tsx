@@ -34,10 +34,12 @@ function CTAction() {
             {t("page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
           </h1>
+          <S.SubTitle isMobile={isMobile}>
+            Build a successful career abroad with this amazing ONLINE COURSE
+          </S.SubTitle>
           <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
         </section>
         <section className="right-side" style={{ marginTop: '1.5rem'}}>
-          {/* <div className="right-side-img-container"> */}
             <Image
               src={imageSource}
               alt="growing abroad coaches"

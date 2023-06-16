@@ -24,23 +24,21 @@ function FollowDreams() {
   }, [isVideoPlaying, setIsVideoPlaying]);
 
   return (
-    <S.Container style={{gap:'40px', paddingBottom:`${isMobile ? '0px':''}`}}>
+    <S.Container className="sales">
       <TwoColorTitle
         text1="Start your journey!"
         text2="Follow your Dream!"
         hasSpaceBtw
         className={classes.followDreamsTitle}
-        fontSize={isMobile ?"32px" :"52px"}
+        fontSize={isMobile ?"36px" :"52px"}
         wrapperStyles={{
-          width:`${isMobile ? '350px':'1160px'}`,
           flexDirection:"column",
           justifyContent: "center",
-          height: `${isMobile ? "150px" : "auto"}`,
         }}
         as="h2"
       />
 
-      <S.ImageContainer onClick={handlePause}>
+      <S.ImageContainer className="sales" onClick={handlePause}>
         {!isVideoPlaying ? (
           <Image
             width={804}
@@ -64,10 +62,10 @@ function FollowDreams() {
         )}
       </S.ImageContainer>
 
-      <S.Paragraph>
-        <p  className={classes.resume}>
+      <S.Paragraph className="sales">
+        <p  className={`${classes.resume} subtitle`}>
           In this life changing Online Course we included all our insights,
-          strategies and methods for you to successfully <br/>get a job in Germany or
+          strategies and methods for you to successfully get a job in Germany or
           Europe.
         </p>
       </S.Paragraph>

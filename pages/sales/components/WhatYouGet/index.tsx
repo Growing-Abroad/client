@@ -4,48 +4,30 @@ import classes from "./style.module.css";
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
-import TwoColorTitle from "@/components/two-color-title";
 import { IconCheck } from "@/components/Icons";
 
 export function WhatYouGet() {
   const { isMobile } = useAppContext();
   return (
-    <S.WrapperWhyBuyCourse
-      style={{
-        paddingBottom: 0,
-        paddingTop: `0px`,
-        gap: `${isMobile ? "" : "40px"}`,
-        transform: `${isMobile ? 'unset' : 'scale(.85)'}`,
-        marginTop: `${isMobile ? '75px' : '8px'}`,
-        marginBottom: `${isMobile ? '55px' : '16px'}`
-      }}
+    <S.WrapperWhyBuyCourse className="what-you-get"
     >
-      <TwoColorTitle
+      <S.DiscoverTitle 
         className="discover-title"
         text1="What you get in"
         text2="this Online Course"
-        hasSpaceBtw
-        styles={{
-          marginBottom: `${isMobile ? "" : "0px"}`,
-          width: `${isMobile ? "100%" : "70%"}`,
-          whiteSpace: `${isMobile ? "normal" : "normal"}`,
-          textAlign: `center`,
-        }}
-        fontSize={isMobile ? "32px" : "60px"}
+        hasSpaceBtw        
       />
-      <S.ContentWhyBuyCourse
+      <S.ContentWhyBuyCourse className="sales-course"
         style={{
-          flexDirection: `${isMobile ? "column" : "row-reverse"}`,
           paddingLeft: `${isMobile ? "" : "0"}`,
           transform: 'unset',
-          marginBottom: `${isMobile ? '90px' : '0'}`       
+          marginBottom: `${isMobile ? '0' : '0'}`       
         }}
       >
-        <Image
+        <S.ImageOnlineCourse
           src={Benefits}
           className="img-benefits"
           alt=""
-          style={{width: `${isMobile ? "100%" : "780px"}`}}
         />
         <S.RightContentWhyBuyCourse
           className={classes.text}
@@ -102,7 +84,7 @@ export function WhatYouGet() {
               life
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
-          <StdButton style={{ width: "181px", margin: " 10px   auto 10px" }}>
+          <StdButton style={{ width: "181px", margin: "38px auto 100px" }}>
             Buy Now
           </StdButton>
         </S.RightContentWhyBuyCourse>

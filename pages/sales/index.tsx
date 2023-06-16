@@ -4,7 +4,6 @@ import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
 import styled from "styled-components";
-import TwoCards from "./components/TwoCards";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
@@ -25,6 +24,8 @@ import useModal, { ModalHook } from "@/hooks/useModal";
 import _useLocale from "@/hooks/useLocale";
 import { IntlProvider } from "react-intl";
 import DiscoverGA from "./components/DiscoverGA";
+import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
+import TwoCards from "@pages/online-course/components/TwoCards";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -35,14 +36,18 @@ export const SalesWrapper = styled.div`
   z-index: 1;
 
   #page-sales {
-    margin-top: calc( 720px + 13% );
+    margin-top: calc( 720px + 13%);
+
+    @media screen and (max-width: 360px) {
+      margin-top: calc(720px - 15%)
+    }
 
     @media screen and (min-width: 1000px) {
-      margin-top: calc( 800px - 4% );
+      margin-top: calc( 800px - 2% );
     }
 
     @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px - 2rem );
+      margin-top: calc( 800px  - 0.7rem );
     }
 
     @media screen and (min-width: 1366px)  {
@@ -77,23 +82,7 @@ export default function Sales() {
           <WhatYouGet />
           <Chapter />
           <BigCard />
-          <SuccessStoriesSection>
-            <TwoColorTitle
-              as="h2"
-              text1="Success"
-              text2="Stories"
-              hasSpaceBtw
-              wrapperStyles={{ maxWidth: "100%" }}
-              styles={isMobile ? { lineHeight: "2.75rem" } : {}}
-            />
-            <OriginalFancyCarousel
-              columnGap={8}
-              dataArray={successStoriesData}
-              openModal={handleModal}
-              visibleModal={isModalVisible}
-              getDataVideo={setDataVideo}
-            />
-          </SuccessStoriesSection>
+          <StoriesPageCandidates hasSubTitle={false} />
           <TwoCards />
           <Investiment />
           <TwoColorTitle

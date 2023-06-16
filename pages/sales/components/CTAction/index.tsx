@@ -1,7 +1,6 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
 import gaCoaches from "@/../public/assets/new-cta-img.webp";
 import Image from "next/image";
-import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import { TextChanger } from "components/TextChanger";
 import { useIntl } from "react-intl";
@@ -29,7 +28,7 @@ function CTAction() {
             {t("page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
           </h1>
-          <S.SubTitle isMobile={isMobile}>
+          <S.SubTitle isMobile={isMobile}> 
             Build a successful career abroad with this amazing ONLINE COURSE
           </S.SubTitle>
           <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>

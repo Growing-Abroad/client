@@ -17,7 +17,7 @@ export function TwoCards() {
         text1="Who is this"
         isMobile={isMobile}
         text2="Online Course for?"
-        fontSize={isMobile ? "" : "60px"}
+        fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
       <S.ContentTwoCards>
