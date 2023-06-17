@@ -1,7 +1,7 @@
 import TwoColorTitle from "@/components/two-color-title";
 import { Image } from "react-bootstrap";
 import classes from './styles.module.css'
-import image from '../../../../../public/assets/blog/growing-abroad-blog-online-course-canva.webp'
+import image from '../../../../../public/assets/blog/growing-abroad-blog-online-course-canva.jpg'
 import { Button } from "@/styles/global-styles";
 
 function Masterclass () {

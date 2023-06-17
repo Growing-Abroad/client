@@ -1,22 +1,45 @@
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
-import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.webp";
+import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.jpg";
 import discount from "@/../public/assets/discount.svg";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheckBlue } from "@/components/Icons";
+import { useEffect, useState } from 'react';
 
 export function BigCard() {
   const { isMobile } = useAppContext();
+  const [isIos, setIsIos] = useState<boolean>(false)
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+
+    const isAndroid = /Android/.test(userAgent);
+
+    if (isIOS && isMobile && isSafari) {
+      setIsIos(true)
+    }
+
+    if (isAndroid) {
+      setIsIos(false)
+    }
+  }, []);
+
+
   return (
     <S.Container>
       <S.TwoColorTitleCustom
         text1="Get the Online Course now and join the"
         text2="Growing Abroad Community"
-        fontSize={isMobile ? "" : "60px"}
+        fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
       <S.BigCardWrapper>
         <S.ImageFlagDiscount
+          isIos={isIos}
           src={discount}
           alt="discount"
           width={153}

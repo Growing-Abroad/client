@@ -1,5 +1,5 @@
 import React from "react";
-import VisionAndMissionBackground from "../../../../public/assets/pages/about-us/vision-growing-abroad.webp";
+import VisionAndMissionBackground from "../../../../public/assets/pages/about-us/vision-growing-abroad.jpg";
 import * as S from "../../../../styles/about-us/components/VisionAndMission/index.styles";
 
 function VisionAndMission() {

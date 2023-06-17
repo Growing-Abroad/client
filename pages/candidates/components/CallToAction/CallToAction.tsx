@@ -1,5 +1,5 @@
 import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
-import gaCoaches from "@/../public/assets/new-cta-img.webp";
+import gaCoaches from "@assets/new-cta-img.jpg";
 import Image from "next/image";
 import { useIntl } from "react-intl";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";

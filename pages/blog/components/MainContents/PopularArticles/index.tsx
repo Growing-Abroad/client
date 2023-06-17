@@ -1,8 +1,8 @@
 import TwoColorTitle from "@/components/two-color-title";
 import { Image } from "react-bootstrap";
 import classes from './styles.module.css';
-import img1 from '../../../../../public/assets/blog/growing-abroad-blog-interview-canva.webp';
-import img2 from '../../../../../public/assets/blog/job-platforms.webp';
+import img1 from '../../../../../public/assets/blog/growing-abroad-blog-interview-canva.jpg';
+import img2 from '../../../../../public/assets/blog/job-platforms.jpg';
 
 function PopularArticles() {
     return (

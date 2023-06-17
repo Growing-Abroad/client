@@ -1,6 +1,6 @@
-import InstagramIcon from "@/../public/assets/icons/instagram.webp";
+import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
 import LinkedinIcon from "@/../public/assets/icons/linkedin-icon.svg";
-import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
 import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
 import CourseStudentsIcon from "@/../public/assets/icons/course-students-icon.svg";
 import { StaticImageData } from "next/image";

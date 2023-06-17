@@ -7,10 +7,10 @@ import TwoColorTitle from "@components/two-color-title";
 import Card from "@components/Card";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
-import puzzleImg from "@assets/puzzle.webp"
-import blogImg2 from "@assets/online-course-success.webp"
-import blogImg3 from "@assets/faqs.webp"
-import blogImg4 from "@assets/job-interview-coach.webp"
+import puzzleImg from "@assets/puzzle.jpg"
+import blogImg2 from "@assets/online-course-success.jpg"
+import blogImg3 from "@assets/faqs.jpg"
+import blogImg4 from "@assets/job-interview-coach.jpg"
 
 export default function BlogSection() {
   const { isMobile } = useAppContext();

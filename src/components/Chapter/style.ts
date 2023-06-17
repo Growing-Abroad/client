@@ -153,6 +153,12 @@ export const ChapterContentCard = styled.div<ContentCardProps>`
   @media screen and (min-width: 769px) and (max-width: 1023px) {
     padding-left: ${(props) => (props.reverse ? "16px" : "0px")};
     padding-right: ${(props) => (props.reverse ? "0" : "16px")};
+    
+  }
+  @media screen and (min-width: 769px) and (max-width: 1123px) {
+    .image {
+      width: 47%;
+    }
   }
 
   @media (max-width: ${mediaQuery}) {

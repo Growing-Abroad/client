@@ -2,9 +2,9 @@ import TwoColorTitle from "@/components/two-color-title";
 import { variables } from "@/styles/global-variables";
 import Image from "next/image";
 import styled from "styled-components";
-import CoachingPackage from "@assets/pages/coaching/coaching-package.webp";
+import CoachingPackage from "@assets/pages/coaching/coaching-package.jpg";
 import useAppContext from "@/hooks/useAppContext";
-import LeftRetangle from "@assets/pages/coaching/left-blue-400.webp";
+import LeftRetangle from "@assets/pages/coaching/left-blue-400.jpg";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

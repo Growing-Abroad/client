@@ -8,7 +8,7 @@ import Pagination from "../Pagination";
 export default function BlogCardSection() {
   const cards = [
     {
-      src: "/../public/assets/curriculum.webp",
+      src: "/../public/assets/curriculum.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -16,7 +16,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/handshake.webp",
+      src: "/../public/assets/handshake.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -24,7 +24,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/online-course-success.webp",
+      src: "/../public/assets/online-course-success.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -32,7 +32,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/meeting.webp",
+      src: "/../public/assets/meeting.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -40,7 +40,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/puzzle.webp",
+      src: "/../public/assets/puzzle.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -48,7 +48,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/trust.webp",
+      src: "/../public/assets/trust.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
@@ -56,7 +56,7 @@ export default function BlogCardSection() {
         "Our Vision is to create a platform that brings people together as a community",
     },
     {
-      src: "/../public/assets/job-interview-coach.webp",
+      src: "/../public/assets/job-interview-coach.jpg",
       description: "image",
       title: "Practical Marketing Tips for Black Friday",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",

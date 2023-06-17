@@ -23,6 +23,18 @@ export const DiscoverGrowingAbroadSection = styled.section`
   width: 100%;
   max-width: ${maxWidthAll};
 
+  &.sales {
+    padding: 0;
+    .discover-content {
+      @media screen and (min-width: 1026px) {
+        max-width: calc(1366px - 44px);
+        padding: 0 22px;        
+        zoom: unset;
+        transform: unset;
+      }
+    }
+  }
+
   @media (max-width: ${mediaQuery}) {
     padding: 40px 0;
     gap: 0px;
@@ -37,6 +49,10 @@ export const DiscoverGrowingAbroadSection = styled.section`
       flex-wrap: wrap;
       display: flex;
       justify-content: center;
+      font-size: 32px;
+      @media screen and (min-width: 768px) {
+        font-size: 52px;
+      }
     }
   }
 `;
@@ -52,6 +68,12 @@ export const DiscoverReadMoreWrapper = styled.div`
   max-width: 100%;
   width: 100%;
   height: 35rem;
+  &.sales {
+    height: 100%;
+    @media screen and (min-width: 1026px) {
+      height: 510px
+    }
+  }
 
   .discover-text {
     color: white;

@@ -29,7 +29,7 @@ export default function DiscoverGA() {
   }
 
   return (
-    <DiscoverGrowingAbroadSection>
+    <DiscoverGrowingAbroadSection className="sales">
       <TwoColorTitle
         text1="We are Uan & Manu"
         text2="your Career Experts"
@@ -40,7 +40,7 @@ export default function DiscoverGA() {
         className="discover-title"
       />
       <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover columnReversed onSlideChangeCallback={(index) => onHoverChangeBoxText(index)}>
-        <DiscoverReadMoreWrapper>
+        <DiscoverReadMoreWrapper className="sales">
           <StdParagraqh className="discover-text" style={{ fontSize: isMobile ? '.875rem' : '', fontWeight: 600 }}>
             {activeIndex > 0 ? (
               <>
