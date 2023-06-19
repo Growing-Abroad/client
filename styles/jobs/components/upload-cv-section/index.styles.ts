@@ -19,7 +19,7 @@ export const UploadCvWrapper = styled.div`
     @media (max-width: ${mediaQuery}) {
         gap: 25px;
         padding-inline: 40px;
-        margin-bottom: 109px;
+        margin-bottom: 60px;
 
         .upload-cv-heading2 {
             span {
@@ -33,15 +33,19 @@ export const UploadCvDetails = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 32px;
 
     .cv-paragraqh {
         font-weight: 500;
-        max-width: 500px;
-        text-align: justify;
+        max-width: 95%;
+        text-align: start;
         color: ${blue700};
         margin: 0;
+
+        @media (max-width: ${mediaQuery}) {
+          text-align: center;
+      }
     }
 
 
@@ -57,10 +61,11 @@ export const CvForm = styled.form`
     flex-direction: column;
     align-items: center;
 
-    .padded { 
+    .padded {
         max-width: ${maxWidthAll};
         width: 100%;
         padding-inline: ${globalHorizontalPadding};
+        padding-bottom: 24px;
 
     }
 
@@ -89,11 +94,11 @@ export const CvForm = styled.form`
         width: 100%;
         margin-bottom: 80px;
         align-items: end;
-        
+
         &.smaller-margin-bottom {
             margin-bottom: 12px;
         }
-    
+
     }
 
 
@@ -122,7 +127,7 @@ export const CvForm = styled.form`
         width: 100%;
         display: flex;
         justify-content: center;
-        
+
         .upload-docs-content {
             padding: 60px ${globalHorizontalPadding} 90px;
 
@@ -210,7 +215,7 @@ export const CvForm = styled.form`
             font-size: 0.875rem;
         }
     }
-    
+
     @media (max-width: ${mediaQuery}) {
         display: flex;
         flex-direction: column;
@@ -244,7 +249,7 @@ export const CvForm = styled.form`
                 text-align: center;
             }
         }
-        
+
         .declaration-of-consent {
             padding-inline: 40px;
             display: flex;
@@ -255,12 +260,12 @@ export const CvForm = styled.form`
             }
             .declaration-paragraqh {
                text-align: justify;
-               
+
                 .highlight {
                 }
             }
         }
     }
 
-    
+
 `

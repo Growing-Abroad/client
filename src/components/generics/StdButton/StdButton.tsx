@@ -3,6 +3,7 @@ import { variables } from '@/styles/global-variables';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
+import { ButtonProps } from 'react-bootstrap';
 import styled, { CSSProperties } from 'styled-components';
 
 const {
@@ -14,7 +15,7 @@ interface HoverProps {
   backgroundColor?: string;
 }
 
-interface StyledStdBtnProps {
+interface StyledStdBtnProps extends ButtonProps {
   hover?: HoverProps;
   backgroundColor?: string;
   color?: string;
@@ -68,11 +69,13 @@ export default function StdButton({
   backgroundColor,
   color,
   onClick,
+  ...props
 }: IStdButton) {
   const { isMobile } = useAppContext();
 
   return (
     <StyledStdBtn
+      {...props}
       backgroundColor={backgroundColor}
       color={color}
       hover={hover}

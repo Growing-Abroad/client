@@ -15,15 +15,12 @@ interface IContainerProps{
 }
 
 export const Container = styled.div<IContainerProps>`
-  width: 100%;
-  background-image: url('${({backgroundImage})=>backgroundImage}');
+  background-image: url('${({backgroundImage}) => backgroundImage}');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  height: 250px;
   width: 100%;
-  position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
   z-index: -1;
   height: 100%;
@@ -31,7 +28,7 @@ export const Container = styled.div<IContainerProps>`
   gap: 2rem;
   flex-direction: column;
   align-items: center;
-  justify-content:"flex-start";
+  justify-content: flex-start;
   position: relative;
 
   @media (max-width: ${mediaQuery}) {
@@ -40,6 +37,4 @@ export const Container = styled.div<IContainerProps>`
       height: 650px;
 
     }
-
-
 `

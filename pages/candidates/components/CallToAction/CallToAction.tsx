@@ -29,7 +29,7 @@ function CallToAction() {
           <h1>
             <>
               {t("page.home.callToAction") + " "}
-              <TextChanger texts={texts} duration={3000} />
+              <TextChanger texts={texts} />
             </>
           </h1>
           <StdButton

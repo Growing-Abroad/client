@@ -1,14 +1,15 @@
 import { theme } from "@/styles/theme";
 import { CSSProperties } from "styled-components";
 import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from "./style";
+import { ReactNode } from "react";
 
 const {
   colors: { blue700, blue400 },
 } = theme;
 
 export interface TwoColorTitleParameters extends IText {
-  text1: string;
-  text2: string;
+  text1: ReactNode;
+  text2: ReactNode;
   hasSpaceBtw?: boolean;
   wrapperStyles?: CSSProperties;
   fontSize?: string;

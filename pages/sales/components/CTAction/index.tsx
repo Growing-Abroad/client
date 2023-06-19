@@ -26,7 +26,7 @@ function CTAction() {
         <section className="left-side">
           <h1>
             {t("page.sales.callToAction") + " "}
-            <TextChanger texts={texts} duration={3000} />
+            <TextChanger texts={texts} />
           </h1>
           <S.SubTitle isMobile={isMobile}>
             Build a successful career abroad with this amazing ONLINE COURSE
