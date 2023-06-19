@@ -140,6 +140,7 @@ export const ContentWhyBuyCourse = styled.div`
     @media screen and (min-width: 768px){
       gap: 50px;
       margin-top: 0;
+      max-width: 1454px;
     }
   }
 
@@ -153,19 +154,25 @@ export const RightContentWhyBuyCourse = styled.div`
   margin-top: 3.125rem;
 
   padding: 0 30px;
+
   @media screen and (min-width: 769px) and (max-width: 1191px){
     width: 100vw;
   }
+  @media screen and (min-width: 1191px) {
+      padding: 0 70px 0 15px;
+    }
   &.sales {
     gap: 37px;
     max-width: 642px;
 
     @media screen and (min-width: 768px){
+
       gap: 56px;
       margin-top: 10px;
     }
     @media screen and (min-width: 1191px) {
       gap: 88px;
+      padding: 0 70px 0 15px;
     }
   }
 
@@ -281,6 +288,6 @@ export const ImageOnlineCourse = styled(Image)`
     margin-bottom: auto;
     max-width: 693px;
     max-height: 418px;
-    margin-top: 8%;
+    margin-top: 30px;
   }
 `
