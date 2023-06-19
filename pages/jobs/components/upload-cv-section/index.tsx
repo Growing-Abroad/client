@@ -153,9 +153,9 @@ export default function UploadCvSection() {
           <StdParagraqh className="cv-paragraqh">
             Important: Only upload your application documents when they are
             optimized into German standard. If you don't have optimized
-            application documents, they will not be considered. In our Online
-            course you will learn every little step to optimize your application
-            documents into German Standard.
+            application documents, they will not be considered. In
+            our <Link href="/online-course" className="highlight">Online course</Link> you
+            will learn every little step to optimize your application documents into German Standard.
           </StdParagraqh>
         </UploadCvDetails>
       </UploadCvWrapper>
