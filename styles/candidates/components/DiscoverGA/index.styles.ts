@@ -70,8 +70,16 @@ export const DiscoverReadMoreWrapper = styled.div`
   height: 35rem;
   &.sales {
     height: 100%;
+    .discover-text {
+      font-weight: 400 !important;
+    }
     @media screen and (min-width: 1026px) {
-      height: 510px
+      height: 461px;
+      padding: 25px;
+      .discover-text {
+        margin-bottom: 0 !important;
+        font-size: 16px;
+      }
     }
   }
 

@@ -15,9 +15,9 @@ export const Wrapper = styled.div<WrapperProps>`
       return css`
         --mobileYoffset: 54px;
         --dynamicOffset: calc(3.375rem + ((1vw - 4.3px) * 7.7562));
-        --desktopOffset: 138px;
-
-      `
+        --desktopOffset: 168px;
+        -margin-top: -61px;
+      ` 
     }
 
     if (waveType === EWaveType.linear) {

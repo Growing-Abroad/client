@@ -43,6 +43,7 @@ const BodyLayout = styled.div<IStyledPageBody>`
 export interface IPageBody extends PropsWithChildren, IStyledPageBody {
     waveType?: EWaveType,
     id?: string;
+    children?: any
 }
 
 export default function PageBodyLayout({children, distanceFromTop, waveType, id}: IPageBody) {
