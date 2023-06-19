@@ -29,7 +29,7 @@ export const Presentation = () => {
               objectFit: "contain",
               objectPosition: "bottom",
             }}
-            src="/assets/main-hero-photo.webp"
+            src="/assets/main-hero-photo.jpg"
             alt="Founders Presenteation Photo"
           />
         </ImageBox>

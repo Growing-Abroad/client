@@ -1,9 +1,9 @@
 import { Image } from 'react-bootstrap';
 import classes from './styles.module.css';
-import linkedin from '../../../../../public/assets/blog/linkedin-logo.webp';
-import fb from '../../../../../public/assets/blog/logo-facebook.webp';
-import twitter from '../../../../../public/assets/blog/twitter-logo.webp';
-import mail from '../../../../../public/assets/blog/mail-item.webp';
+import linkedin from '../../../../../public/assets/blog/linkedin-logo.jpg';
+import fb from '../../../../../public/assets/blog/logo-facebook.jpg';
+import twitter from '../../../../../public/assets/blog/twitter-logo.jpg';
+import mail from '../../../../../public/assets/blog/mail-item.jpg';
 import Masterclass from '../Masterclass';
 import PopularArticles from '../PopularArticles';
 

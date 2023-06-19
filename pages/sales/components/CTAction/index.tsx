@@ -1,7 +1,6 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
-import gaCoaches from "@/../public/assets/new-cta-img.webp";
+import gaCoaches from "@assets/new-cta-img.jpg";
 import Image from "next/image";
-import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import { TextChanger } from "components/TextChanger";
 import { useIntl } from "react-intl";
@@ -32,7 +31,7 @@ function CTAction() {
           <S.SubTitle isMobile={isMobile}>
             Build a successful career abroad with this amazing ONLINE COURSE
           </S.SubTitle>
-          <StdButton>Buy Online Course Now</StdButton>
+          <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
         </section>
         <section className="right-side">
           <Image

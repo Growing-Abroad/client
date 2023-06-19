@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Container } from './style';
-import border from '@/../public/assets/border-bottom.webp';
+import border from '@/../public/assets/border-bottom.jpg';
 import borderMobile from '@/../public/assets/border-mobile.svg';
 import useAppContext from '@/hooks/useAppContext';
 import { CSSProperties } from 'styled-components';

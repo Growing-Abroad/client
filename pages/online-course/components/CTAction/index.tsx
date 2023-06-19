@@ -1,5 +1,5 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
-import gaCoaches from "@/../public/assets/new-cta-img.webp";
+import gaCoaches from "@assets/new-cta-img.jpg";
 import goCoachesMobile from "@/../public/assets/image-mainHero-mobile.png";
 import Image from "next/image";
 import useAppContext from "@/hooks/useAppContext";
@@ -34,10 +34,12 @@ function CTAction() {
             {t("page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
           </h1>
+          <S.SubTitle isMobile={isMobile}>
+            Build a successful career abroad with this amazing ONLINE COURSE
+          </S.SubTitle>
           <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
         </section>
         <section className="right-side" style={{ marginTop: '1.5rem'}}>
-          {/* <div className="right-side-img-container"> */}
             <Image
               src={imageSource}
               alt="growing abroad coaches"

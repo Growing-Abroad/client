@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.jpg";
 import {
   Container,
   LogoContainer,

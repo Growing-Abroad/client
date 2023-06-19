@@ -2,8 +2,8 @@ import ContainerHero from "@/components/ContainerHero";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
-import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp";
-import CoachingHeroBgMobile from "@assets/pages/coaching/cutted-coaching-mobile.webp";
+import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.jpg";
+import CoachingHeroBgMobile from "@assets/pages/coaching/cutted-coaching-mobile.jpg";
 
 import styled from "styled-components";
 import {
@@ -18,9 +18,9 @@ export default function CoachingHeroSection(props: IStyledPageBody) {
   const { isMobile } = useAppContext();
 
   return (
-    <ContainerWrapper 
+    <ContainerWrapper
       backgroundImage={isMobile ? CoachingHeroBgMobile.src : CoachingHeroBg.src}
-      distanceFromTop={props.distanceFromTop}  
+      distanceFromTop={props.distanceFromTop}
     >
       <HeroTitleWrapper>
         <TitlesContainer>

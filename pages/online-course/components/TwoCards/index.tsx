@@ -1,6 +1,6 @@
 import * as S from "../../../../styles/online-course/components/TwoCards/style";
-import thumbsUp from "@/../public/assets/thumbs-up.webp";
-import thumbsDown from "@/../public/assets/thumbs-down.webp";
+import thumbsUp from "@/../public/assets/thumbs-up.jpg";
+import thumbsDown from "@/../public/assets/thumbs-down.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import {
   IconCheckGreen,
@@ -17,7 +17,7 @@ export function TwoCards() {
         text1="Who is this"
         isMobile={isMobile}
         text2="Online Course for?"
-        fontSize={isMobile ? "" : "60px"}
+        fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
       <S.ContentTwoCards>

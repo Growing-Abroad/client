@@ -1,8 +1,8 @@
 import React from "react";
 
 import TwoColorTitle from "@/components/two-color-title";
-import Company from "@/../public/assets/Photos-Main-Page/building.webp";
-import Interview from "@/../public/assets/Photos-Main-Page/meeting.webp";
+import Company from "@/../public/assets/Photos-Main-Page/building.jpg";
+import Interview from "@/../public/assets/Photos-Main-Page/meeting.jpg";
 
 import {
   CardsContainer,

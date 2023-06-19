@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import StdButton from "../generics/StdButton/StdButton";
 
 const {
   colors: { yellow400, blue700, blue500, white },
@@ -232,3 +233,18 @@ export const ImgBG = styled.div`
     }
   }
 ` 
+
+export const StdButtonCustom = styled(StdButton)`
+  display: flex;
+  justify-content: center;
+  width: 143px;
+  padding: 8px 15px;
+  font-size: 12px;
+  margin: 0;
+
+  @media screen and (min-width: 769px) {
+    width: 210px;
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+`

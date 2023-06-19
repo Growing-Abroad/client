@@ -1,13 +1,12 @@
 import * as S from "./style";
-import LinkedInIcon from "@/../public/assets/icons/linkedin.webp";
-import FacebookIcon from "@/../public/assets/icons/facebook.webp";
-import InstagramIcon from "@/../public/assets/icons/instagram.webp";
-import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import LinkedInIcon from "@/../public/assets/icons/linkedin.jpg";
+import FacebookIcon from "@/../public/assets/icons/facebook.jpg";
+import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
+import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
 import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
 import Image from "next/image";
 import NewsLetter from "../news-letter";
 import useAppContext from "@/hooks/useAppContext";
-import StdButton from "../generics/StdButton/StdButton";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
@@ -38,8 +37,8 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   return (
     <S.FooterContainer usePageBody={usePageBody}>
-        {!hideBlueSection 
-          && 
+        {!hideBlueSection
+          &&
           <>
             <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
               <S.ImgBG
@@ -59,20 +58,11 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                       and <span onClick={handleGoToCareerBlog}>"Career Blogs"</span>.
                       Maybe your question is already answered there.
                     </p>
-                    <StdButton
-                      style={{
-                        display: "flex",
-                        alignItems: `${isMobile ? "center" : ""}`,
-                        justifyContent: `${isMobile ? "center" : ""}`,
-                        width: `${isMobile ? "143px" : "210px"}`,
-                        padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-                        fontSize: `${isMobile ? "12px" : "16px"}`,
-                        margin: "0"
-                      }}
+                    <S.StdButtonCustom
                       icon={faEnvelope}
                     >
                       Contact Us
-                    </StdButton>
+                    </S.StdButtonCustom>
                   </S.FooterLinks>
                   <S.FooterLinks>
                     {" "}
@@ -139,7 +129,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
           </>
         }
         {
-          hideBlueSection 
+          hideBlueSection
           &&  <S.FooterBottomContainer>
                 <S.FooterBottomWrapper>
                   <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
@@ -150,7 +140,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                 </S.FooterBottomWrapper>
               </S.FooterBottomContainer>
         }
-        
+
 
     </S.FooterContainer>
   );

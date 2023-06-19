@@ -15,7 +15,7 @@ export interface IBlueSquareProps extends PropsWithChildren, IContentProps {
 export default function BlueSquareWithCarousel({ carouselData, children, changeOnHover, onSlideChangeCallback, columnReversed }: IBlueSquareProps) {
 
   return (
-    <DiscoverContent columnReversed={columnReversed} >
+    <DiscoverContent className="discover-content" columnReversed={columnReversed} >
       {children}
 
       <CarouselContainer>

@@ -1,11 +1,11 @@
 import * as S from "./style";
 import VerticalBar from "./VerticalBar";
 import Image from "next/image";
-import index1 from "@/../public/assets/germany.webp";
-import index4 from "@/../public/assets/job-search-strategy.webp";
-import index3 from "@/../public/assets/optimization.webp";
-import index5 from "@/../public/assets/job-interview-preparation.webp";
-import index6 from "@/../public/assets/job-interview-success.webp";
+import index1 from "@/../public/assets/germany.jpg";
+import index4 from "@/../public/assets/job-search-strategy.jpg";
+import index3 from "@/../public/assets/optimization.jpg";
+import index5 from "@assets/job-interview-preparation.jpg";
+import index6 from "@/../public/assets/job-interview-success.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "../two-color-title";
 import StdButton from "../generics/StdButton/StdButton";

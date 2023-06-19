@@ -1,7 +1,7 @@
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/TwoCards/style";
-import thumbsUp from "@/../public/assets/thumbs-up.webp";
-import thumbsDown from "@/../public/assets/thumbs-down.webp";
+import thumbsUp from "@/../public/assets/thumbs-up.jpg";
+import thumbsDown from "@/../public/assets/thumbs-down.jpg";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";

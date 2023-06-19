@@ -1,6 +1,6 @@
 import img1 from "@/../public/assets/Photos-Main-Page/GrowingAbroadUanBusiness_Canva.png";
-import img2 from "@/../public/assets/Photos-Main-Page/high-five.webp";
-import img3 from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
+import img2 from "@/../public/assets/Photos-Main-Page/high-five.jpg";
+import img3 from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.jpg";
 
 export default [
   {

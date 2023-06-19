@@ -1,10 +1,10 @@
 import React from "react";
 import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
-import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp";
+import HeroBackground from "@/../public/assets/pages/about-us/hero-background.jpg";
 import TwoColorTitle from "@components/two-color-title";
-import Uan from "@/../public/assets/Uan-Career-Coach-1.webp";
-import Uan2 from "@/../public/assets/Uan-Career-Coach-11.webp";
-import Manu from "@/../public/assets/Manu-Career-Coach-1.webp";
+import Uan from "@/../public/assets/Uan-Career-Coach-1.jpg";
+import Uan2 from "@/../public/assets/Uan-Career-Coach-11.jpg";
+import Manu from "@/../public/assets/Manu-Career-Coach-1.jpg";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
 import useAppContext from "@/hooks/useAppContext";
