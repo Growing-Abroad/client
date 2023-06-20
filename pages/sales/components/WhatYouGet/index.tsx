@@ -1,12 +1,15 @@
 import StdButton from "@/components/generics/StdButton/StdButton";
 import Benefits from "@/../public/assets/images/get-job-benefits.jpg";
 import classes from "./style.module.css";
-import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheck } from "@/components/Icons";
 
-export function WhatYouGet() {
+interface IWhatYouGetProps {
+  isSales?: boolean 
+}
+
+export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
   const { isMobile } = useAppContext();
   return (
     <S.WrapperWhyBuyCourse className="what-you-get"
@@ -30,7 +33,7 @@ export function WhatYouGet() {
           alt=""
         />
         <S.RightContentWhyBuyCourse
-          className={classes.text}
+          className={`${isSales && "sales-page"} ${classes.text}`}
           style={{
             marginLeft: "0",
             gap: `${isMobile ? "41px" : "30px"}`,
