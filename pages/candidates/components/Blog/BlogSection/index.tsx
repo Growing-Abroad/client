@@ -70,7 +70,7 @@ export default function BlogSection() {
       </S.BlogCard>
 
       <S.MoreNews>
-        Check out more
+      Explore more
       </S.MoreNews>
     </S.Container>
   );

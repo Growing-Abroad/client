@@ -48,24 +48,22 @@ export const SubHeadingBlog = styled.h4`
   }
 `;
 export const BlogCard = styled.div`
-  min-width: 1280px;
-  flex-wrap: wrap;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: end;
-  justify-items: end;
   row-gap: 45px;
   column-gap: 40px;
   padding-top: 32px;
   padding-bottom: 42px;
+
   @media (max-width: ${mediaQuery}) {
     min-width: 100%;
-    grid-template-columns: repeat(1, 1fr);
     justify-items:center;
     align-items: center;
     padding: 0 42px;
     row-gap: 23px;
   }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 
