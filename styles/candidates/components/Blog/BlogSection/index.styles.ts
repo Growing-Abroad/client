@@ -56,7 +56,6 @@ export const BlogCard = styled.div`
   max-width: 1817px;
   @media (max-width: ${mediaQuery}) {
     min-width: 100%;
-    justify-items:center;
     align-items: center;
     padding: 0 42px;
     row-gap: 23px;
