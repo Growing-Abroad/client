@@ -72,7 +72,13 @@ export const SucessStoriesWrapperCustom = styled(SucessStoriesWrapper)<SucessSto
           }
           
         `
-      : css``
+      : css`
+         @media screen and (min-width: 1024px) {   
+            .short {
+              height: 90%;
+            }
+          }
+      `
   }
 
 `;
