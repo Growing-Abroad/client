@@ -30,6 +30,9 @@ export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-right: auto;
   overflow: hidden;
   background-color: ${blue500};
+  &.candidate {
+    max-height: 97vh;
+  }
 `;
 
 export const CtaButton = styled.button`
@@ -70,6 +73,14 @@ export const BannerMainContainer = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2.0625rem;
+  &.candidates {
+    height: 100%;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    @media screen and (min-width: 1024px) {
+      padding-bottom: 70px;
+    }
+  }
 
   .left-side {
     display: flex;
@@ -217,4 +228,8 @@ export const StdButtonCustom = styled(StdButton)`
   @media screen and (min-width: 1024px) {
     margin-top: 25px;
   }
+`
+
+export const StdVideoCustom = styled(StdButtonCustom)`
+  margin: 20px 0 81px;
 `

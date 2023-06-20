@@ -1,25 +1,21 @@
 import React, { ReactElement, useState } from "react";
 import { PageLayout } from "@/components";
-import { Chapter } from "@/components/Chapter";
-import FaqSection from "@pages/faq/components/FaqSection";
-import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
-import Investiment from "@pages/sales/components/Investiment";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
 import CTAction from "@pages/sales/components/CTAction";
-import WhyBuyCourse from "@pages/online-course/components/WhyBuyCourse";
-import BigCard from "@pages/online-course/components/BigCard";
-import TwoCards from "@pages/online-course/components/TwoCards";
 import WorkIn from "./components/WorkIn/WorkIn";
+import DiscoverGA from "@pages/sales/components/DiscoverGA";
+import OurServicesSection from "./components/OurServices";
+import CommunitySection from "./components/Community";
+import BlogSection from "./components/Blog/BlogSection";
 
 const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -32,9 +28,9 @@ const OnlineCourseWrapper = styled.div`
 
   div#page-candidates {
 
-    margin-top: calc( 720px + 13%);
+    margin-top: 100vh;
 
-    @media screen and (max-width: 360px) {
+    /* @media screen and (max-width: 360px) {
       margin-top: calc(720px - 15%)
     }
 
@@ -48,7 +44,7 @@ const OnlineCourseWrapper = styled.div`
 
     @media screen and (min-width: 1366px)  {
       margin-top: calc( 800px + 1rem );
-    }
+    } */
   }
 `;
 
@@ -65,27 +61,18 @@ export default function OnlineCourse() {
       dataVideo={dataVideo}
     />
     <OnlineCourseWrapper>
-      <CTAction />
+      <CTAction hasSubtitle={false} isCandidates={true} />
       <PageBodyLayout id="page-candidates"
         distanceFromTop={isMobile ? "770px" : "800px"}
         waveType={EWaveType.curly}
       >
         <WorkIn />
+        <DiscoverGA text1="Discover" text2="Growing Abroad" typePages="cadidates" />
+        <OurServicesSection />
+        <StoriesPageCandidates hasSubTitle={true} />
 
-
-
-        <WhyBuyCourse />
-        <Chapter />
-        <BigCard />
-        <StoriesPageCandidates hasSubTitle={false} />
-        <TwoCards />
-        <Investiment />
-        <TwoColorTitle
-          text1="Frequently "
-          text2="Asked Questions"
-          styles={{ width: `${isMobile ? "387px" : ""}` }}
-        />
-        <FaqSection accordeons={OnlineCourseFaqMockUp} />
+        <CommunitySection />
+        <BlogSection />
       </PageBodyLayout>
     </OnlineCourseWrapper> 
    </>

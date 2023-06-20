@@ -71,10 +71,6 @@ export const FlexboxSlider = styled.div<FlexboxSliderProps>`
     min-height: 0;
   }
 
-  .short {
-    /* height: 90%; */
-  }
-
   .selected-slide {
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -335,7 +331,7 @@ export const ImageBackground = styled.div<ImageBackgroundProps>`
   background-image: url(${({ src }) => src});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   display: flex;
   justify-content: center;
   align-items: center;
