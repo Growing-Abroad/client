@@ -159,8 +159,11 @@ export const RightContentWhyBuyCourse = styled.div`
     width: 100vw;
   }
   @media screen and (min-width: 1191px) {
-      padding: 0 70px 0 15px;
+    padding: 0 70px 0 15px;
+    &.sales-page {
+      padding: 0 0 0 60px;
     }
+  }
   &.sales {
     gap: 37px;
     max-width: 642px;

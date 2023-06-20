@@ -79,7 +79,7 @@ export default function Sales() {
           <Motivation />
           <FollowDreams />
           <DiscoverGA />
-          <WhatYouGet />
+          <WhatYouGet isSales={true} />
           <Chapter />
           <BigCard />
           <StoriesPageCandidates hasSubTitle={false} />
