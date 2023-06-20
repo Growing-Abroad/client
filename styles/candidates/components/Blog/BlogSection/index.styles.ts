@@ -12,10 +12,11 @@ export const Container = styled.section`
   align-items: center;
   justify-items: center;
   gap: 2rem;
-  padding: 120px 140px 54px 140px;
+  padding: 120px 0 54px 0;
   color: ${theme.colors.blue700};
   height: auto;
   min-width: 100%;
+  
   & div > h2 {
     margin: 0;
     height: 73px;
@@ -52,7 +53,7 @@ export const BlogCard = styled.div`
   column-gap: 40px;
   padding-top: 32px;
   padding-bottom: 42px;
-
+  max-width: 1817px;
   @media (max-width: ${mediaQuery}) {
     min-width: 100%;
     justify-items:center;
