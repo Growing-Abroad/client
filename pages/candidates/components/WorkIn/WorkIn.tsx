@@ -25,7 +25,7 @@ function WorkIn() {
           description="No matter if you have a higher education degree or you are still studying , we will make it possible for you to get your dream job."
         />
         <WorkInCard
-          title="Start Your New Life in Europe"
+          title="Start your new life in Europe"
           photo={worldPicture}
           description="For people who are already in Germany or Europe and also for people who are not and want to relocate."
         />

@@ -29,6 +29,7 @@ export const Container = styled.section`
   }
 `;
 export const CardSpace = styled.section`
+  flex-wrap: wrap;
   width: 100%;
   height: 70%;
   display: flex;
