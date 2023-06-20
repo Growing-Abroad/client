@@ -7,7 +7,7 @@ import {
 import { socials1, socials2 } from "@utils/socials";
 import TwoColorTitle from "@components/two-color-title";
 import SocialCard from "./SocialCard";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAppContext from "@/hooks/useAppContext";
 
 function CommunitySection() {
@@ -65,15 +65,6 @@ function CommunitySection() {
               />
             ))}
           </CardsWrapper>
-          {/* <CardsWrapper>
-            {socials2.map((social) => (
-              <SocialCard
-                counterOn={counterOn}
-                {...social}
-                key={social.socialLink}
-              />
-            ))}
-          </CardsWrapper> */}
         </Socials>
       </Container>
     </ContainerWrapper>

@@ -1,7 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
-import useAppContext from "@/hooks/useAppContext";
 import { ISocial } from "@/utils/socials";
-import Image from "next/image";
 import {
   Social,
   SocialText,
@@ -19,13 +16,6 @@ interface Props extends ISocial {
 }
 
 export default function SocialCard(props: Props) {
-  const imageSize: ImageSizeProps = {
-    desktop: 120,
-    mobile: 30,
-  };
-
-  const { isMobile } = useAppContext();
-
   return (
     <Social>
       <a href={props.socialLink} target="_blank" rel="noreferrer">

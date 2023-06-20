@@ -80,6 +80,9 @@ export const BannerMainContainer = styled.section`
     @media screen and (min-width: 1024px) {
       padding-bottom: 70px;
     }
+    .left-side h1 {
+      max-width: 642px;
+    }
   }
 
   .left-side {

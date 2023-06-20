@@ -1,8 +1,12 @@
-import Castle from "@/../public/assets/Photos-Main-Page/Castle-Neuschwanstein.jpg";
+import Castle from "@/../public/assets/Photos-Main-Page/cover-letter-optimization.jpg";
 import CvOptimization from "@/../public/assets/Photos-Main-Page/CV-Optimization.jpg";
-import CurriculumVitae from "@/../public/assets/Photos-Main-Page/Curriculum-Vitae.jpg";
+import JobSearchStrategy from "@/../public/assets/Photos-Main-Page/Job-Search-Strategy.jpg";
+
+import CoachingPackage from "@/../public/assets/Photos-Main-Page/Coaching-Package.jpg";
+
 import OnlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.jpg";
 import JobInterview from "@/../public/assets/Photos-Main-Page/job-interview-coaching.jpg";
+import LinkedInOptimization from "@/../public/assets/Photos-Main-Page/LinkedIn-Optimization.jpg";
 import { IImage } from "./blog_posts";
 
 interface IDescription {
@@ -34,17 +38,17 @@ export const services: IService[] = [
       {
         id: "9",
         content:
-          "<span>Guideline and Workbook</span> to perfectly prepare for your job interview",
+          "<span>Videos and Workbook</span> to perfectly prepare for every job interview",
       },
       {
         id: "99",
         content:
-          "<span>Feedback</span> with <span>Video Analysis</span> on how to improve your appearance",
+          "Feedback with <span>Video Analyzis</span> on how to improve your appearance",
       },
       {
         id: "999",
         content:
-          "Templates with the <span>most asked interview questions</span> and how to prepare for them",
+          "Bonus material with the most asked interview questions and how to prepare for them",
       },
     ],
     hasMoreInfo: false,
@@ -71,7 +75,7 @@ export const services: IService[] = [
       {
         id: "123",
         content:
-          "<span>Lifetime access</span> to the entire online course to build a successful career abroad",
+          "Access to the entire online course platform to build a <span>successful career abroad</span>",
       },
     ],
     hasMoreInfo: true,
@@ -88,7 +92,7 @@ export const services: IService[] = [
       {
         id: "4",
         content:
-          "<span>Guideline and Workbook</span> how to effectively optimize your CV for the German market",
+          "<span>Videos and Workbook<span> how to effectively optimize your CV for the German market",
       },
       {
         id: "45",
@@ -105,81 +109,108 @@ export const services: IService[] = [
   },
   {
     id: "1234",
-    title: "Job Interview Preparation",
-    subtitle: "To rock every Job Interview",
+    title: "Cover Letter Optimization",
+    subtitle: "To have a Cover letter in german standards",
     image: {
       src: Castle.src,
-      alt: "Job Interview Preparation",
+      alt: "To Rock every Job Interview",
     },
     descriptions: [
       {
         id: "6",
         content:
-          "Guideline and Workbook to perfectly prepare for your job interview",
+          "<span>Videos and Workbook</span> how to effectively optimize your Cover Letter for the German market",
       },
       {
         id: "67",
         content:
-          "Feedback with Video Analysis on how to improve your appearance",
+          "<span>Personal Feedback</span> and insider tips to elevate your Cover Letter from all the others",
       },
       {
         id: "678",
         content:
-          "Templates with the most asked interview questions and how to prepare for them",
+          "Final corrections to have a <span>perfectly optimized Cover Letter</span> to get every job interview",
       },
     ],
     hasMoreInfo: false,
-  },
-  {
-    id: "12345",
-    title: "Online Course",
-    subtitle: "How to land your dream job in Germany or Europe",
-    image: {
-      src: CurriculumVitae.src,
-      alt: "Online Course",
-    },
-    descriptions: [
-      {
-        id: "8",
-        content:
-          "Learn all the steps you have to take to land your DREAM JOB in GERMANY",
-      },
-      {
-        id: "89",
-        content:
-          "Access to 50+ Videos, Workbook, Community, Templates and much more",
-      },
-      {
-        id: "890",
-        content:
-          "Lifetime access to the entire online course to build a successful career abroad",
-      },
-    ],
-    hasMoreInfo: true,
   },
   {
     id: "123456",
     title: "LinkedIn Optimization",
     subtitle: "To get contacted by german recruiters",
     image: {
-      src: CurriculumVitae.src,
+      src: LinkedInOptimization.src,
       alt: "Online Course",
     },
     descriptions: [
       {
         id: "10",
         content:
-          "Guideline and Workbook how to effectively optimize your LinkedIn Profile for the German market",
+          "<span>Video and Workbook<span> how to effectively optimize your LinkedIn Profile for the German market",
       },
       {
         id: "1011",
         content:
-          "Final corrections to have a perfectly optimized LinkedIn Profile to get every job interview",
+          "<span>Personal Feedback</span> and insider tips to elevate your LinkedIn Profile from all the others",
       },
       {
         id: "101112",
         content:
-          "Lifetime access to the entire online course to build a successful career abroad",
+          "Final corrections to have a <span>perfectly optimized LinkedIn Profile</span> to get 5 times more job requests",
+      },
+    ],
+    hasMoreInfo: true,
+  },
+  {
+    id: "12345",
+    title: "Job Search Strategy",
+    subtitle: "To find the best jobs in the market",
+    image: {
+      src: JobSearchStrategy.src,
+      alt: "Online Course",
+    },
+    descriptions: [
+      {
+        id: "8",
+        content:
+          "<span>Videos and Workbook</span> how to effectively search for jobs on the German market",
+      },
+      {
+        id: "89",
+        content:
+          "<span>Personal Coaching Call</span> to develop your individual Job Search Strategy based on your strengths and goals",
+      },
+      {
+        id: "890",
+        content:
+          "Templates with the most used Job Platforms, Companies which hire English speakers and your personal Application tracker",
+      },
+    ],
+    hasMoreInfo: true,
+  },
+  {
+    id: "1234567",
+    title: "Coaching Package",
+    subtitle: "To be fully prepared for the german market",
+    image: {
+      src: CoachingPackage.src,
+      alt: "Coaching Package",
+    },
+    descriptions: [
+      {
+        id: "18",
+        content:
+          "<span>CV, Cover Letter and LinkedIn Optimization</span> for the German market",
+      },
+      {
+        id: "1811",
+        content:
+          "<span>Individual Job Search Strategy</span> with the focus on your strengths and goals",
+      },
+      {
+        id: "108112",
+        content:
+          "<span>Job Interview Preparation</span> to get every job you wish for",
       },
     ],
     hasMoreInfo: true,
