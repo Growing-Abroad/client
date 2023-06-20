@@ -8,7 +8,7 @@ export default [
     subtitle: 'Co-founder',
     from: ``,
     texts: [
-      'MSc + MBA in German University',
+      'MSc + MBA in Germany University',
       'Ex Bosch, Accenture, Allianz',
       'management experience in Germany',
     ],

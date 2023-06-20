@@ -29,7 +29,7 @@ export const SucessStoriesWrapper = styled.section`
 
 export const SuccessSubtitle = styled.p`
   color: ${blue700};
-  max-width: 604px;
+  max-width: 677px;
   font-size: 1.5rem;
   line-height: 38px;
   font-weight: 400;

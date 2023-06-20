@@ -13,14 +13,12 @@ export default function OurServicesCard({
   image,
   hasMoreInfo,
 }: IService) {
-  // const navigate = useNavigate()
   const {
     colors: { blue700, yellow400 },
   } = useTheme();
   const { isMobile } = useAppContext();
 
   const handleRedirect = (id: string) => {
-    // navigate('services/' + id)
     return id;
   };
   return (

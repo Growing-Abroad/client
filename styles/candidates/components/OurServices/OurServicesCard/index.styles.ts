@@ -15,7 +15,7 @@ export const Container = styled.div`
   overflow: hidden;
   transition: all 450ms;
   min-height: 660px;
-  max-height: 660px;
+  max-height: 697px;
 
   &:hover {
     transform: scale(1.05);
@@ -28,6 +28,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 199.05px;
   }
 `;
 
@@ -97,6 +98,7 @@ export const PostText = styled.p`
 `;
 
 export const Button = styled.button`
+  white-space: nowrap;
   width: 196px;
   height: 59px;
   background: ${theme.colors.yellow400};
@@ -106,8 +108,7 @@ export const Button = styled.button`
   padding: 20px 40px;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: auto;
-
+  margin-top: 15px;
   &:hover {
     opacity: 0.9;
     transform: scale(1.02);

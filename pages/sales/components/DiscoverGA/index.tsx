@@ -53,13 +53,13 @@ export default function DiscoverGA(
           {typePages === 'cadidates' ? (
             <StdParagraqh className="discover-text" style={{ fontSize: isMobile ? '.875rem' : '', fontWeight: 600 }}>
               <>
-                We help skilled foreigners from all over the world secure and land their dream job in Germany and Europe. As experts in the German and European job markets, we know what it takes to succeed.
+                We help <b>skilled foreigners</b> from all over the world secure and <b>land their dream job in Germany and Europe</b>. As experts in the German and European job markets, we know what it takes to succeed.
                 <br />
                 <br />
-                We provide comprehensive support and guidance in every step of the way. Our team will be your mentor, career advisor, coach, and motivator, helping you to navigate the complex job market in Germany and Europe. Whether you need help with building a CV on European standards, a cover letter or getting confidence and convincing the recruiters in the job interview, we're here to help.
+                We provide <b>comprehensive support and guidance</b> in every step of the way. Our team will be your mentor, career advisor, coach, and motivator, helping you to navigate the complex job market in Germany and Europe. Whether you need help with <b>building a CV</b> on European standards, a <b>cover letter</b> or getting <b>confidence</b> and convincing the recruiters in the job interview, we're here to help.
                 <br />
                 <br />
-                We value your unique experiences and personality, and we're committed to helping you showcase your full potential. We understand that moving to a new country can be overwhelming, which is why we're here to provide the support and guidance you need to make a successful career transition.
+                We value your <b>unique experiences and personality</b>, and we're committed to helping you showcase your full potential. We understand that moving to a new country can be overwhelming, which is why we're here to <b>provide the support and guidance</b> you need to make a successful career transition.
                 <S.UILink href="/about-us">
                   Read More
                 </S.UILink>

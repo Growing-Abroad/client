@@ -8,7 +8,7 @@ export default [
     title: "Uanderson Silva",
     from: `Co-founder`,
     texts: [
-      `MSc + MBA in German University`,
+      `MSc + MBA in Germany University`,
       `Ex Bosch, Accenture, Allianz,`,
       `Management Experience`,
     ],
