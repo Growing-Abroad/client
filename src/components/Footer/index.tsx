@@ -155,8 +155,8 @@ export default function Footer({usePageBody, hideBlueSection}: IFooter) {
                 <FooterBottomWrapper>
                   <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
                   <FooterBottomRight>
-                    <Links href="#">Legal Notice</Links>
-                    <Links href="#">Data Privacy</Links>
+                    <Links href="/legal-notice">Legal Notice</Links>
+                    <Links href="/data-privacy">Data Privacy</Links>
                   </FooterBottomRight>
                 </FooterBottomWrapper>
               </FooterBottomContainer>
