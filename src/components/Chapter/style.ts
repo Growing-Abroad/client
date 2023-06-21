@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import Image from "next/image";
 
 const {
   colors: { blue700, blue400 },
@@ -16,9 +17,6 @@ export const ChapterContainer = styled.div`
   justify-content: center;
   width: 100%;
 
-  @media screen and (max-width: 768px) {
-    margin-top: -6rem;
-  }
 
   :nth-child(1n) {
     h1 {
@@ -38,6 +36,7 @@ export const ChapterContainer = styled.div`
       h1 {
         width: 361px;
         padding-bottom: 33px;
+        margin-bottom: 0;
       }
     }
 
@@ -53,12 +52,9 @@ export const ChapterContent = styled.div`
   width: 100%;
   max-width: 1513px;
   background-color: white;
-  padding-bottom: 40px;
-  margin-bottom: 2rem;
 
   @media (max-width: ${mediaQuery}) {
     min-width: 430px;
-    padding-bottom: 20px;
   }
 
 `;
@@ -97,6 +93,10 @@ export const ChapterContainerCards = styled.div`
       text-align: left;
       margin-left: 550px;
       margin-top: -50px;
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        margin-left: 359px;
+        width: 291px;
+      }
     }
 
   }
@@ -110,7 +110,7 @@ export const ChapterContainerCards = styled.div`
       padding: 0;
       padding-left: 20px;
       justify-content: flex-start;
-
+      width: 372px;
       h3 {
         margin: 0;
         font-size: 32px;
@@ -136,6 +136,7 @@ export const ChapterContentCard = styled.div<ContentCardProps>`
   .side {
     transform: scaleX(-1);
   }
+
   @media (min-width: 769px) and (max-width: 1513px) {
     gap: 10%;
     .image {
@@ -148,6 +149,18 @@ export const ChapterContentCard = styled.div<ContentCardProps>`
     padding-left: ${(props) => (props.reverse ? "100px" : "0px")};
     padding-right: ${(props) => (props.reverse ? "0" : "100px")};
   }
+
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+    padding-left: ${(props) => (props.reverse ? "16px" : "0px")};
+    padding-right: ${(props) => (props.reverse ? "0" : "16px")};
+    
+  }
+  @media screen and (min-width: 769px) and (max-width: 1123px) {
+    .image {
+      width: 47%;
+    }
+  }
+
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     gap: 18px;
@@ -175,11 +188,15 @@ export const CardInfo = styled.div`
   align-items: start;
   justify-content: center;
   gap: 51px;
+
   div {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 29px;
+    @media screen and (min-width: 769px) and (max-width: 815px) {
+      gap: 45px;
+    }
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -190,12 +207,16 @@ export const CardInfo = styled.div`
     padding-left: 20px;
   }
 
-  @media screen and (min-width: ${mediaQuery}) {
+  @media screen and (min-width: 769px) {
     width: auto;
 
     h3 {
       width: auto;
     }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    width: 466px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -213,6 +234,7 @@ export const CardTitle = styled.h3`
     white-space: normal;
     width: 327px;
   }
+
 `;
 export const CardText = styled.p`
   padding: 0px;
@@ -232,3 +254,11 @@ export const CardText = styled.p`
     gap: 20px;
   }
 `;
+
+
+export const ImageChapter = styled(Image)`
+  @media screen and (max-width: 770px) {
+    width: 372px;
+    height: 188px;
+  }
+`

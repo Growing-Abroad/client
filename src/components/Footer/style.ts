@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import StdButton from "../generics/StdButton/StdButton";
 
 const {
   colors: { yellow400, blue700, blue500, white },
@@ -217,3 +218,33 @@ export const FooterLinksContentWrapper = styled.div`
     gap: 43px;
   }
 `;
+
+
+export const ImgBG = styled.div`
+  &::before {
+    content: "";
+      width: 100%;
+      height: 5px;
+      background: #fff;
+      display: flex;
+      margin-top: -4px;
+    @media screen and (min-width: 1024px){
+      margin-top: -2px;
+    }
+  }
+` 
+
+export const StdButtonCustom = styled(StdButton)`
+  display: flex;
+  justify-content: center;
+  width: 143px;
+  padding: 8px 15px;
+  font-size: 12px;
+  margin: 0;
+
+  @media screen and (min-width: 769px) {
+    width: 210px;
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+`

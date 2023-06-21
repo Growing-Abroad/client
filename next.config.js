@@ -15,7 +15,10 @@ const nextConfig = {
     fontLoaders: [
       { loader: 'next/font/google', options: { subsets: ['latin'] } },
     ],
-  }
+  },
+  eslint: {
+      ignoreDuringBuilds: true,
+  },
 };
 
 

@@ -1,5 +1,4 @@
-import ImgThinking from "@/../public/assets/images/thinking-job-in-germany.webp";
-import Image from "next/image";
+import ImgThinking from "@/../public/assets/images/thinking-job-in-germany.jpg";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";
@@ -8,28 +7,21 @@ import { IconEmotion } from "@/components/Icons";
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
   return (
-    <S.WrapperWhyBuyCourse style={{ paddingBottom: "20px" }}>
-      <TwoColorTitle
+    <S.WrapperWhyBuyCourse className="sales">
+      <S.TwoColorTitleCustom
         text1="Does this sound"
         text2="Familiar...?"
-        styles={{
-          width: `${isMobile ? "350px" : ""}`,
-          display: "flex",
-          flexDirection: `${isMobile ? "column" : "row"}`,
-        }}
-        fontSize={isMobile ? "36px" : "60px"}
+        fontSize={isMobile ? "36px" : "52px"}
         hasSpaceBtw
       />
-      <S.ContentWhyBuyCourse>
-        <Image
+      <S.ContentWhyBuyCourse className="sales">
+        <S.ImageCustom
           src={ImgThinking}
           alt="Thinking about job in Germany"
-          className="img-thinkinh-job-germany"
+          className="img-thinkinh-job-germany desktop"
         />
 
-        <S.RightContentWhyBuyCourse
-          style={{ gap: `${isMobile ? "52px" : "72px"}` }}
-        >
+        <S.RightContentWhyBuyCourse className="sales">
           <S.TextWrapperWhyBuyCourse>
             <IconEmotion />
             <S.TextWhyBuyCourse style={{ fontWeight: "500" }}>

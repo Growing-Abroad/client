@@ -1,6 +1,6 @@
-import InstagramIcon from "@/../public/assets/icons/instagram.webp";
+import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
 import LinkedinIcon from "@/../public/assets/icons/linkedin-icon.svg";
-import TikTokIcon from "@/../public/assets/icons/tiktok.webp";
+import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
 import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
 import CourseStudentsIcon from "@/../public/assets/icons/course-students-icon.svg";
 import { StaticImageData } from "next/image";
@@ -25,7 +25,14 @@ export const socials1: ISocial[] = [
     source: InstagramIcon,
     name: "instagram",
     socialLink: "https://www.instagram.com/growing.abroad",
-    followNumber: 5144,
+    followNumber: 7200,
+    followType: FollowType.followers,
+  },
+  {
+    source: TikTokIcon,
+    name: "TikTok",
+    socialLink: "https://www.tiktok.com/@growing.abroad",
+    followNumber: 60000,
     followType: FollowType.followers,
   },
   {
@@ -35,13 +42,7 @@ export const socials1: ISocial[] = [
     followNumber: 4040,
     followType: FollowType.followers,
   },
-  {
-    source: TikTokIcon,
-    name: "TikTok",
-    socialLink: "https://www.tiktok.com/@growing.abroad",
-    followNumber: 5144,
-    followType: FollowType.followers,
-  },
+  
 
 ];
 

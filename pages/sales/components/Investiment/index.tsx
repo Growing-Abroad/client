@@ -1,8 +1,8 @@
 import TwoColorTitle from "@components/two-color-title";
 import React, { useCallback, useRef, useState } from "react";
-import computers from "public/assets/images/banners-devices-view.webp";
+import computers from "public/assets/images/banners-devices-view.jpg";
 import Image from "next/image";
-import YoutubeplayButton from "public/assets/youtube-play-btn.webp";
+import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
 import classes from "./style.module.css";
 import { Montserrat } from "next/font/google";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
@@ -28,21 +28,12 @@ function Investiment() {
         ></Image>
       </S.ImageContainer>
 
-      <S.Paragraph
-        style={{
-          width: `${isMobile ? "32px" : "1500px"}`,
-          fontSize: `${isMobile ? "32px" : "60px"}`,
-          textAlign: "center",
-          fontWeight: "600",
-          marginTop: "0px",
-          lineHeight:`${isMobile ? "" : "73px"}`,
-        }}
-      >
-        This course is an investment  <span>in your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>{" "}
-      </S.Paragraph>
-      <StdButton style={{ marginTop: "0px" }}>
-        Get your Lifetime Access Now
-      </StdButton>
+      <S.ParagraphCustom>
+        This course is an investment in <span>your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>
+      </S.ParagraphCustom>
+      <S.StdButtonCustom>
+        Get your Acess Now
+      </S.StdButtonCustom>
     </S.Container>
   );
 }

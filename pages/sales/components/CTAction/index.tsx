@@ -1,12 +1,17 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
-import gaCoaches from "@/../public/assets/new-cta-img.webp";
+import gaCoaches from "@assets/new-cta-img.jpg";
 import Image from "next/image";
-import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
 import { TextChanger } from "components/TextChanger";
 import { useIntl } from "react-intl";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
-function CTAction() {
+interface ICTActionProps {
+  isCandidates?: boolean
+  hasSubtitle?: boolean
+}
+
+function CTAction({isCandidates=false, hasSubtitle=true}: ICTActionProps) {
   const { isMobile } = useAppContext();
 
   const intl = useIntl()
@@ -22,25 +27,24 @@ function CTAction() {
   ]
 
   return (
-    <S.BackgroudCTA isMobile={isMobile} style={{ maxHeight: `${isMobile ? "830px" : ""}` }}>
-      <S.BannerMainContainer id="">
+    <S.BackgroudCTA className={`${isCandidates && 'candidate'}`} isMobile={isMobile} style={{ maxHeight: `${isMobile && !isCandidates ? "830px" : ""}` }}>
+      <S.BannerMainContainer id="" className={`${isCandidates ? "candidates" : ""}`}>
         <section className="left-side">
           <h1>
-            {t("page.sales.callToAction") + " "}
+            {t(isCandidates ? "page.home.callToAction" : "page.sales.callToAction") + " "}
             <TextChanger texts={texts} duration={3000} />
           </h1>
-          <span
-            style={{
-              color: "white",
-              fontSize: `${isMobile ? "16px" : "1.3rem"}`,
-              fontWeight: 400,
-              lineHeight: "38px",
-              maxWidth: `${isMobile ? "323px" : "30rem"}`,
-            }}
-          >
-            Build a successful career abroad with this amazing ONLINE COURSE
-          </span>
-          <StdButton>Buy Online Course Now</StdButton>
+          {hasSubtitle &&
+            <S.SubTitle isMobile={isMobile}>
+              Build a successful career abroad with this amazing ONLINE COURSE
+            </S.SubTitle>
+          }
+
+          {isCandidates ?
+          <S.StdVideoCustom icon={faPlay}>Watch Free Masterclass</S.StdVideoCustom> :
+          <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
+          }
+
         </section>
         <section className="right-side">
           <Image

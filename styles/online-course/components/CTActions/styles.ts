@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const {
   sizes: { mediaQuery },
@@ -13,6 +14,11 @@ interface BackgroundCTAProps {
   isMobile: boolean;
 }
 
+interface SubTitleProps {
+  isMobile: boolean
+}
+
+
 export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
   width: 100%;
@@ -24,6 +30,9 @@ export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-right: auto;
   overflow: hidden;
   background-color: ${blue500};
+  &.candidate {
+    max-height: 97vh;
+  }
 `;
 
 export const CtaButton = styled.button`
@@ -64,6 +73,17 @@ export const BannerMainContainer = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2.0625rem;
+  &.candidates {
+    height: 100%;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    @media screen and (min-width: 1024px) {
+      padding-bottom: 70px;
+    }
+    .left-side h1 {
+      max-width: 642px;
+    }
+  }
 
   .left-side {
     display: flex;
@@ -196,3 +216,23 @@ export const BannerMainContainer = styled.section`
     }
   }
 `;
+
+export const SubTitle = styled.span<SubTitleProps>`
+  color: #fff;
+  font-size: ${({ isMobile }) => isMobile ? '20px' : '24px'}; 
+  font-weight: 400;
+  line-height:  ${({ isMobile }) => isMobile ? '30px' : '38px'}; ;
+  max-width: ${({ isMobile }) => isMobile ? '323px' : '30rem'};  
+`;
+
+
+export const StdButtonCustom = styled(StdButton)`
+  margin: 0;
+  @media screen and (min-width: 1024px) {
+    margin-top: 25px;
+  }
+`
+
+export const StdVideoCustom = styled(StdButtonCustom)`
+  margin: 20px 0 81px;
+`

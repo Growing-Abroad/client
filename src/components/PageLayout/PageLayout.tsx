@@ -14,6 +14,8 @@ interface Props extends ComponentPropsWithoutRef<"body"> {
   chosenHeader: ChosenHeader;
   usePageBody?: boolean;
   hideBlueSection?: boolean;
+  children?: any
+  
 }
 
 interface HeaderProps {

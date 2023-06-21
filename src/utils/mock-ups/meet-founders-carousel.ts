@@ -1,5 +1,5 @@
 import Img1 from '@/../public/assets/Photos-Main-Page/GrowingAbroadUanBusiness_Canva.png';
-import Img2 from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp';
+import Img2 from '@/../public/assets/Photos-Main-Page/Manu-Business_Canva.jpg';
 
 export default [
   {
@@ -8,7 +8,7 @@ export default [
     subtitle: 'Co-founder',
     from: ``,
     texts: [
-      'MSc + MBA in German University',
+      'MSc + MBA in Germany University',
       'Ex Bosch, Accenture, Allianz',
       'management experience in Germany',
     ],

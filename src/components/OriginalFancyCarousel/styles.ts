@@ -2,6 +2,7 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import Image from "next/image";
 import styled from "styled-components";
+import StdButton from "../generics/StdButton/StdButton";
 
 const {
   colors: { blue700, blue500 },
@@ -10,18 +11,22 @@ const {
   sizes: { mediaQuery },
 } = variables;
 
-export const FlexboxSlider = styled.div`
+interface FlexboxSliderProps {
+  gap?: number | undefined;
+}
+
+export const FlexboxSlider = styled.div<FlexboxSliderProps>`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 36px;
+  gap: ${({ gap }) => gap ? `${gap}px` : '36px'};
   width: 100%;
   height: 600px;
   visibility: hidden;
   align-items: baseline;
 
-  @media screen and (max-width: 438px) {
-    height: 260px;
+  @media screen and (max-width: 439px) {
+    height: 280px;
   }
 
   @media (min-width: 440px) and (max-width: 1280px) {
@@ -31,7 +36,9 @@ export const FlexboxSlider = styled.div`
   }
 
   .short {
-    height: 90%;
+    @media screen and (max-width: 767px) {
+      height: 90%;
+    }
   }
 
   .selected-slide {
@@ -122,12 +129,17 @@ export const FlexboxSlide = styled.div`
   }
 
   @media (min-width: 200px) and (max-width: 1280px) {
-    width: 50px;
-    min-width: 50px;
-    height: 100%;
-
+    width: 21px;
+    min-width: 21px;
+    height: 86%;
+    margin: auto;
     .slide-img {
-      left: 78%;
+      left: 81%;
+    }
+  }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    .slide-img {
+      left: 86%;
     }
   }
 `;
@@ -176,12 +188,15 @@ export const TextBlock = styled.div`
   @media (max-width: ${mediaQuery}) {
     padding: 12px 0px 15px 12px;
     max-width: 75%;
-    /* width: 66%; */
 
     p {
       font-size: 0.875rem;
       line-height: 1.063rem;
     }
+  }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    width: 72%;
+    
   }
 `;
 
@@ -203,7 +218,7 @@ export const TextBlockH3 = styled.h3`
     line-height: 1.625rem;
     font-weight: 500;
     margin-bottom: 12px;
-    width: 92%;
+    width: 98%;
     max-width: 386px;
 
     .watch-video-btn {
@@ -262,3 +277,14 @@ export const ImageFlag = styled(Image).attrs({
     height: 17.58px;
   }
 `;
+
+
+export const StdButtonCustom = styled(StdButton)`
+  width: 100%;
+  padding: 8px 20px;
+  margin: 0;
+  @media (min-width: 769px) {
+    padding: 20px 40px;
+  }
+  font-size: calc(0.875rem + ((1vw - 4.3px) * 0.5535));
+`

@@ -1,13 +1,7 @@
-import {
-  DiscoverReadMoreWrapper,
-  DiscoverGrowingAbroadSection,
-} from "../../../../styles/candidates/components/DiscoverGA/index.styles";
+import * as S  from "../../../../styles/candidates/components/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
-// import StdButton from "@/components/generics/StdButton/StdButton";
 import { StaticImageData } from "next/image";
-// import useAppContext from "@/hooks/useAppContext";
-// import Link from "next/link";
 import BlueSquareWithCarousel from "@/components/BlueSquareWithCaroulsel";
 import candidatesDiscoverMockup from "@/utils/mock-ups/candidates-discover-section";
 import { useState } from "react";
@@ -19,7 +13,20 @@ interface ItemProps {
   alt: string;
 }
 
-export default function DiscoverGA() {
+interface DiscoverGAProps {
+  text1?: string
+  text2?: string
+  manuContent?: string
+  uanContent?: string
+  typePages?: 'cadidates' | 'sales' | 'online-course' 
+}
+
+export default function DiscoverGA(
+  {
+    text1= "We are Uan & Manu",
+    text2= "your Career Experts",
+    typePages
+  }: DiscoverGAProps) {
   const [activeIndex, setActiveIndex] = useState<number>(1)
 
   const { isMobile } = useAppContext()
@@ -28,22 +35,41 @@ export default function DiscoverGA() {
     setActiveIndex(index)
   }
 
+
+
   return (
-    <DiscoverGrowingAbroadSection>
+    <S.DiscoverGrowingAbroadSection className="sales">
       <TwoColorTitle
-        text1="We are Uan & Manu"
-        text2="your Career Experts"
-        breakingLine
+        text1={text1}
+        text2={text2}
+        breakingLine={typePages !== "cadidates"}
         hasSpaceBtw
         as="h2"
         wrapperClassName="discover-wrapper"
         className="discover-title"
       />
       <BlueSquareWithCarousel carouselData={candidatesDiscoverMockup} changeOnHover columnReversed onSlideChangeCallback={(index) => onHoverChangeBoxText(index)}>
-        <DiscoverReadMoreWrapper>
+        <S.DiscoverReadMoreWrapper className={`${typePages === 'cadidates' && 'cadidates'} sales`}>
+          {typePages === 'cadidates' ? (
+            <StdParagraqh className="discover-text" style={{ fontSize: isMobile ? '.875rem' : '', fontWeight: 600 }}>
+              <>
+                We help <b>skilled foreigners</b> from all over the world secure and <b>land their dream job in Germany and Europe</b>. As experts in the German and European job markets, we know what it takes to succeed.
+                <br />
+                <br />
+                We provide <b>comprehensive support and guidance</b> in every step of the way. Our team will be your mentor, career advisor, coach, and motivator, helping you to navigate the complex job market in Germany and Europe. Whether you need help with <b>building a CV</b> on European standards, a <b>cover letter</b> or getting <b>confidence</b> and convincing the recruiters in the job interview, we're here to help.
+                <br />
+                <br />
+                We value your <b>unique experiences and personality</b>, and we're committed to helping you showcase your full potential. We understand that moving to a new country can be overwhelming, which is why we're here to <b>provide the support and guidance</b> you need to make a successful career transition.
+                <S.UILink href="/about-us">
+                  Read More
+                </S.UILink>
+              </>
+          </StdParagraqh>
+          ) : (
           <StdParagraqh className="discover-text" style={{ fontSize: isMobile ? '.875rem' : '', fontWeight: 600 }}>
             {activeIndex > 0 ? (
               <>
+
                 <span style={{ fontSize: '2rem' }}>MANU</span>{" "}
                 brings the German perspective and mentality. As a professional Coach, Trainer and Actor, he knows exactly how to present yourself from your best side.<br /><br /> He has been coaching and training executives of international companies how to present themselves in a charismatic way and how to gain confidence and personal development.Besides that he is a professor for various Universities in Germany training students how to prepare and present themselves for job interviews and how to impact at the first impression.<br /><br /> With his knowledge and expertise he will guide you through the job application process and teach you the best techniques and tricks you can have in the German market.
               </>
@@ -56,10 +82,12 @@ export default function DiscoverGA() {
               )
             }
           </StdParagraqh>
-        </DiscoverReadMoreWrapper>
+        )}
+          
+        </S.DiscoverReadMoreWrapper>
 
       </BlueSquareWithCarousel>
 
-    </DiscoverGrowingAbroadSection>
+    </S.DiscoverGrowingAbroadSection>
   );
 }

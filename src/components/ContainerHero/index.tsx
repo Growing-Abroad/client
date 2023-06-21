@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Container } from './style';
-import border from '@/../public/assets/border-bottom.webp';
+import border from '@/../public/assets/border-bottom.jpg';
 import borderMobile from '@/../public/assets/border-mobile.svg';
 import useAppContext from '@/hooks/useAppContext';
 import { CSSProperties } from 'styled-components';
@@ -11,12 +11,18 @@ export interface ContainerHeroParameters{
   styles?: CSSProperties,
   children?: React.ReactNode,
 }
-const ContainerHero:React.FC<ContainerHeroParameters> = ({backgroundImageDesktop, backgroundImageMobile,styles, children})=>{
+const ContainerHero:React.FC<ContainerHeroParameters> = ({
+  backgroundImageDesktop,
+  backgroundImageMobile,
+  styles,
+  children
+})=>{
   const {isMobile} = useAppContext();
+
   return (
     <Container
       backgroundImage={isMobile ? backgroundImageMobile : backgroundImageDesktop}
-     style={{...styles}}>
+      style={{...styles}}>
       {/* <Image
         src={border}
         className="border-image"

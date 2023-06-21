@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import TwoColorTitle from "@components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import uan from "@/../public/assets/pages/sales/uan.png";
-import manu from "@/../public/assets/pages/sales/manu.webp";
+import manu from "@/../public/assets/pages/sales/manu.jpg";
 import {
   DiscoverReadMoreWrapper,
   DiscoverGrowingAbroadSection,

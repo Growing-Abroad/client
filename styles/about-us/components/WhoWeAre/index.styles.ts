@@ -2,6 +2,7 @@ import { theme } from "@styles/theme";
 import { variables } from "@styles/global-variables";
 import styled from "styled-components";
 import Image from "next/image";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const {
   colors: { blue700 },
@@ -21,6 +22,13 @@ export const Container = styled.section`
   @media (max-width: ${variables.sizes.mediaQuery}) {
     padding: 20px 40px 0 40px;
     gap: 1.5rem;
+  }
+  &.sales {
+    gap: 14px;
+    padding: 0 6px 0;
+    button {
+      margin: 31px 0 100px;
+    }
   }
 `;
 
@@ -65,6 +73,15 @@ export const Paragraph = styled.div`
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     text-align: justify;
+  }
+
+  &.sales {
+    width: 100%;
+  }
+
+  .subtitle {
+    max-width: 1005px;
+    width: 100%
   }
 `;
 
@@ -116,6 +133,12 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.sales {
+    margin-bottom: 20px;
+    max-width: 804px;
+  }
+
   div {
     width: 100%;
     height: 100%;
@@ -148,3 +171,22 @@ export const Player = styled(Image).attrs({
     height: auto;
   }
 `;
+
+
+export const ParagraphCustom = styled(Paragraph)`
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0;
+  gap: 0;
+  display: block;
+  @media screen and (min-width: 768px) {
+    line-height: 73px;
+    width: 1500px;
+    font-size: 52px;
+  }
+`
+
+export const StdButtonCustom = styled(StdButton)`
+  margin: calc(70px - 3rem) 0 0;
+`

@@ -1,10 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import { PageLayout } from "@/components";
-import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
 import BigCard from "./components/BigCard";
-import styled from "styled-components";
 import TwoCards from "./components/TwoCards";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
@@ -14,40 +12,43 @@ import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
 import { ModalLayout } from "@/components/ModalLayout";
-import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
-import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
-import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
+import Investiment from "@pages/sales/components/Investiment";
+import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
+import styled from "styled-components";
+import CTAction from "@pages/sales/components/CTAction";
 
-export const OnlineCourseWrapper = styled.div`
+const OnlineCourseWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  zoom: 90%;
+  zoom: 95%;
   z-index: 1;
 
 
   div#page-onlie-course {
 
-    margin-top: calc( 720px + 3%);
+    margin-top: calc( 720px + 13%);
 
     @media screen and (max-width: 360px) {
       margin-top: calc(720px - 15%)
     }
 
     @media screen and (min-width: 1000px) {
-      margin-top: calc(800px - 10%);
+      margin-top: calc( 800px - 2% );
     }
 
     @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px + 1.3rem );
+      margin-top: calc( 800px  - 0.7rem );
+    }
+
+    @media screen and (min-width: 1366px)  {
+      margin-top: calc( 800px + 1rem );
     }
   }
-
-
 `;
 
 export default function OnlineCourse() {
@@ -71,23 +72,9 @@ export default function OnlineCourse() {
         <WhyBuyCourse />
         <Chapter />
         <BigCard />
-        <SuccessStoriesSection>
-          <TwoColorTitle
-            as="h2"
-            text1="Success"
-            text2="Stories"
-            hasSpaceBtw
-            wrapperStyles={{ maxWidth: "100%" }}
-            styles={isMobile ? { lineHeight: "2.75rem" } : {}}
-          />
-          <OriginalFancyCarousel
-            dataArray={successStoriesData}
-            openModal={handleModal}
-            visibleModal={isModalVisible}
-            getDataVideo={setDataVideo}
-          />
-        </SuccessStoriesSection>
+        <StoriesPageCandidates hasSubTitle={false} />
         <TwoCards />
+        <Investiment />
         <TwoColorTitle
           text1="Frequently "
           text2="Asked Questions"

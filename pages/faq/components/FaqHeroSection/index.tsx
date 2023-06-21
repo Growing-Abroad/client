@@ -3,8 +3,8 @@ import TwoColorTitle from "@components/two-color-title";
 import ContainerHero from "@/components/ContainerHero";
 import useAppContext from "@/hooks/useAppContext";
 
-import background from "@/../public/assets/pages/faq/background-desktop.webp";
-import backgroundMobile from "@/../public/assets/pages/faq/background-mobile.webp";
+import background from "@/../public/assets/pages/faq/background-desktop.jpg";
+import backgroundMobile from "@/../public/assets/pages/faq/background-mobile.jpg";
 
 import {
   Container,

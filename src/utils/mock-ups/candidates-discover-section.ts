@@ -1,6 +1,6 @@
 import Img1 from "@/../public/assets/Photos-Main-Page/GrowingAbroadUanBusiness_Canva.png";
-import Img2 from "@/../public/assets/Photos-Main-Page/high-five.webp";
-import Img3 from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.webp";
+import Img2 from "@/../public/assets/Photos-Main-Page/high-five.jpg";
+import Img3 from "@/../public/assets/Photos-Main-Page/Manu-Business_Canva.jpg";
 import { ICarouselData } from "@/components/Fancy-carousel";
 
 const candidatesDiscoverMockup: ICarouselData[] = [
@@ -9,7 +9,7 @@ const candidatesDiscoverMockup: ICarouselData[] = [
     title: "Uanderson Silva",
     from: `Co-founder`,
     texts: [
-      `MSc + MBA in German University`,
+      `MSc + MBA in Germany University`,
       `Ex Bosch, Accenture, Allianz,`,
       `Management Experience`,
     ],

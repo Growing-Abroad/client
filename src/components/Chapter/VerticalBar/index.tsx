@@ -4,14 +4,35 @@ import useAppContext from '@/hooks/useAppContext';
 
 const VerticalBar: React.FC = () => {
   const { isMobile } = useAppContext();
+  const [phoneType, setPhoneType] = useState<string>('462px')
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+
+    const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+    const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+
+    const isAndroid = /Android/.test(userAgent);
+
+    if (isIOS && isMobile ) {
+      setPhoneType('542px')
+    }
+
+    if (isAndroid) {
+      setPhoneType('462px')
+    }
+  }, []);
+
   const propsBar = [
     { index: 1, height: '750px' },
     { index: 2, height: '910px' },
     { index: 3, height: '830px' },
     { index: 4, height: '870px' },
-    { index: 5, height: '462px' },
+    { index: 5, height: phoneType },
     { index: 6, height: '' },
   ];
+
   const [barColor, setBarColor] = useState<string>('#0073CF');
   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

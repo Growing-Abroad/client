@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Wrapper } from "./style";
 import { CSSProperties } from "styled-components";
-import curved from "@/../public/assets/border-bottom.webp";
-import curlyWave from "@/../public/assets/images/components/PageBody/curly-wave.webp";
+import curved from "@/../public/assets/border-bottom.jpg";
+import curlyWave from "@/../public/assets/images/components/PageBody/curly-wave.jpg";
 import useAppContext from "@/hooks/useAppContext";
 
 export enum EWaveType {

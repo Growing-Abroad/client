@@ -12,10 +12,10 @@ interface TextChangerProps {
    * The duration property.
    * It should receive a duration number(in milliseconds).
    */
-  duration: number
+  duration?: number
 }
 
-export const TextChanger = ({ texts, duration }: TextChangerProps) => {
+export const TextChanger = ({ texts, duration = 3000 }: TextChangerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const intl = useIntl()

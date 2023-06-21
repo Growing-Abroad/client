@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.webp";
+import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
@@ -170,6 +170,7 @@ function HeaderForCandidates() {
                       alignItems: "center",
                       borderRadius: 8,
                       boxShadow: "none",
+                      margin: "0"
                     }}
                     onClick={pushTo(EPagesNames.COMPANIES)}
                     backgroundColor={

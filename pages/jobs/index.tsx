@@ -7,10 +7,12 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import PageBodyLayout from "@/components/generics/PageBody";
 import useAppContext from "@/hooks/useAppContext";
 import { EWaveType } from "@/components/Wave";
+import _useLocale from "@/hooks/useLocale";
+import { IntlProvider } from "react-intl";
 
 
 export default function Jobs() {
-    const {windowSize: {height}} = useAppContext();
+    const {windowSize: { height }} = useAppContext();
 
     function getDistanceFromTop() {
         if (height > 1513) {
@@ -24,8 +26,8 @@ export default function Jobs() {
 
     return <>
         <JobsHeroSection />
-        <PageBodyLayout 
-            distanceFromTop={'100px'} 
+        <PageBodyLayout
+            distanceFromTop={'20px'}
             id="page-jobs"
             waveType={EWaveType.linear}
         >
@@ -36,5 +38,11 @@ export default function Jobs() {
 }
 
 Jobs.getLayout = function getLayout(page: ReactElement) {
-    return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} hideBlueSection={true}>{page}</PageLayout>;
+  const { locale, messages } = _useLocale();
+
+  return (
+    <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} hideBlueSection={true}>{page}</PageLayout>;
+    </IntlProvider>
+  )
 }

@@ -1,11 +1,11 @@
 import * as S from "./style";
 import VerticalBar from "./VerticalBar";
 import Image from "next/image";
-import index1 from "@/../public/assets/germany.webp";
-import index4 from "@/../public/assets/job-search-strategy.webp";
-import index3 from "@/../public/assets/optimization.webp";
-import index5 from "@/../public/assets/job-interview-preparation.webp";
-import index6 from "@/../public/assets/job-interview-success.webp";
+import index1 from "@/../public/assets/germany.jpg";
+import index4 from "@/../public/assets/job-search-strategy.jpg";
+import index3 from "@/../public/assets/optimization.jpg";
+import index5 from "@assets/job-interview-preparation.jpg";
+import index6 from "@/../public/assets/job-interview-success.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "../two-color-title";
 import StdButton from "../generics/StdButton/StdButton";
@@ -14,9 +14,7 @@ import { IconCheckBlue } from "../Icons";
 export function Chapter() {
   const { isMobile } = useAppContext();
   return (
-    <S.ChapterContainer
-      style={{ paddingBottom: `${isMobile ? " " : "140px"}` }}
-    >
+    <S.ChapterContainer>
       <TwoColorTitle
         text1="What you can expect"
         text2="in this Course"
@@ -27,7 +25,7 @@ export function Chapter() {
         <VerticalBar />
         <S.ChapterContainerCards>
           <S.ChapterContentCard reverse={false}>
-            <Image
+            <S.ImageChapter
               className="image"
               src={index1}
               alt="Germany Flag"
@@ -58,7 +56,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ChapterContentCard>
           <S.ChapterContentCard reverse>
-            <Image
+            <S.ImageChapter
               src={index3}
               className="image"
               alt="Germany Flag"
@@ -91,7 +89,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ChapterContentCard>
           <S.ChapterContentCard reverse={false}>
-            <Image
+            <S.ImageChapter
               src={index4}
               className="image"
               alt="Germany Flag"
@@ -125,7 +123,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ChapterContentCard>
           <S.ChapterContentCard reverse>
-            <Image
+            <S.ImageChapter
               src={index5}
               className="image"
               alt="Germany Flag"
@@ -159,7 +157,7 @@ export function Chapter() {
             </S.CardInfo>
           </S.ChapterContentCard>
           <S.ChapterContentCard reverse={false}>
-            <Image
+            <S.ImageChapter
               src={index6}
               className="image"
               alt="Germany Flag"
@@ -198,7 +196,7 @@ export function Chapter() {
           </div>
         </S.ChapterContainerCards>
       </S.ChapterContent>
-      <StdButton style={{ marginTop: `${isMobile ? "40px" : "0"}` }}>
+      <StdButton>
         {" "}
         Buy Online Course Now
       </StdButton>

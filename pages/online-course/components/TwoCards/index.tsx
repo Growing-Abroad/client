@@ -1,9 +1,6 @@
-import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/TwoCards/style";
-import thumbsUp from "@/../public/assets/thumbs-up.webp";
-import thumbsDown from "@/../public/assets/thumbs-down.webp";
-import StdButton from "@/components/generics/StdButton/StdButton";
-import TwoColorTitle from "@/components/two-color-title";
+import thumbsUp from "@/../public/assets/thumbs-up.jpg";
+import thumbsDown from "@/../public/assets/thumbs-down.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import {
   IconCheckGreen,
@@ -16,29 +13,21 @@ export function TwoCards() {
   const { isMobile } = useAppContext();
   return (
     <S.Container>
-      <TwoColorTitle
+      <S.TwoColorTitleCustom
         text1="Who is this"
-        styles={{
-          fontSize: `${isMobile ? "36px" : "60px"}`,
-          display: "flex",
-          flexWrap: "wrap",
-          width: `${isMobile ? "334px" : ""}`,
-          justifyContent: "center",
-        }}
+        isMobile={isMobile}
         text2="Online Course for?"
+        fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
       <S.ContentTwoCards>
         <S.TwoCardsWrapper>
-          <Image
+        <S.ImageCustom
+            isMobile={isMobile}
             src={thumbsUp}
             alt=""
             width={isMobile ? 350 : 430}
             height={isMobile ? 194 : 170}
-            style={{
-              borderRadius: `${isMobile ? "10px" : "10px"}`,
-              objectFit: "cover",
-            }}
           />
           <h3>
             <IconPositiveGreenGest />
@@ -68,15 +57,12 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
         <S.TwoCardsWrapper className="right-card">
-          <Image
+          <S.ImageCustom
+            isMobile={isMobile}
             src={thumbsDown}
             alt=""
             width={isMobile ? 350 : 430}
             height={isMobile ? 194 : 170}
-            style={{
-              borderRadius: `${isMobile ? "10px" : "10px"}`,
-              objectFit: "cover",
-            }}
           />
           <h3>
             {" "}
@@ -107,11 +93,9 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
       </S.ContentTwoCards>
-      <StdButton
-        style={{ width: "auto", display: "flex", justifyContent: "center" }}
-      >
+      <S.StdButtonCustom>
         Buy Now
-      </StdButton>
+      </S.StdButtonCustom>
     </S.Container>
   );
 }

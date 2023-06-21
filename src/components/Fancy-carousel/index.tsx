@@ -6,7 +6,7 @@ import { removePxFromCssValue } from "@utils/scripts/general-utility";
 import useAppContext from "@/hooks/useAppContext";
 import StdButton from "../generics/StdButton/StdButton";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import LinkedinImage from "@/../public/assets/icons/linkedin.webp";
+import LinkedinImage from "@/../public/assets/icons/linkedin.jpg";
 import {
   FlexboxSlide,
   FlexboxSlider,
@@ -19,7 +19,6 @@ import {
   StdButtonContainer,
   ImageFlag,
 } from "./style";
-import { useRouter } from "next/router";
 
 export interface ICarouselData {
   imgSrc: StaticImageData
