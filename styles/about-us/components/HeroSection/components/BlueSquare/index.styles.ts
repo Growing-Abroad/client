@@ -112,6 +112,9 @@ export const Content = styled.div<SquareProps>`
       transform: rotate(-25deg);
       padding-left: 35%;
       align-items: flex-start;
+      @media (min-width: 1000px) and (max-width: 1320px){
+        padding-left: 38%;
+      }
     `}
   ${({ theme, type }) =>
     type === "right-square" &&

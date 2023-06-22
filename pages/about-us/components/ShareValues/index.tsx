@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "../../../../styles/about-us/components/ShareValues/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import Image from "next/image";
-import { Container, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { sharedValues } from "utils/mock/shared_values";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import useAppContext from "@/hooks/useAppContext";
@@ -25,17 +25,12 @@ function ShareValues() {
       </S.TitleContainer>
 
       <Container>
-        <S.Row>
+        <S.UIRow>
           {sharedValues.map((sharedValue, index) => (
-            <Col
+            <S.UICol
               lg="4"
               md="12"
-              style={{
-                paddingBottom: "56px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              
               key={index}
             >
               <S.Card key={index}>
@@ -45,15 +40,13 @@ function ShareValues() {
                   style={{ width: "100%", maxHeight: "258px", height: "258px" }}
                 />
                 <S.CardContent>
-                  {/* <S.WhiteTriangle /> */}
                   <h3 style={{ margin: "0" }}>{sharedValue.title}</h3>
                   <StdParagraqh>{sharedValue.body}</StdParagraqh>
-                  {/* <StdParagraqh style={{fontFamily: font.style.fontFamily}}>{sharedValue.paragraph}</StdParagraqh> */}
                 </S.CardContent>
               </S.Card>
-            </Col>
+            </S.UICol>
           ))}
-        </S.Row>
+        </S.UIRow>
       </Container>
     </S.Container>
   );

@@ -179,3 +179,8 @@
     left: calc(50% - 50px);
 }
 }
+
+
+.youtubeImageAboutUs {
+	max-height: 600px;
+}
