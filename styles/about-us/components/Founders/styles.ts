@@ -16,7 +16,7 @@ export const ContainerFounders = styled.div`
 
 export const Text = styled.p<IImageFoundersProps>`
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 30px;
   color: #05335b;
@@ -89,9 +89,11 @@ export const ImageCenter = styled(Image)`
   width: 100%;
   height: auto;
   margin: 50px 0;
+  display: none;
   @media screen and (min-width: 768px) {
+    display: initial;
     width: 756px;
-    height: 444px;
+    height: auto;
   }
 `;
 

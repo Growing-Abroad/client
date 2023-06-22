@@ -1,14 +1,11 @@
 import React from "react";
 import * as S from "../../../../styles/about-us/components/ShareValues/index.styles";
 import TwoColorTitle from "@components/two-color-title";
-import Image from "next/image";
 import { Container } from "react-bootstrap";
 import { sharedValues } from "utils/mock/shared_values";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
-import useAppContext from "@/hooks/useAppContext";
 
 function ShareValues() {
-  const { isMobile } = useAppContext();
 
   return (
     <S.Container>
@@ -34,7 +31,7 @@ function ShareValues() {
               key={index}
             >
               <S.Card key={index}>
-                <Image
+                <S.UIImage
                   src={sharedValue.image}
                   alt={sharedValue.title}
                   style={{ width: "100%", maxHeight: "258px", height: "258px" }}

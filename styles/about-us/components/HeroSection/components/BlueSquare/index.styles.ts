@@ -84,11 +84,11 @@ export const Content = styled.div<SquareProps>`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.white};
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 10%;
 
   @media (max-width: 1180px) {
-    gap: 25%;
+    gap: 22%;
     justify-content: flex-start;
   }
 
@@ -96,7 +96,7 @@ export const Content = styled.div<SquareProps>`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       /* gap: 5%; */
       height: 50%;
-      justify-content: space-between;
+      justify-content: center;
       padding-bottom: 8px;
     }
   `};

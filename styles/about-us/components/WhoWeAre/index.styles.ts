@@ -106,7 +106,7 @@ export const p = styled.p`
   margin: 0;
 
   display: flex;
-  text-align: justify;
+  text-align: center;
   align-items: center;
 
   @media (max-width: 768px) {
@@ -116,7 +116,6 @@ export const p = styled.p`
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     font-size: 16px;
-    padding: 0 15px;
   }
 `;
 
@@ -135,7 +134,6 @@ export const ImageContainer = styled.div`
   border-radius: 5px;
   overflow: hidden;
   width: 80%;
-  zoom: 80%;
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;
