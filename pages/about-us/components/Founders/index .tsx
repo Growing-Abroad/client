@@ -1,10 +1,10 @@
 import GrowingAbroadWorldwide from "@/../public/assets/pages/about-us/growing-abroad-worldwide.jpg";
 import UAN from "@/../public/assets/pages/about-us/uan-growing-abroad.jpg";
 import MANU from "@/../public/assets/pages/about-us/manuel-growing-abroad.jpg";
-import Image from "next/image";
-import * as S from "./styles";
+// import * as S from "./styles";
+import * as S from "@/../styles/about-us/components/Founders/styles";
 
-export const Founders = () => {
+const Founders = () => {
   return (
     <div>
       <S.ContainerFounders>
@@ -80,3 +80,5 @@ export const Founders = () => {
     </div>
   );
 };
+
+export default Founders

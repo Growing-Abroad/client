@@ -1,14 +1,10 @@
 import React from "react";
 import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
 import HeroBackground from "@/../public/assets/growing-abroad.jpg";
-import Uan from "@/../public/assets/Uan-Career-Coach-1.jpg";
-import Uan2 from "@/../public/assets/Uan-Career-Coach-11.jpg";
-import Manu from "@/../public/assets/Manu-Career-Coach-1.jpg";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
 import useAppContext from "@/hooks/useAppContext";
 import BlueSquare from "./components/BlueSqare";
-import Image from "next/image";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

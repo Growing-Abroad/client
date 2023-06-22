@@ -6,7 +6,7 @@ import ShareValues from "./components/ShareValues";
 import PageLayout from "../../src/components/PageLayout";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import visionAndMissionMock from "@/utils/mock-ups/vision-and-mission.mock";
-import { Founders } from "./components/Founders/index ";
+import Founders from "./components/Founders/index ";
 
 export default function AboutUs() {
   return (
