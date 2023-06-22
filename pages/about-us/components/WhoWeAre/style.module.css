@@ -182,7 +182,11 @@
 
 
 .youtubeImageAboutUs {
-	max-height: 335px;
+	max-height: 256.95px;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+
 	@media screen and (min-width: 768px) {
 		max-width: 600px;
 	}

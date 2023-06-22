@@ -88,7 +88,7 @@ export const Content = styled.div<SquareProps>`
   margin-top: 10%;
 
   @media (max-width: 1180px) {
-    gap: 22%;
+    gap: 14%;
     justify-content: flex-start;
   }
 
