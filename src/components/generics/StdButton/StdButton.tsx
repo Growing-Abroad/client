@@ -22,7 +22,6 @@ interface StyledStdBtnProps extends ButtonProps {
 }
 
 const StyledStdBtn = styled.button<StyledStdBtnProps>`
-  margin: 70px 0 100px;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.25rem;

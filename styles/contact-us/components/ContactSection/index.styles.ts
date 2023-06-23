@@ -72,7 +72,7 @@ export const FooterLinks = styled.ul<IFooterLinksProps>`
     font-size: 20px;
     margin-bottom: 18px;
   }
-  & p > span {
+  & p > span, & p > a {
     color: ${yellow400};
   }
   @media (max-width: ${mediaQuery}) {

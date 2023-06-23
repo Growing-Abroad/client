@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import {
   FooterLinks,
   SocialMedia,
@@ -13,9 +13,163 @@ import TikTokIcon from "@assets/icons/tiktok.svg";
 import YoutubeIcon from "@assets/icons/youtube-icon.svg";
 import StdButton from "@components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import Link from "next/link";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import sendContactUsForm from "@/services/contact-us/contact-us.service";
+import { IContactUsServerResponse } from "@/models/contact-us.model";
+import { Checkbox, FormControlLabel } from "@mui/material";
+// import { Checkbox } from "@/components/Form/Checkbox";
+
+
+type MyFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  concern: string;
+  message: string;
+  dataPrivacyPolicy: Date
+};
+
+const Error = () => (
+  <>
+    <span className={styles.app__contact__form__error}>This field is required.</span>
+  </>
+  )
+
+interface IFormProps {
+  errors: any, 
+  register: any, 
+  handleSubmit: any, 
+  onSubmit: any, 
+  control: any
+}
+
+const ContactForm = ({errors, register, handleSubmit, onSubmit, control}: IFormProps) => (
+  <form onSubmit={handleSubmit(onSubmit)} className={styles.app__contact__form}>
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <input
+        type="text"
+        key={'firstName'}
+        className={styles.app__contact__form__input}
+        placeholder="First Name"
+        {...register('firstName', {required: true})}
+      />
+      {errors?.firstName && <Error />}
+    </div>
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <input
+        type="text"
+        key={'lastName'}
+        className={styles.app__contact__form__input}
+        placeholder="Last Name"
+        {...register('lastName', {required: true})}
+      />
+      {errors?.lastName && <Error />}
+    </div>
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <input
+        type="email"
+        key={'email'}
+        className={styles.app__contact__form__input}
+        placeholder="E-Mail Address"
+        {...register('email', {required: true})}
+      />
+      {errors?.email && <Error />}
+    </div>
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <input
+        type="text"
+        key={'concern'}
+        className={styles.app__contact__form__input}
+        placeholder="Concern"
+        {...register('concern', {required: true})}
+      />
+      {errors?.concern && <Error />}
+    </div>
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <textarea
+        id=""
+        key={'message'}
+        className={styles.app__contact__form__textarea}
+        placeholder="Message"
+        {...register('message', {required: true})}
+        ></textarea>
+      {errors?.message && <Error />}
+    </div>
+    {/* <Checkbox 
+      register={register} 
+      type="checkbox" 
+      nameType="concert" 
+      textLabel="By clicking my personal data will be processed in accordance with the Privacy Policy." 
+      required={true}
+    /> */}
+    <div className={styles.app__contact__form__inputs__wrapper}>
+      <Controller
+        name="dataPrivacyPolicy"
+        control={control}
+        defaultValue={false}
+        rules={{ required: true }}
+        render={({ field }) => (
+          <FormControlLabel
+            control={<Checkbox {...field} checked={field.value} />}
+            label="By clicking my personal data will be processed in accordance with the Privacy Policy."
+            disableTypography
+            style={{marginInline: 0, fontSize: '12px', fontFamily: 'Montserrat !important', marginBottom: '6px'}}
+          />
+        )}
+      />
+      {errors?.dataPrivacyPolicy && <Error />}
+    </div>
+    <StdButton type="submit" style={{paddingInline: '44px', marginTop: 'auto', }}>
+      Send Message
+    </StdButton>
+  </form>
+  )
+
 
 export default function Contact() {
-  const { isMobile } = useAppContext();
+  const { isMobile, loading, setLoading } = useAppContext();
+  const [ msgSent, setMsgSent ] = useState<boolean>(false);
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+    reset 
+  } = useForm<any>();
+  const inputRef = useRef(null);
+
+  const onSubmit: SubmitHandler<MyFormData> = async (data) => {
+    setLoading(true);
+    
+    console.log({data})
+    // const response: IContactUsServerResponse = await sendContactUsForm(data);
+    
+    // if(response.ok) {
+    //   router.push('/confirmation')
+    // }else {
+    //   setShowToast(true)
+    //   setShowMsgErro(`Error: ${response}`)
+    // }
+    setMsgSent(true);
+    reset();
+
+    setLoading(false);
+  }
+
+  const MsgSent = () => (
+    <>
+      <div className={styles.app__contact__form__msg_sent}>
+        <p className={styles.app__contact__form__msg_sent__paragraph}>
+          <span className={styles.app__contact__form__msg_sent_thanks}>THANK YOU</span> for reaching out to us.
+        </p>
+        
+        <p className={styles.app__contact__form__msg_sent__paragraph}>
+          We will try to take care of your request as soon as possible. 
+        </p>
+      </div>
+    </>
+    )
 
   return (
     <Wrapper>
@@ -40,86 +194,56 @@ export default function Contact() {
                 : {fontWeight: 500, fontSize: '1.25rem'}}
               >
                 Also check out the section{" "}
-                <span>"Frequently asked questions"</span> and{" "}
-                <span>"Career Blogs"</span>. Maybe your question is already
-                answered there.
+                <Link href={'/faq'} className="">"Frequently asked questions"</Link>. <br /> 
+                {/* and{" "} <Link href={'/career-blog'}>"Career Blogs"</Link>.  */}
+                Maybe your question is already answered there.
               </p>
             </FooterLinks>
             <div className={styles.app__contact__form__social}>
               <span className={styles.app__contact__left__form__header__second}>
                 Social Media
               </span>
-              <div>
-                <SocialMedia gap={"27px"}>
-                  <Image
-                    className={styles.app__contact__form__social__icon}
-                    src={InstagramIcon}
-                    alt="instagram icon"
-                    height={60}
-                    width={60}
-                  />
-                  <Image
-                    className={styles.app__contact__form__social__icon}
-                    src={FacebookIcon}
-                    alt="facebook icon"
-                    height={60}
-                    width={60}
-                  />
-                  <Image
-                    className={styles.app__contact__form__social__icon}
-                    src={TikTokIcon}
-                    alt="tiktok icon"
-                    height={60}
-                    width={60}
-                  />
-                  <Image
-                    className={styles.app__contact__form__social__icon}
-                    src={YoutubeIcon}
-                    alt="youtube icon"
-                    height={60}
-                    width={60}
-                  />
-                  <Image
-                    className={styles.app__contact__form__social__icon}
-                    src={LinkedInIcon}
-                    alt="linkedin icon"
-                    height={60}
-                    width={60}
-                  />
-                </SocialMedia>
-              </div>
+              <SocialMedia gap={"27px"}>
+                <Image
+                  className={styles.app__contact__form__social__icon}
+                  src={InstagramIcon}
+                  alt="instagram icon"
+                  height={60}
+                  width={60}
+                />
+                <Image
+                  className={styles.app__contact__form__social__icon}
+                  src={FacebookIcon}
+                  alt="facebook icon"
+                  height={60}
+                  width={60}
+                />
+                <Image
+                  className={styles.app__contact__form__social__icon}
+                  src={TikTokIcon}
+                  alt="tiktok icon"
+                  height={60}
+                  width={60}
+                />
+                <Image
+                  className={styles.app__contact__form__social__icon}
+                  src={YoutubeIcon}
+                  alt="youtube icon"
+                  height={60}
+                  width={60}
+                />
+                <Image
+                  className={styles.app__contact__form__social__icon}
+                  src={LinkedInIcon}
+                  alt="linkedin icon"
+                  height={60}
+                  width={60}
+                />
+              </SocialMedia>
             </div>
           </div>
           <div className={styles.app__contact__right__form}>
-            <input
-              type="text"
-              className={styles.app__contact__form__input}
-              placeholder="First Name"
-            />
-            <input
-              type="text"
-              className={styles.app__contact__form__input}
-              placeholder="Last Name"
-            />
-            <input
-              type="text"
-              className={styles.app__contact__form__input}
-              placeholder="E-Mail Address"
-            />
-            <input
-              type="email"
-              className={styles.app__contact__form__input}
-              placeholder="Concern"
-            />
-            <textarea
-              name=""
-              id=""
-              className={styles.app__contact__form__textarea}
-              placeholder="Message"
-            ></textarea>
-            <StdButton>
-              Send Message
-            </StdButton>
+            {msgSent ? <MsgSent /> : <ContactForm  control={control} errors={errors} handleSubmit={handleSubmit} onSubmit={onSubmit} register={register} />}
           </div>
         </div>
       </div>

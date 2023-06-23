@@ -7,6 +7,8 @@ export interface IContext {
   };
   isMobile: boolean;
   smallDesktopSize: number;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const defaultContext = {
@@ -16,6 +18,8 @@ const defaultContext = {
   },
   isMobile: false,
   smallDesktopSize: 0,
+  loading: false,
+  setLoading: () => {},
 };
 
 const AppContext = React.createContext<IContext>(defaultContext);

@@ -4,7 +4,7 @@ import { Wrapper } from '@/components/Wrapper';
 import ContactSection from './components/ContactSection';
 import { ChosenHeader } from '@/components/PageLayout/PageLayout';
 
-export default function CONTACT() {
+export default function ContactUs() {
   return (
     <Wrapper>
       <ContactSection/>
@@ -12,6 +12,6 @@ export default function CONTACT() {
   );
 }
 
-CONTACT.getLayout = function getLayout(page: ReactElement) {
+ContactUs.getLayout = function getLayout(page: ReactElement) {
   return <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>;
 };
