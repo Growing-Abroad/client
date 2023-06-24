@@ -9,31 +9,59 @@ import useAppContext from "@/hooks/useAppContext";
 import { EWaveType } from "@/components/Wave";
 import _useLocale from "@/hooks/useLocale";
 import { IntlProvider } from "react-intl";
+import CTAction from "@pages/sales/components/CTAction";
+import styled from "styled-components";
 
+
+const JobsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  zoom: 95%;
+  z-index: 1;
+
+
+  div#page-jobs {
+
+    margin-top: calc( 720px + 13%);
+
+    @media screen and (max-width: 360px) {
+      margin-top: calc(720px - 15%)
+    }
+
+    @media screen and (min-width: 1000px) {
+      margin-top: calc( 800px - 2% );
+    }
+
+    @media screen and (min-width: 1280px)  {
+      margin-top: calc( 800px  - 0.7rem );
+    }
+
+    @media screen and (min-width: 1366px)  {
+      margin-top: calc( 800px + 1rem );
+    }
+  }
+`;
 
 export default function Jobs() {
     const {windowSize: { height }} = useAppContext();
 
-    function getDistanceFromTop() {
-        if (height > 1513) {
-            return '628px';
-        }
-        if (height > 430) {
-            return 'calc(25.75rem + ((1vw - 4.3px) * 19.9446))';
-        }
-        return '412px;'
-    }
+    const { isMobile } = useAppContext();
 
     return <>
-        <JobsHeroSection />
-        <PageBodyLayout
-            distanceFromTop={'20px'}
-            id="page-jobs"
-            waveType={EWaveType.linear}
-        >
-            <CloudSection />
-            <UploadCvSection />
-        </PageBodyLayout>
+          <JobsWrapper>
+            <CTAction isJobpage={true} hasSubtitle={false} callActionText="Upload your CV NOW" />
+            <PageBodyLayout id="page-jobs"
+                distanceFromTop={isMobile ? "770px" : "800px"}
+                waveType={EWaveType.linear}
+            >
+                <CloudSection />
+                <UploadCvSection />
+            </PageBodyLayout>
+          </JobsWrapper>
+
+        
     </>
 }
 
@@ -42,7 +70,7 @@ Jobs.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} hideBlueSection={true}>{page}</PageLayout>;
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} hideBlueSection={true}>{page}</PageLayout>
     </IntlProvider>
   )
 }

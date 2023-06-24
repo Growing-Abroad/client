@@ -1,6 +1,9 @@
 import { variables } from "@/styles/global-variables";
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
+import TwoColorTitle from "@/components/two-color-title";
+import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
+import StdButton from "@/components/generics/StdButton/StdButton";
 
 const { colors: { blue700, yellow400, blue300, blue400 }} = theme;
 const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
@@ -12,14 +15,14 @@ export const UploadCvWrapper = styled.div`
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 80px;
-    gap: 72px;
+    margin-bottom: 120px;
+    gap: 40px;
     flex-direction: column;
 
     @media (max-width: ${mediaQuery}) {
         gap: 25px;
         padding-inline: 40px;
-        margin-bottom: 60px;
+        margin: 60px 0;
 
         .upload-cv-heading2 {
             span {
@@ -35,17 +38,22 @@ export const UploadCvDetails = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 32px;
-
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 1026px) {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+    }
     .cv-paragraqh {
         font-weight: 500;
-        max-width: 95%;
-        text-align: start;
+        max-width: 502px;
+        text-align: center;
         color: ${blue700};
         margin: 0;
-
-        @media (max-width: ${mediaQuery}) {
-          text-align: center;
-      }
+        @media screen and (min-width: 1026px) {
+            text-align: justify;
+        }
     }
 
 
@@ -60,6 +68,27 @@ export const CvForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .allow-dropdown {
+        color: #05335B;
+        border: 1px solid #05335B;
+        border-radius: 10px;
+        padding: 0 16px;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        .selected-flag {
+            .iti-flag {
+                zoom: 126%;
+            }
+        }
+        input[type=tel] {
+            height: 52px;
+            padding-left: 36px;
+            &:focus-visible {
+                outline: unset;
+            }
+        }
+    }
 
     .padded {
         max-width: ${maxWidthAll};
@@ -127,7 +156,7 @@ export const CvForm = styled.form`
         width: 100%;
         display: flex;
         justify-content: center;
-
+        margin: 60px 0 6px;
         .upload-docs-content {
             padding: 60px ${globalHorizontalPadding} 90px;
 
@@ -268,4 +297,44 @@ export const CvForm = styled.form`
     }
 
 
+`
+
+export const UITwoColorTitle = styled(TwoColorTitle)`
+    margin-top: 60px;
+`
+
+export const DeclarationTitle = styled(TwoColorTitle)`
+    text-align: left;
+    margin-bottom: 24px;
+    @media screen and (min-width: 768px) {
+        margin-bottom: 24px;
+    }
+`
+
+export const UIStdParagraqh = styled(StdParagraqh)`
+    margin-bottom: 32px !important;
+    cursor: pointer;
+`
+
+export const InfoTitle = styled(TwoColorTitle)`
+    @media screen and (min-width: 1026px) {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+`
+
+export const ContentInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+`
+
+export const UIInfoButton = styled(StdButton)`
+    max-width: 324px;
+    margin: auto;
+    @media screen and (min-width: 1026px) {    
+        margin: unset;
+        margin-right: auto;
+    }
 `
