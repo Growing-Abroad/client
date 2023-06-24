@@ -44,9 +44,9 @@ export const StyledFooter = styled.div`
 
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 104%;
 
-    width: 100%;
+    width: 104%;
     height: 200px;
 
     @media screen and (min-width: 64rem) {

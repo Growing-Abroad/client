@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import Image from "next/image";
+import StdButton from "../generics/StdButton/StdButton";
 
 const {
   colors: { blue700, blue400 },
@@ -261,4 +262,8 @@ export const ImageChapter = styled(Image)`
     width: 372px;
     height: 188px;
   }
+`
+
+export const UIStdButton = styled(StdButton)`
+  margin: 70px 0 100px;
 `
