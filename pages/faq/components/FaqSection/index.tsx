@@ -1,10 +1,11 @@
+import React from "react";
 import * as S from "../../../../styles/faq/FaqSection/index.styles";
 import Accordeon from "./Accordeon";
 
 
 type Accordeon = {
   title: string;
-  content: string;
+  content: string | JSX.Element;
 };
 
 type FaqSectionProps = {

@@ -1,7 +1,9 @@
 import { PropsWithChildren } from 'react';
 import Wave, { EWaveType } from "@/components/Wave";
 import styled from "styled-components";
+import { variables } from '@/styles/global-variables';
 
+const {sizes: {mediaQuery}} = variables;
 export interface IStyledPageBody {
     distanceFromTop: string | number;
 }
@@ -29,14 +31,9 @@ const BodyLayout = styled.div<IStyledPageBody>`
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 430px) {
+    @media (max-width: ${mediaQuery}) {
         margin-top: calc(
-            ${({distanceFromTop}) => distanceFromTop} + -2rem
-        );
-    }
-    @media (min-width: 1513px) {
-        margin-top: calc(
-            ${({distanceFromTop}) => distanceFromTop} + 7rem
+            ${({distanceFromTop}) => distanceFromTop} + 60px
         );
     }
 `

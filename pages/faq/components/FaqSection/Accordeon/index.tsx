@@ -12,7 +12,7 @@ import { faChevronDown, faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
 interface AccordeonProps {
   title: string;
-  content: string;
+  content: string | JSX.Element;
 }
 function Accordeon({ title, content }: AccordeonProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +22,8 @@ function Accordeon({ title, content }: AccordeonProps) {
   };
 
   return (
-    <AccordeonWrapper isOpen={isOpen}>
-      <AccordeonHeader isOpen={isOpen} onClick={toggleContent}>
+    <AccordeonWrapper isOpen={isOpen} onClick={toggleContent}>
+      <AccordeonHeader isOpen={isOpen}>
         <AccordeonTitle>{title}</AccordeonTitle>
         <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronLeft} size="lg" className={"accordeon-icon" + isOpen && ' open'} style={{marginTop: '6px', width: '20px'}} />
       </AccordeonHeader>

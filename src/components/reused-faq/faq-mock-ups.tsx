@@ -1,3 +1,5 @@
+import { Ul } from "styles/data-privacy";
+
 export const OnlineCourseFaqMockUp = [
   {
     title: "What happens after I purchase the course? ",
@@ -34,23 +36,51 @@ export const OnlineCourseFaqMockUp = [
 
 export const GeneralFaqMockUp = [
   {
-    title: "What is Webflow and why is it the best website builder?",
+    title: "What is your service?",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
+      "We want to help you get your dream job in Germany or Europe. That's why we have different coaching packages available to guide you along the way. We also have an online course that will lead you through every step you need to take to land your dream job in Germany or Europe.",
   },
   {
-    title: "What is your favorite template from BRIX Templates?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
+    title: "What are the requirements to get a job in Germany?",
+    content:(
+    <>
+      Not everyone can easily find a job in Germany. There are certain requirements you need to meet: <br />
+      <Ul>
+        <li>
+          Very good knowledge of the English language (German is not mandatory, but it increases your chances).
+        </li>
+        <li>
+          Completed vocational training or a higher education degree.
+        </li>
+        <li>
+          Your qualification must be recognized by the German authorities.
+        </li>
+      </Ul>
+    </>
+      ),
   },
   {
-    title: "How do you clone a Webflow Template from the Showcase?",
+    title: "Do I need to speak German to find a job in Germany?",
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
+      "No, speaking German is not necessary to find a job in Germany. Many large international companies in Germany use English as their business language, and even many young startups choose English as their business language. However, once you are in Germany, we strongly recommend studying German. It will make it much easier to integrate into the country when you know the language spoken by the people.",
   },
   {
-    title: "Why is BRIX Templates the best Webflow agency out there?",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Utenimad minim veniam, quis nostrud exercitation dolore magna",
+    title: "What is the process to find a job in Germany?",
+    content: (
+      <>
+        The first thing you need is a job offer from a German company. Without a job offer, you can't get a work visa. So, the first step is to find a job offer. Here are some steps to get a job offer from a German company: <br />
+        <Ul>
+          <li>Make your application documents match the European standards.</li>
+          <li>Apply for jobs on common job platforms in Germany.</li>
+          <li>Impress the hiring managers during job interviews.</li>
+        </Ul>
+        We have created an online course just for you. In this course, we will guide you through each step to help you land your dream job in Germany.
+
+      </>
+      ),
   },
+  {
+    title: "Is it possible to get a job in Germany without a degree?",
+    content: "To find a job in Germany, you must have either finished vocational training or obtained a university degree. If you don't have either, don't worry! You still have options to educate yourself in Germany. For instance, you can apply for a student visa and study here, or you can complete vocational training in Germany. There are always ways to achieve your goals. However, it's crucial to have a strong desire because the path without a degree can be more difficult."
+  }
 ];

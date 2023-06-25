@@ -7,36 +7,57 @@ const {
   colors: { blue400, blue700, white },
 } = theme;
 const {
-  sizes: { mediaQuery },
+  sizes: { mediaQuery, maxWidthAll, globalHorizontalPadding },
 } = variables;
-export const Container = styled.div`
-  margin-top: 60px;
-  width: 100%;
+
+
+
+
+interface IContainerProps{
+  backgroundImage:string
+}
+
+export const FaqContainerHero = styled.div<IContainerProps>`
+  background-image: url('${({backgroundImage}) => backgroundImage}');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
+
   position: fixed;
-  top: 0;
+  top: 90px;
   left: 0;
   z-index: -1;
-  height:650px;
+
+  width: 100%;
+  height: 600px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  min-width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+
   @media (max-width: ${mediaQuery}) {
-    max-width: 430px;
-    margin-top:0px;
-    height:450px;
+    background-size: cover;
+
+
+    height: 300px;
+
+    top: 60px;
   }
-`;
+`
+
 export const ContentHero = styled.div`
-  min-width: 1240px;
+  width: 100%;
+  max-width: ${maxWidthAll};
+  padding-inline: ${globalHorizontalPadding};
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   gap: 33px;
+
   div > h1{
     display:flex;
       flex-direction: column;
@@ -47,11 +68,11 @@ export const ContentHero = styled.div`
 
   @media (max-width: ${mediaQuery}) {
     padding: 25px 20px 0 25px;;
-    min-width: 430px;
-    height: 400px;
+    height: 300px;
     justify-content:start;
     align-items: start;
     position: relative;
+    max-width: 350px;
     div {
       display: flex;
       flex-direction: column;
@@ -85,14 +106,15 @@ export const SubheadingHero = styled.p`
     text-decoration:none;
   }
   @media (max-width: ${mediaQuery}) {
-    max-width: 430px;
+    max-width: 100%;
+    width: 100%;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     align-items: center;
     font-size: 1rem;
     line-height: 27px;
     z-index: 2;
-    margin-bottom: 86px;
+    margin-bottom: 12px;
     text-align: start;
     padding: 0 42px;
   }

@@ -38,6 +38,8 @@ export const AccordeonWrapper = styled.div<AccordeonWrapperProps>`
   background-color: ${white};
   border: ${props => props.isOpen ? `2px solid ${blue700}` : '2px solid transparent'};
   box-shadow:0px 6px 16px 0px rgba(74, 58, 255, 0.19);
+  transition: 550ms;
+  cursor: pointer;
 
   @media (max-width: ${mediaQuery}) {
     padding:22px;
@@ -51,7 +53,6 @@ export const AccordeonHeader = styled.div<AccordeonWrapperProps>`
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  cursor: pointer;
 
   .accordeon-icon {
   }
@@ -85,7 +86,7 @@ export const AccordeonContent = styled.p<AccordeonWrapperProps>`
   font-size:16px;
   font-weight: 400;
   margin:0;
-  max-width: 723px;
+  max-width: 95%;
   width: 100%;
   transition: opacity 2s ease-in-out;
   animation: slideIn 0.4s ease-in-out;

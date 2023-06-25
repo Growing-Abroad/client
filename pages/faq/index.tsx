@@ -21,7 +21,7 @@ export default function FAQ() {
       <FaqHeroSection />
       <PageBodyLayout
         id="page-faq"
-        distanceFromTop={isMobile ? "770px" : "800px"}
+        distanceFromTop={isMobile ? "300px" : "600px"}
         waveType={EWaveType.linear}
       >
 
@@ -34,7 +34,7 @@ export default function FAQ() {
         ) : (
           <></>
         )}
-        <NavHero />
+        {/* <NavHero /> */}
         <FaqSection accordeons={GeneralFaqMockUp} />
       </PageBodyLayout>
     </Wrapper>
