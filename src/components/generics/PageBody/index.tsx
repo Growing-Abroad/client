@@ -18,11 +18,9 @@ export interface IStyledPageBody {
 
 const BodyLayout = styled.div<IStyledPageBody>`
     position: relative;
-    z-index: 2;
-    margin-top: calc(615px + 35%);
     z-index: 1;
     margin-top: calc(
-        ${({distanceFromTop}) => distanceFromTop} + 60px
+        ${({distanceFromTop}) => distanceFromTop} + 90px
     );
     left: 0;
     width: 100%;

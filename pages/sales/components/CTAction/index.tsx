@@ -1,5 +1,7 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
 import backgroundJobs from "@assets/background-jobs.png";
+import backgroundJobsMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png";
+import backgroundJobsUltra from "@assets/pages/jobs/jobs-hero-bg-ultra-wide.png";
 import gaCoaches from "@assets/new-cta-img.jpg";
 import Image from "next/image";
 import useAppContext from "@/hooks/useAppContext";
@@ -33,11 +35,20 @@ function CTAction({
     "page.home.callToAction.europe",
   ];
 
+  function getBgImg() {
+  
+    if (isJobpage) {
+      return isMobile ? backgroundJobsMobile.src : backgroundJobsUltra.src
+    }
+    return '';
+  }
+
   return (
     <S.BackgroudCTA
       className={`${isCandidates && "candidate"} ${isJobpage && "job-page"}`}
       isMobile={isMobile}
-      style={{ maxHeight: `${isMobile && !isCandidates ? "830px" : ""}` }}
+      style={!isCandidates ? { maxHeight: `${isMobile ? "380px" : "600px"}` }:{}}
+      backgroundImg={getBgImg()}
     >
       <S.BannerMainContainer
         isJobpage={isJobpage}
@@ -67,15 +78,7 @@ function CTAction({
             <S.StdButtonCustom>{callActionText}</S.StdButtonCustom>
           )}
         </section>
-        {isJobpage ? (
-          <S.UIImage
-            src={backgroundJobs}
-            alt="growing abroad jobs"
-            width={1580}
-            priority
-            quality={100}
-          />
-        ) : (
+        {isCandidates && (
           <section className="right-side">
             <Image
               src={gaCoaches}

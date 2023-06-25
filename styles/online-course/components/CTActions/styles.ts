@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import StdButton from "@/components/generics/StdButton/StdButton";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const {
   sizes: { mediaQuery },
@@ -13,6 +13,7 @@ const {
 
 interface BackgroundCTAProps {
   isMobile: boolean;
+  backgroundImg?: string
 }
 
 interface SubTitleProps {
@@ -25,7 +26,7 @@ interface IBannerMainContainerProps {
 
 
 export const BackgroudCTA = styled.section<BackgroundCTAProps>`
-  margin-top: ${({ isMobile }) => (isMobile ? "66px" : "90px")};
+  margin-top: ${({ isMobile }) => (isMobile ? "60px" : "90px")};
   width: 100%;
   height: 100%;
   max-height: ${({ isMobile }) =>
@@ -35,11 +36,21 @@ export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   margin-right: auto;
   overflow: hidden;
   background-color: ${blue500};
+
+  background-image: url('${({backgroundImg}) => backgroundImg}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: ${mediaQuery}) {
+    background-size: cover;
+    background-position: left;
+  }
   &.candidate {
     max-height: 97vh;
   }
   &.job-page {
-    background: #fff;
+    background-color: #fff;
   }
 `;
 
@@ -98,6 +109,7 @@ export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
     flex-direction: column;
     gap: 1.4425rem;
     width: 100%;
+    align-items: flex-start;
 
     button {
       max-width: 17.4375rem;
@@ -171,7 +183,7 @@ export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
 
   @media screen and (min-width: 430px) {
     .left-side {
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
@@ -179,11 +191,10 @@ export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
     padding-top: 5.3125rem;
 
     .left-side {
-      align-items: center;
+      align-items: flex-start;
 
       button {
         max-width: 70%;
-        width: 100%;
       }
 
       h1 {

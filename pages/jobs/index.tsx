@@ -18,30 +18,7 @@ const JobsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  zoom: 95%;
   z-index: 1;
-
-
-  div#page-jobs {
-
-    margin-top: calc( 720px + 13%);
-
-    @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%)
-    }
-
-    @media screen and (min-width: 1000px) {
-      margin-top: calc( 800px - 2% );
-    }
-
-    @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px  - 0.7rem );
-    }
-
-    @media screen and (min-width: 1366px)  {
-      margin-top: calc( 800px + 1rem );
-    }
-  }
 `;
 
 export default function Jobs() {
@@ -53,7 +30,7 @@ export default function Jobs() {
           <JobsWrapper>
             <CTAction isJobpage={true} hasSubtitle={false} callActionText="Upload your CV NOW" />
             <PageBodyLayout id="page-jobs"
-                distanceFromTop={isMobile ? "770px" : "800px"}
+                distanceFromTop={isMobile ? "380px" : "600px"}
                 waveType={EWaveType.linear}
             >
                 <CloudSection />

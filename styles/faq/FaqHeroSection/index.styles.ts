@@ -29,7 +29,7 @@ export const FaqContainerHero = styled.div<IContainerProps>`
   z-index: -1;
 
   width: 100%;
-  height: 600px;
+  height: 570px;
 
   display: flex;
   flex-direction: column;

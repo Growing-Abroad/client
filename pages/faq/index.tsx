@@ -21,7 +21,7 @@ export default function FAQ() {
       <FaqHeroSection />
       <PageBodyLayout
         id="page-faq"
-        distanceFromTop={isMobile ? "300px" : "600px"}
+        distanceFromTop={isMobile ? "300px" : "570px"}
         waveType={EWaveType.linear}
       >
 
