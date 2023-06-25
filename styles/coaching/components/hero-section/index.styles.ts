@@ -47,6 +47,7 @@ export const HeroTitleWrapper = styled.div`
 
   .coaching-title-wrapper {
     padding: 0 0 16px;
+    justify-content: flex-start;
 
     .coaching-title {
       margin-bottom: 0;
