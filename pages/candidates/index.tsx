@@ -64,7 +64,7 @@ export default function OnlineCourse() {
       <CTAction 
         pageName="candidates"
         titleIntl="page.candidates.title"
-        subTitleIntl="page.candidates.subtitle"
+        subTitleIntl=""
         buttonIntl="page.candidates.buttonCallToAction"
       />
       <PageBodyLayout id="page-candidates"
