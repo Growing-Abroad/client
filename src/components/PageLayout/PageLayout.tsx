@@ -25,12 +25,12 @@ interface HeaderProps {
 function Header({ chosenHeader }: HeaderProps) {
   switch (chosenHeader) {
     case ChosenHeader.FOR_CANDIDATES:
-      return <HeaderForCandidates />;
+      return <HeaderForCandidates />
     case ChosenHeader.FOR_COMPANIES:
-      return <HeaderForCompanies />;
+      return <HeaderForCompanies />
     case ChosenHeader.DEFAULT:
     default:
-      return <HeaderForPublicRoutes />;
+      return <HeaderForPublicRoutes />
   }
 }
 

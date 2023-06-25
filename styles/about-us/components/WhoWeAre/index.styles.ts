@@ -23,6 +23,15 @@ export const Container = styled.section`
     padding: 20px 40px 0 40px;
     gap: 1.5rem;
   }
+  &.about-us {
+    padding: 0;
+    margin: 90px 0 50px;
+    gap: 50px;
+    @media screen and (min-width: 768px) {
+      margin: 90px 0 0;
+    }
+  }
+
   &.sales {
     gap: 14px;
     padding: 0 6px 0;
@@ -66,9 +75,10 @@ export const Paragraph = styled.div`
   color: ${blue700};
   max-width: 100%;
   font: 400 0.8rem;
-
   @media (min-width: ${variables.sizes.mediaQuery}) {
     font-size: 1rem;
+  padding: 0 35px;
+
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
@@ -96,7 +106,7 @@ export const p = styled.p`
   margin: 0;
 
   display: flex;
-  text-align: justify;
+  text-align: center;
   align-items: center;
 
   @media (max-width: 768px) {
@@ -106,7 +116,6 @@ export const p = styled.p`
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     font-size: 16px;
-    padding: 0 15px;
   }
 `;
 
@@ -125,7 +134,6 @@ export const ImageContainer = styled.div`
   border-radius: 5px;
   overflow: hidden;
   width: 80%;
-  zoom: 80%;
   max-width: ${variables.sizes.maxWidthAll};
   height: auto;
   position: relative;

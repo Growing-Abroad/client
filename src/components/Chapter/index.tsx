@@ -1,6 +1,5 @@
 import * as S from "./style";
 import VerticalBar from "./VerticalBar";
-import Image from "next/image";
 import index1 from "@/../public/assets/germany.jpg";
 import index4 from "@/../public/assets/job-search-strategy.jpg";
 import index3 from "@/../public/assets/optimization.jpg";
@@ -8,7 +7,6 @@ import index5 from "@assets/job-interview-preparation.jpg";
 import index6 from "@/../public/assets/job-interview-success.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "../two-color-title";
-import StdButton from "../generics/StdButton/StdButton";
 import { IconCheckBlue } from "../Icons";
 
 export function Chapter() {
@@ -196,10 +194,10 @@ export function Chapter() {
           </div>
         </S.ChapterContainerCards>
       </S.ChapterContent>
-      <StdButton>
+      <S.UIStdButton>
         {" "}
         Buy Online Course Now
-      </StdButton>
+      </S.UIStdButton>
     </S.ChapterContainer>
   );
 }

@@ -1,6 +1,8 @@
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { Col } from "react-bootstrap";
+import Image from "next/image";
 
 const {
   colors: { blue700 },
@@ -25,7 +27,7 @@ export const Container = styled.section`
   }
 
   @media (max-width: 580px) {
-    padding: 0 42px 2px;
+    padding: 0 16px 2px;
   }
 `;
 
@@ -74,9 +76,7 @@ export const Card = styled.div`
     transform: scale(1.02);
   }
 
-  @media (min-width: ${variables.sizes.mediaQuery}) and (max-width: 1200px) {
-    min-width: 376px;
-  }
+ 
 `;
 
 export const CardContent = styled.div`
@@ -118,3 +118,24 @@ export const WhiteTriangle = styled.div`
   height: 80px;
   z-index: 0;
 `;
+
+export const UIRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
+export const UICol = styled(Col)`
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 1026px) {
+    padding-bottom: 93px;
+  }
+`
+
+export const UIImage = styled(Image)`
+  object-fit: cover;
+`

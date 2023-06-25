@@ -1,10 +1,6 @@
 import React from "react";
 import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
-import HeroBackground from "@/../public/assets/pages/about-us/hero-background.jpg";
-import TwoColorTitle from "@components/two-color-title";
-import Uan from "@/../public/assets/Uan-Career-Coach-1.jpg";
-import Uan2 from "@/../public/assets/Uan-Career-Coach-11.jpg";
-import Manu from "@/../public/assets/Manu-Career-Coach-1.jpg";
+import HeroBackground from "@/../public/assets/growing-abroad.jpg";
 import { Montserrat } from "next/font/google";
 import classes from "./Hero.module.css";
 import useAppContext from "@/hooks/useAppContext";
@@ -15,33 +11,14 @@ const montserrat = Montserrat({
 });
 
 function HeroSection() {
-  const { isMobile, windowSize } = useAppContext();
+  const { windowSize } = useAppContext();
 
   return (
-    <S.Container backgroundImg={HeroBackground.src}>
+    <S.Container>
+      <S.UIImage src={HeroBackground} alt="background Uan and Manu" />
       <S.ContentWrapper>
-        <TwoColorTitle
-          breakingLine={isMobile}
-          text1="Discover"
-          text2="Growing Abroad"
-          wrapperStyles={{
-            maxWidth: "100vw",
-          }}
-          hasSpaceBtw
-        />
-        <p
-          style={{ maxWidth: "80vw", fontFamily: montserrat.style.fontFamily }}
-          className={classes.para}
-        >
-          Uan from Brazil and Manu from Germany created a unique platform for
-          foreigners to make their dream of living and working in Germany or
-          Europe a reality
-        </p>
-
         <S.ImagesContainer>
-          <S.ImagesWrapper
-            background={windowSize.width >= 1100 ? Uan.src : Uan2.src}
-          >
+          <S.ImagesWrapper>
             <BlueSquare type="left-square">
               <S.Quote className={classes.quotes}>“</S.Quote>
               <S.TextLeft>
@@ -50,7 +27,7 @@ function HeroSection() {
             </BlueSquare>
           </S.ImagesWrapper>
 
-          <S.ImagesWrapper className="right-wrapper" background={Manu.src}>
+          <S.ImagesWrapper className="right-wrapper">
             <BlueSquare type="right-square">
               <S.Quote className={classes.quotes}>”</S.Quote>
               <S.TextRight>

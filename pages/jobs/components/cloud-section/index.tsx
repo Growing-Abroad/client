@@ -32,6 +32,9 @@ const CloudWrapper = styled.section`
     padding-inline: 40px;
     margin-bottom: 40px;
   }
+  @media screen and (max-width: 1026px) {
+    flex-direction: column;
+  }
 `
 
 const CloudDetails = styled.div`
@@ -40,9 +43,13 @@ const CloudDetails = styled.div`
   gap: 32px;
   text-align: flex-start;
   color: ${blue700};
-  max-width: 500px;
   width: 100%;
-
+  margin-top: 30px;
+  @media screen and (min-width: 1026px) {
+    max-width: 500px;
+    
+    
+  }
   .heading3 {
     max-width: 100%;
     text-align: start;

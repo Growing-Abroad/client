@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import Image from "next/image";
 
 const {
   sizes: { mediaQuery },
 } = variables;
 const {
-  colors: { blue500, blue700, yellow400 },
+  colors: { blue400 ,blue500, blue700, yellow400 },
 } = theme;
 
 interface BackgroundCTAProps {
@@ -16,6 +17,10 @@ interface BackgroundCTAProps {
 
 interface SubTitleProps {
   isMobile: boolean
+}
+
+interface IBannerMainContainerProps {
+  isJobpage?: boolean  
 }
 
 
@@ -32,6 +37,9 @@ export const BackgroudCTA = styled.section<BackgroundCTAProps>`
   background-color: ${blue500};
   &.candidate {
     max-height: 97vh;
+  }
+  &.job-page {
+    background: #fff;
   }
 `;
 
@@ -62,12 +70,12 @@ export const CtaButton = styled.button`
   }
 `;
 
-export const BannerMainContainer = styled.section`
+export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
   max-width: ${variables.sizes.maxWidthAll};
   width: 100%;
   height: 90%;
   padding: 1.5rem 1.125rem 0;
-  background-color: ${blue500};
+  background-color: ${(isJobpage) => (isJobpage ? "transparent" : blue500)};
 
   display: flex;
   flex-direction: column;
@@ -102,7 +110,10 @@ export const BannerMainContainer = styled.section`
       font-weight: 600;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       margin: 0;
-
+      &.job-page {
+        max-width: 501px;
+        color: #05335B;
+      }
       .title-change {
         font-weight: 600;
         animation-iteration-count: 1;
@@ -117,7 +128,7 @@ export const BannerMainContainer = styled.section`
         @keyframes text-enter-germany {
           0% {
             left: -200px;
-            color: ${blue500};
+            color:  ${(isJobpage) => (isJobpage ? blue400 : blue500)};
             visibility: hidden;
             opacity: 0;
           }
@@ -140,7 +151,7 @@ export const BannerMainContainer = styled.section`
             left: 200px;
             visibility: hidden;
             opacity: 0;
-            color: ${blue500};
+            color: ${(isJobpage) => (isJobpage ? blue400 : blue500)};
           }
         }
       }
@@ -235,4 +246,17 @@ export const StdButtonCustom = styled(StdButton)`
 
 export const StdVideoCustom = styled(StdButtonCustom)`
   margin: 20px 0 81px;
+`
+
+export const UIImage = styled(Image)`
+  position: absolute;
+  width: 200%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
 `

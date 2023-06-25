@@ -1,47 +1,47 @@
 import { theme } from "@styles/theme";
 import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
+import Image from "next/image";
 
-interface IContainer {
-  backgroundImg: string;
-}
 
-export const Container = styled.section<IContainer>`
+
+export const Container = styled.section`
   min-width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding-top: 80px;
+  
   color: ${theme.colors.blue700};
   text-align: center;
   overflow: hidden;
-
-  background-image: url(${({ backgroundImg }) => backgroundImg});
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
+  position: relative;
+  overflow: hidden;
+  margin-top: 89px;
+  max-height: calc(100vh - 89px);
+  @media screen and (min-width: 768px){
+    max-height: calc(50vh - 89px);
+  }
+  @media screen and (min-width: 1026px){
+    max-height: calc(100vh - 89px);
+  }
   > p {
     max-width: 850px;
     padding-inline: 1rem;
   }
 
-  @media (max-width: ${variables.sizes.mediaQuery}) {
-    padding-top: 20px;
-  }
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 1280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-
+  position: absolute;
+  max-height: 438px;
+  overflow: hidden;
+  bottom: 0;
   > p {
     padding-inline: 1rem;
   }
@@ -64,32 +64,20 @@ export const ImagesContainer = styled.div`
     flex-direction: initial;
     width: 100vw;
   }
-  /* @media (max-width: 588px) {
-    margin-top: -66px;
-  } */
-  @media (max-width: 480px) {
-    margin-top: -66px;
-  }
+  
+  
 `;
 
-export interface IImagesWrapper {
-  background: string;
-}
 
-export const ImagesWrapper = styled.div<IImagesWrapper>`
+export const ImagesWrapper = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  background-image: url(${({ background }) => background});
-  background-position: 90%;
-  background-repeat: no-repeat;
-  background-size: contain;
   height: 450px;
   width: 100%;
 
   &.right-wrapper {
     justify-content: flex-end;
-    background-position: 10%;
   }
 
   .text-left,
@@ -244,6 +232,7 @@ export const TextLeft = styled.span`
   font-weight: 600;
   white-space: pre-wrap;
 
+
   @media (min-width: 1025px) and (max-width: 1305px) {
     width: auto;
   }
@@ -318,3 +307,17 @@ export const Quote = styled.div`
     font-size: 32px;
   }
 `;
+
+
+export const UIImage = styled(Image)`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  @media screen and (min-width: 769px) {
+    margin-top: 0;
+    height: 100vh;
+
+  }
+  
+`

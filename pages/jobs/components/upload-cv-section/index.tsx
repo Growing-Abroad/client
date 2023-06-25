@@ -1,30 +1,42 @@
-import React, { useState, ChangeEvent, useMemo, useEffect } from "react";
+import React, { useState, ChangeEvent, useRef, useEffect } from "react";
 import { useTheme } from "styled-components";
 import { Checkbox, CircularProgress, FormControlLabel, FormGroup, SelectChangeEvent, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudUploadAlt, faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link';
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
+import IntlTelInput from 'react-intl-tel-input';
 
 import TwoColorTitle from "@/components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
-import {
-  CvForm,
-  UploadCvDetails,
-  UploadCvWrapper,
-} from "styles/jobs/components/upload-cv-section/index.styles";
+import * as S from "styles/jobs/components/upload-cv-section/index.styles";
 import useAppContext from "@/hooks/useAppContext";
 import StdSelect from "@/components/generics/StdInput/StdSelect";
 import StdInput from "@/components/generics/StdInput";
 import StdTextInput from "@/components/generics/StdInput/StdTextInput";
+import 'react-intl-tel-input/dist/main.css';
+import Image from "next/image";
+import imgUpload from "@/../public/assets/pages/jobs/growing.png";
 
 interface FormFields {
-  pronoun: string
+  title: string
   firstName: string
   lastName: string
   email: string
   phone: string
+}
+
+interface IPhone {
+  countryData: string
+  
+  number: {
+    name?: string
+    iso2?: string
+    dialCode?: string
+    priority?: number
+    areaCodes?: string[] | null
+  }
 }
 
 const expertiseOptions = [
@@ -60,16 +72,19 @@ export default function UploadCvSection() {
   } = useTheme();
   const { isMobile, smallDesktopSize, windowSize: { width } } = useAppContext();
   const [selectedFile, setSelectedFile] = useState<File>();
-  const [pronoun, setPronoun] = useState('')
-  const formDefaultValues = useMemo(() => {
-    return {
-      pronoun: '',
+  const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
+  const [title, setTitle] = useState('')
+  const [showNewInput, SetShowNewInput] = useState(false)
+
+  const phoneRef = useRef(null);
+
+  const formDefaultValues = {
+      title: '',
       firstName: '',
       lastName: '',
       email: '',
       phone: '',
-    }
-  }, [])
+  }
 
   const methods = useForm<FormFields>({
     mode: 'onBlur',
@@ -82,11 +97,19 @@ export default function UploadCvSection() {
     handleSubmit,
     clearErrors,
     reset,
+    register,
+    setValue
   } = methods
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files?.[0]) {
       setSelectedFile(event.target.files[0]);
+    }
+  };
+
+  const handleFileChangeOptional = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files?.[0]) {
+      setSelectedFileOptional(event.target.files[0]);
     }
   };
 
@@ -96,71 +119,76 @@ export default function UploadCvSection() {
       setSelectedFile(event.dataTransfer?.files[0]);
     }
   };
+  const handleDropOptionl: React.DragEventHandler<HTMLDivElement> = (event) => {
+    event.preventDefault();
+    if (event.dataTransfer?.files[0]) {
+      
+      setSelectedFileOptional(event.dataTransfer?.files[0]);
+    }
+  };
+
 
   const handleDragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
     event.preventDefault();
   };
 
-  const handleChangePronoun = (event: SelectChangeEvent) => {
-    setPronoun(event.target.value as string)
+  const handleChangeTitle = (event: SelectChangeEvent) => {
+    setTitle(event.target.value as string)
     clearErrors()
   };
 
-  const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    console.log('data', data)
-    // const res = await fetch("/request-path", { // TODO: update this path
-    //   body: JSON.stringify({
-    //     pronoun: data.pronoun,
-    //     firstName: data.firstName,
-    //     lastName: data.lastName,
-    //     email: data.email,
-    //     phone: data.phone,
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   method: "POST",
-    // });
 
-    // const { error } = await res.json();
-    // if (error) {
-    //   console.log(error);
-    //   return;
-    // }
+
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    console.log('data12', data)
+  }
+
+  const handleSanitaze = ({number, countryData}: IPhone) => {
+    const phoneNumber = number.dialCode+countryData
+    return `+${phoneNumber.replace(/\D/g, "")}`
   }
 
   useEffect(() => {
     if (isSubmitted && !errors) {
       reset(formDefaultValues)
-      setPronoun('')
+      setTitle('')
     }
   }, [formDefaultValues, isSubmitted, reset, errors])
 
+
+
+
+
   return (
     <>
-      <UploadCvWrapper>
-        <TwoColorTitle
-          as="h2"
-          text1="Upload your"
-          text2="Application Documents"
+      <S.UploadCvWrapper>
+        <S.InfoTitle
+          text1="Create a Profile &"
+          text2="Upload your Application Documents"
           hasSpaceBtw
-          styles={{ display: "flex", flexDirection: width < smallDesktopSize ? "column" : "row" }}
           className="upload-cv-heading2"
           wrapperStyles={{ width: "100%", justifyContent:"flex-start" }}
         />
 
-        <UploadCvDetails>
-          <StdParagraqh className="cv-paragraqh">
-            Important: Only upload your application documents when they are
-            optimized into German standard. If you don't have optimized
-            application documents, they will not be considered. In
-            our <Link href="/online-course" className="highlight">Online course</Link> you
-            will learn every little step to optimize your application documents into German Standard.
-          </StdParagraqh>
-        </UploadCvDetails>
-      </UploadCvWrapper>
+        <S.UploadCvDetails>
+          <Image src={imgUpload} alt="Create a Profile & Upload your Application Documents" width={516} height={299} />
+
+          <S.ContentInfo>
+            <StdParagraqh className="cv-paragraqh">
+              Important: Only upload your application documents when they are optimized into German standard. 
+              If you don't have optimized application documents, they will not be considered. 
+              In our Online course you will learn every little step to optimize your 
+              application documents into German Standard. We kindly ask you not to include sensitive data (see Article 9 DSGVO) 
+              in your application, neither in the form nor in the uploaded documents.
+            </StdParagraqh>
+            <S.UIInfoButton>
+              to the online course
+            </S.UIInfoButton>
+          </S.ContentInfo>
+        </S.UploadCvDetails>
+      </S.UploadCvWrapper>
       <FormProvider {...methods}>
-        <CvForm onSubmit={handleSubmit(onSubmit)}>
+        <S.CvForm onSubmit={handleSubmit(onSubmit)}>
           <div className="padded">
             <TwoColorTitle
               as="h3"
@@ -176,32 +204,32 @@ export default function UploadCvSection() {
 
             <div className="personal-info-inputs-wrapper  smaller-margin-bottom">
               <StdInput
-                label="Pronoun"
-                name="pronoun"
+                label="Title"
+                name="title"
                 required={true}
-                errorMessage={errors.pronoun?.type === 'required' ? 'Select how would you like to be addressed' : ''}
+                errorMessage={errors.title?.type === 'required' ? 'Select how would you like to be addressed' : ''}
               >
                 <StdSelect
-                  value={pronoun}
-                  name="pronoun"
-                  onChange={handleChangePronoun}
+                  value={title}
+                  name="title"
+                  onChange={handleChangeTitle}
                   required={true}
                   options={[
                     {
-                      value: 'he-him-his',
-                      label: 'He/him/his'
+                      value: 'Male',
+                      label: 'Male'
                     },
                     {
-                      value: 'she-her-hers',
-                      label: 'She/her/hers'
+                      value: 'Female',
+                      label: 'Female'
                     },
                     {
-                      value: 'they-them-their',
-                      label: 'They/them/their'
+                      value: 'Divers',
+                      label: 'Divers'
                     },
                     {
-                      value: 'neither',
-                      label: 'Neither'
+                      value: 'Prefer-not-to-say',
+                      label: 'Prefer not to say'
                     },
                   ]}
                 />
@@ -252,15 +280,24 @@ export default function UploadCvSection() {
                 required={true}
                 errorMessage={errors.phone?.type === 'required' ? 'Type your Telephone Number' : ''}
               >
-                <StdTextInput
-                  name="phone"
-                  required={true}
+                <IntlTelInput
+                  preferredCountries={['de']}
+                  fieldId="phone"
+                  fieldName="phone"
+                  format
+                  key="phone"
+                  {...register('phone', {required: true})}
+                  ref={phoneRef}
+                  onPhoneNumberChange={(value, countryData, number) => {
+                    setValue('phone', handleSanitaze({countryData, number}))
+                  }}
+                  
                 />
+               
               </StdInput>
             </div>
 
-            <TwoColorTitle
-              as="h3"
+            <S.UITwoColorTitle
               text1="Other Information"
               text2=""
               className="upload-cv-heading3"
@@ -345,11 +382,6 @@ export default function UploadCvSection() {
                 }
               />
 
-              {/* <label htmlFor="file-upload" className="custom-file-upload">
-                              <FontAwesomeIcon icon={faCloudUploadAlt}></FontAwesomeIcon> Choose File
-                          </label>
-                          <input id="file-upload" type="file"/>
-                          */}
               <div
                 className="drop-area"
                 onDrop={handleDrop}
@@ -359,7 +391,7 @@ export default function UploadCvSection() {
                   <div className="drop-message">
                     <span>
                       {isMobile
-                        ? "Upaload you CV"
+                        ? "Upload you CV"
                         : "Drag resume in here or select"}
                     </span>
                   </div>
@@ -384,10 +416,51 @@ export default function UploadCvSection() {
                   onChange={handleFileChange}
                 />
               </div>
-              <StdParagraqh className="personal-info-sub-heading cv-upload-sub">
-                + Optional Documents (Cover Letter, Qualifications,
-                Recommendations, ...)
-              </StdParagraqh>
+              <div onClick={() => SetShowNewInput(!showNewInput)} >
+                <S.UIStdParagraqh className="personal-info-sub-heading cv-upload-sub">
+                  {(showNewInput || selectedFileOptional) ? "-" : "+"} Optional Documents (Cover Letter, Qualifications,
+                  Recommendations, ...)
+                </S.UIStdParagraqh>
+              </div>
+
+              
+
+              {(showNewInput || selectedFileOptional) && 
+                (<div
+                  className="drop-area"
+                  onDrop={handleDropOptionl}
+                  onDragOver={handleDragOver}
+                >
+                  {!selectedFileOptional ? (
+                    <div className="drop-message">
+                      <span>
+                        {isMobile
+                          ? "Upload you optional documents"
+                          : "Drag optional documents in here or select"}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="file-details">
+                      <div className="file-name">{selectedFileOptional.name}</div>
+                      <div className="file-size">{selectedFileOptional.size} bytes</div>
+                    </div>
+                  )}
+                  <label htmlFor="cv-file-input-optional" className="file-input-label">
+                    <FontAwesomeIcon
+                      icon={faCloudUploadAlt}
+                      size="5x"
+                      color={blue700}
+                      className="label-icon"
+                    />
+                  </label>
+                  <input
+                    id="cv-file-input-optional"
+                    type="file"
+                    className="file-input"
+                    onChange={handleFileChangeOptional}
+                  />
+                </div>
+                )}
             </div>
           </div>
           <div className="declaration-of-consent newsletter-check">
@@ -427,16 +500,12 @@ export default function UploadCvSection() {
 
           </div>
           <div className="declaration-of-consent">
-            <TwoColorTitle
-              as="h3"
+            <S.DeclarationTitle
               text1="Declaration of Consent"
               text2=""
               wrapperClassName="upload-cv-heading3-wrapper"
               className="upload-cv-heading3 declarations"
               wrapperStyles={{ maxWidth: "100%" }}
-              styles={
-                isMobile ? { marginBottom: "24px" } : { marginBottom: "24px" }
-              }
             />
 
             <div
@@ -477,7 +546,7 @@ export default function UploadCvSection() {
           >
             {isSubmitting ? <CircularProgress /> : 'Upload Now'}
           </StdButton>
-        </CvForm>
+        </S.CvForm>
       </FormProvider>
     </>
   );
