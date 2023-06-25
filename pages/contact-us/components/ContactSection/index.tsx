@@ -219,7 +219,7 @@ export default function Contact() {
                   />
                 </Link>
 
-                <Link href={''} target="blank">
+                <Link href={'https://discord.gg/mYMBQJJaQr'} target="blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={DiscordIcon.src}
