@@ -69,7 +69,12 @@ export default function Sales() {
         dataVideo={dataVideo}
       />
       <SalesWrapper>
-        <CTAction />
+        <CTAction 
+          pageName="sales"
+          buttonIntl="page.sales.buttonCallToAction"
+          subTitleIntl="page.sales.subtitle"
+          titleIntl="page.sales.title"
+        />
         <PageBodyLayout
           id="page-sales"
           distanceFromTop={isMobile ? "850px" : "780px"}

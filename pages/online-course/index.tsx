@@ -28,25 +28,23 @@ const OnlineCourseWrapper = styled.div`
   zoom: 95%;
   z-index: 1;
 
-
   div#page-onlie-course {
-
-    margin-top: calc( 720px + 13%);
+    margin-top: calc(720px + 13%);
 
     @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%)
+      margin-top: calc(720px - 15%);
     }
 
     @media screen and (min-width: 1000px) {
-      margin-top: calc( 800px - 2% );
+      margin-top: calc(800px - 2%);
     }
 
-    @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px  - 0.7rem );
+    @media screen and (min-width: 1280px) {
+      margin-top: calc(800px - 0.7rem);
     }
 
-    @media screen and (min-width: 1366px)  {
-      margin-top: calc( 800px + 1rem );
+    @media screen and (min-width: 1366px) {
+      margin-top: calc(800px + 1rem);
     }
   }
 `;
@@ -57,33 +55,40 @@ export default function OnlineCourse() {
   const [dataVideo, setDataVideo] = useState();
 
   return (
-   <>
-    <ModalLayout
-      visible={isModalVisible}
-      onClose={handleModal}
-      dataVideo={dataVideo}
-    />
-    <OnlineCourseWrapper>
-      <CTAction />
-      <PageBodyLayout id="page-onlie-course"
-        distanceFromTop={isMobile ? "770px" : "800px"}
-        waveType={EWaveType.linear}
-      >
-        <WhyBuyCourse />
-        <Chapter />
-        <BigCard />
-        <StoriesPageCandidates hasSubTitle={false} />
-        <TwoCards />
-        <Investiment />
-        <TwoColorTitle
-          text1="Frequently "
-          text2="Asked Questions"
-          styles={{ width: `${isMobile ? "387px" : ""}` }}
+    <>
+      <ModalLayout
+        visible={isModalVisible}
+        onClose={handleModal}
+        dataVideo={dataVideo}
+      />
+      <OnlineCourseWrapper>
+        <CTAction
+          pageName="onlineCourses"
+          
+          titleIntl="page.onlineCourse.title"
+          subTitleIntl="page.onlineCourse.subtitle"
+          buttonIntl="page.onlineCourse.buttonCallToAction"
         />
-        <FaqSection accordeons={OnlineCourseFaqMockUp} />
-      </PageBodyLayout>
-    </OnlineCourseWrapper>
-   </>
+        <PageBodyLayout
+          id="page-onlie-course"
+          distanceFromTop={isMobile ? "770px" : "800px"}
+          waveType={EWaveType.linear}
+        >
+          <WhyBuyCourse />
+          <Chapter />
+          <BigCard />
+          <StoriesPageCandidates hasSubTitle={false} />
+          <TwoCards />
+          <Investiment />
+          <TwoColorTitle
+            text1="Frequently "
+            text2="Asked Questions"
+            styles={{ width: `${isMobile ? "387px" : ""}` }}
+          />
+          <FaqSection accordeons={OnlineCourseFaqMockUp} />
+        </PageBodyLayout>
+      </OnlineCourseWrapper>
+    </>
   );
 }
 

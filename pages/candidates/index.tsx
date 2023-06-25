@@ -61,7 +61,12 @@ export default function OnlineCourse() {
       dataVideo={dataVideo}
     />
     <OnlineCourseWrapper>
-      <CTAction hasSubtitle={false} isCandidates={true} />
+      <CTAction 
+        pageName="candidates"
+        titleIntl="page.candidates.title"
+        subTitleIntl="page.candidates.subtitle"
+        buttonIntl="page.candidates.buttonCallToAction"
+      />
       <PageBodyLayout id="page-candidates"
         distanceFromTop={isMobile ? "770px" : "800px"}
         waveType={EWaveType.curly}

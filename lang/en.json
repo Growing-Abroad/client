@@ -7,5 +7,24 @@
   "page.home.head.meta.description": "Next.js i18n example - English",
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
-  "page.sales.callToAction": "Land your Dream job in"
+  "page.sales.callToAction": "Land your Dream job in",
+
+  "dynamictext.germany": " Deutschland",
+  "dynamictext.europe": " Europa",
+
+  "page.sales.title": "Land your Dream job in",
+  "page.sales.subtitle": "Build a successful career abroad with this amazing ONLINE COURSE",
+  "page.sales.buttonCallToAction": "Buy Online Course Now",
+
+  "page.onlineCourse.title": "Land your Dream job in",
+  "page.onlineCourse.subtitle": "Build a successful career abroad with this amazing ONLINE COURSE",
+  "page.onlineCourse.buttonCallToAction": "Buy Online Course Now",
+
+  "page.candidates.title": "Land your Dream job in",
+  "page.candidates.subtitle": "Build a successful career abroad with this amazing ONLINE COURSE",
+  "page.candidates.buttonCallToAction": "Buy Online Course Now",
+  
+  "page.jobs.title": "Land your Dream job in",
+  "page.jobs.subtitle": "Build a successful career abroad with this amazing ONLINE COURSE",
+  "page.jobs.buttonCallToAction": "Upload your CV NOW"
 }

@@ -1,57 +1,98 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import StdButton from "@/components/generics/StdButton/StdButton";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import backgroundJobsMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png";
+import backgroundJobsUltra from "@assets/pages/jobs/jobs-hero-bg-ultra-wide.png";
 
 const {
   sizes: { mediaQuery },
 } = variables;
 const {
-  colors: { blue400 ,blue500, blue700, yellow400 },
+  colors: { blue400, blue500, blue700, yellow400 },
 } = theme;
 
-interface BackgroundCTAProps {
-  isMobile: boolean;
-  backgroundImg?: string
-}
-
 interface SubTitleProps {
-  isMobile: boolean
+  isMobile: boolean;
 }
 
 interface IBannerMainContainerProps {
-  isJobpage?: boolean  
+  pageName: Pages;
 }
 
+type Pages = "jobs" | "sales" | "onlineCourses" | "candidates";
 
-export const BackgroudCTA = styled.section<BackgroundCTAProps>`
-  margin-top: ${({ isMobile }) => (isMobile ? "60px" : "90px")};
+type BackgroundCTAProps = {
+  pageName: Pages;
+};
+
+// variants functions
+
+const variantBackgroudCTA = (variant: Pages) => {
+  return {
+    jobs: css`
+      background-image: url(${backgroundJobsMobile.src});
+      @media screen and (min-width: 768px) {
+        background-image: url(${backgroundJobsUltra.src});
+      }
+    `,
+    sales: css``,
+    onlineCourses: css``,
+    candidates: css`
+      max-height: 97vh;
+    `,
+  }[variant];
+};
+
+const variantBannerMainContainer = (variant: Pages) => {
+  return {
+    jobs: css`
+      background-color: transparent;
+    `,
+    sales: css``,
+    onlineCourses: css``,
+    candidates: css`
+      height: 100%;
+      justify-content: space-between;
+      padding-bottom: 30px;
+      @media screen and (min-width: 1024px) {
+        padding-bottom: 70px;
+      }
+      .left-side h1 {
+        max-width: 642px;
+      }
+    `,
+  }[variant];
+};
+
+// styles
+
+export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>`
+  margin-top: 60px;
   width: 100%;
   height: 100%;
-  max-height: ${({ isMobile }) =>
-    isMobile ? "776px" : "710px"};
+  max-height: 776px;
   position: fixed;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   background-color: ${blue500};
 
-  background-image: url('${({backgroundImg}) => backgroundImg}');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 90px;
+  }
 
   @media (max-width: ${mediaQuery}) {
     background-size: cover;
     background-position: left;
   }
-  &.candidate {
-    max-height: 97vh;
-  }
-  &.job-page {
-    background-color: #fff;
-  }
+
+  ${({ pageName }) => variantBackgroudCTA(pageName)}
 `;
 
 export const CtaButton = styled.button`
@@ -86,130 +127,12 @@ export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
   width: 100%;
   height: 90%;
   padding: 1.5rem 1.125rem 0;
-  background-color: ${(isJobpage) => (isJobpage ? "transparent" : blue500)};
+  background-color: ${blue500};
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.0625rem;
-  &.candidates {
-    height: 100%;
-    justify-content: space-between;
-    padding-bottom: 30px;
-    @media screen and (min-width: 1024px) {
-      padding-bottom: 70px;
-    }
-    .left-side h1 {
-      max-width: 642px;
-    }
-  }
-
-  .left-side {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4425rem;
-    width: 100%;
-    align-items: flex-start;
-
-    button {
-      max-width: 17.4375rem;
-    }
-
-    h1 {
-      max-width: 17.4375rem;
-      color: #fff;
-      font-size: 2.75rem;
-      font-weight: 600;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      margin: 0;
-      &.job-page {
-        max-width: 501px;
-        color: #05335B;
-      }
-      .title-change {
-        font-weight: 600;
-        animation-iteration-count: 1;
-        position: relative;
-        left: -200px;
-        opacity: 0;
-        animation-fill-mode: both;
-        display: inline-block;
-        color: ${blue500};
-        animation: text-enter-germany 3000ms ease;
-
-        @keyframes text-enter-germany {
-          0% {
-            left: -200px;
-            color:  ${(isJobpage) => (isJobpage ? blue400 : blue500)};
-            visibility: hidden;
-            opacity: 0;
-          }
-          20% {
-            left: 0;
-            visibility: visible;
-            color: ${blue700};
-          }
-          40% {
-            color: ${yellow400};
-            opacity: 1;
-          }
-          80% {
-            left: 0;
-            visibility: visible;
-            color: ${yellow400};
-            opacity: 1;
-          }
-          100% {
-            left: 200px;
-            visibility: hidden;
-            opacity: 0;
-            color: ${(isJobpage) => (isJobpage ? blue400 : blue500)};
-          }
-        }
-      }
-    }
-  }
-
-  .right-side {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    img {
-      max-width: 375px;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  @media screen and (min-width: 430px) {
-    .left-side {
-      align-items: flex-start;
-    }
-  }
-
-  @media screen and (min-width: ${mediaQuery}) {
-    padding-top: 5.3125rem;
-
-    .left-side {
-      align-items: flex-start;
-
-      button {
-        max-width: 70%;
-      }
-
-      h1 {
-        max-width: 71%;
-        font-size: 3.75rem;
-      }
-    }
-
-    .right-side {
-      margin-top: auto;
-      img {
-        max-width: 314px;
-      }
-    }
-  }
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
@@ -217,47 +140,86 @@ export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
     padding-top: 5.3125rem;
     padding-left: 7rem;
     align-items: start;
-
-    .left-side {
-      align-items: start;
-      button {
-        width: 100%;
-        max-width: 21.9375rem;
-      }
-
-      h1 {
-        font-size: 4.625rem;
-        max-width: 100%;
-      }
-    }
-
-    .right-side {
-      img {
-        max-width: 657px;
-      }
-    }
   }
+
+  ${({ pageName }) => variantBannerMainContainer(pageName)}
 `;
 
-export const SubTitle = styled.span<SubTitleProps>`
+export const LeftSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.4425rem;
+  width: 100%;
+  align-items: flex-start;
+`;
+
+export const UIMainTitle = styled.h1<Pick<BackgroundCTAProps, "pageName">>`
+  max-width: 17.4375rem;
   color: #fff;
-  font-size: ${({ isMobile }) => isMobile ? '20px' : '24px'}; 
-  font-weight: 400;
-  line-height:  ${({ isMobile }) => isMobile ? '30px' : '38px'}; ;
-  max-width: ${({ isMobile }) => isMobile ? '323px' : '30rem'};  
-`;
-
-
-export const StdButtonCustom = styled(StdButton)`
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
   @media screen and (min-width: 1024px) {
-    margin-top: 25px;
+    font-size: 4.625rem;
+    max-width: 100%;
   }
-`
+  ${({ pageName }) =>
+    pageName === "jobs" &&
+    css`
+      max-width: 501px;
+      color: #05335b;
+    `};
+`;
 
-export const StdVideoCustom = styled(StdButtonCustom)`
-  margin: 20px 0 81px;
-`
+export const RightSide = styled.div<Pick<BackgroundCTAProps, "pageName">>`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  ${({ pageName }) =>
+    pageName === "jobs" &&
+    css`
+      visibility: hidden;
+    `};
+`;
+
+export const MainImage = styled(Image)`
+  max-width: 375px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  border: 1px solid transparent;
+  @media screen and (min-width: 1024px) {
+    max-width: 657px;
+  }
+`;
+
+export const SubTitle = styled.span`
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  max-width: 323px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 38px;
+    max-width: 30rem;
+  }
+`;
+
+export const StdButtonCustom = styled(StdButton)<Pick<BackgroundCTAProps, "pageName">>`
+  margin: 0;
+  max-width: 17.4375rem;
+  @media screen and (min-width: 1024px) {
+    margin-top: 25px;
+    max-width: 21.9375rem;
+  }
+  ${({ pageName }) =>
+    pageName === "candidates" &&
+    css`
+      margin: 20px 0 81px;
+    `};
+`;
 
 export const UIImage = styled(Image)`
   position: absolute;
@@ -270,4 +232,4 @@ export const UIImage = styled(Image)`
   @media screen and (min-width: 768px) {
     width: 100%;
   }
-`
+`;

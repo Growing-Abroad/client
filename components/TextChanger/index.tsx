@@ -1,44 +1,85 @@
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
+import styled from "styled-components";
+import { theme } from "@styles/theme";
 
 interface TextChangerProps {
-  /**
-   * The texts property.
-   * It should receive an array of translation keys.
-   */
-  texts: string[]
-
-  /**
-   * The duration property.
-   * It should receive a duration number(in milliseconds).
-   */
-  duration?: number
+  texts: string[];
+  duration?: number;
 }
 
-export const TextChanger = ({ texts, duration = 3000 }: TextChangerProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+const {
+  colors: { blue500, blue700, yellow400 },
+} = theme;
 
-  const intl = useIntl()
+const UISpan = styled.span`
+  font-weight: 600;
+  animation-iteration-count: 1;
+  position: relative;
+  left: -200px;
+  opacity: 0;
+  animation-fill-mode: both;
+  display: inline-block;
+  color: ${blue500};
+  animation: text-enter-germany 3000ms ease;
+
+  @keyframes text-enter-germany {
+    0% {
+      left: -200px;
+      color: ${blue500};
+      visibility: hidden;
+      opacity: 0;
+    }
+    20% {
+      left: 0;
+      visibility: visible;
+      color: ${blue700};
+    }
+    40% {
+      color: ${yellow400};
+      opacity: 1;
+    }
+    80% {
+      left: 0;
+      visibility: visible;
+      color: ${yellow400};
+      opacity: 1;
+    }
+    100% {
+      left: 200px;
+      visibility: hidden;
+      opacity: 0;
+      color: ${blue500};
+    }
+  }
+`;
+
+export const TextChanger = ({ texts, duration = 3000 }: TextChangerProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const intl = useIntl();
 
   const t = (id: string): string => {
-    return intl.formatMessage({ id })
+    return intl.formatMessage({ id });
   };
 
   const textsTranslations = texts.map((texts) => {
-    return t(`${texts}`)
-  })
+    return t(`${texts}`);
+  });
 
-  const currentName = textsTranslations[currentIndex]
+  const currentName = textsTranslations[currentIndex];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setCurrentIndex((oldIndex) => (oldIndex + 1) % textsTranslations.length)
-    }, duration)
+      setCurrentIndex((oldIndex) => (oldIndex + 1) % textsTranslations.length);
+    }, duration);
 
-    return () => clearTimeout(timeout)
-  }, [currentIndex, duration, textsTranslations.length])
+    return () => clearTimeout(timeout);
+  }, [currentIndex, duration, textsTranslations.length]);
 
   return (
-    <span key={currentName} className="title-change">{currentName}</span>
-  )
-}
+    <UISpan key={currentName}>
+      {currentName}
+    </UISpan>
+  );
+};

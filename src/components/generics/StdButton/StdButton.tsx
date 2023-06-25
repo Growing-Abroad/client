@@ -55,7 +55,7 @@ const StyledStdBtn = styled.button<StyledStdBtnProps>`
 export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
   className?: string;
   style?: CSSProperties;
-  icon?: IconProp;
+  icon?: IconProp | '';
   onClick?(arg: any): any;
 }
 
