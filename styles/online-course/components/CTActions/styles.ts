@@ -181,6 +181,12 @@ export const RightSide = styled.div<Pick<BackgroundCTAProps, "pageName">>`
     css`
       visibility: hidden;
     `};
+
+    ${({ pageName }) =>
+    pageName === "candidates" &&
+    css`
+      margin-top: auto;
+    `};
 `;
 
 export const MainImage = styled(Image)`
@@ -192,6 +198,8 @@ export const MainImage = styled(Image)`
   @media screen and (min-width: 1024px) {
     max-width: 657px;
   }
+
+
 `;
 
 export const SubTitle = styled.span`
