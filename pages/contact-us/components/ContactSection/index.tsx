@@ -209,41 +209,56 @@ export default function Contact() {
                 Social Media
               </span>
               <SocialMedia gap={"27px"}>
-                <Image
-                  className={styles.app__contact__form__social__icon}
-                  src={InstagramIcon}
-                  alt="instagram icon"
-                  height={60}
-                  width={60}
-                />
-                <Image
-                  className={styles.app__contact__form__social__icon}
-                  src={DiscordIcon.src}
-                  alt="discord icon"
-                  height={60}
-                  width={60}
-                />
-                <Image
-                  className={styles.app__contact__form__social__icon}
-                  src={TikTokIcon}
-                  alt="tiktok icon"
-                  height={60}
-                  width={60}
-                />
-                <Image
-                  className={styles.app__contact__form__social__icon}
-                  src={YoutubeIcon}
-                  alt="youtube icon"
-                  height={60}
-                  width={60}
-                />
-                <Image
-                  className={styles.app__contact__form__social__icon}
-                  src={LinkedInIcon}
-                  alt="linkedin icon"
-                  height={60}
-                  width={60}
-                />
+                <Link href={'https://www.instagram.com/growing.abroad/'} target="blank">
+                  <Image
+                    className={styles.app__contact__form__social__icon}
+                    src={InstagramIcon}
+                    alt="instagram icon"
+                    height={60}
+                    width={60}
+                  />
+                </Link>
+
+                <Link href={''} target="blank">
+                  <Image
+                    className={styles.app__contact__form__social__icon}
+                    src={DiscordIcon.src}
+                    alt="discord icon"
+                    height={60}
+                    width={60}
+                  />
+                </Link>
+
+                <Link href={'https://www.tiktok.com/@growing.abroad'} target="blank">
+                  <Image
+                    className={styles.app__contact__form__social__icon}
+                    src={TikTokIcon}
+                    alt="tiktok icon"
+                    height={60}
+                    width={60}
+                  />
+                </Link>
+
+                <Link href={'https://www.youtube.com/@growing.abroad'} target="blank">
+                  <Image
+                    className={styles.app__contact__form__social__icon}
+                    src={YoutubeIcon}
+                    alt="youtube icon"
+                    height={60}
+                    width={60}
+                  />
+                </Link>
+
+                <Link href={'https://www.linkedin.com/company/growing.abroad/'} target="blank">
+                  <Image
+                    className={styles.app__contact__form__social__icon}
+                    src={LinkedInIcon}
+                    alt="linkedin icon"
+                    height={60}
+                    width={60}
+                  />
+                </Link>
+              
               </SocialMedia>
             </div>
           </div>
