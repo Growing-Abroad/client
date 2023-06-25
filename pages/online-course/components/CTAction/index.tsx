@@ -27,31 +27,7 @@ function CTAction() {
   }
 
   return (
-    <S.BackgroudCTA isMobile={isMobile}>
-      <S.BannerMainContainer>
-        <section className="left-side">
-          <h1>
-            {t("page.sales.callToAction") + " "}
-            <TextChanger texts={texts} />
-          </h1>
-          <S.SubTitle isMobile={isMobile}>
-            Build a successful career abroad with this amazing ONLINE COURSE
-          </S.SubTitle>
-          <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
-        </section>
-        <section className="right-side" style={{ marginTop: '1.5rem'}}>
-            <Image
-              src={imageSource}
-              alt="growing abroad coaches"
-              width={616}
-              style={{ objectFit: "contain", border: "1px solid transparent" }}
-              priority
-              quality={100}
-            />
-          {/* </div> */}
-        </section>
-      </S.BannerMainContainer>
-    </S.BackgroudCTA>
+    <></>
   );
 }
 
