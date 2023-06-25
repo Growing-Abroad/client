@@ -4,7 +4,7 @@ import { IContactUsForm, IContactUsServerResponse } from "@/models/contact-us.mo
 
 const sendContactUsForm = async (data: IContactUsForm): Promise<IContactUsServerResponse> => {
     try {
-      const response = await fetch('https://api.growingabroad.de/contact-us', {
+      const response = await fetch('http://localhost:3001/contact-growing-abroad', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

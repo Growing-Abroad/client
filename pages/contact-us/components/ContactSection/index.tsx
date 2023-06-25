@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef, useState } from "react";
+import React, { ReactElement, memo, useEffect, useRef, useState } from "react";
 import {
   FooterLinks,
   SocialMedia,
@@ -7,7 +7,7 @@ import styles from "@pages/contact-us/components/ContactSection/index.module.css
 import { Wrapper } from "@/components/Wrapper";
 import Image from "next/image";
 import LinkedInIcon from "@assets/icons/linkedin-icon.svg";
-import FacebookIcon from "@assets/icons/facebook.svg";
+import DiscordIcon from "@assets/icons/discord-logo.webp";
 import InstagramIcon from "@assets/icons/instagram.svg";
 import TikTokIcon from "@assets/icons/tiktok.svg";
 import YoutubeIcon from "@assets/icons/youtube-icon.svg";
@@ -20,15 +20,16 @@ import { IContactUsServerResponse } from "@/models/contact-us.model";
 import { Checkbox, FormControlLabel } from "@mui/material";
 // import { Checkbox } from "@/components/Form/Checkbox";
 
-
-type MyFormData = {
+export type TContactFormData = {
   firstName: string;
   lastName: string;
   email: string;
   concern: string;
   message: string;
-  dataPrivacyPolicy: Date
+  dataPrivacyPolicy: boolean
 };
+
+
 
 const Error = () => (
   <>
@@ -43,6 +44,15 @@ interface IFormProps {
   onSubmit: any, 
   control: any
 }
+
+const PrivacyPolicy = () => (<>
+  <div style={{display: 'flex', alignItems: 'center'}}>
+    <p style={{margin: 0 }}>
+      By clicking my personal data will be processed in accordance with the{' '}
+      <Link href={'/data-privacy'}>Privacy Policy</Link>
+    </p>
+  </div>
+</>)
 
 const ContactForm = ({errors, register, handleSubmit, onSubmit, control}: IFormProps) => (
   <form onSubmit={handleSubmit(onSubmit)} className={styles.app__contact__form}>
@@ -96,13 +106,7 @@ const ContactForm = ({errors, register, handleSubmit, onSubmit, control}: IFormP
         ></textarea>
       {errors?.message && <Error />}
     </div>
-    {/* <Checkbox 
-      register={register} 
-      type="checkbox" 
-      nameType="concert" 
-      textLabel="By clicking my personal data will be processed in accordance with the Privacy Policy." 
-      required={true}
-    /> */}
+    
     <div className={styles.app__contact__form__inputs__wrapper}>
       <Controller
         name="dataPrivacyPolicy"
@@ -112,7 +116,7 @@ const ContactForm = ({errors, register, handleSubmit, onSubmit, control}: IFormP
         render={({ field }) => (
           <FormControlLabel
             control={<Checkbox {...field} checked={field.value} />}
-            label="By clicking my personal data will be processed in accordance with the Privacy Policy."
+            label={<PrivacyPolicy/>}
             disableTypography
             style={{marginInline: 0, fontSize: '12px', fontFamily: 'Montserrat !important', marginBottom: '6px'}}
           />
@@ -126,6 +130,19 @@ const ContactForm = ({errors, register, handleSubmit, onSubmit, control}: IFormP
   </form>
   )
 
+const MsgSent = () => (
+  <>
+    <div className={styles.app__contact__form__msg_sent}>
+      <p className={styles.app__contact__form__msg_sent__paragraph}>
+        <span className={styles.app__contact__form__msg_sent_thanks}>THANK YOU</span> for reaching out to us.
+      </p>
+      
+      <p className={styles.app__contact__form__msg_sent__paragraph}>
+        We will try to take care of your request as soon as possible. 
+      </p>
+    </div>
+  </>
+)
 
 export default function Contact() {
   const { isMobile, loading, setLoading } = useAppContext();
@@ -139,12 +156,12 @@ export default function Contact() {
   } = useForm<any>();
   const inputRef = useRef(null);
 
-  const onSubmit: SubmitHandler<MyFormData> = async (data) => {
+  const onSubmit: SubmitHandler<TContactFormData> = async (data) => {
     setLoading(true);
     
     console.log({data})
-    // const response: IContactUsServerResponse = await sendContactUsForm(data);
-    
+    const response: IContactUsServerResponse = await sendContactUsForm(data);
+    console.log(response)
     // if(response.ok) {
     //   router.push('/confirmation')
     // }else {
@@ -157,19 +174,7 @@ export default function Contact() {
     setLoading(false);
   }
 
-  const MsgSent = () => (
-    <>
-      <div className={styles.app__contact__form__msg_sent}>
-        <p className={styles.app__contact__form__msg_sent__paragraph}>
-          <span className={styles.app__contact__form__msg_sent_thanks}>THANK YOU</span> for reaching out to us.
-        </p>
-        
-        <p className={styles.app__contact__form__msg_sent__paragraph}>
-          We will try to take care of your request as soon as possible. 
-        </p>
-      </div>
-    </>
-    )
+
 
   return (
     <Wrapper>
@@ -213,8 +218,8 @@ export default function Contact() {
                 />
                 <Image
                   className={styles.app__contact__form__social__icon}
-                  src={FacebookIcon}
-                  alt="facebook icon"
+                  src={DiscordIcon.src}
+                  alt="discord icon"
                   height={60}
                   width={60}
                 />
