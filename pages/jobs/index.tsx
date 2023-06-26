@@ -28,7 +28,12 @@ export default function Jobs() {
 
     return <>
           <JobsWrapper>
-            <CTAction isJobpage={true} hasSubtitle={false} callActionText="Upload your CV NOW" />
+            <CTAction 
+            pageName="jobs"
+            titleIntl="page.jobs.title"
+            subTitleIntl=""
+            buttonIntl="page.jobs.buttonCallToAction"
+            />
             <PageBodyLayout id="page-jobs"
                 distanceFromTop={isMobile ? "380px" : "600px"}
                 waveType={EWaveType.linear}
