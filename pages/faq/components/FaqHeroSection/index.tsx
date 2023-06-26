@@ -36,7 +36,7 @@ export default function FaqHeroSection() {
           <SubheadingHero>
             Got a question? We're here to answer ! If you don't see your
             question here, drop us a line on our{" "}
-            <Link href={"/contact"}>contact page.</Link>
+            <Link href={"/contact-us"} target="_blank">contact page.</Link>
           </SubheadingHero>
         }
         

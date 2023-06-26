@@ -10,7 +10,7 @@ export interface ILinkProps extends PropsWithChildren {
     href?: string
 }
 
-export const LinkTo = ({children: link, href}: ILinkProps) => (<Link className="link-to" href={href ?? link as string} target="blank">{link}</Link>)
+export const LinkTo = ({children: link, href}: ILinkProps) => (<Link className="link-to" href={href ?? link as string} target="_blank">{link}</Link>)
 
 export const CustomLink = styled.a`
   text-decoration: underline;
