@@ -4,8 +4,6 @@ import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-import { ModalLayout } from "@/components/ModalLayout";
-import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
@@ -17,50 +15,28 @@ import OurServicesSection from "./components/OurServices";
 import CommunitySection from "./components/Community";
 import BlogSection from "./components/Blog/BlogSection";
 
-const OnlineCourseWrapper = styled.div`
+
+export const CandidatesWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  zoom: 95%;
   z-index: 1;
 
-
-  div#page-candidates {
-
-    margin-top: 100vh;
-
-    /* @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%)
+  #page-candidates {
+    margin-top: 99vh;
+    @media screen and (min-width: 768px) {
+      margin-top: 100vh;
     }
-
-    @media screen and (min-width: 1000px) {
-      margin-top: calc( 800px - 2% );
-    }
-
-    @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px  - 0.7rem );
-    }
-
-    @media screen and (min-width: 1366px)  {
-      margin-top: calc( 800px + 1rem );
-    } */
   }
 `;
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
-  const [isModalVisible, handleModal]: ModalHook = useModal();
-  const [dataVideo, setDataVideo] = useState();
 
   return (
    <>
-    <ModalLayout
-      visible={isModalVisible}
-      onClose={handleModal}
-      dataVideo={dataVideo}
-    />
-    <OnlineCourseWrapper>
+    <CandidatesWrapper>
       <CTAction 
         pageName="candidates"
         titleIntl="page.candidates.title"
@@ -79,7 +55,7 @@ export default function OnlineCourse() {
         <CommunitySection />
         <BlogSection />
       </PageBodyLayout>
-    </OnlineCourseWrapper> 
+    </CandidatesWrapper> 
    </>
   );
 }

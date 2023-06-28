@@ -3,7 +3,7 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import Image from "next/image";
-import backgroundJobsMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png";
+// import backgroundJobsMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png";
 import backgroundJobsUltra from "@assets/pages/jobs/jobs-hero-bg-ultra-wide.png";
 
 const {
@@ -32,16 +32,13 @@ type BackgroundCTAProps = {
 const variantBackgroudCTA = (variant: Pages) => {
   return {
     jobs: css`
-      background-image: url(${backgroundJobsMobile.src});
       @media screen and (min-width: 768px) {
         background-image: url(${backgroundJobsUltra.src});
       }
     `,
     sales: css``,
     onlineCourses: css``,
-    candidates: css`
-      max-height: 97vh;
-    `,
+    candidates: css``,
   }[variant];
 };
 
@@ -55,10 +52,7 @@ const variantBannerMainContainer = (variant: Pages) => {
     candidates: css`
       height: 100%;
       justify-content: space-between;
-      padding-bottom: 30px;
-      @media screen and (min-width: 1024px) {
-        padding-bottom: 70px;
-      }
+      padding-bottom: 0;
       .left-side h1 {
         max-width: 642px;
       }
@@ -69,10 +63,10 @@ const variantBannerMainContainer = (variant: Pages) => {
 // styles
 
 export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>`
-  margin-top: 60px;
+  padding-top: 66px;
   width: 100%;
-  height: 100%;
-  max-height: 776px;
+  // resolve o awkward jump do VH em aplicoes IOS - tela 100vh
+  height: calc(var(--vh, 1vh) * 100);
   position: fixed;
   margin-left: auto;
   margin-right: auto;
@@ -84,7 +78,7 @@ export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>
   background-position: center;
 
   @media screen and (min-width: 768px) {
-    margin-top: 90px;
+    padding-top: 90px;
   }
 
   @media (max-width: ${mediaQuery}) {
@@ -125,7 +119,7 @@ export const CtaButton = styled.button`
 export const BannerMainContainer = styled.section<IBannerMainContainerProps>`
   max-width: ${variables.sizes.maxWidthAll};
   width: 100%;
-  height: 90%;
+  height: 100%;
   padding: 1.5rem 1.125rem 0;
   background-color: ${blue500};
 
@@ -164,15 +158,16 @@ export const UIMainTitle = styled.h1<Pick<BackgroundCTAProps, "pageName">>`
     font-size: 4.625rem;
     max-width: 100%;
   }
-  ${({ pageName }) =>
+  /* ${({ pageName }) =>
     pageName === "jobs" &&
     css`
       max-width: 501px;
       color: #05335b;
-    `};
+    `}; */
 `;
 
 export const RightSide = styled.div<Pick<BackgroundCTAProps, "pageName">>`
+  margin-top: auto;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -184,9 +179,8 @@ export const RightSide = styled.div<Pick<BackgroundCTAProps, "pageName">>`
 
     ${({ pageName }) =>
     pageName === "candidates" &&
-    css`
-      margin-top: auto;
-    `};
+    css``
+  };
 `;
 
 export const MainImage = styled(Image)`

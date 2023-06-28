@@ -4,6 +4,8 @@ import { theme } from "@/styles/theme";
 import TwoColorTitle from "@/components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import Image from "next/image";
+import StdInput from "@/components/generics/StdInput";
 
 const { colors: { blue700, yellow400, blue300, blue400 }} = theme;
 const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
@@ -226,7 +228,6 @@ export const CvForm = styled.form`
 
         .declaration-paragraqh {
             margin: 0;
-            font-size: 1rem;
             line-height: 1.25rem;
             color: ${blue700};
             padding: 12px 0;
@@ -337,4 +338,58 @@ export const UIInfoButton = styled(StdButton)`
         margin: unset;
         margin-right: auto;
     }
+`
+
+export const UIImage = styled(Image)`
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        height: auto;
+    }
+`
+
+export const SpecializationsContent = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 50%;
+    @media screen and (min-width: 768px){
+        width: 25%;        
+    }
+    min-width: 190px;
+`
+
+export const UIInputCheckbox = styled.input`
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+`
+
+export const SpecializationsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px 0;
+`
+
+export const PrivacyContent = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 16px;
+`
+
+export const PrivacyContainer = styled.div`
+    label {
+        font-size: 2rem;
+        line-height: 2.438rem;
+    }
+`
+
+export const PrivacyText = styled.p`
+    *{
+        text-decoration: none;
+    }
+    font-size: 12px;
+    @media screen and (min-width: 768px) {
+        font-size: 1rem;
+    }
+
 `

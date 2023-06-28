@@ -26,18 +26,26 @@ function CTAction({
     return "";
   };
 
-  const icon = pageName == "candidates" ? faPlay : ''
+  const icon = pageName == "candidates" ? faPlay : "";
 
   const texts = [
     "page.home.callToAction.germany",
     "page.home.callToAction.europe",
   ];
 
+  const hadleScroll = () => {
+    if (pageName === "jobs") {
+      const sectionElement = document.getElementById("form-jobs");
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <S.BackgroudCTA pageName={pageName}>
       <S.BannerMainContainer pageName={pageName}>
         <S.LeftSide>
-
           <S.UIMainTitle pageName={pageName}>
             {t(titleIntl)}
             <TextChanger texts={texts} duration={3000} />
@@ -45,19 +53,24 @@ function CTAction({
 
           <S.SubTitle>{t(subTitleIntl)}</S.SubTitle>
 
-          <S.StdButtonCustom icon={icon} pageName={pageName}>{t(buttonIntl)}</S.StdButtonCustom>
-         
+          <S.StdButtonCustom
+            onClick={hadleScroll}
+            icon={icon}
+            pageName={pageName}
+          >
+            {t(buttonIntl)}
+          </S.StdButtonCustom>
         </S.LeftSide>
 
-          <S.RightSide pageName={pageName}>
-            <S.MainImage
-              src={gaCoaches}
-              alt="growing abroad banner"
-              width={616}
-              priority
-              quality={100}
-            />
-          </S.RightSide>
+        <S.RightSide pageName={pageName}>
+          <S.MainImage
+            src={gaCoaches}
+            alt="growing abroad banner"
+            width={616}
+            priority
+            quality={100}
+          />
+        </S.RightSide>
       </S.BannerMainContainer>
     </S.BackgroudCTA>
   );

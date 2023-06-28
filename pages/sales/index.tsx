@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { PageLayout } from "@/components";
 import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
@@ -16,58 +16,34 @@ import WhatYouGet from "./components/WhatYouGet";
 import Investiment from "./components/Investiment";
 import BigCard from "@pages/online-course/components/BigCard";
 import PageBodyLayout from "@/components/generics/PageBody";
-import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
-import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
-import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
-import { ModalLayout } from "@/components/ModalLayout";
-import useModal, { ModalHook } from "@/hooks/useModal";
 import _useLocale from "@/hooks/useLocale";
 import { IntlProvider } from "react-intl";
 import DiscoverGA from "./components/DiscoverGA";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import TwoCards from "@pages/online-course/components/TwoCards";
 
+
 export const SalesWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  zoom: 95%;
   z-index: 1;
 
   #page-sales {
-    margin-top: calc( 720px + 13%);
-
-    @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%)
-    }
-
-    @media screen and (min-width: 1000px) {
-      margin-top: calc( 800px - 2% );
-    }
-
-    @media screen and (min-width: 1280px)  {
-      margin-top: calc( 800px  - 0.7rem );
-    }
-
-    @media screen and (min-width: 1366px)  {
-      margin-top: calc( 800px + 1rem );
+    margin-top: 100vh;
+    @media screen and (min-width: 768px) {
+      margin-top: 103vh;
     }
   }
 `;
 
+
 export default function Sales() {
   const { isMobile } = useAppContext();
-  const [isModalVisible, handleModal]: ModalHook = useModal();
-  const [dataVideo, setDataVideo] = useState();
 
   return (
     <>
-      <ModalLayout
-        visible={isModalVisible}
-        onClose={handleModal}
-        dataVideo={dataVideo}
-      />
       <SalesWrapper>
         <CTAction 
           pageName="sales"

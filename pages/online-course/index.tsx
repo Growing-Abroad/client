@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { PageLayout } from "@/components";
 import WhyBuyCourse from "./components/WhyBuyCourse";
 import { Chapter } from "@/components/Chapter";
@@ -11,8 +11,6 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-import { ModalLayout } from "@/components/ModalLayout";
-import useModal, { ModalHook } from "@/hooks/useModal";
 import { IntlProvider } from "react-intl";
 import _useLocale from "@/hooks/useLocale";
 import Investiment from "@pages/sales/components/Investiment";
@@ -20,51 +18,37 @@ import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandi
 import styled from "styled-components";
 import CTAction from "@pages/sales/components/CTAction";
 
-const OnlineCourseWrapper = styled.div`
+export const OnlineCourseWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  zoom: 95%;
   z-index: 1;
 
-  div#page-onlie-course {
-    margin-top: calc(720px + 13%);
-
-    @media screen and (max-width: 360px) {
-      margin-top: calc(720px - 15%);
-    }
-
-    @media screen and (min-width: 1000px) {
-      margin-top: calc(800px - 2%);
-    }
-
-    @media screen and (min-width: 1280px) {
-      margin-top: calc(800px - 0.7rem);
-    }
-
-    @media screen and (min-width: 1366px) {
-      margin-top: calc(800px + 1rem);
+  #page-onlie-course {
+    margin-top: 100vh;
+    @media screen and (min-width: 768px) {
+      margin-top: 103vh;
     }
   }
 `;
 
+
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
-  const [isModalVisible, handleModal]: ModalHook = useModal();
-  const [dataVideo, setDataVideo] = useState();
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  },[])
 
   return (
     <>
-      <ModalLayout
-        visible={isModalVisible}
-        onClose={handleModal}
-        dataVideo={dataVideo}
-      />
       <OnlineCourseWrapper>
         <CTAction
           pageName="onlineCourses"
-          
           titleIntl="page.onlineCourse.title"
           subTitleIntl="page.onlineCourse.subtitle"
           buttonIntl="page.onlineCourse.buttonCallToAction"
