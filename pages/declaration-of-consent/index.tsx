@@ -93,12 +93,17 @@ export default function LegalNotice() {
             <li>Place of residence</li>
             <li>Telephone/mobile phone number</li>
             <li>e-mail address</li>
+            <li>Area of expertise</li>
           </Ul>
           In addition, I expressly consent to the processing of the following additional personal data by Growing Abroad, to the extent that I voluntarily provide such data at the time of registration or subsequent thereto: <br />
           <Ul>
+            <li>resume</li>
+            <li>other provided documents</li>
             <li>desired salary</li>
-            <li>vocational training</li>
+            <li>vocational training or university degree</li>
             <li>school-leaving qualification</li>
+            <li>working experience</li>
+            <li>professional skills</li>
             <li>photograph</li>
           </Ul>
           "Processing" in the aforementioned sense includes the following processing activities:

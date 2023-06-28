@@ -22,7 +22,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           81543 Munich <br />
           Germany <br />
           Email: <EmailLink>team@growingabroad.de</EmailLink>  <br />
-          Website: <CustomLink href="www.growingabroad.de" target="blank">www.growingabroad.de</CustomLink> <br />
+          Website: <CustomLink href="www.growingabroad.de" target="_blank">www.growingabroad.de</CustomLink> <br />
         </>
       ) 
     },
@@ -30,7 +30,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
       title: '2. Definitions of terms',
       paragraph: (
         <>
-          We have designed our privacy policy according to the principles of clarity and transparency. However, if there are any ambiguities with regard to the use of various terms, the corresponding definitions can be found <CustomLink href="https://dsgvo-gesetz.de/art-4-dsgvo/" target="blank">here</CustomLink> .
+          We have designed our privacy policy according to the principles of clarity and transparency. However, if there are any ambiguities with regard to the use of various terms, the corresponding definitions can be found <CustomLink href="https://dsgvo-gesetz.de/art-4-dsgvo/" target="_blank">here</CustomLink> .
         </>
       ) 
     },
@@ -185,7 +185,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           <br />
           We send our newsletter using the newsletter service "ActiveCampaign," operated by ActiveCampaign, LLC (1 North Dearborn St, 5th Floor, Chicago, IL 60602, USA). <br />
           The email addresses of our newsletter subscribers, as well as their other data described in these notices, are stored on ActiveCampaign's servers in the USA. ActiveCampaign uses this information to send and evaluate the newsletter on our behalf. <br />
-          Furthermore, according to ActiveCampaign, this data may be used in pseudonymous form, i.e., without assigning it to a specific user, for optimizing or improving their own services, such as technical optimization of newsletter delivery and display or statistical purposes to determine the countries from which the recipients originate. However, the email service provider does not use the data of our newsletter subscribers to contact them directly or share it with third parties. You can find ActiveCampaign's privacy policy here: <CustomLink href="https://www.activecampaign.com/legal/privacy-policy" target="blank">https://www.activecampaign.com/legal/privacy-policy</CustomLink> .<br />
+          Furthermore, according to ActiveCampaign, this data may be used in pseudonymous form, i.e., without assigning it to a specific user, for optimizing or improving their own services, such as technical optimization of newsletter delivery and display or statistical purposes to determine the countries from which the recipients originate. However, the email service provider does not use the data of our newsletter subscribers to contact them directly or share it with third parties. You can find ActiveCampaign's privacy policy here: <CustomLink href="https://www.activecampaign.com/legal/privacy-policy" target="_blank">https://www.activecampaign.com/legal/privacy-policy</CustomLink> .<br />
           <br />
           <ItalicText>Statistical Surveys and Analyses</ItalicText> <br />
           <br />
@@ -238,7 +238,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           Your IP address is automatically anonymized by Google before being recorded via EU domains and servers. Therefore, no logging or storage of your IP address occurs. <br />
           On our behalf, Google will use this information to evaluate your use of our website, compile reports on website activity, and provide us with other services related to website usage and internet usage. The IP address transmitted by your browser as part of Google Analytics will not be merged with other data from Google. <br />
           We have concluded a contract for order processing with Google. 
-          Please click here for an overview of Google's privacy policy: [<CustomLink href="https://support.google.com/analytics/answer/6004245" target="blank">https://support.google.com/analytics/answer/6004245</CustomLink>] <br />
+          Please click here for an overview of Google's privacy policy: [<CustomLink href="https://support.google.com/analytics/answer/6004245" target="_blank">https://support.google.com/analytics/answer/6004245</CustomLink>] <br />
           <br />
           b) <Underlined>Google Remarketing</Underlined>  <br />
           <br />
@@ -253,13 +253,13 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           We utilize Google Ads, an online advertising program provided by Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland), on our website. This program also employs conversion tracking. With this tool, Google Ads places a cookie on your device when you access our website through a Google advertisement. <br />
           The cookie does not enable personal tracking. If you, as a user, visit our website while the cookie is still active, it becomes apparent to both us and Google that you clicked on the corresponding ad and were redirected to our site. Each Google Ads customer is assigned a different cookie, making cookies untraceable across the websites of Ads customers. Data obtained through conversion cookies is used to generate conversion statistics for Ads customers. As customers of Google Ads, we learn the total number of users who responded to our ad and were subsequently redirected to a website equipped with a conversion tracking tag. This allows us to assess the success of individual advertising measures. However, we do not receive any information that personally identifies you as a user. <br /> 
           When using Google Ads, your browser automatically establishes a direct connection to Google's server. If you have a Google account and are logged in, your visit can be associated with your account. If you do not have a Google account, Google assigns you a unique identifier. We have no control over the data collected and stored by Google. 
-          For more information about Google's privacy policy, please visit <CustomLink href="http://www.google.de/policies/privacy/" target="blank">http://www.google.de/policies/privacy/</CustomLink>. <br />
+          For more information about Google's privacy policy, please visit <CustomLink href="http://www.google.de/policies/privacy/" target="_blank">http://www.google.de/policies/privacy/</CustomLink>. <br />
           <br />
           d) <Underlined>Google AdSense</Underlined> <br />
           <br />
           We use Google AdSense, a service provided by Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland), to display advertisements on our website. Google AdSense utilizes cookies, which are files that allow Google to analyze data about your usage of our website when stored on your device. Additionally, Google AdSense uses web beacons, invisible graphics that enable Google to analyze clicks on our website, traffic on the site, and related information. <br />
           The information obtained through cookies and web beacons, including your IP address and the delivery of ad formats, is transmitted to and stored on a server located in the United States. Google may share this collected information with third parties when required by law or when Google engages third parties to process the data. However, Google will not merge your IP address with other stored data. <br />
-          For more information about Google's privacy policy, please visit <CustomLink href="http://www.google.de/policies/privacy/" target="blank">http://www.google.de/policies/privacy/</CustomLink>. <br />
+          For more information about Google's privacy policy, please visit <CustomLink href="http://www.google.de/policies/privacy/" target="_blank">http://www.google.de/policies/privacy/</CustomLink>. <br />
           <br />
           e) <Underlined>Use of Google reCAPTCHA</Underlined> <br />
           <br />
@@ -267,7 +267,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           When queried by the reCAPTCHA service, your IP address, as well as any additional data required by Google for the reCAPTCHA service, may be transmitted to Google and processed there. <br />
           To use reCAPTCHA, you must accept Google's terms of use, which are presented in a separate field. We have activated IP anonymization on this website, so your IP address is truncated by Google within member states of the European Union or other contracting parties to the Agreement on the European Economic Area before transmission. Only in exceptional cases will the full IP address be transferred to a Google server in the USA and truncated there. <br />
           On our behalf, Google will use this information to evaluate your use of this service. The IP address transmitted by your browser in the context of reCAPTCHA will not be merged with other Google data. The data collected in the context of reCAPTCHA is subject to Google's separate privacy policy. <br />
-          For more information about Google's privacy policies, please visit: <CustomLink href="https://www.google.com/intl/de/policies/privacy/" target="blank">https://www.google.com/intl/de/policies/privacy/</CustomLink>. <br />
+          For more information about Google's privacy policies, please visit: <CustomLink href="https://www.google.com/intl/de/policies/privacy/" target="_blank">https://www.google.com/intl/de/policies/privacy/</CustomLink>. <br />
           By integrating reCAPTCHA, Google Fonts are also dynamically loaded from Google without explicit action by the website operator or visitor. The integration of these web fonts is accomplished through a server call, typically to a server in the USA operated by Google. The following information may be transmitted to and stored by Google as a result: <br />
           <Ul>
             <li>Name and version of the browser used</li>

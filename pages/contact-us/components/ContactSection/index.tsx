@@ -209,7 +209,7 @@ export default function Contact() {
                 Social Media
               </span>
               <SocialMedia gap={"27px"}>
-                <Link href={'https://www.instagram.com/growing.abroad/'} target="blank">
+                <Link href={'https://www.instagram.com/growing.abroad/'} target="_blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={InstagramIcon}
@@ -219,7 +219,7 @@ export default function Contact() {
                   />
                 </Link>
 
-                <Link href={'https://discord.gg/mYMBQJJaQr'} target="blank">
+                <Link href={'https://discord.gg/mYMBQJJaQr'} target="_blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={DiscordIcon.src}
@@ -229,7 +229,7 @@ export default function Contact() {
                   />
                 </Link>
 
-                <Link href={'https://www.tiktok.com/@growing.abroad'} target="blank">
+                <Link href={'https://www.tiktok.com/@growing.abroad'} target="_blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={TikTokIcon}
@@ -239,7 +239,7 @@ export default function Contact() {
                   />
                 </Link>
 
-                <Link href={'https://www.youtube.com/@growing.abroad'} target="blank">
+                <Link href={'https://www.youtube.com/@growing.abroad'} target="_blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={YoutubeIcon}
@@ -249,7 +249,7 @@ export default function Contact() {
                   />
                 </Link>
 
-                <Link href={'https://www.linkedin.com/company/growing.abroad/'} target="blank">
+                <Link href={'https://www.linkedin.com/company/growing.abroad/'} target="_blank">
                   <Image
                     className={styles.app__contact__form__social__icon}
                     src={LinkedInIcon}

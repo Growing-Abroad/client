@@ -77,7 +77,7 @@ interface AccordeonButtonProps {
   bgColor: string
 }
 
-export const AccordeonContent = styled.p<AccordeonWrapperProps>`
+export const AccordeonContent = styled.div<AccordeonWrapperProps>`
   display: flex;
   flex-direction: column;
   align-items: start;

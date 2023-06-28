@@ -45,6 +45,7 @@ export const GeneralFaqMockUp = [
     content:(
     <>
       Not everyone can easily find a job in Germany. There are certain requirements you need to meet: <br />
+      <br />
       <Ul>
         <li>
           Very good knowledge of the English language (German is not mandatory, but it increases your chances).
@@ -69,6 +70,7 @@ export const GeneralFaqMockUp = [
     content: (
       <>
         The first thing you need is a job offer from a German company. Without a job offer, you can't get a work visa. So, the first step is to find a job offer. Here are some steps to get a job offer from a German company: <br />
+        <br />
         <Ul>
           <li>Make your application documents match the European standards.</li>
           <li>Apply for jobs on common job platforms in Germany.</li>
