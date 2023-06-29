@@ -1,7 +1,4 @@
-import Image from 'next/image';
 import { Container } from './style';
-import border from '@/../public/assets/border-bottom.jpg';
-import borderMobile from '@/../public/assets/border-mobile.svg';
 import useAppContext from '@/hooks/useAppContext';
 import { CSSProperties } from 'styled-components';
 
@@ -23,11 +20,6 @@ const ContainerHero:React.FC<ContainerHeroParameters> = ({
     <Container
       backgroundImage={isMobile ? backgroundImageMobile : backgroundImageDesktop}
       style={{...styles}}>
-      {/* <Image
-        src={border}
-        className="border-image"
-        alt="white border"
-      /> */}
       {children}
     </Container>
   );

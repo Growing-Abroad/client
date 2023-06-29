@@ -42,6 +42,7 @@ const Wave: React.FC<WaveParameters> = ({
         style={{ bottom: "-2px" }}
         className={className}
         alt="white border"
+        priority
         fill={true}
       />
     </Wrapper>
