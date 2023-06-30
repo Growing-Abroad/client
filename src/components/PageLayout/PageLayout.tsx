@@ -8,6 +8,7 @@ export enum ChosenHeader {
   DEFAULT = "DEFAULT",
   FOR_CANDIDATES = "FOR_CANDIDATES",
   FOR_COMPANIES = "FOR_COMPANIES",
+  FOR_SALES = "FOR_SALES",
 }
 
 interface Props extends ComponentPropsWithoutRef<"body"> {
@@ -28,6 +29,8 @@ function Header({ chosenHeader }: HeaderProps) {
       return <HeaderForCandidates />
     case ChosenHeader.FOR_COMPANIES:
       return <HeaderForCompanies />
+    case ChosenHeader.FOR_SALES:
+      return <></>
     case ChosenHeader.DEFAULT:
     default:
       return <HeaderForPublicRoutes />

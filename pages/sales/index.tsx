@@ -82,7 +82,7 @@ Sales.getLayout = function getLayout(page: ReactElement) {
   const { locale, messages } = _useLocale();
   return (
     <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
+      <PageLayout chosenHeader={ChosenHeader.FOR_SALES} hideBlueSection={true}>{page}</PageLayout>
     </IntlProvider>
-  );
+  ); 
 };

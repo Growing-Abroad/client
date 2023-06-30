@@ -60,8 +60,12 @@ const variantBannerMainContainer = (variant: Pages) => {
 // styles
 
 export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>`
-  padding-top: 66px;
   width: 100%;
+  ${({ pageName }) =>
+    pageName !== "sales" &&
+    css`
+      padding-top: 66px;
+    `};
   // resolve o awkward jump do VH em aplicoes IOS - tela 100vh
   height: calc(var(--vh, 1vh) * 100);
   position: fixed;
@@ -75,7 +79,11 @@ export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>
   background-position: center;
 
   @media screen and (min-width: 768px) {
-    padding-top: 90px;
+    ${({ pageName }) =>
+    pageName !== "sales" &&
+    css`
+      padding-top: 90px;
+    `};
   }
 
   @media (max-width: ${mediaQuery}) {
