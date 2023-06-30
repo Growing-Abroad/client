@@ -7,7 +7,7 @@ import styles from "@pages/contact-us/components/ContactSection/index.module.css
 import { Wrapper } from "@/components/Wrapper";
 import Image from "next/image";
 import LinkedInIcon from "@assets/icons/linkedin-icon.svg";
-import DiscordIcon from "@assets/icons/discord-logo.webp";
+import DiscordIcon from "@assets/icons/discord-logo.jpg";
 import InstagramIcon from "@assets/icons/instagram.svg";
 import TikTokIcon from "@assets/icons/tiktok.svg";
 import YoutubeIcon from "@assets/icons/youtube-icon.svg";
