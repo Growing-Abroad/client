@@ -3,7 +3,11 @@ import * as S from "../../../../styles/online-course/components/WhyBuyCourse/sty
 import useAppContext from "@/hooks/useAppContext";
 import { IconEmotion } from "@/components/Icons";
 
-export function WhyBuyCourse() {
+interface IWhyBuyCourseProps {
+  justifyContent?: string
+}
+
+export function WhyBuyCourse({justifyContent="justify"}:IWhyBuyCourseProps) {
   const { isMobile } = useAppContext();
   return (
     <S.WrapperWhyBuyCourse className="sales">
@@ -20,7 +24,7 @@ export function WhyBuyCourse() {
           className="img-thinkinh-job-germany desktop"
         />
 
-        <S.RightContentWhyBuyCourse className="sales">
+        <S.RightContentWhyBuyCourse style={{justifyContent: justifyContent}} className="sales">
           <S.TextWrapperWhyBuyCourse>
             <IconEmotion />
             <S.TextWhyBuyCourse>

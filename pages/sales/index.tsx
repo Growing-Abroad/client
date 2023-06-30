@@ -39,6 +39,8 @@ export const SalesWrapper = styled.div`
 `;
 
 
+
+
 export default function Sales() {
   const { isMobile } = useAppContext();
 
@@ -56,7 +58,7 @@ export default function Sales() {
           distanceFromTop={isMobile ? "850px" : "780px"}
           waveType={EWaveType.linear}
         >
-          <WhyBuyCourse />
+          <WhyBuyCourse justifyContent="unset" />
           <Motivation />
           <FollowDreams />
           <DiscoverGA text1={isMobile ? "Uan & Manu" : "We are Uan & Manu"} />
