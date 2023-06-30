@@ -6,6 +6,14 @@ import { IconCheck } from "@/components/Icons";
 
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
+
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("scroll-id");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <S.WrapperWhyBuyCourse>
       <S.ContentWhyBuyCourse style={{transform: "unset"}}>
@@ -77,7 +85,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <S.StdButtonCustom>Buy Online Course Now</S.StdButtonCustom>
+      <S.StdButtonCustom onClick={hadleScroll}>Buy Online Course Now</S.StdButtonCustom>
     </S.WrapperWhyBuyCourse>
   );
 }

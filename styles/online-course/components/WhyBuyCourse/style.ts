@@ -76,12 +76,24 @@ export const ContentWhyBuyCourse = styled.div`
   @media screen and (min-width: 769px) and (max-width: 1191px){
     flex-direction: column;
   }
+  @media screen and (min-width: 1191px){
+      img {
+        object-fit: contain;
+        object-position: top;
+      }
+  }
 
   &.sales-course {
-    max-width: 100vw;
     min-width: unset;
-    @media screen and (min-width: 1024px){
-      flex-direction: row-reverse;
+    @media screen and (min-width: 1191px){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      img {
+        width: 100% !important;
+        order: 2;
+        object-fit: cover;
+        object-position: top;
+      }
     }
     @media screen and (min-width: 769px) and (max-width: 1191px){
       flex-direction: column;
@@ -91,6 +103,7 @@ export const ContentWhyBuyCourse = styled.div`
       object-fit: contain;
 
     }
+
   }
 
   .desktop {
@@ -112,7 +125,7 @@ export const ContentWhyBuyCourse = styled.div`
 
   @media screen and (max-width: 1440px) {
     transform-box: view-box;
-    transform-origin: top;
+    /* transform-origin: top; */
   }
 
   @media screen and (min-width: 64rem) {
@@ -160,10 +173,16 @@ export const RightContentWhyBuyCourse = styled.div`
   }
   @media screen and (min-width: 1191px) {
     padding: 0 70px 0 15px;
+    width: 50%;
     &.sales-page {
-      padding: 0 0 0 60px;
+      padding: 0 15px 0 70px;
+      height: 100%;
+      width: 100%;
     }
   }
+
+
+
   &.sales {
     gap: 37px;
     max-width: 642px;
@@ -199,6 +218,12 @@ export const RightContentWhyBuyCourse = styled.div`
     width: 54%;
   }
 
+  @media screen and (min-width: 1191px) {
+    height: 558px;
+    gap: unset;
+    justify-content: space-between;
+  }
+
 `;
 
 export const TextWrapperWhyBuyCourse = styled.div`
@@ -215,10 +240,8 @@ export const BoldSpanWhyBuyCourse = styled.span`
 `;
 
 export const TextWhyBuyCourse = styled.p`
-  font-size: 22px !important;
   color: ${blue700};
   margin-bottom: 0;
-
   @media screen and (min-width: 64rem) {
     font-size: 1.375rem;
   }

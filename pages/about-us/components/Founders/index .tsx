@@ -13,28 +13,23 @@ const Founders = () => {
           <S.ContentFounderItem>
             <S.Text sideImg="left">
               <S.ImageFounders sideImg="left" height={555} width={756} src={UAN} alt="uan photo"></S.ImageFounders>
-              <span>
-                <S.Span>UAN</S.Span> grew up in a small village in Brazil with
-                limited opportunities. But he didn't let that stop him. When he
-                was just 16, he joined Bosch and got to experience the German
-                culture, which opened his eyes to new possibilities. With the help
-                of mentors, he learned English and studied Business
-                Administration.
-                <br />
-                <br />
-                At 21, he applied to more than 100 companies for an internship
-                abroad and finally got accepted at Bosch in Germany. It was tough
-                because of the language and cultural differences, but Uan worked
-                hard and learned a lot. He earned an MBA and a Master's degree in
-                International Management in Germany.
-                <br />
-                <br />
-                Today, Uan is a proud German citizen and works in management
-                positions at companies like Bosch, Allianz, and Accenture. He
-                understands what it takes to succeed in the job market. Uan wants
-                to give back and help others who are looking for jobs in Germany,
-                just like he did.
-              </span>
+                <span>
+                  <S.Span>UAN</S.Span> grew up in a small village in Brazil where opportunities was very limited, 
+                  nevertheless he didn't let that stop him. When he was just 16 years old , he joined Bosch in Brazil 
+                  and got to experience the German culture for the first time. With the help of mentors, he learned 
+                  English and earned a bachelor in Business Administration.
+                  <br />
+                  <br />
+                  At the age of 21, he applied to more than 100 companies for an internship abroad and finally got 
+                  accepted at Bosch in Germany and USA. It was tough because of the language and cultural differences, 
+                  but Uan worked hard and learned a lot. Furthermore he learned German and earned an MBA and a Master's 
+                  degree in International Management in Germany.
+                  <br />
+                  <br />
+                  Today, Uan is a proud German citizen besides he worked in management positions at companies 
+                  like Allianz, Accenture and Infineon. He understands what it takes to succeed in the European 
+                  job market. Uan wants to give back and help others who are looking for jobs in Germany, just like he did.
+                </span>
             </S.Text>
           </S.ContentFounderItem>
         </S.ContentFounder>

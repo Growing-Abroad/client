@@ -29,7 +29,7 @@ export const services: IService[] = [
   {
     id: "1",
     title: "Job Interview Preparation",
-    subtitle: "To rock every Job Interview",
+    subtitle: "To rock every Job Interview in Germany",
     image: {
       src: JobInterview.src,
       alt: "Job Interview Preparation",
@@ -43,7 +43,7 @@ export const services: IService[] = [
       {
         id: "99",
         content:
-          "Feedback with <span>Video Analyzis</span> on how to improve your appearance",
+          "Personal Feedback with <span>Video Analyzis</span> on how to improve your appearance",
       },
       {
         id: "999",
@@ -55,7 +55,7 @@ export const services: IService[] = [
   },
   {
     id: "12",
-    title: "Online Course",
+    title: "Online <br /> Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
       src: OnlineCourse.src,
@@ -65,7 +65,7 @@ export const services: IService[] = [
       {
         id: "1",
         content:
-          "Learn all the steps you have to take to land your <span>Dream Job in Europe or Germany</span>",
+          "Learn all the steps to land your <span>Dream Job in Europe or Germany</span>",
       },
       {
         id: "12",
@@ -82,7 +82,7 @@ export const services: IService[] = [
   },
   {
     id: "123",
-    title: "CV Optimization",
+    title: "CV <br /> Optimization",
     subtitle: "To have a CV in german standards",
     image: {
       src: CvOptimization.src,
@@ -92,7 +92,7 @@ export const services: IService[] = [
       {
         id: "4",
         content:
-          "<span>Videos and Workbook<span> how to effectively optimize your CV for the German market",
+          "<span>Videos and Workbook<span> how to effectively optimize your CV",
       },
       {
         id: "45",
@@ -119,7 +119,7 @@ export const services: IService[] = [
       {
         id: "6",
         content:
-          "<span>Videos and Workbook</span> how to effectively optimize your Cover Letter for the German market",
+          "<span>Videos and Workbook</span> how to effectively optimize your Cover Letter",
       },
       {
         id: "67",
@@ -146,7 +146,7 @@ export const services: IService[] = [
       {
         id: "10",
         content:
-          "<span>Video and Workbook<span> how to effectively optimize your LinkedIn Profile for the German market",
+          "<span>Video and Workbook<span> how to effectively optimize your LinkedIn Profile",
       },
       {
         id: "1011",
@@ -173,7 +173,7 @@ export const services: IService[] = [
       {
         id: "8",
         content:
-          "<span>Videos and Workbook</span> how to effectively search for jobs on the German market",
+          "<span>Videos and Workbook</span> how to effectively search for jobs",
       },
       {
         id: "89",
@@ -183,7 +183,7 @@ export const services: IService[] = [
       {
         id: "890",
         content:
-          "Templates with the most used Job Platforms, Companies which hire English speakers and your personal Application tracker",
+        "<span>Bonus:</span> Most used Job Platforms, Companies hiring English speakers, Application tracker",
       },
     ],
     hasMoreInfo: true,

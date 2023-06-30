@@ -3,19 +3,15 @@ import { variables } from "@styles/global-variables";
 import { theme } from "@styles/theme";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import Image from "next/image";
-// import backgroundJobsMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png";
 import backgroundJobsUltra from "@assets/pages/jobs/jobs-hero-bg-ultra-wide.png";
 
 const {
   sizes: { mediaQuery },
 } = variables;
 const {
-  colors: { blue400, blue500, blue700, yellow400 },
+  colors: { blue500, blue700, yellow400 },
 } = theme;
 
-interface SubTitleProps {
-  isMobile: boolean;
-}
 
 interface IBannerMainContainerProps {
   pageName: Pages;
@@ -33,6 +29,7 @@ const variantBackgroudCTA = (variant: Pages) => {
   return {
     jobs: css`
       @media screen and (min-width: 768px) {
+        background-color: transparent;
         background-image: url(${backgroundJobsUltra.src});
       }
     `,
@@ -158,12 +155,13 @@ export const UIMainTitle = styled.h1<Pick<BackgroundCTAProps, "pageName">>`
     font-size: 4.625rem;
     max-width: 100%;
   }
-  /* ${({ pageName }) =>
+  @media screen and (min-width: 768px) {
+    ${({ pageName }) =>
     pageName === "jobs" &&
     css`
-      max-width: 501px;
       color: #05335b;
-    `}; */
+    `};
+  }
 `;
 
 export const RightSide = styled.div<Pick<BackgroundCTAProps, "pageName">>`

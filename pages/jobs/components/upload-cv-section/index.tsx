@@ -147,7 +147,7 @@ export default function UploadCvSection() {
           />
 
           <S.ContentInfo>
-            <StdParagraqh>
+            <S.UIStdParagraqhCustom>
               Important: Only upload your application documents when they are
               optimized into German standard. If you don't have optimized
               application documents, they will not be considered. In our Online
@@ -155,8 +155,8 @@ export default function UploadCvSection() {
               application documents into German Standard. We kindly ask you not
               to include sensitive data (see Article 9 DSGVO) in your
               application, neither in the form nor in the uploaded documents.
-            </StdParagraqh>
-            <S.UIInfoButton href="https://growingabroad.de/online-course">
+            </S.UIStdParagraqhCustom>
+            <S.UIInfoButton onClick={() => location.href = "/online-course"}>
               To the online course
             </S.UIInfoButton>
           </S.ContentInfo>
@@ -164,7 +164,7 @@ export default function UploadCvSection() {
       </S.UploadCvWrapper>
 
       <FormProvider {...methods}>
-        <S.CvForm id="form-jobs" onSubmit={handleSubmit(onSubmit)}>
+        <S.CvForm id="scroll-id" onSubmit={handleSubmit(onSubmit)}>
           <S.ContainerField>
             <S.UITitle text1="Personal Information" text2="" />
             <S.UISubtitle>Enter your personal details below</S.UISubtitle>
@@ -380,7 +380,7 @@ export default function UploadCvSection() {
                 <S.PrivacyText>
                   Yes, I want to get updates and news of Growing Abroad and I
                   accept the websites{" "}
-                  <Link href="https://growingabroad.de/data-privacy-policy">
+                  <Link target="_blank" href="/data-privacy-policy">
                     Privacy Policy
                   </Link>
                   . Our newsletter subscription is non-binding.
@@ -406,11 +406,11 @@ export default function UploadCvSection() {
                 />
                 <S.PrivacyText>
                   I agree to the{" "}
-                  <Link href="https://growingabroad.de/declaration-of-consent ">
+                  <Link target="_blank" href="/declaration-of-consent ">
                     declaration of consent
                   </Link>{" "}
                   and have read and understood the{" "}
-                  <Link href="https://growingabroad.de/data-privacy-policy/applicants">
+                  <Link target="_blank" href="/data-privacy-policy/applicants">
                     revocation and privacy policy
                   </Link>
                   . *

@@ -11,6 +11,14 @@ import { IconCheckBlue } from "../Icons";
 
 export function Chapter() {
   const { isMobile } = useAppContext();
+
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("scroll-id");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <S.ChapterContainer>
       <TwoColorTitle
@@ -194,7 +202,7 @@ export function Chapter() {
           </div>
         </S.ChapterContainerCards>
       </S.ChapterContent>
-      <S.UIStdButton>
+      <S.UIStdButton onClick={hadleScroll}>
         {" "}
         Buy Online Course Now
       </S.UIStdButton>

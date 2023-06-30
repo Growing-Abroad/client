@@ -106,11 +106,6 @@
   }
 }
 
-@media (max-width: 580px) {
-  .visionContainer {
-    /* padding:0; */
-  }
-}
 
 @media (max-width: 500px) {
   .missionInner h3,
@@ -122,7 +117,7 @@
 
   .missionInner p,
   .visionContainer p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0em;
@@ -144,12 +139,28 @@
     margin: auto;
   }
 
-  .visionCol {
-    /* box-shadow: 3px 0px 9px #c6c6c6; */
-  }
-
   .sectionContainer {
     padding: 0;
     margin-bottom: 80px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .missionContainer {
+    background: #fff;
+  }
+
+  .missionInner {
+    color: #05335b;
+  }
+
+  .visionCol {
+    background: #0073cfeb;
+  }
+
+  .visionContainer p,
+  .visionContainer h3 {
+    color: #fff;
   }
 }

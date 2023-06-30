@@ -1,4 +1,3 @@
-import { theme } from "@styles/theme";
 import styled, { css } from "styled-components";
 import { variables } from "@styles/global-variables";
 import CountUp from "react-countup";
@@ -9,7 +8,7 @@ export const Social = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
 
   img {

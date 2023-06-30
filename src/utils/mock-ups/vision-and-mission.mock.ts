@@ -10,11 +10,11 @@ export default {
   text1: {
     heading: "Mission",
     description:
-      "Our Mission is to show people how to grow and rise up to their full potential to make their dreams come true.",
+    "Our Mission is to become the number 1 platform connecting professionals from all around the world with growing companies in the European and German job market. A platform where skilled talents can inspire and support each other to grow to their full potential."
   },
   text2: {
     heading: "Vision",
     description:
-      "Our Vision is to create a platform that brings people together as a community with similar goals, where people can share their stories and inspire others.",
+    "Our Vision is to empower skilled talents globally making their dreams to work and live in Europe or Germany come true."
   },
 } satisfies IVisionAndMission;

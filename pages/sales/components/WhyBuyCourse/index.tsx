@@ -1,7 +1,6 @@
 import ImgThinking from "@/../public/assets/images/thinking-job-in-germany.jpg";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
-import TwoColorTitle from "@/components/two-color-title";
 import { IconEmotion } from "@/components/Icons";
 
 export function WhyBuyCourse() {
@@ -24,21 +23,21 @@ export function WhyBuyCourse() {
         <S.RightContentWhyBuyCourse className="sales">
           <S.TextWrapperWhyBuyCourse>
             <IconEmotion />
-            <S.TextWhyBuyCourse style={{ fontWeight: "500" }}>
+            <S.TextWhyBuyCourse>
               You feel like that there is more you can achieve in your life?
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <IconEmotion />
-            <S.TextWhyBuyCourse style={{ fontWeight: "500" }}>
+            <S.TextWhyBuyCourse>
               You have no idea how and where to start to build a career in
               Europe or Germany?
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
           <S.TextWrapperWhyBuyCourse>
             <IconEmotion />
-            <S.TextWrapperWhyBuyCourse style={{ fontWeight: "500" }}>
-              <S.TextWhyBuyCourse style={{ fontWeight: "500" }}>
+            <S.TextWrapperWhyBuyCourse>
+              <S.TextWhyBuyCourse>
               You are very qualified but still don't earn enough money?
               </S.TextWhyBuyCourse>
             </S.TextWrapperWhyBuyCourse>

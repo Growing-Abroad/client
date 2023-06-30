@@ -4,15 +4,10 @@ import { services } from "@utils/services";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import OurServicesCard from "../OurServicesCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { variables } from "@/styles/global-variables";
-import { removePxFromCssValue } from "@/utils/scripts/general-utility";
 
 export default function OurServicesSwiper() {
   SwiperCore.use([Navigation, Pagination]);
-  const {
-    sizes: { mediaQuery },
-  } = variables;
-  const mediaQueryNum = removePxFromCssValue(mediaQuery);
+
 
   return (
     <S.Container>

@@ -22,9 +22,12 @@ export default function SocialCard(props: Props) {
         <IconImage src={props.source} alt={props.name} />
       </a>
       <SocialText>
-        <p>
-          + {props.counterOn ? <MyCounter end={props.followNumber} /> : "0"}
-        </p>
+        {(props.followNumber > 0) && 
+          <p>
+            + <MyCounter end={props.followNumber} />
+          </p>
+        }
+        
         <span>{props.followType}</span>
       </SocialText>
     </Social>

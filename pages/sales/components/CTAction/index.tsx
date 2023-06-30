@@ -9,6 +9,7 @@ interface ICTActionProps {
   titleIntl: string;
   subTitleIntl: string;
   buttonIntl: string;
+  buttonURL?: string;
 }
 
 function CTAction({
@@ -16,6 +17,7 @@ function CTAction({
   titleIntl,
   subTitleIntl,
   buttonIntl,
+  buttonURL = "",
 }: ICTActionProps) {
   const intl = useIntl();
 
@@ -34,11 +36,13 @@ function CTAction({
   ];
 
   const hadleScroll = () => {
-    if (pageName === "jobs") {
-      const sectionElement = document.getElementById("form-jobs");
+    if (pageName === "jobs" || buttonURL === "") {
+      const sectionElement = document.getElementById("scroll-id");
       if (sectionElement) {
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
+    }else {
+        location.href = buttonURL
     }
   };
 
@@ -47,7 +51,7 @@ function CTAction({
       <S.BannerMainContainer pageName={pageName}>
         <S.LeftSide>
           <S.UIMainTitle pageName={pageName}>
-            {t(titleIntl)}
+            {t(titleIntl)}{" "}
             <TextChanger texts={texts} duration={3000} />
           </S.UIMainTitle>
 

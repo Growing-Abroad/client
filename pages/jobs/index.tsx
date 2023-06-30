@@ -1,7 +1,6 @@
 import { PageLayout } from "@/components";
 import { ReactElement } from "react";
 import CloudSection from "./components/cloud-section";
-import JobsHeroSection from "./components/jobs-hero-section";
 import UploadCvSection from "./components/upload-cv-section";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import PageBodyLayout from "@/components/generics/PageBody";
@@ -20,7 +19,7 @@ export const JobsWrapper = styled.div`
   z-index: 1;
 
   #page-jobs {
-    margin-top: 100vh;
+    margin-top: 60vh;
     @media screen and (min-width: 768px) {
       margin-top: 103vh;
     }
@@ -38,6 +37,7 @@ export default function Jobs() {
     <>
       <JobsWrapper>
         <CTAction
+          buttonURL=""
           pageName="jobs"
           titleIntl="page.jobs.title"
           subTitleIntl=""

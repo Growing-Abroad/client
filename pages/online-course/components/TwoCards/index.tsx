@@ -11,6 +11,14 @@ import {
 
 export function TwoCards() {
   const { isMobile } = useAppContext();
+
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("scroll-id");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <S.Container>
       <S.TwoColorTitleCustom
@@ -44,7 +52,7 @@ export function TwoCards() {
             </S.CardText>
             <S.CardText>
               <IconCheckGreen />
-              People who are motivated and want to achieve something in life
+              People who are still studying a Bachelor or Master Degree
             </S.CardText>
             <S.CardText>
               <IconCheckGreen />
@@ -52,7 +60,7 @@ export function TwoCards() {
             </S.CardText>
             <S.CardText>
               <IconCheckGreen />
-              People who already live in Germany
+              People who want to live and work in Germany or Europe and people who already live there
             </S.CardText>
           </div>
         </S.TwoCardsWrapper>
@@ -93,7 +101,7 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
       </S.ContentTwoCards>
-      <S.StdButtonCustom>
+      <S.StdButtonCustom onClick={hadleScroll}>
         Buy Now
       </S.StdButtonCustom>
     </S.Container>

@@ -13,7 +13,7 @@ import WorkIn from "./components/WorkIn/WorkIn";
 import DiscoverGA from "@pages/sales/components/DiscoverGA";
 import OurServicesSection from "./components/OurServices";
 import CommunitySection from "./components/Community";
-import BlogSection from "./components/Blog/BlogSection";
+// import BlogSection from "./components/Blog/BlogSection";
 
 
 export const CandidatesWrapper = styled.div`
@@ -38,6 +38,7 @@ export default function OnlineCourse() {
    <>
     <CandidatesWrapper>
       <CTAction 
+        buttonURL="/online-course"
         pageName="candidates"
         titleIntl="page.candidates.title"
         subTitleIntl=""
@@ -53,7 +54,7 @@ export default function OnlineCourse() {
         <StoriesPageCandidates hasSubTitle={true} />
 
         <CommunitySection />
-        <BlogSection />
+        {/* <BlogSection /> */}
       </PageBodyLayout>
     </CandidatesWrapper> 
    </>

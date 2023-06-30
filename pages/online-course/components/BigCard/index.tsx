@@ -37,7 +37,7 @@ export function BigCard() {
         fontSize={isMobile ? "" : "52px"}
         hasSpaceBtw
       />
-      <S.BigCardWrapper>
+      <S.BigCardWrapper id="scroll-id">
         <S.ImageFlagDiscount
           isIos={isIos}
           src={discount}

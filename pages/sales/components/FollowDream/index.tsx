@@ -23,6 +23,13 @@ function FollowDreams() {
     }
   }, [isVideoPlaying, setIsVideoPlaying]);
 
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("scroll-id");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <S.Container className="sales">
       <TwoColorTitle
@@ -69,7 +76,7 @@ function FollowDreams() {
           Europe.
         </p>
       </S.Paragraph>
-      <StdButton>Buy Online Course Now</StdButton>
+      <StdButton onClick={hadleScroll}>Buy Online Course Now</StdButton>
     </S.Container>
   );
 }

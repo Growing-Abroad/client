@@ -17,7 +17,6 @@ export const ContainerWrapper = styled.div`
 `;
 
 export const Container = styled.section`
-  width: min(100%, ${variables.sizes.maxWidthAll});
   display: flex;
   flex-direction: column;
   align-items: center;

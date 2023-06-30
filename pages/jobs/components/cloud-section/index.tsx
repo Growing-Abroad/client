@@ -61,7 +61,7 @@ const CloudDetails = styled.div`
   }
 
   .cloud-paragraqh {
-    font-weight: 500;
+    font-weight: 400;
 
     @media (max-width: ${mediaQuery}) {
       text-align: center;

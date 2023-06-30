@@ -59,7 +59,7 @@ export default function Sales() {
           <WhyBuyCourse />
           <Motivation />
           <FollowDreams />
-          <DiscoverGA />
+          <DiscoverGA text1={isMobile ? "Uan & Manu" : "We are Uan & Manu"} />
           <WhatYouGet isSales={true} />
           <Chapter />
           <BigCard />

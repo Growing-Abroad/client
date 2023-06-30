@@ -17,6 +17,7 @@ import Investiment from "@pages/sales/components/Investiment";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
 import CTAction from "@pages/sales/components/CTAction";
+import FollowDreams from "@pages/sales/components/FollowDream";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -60,6 +61,8 @@ export default function OnlineCourse() {
         >
           <WhyBuyCourse />
           <Chapter />
+          <FollowDreams />
+
           <BigCard />
           <StoriesPageCandidates hasSubTitle={false} />
           <TwoCards />

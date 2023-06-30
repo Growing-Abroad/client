@@ -21,6 +21,7 @@ interface DiscoverGAProps {
   typePages?: 'cadidates' | 'sales' | 'online-course' 
 }
 
+
 export default function DiscoverGA(
   {
     text1= "We are Uan & Manu",

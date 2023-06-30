@@ -1,9 +1,6 @@
 import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesCard/index.styles";
 import { BsCheckLg } from "react-icons/bs";
-import Image from "next/image";
 import { IService } from "@utils/services";
-import { useTheme } from "styled-components";
-import useAppContext from "@/hooks/useAppContext";
 
 export default function OurServicesCard({
   id,
@@ -11,16 +8,12 @@ export default function OurServicesCard({
   subtitle,
   descriptions,
   image,
-  hasMoreInfo,
 }: IService) {
-  const {
-    colors: { blue700, yellow400 },
-  } = useTheme();
-  const { isMobile } = useAppContext();
 
   const handleRedirect = (id: string) => {
     return id;
   };
+
   return (
     <S.Container>
       <div
@@ -29,7 +22,7 @@ export default function OurServicesCard({
       ></div>
       <S.CardContainer>
         <S.CardHeader>
-          <h2> {title} </h2>
+          <h2 dangerouslySetInnerHTML={{ __html: title }} />
           <h3> {subtitle} </h3>
         </S.CardHeader>
 
@@ -44,7 +37,7 @@ export default function OurServicesCard({
 
         <div className="lastDiv">
           <S.Button onClick={() => handleRedirect(id)}>
-            {hasMoreInfo ? "More Info" : "Book Now"}
+            More Info
           </S.Button>
         </div>
       </S.CardContainer>

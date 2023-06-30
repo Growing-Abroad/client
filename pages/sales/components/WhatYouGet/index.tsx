@@ -11,6 +11,14 @@ interface IWhatYouGetProps {
 
 export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
   const { isMobile } = useAppContext();
+
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("scroll-id");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <S.WrapperWhyBuyCourse className="what-you-get"
     >
@@ -87,7 +95,7 @@ export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
               life
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
-          <StdButton style={{ width: "181px", margin: "38px auto 100px" }}>
+          <StdButton onClick={hadleScroll} style={{ width: "181px", margin: "38px auto 100px" }}>
             Buy Now
           </StdButton>
         </S.RightContentWhyBuyCourse>

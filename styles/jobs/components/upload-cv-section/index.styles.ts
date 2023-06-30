@@ -107,6 +107,10 @@ export const DeclarationTitle = styled(TwoColorTitle)`
 export const UIStdParagraqh = styled(StdParagraqh)`
   margin-bottom: 32px !important;
   cursor: pointer;
+  color: #4A9AFD;
+  font-size: 20px;
+  margin: 21px 0 0;
+  
   &.cv-upload-sub {
     margin-top: 32px;
     margin-bottom: 0;
@@ -334,3 +338,7 @@ export const DropMessage = styled.div`
 export const FileInput = styled.input`
   display: none;
 `;
+
+export const UIStdParagraqhCustom = styled(StdParagraqh)`
+  font-weight: 400;
+`

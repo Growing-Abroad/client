@@ -3,9 +3,7 @@ import { Ul } from "styles/data-privacy";
 export const OnlineCourseFaqMockUp = [
   {
     title: "What happens after I purchase the course? ",
-    content:
-      `You will receive an order confirmation and a welcome mail with access to the member area of the Online Course “Land your Dream Job in Germany or Europe”. This includes access to all videos and digital Workbook, as well as a link to the Growing Abroad Community Group.
-      `,
+    content: `You will receive an order confirmation and a welcome email containing a link to access the member area of the online course "Land Your Dream Job in Germany or Europe." Using this link, you can create an account on our online course platform hosted by Elopage. Once you have registered, you will gain access to all the videos, the digital workbook, and other course materials. Additionally, you will find a link to the Growing Abroad Community Group within this online course.`,
   },
   {
     title: "What language is used in the Online Course?",
@@ -23,14 +21,20 @@ export const OnlineCourseFaqMockUp = [
   },
   {
     title: "How does payment work?",
-    content:
-      "Payment can be made via PayPal or credit card. Payments can be made in various currencies. If you are from a country with a different currency, you can use a currency converter to calculate the price.",
+    content: "Payment can be made through PayPal, credit card, Apple Pay, and Google Pay. The price will be displayed in Euros. If you are from a country with a different currency, you can utilize a currency converter to calculate the price in your respective currency."
   },
-
   {
     title: "After this Online Course, can I get jobs in other European countries?",
     content:
       "Yes. The techniques and methods taught in the course apply to all European countries. Our customers have secured jobs in many different European countries.",
+  },
+  {
+    title: "Is this course a guarantee to secure a job in Germany or Europe?",
+    content: "While this course provides comprehensive preparation to help you secure your dream job in Germany or Europe, it is important to note that success ultimately depends on your own dedication and efforts. The course equips you with valuable knowledge and skills, making it easier for you to navigate the job market. However, it does not guarantee job placement. Your level of motivation and willingness to apply what you learn will greatly impact your job search."
+  },
+  {
+    title: "How long will I have access to the online course?",
+    content: "You will have access to the online course for a duration of 3 years. Throughout this period, you can watch the course content as many times as you wish."
   }
 ];
 
