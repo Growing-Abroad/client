@@ -1,26 +1,37 @@
-import { FormEvent } from 'react';
+import useAppContext from '@/hooks/useAppContext';
+import signInNewsLetter from '@/services/news-letter/news-letter.service';
 import { Checkbox } from "@mui/material";
+import { FormEvent } from 'react';
+import { useForm } from 'react-hook-form';
+import { useTheme } from "styled-components";
+import StdButton from '../generics/StdButton/StdButton';
 import {
-  CheckboxWrapper,
-  ContentInputNewsLetter,
   InputNewsLetter,
   InputWrapper,
   NewsLetterContainer,
+  NewsLetterForm,
   SubscribeWrapper,
-  TitleNewsLetter,
+  TitleNewsLetter
 } from './style';
-import useAppContext from '@/hooks/useAppContext';
-import StdButton from '../generics/StdButton/StdButton';
-import { useTheme } from "styled-components";
 
+export type TNewsLetter = {
+  name: string;
+  email: string;
+  consent: boolean;
+}
 
 export default function NewsLetter() {
   const {
     colors: { white, blue400 },
   } = useTheme();
   const {
-    isMobile
+    isMobile, loading, setLoading
   } = useAppContext();
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm<TNewsLetter>();
 
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked) {
@@ -30,15 +41,47 @@ export default function NewsLetter() {
     }
   };
 
+  const onSubmit = async (data: TNewsLetter) => {
+    const { name, email, consent } = data;
+    if (!consent) return;
+    setLoading(true);
+    console.log(data)
+    const newsletterData = {
+      url: 'https://api.growingabroad.de/contact',
+      data: {
+        user: {
+          name,
+          email,  
+          consent
+        },
+        listId: 6
+      }
+    };
+    const response = await signInNewsLetter(newsletterData)
+    console.log(response)
+    if(response.ok) {
+      //todo 
+    }else {
+     //todo
+    }
+    setLoading(false);
+  }
+
   return (
     <>
       <NewsLetterContainer>
         <TitleNewsLetter>Join our Newsletter</TitleNewsLetter>
-        <ContentInputNewsLetter>
+        <NewsLetterForm onSubmit={handleSubmit(onSubmit)}>
           <SubscribeWrapper>
             <InputWrapper>
-              <InputNewsLetter placeholder="Enter Your Full Name" />
-              <InputNewsLetter placeholder="Enter Your E-mail Adress" />
+              <InputNewsLetter 
+                {...register('name', {required: true})}
+                placeholder="Enter Your Full Name" 
+              />
+              <InputNewsLetter 
+                placeholder="Enter Your E-mail Adress" 
+                {...register('email', {required: true})}
+              />
             </InputWrapper>
             <div
               style={{
@@ -56,6 +99,7 @@ export default function NewsLetter() {
                     color: white,
                   },
                 }}
+                {...register('consent', {required: true})}
               />
               <p  className="paragraph" style={{color:"white"}}>
                 By clicking you are agreeing  with the Growing Abroad rules and policy
@@ -75,10 +119,11 @@ export default function NewsLetter() {
               height:`${isMobile ?'35px' : '54px'}`,
               textAlign: `${isMobile ? "start" : "center"}`
             }}
+            type="submit"
           >
             Subscribe
           </StdButton>
-        </ContentInputNewsLetter>
+        </NewsLetterForm>
       </NewsLetterContainer>
     </>
   );

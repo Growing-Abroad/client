@@ -62,7 +62,7 @@ export const InputNewsLetter = styled(Input)`
   }
 `;
 
-export const ContentInputNewsLetter = styled.div`
+export const NewsLetterForm = styled.form`
   display: flex;
   flex-direction: row;
   gap: 12px;

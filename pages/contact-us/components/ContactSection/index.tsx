@@ -162,12 +162,7 @@ export default function Contact() {
     console.log({data})
     const response: IContactUsServerResponse = await sendContactUsForm(data);
     console.log(response)
-    // if(response.ok) {
-    //   router.push('/confirmation')
-    // }else {
-    //   setShowToast(true)
-    //   setShowMsgErro(`Error: ${response}`)
-    // }
+    
     setMsgSent(true);
     reset();
 
