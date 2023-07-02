@@ -159,7 +159,6 @@ export default function Contact() {
   const onSubmit: SubmitHandler<TContactFormData> = async (data) => {
     setLoading(true);
     
-    console.log({data})
     const response: IContactUsServerResponse = await sendContactUsForm(data);
     console.log(response)
     

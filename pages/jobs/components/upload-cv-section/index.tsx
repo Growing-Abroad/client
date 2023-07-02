@@ -22,11 +22,11 @@ interface FormFields {
   lastName: string;
   email: string;
   phone: string;
-  specializationInput: string;
-  declaration_of_consent: string;
+  specializationInput: Array<string>;
+  declaration_of_consent: boolean;
   newsletter: string;
-  file: string;
-  otherFile: string;
+  file: FileList;
+  otherFile: FileList;
 }
 
 interface IPhone {
@@ -402,7 +402,6 @@ export default function UploadCvSection() {
                 <S.UIInputCheckbox
                   type="checkbox"
                   {...register("declaration_of_consent", { required: true })}
-                  value="I agree to the declaration of consent and have read and understood the revocation and privacy policy*"
                 />
                 <S.PrivacyText>
                   I agree to the{" "}
