@@ -195,3 +195,9 @@ export const Icon = styled(Image).attrs({
   alt: "",
   href: "",
 })``;
+
+export const UIButton = styled(Button)`
+  @media screen and (min-width: 768px) {
+      margin-left: 32px;
+  }
+`

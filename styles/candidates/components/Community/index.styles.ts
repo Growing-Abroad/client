@@ -62,4 +62,7 @@ export const CardsWrapper = styled.div`
     column-gap: 16px;
     row-gap: 30px
   }
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 `;

@@ -15,6 +15,7 @@ import {
   IconButton,
   AwesomeIcon,
   Header,
+  UIButton,
 } from "./styles";
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
@@ -126,7 +127,11 @@ function HeaderForCandidates() {
                 Online course
               </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
                   Coaching
-                </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button></>)
+                </Button>
+                <Button onClick={pushTo(EPagesNames.JOBS)}>
+                Talentpool
+                </Button>
+              <UIButton onClick={pushTo(EPagesNames.LOGIN)}>login</UIButton></>)
               }
               {shouldHaveMobileBehavior && (
                 <>
@@ -135,13 +140,13 @@ function HeaderForCandidates() {
                   </Button>
                   <Button onClick={pushTo(EPagesNames.COACHING)}>
                     Coaching
-                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button>
+                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Talent Pool</Button>
                   <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
                     About Us
                   </Button>
-                  <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
+                  {/* <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
                     Career Blog
-                  </Button>
+                  </Button> */}
                   <Button onClick={pushTo(EPagesNames.FAQ)}>FAQ</Button>
                 </>
               )}
@@ -149,10 +154,10 @@ function HeaderForCandidates() {
             {!shouldHaveMobileBehavior && (
               <IconsContainer>
                 <>
-                  <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
+                  {/* <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
                   <IconButton>
                     <AwesomeIcon icon={faGlobe} size="2xl" />
-                  </IconButton>
+                  </IconButton> */}
                   <Burger
                     open={itsDesktopMenuOpen}
                     handleClick={() =>
@@ -160,7 +165,7 @@ function HeaderForCandidates() {
                     }
                     isForDesktop
                   />
-                  <StdButton
+                  {/* <StdButton
                     style={{
                       width: 195,
                       height: 32,
@@ -183,7 +188,7 @@ function HeaderForCandidates() {
                     }}
                   >
                     For Companies
-                  </StdButton>
+                  </StdButton> */}
                 </>
               </IconsContainer>
             )}

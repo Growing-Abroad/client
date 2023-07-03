@@ -90,8 +90,9 @@ export const Paragraph = styled.div`
   }
 
   .subtitle {
-    max-width: 1005px;
-    width: 100%
+    max-width: 787px;
+    width: 100%;
+    font-size: 17px;
   }
 `;
 
@@ -197,4 +198,15 @@ export const ParagraphCustom = styled(Paragraph)`
 
 export const StdButtonCustom = styled(StdButton)`
   margin: calc(70px - 3rem) 0 0;
+`
+
+export const UIIframeYoutube = styled.iframe`
+    width: 100%;
+    max-width: 824px;
+    height: auto;
+    min-height: 280px;
+    padding: 0 10px;
+    @media screen and (min-width: 768px) {
+    height: 438px;
+    }
 `

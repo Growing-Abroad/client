@@ -8,13 +8,14 @@ export default {
     mobile: PuzzleImageMobile.src,
   },
   text1: {
-    heading: "Mission",
-    description:
-    "Our Mission is to become the number 1 platform connecting professionals from all around the world with growing companies in the European and German job market. A platform where skilled talents can inspire and support each other to grow to their full potential."
-  },
-  text2: {
     heading: "Vision",
     description:
     "Our Vision is to empower skilled talents globally making their dreams to work and live in Europe or Germany come true."
+
+  },
+  text2: {
+    heading: "Mission",
+    description:
+    "Our Mission is to become the number 1 platform connecting professionals from all around the world with growing companies in the European and German job market. A platform where skilled talents can inspire and support each other to grow to their full potential."
   },
 } satisfies IVisionAndMission;

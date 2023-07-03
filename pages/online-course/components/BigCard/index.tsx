@@ -1,6 +1,7 @@
 import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
 import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.jpg";
+import onlineCourseTenporary from "@/../public/assets/Photos-Main-Page/online-course-success2.jpg";
 import discount from "@/../public/assets/discount.svg";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheckBlue } from "@/components/Icons";
@@ -28,6 +29,9 @@ export function BigCard() {
     }
   }, []);
 
+  const dataDesejada = new Date('2023-07-14T15:00:00+02:00');
+  const dataAtual = new Date();
+
 
   return (
     <S.Container>
@@ -45,12 +49,22 @@ export function BigCard() {
           width={153}
           height={103}
         />
+        
+        {dataAtual > dataDesejada ? (
         <S.ImageCustom
-          src={onlineCourse}
+        src={onlineCourse}
+        alt=""
+        width={isMobile ? 383 : 705}
+        height={isMobile ? 241 : 294}
+      />
+      ) : (
+        <S.ImageCustom
+          src={onlineCourseTenporary}
           alt=""
           width={isMobile ? 383 : 705}
           height={isMobile ? 241 : 294}
         />
+      )}
         <h1>Online Course</h1>
         <h2>
           Land your Dream Job in{" "}

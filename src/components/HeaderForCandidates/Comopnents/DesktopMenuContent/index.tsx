@@ -60,7 +60,7 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer onClick={pushTo(EPagesNames.JOBS)}>
-              <RSMenuItem>Jobs{"\xa0"}</RSMenuItem>
+              <RSMenuItem>Talent Pool{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
           </LeftSideContent>

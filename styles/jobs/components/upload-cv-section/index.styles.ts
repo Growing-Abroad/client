@@ -256,6 +256,7 @@ export const UISelect = styled.select`
   border: 1px solid #05335b;
   background: #fff;
   height: 60px;
+  padding: 0 10px;
 `;
 
 export const UIOption = styled.option`

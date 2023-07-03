@@ -243,7 +243,7 @@ export const TextWhyBuyCourse = styled.p`
   color: ${blue700};
   margin-bottom: 0;
   @media screen and (min-width: 64rem) {
-    font-size: 1.375rem;
+    font-size: 17px;
   }
 `;
 
