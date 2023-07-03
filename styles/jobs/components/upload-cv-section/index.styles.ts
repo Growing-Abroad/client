@@ -163,6 +163,7 @@ export const UIInputCheckbox = styled.input`
   min-width: 30px;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 `;
 
 export const SpecializationsContainer = styled.div`

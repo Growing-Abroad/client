@@ -30,7 +30,14 @@ function FollowDreams() {
         as="h2"
       />
 
-      <S.UIIframeYoutube width="560" height="315" src="https://www.youtube-nocookie.com/embed/BvRBJ1Hnui0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></S.UIIframeYoutube>
+      <S.UIIframeYoutube 
+      width="560" 
+      height="315" 
+      src="https://www.youtube-nocookie.com/embed/BvRBJ1Hnui0" title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      />
+
+      {/* </S.UIIframeYoutube> */}
 
       <S.Paragraph className="sales">
         <p  className={`${classes.resume} subtitle`}>

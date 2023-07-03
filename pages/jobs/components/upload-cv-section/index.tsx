@@ -304,7 +304,7 @@ export default function UploadCvSection() {
                 ) : (
                   <S.DropMessage>
                     <div>{selectedFile.name}</div>
-                    <div>{selectedFile.size} bytes</div>
+                    <div>{selectedFile.size} MB</div>
                   </S.DropMessage>
                 )}
                 <S.FileInputLabel htmlFor="cv-file-input">
@@ -322,7 +322,7 @@ export default function UploadCvSection() {
                 <StdError>
                   {errors.file?.type === "required"
                     ? "Please upload your CV"
-                    : ""}
+                    : errors.file ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file." : ""}
                 </StdError>
               </S.DropArea>
               <div onClick={() => SetShowNewInput(!showNewInput)}>
@@ -348,7 +348,7 @@ export default function UploadCvSection() {
                         {selectedFileOptional.name}
                       </div>
                       <div className="file-size">
-                        {selectedFileOptional.size} bytes
+                        {selectedFileOptional.size} MB
                       </div>
                     </div>
                   )}
