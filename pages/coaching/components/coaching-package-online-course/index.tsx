@@ -96,6 +96,8 @@ const PackageCourseContent = styled.div`
         .check-icon {
           font-weight: 900;
           font-size: 28px;
+          max-width: 28px;
+          max-height: 28px;
         }
       }
     }

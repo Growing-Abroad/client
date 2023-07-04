@@ -21,6 +21,7 @@ import { IntlProvider } from "react-intl";
 import DiscoverGA from "./components/DiscoverGA";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import TwoCards from "@pages/online-course/components/TwoCards";
+import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 
 
 export const SalesWrapper = styled.div`
@@ -63,6 +64,7 @@ export default function Sales() {
           <FollowDreams />
           <DiscoverGA text1={isMobile ? "Uan & Manu" : "We are Uan & Manu"} />
           <WhatYouGet isSales={true} />
+          {/* <VerticalProgressBarCustom /> */}
           <Chapter />
           <BigCard />
           <StoriesPageCandidates hasSubTitle={false} />
