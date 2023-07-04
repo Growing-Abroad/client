@@ -18,7 +18,7 @@ export const Container = styled.section`
   overflow: hidden;
   position: relative;
   overflow: hidden;
-  margin-top: 89px;
+  margin-top: 75px;
   max-height: calc(100vh - 89px);
   @media screen and (min-width: 768px){
     max-height: calc(50vh - 89px);

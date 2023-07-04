@@ -383,7 +383,7 @@ export default function UploadCvSection() {
                   <Link target="_blank" href="/data-privacy-policy">
                     Privacy Policy
                   </Link>
-                  . Our newsletter subscription is non-binding.
+                  . <br />Our newsletter subscription is non-binding.
                 </S.PrivacyText>
               </S.PrivacyContent>
             </StdInput>

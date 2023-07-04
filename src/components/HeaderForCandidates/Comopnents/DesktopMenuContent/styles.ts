@@ -105,7 +105,7 @@ export const MenuItemContainer = styled.div`
 export const RSMenuItem = styled.li`
   height: 100%;
   font-family: 'Montserrat';
-  font-size: 72px;
+  font-size: 60px;
   line-height: 1;
   display: flex;
   justify-content: center;

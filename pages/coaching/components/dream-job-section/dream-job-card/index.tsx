@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import TwoColorTitle from "@/components/two-color-title";
 import styled from "styled-components";
 import { variables } from "@/styles/global-variables";
@@ -138,6 +139,7 @@ const ImgWrapper = styled.div`
 `
 
 export interface IDramJobCardProps {
+    slug: string
     title: string,
     description: string,
     info: string[],
@@ -148,12 +150,23 @@ export interface IDramJobCardProps {
 
 }
 
-export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes}: IDramJobCardProps) {
+export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes, slug}: IDramJobCardProps) {
     const {isMobile} = useAppContext();
+
+    useEffect(() => {
+        const ID = window.location.href.split("#").pop()
+        if(ID) {
+            const sectionElement = document.getElementById(ID);
+            if (sectionElement) {
+              sectionElement.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+      }, []);
 
     return (
         <>
-            <Service className={classes}>
+            <Service className={classes} id={slug}>
                 <ServiceData>
 
                     <TwoColorTitle 

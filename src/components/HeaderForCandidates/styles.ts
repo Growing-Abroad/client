@@ -64,7 +64,7 @@ export const Container = styled.div<ContainerProps>`
 
     @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
-      height: 90px;
+      height: 75px;
 
       background-color: white;
       padding: 22px 50px;
@@ -83,6 +83,12 @@ export const LogoContainer = styled.div`
 
   :hover {
     cursor: pointer;
+  }
+  &.desktop {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+    }
   }
 `;
 

@@ -113,7 +113,7 @@ function HeaderForCandidates() {
       >
         <Container itsOpen={itsMobileMenuOpen}>
           {!shouldHaveMobileBehavior && (
-            <LogoContainer>
+            <LogoContainer className="desktop">
               <Logo
                 src={GrowingAbroadImage.src}
                 onClick={pushTo(EPagesNames.DEFAULT)}

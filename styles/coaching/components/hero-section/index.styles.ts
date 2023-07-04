@@ -36,7 +36,7 @@ export const ContainerWrapper = styled.div<IContainerProps>`
   @media (min-width: 1513px) {
     /* height: 580px; */
     height: ${({distanceFromTop}) => distanceFromTop};
-    margin-top: 90px;
+    margin-top: 75px;
   }
 `;
 

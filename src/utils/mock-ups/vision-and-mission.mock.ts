@@ -16,6 +16,6 @@ export default {
   text2: {
     heading: "Mission",
     description:
-    "Our Mission is to become the number 1 platform connecting professionals from all around the world with growing companies in the European and German job market. A platform where skilled talents can inspire and support each other to grow to their full potential."
+    "Our Mission is to become the number one platform connecting professionals from all around the world with growing companies in the European and German job market. A platform where skilled talents can inspire and support each other to grow to their full potential."
   },
 } satisfies IVisionAndMission;

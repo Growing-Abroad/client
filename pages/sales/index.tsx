@@ -64,8 +64,8 @@ export default function Sales() {
           <FollowDreams />
           <DiscoverGA text1={isMobile ? "Uan & Manu" : "We are Uan & Manu"} />
           <WhatYouGet isSales={true} />
-          {/* <VerticalProgressBarCustom /> */}
-          <Chapter />
+          <VerticalProgressBarCustom />
+          {/* <Chapter /> */}
           <BigCard />
           <StoriesPageCandidates hasSubTitle={false} />
           <TwoCards />

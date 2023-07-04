@@ -11,7 +11,7 @@ export default function OurServicesCard({
 }: IService) {
 
   const handleRedirect = (id: string) => {
-    return id;
+    location.href = id;
   };
 
   return (
@@ -36,7 +36,7 @@ export default function OurServicesCard({
         </S.CardDescriptions>
 
         <div className="lastDiv">
-          <S.Button onClick={() => handleRedirect(id)}>
+          <S.Button onClick={() => handleRedirect(`/coaching#${id}`)}>
             More Info
           </S.Button>
         </div>

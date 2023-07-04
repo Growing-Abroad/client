@@ -98,6 +98,8 @@ const PackageCourseContent = styled.div`
           font-size: 28px;
           max-width: 28px;
           max-height: 28px;
+          min-width: 28px;
+          min-height: 28px;
         }
       }
     }
@@ -307,7 +309,7 @@ export default function CoachingPackageOnlineCourseSection() {
           fontSize={twoColorFontSize}
         />
 
-        <Card>
+        <Card id="Coaching-Package">
           <ImageWrapper>
             <Image
               src={CoachingPackage}
@@ -321,15 +323,15 @@ export default function CoachingPackageOnlineCourseSection() {
               className="blue-retangle"
             />
             <div className="price-wrapper">
-              <span className="price old-price">1360 €</span>
-              <span className="price new-price">597 €</span>
+              <span className="price old-price">1700 €</span>
+              <span className="price new-price">797 €</span>
             </div>
           </ImageWrapper>
 
           <div className="package-course-details">
             <p>
               Get our special Coaching package with all the Coaching Sessions
-              from above and <span>save more than 750 €</span>
+              from above and <span>save more than 900 €</span>
             </p>
             <ul>
               {detailsContent.map((liText, i) => (

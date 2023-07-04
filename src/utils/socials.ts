@@ -33,7 +33,7 @@ export const socials1: ISocial[] = [
     source: InstagramIcon,
     name: "instagram",
     socialLink: "https://www.instagram.com/growing.abroad",
-    followNumber: 7200,
+    followNumber: 8200,
     followType: FollowType.followers,
   },
   {

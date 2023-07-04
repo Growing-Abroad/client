@@ -219,7 +219,7 @@ export const RightContentWhyBuyCourse = styled.div`
   }
 
   @media screen and (min-width: 1191px) {
-    height: 558px;
+    height: 510px;
     gap: unset;
     justify-content: space-between;
   }

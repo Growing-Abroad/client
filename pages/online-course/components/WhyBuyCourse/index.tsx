@@ -41,7 +41,7 @@ export function WhyBuyCourse() {
             </S.IconWhyBuyCourse>
             <S.TextWhyBuyCourse>
               Discover
-              <S.BoldSpanWhyBuyCourse>SECRET METHODS </S.BoldSpanWhyBuyCourse>and Job Search
+              <S.BoldSpanWhyBuyCourse> SECRET METHODS </S.BoldSpanWhyBuyCourse>and Job Search
               strategies to get multiple job interviews
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>

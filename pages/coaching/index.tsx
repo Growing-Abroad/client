@@ -59,10 +59,11 @@ export default function Coaching() {
           text1={text1}
           text2={text2}
         />
-        {/* <WhatOurClientsSay /> */}
-          <StoriesPageCandidates pageType="coaching" hasSubTitle={false} />
+        <StoriesPageCandidates  pageType="coaching" hasSubTitle={false} />
+        <div style={{marginTop: 50}} >
 
-        <ReusedFaq />
+          <ReusedFaq pageType="coaching" />
+        </div>
       </PageBodyLayout>
     </>
   );

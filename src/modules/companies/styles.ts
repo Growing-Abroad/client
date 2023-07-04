@@ -20,6 +20,6 @@ export const Container = styled.main`
     }
 
     @media (min-width: ${breakpoints.desktop.max}px) {
-        margin-top: 90px;
+        margin-top: 75px;
     }
 `

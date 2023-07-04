@@ -42,13 +42,16 @@ export function BigCard() {
         hasSpaceBtw
       />
       <S.BigCardWrapper id="scroll-id">
-        <S.ImageFlagDiscount
-          isIos={isIos}
-          src={discount}
-          alt="discount"
-          width={153}
-          height={103}
-        />
+        
+         {dataAtual > dataDesejada && 
+          <S.ImageFlagDiscount
+            isIos={isIos}
+            src={discount}
+            alt="discount"
+            width={153}
+            height={103}
+          />
+         }
         
         {dataAtual > dataDesejada ? (
         <S.ImageCustom
@@ -71,7 +74,8 @@ export function BigCard() {
           <span style={{ color: "#4A9AFD" }}>Germany or Europe</span>
         </h2>
         <p className="discount">
-          Instead Of <span>1360 €</span> Only
+          Instead Of 
+          {/* <span>1360 €</span> Only */}
         </p>
         <S.PriceSpan>397 €</S.PriceSpan>
         <div>

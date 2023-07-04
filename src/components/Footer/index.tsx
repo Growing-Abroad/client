@@ -1,6 +1,6 @@
 import * as S from "./style";
 import LinkedInIcon from "@/../public/assets/icons/linkedin.jpg";
-import FacebookIcon from "@/../public/assets/icons/facebook.jpg";
+import discordLogoIcon from "@/../public/assets/icons/discord-logo.jpg";
 import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
 import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
 import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
@@ -21,19 +21,21 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   const handleGoToFaq = () => onGoToNextPage(EPagesNames.FAQ);
 
-  const handleGoToCareerBlog = () => onGoToNextPage(EPagesNames.CAREER_BLOG);
+  const handleGoToTalentPool = () => onGoToNextPage(EPagesNames.JOBS);
 
   const handleGoToAboutUs = () => onGoToNextPage(EPagesNames.ABOUT_US);
 
-  const handleGoToServices = () => onGoToNextPage(EPagesNames.SERVICES);
+  const handleGoToContactUs = () => onGoToNextPage(EPagesNames.CONTACT_US);
 
-  const handleGoToJobs = () => onGoToNextPage(EPagesNames.JOBS);
+  const handleGoToOnlineCourse = () => onGoToNextPage(EPagesNames.ONLINE_COURSE);
+
+  const handleGoToCoaching = () => onGoToNextPage(EPagesNames.COACHING);
 
   const handleGoToLegal = () => onGoToNextPage(EPagesNames.LEGAL_NOTICE);
 
   const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
 
-  const handleGoToTerms = () => onGoToNextPage(EPagesNames.TERMS);
+  const handleGoToPrivacyApplicants = () => onGoToNextPage(EPagesNames.PRIVACY_APPLICANTS);
 
   return (
     <S.FooterContainer usePageBody={usePageBody}>
@@ -55,10 +57,9 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                       <span onClick={handleGoToFaq}>
                         "Frequently asked questions"
                       </span>{" "}
-                      and <span onClick={handleGoToCareerBlog}>"Career Blogs"</span>.
                       Maybe your question is already answered there.
                     </p>
-                    <S.StdButtonCustom
+                    <S.StdButtonCustom onClick={handleGoToContactUs}
                       icon={faEnvelope}
                     >
                       Contact Us
@@ -68,16 +69,16 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                     {" "}
                     <h3>Quick links</h3>
                     <li onClick={handleGoToAboutUs}>About Us</li>
-                    <li onClick={handleGoToServices}>Services</li>
-                    <li onClick={handleGoToJobs}>Jobs</li>
-                    <li onClick={handleGoToCareerBlog}>Career Blog</li>
+                    <li onClick={handleGoToOnlineCourse}>Online Course</li>
+                    <li onClick={handleGoToCoaching}>Coaching</li>
+                    <li onClick={handleGoToTalentPool}>Talent Pool</li>
                   </S.FooterLinks>
                   <S.FooterLinks>
                     <h3>Useful links</h3>
-                    <li onClick={handleGoToLegal}>Legal notice</li>
-                    <li onClick={handleGoToPrivacy}>Privacy Policy</li>
-                    <li onClick={handleGoToTerms}>Terms and Conditions</li>
                     <li onClick={handleGoToFaq}>FAQ</li>
+                    <li onClick={handleGoToPrivacy}>Privacy Policy</li>
+                    <li onClick={handleGoToPrivacyApplicants}>Privacy Applicants</li>
+                    <li onClick={handleGoToLegal}>Legal Notice</li>
                   </S.FooterLinks>
                   <S.FooterLinks>
                     <h3>Social media</h3>
@@ -101,8 +102,8 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                         width={26}
                       />
                       <Image
-                        src={FacebookIcon}
-                        alt="facebook icon"
+                        src={discordLogoIcon}
+                        alt="discord icon"
                         height={26}
                         width={26}
                       />
@@ -118,10 +119,10 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
               </S.FooterContentWrapper>
               <S.FooterBottomContainer>
                 <S.FooterBottomWrapper>
-                  <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
+                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
                   <S.FooterBottomRight>
-                    <S.Links href="#">Legal Notice</S.Links>
-                    <S.Links href="#">Data Privacy</S.Links>
+                    <S.Links href="/legal-notice">Legal Notice</S.Links>
+                    <S.Links href="/data-privacy">Data Privacy</S.Links>
                   </S.FooterBottomRight>
                 </S.FooterBottomWrapper>
               </S.FooterBottomContainer>
@@ -132,7 +133,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
           hideBlueSection
           &&  <S.FooterBottomContainer>
                 <S.FooterBottomWrapper>
-                  <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
+                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
                   <S.FooterBottomRight>
                     <S.Links href="/legal-notice">Legal Notice</S.Links>
                     <S.Links href="/data-privacy">Data Privacy</S.Links>

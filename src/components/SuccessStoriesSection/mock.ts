@@ -204,7 +204,7 @@ export const successStoriesDataCoaching = [
     countryFlag: flagJordan,
     video : {
       titleVideo: "Jana from Jordan",
-      urlVideo: "https://www.youtube-nocookie.com/embed/LxEVyamUqeQ",
+      urlVideo: "https://www.youtube-nocookie.com/embed/ggHs163APyY",
     }
   },
 

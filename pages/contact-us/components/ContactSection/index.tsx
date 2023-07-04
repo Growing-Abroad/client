@@ -195,7 +195,6 @@ export default function Contact() {
               >
                 Also check out the section{" "}
                 <Link href={'/faq'} className="">"Frequently asked questions"</Link>. <br /> 
-                {/* and{" "} <Link href={'/career-blog'}>"Career Blogs"</Link>.  */}
                 Maybe your question is already answered there.
               </p>
             </FooterLinks>

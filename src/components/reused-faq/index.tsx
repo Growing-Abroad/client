@@ -1,10 +1,13 @@
 import useAppContext from "@/hooks/useAppContext";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "../two-color-title";
-import { GeneralFaqMockUp } from "./faq-mock-ups";
+import { GeneralFaqMockUp, FaqCoaching } from "./faq-mock-ups";
 
+interface IReusedFaqProps {
+    pageType?: string
+}
 
-export default function ReusedFaq() {
+export default function ReusedFaq({pageType="any"}: IReusedFaqProps) {
     const { isMobile } = useAppContext();
 
     return (
@@ -18,7 +21,7 @@ export default function ReusedFaq() {
                 flexDirection: "column"
             } : undefined}
             />
-            <FaqSection accordeons={GeneralFaqMockUp} />
+            <FaqSection accordeons={pageType === "coaching" ? FaqCoaching : GeneralFaqMockUp} />
         </>
     )
 }
