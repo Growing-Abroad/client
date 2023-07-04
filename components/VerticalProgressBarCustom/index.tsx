@@ -10,7 +10,7 @@ import * as S from "./styles";
 import { IconCheckBlue } from "@/components/Icons";
 
 export default function VerticalProgressBarCustom() {
-  const Timeline = ({ setObserver, callback }) => {
+  const Timeline = ({ setObserver, callback }: any) => {
     const [message1, setMessage1] = useState("");
     const [message2, setMessage2] = useState("");
     const [message3, setMessage3] = useState("");
