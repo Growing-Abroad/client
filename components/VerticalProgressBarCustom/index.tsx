@@ -179,11 +179,14 @@ export default function VerticalProgressBarCustom() {
   
   return (
     <S.ContainerProgressBar>
-      <TwoColorTitle
-        text1="What you can expect"
-        text2="in this Course"
-        hasSpaceBtw
-      />
+      <S.UITwoColorTitleContainer>
+        <S.UITwoColorTitle
+          text1="What you can expect"
+          text2="in this Course"
+          hasSpaceBtw
+        />
+      </S.UITwoColorTitleContainer>
+      
       <S.ChapterTitle>Chapter</S.ChapterTitle>
 
       <TimelineObserver

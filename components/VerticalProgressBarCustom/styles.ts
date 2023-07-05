@@ -1,4 +1,5 @@
 import StdButton from "@/components/generics/StdButton/StdButton";
+import TwoColorTitle from "@/components/two-color-title";
 import Image from "next/image";
 import styled, { css } from "styled-components";
 
@@ -180,3 +181,18 @@ export const Line = styled.div`
     display: initial;
   }
 `;
+
+
+export const UITwoColorTitle = styled(TwoColorTitle)`
+  margin: auto;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+export const UITwoColorTitleContainer = styled.div`
+  div {
+    margin: auto;
+  }
+`
