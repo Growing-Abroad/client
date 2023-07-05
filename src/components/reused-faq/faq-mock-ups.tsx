@@ -103,21 +103,31 @@ export const FaqCoaching = [
     title: "What happens after I book a CV, Cover Letter, or LinkedIn Optimization session?",
     content:(
     <>
-      <Ul>
+      <Ul className="coaching">
         <li>
         1. Once you have booked our coaching service, you will receive an email containing all the information about the next steps in the process.
+          <br />
+          <br />
         </li>
         <li>
           2. If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once you have created your account, you will be able to watch coaching videos and access the workbook with coaching tasks.
+          <br />
+          <br />
         </li>
         <li>
           3. After you have watched all the videos and completed the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a date and time for your personal coaching session.
+          <br />
+          <br />
         </li>
         <li>
           4. During the 30-minute personal coaching call, we will review your application documents and provide you with individual tips and feedback on areas where you can improve.
+          <br />
+          <br />
         </li>
         <li>
           5. Finally, we will make the final optimization of your documents to ensure they meet the standards required in Germany.
+          <br />
+          <br />
         </li>
       </Ul>
     </>
@@ -127,18 +137,26 @@ export const FaqCoaching = [
     title: "What happens after I book a Job Search Strategy Coaching session?",
     content: (
       <>
-      <Ul>
+      <Ul className="coaching">
         <li>
         1. After you have booked our coaching service, you will receive an email with all the information about the next steps in the process. 
+        <br />
+          <br />
         </li>
         <li>
           2. If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once you have created your account, you will gain access to coaching videos, the workbook, and coaching tasks.
+          <br />
+          <br />
         </li>
         <li>
           3. Once you have watched all the videos and completed the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can select a suitable date and time for your personal coaching session.
+          <br />
+          <br />
         </li>
         <li>
           4. During the 30-minute personal coaching call, we will work together to develop your individual job search strategy and provide you with personalized tips on how to secure multiple job interviews.
+          <br />
+          <br />
         </li>
       </Ul>
     </>
@@ -148,7 +166,7 @@ export const FaqCoaching = [
     title: "What happens after I book a Job Interview Coaching session?",
     content: (
       <>
-        <Ul>
+        <Ul className="coaching">
           <li>After you have booked our coaching service, you will receive an email with all the information regarding the subsequent steps of the process.</li>
           <li>If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once your account is created, you will be able to access coaching videos, the workbook, and coaching tasks.</li>
           <li>Upon watching all the videos and completing the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a suitable date and time for your personal coaching session.</li>

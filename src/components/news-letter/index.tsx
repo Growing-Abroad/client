@@ -88,6 +88,7 @@ export default function NewsLetter() {
                 gap: `${isMobile ?"8px" :"0px"}`,
                 display: "flex",
                 alignItems: "center",
+                marginTop: 13
               }}
             >
               <Checkbox
@@ -101,7 +102,7 @@ export default function NewsLetter() {
                 }}
                 {...register('consent', {required: true})}
               />
-              <p  className="paragraph" style={{color:"white"}}>
+              <p  className="paragraph" style={{color:"white", fontSize: 13}}>
                 Yes, I would like to sign up for the Growing Abroad Newsletter and I accept the websites Privacy Policy. <br /> Our newsletter subscription is non-binding.*
               </p>
             </div>

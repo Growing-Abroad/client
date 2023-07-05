@@ -98,6 +98,9 @@ export const BoldText = styled.b`
 
 export const Ul = styled.ul`
   list-style-type: disc;
+  &.coaching li {
+    list-style: none;
+  }
   
   li {
     display: list-item;

@@ -54,7 +54,7 @@ export const services: IService[] = [
     hasMoreInfo: false,
   },
   {
-    id: "Online-Course",  
+    id: "online-course",  
     title: "Online <br /> Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {

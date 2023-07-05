@@ -48,6 +48,7 @@ const CardsWrapper = styled.div`
 
 const mockupDreamJobCard: IDramJobCardProps[] = [
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-cv/payment",
         slug: 'CV-Optimization',
         title: 'CV Optimization',
         description: "Your CV is your Business Card. Without an optimized Resume into German standards, you won't even be considered in the process." ,
@@ -61,6 +62,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         img: cvOptimization
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-cover-letter/payment",
         slug: 'Cover-Letter-Optimization',
         title: 'Cover Letter Optimization',
         description: "Your Cover Letter shows your motivation and strengths. This is next to the CV one of the most important documents for recruiters.",
@@ -74,6 +76,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         img: coverLetter
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-linkedin/payment",
         slug: 'LinkedIn-Optimization',
         title: 'LinkedIn Optimization',
         description: "With an optimized LinkedIn Profile you don't even have to apply for jobs. Recruiters will contact You for jobs.",
@@ -87,6 +90,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         img: linkedinOpt
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-job-search-strategy/payment",
         slug: 'Job-Search-Strategy',
         title: 'Job Search Strategy',
         description: "With our Job Search Strategy you will focus on your strengths and know exactly where to find the right jobs for you",
@@ -100,6 +104,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         img: jobSearchStrategy
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-job-interview/payment",
         slug: 'Job-Interview-Preparation',
         title: 'Job Interview Preparation',
         description: "When you know how to convince in job interviews and present yourself with all your strengths you will be unstoppable",
@@ -141,6 +146,7 @@ export default function DreamJobSection() {
             <CardsWrapper>
                 {mockupDreamJobCard.map((c: IDramJobCardProps, i) => (
                     <DreamJobCard 
+                        url={c.url}
                         slug={c.slug}
                         title={c.title} 
                         description={c.description} 

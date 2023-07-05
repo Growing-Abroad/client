@@ -60,14 +60,14 @@ export default function DiscoverGA({
             >
               <>
                 We help <b>skilled foreigners</b> from all over the world secure
-                and land their <b>dream job in Germany and Europe.</b>
+                and land their <b>dream job in Germany and Europe. <br /> <br /> </b>
                 As Career experts we will be your mentor, career advisor, coach,
                 and motivator, helping you to navigate the complex job market in
                 Germany and Europe. Whether you need help with{" "}
                 <b>building a CV</b> on European standards, a{" "}
                 <b>cover letter</b> or getting confidence and{" "}
                 <b>convincing the recruiters</b> in the job interview, we're
-                here to help. We understand that moving to a new country can be
+                here to help. <br /><br />We understand that moving to a new country can be
                 overwhelming, which is why we're here to{" "}
                 <b>provide the support and guidance</b> you need to make a
                 successful career transition.

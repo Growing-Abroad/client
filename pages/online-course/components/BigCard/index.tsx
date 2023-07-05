@@ -6,10 +6,12 @@ import discount from "@/../public/assets/discount.svg";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheckBlue } from "@/components/Icons";
 import { useEffect, useState } from 'react';
+import { useRouter as useNextRouter } from "next/router"
 
 export function BigCard() {
   const { isMobile } = useAppContext();
   const [isIos, setIsIos] = useState<boolean>(false)
+  const router = useNextRouter()
 
   useEffect(() => {
     const userAgent = window.navigator.userAgent;
@@ -74,8 +76,7 @@ export function BigCard() {
           <span style={{ color: "#4A9AFD" }}>Germany or Europe</span>
         </h2>
         <p className="discount">
-          Instead Of 
-          {/* <span>1360 €</span> Only */}
+          Instead Of <span>1360 €</span> Only
         </p>
         <S.PriceSpan>397 €</S.PriceSpan>
         <div>
@@ -118,7 +119,7 @@ export function BigCard() {
             </p>
           </S.CardText>
         </div>
-        <S.StdButtonCustom>
+        <S.StdButtonCustom onClick={() => router.push("/s/growingabroad/land-your-dream-job/payment")}>
           Get Access Now
         </S.StdButtonCustom>
       </S.BigCardWrapper>

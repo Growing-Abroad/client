@@ -8,6 +8,7 @@ import checkIcon from '@assets/icons/check-icon.svg';
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import Link from "next/link";
 
 const { sizes: { globalHorizontalPadding, mediaQuery}} = variables;
 const { colors: {blue700} } = theme; 
@@ -139,7 +140,8 @@ const ImgWrapper = styled.div`
 `
 
 export interface IDramJobCardProps {
-    slug: string
+    url: string,
+    slug: string,
     title: string,
     description: string,
     info: string[],
@@ -150,7 +152,7 @@ export interface IDramJobCardProps {
 
 }
 
-export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes, slug}: IDramJobCardProps) {
+export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes, slug, url}: IDramJobCardProps) {
     const {isMobile} = useAppContext();
 
     useEffect(() => {
@@ -193,7 +195,9 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                         ))}
                     </ul>
                     {!isMobile && <div className="price">
-                        <StdButton>Book Now</StdButton>
+                        <Link href={url} style={{textDecoration: "none"}}>
+                            <StdButton>Book Now</StdButton>
+                        </Link>
                         <span style={{textDecoration: 'line-through'}}>{deprecatedPrice}</span>
                         <span>{actualPrice}</span>
                     </div>}
@@ -204,7 +208,9 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                     {isMobile && <div className="price price-mobile">
                         <span>{actualPrice}</span>
                         <span style={{textDecoration: 'line-through'}}>{deprecatedPrice}</span>
-                        <StdButton>Book Now</StdButton>
+                        <Link href={url} style={{textDecoration: "none"}}>
+                            <StdButton>Book Now</StdButton>
+                        </Link>
                     </div>}
                     <Image src={img} alt="cv-optimization" style={isMobile ? {height: '250px', width: '223px'} : {height: '100%'}} />
                 </ImgWrapper>

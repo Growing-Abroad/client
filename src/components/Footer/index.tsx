@@ -11,6 +11,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import wave from "../../../public/assets/wave-desktop.svg";
 import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
+import Link from "next/link";
 
 export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
   const route = useRouter();
@@ -83,36 +84,46 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                   <S.FooterLinks>
                     <h3>Social media</h3>
                     <S.SocialMedia>
-                      <Image
-                        src={InstagramIcon}
-                        alt="instagram icon"
-                        height={26}
-                        width={26}
-                      />
-                      <Image
-                        src={TikTokIcon}
-                        alt="tiktok icon"
-                        height={26}
-                        width={26}
-                      />
-                      <Image
-                        src={YoutubeIcon}
-                        alt="youtube icon"
-                        height={26}
-                        width={26}
-                      />
-                      <Image
-                        src={discordLogoIcon}
-                        alt="discord icon"
-                        height={26}
-                        width={26}
-                      />
-                      <Image
-                        src={LinkedInIcon}
-                        alt="linkedin icon"
-                        height={26}
-                        width={26}
-                      />
+                      <Link target="_blank" href="https://www.instagram.com/growing.abroad/" >
+                        <Image
+                          src={InstagramIcon}
+                          alt="instagram icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.tiktok.com/@growing.abroad" >
+                        <Image
+                          src={TikTokIcon}
+                          alt="tiktok icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ" >
+                        <Image
+                          src={YoutubeIcon}
+                          alt="youtube icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://discord.com/invite/5kGd44eA" >
+                        <Image
+                          src={discordLogoIcon}
+                          alt="discord icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.linkedin.com/company/growing.abroad/"> 
+                        <Image
+                          src={LinkedInIcon}
+                          alt="linkedin icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
                     </S.SocialMedia>
                   </S.FooterLinks>
                 </S.FooterLinksContentWrapper>

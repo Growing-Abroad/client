@@ -64,7 +64,7 @@ export const Container = styled.div<ContainerProps>`
 
     @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
-      height: 75px;
+      height: 65px;
 
       background-color: white;
       padding: 22px 50px;
@@ -100,7 +100,7 @@ export const Logo = styled(Image).attrs({
   width: 150px;
 
   @media (min-width: ${breakpoints.laptop.max}px) {
-    width: 200px;
+    width: 146px;
     height: auto;
   }
 `;

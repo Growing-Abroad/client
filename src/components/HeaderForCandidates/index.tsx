@@ -25,6 +25,7 @@ import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
 import { useRouter } from "@/hooks/useRouter";
 import { breakpoints } from "utils/constants";
+import { useRouter as useNextRouter } from "next/router"
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -32,6 +33,7 @@ function HeaderForCandidates() {
   const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
     useState(false);
   const [showButtons, setShowButtons] = useState(true);
+  const router = useNextRouter()
 
   const closeMenus = () => {
     setItsDesktopMenuOpen(false)
@@ -131,7 +133,7 @@ function HeaderForCandidates() {
                 <Button onClick={pushTo(EPagesNames.JOBS)}>
                 Talentpool
                 </Button>
-              <UIButton onClick={pushTo(EPagesNames.LOGIN)}>login</UIButton></>)
+              <UIButton onClick={() => router.push("/s/growingabroad/sign_in")}>login</UIButton></>)
               }
               {shouldHaveMobileBehavior && (
                 <>
