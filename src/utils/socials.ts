@@ -56,7 +56,7 @@ export const socials2: ISocial[] = [
   {
     source: OurCommunity,
     name: "Discord",
-    socialLink: "https://google.com/search?q=growing+abroad",
+    socialLink: "https://discord.gg/5kGd44eA",
     followNumber: 0,
     followType: FollowType.OurCommunity,
   },
