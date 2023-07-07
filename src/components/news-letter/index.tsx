@@ -72,16 +72,15 @@ export default function NewsLetter() {
         listId: 6,
       },
     };
-    const response = await signInNewsLetter(newsletterData)
-    console.log(response)
-    console.log("response")
+    const {response} = await signInNewsLetter(newsletterData)
     if (response.ok) {
       const parametros = { params: response.ok };
-
       router.push({
         pathname: '/newsletter-confirmation',
         query: parametros,
-      });
+      },
+        '/newsletter-confirmation',
+      );
     } else {
       //todo
     }
