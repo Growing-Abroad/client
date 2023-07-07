@@ -9,7 +9,6 @@ export const ModalLayout = ({
   onClose,
   dataVideo,
 }: T.OrderModalProps) => {
-  console.log("Modal", { dataVideo });
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
