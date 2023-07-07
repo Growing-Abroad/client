@@ -7,6 +7,7 @@ import useAppContext from "@/hooks/useAppContext";
 import LeftRetangle from "@assets/pages/coaching/left-blue-400.jpg";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter as useNextRouter } from "next/router"
 
 const {
   sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery },
@@ -152,22 +153,11 @@ const PackageCourseContent = styled.div`
     }
   }
 
-  @media (max-width: 450px) {
-    .package-course-details {
-
-      ul {
-        /* gap: 20px;
-        margin: 16px 0; */
-      }
-    }
-  }
 
   @media (max-width: 415px) {
     .package-course-details {
-
       ul {
         gap: 10px;
-        /* margin: 5px 0; */
       }
     }
   }
@@ -286,6 +276,8 @@ const ButtonContainer = styled.div`
 `;
 
 export default function CoachingPackageOnlineCourseSection() {
+  const router = useNextRouter()
+
   const {
     isMobile,
     windowSize: { width },
@@ -347,7 +339,7 @@ export default function CoachingPackageOnlineCourseSection() {
               ))}
             </ul>
             <ButtonContainer>
-              <StdButton>Book Now</StdButton>
+              <StdButton onClick={() => router.push("/s/growingabroad/coaching-package/payment")}>Book Now</StdButton>
             </ButtonContainer>
           </div>
         </Card>
