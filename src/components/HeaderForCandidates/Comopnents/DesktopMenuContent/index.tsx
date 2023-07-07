@@ -60,7 +60,7 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer onClick={pushTo(EPagesNames.JOBS)}>
-              <RSMenuItem>Jobs{"\xa0"}</RSMenuItem>
+              <RSMenuItem>Talent Pool{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
           </LeftSideContent>
@@ -73,10 +73,10 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
               </LSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
-            <MenuItemContainer>
+            {/* <MenuItemContainer>
               <LSMenuItem onClick={pushTo(EPagesNames.BLOG)}>Blog{"\xa0"}</LSMenuItem>
               <AwesomeIcon />
-            </MenuItemContainer>
+            </MenuItemContainer> */}
             <MenuItemContainer>
               <LSMenuItem onClick={pushTo(EPagesNames.FAQ)}>FAQ{"\xa0"}</LSMenuItem>
               <AwesomeIcon />

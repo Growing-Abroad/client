@@ -1,27 +1,12 @@
 import TwoColorTitle from "@components/two-color-title";
-import React, { useCallback, useState } from "react";
-import videoBackground from "@assets/pages/sales/Online-Course-Dream.jpg";
-import Image from "next/image";
-import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
+import React from "react";
 import classes from "./style.module.css";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
 import useAppContext from "@/hooks/useAppContext";
-import VideoComponent from "@/components/VideoComponent";
 import StdButton from "@/components/generics/StdButton/StdButton";
 
 function FollowDreams() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const { isMobile } = useAppContext();
-
-  const handlePlay = useCallback(() => {
-    setIsVideoPlaying(true);
-  }, [setIsVideoPlaying]);
-
-  const handlePause = useCallback(() => {
-    if (isVideoPlaying) {
-      setIsVideoPlaying(false);
-    }
-  }, [isVideoPlaying, setIsVideoPlaying]);
 
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
@@ -45,29 +30,14 @@ function FollowDreams() {
         as="h2"
       />
 
-      <S.ImageContainer className="sales" onClick={handlePause}>
-        {!isVideoPlaying ? (
-          <Image
-            width={804}
-            height={isMobile ?250 : 438}
-            src={videoBackground}
-            alt="uan and manu"
-            className={classes.youtubeImage}
-          ></Image>
-        ) : (
-          <VideoComponent
-            isPlaying={isVideoPlaying}
-            src="assets/videos/header-video.mp4"
-            type="video/mp4"
-            controls
-          />
-        )}
-        {!isVideoPlaying && (
-          <div>
-            <S.Player onClick={handlePlay} src={YoutubeplayButton}></S.Player>
-          </div>
-        )}
-      </S.ImageContainer>
+      <S.UIIframeYoutube 
+      width="560" 
+      height="315" 
+      src="https://www.youtube-nocookie.com/embed/BvRBJ1Hnui0" title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      />
+
+      {/* </S.UIIframeYoutube> */}
 
       <S.Paragraph className="sales">
         <p  className={`${classes.resume} subtitle`}>

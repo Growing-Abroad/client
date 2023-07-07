@@ -15,6 +15,7 @@ import {
   IconButton,
   AwesomeIcon,
   Header,
+  UIButton,
 } from "./styles";
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
@@ -24,6 +25,7 @@ import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
 import { useRouter } from "@/hooks/useRouter";
 import { breakpoints } from "utils/constants";
+import { useRouter as useNextRouter } from "next/router"
 
 function HeaderForCandidates() {
   const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
@@ -31,6 +33,7 @@ function HeaderForCandidates() {
   const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
     useState(false);
   const [showButtons, setShowButtons] = useState(true);
+  const router = useNextRouter()
 
   const closeMenus = () => {
     setItsDesktopMenuOpen(false)
@@ -112,7 +115,7 @@ function HeaderForCandidates() {
       >
         <Container itsOpen={itsMobileMenuOpen}>
           {!shouldHaveMobileBehavior && (
-            <LogoContainer>
+            <LogoContainer className="desktop">
               <Logo
                 src={GrowingAbroadImage.src}
                 onClick={pushTo(EPagesNames.DEFAULT)}
@@ -126,7 +129,11 @@ function HeaderForCandidates() {
                 Online course
               </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
                   Coaching
-                </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button></>)
+                </Button>
+                <Button onClick={pushTo(EPagesNames.JOBS)}>
+                Talentpool
+                </Button>
+              <UIButton onClick={() => router.push("/s/growingabroad/sign_in")}>login</UIButton></>)
               }
               {shouldHaveMobileBehavior && (
                 <>
@@ -135,13 +142,13 @@ function HeaderForCandidates() {
                   </Button>
                   <Button onClick={pushTo(EPagesNames.COACHING)}>
                     Coaching
-                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Jobs</Button>
+                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Talent Pool</Button>
                   <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
                     About Us
                   </Button>
-                  <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
+                  {/* <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
                     Career Blog
-                  </Button>
+                  </Button> */}
                   <Button onClick={pushTo(EPagesNames.FAQ)}>FAQ</Button>
                 </>
               )}
@@ -149,10 +156,10 @@ function HeaderForCandidates() {
             {!shouldHaveMobileBehavior && (
               <IconsContainer>
                 <>
-                  <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
+                  {/* <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
                   <IconButton>
                     <AwesomeIcon icon={faGlobe} size="2xl" />
-                  </IconButton>
+                  </IconButton> */}
                   <Burger
                     open={itsDesktopMenuOpen}
                     handleClick={() =>
@@ -160,7 +167,7 @@ function HeaderForCandidates() {
                     }
                     isForDesktop
                   />
-                  <StdButton
+                  {/* <StdButton
                     style={{
                       width: 195,
                       height: 32,
@@ -183,7 +190,7 @@ function HeaderForCandidates() {
                     }}
                   >
                     For Companies
-                  </StdButton>
+                  </StdButton> */}
                 </>
               </IconsContainer>
             )}

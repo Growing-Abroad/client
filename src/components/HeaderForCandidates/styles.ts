@@ -64,7 +64,7 @@ export const Container = styled.div<ContainerProps>`
 
     @media (min-width: ${breakpoints.tablet.max}px) {
       flex-direction: row;
-      height: 90px;
+      height: 65px;
 
       background-color: white;
       padding: 22px 50px;
@@ -84,6 +84,12 @@ export const LogoContainer = styled.div`
   :hover {
     cursor: pointer;
   }
+  &.desktop {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: flex;
+    }
+  }
 `;
 
 export const Logo = styled(Image).attrs({
@@ -94,7 +100,7 @@ export const Logo = styled(Image).attrs({
   width: 150px;
 
   @media (min-width: ${breakpoints.laptop.max}px) {
-    width: 200px;
+    width: 146px;
     height: auto;
   }
 `;
@@ -195,3 +201,9 @@ export const Icon = styled(Image).attrs({
   alt: "",
   href: "",
 })``;
+
+export const UIButton = styled(Button)`
+  @media screen and (min-width: 768px) {
+      margin-left: 32px;
+  }
+`

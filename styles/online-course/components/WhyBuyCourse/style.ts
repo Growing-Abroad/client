@@ -219,7 +219,7 @@ export const RightContentWhyBuyCourse = styled.div`
   }
 
   @media screen and (min-width: 1191px) {
-    height: 558px;
+    height: 510px;
     gap: unset;
     justify-content: space-between;
   }
@@ -243,7 +243,7 @@ export const TextWhyBuyCourse = styled.p`
   color: ${blue700};
   margin-bottom: 0;
   @media screen and (min-width: 64rem) {
-    font-size: 1.375rem;
+    font-size: 17px;
   }
 `;
 

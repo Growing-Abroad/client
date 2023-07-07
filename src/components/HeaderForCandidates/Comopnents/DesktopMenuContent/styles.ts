@@ -91,7 +91,12 @@ export const MenuItemContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
+  svg {
+    max-width: 21px;
+    max-height: 24px;
+    width: 21px;
+    height: 24px;
+  }
   :hover {
     color: ${({ theme }) => theme.colors.blue400};
     cursor: pointer;
@@ -105,7 +110,7 @@ export const MenuItemContainer = styled.div`
 export const RSMenuItem = styled.li`
   height: 100%;
   font-family: 'Montserrat';
-  font-size: 72px;
+  font-size: 60px;
   line-height: 1;
   display: flex;
   justify-content: center;
@@ -140,6 +145,7 @@ export const LSMenuItem = styled.li<LiProps>`
   font-family: 'Montserrat';
   font-size: 36px;
   line-height: 1;
+
 
   ${({ isLit, theme }) =>
     isLit &&

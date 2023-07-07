@@ -4,16 +4,17 @@ import {
 } from "../../../../styles/candidates/components/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
-import { successStoriesData } from "@/components/SuccessStoriesSection/mock";
+import { successStoriesData, successStoriesDataCoaching } from "@/components/SuccessStoriesSection/mock";
 import { useState } from "react";
 import { ModalLayout } from "@/components/ModalLayout";
 import useModal, { ModalHook } from "@/hooks/useModal";
 
 interface StoriesPageCandidatesProps {
   hasSubTitle?: boolean
+  pageType?: string
 }
 
-export const StoriesPageCandidates = ({hasSubTitle=true}: StoriesPageCandidatesProps) => {
+export const StoriesPageCandidates = ({hasSubTitle=true, pageType="any"}: StoriesPageCandidatesProps) => {
   const [isModalVisible, handleModal]: ModalHook = useModal();
   const [dataVideo, setDataVideo] = useState();
 
@@ -36,7 +37,7 @@ export const StoriesPageCandidates = ({hasSubTitle=true}: StoriesPageCandidatesP
         
         <OriginalFancyCarousel
           columnGap={8}
-          dataArray={successStoriesData}
+          dataArray={pageType !== "any" ? successStoriesDataCoaching : successStoriesData}
           openModal={handleModal}
           visibleModal={isModalVisible}
           getDataVideo={setDataVideo}

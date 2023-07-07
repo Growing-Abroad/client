@@ -16,4 +16,5 @@ export enum EPagesNames {
   LEGAL_NOTICE = "legal-notice",
   PRIVACY_POLICY = "privacy-policy",
   TERMS = "terms-and-conditions",
+  PRIVACY_APPLICANTS = "privacy-applicants",
 }

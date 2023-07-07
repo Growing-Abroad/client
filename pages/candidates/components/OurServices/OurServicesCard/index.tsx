@@ -11,7 +11,11 @@ export default function OurServicesCard({
 }: IService) {
 
   const handleRedirect = (id: string) => {
-    return id;
+    if(id == "online-course") {
+      location.href = id;
+    }else {
+      location.href = `/coaching#${id}`;
+    }
   };
 
   return (

@@ -18,6 +18,7 @@ import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandi
 import styled from "styled-components";
 import CTAction from "@pages/sales/components/CTAction";
 import FollowDreams from "@pages/sales/components/FollowDream";
+import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -34,6 +35,14 @@ export const OnlineCourseWrapper = styled.div`
   }
 `;
 
+const TwoColorTitleCustom = styled(TwoColorTitle)`
+  width: 350px;
+  max-width: 1039px;
+  @media screen and (min-width: 768px){
+    width: 100%;
+  }
+  
+`
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
@@ -51,7 +60,7 @@ export default function OnlineCourse() {
         <CTAction
           pageName="onlineCourses"
           titleIntl="page.onlineCourse.title"
-          subTitleIntl="page.onlineCourse.subtitle"
+          subTitleIntl=""
           buttonIntl="page.onlineCourse.buttonCallToAction"
         />
         <PageBodyLayout
@@ -59,8 +68,16 @@ export default function OnlineCourse() {
           distanceFromTop={isMobile ? "770px" : "800px"}
           waveType={EWaveType.linear}
         >
+          <TwoColorTitleCustom
+        text1="Build a successful career abroad "
+        text2="with this amazing ONLINE COURSE"
+        fontSize={isMobile ? "36px" : "52px"}
+        hasSpaceBtw
+      />
           <WhyBuyCourse />
-          <Chapter />
+          <VerticalProgressBarCustom />
+
+          {/* <Chapter /> */}
           <FollowDreams />
 
           <BigCard />

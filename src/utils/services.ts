@@ -27,7 +27,7 @@ export interface IService {
 
 export const services: IService[] = [
   {
-    id: "1",
+    id: "Job-Interview-Preparation",
     title: "Job Interview Preparation",
     subtitle: "To rock every Job Interview in Germany",
     image: {
@@ -54,7 +54,7 @@ export const services: IService[] = [
     hasMoreInfo: false,
   },
   {
-    id: "12",
+    id: "online-course",  
     title: "Online <br /> Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
@@ -81,7 +81,7 @@ export const services: IService[] = [
     hasMoreInfo: true,
   },
   {
-    id: "123",
+    id: "CV-Optimization",
     title: "CV <br /> Optimization",
     subtitle: "To have a CV in german standards",
     image: {
@@ -108,7 +108,7 @@ export const services: IService[] = [
     hasMoreInfo: false,
   },
   {
-    id: "1234",
+    id: "Cover-Letter-Optimization",
     title: "Cover Letter Optimization",
     subtitle: "To have a Cover letter in german standards",
     image: {
@@ -135,7 +135,7 @@ export const services: IService[] = [
     hasMoreInfo: false,
   },
   {
-    id: "123456",
+    id: "LinkedIn-Optimization",
     title: "LinkedIn Optimization",
     subtitle: "To get contacted by german recruiters",
     image: {
@@ -162,7 +162,7 @@ export const services: IService[] = [
     hasMoreInfo: true,
   },
   {
-    id: "12345",
+    id: "Job-Search-Strategy",
     title: "Job Search Strategy",
     subtitle: "To find the best jobs in the market",
     image: {
@@ -189,7 +189,7 @@ export const services: IService[] = [
     hasMoreInfo: true,
   },
   {
-    id: "1234567",
+    id: "Coaching-Package",
     title: "Coaching Package",
     subtitle: "To be fully prepared for the german market",
     image: {

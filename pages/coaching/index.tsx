@@ -12,6 +12,7 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.jpg";
 import useAppContext from "@/hooks/useAppContext";
 import PageBodyLayout from "@/components/generics/PageBody";
+import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 
 export default function Coaching() {
   const { windowSize: {width} } = useAppContext();
@@ -58,8 +59,11 @@ export default function Coaching() {
           text1={text1}
           text2={text2}
         />
-        <WhatOurClientsSay />
-        <ReusedFaq />
+        <StoriesPageCandidates  pageType="coaching" hasSubTitle={false} />
+        <div style={{marginTop: 50}} >
+
+          <ReusedFaq pageType="coaching" />
+        </div>
       </PageBodyLayout>
     </>
   );

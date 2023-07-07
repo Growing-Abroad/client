@@ -17,6 +17,13 @@ import { IStyledPageBody } from "@/components/generics/PageBody";
 export default function CoachingHeroSection(props: IStyledPageBody) {
   const { isMobile } = useAppContext();
 
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("CV-Optimization");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <ContainerWrapper
       backgroundImage={isMobile ? CoachingHeroBgMobile.src : CoachingHeroBg.src}
@@ -36,7 +43,7 @@ export default function CoachingHeroSection(props: IStyledPageBody) {
             Let us coach you towards a successful career in Germany
           </Subtitle>
         </TitlesContainer>
-        <StdButton className="coaching-hero-cta">
+        <StdButton className="coaching-hero-cta" onClick={hadleScroll}>
           {isMobile ? "Book Now" : "Book a Coaching Now"}
         </StdButton>
       </HeroTitleWrapper>

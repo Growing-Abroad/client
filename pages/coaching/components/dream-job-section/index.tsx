@@ -48,63 +48,73 @@ const CardsWrapper = styled.div`
 
 const mockupDreamJobCard: IDramJobCardProps[] = [
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-cv/payment",
+        slug: 'CV-Optimization',
         title: 'CV Optimization',
-        description: "Your CV is your Business Card. Without an optimized Resume into German or European standards, you won't be considered.",
+        description: "Your CV is your Business Card. Without an optimized Resume into German standards, you won't even be considered in the process." ,
         info: [
-            'Guideline, Workbook and Videos on how to effectively optimize your CV for the German and European Job market.', 
-            'Personal Feedback rounds on the content strategy to capture your main strengths, key tasks, achievements and impress recruiters.', 
-            'Final corrections to have a perfectly optimized CV (ATS friendly, German & European standards) to get every job interview.'
+            'Video lessons and interactive Workbook with key insights on how to effectively optimize your CV for the German market',
+            'Content strategy to capture your main strengths, key tasks, achievements and impress recruiters and pass ATS systems',
+            'Personal Coaching Call and final corrections to have a perfectly optimized CV to get every job interview'
         ],
-        deprecatedPrice: '260 €',
-        actualPrice: '130 €',
+        deprecatedPrice: '300 €',
+        actualPrice: '147 €',
         img: cvOptimization
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-cover-letter/payment",
+        slug: 'Cover-Letter-Optimization',
         title: 'Cover Letter Optimization',
-        description: "Your Cover Letter shows your motivation and strengths. Next to your resume, this is one of the most important documents for recruiters.",
+        description: "Your Cover Letter shows your motivation and strengths. This is next to the CV one of the most important documents for recruiters.",
         info: [
-            "Guideline, Workbook and Videos on how to effectively optimize your Cover Letter for the German and European Job market.", 
-            "Personal Feedback rounds and insider tips on Storytelling to elevate the content of your Cover Letter and catch recruiter's attention.", 
-            "Final corrections to have a perfectly optimized Cover Letter (ATS friendly, German & European standards) with meaningful and exciting content."    
+            'Video lessons and Workbook on how to effectively optimize your Cover Letter for the German market',
+            'Personal Coaching Call and insider tips on Storytelling to elevate your Cover Letters content and get recruiter’s attention',
+            'Final corrections to have a perfectly optimized Cover Letter to get every job interview with meaningful and exciting content'
         ],
-        deprecatedPrice: '260 €',
-        actualPrice: '130 €',
+        deprecatedPrice: '300 €',
+        actualPrice: '147 €',
         img: coverLetter
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-linkedin/payment",
+        slug: 'LinkedIn-Optimization',
         title: 'LinkedIn Optimization',
-        description: "With an optimized LinkedIn Profile you don’t have to apply for jobs any more. Recruiters will contact you for their open positions.",
+        description: "With an optimized LinkedIn Profile you don't even have to apply for jobs. Recruiters will contact You for jobs.",
         info: [
-            'Guideline and Videos on how to effectively optimize your LinkedIn Profile for the German and European Job market.', 
-            'Personal Feedback rounds and insider tips to elevate your LinkedIn Profile, build a personal brand and get more visualization from recruiters and LinkedIn users.', 
-            'Final corrections to have a perfectly optimized LinkedIn Profile to to get 5 times more job requests and interviews from recruiters.'
+            'Guideline and Workbook on how to effectively optimize your LinkedIn Profile for the German market',
+            'Coaching Call and insider tips to elevate your Profile, build a personal brand and get more visualization from recruiters and LinkedIn users',
+            'Final corrections to have a perfectly optimized LinkedIn Profile to get  5 times more job requests and interviews from recruiters'
         ],
-        deprecatedPrice: '220 €',
-        actualPrice: '110 €',
+        deprecatedPrice: '300 €',
+        actualPrice: '147 €',
         img: linkedinOpt
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-job-search-strategy/payment",
+        slug: 'Job-Search-Strategy',
         title: 'Job Search Strategy',
-        description: "With our Job Search Strategy you will focus on your strengths and skilly and know exactly where to find the right jobs for you.",
+        description: "With our Job Search Strategy you will focus on your strengths and know exactly where to find the right jobs for you",
         info: [
-            'Guideline and Workbook on how to effectively search for jobs in the German Job market.', 
-            'Individual Coaching Session to develop your individual Job Search Strategy based on your strenghts and goals.', 
+            'Video lessons and interactive Workbook on how to effectively search for jobs on the German market',
+            'Personal Coaching Call to develop your individual Job Search Strategy based on your strengths, background and goals',
             'Templates with the most used Job Platforms, Companies which hire English speakers and your personal Application tracker'
         ],
-        deprecatedPrice: '220 €',
-        actualPrice: '97 €',
+        deprecatedPrice: '300 €',
+        actualPrice: '147 €',
         img: jobSearchStrategy
     },
     {
+        url: "https://growingabroad.de/s/growingabroad/coaching-job-interview/payment",
+        slug: 'Job-Interview-Preparation',
         title: 'Job Interview Preparation',
-        description: "The most important part is the job interview. When you know how to convince German and European recruiters and present yourself with all your strengths you will be unstoppable.",
+        description: "When you know how to convince in job interviews and present yourself with all your strengths you will be unstoppable",
         info: [
-            'Guideline, Workbook and Videos on how to effectively prepare for your job interview.', 
-            'Individual Coaching Session with Mock up interview and Video Analysis to improve your overall appearance.', 
-            'Templates with the most asked interview questions and how to answer them.'
+            'Video lessons and interactive Workbook to learn step by step how to convince in job interviews',
+            'Personal Coaching Call with individual tips on your performance, Mock interview and Video analysis ',
+            'Learn how to pitch yourself and how to use Storytelling to elevate your answers and impress hiring managers'
         ],
-        deprecatedPrice: '400 €',
-        actualPrice: '100 €',
+        deprecatedPrice: '500 €',
+        actualPrice: '247 €',
         img: jobInterviewPrep
     }
 ]
@@ -136,6 +146,8 @@ export default function DreamJobSection() {
             <CardsWrapper>
                 {mockupDreamJobCard.map((c: IDramJobCardProps, i) => (
                     <DreamJobCard 
+                        url={c.url}
+                        slug={c.slug}
                         title={c.title} 
                         description={c.description} 
                         info={c.info} 

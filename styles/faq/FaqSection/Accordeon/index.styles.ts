@@ -45,6 +45,12 @@ export const AccordeonWrapper = styled.div<AccordeonWrapperProps>`
     padding:22px;
     gap:10px;
   }
+
+  svg.svg-inline--fa.fa-chevron-down.fa-lg.open,
+  svg.svg-inline--fa.fa-chevron-left.fa-lg.open {
+    width: 20px !important;
+    height: 20px !important;
+  }
 `
 export const AccordeonHeader = styled.div<AccordeonWrapperProps>`
   display: flex;

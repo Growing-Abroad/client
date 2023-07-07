@@ -83,7 +83,7 @@ export const DiscoverReadMoreWrapper = styled.div`
       height: 461px;
       padding: 25px;
       &.cadidates {
-        height: 100%;
+        height: 461px;
       }
       .discover-text {
         margin-bottom: 0 !important;

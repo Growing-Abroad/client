@@ -14,6 +14,7 @@ export const ContainerWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 120px;
 `;
 
 export const Container = styled.section`
@@ -61,5 +62,8 @@ export const CardsWrapper = styled.div`
   @media (max-width: ${variables.sizes.mediaQuery}) {
     column-gap: 16px;
     row-gap: 30px
+  }
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
   }
 `;

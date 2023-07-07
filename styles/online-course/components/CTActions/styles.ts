@@ -82,7 +82,7 @@ export const BackgroudCTA = styled.section<Pick<BackgroundCTAProps, "pageName">>
     ${({ pageName }) =>
     pageName !== "sales" &&
     css`
-      padding-top: 90px;
+      padding-top: 65px;
     `};
   }
 

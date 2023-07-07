@@ -37,7 +37,7 @@ export const DataPrivacyContent = styled.div`
     padding-inline: ${globalHorizontalPaddingMobile};
     
   }
-
+ 
   .link-to {
     text-decoration: underline;
     color: ${blue700};
@@ -67,6 +67,7 @@ export const DataPrivacyTitle2 = styled.h2`
   line-height: 1.875rem;
   color: ${blue700};
   margin-top: 30px;
+  margin-bottom: 25px;
 
   @media (max-width: ${mediaQuery}) {
     font-size: 1.25rem;
@@ -80,6 +81,35 @@ export const DataPrivacyParagraph = styled.div`
   line-height: 24px;
   color: ${blue700};
   margin: 0;
+  a {
+    color: #05335B;
+    font-size: 14px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 24px;
+  }
+  h3 {
+    color: #05335B;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0 0 0 26px;
+    li {
+      list-style: initial;
+    }
+  }
 `
 
 
@@ -98,9 +128,6 @@ export const BoldText = styled.b`
 
 export const Ul = styled.ul`
   list-style-type: disc;
-  &.coaching li {
-    list-style: none;
-  }
   
   li {
     display: list-item;
@@ -113,4 +140,16 @@ export const Ol = styled.ol`
     display: list-item;
     list-style: lower-roman;
   }
+`
+
+export const Subtitle  = styled.p`
+  margin: 0 0 47px;
+  padding: 0;
+  color: #05335B;
+  font-size: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.3px;
 `

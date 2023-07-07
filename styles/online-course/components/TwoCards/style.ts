@@ -84,7 +84,7 @@ export const ContentTwoCards = styled.div`
 export const TwoCardsWrapper = styled.div`
   width: 520px;
   height: auto;
-  padding-bottom: 29px;
+  padding-bottom: 40px;
   gap: 10px;
   display: flex;
   flex-direction: column;
@@ -94,7 +94,7 @@ export const TwoCardsWrapper = styled.div`
   border-radius: 10px;
   transition: 0.3s ease-in-out;
   margin: 0;
-
+  min-height: 627px;
   &:hover {
     transform: scale(1.05);
   }
