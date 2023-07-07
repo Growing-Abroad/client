@@ -16,6 +16,7 @@ import {
   TitleNewsLetter,
   FlexContainer,
   FlexContainerCheckbox,
+  SuccessMsg,
 } from "./style";
 import StdError from "../generics/StdError";
 
@@ -184,9 +185,10 @@ export default function NewsLetter() {
             </NewsLetterForm>
           </FormProvider>
         ) : (
-          <h3>You will receive an email shortly to <span>CONFIRM YOUR RESGISTRATION</span>
-            if you don´t find any mail, then please also check your Span Folder
-          </h3>
+          <SuccessMsg>
+            You will receive an email shortly to <span>CONFIRM YOUR RESGISTRATION</span>. <br />
+            If you don’t find any mail, then please also check your Spam Folder.
+          </SuccessMsg>
         )}
       </NewsLetterContainer>
     </>
