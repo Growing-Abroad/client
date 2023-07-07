@@ -15,15 +15,16 @@ import Image from "next/image";
 import imgUpload from "@/../public/assets/pages/jobs/growing.png";
 import StdError from "@/components/generics/StdError";
 import uploadIcon from "@assets/pages/jobs/icon-upload.svg";
+import newApplication from "@/services/applications/applications.service";
 
-interface FormFields {
-  title: string;
+export interface IFormFields {
+  pronoum: string;
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  specializationInput: Array<string>;
-  declaration_of_consent: boolean;
+  areasOfExpertise: Array<string>;
+  declarationOfConsent: boolean;
   newsletter: string;
   file: FileList;
   otherFile: FileList;
@@ -95,14 +96,14 @@ export default function UploadCvSection() {
   const phoneRef = useRef(null);
 
   const formDefaultValues = {
-    title: "",
+    pronoum: "",
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
   };
 
-  const methods = useForm<FormFields>({
+  const methods = useForm<IFormFields>({
     mode: "onBlur",
     reValidateMode: "onChange",
     defaultValues: formDefaultValues,
@@ -119,8 +120,22 @@ export default function UploadCvSection() {
     event.preventDefault();
   };
 
-  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+  const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
     console.log("data12", data);
+    /**
+     *  pronoum: string;
+        firstName: string;
+        lastName: string;
+        email: string;
+        phone: string;
+        areasOfExpertise: Array<string>;
+        declarationOfConsent: boolean;
+        newsletter: string;
+        file: FileList;
+        otherFile: FileList;
+     */
+      const response = await newApplication(data);
+      console.log({response})
   };
 
   const handleSanitaze = ({ number, countryData }: IPhone) => {
@@ -172,17 +187,17 @@ export default function UploadCvSection() {
             <S.SelectContainer>
               <StdInput
                 label="Title"
-                name="title"
+                name="pronoum"
                 required={true}
                 errorMessage={
-                  errors.title?.type === "required"
+                  errors.pronoum?.type === "required"
                     ? "Select how would you like to be addressed"
                     : ""
                 }
               >
                 <S.UISelect
                   placeholder="No specification"
-                  {...register("title", { required: true })}
+                  {...register("pronoum", { required: true })}
                 >
                   <S.UIOption value="" defaultChecked>
                     No specification
@@ -272,14 +287,14 @@ export default function UploadCvSection() {
                 <S.SpecializationsContent key={idx}>
                   <S.UIInputCheckbox
                     type="checkbox"
-                    {...register("specializationInput", { required: true })}
+                    {...register("areasOfExpertise", { required: true })}
                     value={item}
                   />
                   {item}
                 </S.SpecializationsContent>
               ))}
               <StdError>
-                {errors.specializationInput?.type === "required"
+                {errors.areasOfExpertise?.type === "required"
                   ? "Please choose your specialization"
                   : ""}
               </StdError>
@@ -390,10 +405,10 @@ export default function UploadCvSection() {
 
             <StdInput
               label="Data protection statement"
-              name="declaration_of_consent"
+              name="declarationOfConsent"
               required={true}
               errorMessage={
-                errors.declaration_of_consent?.type === "required"
+                errors.declarationOfConsent?.type === "required"
                   ? "This is a required field. Please fill in the required information."
                   : ""
               }
@@ -401,7 +416,7 @@ export default function UploadCvSection() {
               <S.PrivacyContent>
                 <S.UIInputCheckbox
                   type="checkbox"
-                  {...register("declaration_of_consent", { required: true })}
+                  {...register("declarationOfConsent", { required: true })}
                 />
                 <S.PrivacyText>
                   I agree to the{" "}
