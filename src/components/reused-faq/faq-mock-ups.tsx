@@ -167,10 +167,13 @@ export const FaqCoaching = [
     content: (
       <>
         <Ul className="coaching">
-          <li>After you have booked our coaching service, you will receive an email with all the information regarding the subsequent steps of the process.</li>
-          <li>If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once your account is created, you will be able to access coaching videos, the workbook, and coaching tasks.</li>
-          <li>Upon watching all the videos and completing the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a suitable date and time for your personal coaching session.</li>
-          <li>During this 60-minute personal coaching call, we will conduct a mock interview with you, record it on video, and analyze your appearance and performance. You will receive individual feedback and tips on how to excel in every job interview and increase your chances of securing the desired job.</li>
+          <li>1. After you have booked our coaching service, you will receive an email with all the information regarding the subsequent steps of the process.</li>
+            <br />
+            <li>2. If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once your account is created, you will be able to access coaching videos, the workbook, and coaching tasks.</li>
+            <br />
+            <li>3. Upon watching all the videos and completing the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a suitable date and time for your personal coaching session.</li>
+            <br />
+            <li>4. During this 60-minute personal coaching call, we will conduct a mock interview with you, record it on video, and analyze your appearance and performance. You will receive individual feedback and tips on how to excel in every job interview and increase your chances of securing the desired job.</li>
         </Ul>
       </>
       ),

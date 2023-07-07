@@ -2,7 +2,6 @@ import React, { ReactElement } from "react";
 import { PageLayout } from "@/components";
 import CTAction from "./components/CTAction";
 import WhyBuyCourse from "./components/WhyBuyCourse";
-import { Chapter } from "@/components/Chapter";
 import styled from "styled-components";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
@@ -65,7 +64,6 @@ export default function Sales() {
           <DiscoverGA text1={isMobile ? "Uan & Manu" : "We are Uan & Manu"} />
           <WhatYouGet isSales={true} />
           <VerticalProgressBarCustom />
-          {/* <Chapter /> */}
           <BigCard />
           <StoriesPageCandidates hasSubTitle={false} />
           <TwoCards />
