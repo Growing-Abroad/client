@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Ul } from "styles/data-privacy";
 
 export const OnlineCourseFaqMockUp = [
@@ -42,7 +43,15 @@ export const GeneralFaqMockUp = [
   {
     title: "What is your service?",
     content:
-      "We want to help you get your dream job in Germany or Europe. That's why we have different coaching packages available to guide you along the way. We also have an online course that will lead you through every step you need to take to land your dream job in Germany or Europe.",
+    (
+      <p style={{marginBottom: 0}}>
+         We want to help you get your dream job in Germany or Europe. 
+        That's why we have different <Link style={{color: "#0073cf"}} href="/coaching">coaching packages</Link> available to guide you along the way. 
+        We also have an <Link style={{color: "#0073cf"}} href="/online-course">online course</Link> that will lead you through every step you need to take to land your dream 
+        job in Germany or Europe.
+      </p>
+
+    )
   },
   {
     title: "What are the requirements to get a job in Germany?",
@@ -74,14 +83,16 @@ export const GeneralFaqMockUp = [
     content: (
       <>
         The first thing you need is a job offer from a German company. Without a job offer, you can't get a work visa. So, the first step is to find a job offer. Here are some steps to get a job offer from a German company: <br />
-        <br />
+            <br />
         <Ul>
-          <li>Make your application documents match the European standards.</li>
+          <li>
+            Make your application documents match the European standards.</li>
           <li>Apply for jobs on common job platforms in Germany.</li>
           <li>Impress the hiring managers during job interviews.</li>
         </Ul>
-        We have created an online course just for you. In this course, we will guide you through each step to help you land your dream job in Germany.
-
+        <p style={{marginBottom: 0}}>
+          We have created an <Link style={{color: "#0073cf"}} href="/online-course">online course</Link> just for you. In this course, we will guide you through each step to help you land your dream job in Germany.
+        </p>
       </>
       ),
   },
