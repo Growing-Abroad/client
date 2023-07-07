@@ -160,3 +160,25 @@ export const CheckboxWrapper = styled.label`
     transform: rotate(45deg);
   }
 `;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  input {
+    width: 100%;
+    +span {
+      color: #FFDB5c
+    }
+  }
+
+`
+
+export const FlexContainerCheckbox = styled(FlexContainer)`
+  width: 100%;
+  gap: 10px;
+  .paragraph +span {
+    color: #FFDB5c
+  }
+`

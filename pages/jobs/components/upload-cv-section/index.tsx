@@ -4,7 +4,6 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import IntlTelInput from "react-intl-tel-input";
-import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import * as S from "styles/jobs/components/upload-cv-section/index.styles";
 import useAppContext from "@/hooks/useAppContext";
@@ -107,6 +106,7 @@ export default function UploadCvSection() {
     reValidateMode: "onChange",
     defaultValues: formDefaultValues,
   });
+  
 
   const {
     formState: { errors, isSubmitting },

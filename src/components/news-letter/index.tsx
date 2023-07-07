@@ -1,130 +1,180 @@
-import useAppContext from '@/hooks/useAppContext';
-import signInNewsLetter from '@/services/news-letter/news-letter.service';
+import useAppContext from "@/hooks/useAppContext";
+import signInNewsLetter from "@/services/news-letter/news-letter.service";
 import { Checkbox } from "@mui/material";
-import { FormEvent } from 'react';
-import { useForm } from 'react-hook-form';
+import { FormEvent } from "react";
+import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import { useTheme } from "styled-components";
-import StdButton from '../generics/StdButton/StdButton';
+import { useRouter as useNextRouter } from "next/router"
+import StdButton from "../generics/StdButton/StdButton";
 import {
   InputNewsLetter,
   InputWrapper,
   NewsLetterContainer,
   NewsLetterForm,
   SubscribeWrapper,
-  TitleNewsLetter
-} from './style';
+  TitleNewsLetter,
+  FlexContainer,
+  FlexContainerCheckbox,
+} from "./style";
+import StdError from "../generics/StdError";
 
-export type TNewsLetter = {
+interface INewsLetter {
   name: string;
   email: string;
   consent: boolean;
 }
 
 export default function NewsLetter() {
+  const router = useNextRouter()
+
+  const formDefaultValues = {
+    name: "",
+    email: "",
+    consent: false,
+  };
   const {
-    colors: { white, blue400 },
+    colors: { white },
   } = useTheme();
+  const { isMobile, setLoading } = useAppContext();
+
+  const methods = useForm<INewsLetter>({
+    mode: "onBlur",
+    reValidateMode: "onChange",
+    defaultValues: formDefaultValues,
+  });
+
   const {
-    isMobile, loading, setLoading
-  } = useAppContext();
-  const {
-    register,
+    formState: { errors },
     handleSubmit,
-    formState: { isValid },
-  } = useForm<TNewsLetter>();
+    register,
+  } = methods;
 
   const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked) {
-      e.currentTarget.value = 'false';
+      e.currentTarget.value = "false";
     } else {
-      e.currentTarget.value = 'true';
+      e.currentTarget.value = "true";
     }
   };
 
-  const onSubmit = async (data: TNewsLetter) => {
+  const onSubmit: SubmitHandler<INewsLetter> = async (data) => {
     const { name, email, consent } = data;
-    if (!consent) return;
+
     setLoading(true);
-    console.log(data)
     const newsletterData = {
-      url: 'https://api.growingabroad.de/contact',
+      url: "https://api.growingabroad.de/contact",
       data: {
         user: {
           name,
-          email,  
-          consent
+          email,
+          consent,
         },
-        listId: 6
-      }
+        listId: 6,
+      },
     };
     const response = await signInNewsLetter(newsletterData)
     console.log(response)
-    if(response.ok) {
-      //todo 
-    }else {
-     //todo
+    console.log("response")
+    if (response.ok) {
+      const parametros = { params: response.ok };
+
+      router.push({
+        pathname: '/newsletter-confirmation',
+        query: parametros,
+      });
+    } else {
+      //todo
     }
     setLoading(false);
-  }
+  };
 
   return (
     <>
       <NewsLetterContainer>
         <TitleNewsLetter>Join our Newsletter</TitleNewsLetter>
-        <NewsLetterForm onSubmit={handleSubmit(onSubmit)}>
-          <SubscribeWrapper>
-            <InputWrapper>
-              <InputNewsLetter 
-                {...register('name', {required: true})}
-                placeholder="Enter Your Full Name" 
-              />
-              <InputNewsLetter 
-                placeholder="Enter Your E-mail Adress" 
-                {...register('email', {required: true})}
-              />
-            </InputWrapper>
-            <div
-              style={{
-                gap: `${isMobile ?"8px" :"0px"}`,
-                display: "flex",
-                alignItems: "center",
-                marginTop: 13
-              }}
-            >
-              <Checkbox
-                className="declaration-checkbox"
-                sx={{
-                  "& .MuiSvgIcon-root": isMobile ? { width: 30, height: 30 } : {  width: 24, height:24} ,
-                  color: white,
-                  "&.Mui-checked": {
-                    color: white,
-                  },
+        <FormProvider {...methods}>
+          <NewsLetterForm onSubmit={handleSubmit(onSubmit)}>
+            <SubscribeWrapper>
+              <InputWrapper>
+                <FlexContainer>
+                  <InputNewsLetter 
+                    {...register("name", { required: true })}
+                    placeholder="Enter Your Full Name"
+                  />
+                  <StdError>
+                    {errors.name?.type === "required"
+                      ? "Please type your full name"
+                      : ""}
+                  </StdError>
+                </FlexContainer>
+
+                <FlexContainer>
+                  <InputNewsLetter
+                    placeholder="Enter Your E-mail Adress"
+                    {...register("email", { required: true })}
+                  />
+                  <StdError>
+                    {errors.email?.type === "required"
+                      ? "Please type your E-mail Adress"
+                      : ""}
+                  </StdError>
+                </FlexContainer>
+              </InputWrapper>
+              <div
+                style={{
+                  gap: `${isMobile ? "8px" : "0px"}`,
+                  display: "flex",
+                  alignItems: "flex-start",
                 }}
-                {...register('consent', {required: true})}
-              />
-              <p  className="paragraph" style={{color:"white", fontSize: 13}}>
-                Yes, I would like to sign up for the Growing Abroad Newsletter and I accept the websites Privacy Policy. <br /> Our newsletter subscription is non-binding.*
-              </p>
-            </div>
-            
-          </SubscribeWrapper>
-          <StdButton
-            style={{
-              margin: "0",
-              display:'flex',
-              alignItems: `${isMobile ? "flex-start" : "center"}`,
-              justifyContent:`${isMobile ? "center" : "center"}`,
-              width: `${isMobile ? "112px" : "193px"}`,
-              padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
-              fontSize:`${isMobile ?'14px' : '16px'}`,
-              height:`${isMobile ?'35px' : '54px'}`,
-              textAlign: `${isMobile ? "start" : "center"}`
-            }}
-            type="submit"
-          >
-            Subscribe
-          </StdButton>
-        </NewsLetterForm>
+              >
+                <Checkbox
+                  className="declaration-checkbox"
+                  sx={{
+                    "& .MuiSvgIcon-root": isMobile
+                      ? { width: 30, height: 30 }
+                      : { width: 24, height: 24 },
+                    color: white,
+                    "&.Mui-checked": {
+                      color: white,
+                    },
+                  }}
+                  {...register("consent", { required: true })}
+                />
+                <FlexContainerCheckbox>
+                  <p
+                    className="paragraph"
+                    style={{ color: "white", fontSize: 13 }}
+                  >
+                    Yes, I would like to sign up for the Growing Abroad
+                    Newsletter and I accept the websites Privacy Policy. <br />{" "}
+                    Our newsletter subscription is non-binding.*
+                  </p>
+                  <StdError>
+                    {errors.consent?.type === "required"
+                      ? "this field is required"
+                      : ""}
+                  </StdError>
+                </FlexContainerCheckbox>
+              </div>
+            </SubscribeWrapper>
+            <StdButton
+              style={{
+                margin: "0",
+                display: "flex",
+                alignItems: `${isMobile ? "flex-start" : "center"}`,
+                justifyContent: `${isMobile ? "center" : "center"}`,
+                width: `${isMobile ? "112px" : "193px"}`,
+                padding: `${isMobile ? "8px 15px" : "20px 40px"}`,
+                fontSize: `${isMobile ? "14px" : "16px"}`,
+                height: `${isMobile ? "35px" : "54px"}`,
+                textAlign: `${isMobile ? "start" : "center"}`,
+              }}
+              type="submit"
+            >
+              Subscribe
+            </StdButton>
+          </NewsLetterForm>
+        </FormProvider>
       </NewsLetterContainer>
     </>
   );
