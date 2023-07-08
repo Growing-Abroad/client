@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ComponentPropsWithoutRef } from "react";
-import { breakpoints } from "utils/constants";
+import { breakpoints } from "@/utils/constants";
 
 const localMobileSize = "1160px";
 

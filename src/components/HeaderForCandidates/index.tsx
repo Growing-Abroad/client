@@ -24,7 +24,7 @@ import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import { Burger } from "./Comopnents/Burguer";
 import { StyledBurgerContainer } from "./Comopnents/Burguer/styles";
 import { useRouter } from "@/hooks/useRouter";
-import { breakpoints } from "utils/constants";
+import { breakpoints } from "@/utils/constants";
 import { useRouter as useNextRouter } from "next/router"
 
 function HeaderForCandidates() {

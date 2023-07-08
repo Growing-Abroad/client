@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "../../../../styles/about-us/components/ShareValues/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import { Container } from "react-bootstrap";
-import { sharedValues } from "utils/mock/shared_values";
+import { sharedValues } from "@/utils/mock/shared_values";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 
 function ShareValues() {
