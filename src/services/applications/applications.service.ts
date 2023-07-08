@@ -16,7 +16,7 @@ const newApplication = async (data: IFormFields) => {
             otherFile: otherFile64
         };
         const body = JSON.stringify(newData);
-        const response = await axios.post('http://localhost:3001/talentpool', body, {headers});
+        const response = await axios.post('http://api.growingabroad.de/talentpool', body, {headers});
 
         return response
         
