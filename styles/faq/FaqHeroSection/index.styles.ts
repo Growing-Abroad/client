@@ -24,7 +24,7 @@ export const FaqContainerHero = styled.div<IContainerProps>`
   background-position: center center;
 
   position: fixed;
-  top: 90px;
+  top: 65px;
   left: 0;
   z-index: 0;
 

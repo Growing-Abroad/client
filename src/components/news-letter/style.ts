@@ -58,7 +58,6 @@ export const InputNewsLetter = styled(Input)`
     max-height: 32px;
     font-size: 12px;
     padding: 8px 16px;
-
   }
 `;
 
@@ -67,7 +66,7 @@ export const NewsLetterForm = styled.form`
   flex-direction: row;
   gap: 12px;
   width: 100%;
-  
+
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
     align-items: flex-start;
@@ -81,13 +80,12 @@ export const SubscribeWrapper = styled.div`
   justify-content: space-between;
   padding-left: 20px;
 
-  .declaration-checkbox{
-    margin-left:-5px;
+  .declaration-checkbox {
+    margin-left: -5px;
   }
-  .paragraph{
+  .paragraph {
     margin: 0;
     font-size: 16px;
-    
   }
   @media (max-width: ${mediaQuery}) {
     flex-direction: column;
@@ -95,11 +93,10 @@ export const SubscribeWrapper = styled.div`
     align-items: start;
     padding-left: 0px;
 
-    .paragraph{
-      font-size:12px;
+    .paragraph {
+      font-size: 12px;
     }
   }
-  
 `;
 
 export const CheckboxWrapper = styled.label`
@@ -158,5 +155,37 @@ export const CheckboxWrapper = styled.label`
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  input {
+    width: 100%;
+    + span {
+      color: #ffdb5c;
+    }
+  }
+`;
+
+export const FlexContainerCheckbox = styled(FlexContainer)`
+  width: 100%;
+  gap: 10px;
+  .paragraph + span {
+    color: #ffdb5c;
+  }
+`;
+export const SuccessMsg = styled.h3`
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  span {
+    color: #FFDB5C;
   }
 `;

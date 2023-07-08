@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Ul } from "styles/data-privacy";
 
 export const OnlineCourseFaqMockUp = [
@@ -42,7 +43,15 @@ export const GeneralFaqMockUp = [
   {
     title: "What is your service?",
     content:
-      "We want to help you get your dream job in Germany or Europe. That's why we have different coaching packages available to guide you along the way. We also have an online course that will lead you through every step you need to take to land your dream job in Germany or Europe.",
+    (
+      <p style={{marginBottom: 0}}>
+         We want to help you get your dream job in Germany or Europe. 
+        That's why we have different <Link style={{color: "#0073cf"}} href="/coaching">coaching packages</Link> available to guide you along the way. 
+        We also have an <Link style={{color: "#0073cf"}} href="/online-course">online course</Link> that will lead you through every step you need to take to land your dream 
+        job in Germany or Europe.
+      </p>
+
+    )
   },
   {
     title: "What are the requirements to get a job in Germany?",
@@ -74,14 +83,16 @@ export const GeneralFaqMockUp = [
     content: (
       <>
         The first thing you need is a job offer from a German company. Without a job offer, you can't get a work visa. So, the first step is to find a job offer. Here are some steps to get a job offer from a German company: <br />
-        <br />
+            <br />
         <Ul>
-          <li>Make your application documents match the European standards.</li>
+          <li>
+            Make your application documents match the European standards.</li>
           <li>Apply for jobs on common job platforms in Germany.</li>
           <li>Impress the hiring managers during job interviews.</li>
         </Ul>
-        We have created an online course just for you. In this course, we will guide you through each step to help you land your dream job in Germany.
-
+        <p style={{marginBottom: 0}}>
+          We have created an <Link style={{color: "#0073cf"}} href="/online-course">online course</Link> just for you. In this course, we will guide you through each step to help you land your dream job in Germany.
+        </p>
       </>
       ),
   },
@@ -167,10 +178,13 @@ export const FaqCoaching = [
     content: (
       <>
         <Ul className="coaching">
-          <li>After you have booked our coaching service, you will receive an email with all the information regarding the subsequent steps of the process.</li>
-          <li>If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once your account is created, you will be able to access coaching videos, the workbook, and coaching tasks.</li>
-          <li>Upon watching all the videos and completing the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a suitable date and time for your personal coaching session.</li>
-          <li>During this 60-minute personal coaching call, we will conduct a mock interview with you, record it on video, and analyze your appearance and performance. You will receive individual feedback and tips on how to excel in every job interview and increase your chances of securing the desired job.</li>
+          <li>1. After you have booked our coaching service, you will receive an email with all the information regarding the subsequent steps of the process.</li>
+            <br />
+            <li>2. If you haven't purchased any of our products yet, the first step is to create an account to access our coaching platform hosted by Elopage. Once your account is created, you will be able to access coaching videos, the workbook, and coaching tasks.</li>
+            <br />
+            <li>3. Upon watching all the videos and completing the coaching tasks, it will be time for your personal coaching call. In the coaching platform, you will find a link to our calendar where you can choose a suitable date and time for your personal coaching session.</li>
+            <br />
+            <li>4. During this 60-minute personal coaching call, we will conduct a mock interview with you, record it on video, and analyze your appearance and performance. You will receive individual feedback and tips on how to excel in every job interview and increase your chances of securing the desired job.</li>
         </Ul>
       </>
       ),

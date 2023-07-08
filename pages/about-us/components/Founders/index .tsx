@@ -14,7 +14,7 @@ const Founders = () => {
             <S.Text sideImg="left">
               <S.ImageFounders sideImg="left" height={555} width={756} src={UAN} alt="uan photo"></S.ImageFounders>
                 <span>
-                  <S.Span>UAN</S.Span> grew up in a small village in Brazil where opportunities was very limited, 
+                  <S.Span>UAN</S.Span> grew up in a small village in Brazil where opportunities were very limited, 
                   nevertheless he didn't let that stop him. When he was just 16 years old , he joined Bosch in Brazil 
                   and got to experience the German culture for the first time. With the help of mentors, he learned 
                   English and earned a bachelor in Business Administration.
