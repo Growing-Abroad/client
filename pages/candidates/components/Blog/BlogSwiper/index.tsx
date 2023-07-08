@@ -4,7 +4,7 @@ import { posts, IPost } from "@utils/blog_posts";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
-import useAppContext from "@/hooks/useAppContext";
+import useAppContext from "@hooks/useAppContext";
 import BlogCard from "../BlogCard";
 
 export default function BlogSwiper() {
@@ -12,15 +12,15 @@ export default function BlogSwiper() {
   const {
     windowSize: { width },
   } = useAppContext();
-  const [posts_, setPosts] = useState<IPost[]>();
+  const [posts_, setPosts] = useState<IPost[]>(posts);
 
   const handleSwiperCards = (mobile: number, desktop: number) => {
     return width < 768 ? mobile : desktop;
   };
 
-  useEffect(() => {
-    setPosts(posts);
-  }, []);
+  // useEffect(() => {
+  //   setPosts(posts);
+  // }, []);
 
   return (
     <S.Container>
