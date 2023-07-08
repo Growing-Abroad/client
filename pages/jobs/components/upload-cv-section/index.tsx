@@ -16,6 +16,8 @@ import imgUpload from "@/../public/assets/pages/jobs/growing.png";
 import StdError from "@/components/generics/StdError";
 import uploadIcon from "@assets/pages/jobs/icon-upload.svg";
 import newApplication from "@/services/applications/applications.service";
+import LoadingComponent from "@/components/generics/Loading";
+import { AxiosResponse } from "axios";
 
 export interface IFormFields {
   pronoum: string;
@@ -88,12 +90,12 @@ const titleOptions = [
 ];
 
 export default function UploadCvSection() {
-  const { isMobile } = useAppContext();
+  const { isMobile, loading, setLoading } = useAppContext();
   const [selectedFile, setSelectedFile] = useState<File>();
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
 
-  const phoneRef = useRef(null);
+  const phoneRef = useRef<IntlTelInput | null>(null);
 
   const formDefaultValues = {
     pronoum: "",
@@ -114,6 +116,7 @@ export default function UploadCvSection() {
     handleSubmit,
     register,
     setValue,
+    reset
   } = methods;
 
   const handleDragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
@@ -121,22 +124,27 @@ export default function UploadCvSection() {
   };
 
   const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
-    console.log("data12", data);
-    /**
-     *  pronoum: string;
-        firstName: string;
-        lastName: string;
-        email: string;
-        phone: string;
-        areasOfExpertise: Array<string>;
-        declarationOfConsent: boolean;
-        newsletter: string;
-        file: FileList;
-        otherFile: FileList;
-     */
-      const response = await newApplication(data);
+    console.log("talentpool", data);
+    setLoading(true);
+
+    try {
+      const response: AxiosResponse = await newApplication(data);
       console.log({response})
+      resetStates();
+    } catch (error) {
+      // Handle error
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
+    
+  const resetStates = () => {
+    reset();
+    phoneRef.current?.setNumber('');
+    setSelectedFile(undefined);
+    setSelectedFileOptional(undefined);
+  }
 
   const handleSanitaze = ({ number, countryData }: IPhone) => {
     const phoneNumber = number.dialCode + countryData;
@@ -145,6 +153,7 @@ export default function UploadCvSection() {
 
   return (
     <>
+      {loading && <LoadingComponent/>}
       <S.UploadCvWrapper>
         <S.InfoTitle
           text1="Create a Profile &"
@@ -390,7 +399,6 @@ export default function UploadCvSection() {
                 <S.UIInputCheckbox
                   type="checkbox"
                   {...register("newsletter", { required: false })}
-                  value="Yes, I want to get updates and news of Growing Abroad and I accept the websites Privacy Policy. Our newsletter subscription is non-binding."
                 />
                 <S.PrivacyText>
                   Yes, I want to get updates and news of Growing Abroad and I
