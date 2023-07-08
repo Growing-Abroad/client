@@ -1,140 +1,159 @@
-import {
-  FooterContentWrapper,
-  FooterLinks,
-  FooterLinksContentWrapper,
-  StyledFooter,
-  SocialMedia,
-  FooterBottomWrapper,
-  FooterBottomRight,
-  FooterBottomContainer,
-  Links,
-} from './style';
-import LinkedInIcon from '@/../public/assets/icons/linkedin.webp';
-import FacebookIcon from '@/../public/assets/icons/facebook.webp';
-import InstagramIcon from '@/../public/assets/icons/instagram.webp';
-import TikTokIcon from '@/../public/assets/icons/tiktok.webp';
-import YoutubeIcon from '@/../public/assets/icons/youtube-icon.svg';
-import Image from 'next/image';
-import NewsLetter from '../news-letter';
-import useAppContext from '@/hooks/useAppContext';
-import StdButton from '../generics/StdButton/StdButton';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import wave from "../../../public/assets/wave-desktop.svg"
+import * as S from "./style";
+import LinkedInIcon from "@/../public/assets/icons/linkedin.jpg";
+import discordLogoIcon from "@/../public/assets/icons/discord-logo.jpg";
+import InstagramIcon from "@/../public/assets/icons/instagram.jpg";
+import TikTokIcon from "@/../public/assets/icons/tiktok.jpg";
+import YoutubeIcon from "@/../public/assets/icons/youtube-icon.svg";
+import Image from "next/image";
+import NewsLetter from "../news-letter";
+import useAppContext from "@/hooks/useAppContext";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import wave from "../../../public/assets/wave-desktop.svg";
+import { useRouter } from "next/router";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
+import Link from "next/link";
 
-export default function Footer() {
-  const {
-    windowSize: { width },
-    isMobile,
-  } = useAppContext();
+export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
+  const route = useRouter();
+
+  const { isMobile } = useAppContext();
+
+  const onGoToNextPage = (page: EPagesNames) => route.push(`/${page}`);
+
+  const handleGoToFaq = () => onGoToNextPage(EPagesNames.FAQ);
+
+  const handleGoToTalentPool = () => onGoToNextPage(EPagesNames.JOBS);
+
+  const handleGoToAboutUs = () => onGoToNextPage(EPagesNames.ABOUT_US);
+
+  const handleGoToContactUs = () => onGoToNextPage(EPagesNames.CONTACT_US);
+
+  const handleGoToOnlineCourse = () => onGoToNextPage(EPagesNames.ONLINE_COURSE);
+
+  const handleGoToCoaching = () => onGoToNextPage(EPagesNames.COACHING);
+
+  const handleGoToLegal = () => onGoToNextPage(EPagesNames.LEGAL_NOTICE);
+
+  const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
+
+  const handleGoToPrivacyApplicants = () => onGoToNextPage(EPagesNames.PRIVACY_APPLICANTS);
 
   return (
-    <>
-      {
-        isMobile && <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -40 1440 320"
-            style={{ marginBottom: '-10px' }}
-          >
-            <path
-              fill="#0073CF"
-              fillOpacity="10"
-              d="M0,128L48,122.7C96,117,192,107,288,138.7C384,171,480,245,576,245.3C672,245,768,171,864,117.3C960,64,1056,32,1152,37.3C1248,43,1344,85,1392,106.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </svg>
-      }
-      <StyledFooter style={{paddingTop: isMobile? 0 : 130}}>
-        {!isMobile && (
-          <div  style={{ backgroundImage: `url(${wave.src})`}} className='wave' >
-          </div>
-        )}
-        <FooterContentWrapper>
-          <NewsLetter />
-          <FooterLinksContentWrapper>
-            <FooterLinks width="400px" alignItems="start">
-              <h3>Contact us</h3>
-              <p>
-                Also check out the section{' '}
-                <span>"Frequently asked questions"</span> and{' '}
-                <span>"Career Blogs"</span>. Maybe your question is already
-                answered there.
-              </p>
-              <StdButton
-                style={{
-                  display: 'flex',
-                  alignItems: `${isMobile ?'center' :''}`,
-                  justifyContent: `${isMobile ?'center' :''}`,
-                  width: `${isMobile ?'143px' : '210px'}`,
-                  padding: `${isMobile ? '8px 15px' : '20px 40px'}`,
-                  fontSize: `${isMobile ?'12px' : '16px'}`,
-                }}
-                icon={faEnvelope}
-              >
-                Contact Us
-              </StdButton>
-            </FooterLinks>
-            <FooterLinks>
-              {' '}
-              <h3>Quick links</h3>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Jobs</li>
-              <li>Career Blog</li>
-            </FooterLinks>
-            <FooterLinks>
-              <h3>Useful links</h3>
-              <li>Legal notice</li>
-              <li>Privacy Policy</li>
-              <li>Terms and Conditions</li>
-              <li>FAQ</li>
-            </FooterLinks>
-            <FooterLinks>
-              <h3>Social media</h3>
-              <SocialMedia>
-                <Image
-                  src={InstagramIcon}
-                  alt="instagram icon"
-                  height={26}
-                  width={26}
-                />
-                <Image
-                  src={TikTokIcon}
-                  alt="tiktok icon"
-                  height={26}
-                  width={26}
-                />
-                <Image
-                  src={YoutubeIcon}
-                  alt="youtube icon"
-                  height={26}
-                  width={26}
-                />
-                <Image
-                  src={FacebookIcon}
-                  alt="facebook icon"
-                  height={26}
-                  width={26}
-                />
-                <Image
-                  src={LinkedInIcon}
-                  alt="linkedin icon"
-                  height={26}
-                  width={26}
-                />
-              </SocialMedia>
-            </FooterLinks>
-          </FooterLinksContentWrapper>
-        </FooterContentWrapper>
+    <S.FooterContainer usePageBody={usePageBody}>
+        {!hideBlueSection
+          &&
+          <>
+            <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
+              <S.ImgBG
+                style={{ backgroundImage: `url(${wave.src})` }}
+                className="wave wave-desktop"
+              ></S.ImgBG>
+              <S.FooterContentWrapper>
+                <NewsLetter />
+                <S.FooterLinksContentWrapper>
+                  <S.FooterLinks width="400px" alignItems="start">
+                    <h3>Contact us</h3>
+                    <p>
+                      Also check out the section{" "}
+                      <span onClick={handleGoToFaq}>
+                        "Frequently asked questions"
+                      </span>{" "}
+                      Maybe your question is already answered there.
+                    </p>
+                    <S.StdButtonCustom onClick={handleGoToContactUs}
+                      icon={faEnvelope}
+                    >
+                      Contact Us
+                    </S.StdButtonCustom>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
+                    {" "}
+                    <h3>Quick links</h3>
+                    <li onClick={handleGoToAboutUs}>About Us</li>
+                    <li onClick={handleGoToOnlineCourse}>Online Course</li>
+                    <li onClick={handleGoToCoaching}>Coaching</li>
+                    <li onClick={handleGoToTalentPool}>Talent Pool</li>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
+                    <h3>Useful links</h3>
+                    <li onClick={handleGoToFaq}>FAQ</li>
+                    <li onClick={handleGoToPrivacy}>Privacy Policy</li>
+                    <li onClick={handleGoToPrivacyApplicants}>Privacy Applicants</li>
+                    <li onClick={handleGoToLegal}>Legal Notice</li>
+                  </S.FooterLinks>
+                  <S.FooterLinks>
+                    <h3>Social media</h3>
+                    <S.SocialMedia>
+                      <Link target="_blank" href="https://www.instagram.com/growing.abroad/" >
+                        <Image
+                          src={InstagramIcon}
+                          alt="instagram icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.tiktok.com/@growing.abroad" >
+                        <Image
+                          src={TikTokIcon}
+                          alt="tiktok icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ" >
+                        <Image
+                          src={YoutubeIcon}
+                          alt="youtube icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://discord.com/invite/5kGd44eA" >
+                        <Image
+                          src={discordLogoIcon}
+                          alt="discord icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                      <Link target="_blank" href="https://www.linkedin.com/company/growing.abroad/"> 
+                        <Image
+                          src={LinkedInIcon}
+                          alt="linkedin icon"
+                          height={26}
+                          width={26}
+                        />
+                      </Link>
+                    </S.SocialMedia>
+                  </S.FooterLinks>
+                </S.FooterLinksContentWrapper>
+              </S.FooterContentWrapper>
+              <S.FooterBottomContainer>
+                <S.FooterBottomWrapper>
+                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
+                  <S.FooterBottomRight>
+                    <S.Links href="/legal-notice">Legal Notice</S.Links>
+                    <S.Links href="/data-privacy">Data Privacy</S.Links>
+                  </S.FooterBottomRight>
+                </S.FooterBottomWrapper>
+              </S.FooterBottomContainer>
+            </S.StyledFooter>
+          </>
+        }
+        {
+          hideBlueSection
+          &&  <S.FooterBottomContainer>
+                <S.FooterBottomWrapper>
+                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
+                  <S.FooterBottomRight>
+                    <S.Links href="/legal-notice">Legal Notice</S.Links>
+                    <S.Links href="/data-privacy">Data Privacy</S.Links>
+                  </S.FooterBottomRight>
+                </S.FooterBottomWrapper>
+              </S.FooterBottomContainer>
+        }
 
-        <FooterBottomContainer>
-          <FooterBottomWrapper>
-            <span> Copyright &copy;&nbsp;2022 Growing Abroad </span>
-            <FooterBottomRight>
-              <Links href="#">Legal Notice</Links>
-              <Links href="#">Data Privacy</Links>
-            </FooterBottomRight>
-          </FooterBottomWrapper>
-        </FooterBottomContainer>
-      </StyledFooter>
-    </>
+
+    </S.FooterContainer>
   );
 }

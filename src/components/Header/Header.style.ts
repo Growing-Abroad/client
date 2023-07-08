@@ -1,15 +1,15 @@
-import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
-import { ComponentPropsWithoutRef } from "react";
-import styled from "styled-components";
+import { variables } from '@styles/global-variables';
+import { theme } from '@styles/theme';
+import { ComponentPropsWithoutRef } from 'react';
+import styled from 'styled-components';
 
 const {
-  colors: { secondaryBlue, primaryBlue },
+  colors: { blue400, blue700 },
 } = theme;
 
 export const StyledHeader = styled.header`
   width: 100%;
-  height: 65px;
+  height: 66px;
   padding: 0 ${variables.sizes.globalHorizontalPadding};
   display: flex;
   justify-content: center;
@@ -49,19 +49,19 @@ export const StyledUl = styled.ul<BurgerProps>`
     font-weight: 500;
     font-size: 1.25rem;
     cursor: pointer;
-    color: ${primaryBlue};
+    color: ${blue700};
   }
 
   a {
     text-decoration: none;
-    color: ${primaryBlue};
+    color: ${blue700};
   }
 
   @media (max-width: ${variables.sizes.mediaQuery}) {
     flex-direction: column;
-    background-color: ${secondaryBlue};
+    background-color: ${blue400};
     position: fixed;
-    transform: ${(props) => (props.open ? "translate(0)" : "translate(100%)")};
+    transform: ${(props) => (props.open ? 'translate(0)' : 'translate(100%)')};
     top: 0;
     right: 0;
     height: 100vh;
@@ -80,7 +80,7 @@ export const BurguerLogo = styled.img<BurgerProps>`
   z-index: 19;
   width: min-content;
   margin-bottom: 24px;
-  display: ${(props) => (props.open ? "inital" : "none")};
+  display: ${(props) => (props.open ? 'inital' : 'none')};
 `;
 
 export const StyledBurger = styled.div<BurgerProps>`
@@ -97,20 +97,20 @@ export const StyledBurger = styled.div<BurgerProps>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${(props) => (props.open ? "#ccc" : "#333")};
+    background-color: ${(props) => (props.open ? '#ccc' : '#333')};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s;
 
     &:nth-child(1) {
-      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     &:nth-child(2) {
-      transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.open ? 'rotate(45deg)' : 'rotate(0)')};
       opacity: ${(props) => (props.open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${(props) => (props.open ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 
@@ -122,6 +122,6 @@ export const StyledBurger = styled.div<BurgerProps>`
   }
 `;
 
-interface BurgerProps extends ComponentPropsWithoutRef<"div"> {
+interface BurgerProps extends ComponentPropsWithoutRef<'div'> {
   open: boolean;
 }

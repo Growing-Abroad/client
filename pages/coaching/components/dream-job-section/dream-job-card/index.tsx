@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import TwoColorTitle from "@/components/two-color-title";
 import styled from "styled-components";
 import { variables } from "@/styles/global-variables";
@@ -7,8 +8,9 @@ import checkIcon from '@assets/icons/check-icon.svg';
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import Link from "next/link";
 
-const { sizes: { globalHorizontalPadding, maxWidthAll, mediaQuery}} = variables;
+const { sizes: { globalHorizontalPadding, mediaQuery}} = variables;
 const { colors: {blue700} } = theme; 
 
 const Service = styled.div`
@@ -18,6 +20,7 @@ const Service = styled.div`
     display: flex;
     justify-content: end;
     gap: 40px;
+    box-shadow: 0px 5px 10px -2px rgba(0,0,0,0.2);
 
     &.reversed {
         flex-direction: row-reverse;
@@ -63,6 +66,7 @@ const ServiceData = styled.div`
                 margin: 0 0 0 32px;
                 font-weight: 400;
                 line-height: 1.25rem;
+                color: ${({theme}) => theme.colors.blue700};
             }
         }
     }
@@ -136,6 +140,8 @@ const ImgWrapper = styled.div`
 `
 
 export interface IDramJobCardProps {
+    url: string,
+    slug: string,
     title: string,
     description: string,
     info: string[],
@@ -146,24 +152,41 @@ export interface IDramJobCardProps {
 
 }
 
-export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes}: IDramJobCardProps) {
+export default function DreamJobCard({title, description, info, deprecatedPrice, actualPrice, img, classes, slug, url}: IDramJobCardProps) {
     const {isMobile} = useAppContext();
+
+    useEffect(() => {
+        const ID = window.location.href.split("#").pop()
+        if(ID) {
+            const sectionElement = document.getElementById(ID);
+            if (sectionElement) {
+              sectionElement.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+      }, []);
 
     return (
         <>
-            <Service className={classes}>
+            <Service className={classes} id={slug}>
                 <ServiceData>
 
-                    <TwoColorTitle text1={title} text2="" as="h3" styles={isMobile ? {fontWeight: '700', fontSize: '2rem', lineHeight: '2.5rem'} : {fontWeight: '700'}} wrapperStyles={{width: isMobile? '100%': 'max-content'}}/>
+                    <TwoColorTitle 
+                        text1={title} text2="" as="h3" 
+                        styles={isMobile 
+                            ? { fontWeight: '700', fontSize: '2rem', lineHeight: '2.5rem' } 
+                            : { fontWeight: '700', fontSize: '2.5rem', lineHeight: '3rem' }
+                        } 
+                        wrapperStyles={{width: isMobile? '100%': 'max-content'}}/>
                    
                     <TwoColorTitle 
                     wrapperStyles={isMobile ? {margin: '32px 0', width: '100%'} :{width: '100%', margin: '20px 0 42px', justifyContent: "left"}} 
-                    styles={isMobile ? {fontSize: '1rem', lineHeight: '1.625rem', marginBottom: '0px'} : {textAlign: 'justify'}} text1={description} text2="" as="h4" 
+                    styles={isMobile ? {fontSize: '1rem', lineHeight: '1.625rem', marginBottom: '0px'} : {textAlign: 'left'}} text1={description} text2="" as="h4" 
                     />
                     
                     <ul className="services-list" >
-                        {info.map((info: string) => (
-                            <li className="list-item">
+                        {info.map((info: string, i) => (
+                            <li className="list-item" key={info+i}>
                                 <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
                                 <StdParagraqh className="paragraqh">
                                     {info}
@@ -172,7 +195,9 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                         ))}
                     </ul>
                     {!isMobile && <div className="price">
-                        <StdButton>Book Now</StdButton>
+                        <Link href={url} style={{textDecoration: "none"}}>
+                            <StdButton>Book Now</StdButton>
+                        </Link>
                         <span style={{textDecoration: 'line-through'}}>{deprecatedPrice}</span>
                         <span>{actualPrice}</span>
                     </div>}
@@ -183,7 +208,9 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                     {isMobile && <div className="price price-mobile">
                         <span>{actualPrice}</span>
                         <span style={{textDecoration: 'line-through'}}>{deprecatedPrice}</span>
-                        <StdButton>Book Now</StdButton>
+                        <Link href={url} style={{textDecoration: "none"}}>
+                            <StdButton>Book Now</StdButton>
+                        </Link>
                     </div>}
                     <Image src={img} alt="cv-optimization" style={isMobile ? {height: '250px', width: '223px'} : {height: '100%'}} />
                 </ImgWrapper>

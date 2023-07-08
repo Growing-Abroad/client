@@ -1,50 +1,66 @@
+.sectionContainer {
+  margin-bottom: 93px;
+}
+
 .section {
-    box-shadow: 0px 10px 10px #efefef;
-    margin-top: 93px;
+  box-shadow: 0px 10px 10px #efefef;
+  margin-top: 93px;
 }
 
 .missionBg {
-    height: 748px;
-    background-position: right;
-    background-size: cover;
-    position: relative;
+  height: 700px;
+  background-position: left top;
+  background-size: cover;
+  position: relative;
 }
 
 .missionContainer {
-    position: absolute;
-    justify-content:start;
-    align-items: start;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    padding: 109px 0 138px 0;
-    background: #0073CFEB;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #0073cfeb;
+  height: 45%;
 }
 
+@media screen and (max-width: 500px) {
+  .missionContainer {
+    height: 55%;
+  }    
+}
 .missionInner {
-    max-width: 420px;
-    margin: auto;
-    color: white;
+  max-width: 470px;
+  color: white;
 }
 
 .missionInner h3,
 .visionContainer h3 {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 49px;
-    letter-spacing: 1.3px;
-    text-align: left;
-
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 49px;
+  letter-spacing: 1.3px;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
 .missionInner p,
 .visionContainer p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: justify;
-
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: justify;
+}
+.visionContainer p,
+.visionContainer h3 {
+  max-width: 470px;
+  color: #05335b;
+  @media (max-width: 768px) {
+    color: #fff;
+  }
 }
 .visionContainer p, .visionContainer h3 {
     max-width:400px;
@@ -52,111 +68,116 @@
 }
 
 .visionCol {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .visionContainer {
   padding-left: 79px;
   width: 100%;
-
 }
 
 @media (max-width: 992px) {
-    .visionContainer {
-        padding-top: 109px;
-        padding-bottom: 138px;
-        padding-left:0;
-        max-width: 420px;
-    }
-    .missionContainer {
-        background: #0073CF;
-    }
+  .visionCol {
+    padding: 36px 40px;
+  }
+  .visionContainer {
+    padding: 0;
+  }
+  .missionContainer {
+    justify-content: flex-start;
+    padding: 36px 46px;
+    background: #0073cf;
+  }
 }
 
 @media (max-width: 768px) {
+  .visionCol {
+    background: #0073cf;
+  }
+  .section {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin: auto;
 
-    .section {
-        display: flex;
-        flex-direction: column-reverse;
-        width: 100%;
-        margin: auto;
-    }
+  }
 
-    .visionCol {
-        box-shadow: 10px -4px 6px #c6c6c6;
-        padding: 0px 40px 0px 46px;
-    }
+  .visionCol {
+    box-shadow: 3px 0px 9px #c6c6c6;
+  }
 
-    .sectionContainer {
-        padding: 0;
-        margin-top: 93px;
-    }
+  .sectionContainer {
+    padding: 0;
+    margin-bottom: 80px;
+  }
 
-    .visionContainer {
-        padding-left: 0;
-        max-width: 420px;
-        padding: 36px 0 34px 0 ;
-    }
+  .visionContainer p {
+    max-width: 420px;
+  }
 
-    .missionContainer {
-        padding: 36px 0 34px 0 ;
-    }
-
-    .missionBg {
-        height: 420px;
-    }
-
-
+  .missionBg {
+    height: 700px;
+  }
 }
 
-@media (max-width: 580px) {
-    .visionContainer {
-		padding:0;
-	}
-}
 
 @media (max-width: 500px) {
-    .missionInner h3, .visionContainer h3 {
-        font-size: 24px;
-        line-height: 29px;
-        text-align: left;
+  .missionInner h3,
+  .visionContainer h3 {
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+  }
 
-    }
+  .missionInner p,
+  .visionContainer p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 
-    .missionInner p, .visionContainer p  {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
+  .missionBg {
+    height: 600px;
+  }
 
-    }
+  .missionContainer {
+    padding: 36px 40px;
 
-    .missionBg {
-        height: 350px;
-    }
+  }
 
-    .missionContainer {
-        padding: 29px 40px 20px 46px;
-    }
+  .section {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin: auto;
+  }
 
-    .section {
-        display: flex;
-        flex-direction: column-reverse;
-        width: 100%;
-        margin: auto;
-    }
+  .sectionContainer {
+    padding: 0;
+    margin-bottom: 80px;
+  }
+}
 
-    .visionCol {
-        box-shadow: 10px -4px 6px #c6c6c6;
-        padding: 36px 40px 34px 46px;
-    }
 
-    .sectionContainer {
-        padding: 0;
-        margin-top: 93px;
-    }
+@media screen and (min-width: 768px) {
+  .missionContainer {
+    background: #fff;
+  }
+
+  .missionInner {
+    color: #05335b;
+  }
+
+  .visionCol {
+    background: #0073cfeb;
+  }
+
+  .visionContainer p,
+  .visionContainer h3 {
+    color: #fff;
+  }
 }

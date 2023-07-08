@@ -1,23 +1,52 @@
 import ContainerHero from "@/components/ContainerHero";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import TwoColorTitle from "@/components/two-color-title";
-import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.webp"
-import { HeroTitleWrapper } from "./style";
+import useAppContext from "@/hooks/useAppContext";
+import CoachingHeroBg from "@assets/pages/coaching/coaching-hero.jpg";
+import CoachingHeroBgMobile from "@assets/pages/coaching/cutted-coaching-mobile.jpg";
 
-export default function CoachingHeroSection() {
-    return <ContainerHero 
-    backgroundImageDesktop={CoachingHeroBg.src}  
-    backgroundImageMobile={CoachingHeroBg.src}
-    styles={{maxHeight: '580px'}}
+import styled from "styled-components";
+import {
+  ContainerWrapper,
+  HeroTitleWrapper,
+  Subtitle,
+  TitlesContainer,
+} from "../../../../styles/coaching/components/hero-section/index.styles";
+import { IStyledPageBody } from "@/components/generics/PageBody";
+
+export default function CoachingHeroSection(props: IStyledPageBody) {
+  const { isMobile } = useAppContext();
+
+  const hadleScroll = () => {
+    const sectionElement = document.getElementById("CV-Optimization");
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <ContainerWrapper
+      backgroundImage={isMobile ? CoachingHeroBgMobile.src : CoachingHeroBg.src}
+      distanceFromTop={props.distanceFromTop}
     >
-            <HeroTitleWrapper>
-                <TwoColorTitle 
-                text1="1:1" 
-                text2="Coaching" 
-                hasSpaceBtw 
-                wrapperStyles={{padding: `0 0 35px`}} 
-                />
-                <StdButton>Book a Coaching Now</StdButton>
-            </HeroTitleWrapper>
-    </ContainerHero>
+      <HeroTitleWrapper>
+        <TitlesContainer>
+          <TwoColorTitle
+            text1="Personal"
+            text2="Coaching"
+            hasSpaceBtw
+            wrapperClassName="coaching-title-wrapper"
+            className="coaching-title"
+            color1="white"
+          />
+          <Subtitle>
+            Let us coach you towards a successful career in Germany
+          </Subtitle>
+        </TitlesContainer>
+        <StdButton className="coaching-hero-cta" onClick={hadleScroll}>
+          {isMobile ? "Book Now" : "Book a Coaching Now"}
+        </StdButton>
+      </HeroTitleWrapper>
+    </ContainerWrapper>
+  );
 }

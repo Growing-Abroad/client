@@ -4,6 +4,8 @@ html {
 
 body {
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif !important;
+    padding: 0 !important;
 }
 
 .container {

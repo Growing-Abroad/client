@@ -1,36 +1,66 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import VisionAndMissionBackground from "../../../../public/assets/puzzle.webp"
-import classes from "./style.module.css"
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import classes from "./style.module.css";
+import useAppContext from "@/hooks/useAppContext";
 
-function VisionAndMissionNew() {
+export interface IText {
+  heading: string;
+  description: string;
+}
+export interface IVisionAndMission {
+  text1: IText;
+  text2: IText;
+  backgroundSrc: {
+    desktop: string;
+    mobile: string;
+  };
+}
+
+function VisionAndMissionNew({
+  backgroundSrc,
+  text1,
+  text2,
+}: IVisionAndMission) {
+  const [backgroundImg, setBackgroundImg] = useState<string>("");
+
+  const { isMobile } = useAppContext();
+
+  useEffect(() => {
+    if (isMobile) {
+      setBackgroundImg(backgroundSrc.mobile);
+      return;
+    }
+    setBackgroundImg(backgroundSrc.desktop);
+  }, [isMobile]);
+
   return (
     <>
       <Container className={classes.sectionContainer}>
         <Row className={classes.section}>
-          <Col lg="6" className={classes.missionBg} style={{ backgroundImage: 'url(' + VisionAndMissionBackground.src + ')' }}>
+          <Col
+            lg="6"
+            className={classes.missionBg}
+            style={{
+              backgroundImage: "url(" + backgroundImg + ")",
+            }}
+          >
             <div className={classes.missionContainer}>
               <div className={classes.missionInner}>
-                <h3>Mission</h3>
-                <p>
-                  Our Mission is to show people how to grow and rise up to their full potential to make their dreams come true.
-                </p>
+                <h3>{text1.heading}</h3>
+                <p>{text1.description}</p>
               </div>
             </div>
           </Col>
           <Col lg="6" className={classes.visionCol}>
             <div className={classes.visionContainer}>
-              <h3>Vision</h3>
-              <p>
-                Our Vision is to create a platform that brings people together as a community with similar goals, where people can share their stories and inspire others.
-              </p>
+              <h3>{text2.heading}</h3>
+              <p>{text2.description}</p>
             </div>
           </Col>
         </Row>
       </Container>
-
     </>
-  )
+  );
 }
 
-export default VisionAndMissionNew
+export default VisionAndMissionNew;

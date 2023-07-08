@@ -45,7 +45,7 @@ const ContentWrapper = styled.div<IStyledProp>`
 
     @media (max-width: ${mediaQuery}) {
       padding: 80px 66px;
-      
+      max-width: 100%;
     }
 `
 

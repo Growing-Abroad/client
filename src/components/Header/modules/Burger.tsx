@@ -1,16 +1,15 @@
-import 'react-select-search-nextjs/style.css'
-import { ReactNode, useEffect, useState } from "react";
-import { Select, MenuItem } from "@mui/material";
-import Nav from "./Nav";
-import { NavWrapper, SelectLangLabel, SelectLangWrapper } from "./BurguerStyle";
-import { variables } from "@styles/global-variables";
-import { removePxFromCssValue } from "@utils/scripts/general-utility";
-import { StyledBurger } from "../Header.style";
-import Link from "next/link";
-import Image from "next/image";
-import BrFlag from "public/countries-flags/br.svg"
-import DeFlag from "public/countries-flags/de.svg"
-import UsFlag from "public/countries-flags/us.svg"
+import { ReactNode, useEffect, useState } from 'react';
+import { Select, MenuItem } from '@mui/material';
+import Nav from './Nav';
+import { NavWrapper, SelectLangLabel, SelectLangWrapper } from './BurguerStyle';
+import { variables } from '@styles/global-variables';
+import { removePxFromCssValue } from '@utils/scripts/general-utility';
+import { StyledBurger } from '../Header.style';
+import Link from 'next/link';
+import Image from 'next/image';
+import BrFlag from 'public/countries-flags/br.svg';
+import DeFlag from 'public/countries-flags/de.svg';
+import UsFlag from 'public/countries-flags/us.svg';
 import useAppContext from '@/hooks/useAppContext';
 
 export type TCountryLangDict = Record<string, string>;
@@ -18,20 +17,22 @@ export type TCountryLangDict = Record<string, string>;
 export enum ECountryToLang {
   us = 'en',
   br = 'pt',
-  de = 'de'
+  de = 'de',
 }
 
 export const countryToFlag: {
-  [key in ECountryToLang]: string
- } = {
-   [ECountryToLang.us]: UsFlag,
-   [ECountryToLang.br]: BrFlag,
-   [ECountryToLang.de]: DeFlag,
- }
+  [key in ECountryToLang]: string;
+} = {
+  [ECountryToLang.us]: UsFlag,
+  [ECountryToLang.br]: BrFlag,
+  [ECountryToLang.de]: DeFlag,
+};
 
 function Burger() {
   const [open, setOpen] = useState(false);
-  const {windowSize: {width}} = useAppContext();
+  const {
+    windowSize: { width },
+  } = useAppContext();
   const {
     sizes: { mediaQuery },
   } = variables;
@@ -44,7 +45,9 @@ function Burger() {
   const [openLang, setOpenLang] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('us');
   const [flag, setFlag] = useState(UsFlag);
-  const [selectImg, setSelectImage] = useState<ReactNode>(<Image src={UsFlag} alt={'us flag'} width={25} height={20} />);
+  const [selectImg, setSelectImage] = useState<ReactNode>(
+    <Image src={UsFlag} alt={'us flag'} width={25} height={20} />,
+  );
 
   const countryLangDict: TCountryLangDict = {
     us: 'en',
@@ -55,8 +58,8 @@ function Burger() {
   const LangToFlag: TCountryLangDict = {
     us: UsFlag,
     br: BrFlag,
-    de: DeFlag
-  }
+    de: DeFlag,
+  };
 
   const handleClose = () => {
     setOpenLang(false);
@@ -68,15 +71,15 @@ function Burger() {
 
   const handleChange = (lang: string) => {
     setSelectedCountry(lang);
-    setFlag(LangToFlag[lang])
+    setFlag(LangToFlag[lang]);
     setSelectImage(
       <Image
         src={LangToFlag[lang]}
-        alt={lang +' flag'}
+        alt={lang + ' flag'}
         width={25}
         height={20}
-      />
-    )
+      />,
+    );
     setOpen(false);
     // changeLanguage(countryLangDict[lang.toLowerCase()]);
   };
@@ -86,25 +89,17 @@ function Burger() {
   }
 
   useEffect(() => {
-    const lang = window.location.pathname.slice(1,3)
+    const lang = window.location.pathname.slice(1, 3);
 
     const initialFlag = countryToFlag[lang as ECountryToLang] 
-    // const initialFlag = getKeyByValue(countryLangDict, lang)
-    console.log({initialFlag});
     
     if (initialFlag) {
       setSelectedCountry(getKeyByValue(countryLangDict, lang)!);
-      setFlag(initialFlag)
+      setFlag(initialFlag);
       setSelectImage(
-            <Image
-              src={initialFlag}
-              alt={lang +' flag'}
-              width={25}
-              height={20}
-            />
-      )
+        <Image src={initialFlag} alt={lang + ' flag'} width={25} height={20} />,
+      );
     }
-    console.log({loca: window.location, flag: initialFlag, lang})
   }, [])
 
   return (
@@ -145,12 +140,7 @@ function Burger() {
               onClick={() => handleChange('br')}
             >
               <MenuItem key={'br'} value={'br'}>
-                  <Image
-                    src={BrFlag}
-                    alt={'br flag'}
-                    width={25}
-                    height={20}
-                  />
+                <Image src={BrFlag} alt={'br flag'} width={25} height={20} />
               </MenuItem>
             </Link>
             <Link
@@ -160,12 +150,7 @@ function Burger() {
               onClick={() => handleChange('us')}
             >
               <MenuItem key={'us'} value={'us'}>
-                  <Image
-                    src={UsFlag}
-                    alt={'Us flag'}
-                    width={25}
-                    height={20}
-                  />
+                <Image src={UsFlag} alt={'Us flag'} width={25} height={20} />
               </MenuItem>
             </Link>
             <Link
@@ -175,16 +160,9 @@ function Burger() {
               onClick={() => handleChange('de')}
             >
               <MenuItem key={'de'} value={'de'}>
-                  <Image
-                    src={DeFlag}
-                    alt={'de flag'}
-                    width={25}
-                    height={20}
-                  />
+                <Image src={DeFlag} alt={'de flag'} width={25} height={20} />
               </MenuItem>
             </Link>
-
-
           </Select>
         </SelectLangWrapper>
       </NavWrapper>

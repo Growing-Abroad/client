@@ -1,0 +1,101 @@
+
+.funnels_pages__title {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    text-align: center;
+    color: white;
+
+    margin-bottom: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 400px) {
+        font-size: calc(2.25rem + ((1vw - 0.25rem) * 1.0782));
+        line-height: calc(2.75rem + ((1vw - 0.25rem) * 1.4376));
+    }
+      @media (min-width: 94.5625em) {
+        font-size: 3rem;
+        line-height: 3.75rem;
+      }
+}
+.funnels_pages__title_span {
+    color: #05335B;
+}
+
+.funnels_pages__paragraph,
+.funnels_pages__ending_paragraph {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+
+    color: white;
+
+    max-width: 950px;
+    width: 100%;
+    text-align: center;
+
+    
+
+}
+.bold__text {
+    font-weight: 700 !important;
+}
+
+.funnels_pages__img {
+    margin-top: 46px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 718px;
+    height: auto;
+}
+
+.funnels_pages__ending_paragraph {
+    color: #05335B;
+}
+
+.funnels_pages__video {
+    margin-bottom: 32px;
+    border-radius: 10px;
+    width: 900px;
+    min-height: 506.25px;
+
+    @media (max-width: 950px) {
+        width: calc(22.5rem + ((1vw - 4px) * 48.5175));
+        height: calc(12.65625rem + ((1vw - 4px) * 27.2911));
+        min-height: auto;
+    }
+}
+
+.funnels_pages__button {
+    margin-top: 32px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    background-color: #FFDB5C;
+    color: #05335B;
+    letter-spacing: 1.3px;
+    padding: 20px 36px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 350ms;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    
+
+    @media (max-width: 768px) {
+        font-size: 0.875rem;
+        line-height: 1.188rem;
+        padding: 12px 18px;
+    }
+}
+.funnels_pages__button:hover {
+    background-color: #05335B;
+    color: #FFDB5C;
+}

@@ -1,11 +1,10 @@
 import { variables } from "@styles/global-variables";
-import { theme } from "@styles/theme";
-import styled, { css, CSSProperties } from "styled-components";
-import {Montserrat} from "next/font/google";
+import styled, { css } from "styled-components";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
-  subsets: ['latin']
-})
+  subsets: ["latin"],
+});
 const {
   sizes: { mediaQuery },
 } = variables;
@@ -14,39 +13,53 @@ export const TwoColorTitleWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: max-content;
-  
+  width: 95%;
+
+.title-why-buy-course {
+
+  @media screen and (max-width: 32rem) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 33rem) and (max-width: 64rem) {
+    margin-top: -6rem;
+  }
+}
+
   @media (max-width: ${mediaQuery}) {
     justify-content: center;
   }
-  `;
+`;
 
 export interface IText {
   color?: string;
   as?: keyof JSX.IntrinsicElements;
 }
 
-export const Text = styled.h1<IText>`
+export const Text: any = styled.h1<IText>`
   ${(props) => {
     const { color } = props;
     return css`
-    color: ${theme.colors[color!]};
-    font-family: ${montserrat.style.fontFamily};
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 1.3px;
-  `}}
+      display: inline-block;
+      color: ${color};
+      font-family: ${montserrat.style.fontFamily};
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1.3px;
+      max-width: 100%;
+    `;
+  }}
 
   ${(props) => {
     switch (props.as) {
       case "h1":
         return css`
-          font-size: 4.625rem;
+          font-size: 52px;
           line-height: 5.625rem;
         `;
       case "h2":
         return css`
-          font-size: 3.75rem;
+          font-size: 3.25rem;
           line-height: 4.625rem;
         `;
       case "h3":
@@ -87,4 +100,13 @@ export const Text = styled.h1<IText>`
     font-size: 36px;
     line-height: 53.64px;
   }
+`;
+
+export const ColoredSpan = styled.span<IText>`
+  ${(props) => {
+    const { color } = props;
+    return css`
+      color: ${color};
+    `;
+  }}
 `;
