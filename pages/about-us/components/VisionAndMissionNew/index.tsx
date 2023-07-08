@@ -46,15 +46,15 @@ function VisionAndMissionNew({
           >
             <div className={classes.missionContainer}>
               <div className={classes.missionInner}>
-                <h3>{text1?.heading}</h3>
-                <p>{text1?.description}</p>
+                <h3>{text1.heading}</h3>
+                <p>{text1.description}</p>
               </div>
             </div>
           </Col>
           <Col lg="6" className={classes.visionCol}>
             <div className={classes.visionContainer}>
-              <h3>{text2?.heading}</h3>
-              <p>{text2?.description}</p>
+              <h3>{text2.heading}</h3>
+              <p>{text2.description}</p>
             </div>
           </Col>
         </Row>
