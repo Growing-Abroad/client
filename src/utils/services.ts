@@ -4,8 +4,8 @@ import JobSearchStrategy from "@/../public/assets/Photos-Main-Page/Job-Search-St
 
 import CoachingPackage from "@/../public/assets/Photos-Main-Page/Coaching-Package.jpg";
 
-import OnlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.jpg";
-import JobInterview from "@/../public/assets/Photos-Main-Page/job-interview-coaching.jpg";
+import OnlineCourse from "@assets/Photos-Main-Page/online-course-success.jpg";
+import JobInterview from "@assets/Photos-Main-Page/job-interview-coaching.jpg";
 import LinkedInOptimization from "@/../public/assets/Photos-Main-Page/LinkedIn-Optimization.jpg";
 import { IImage } from "./blog_posts";
 
@@ -31,7 +31,7 @@ export const services: IService[] = [
     title: "Job Interview Preparation",
     subtitle: "To rock every Job Interview in Germany",
     image: {
-      src: JobInterview.src,
+      src: JobInterview?.src,
       alt: "Job Interview Preparation",
     },
     descriptions: [
@@ -58,7 +58,7 @@ export const services: IService[] = [
     title: "Online <br /> Course",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
-      src: OnlineCourse.src,
+      src: OnlineCourse?.src,
       alt: "Online Course",
     },
     descriptions: [
@@ -85,7 +85,7 @@ export const services: IService[] = [
     title: "CV <br /> Optimization",
     subtitle: "To have a CV in german standards",
     image: {
-      src: CvOptimization.src,
+      src: CvOptimization?.src,
       alt: "CV Optimization",
     },
     descriptions: [
@@ -112,7 +112,7 @@ export const services: IService[] = [
     title: "Cover Letter Optimization",
     subtitle: "To have a Cover letter in german standards",
     image: {
-      src: Castle.src,
+      src: Castle?.src,
       alt: "To Rock every Job Interview",
     },
     descriptions: [
@@ -139,7 +139,7 @@ export const services: IService[] = [
     title: "LinkedIn Optimization",
     subtitle: "To get contacted by german recruiters",
     image: {
-      src: LinkedInOptimization.src,
+      src: LinkedInOptimization?.src,
       alt: "Online Course",
     },
     descriptions: [
@@ -166,7 +166,7 @@ export const services: IService[] = [
     title: "Job Search Strategy",
     subtitle: "To find the best jobs in the market",
     image: {
-      src: JobSearchStrategy.src,
+      src: JobSearchStrategy?.src,
       alt: "Online Course",
     },
     descriptions: [
@@ -193,7 +193,7 @@ export const services: IService[] = [
     title: "Coaching Package",
     subtitle: "To be fully prepared for the german market",
     image: {
-      src: CoachingPackage.src,
+      src: CoachingPackage?.src,
       alt: "Coaching Package",
     },
     descriptions: [

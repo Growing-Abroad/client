@@ -43,7 +43,7 @@ export default function BlogSwiper() {
         loop
         style={{ padding: "0 60px" }}
       >
-        {posts_?.map((post) => (
+        {posts?.map((post) => (
           <SwiperSlide key={post.id} zoom>
             <BlogCard {...post} />
           </SwiperSlide>

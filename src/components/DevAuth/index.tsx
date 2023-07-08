@@ -4,8 +4,11 @@ const useWithAuth = () => {
     const router = useRouter();
     const { password } = router.query;
 
+    if (process.env.ENVIRONMENT === 'prod') {
+        return true;
+    }
     if (
-        process.env.NEXT_PUBLIC_AUTH && process.env.NEXT_PUBLIC_AUTH !== password
+        process.env.ENVIRONMENT === 'dev' && process.env.NEXT_PUBLIC_AUTH !== password
     ) {
         return false;
     }
