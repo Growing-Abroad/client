@@ -3,13 +3,11 @@ import { CircularProgress } from "@mui/material";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
-import IntlTelInput from "react-intl-tel-input";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import * as S from "styles/jobs/components/upload-cv-section/index.styles";
 import useAppContext from "@/hooks/useAppContext";
 import StdInput from "@/components/generics/StdInput";
 import StdTextInput from "@/components/generics/StdInput/StdTextInput";
-import "react-intl-tel-input/dist/main.css";
 import Image from "next/image";
 import imgUpload from "@/../public/assets/pages/jobs/growing.png";
 import StdError from "@/components/generics/StdError";
@@ -94,7 +92,7 @@ export default function UploadCvSection() {
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
 
-  const phoneRef = useRef<IntlTelInput | null>(null);
+  // const phoneRef = useRef<IntlTelInput | null>(null);
 
   const formDefaultValues = {
     pronoum: "",
@@ -141,7 +139,7 @@ export default function UploadCvSection() {
     
   const resetStates = () => {
     reset();
-    phoneRef.current?.setNumber('');
+    // phoneRef.current?.setNumber('');
     setSelectedFile(undefined);
     setSelectedFileOptional(undefined);
   }
@@ -270,7 +268,7 @@ export default function UploadCvSection() {
                     : ""
                 }
               >
-                <IntlTelInput
+                {/* <IntlTelInput
                   preferredCountries={["de"]}
                   fieldId="phone"
                   fieldName="phone"
@@ -281,7 +279,7 @@ export default function UploadCvSection() {
                   onPhoneNumberChange={(value, countryData, number) => {
                     setValue("phone", handleSanitaze({ countryData, number }));
                   }}
-                />
+                /> */}
               </StdInput>
             </S.FieldGroup>
 
