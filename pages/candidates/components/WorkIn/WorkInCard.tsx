@@ -1,4 +1,4 @@
-import * as S from "../../../../styles/candidates/components/WorkIn/index.styles";
+import * as S from "@/styles/pages-styles/candidates/WorkIn/index.styles";
 import Image, { StaticImageData } from "next/image";
 import { CSSProperties } from "styled-components";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";

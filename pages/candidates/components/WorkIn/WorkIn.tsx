@@ -1,4 +1,4 @@
-import * as S from "../../../../styles/candidates/components/WorkIn/index.styles";
+import * as S from "@/styles/pages-styles/candidates/WorkIn/index.styles";
 import studentHat from "@/../public/assets/student-hat.svg";
 import worldPicture from "@/../public/assets/world-icon.svg";
 import expertPicture from "@/../public/assets/person-icon.svg";

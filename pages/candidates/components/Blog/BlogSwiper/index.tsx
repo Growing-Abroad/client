@@ -1,5 +1,5 @@
 import "swiper/swiper-bundle.css";
-import * as S from "../../../../../styles/candidates/components/Blog/BlogSwiper/index.styles";
+import * as S from "@/styles/pages-styles/candidates/Blog/BlogSwiper/index.styles";
 import { posts, IPost } from "@utils/blog_posts";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

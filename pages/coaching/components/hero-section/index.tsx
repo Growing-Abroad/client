@@ -11,7 +11,7 @@ import {
   HeroTitleWrapper,
   Subtitle,
   TitlesContainer,
-} from "../../../../styles/coaching/components/hero-section/index.styles";
+} from "@/styles/pages-styles/coaching/components/hero-section/index.styles";
 import { IStyledPageBody } from "@/components/generics/PageBody";
 
 export default function CoachingHeroSection(props: IStyledPageBody) {

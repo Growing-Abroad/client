@@ -1,11 +1,11 @@
 import { PageLayout } from "@/components";
 import { ReactElement } from "react";
 import CoachingHeroSection from "./components/hero-section";
-import DreamJobSection from "./components/dream-job-section";
+import DreamJobSection from "./components//dream-job-section";
 import VisionAndMissionNew, {
   IText,
 } from "@pages/about-us/components/VisionAndMissionNew";
-import CoachingPackageOnlineCourseSection from "./components/coaching-package-online-course";
+import CoachingPackageOnlineCourseSection from "@pages/coaching/components/coaching-package-online-course";
 import WhatOurClientsSay from "./components/what-our-clients-say";
 import ReusedFaq from "@/components/reused-faq";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";

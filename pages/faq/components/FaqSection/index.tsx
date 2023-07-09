@@ -16,7 +16,7 @@ function FaqSection({ accordeons }: FaqSectionProps) {
   return (
     <S.FaqSectionContainer>
       <S.FaqSectionContent>
-        {accordeons.map((accordeon, index) => {
+        {accordeons?.map((accordeon, index) => {
           return (
             <Accordeon
               title={accordeon.title}

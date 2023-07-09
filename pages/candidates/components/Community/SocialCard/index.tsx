@@ -4,7 +4,7 @@ import {
   SocialText,
   MyCounter,
   IconImage,
-} from "@/../styles/candidates/components/Community/SocialCard/index.styles";
+} from "@/styles/pages-styles/candidates/Community/SocialCard/index.styles";
 
 interface ImageSizeProps {
   mobile: number;

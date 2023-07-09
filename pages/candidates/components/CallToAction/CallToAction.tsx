@@ -1,25 +1,25 @@
-import * as S from "../../../../styles/candidates/components/CallToAction/index.styles";
+import * as S from "@/styles/pages-styles/candidates/CallToAction/index.styles";
 import gaCoaches from "@assets/new-cta-img.jpg";
 import Image from "next/image";
-import { useIntl } from "react-intl";
+// import { useIntl } from "react-intl";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import { TextChanger } from "components/TextChanger";
 import useAppContext from "@/hooks/useAppContext";
 
+
 function CallToAction() {
-
+  
   const { isMobile } = useAppContext()
+  // const intl = useIntl();
 
-  const intl = useIntl();
-
-  const t = (id: string): string => {
-    return intl.formatMessage({ id });
-  };
+  // const t = (id: string): string => {
+  //   return intl.formatMessage({ id });
+  // };
 
   const texts = [
-    "page.home.callToAction.germany",
-    "page.home.callToAction.europe",
+    "Germany",
+    " Europe",
   ]
 
   return (
@@ -28,7 +28,7 @@ function CallToAction() {
         <div className="left-side">
           <h1>
             <>
-              {t("page.home.callToAction") + " "}
+              {'Land your Dream Job in' + " "}
               <TextChanger texts={texts} />
             </>
           </h1>

@@ -4,7 +4,7 @@ import { Wrapper } from "@/components/Wrapper";
 import BlogCardSection from "./components/BlogCardSection";
 import CareerHeroSection from "./components/CareerHeroSection";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import { PageBody } from "styles/coaching";
+import { PageBody } from "@/styles/pages-styles/coaching";
 import Wave, { EWaveType } from "@/components/Wave";
 import NavHero from "@/components/NavHero";
 import useAppContext from "@/hooks/useAppContext";

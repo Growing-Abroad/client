@@ -7,7 +7,8 @@ import CoachingPackage from "@/../public/assets/Photos-Main-Page/Coaching-Packag
 import OnlineCourse from "@assets/Photos-Main-Page/online-course-success.jpg";
 import JobInterview from "@assets/Photos-Main-Page/job-interview-coaching.jpg";
 import LinkedInOptimization from "@/../public/assets/Photos-Main-Page/LinkedIn-Optimization.jpg";
-import { IImage } from "./blog_posts";
+import { IImage } from "@pages/candidates/components/OurServices/OurServicesSwiper";
+// import { IImage } from "./blog_posts";
 
 interface IDescription {
   id: string;

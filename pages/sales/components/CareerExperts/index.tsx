@@ -8,7 +8,7 @@ import manu from "@/../public/assets/pages/sales/manu.jpg";
 import {
   DiscoverReadMoreWrapper,
   DiscoverGrowingAbroadSection,
-} from "styles/candidates/components/DiscoverGA/index.styles";
+} from "@styles/pages-styles/candidates/DiscoverGA/index.styles";
 import { DiscoverContent } from "@/components/BlueSquareWithCaroulsel/style";
 
 

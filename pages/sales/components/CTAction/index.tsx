@@ -1,7 +1,7 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
 import gaCoaches from "@assets/new-cta-img.jpg";
 import { TextChanger } from "components/TextChanger";
-import { useIntl } from "react-intl";
+// import { useIntl } from "react-intl";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 interface ICTActionProps {
@@ -19,20 +19,20 @@ function CTAction({
   buttonIntl,
   buttonURL = "",
 }: ICTActionProps) {
-  const intl = useIntl();
+  // const intl = useIntl();
 
-  const t = (id: string): string => {
-    if (id !== "") {
-      return intl.formatMessage({ id });
-    }
-    return "";
-  };
+  // const t = (id: string): string => {
+  //   if (id !== "") {
+  //     return intl.formatMessage({ id });
+  //   }
+  //   return "";
+  // };
 
   const icon = pageName == "candidates" ? faPlay : "";
 
   const texts = [
-    "page.home.callToAction.germany",
-    "page.home.callToAction.europe",
+    " Germany", //"page.home.callToAction.germany",
+    " Europe", //"page.home.callToAction.europe",
   ];
 
   const hadleScroll = () => {
@@ -51,18 +51,18 @@ function CTAction({
       <S.BannerMainContainer pageName={pageName}>
         <S.LeftSide>
           <S.UIMainTitle pageName={pageName}>
-            {t(titleIntl)}{" "}
+            {titleIntl}{" "}
             <TextChanger texts={texts} duration={3000} />
           </S.UIMainTitle>
 
-          <S.SubTitle>{t(subTitleIntl)}</S.SubTitle>
+          <S.SubTitle>{subTitleIntl}</S.SubTitle>
 
           <S.StdButtonCustom
             onClick={hadleScroll}
             icon={icon}
             pageName={pageName}
           >
-            {t(buttonIntl)}
+            {buttonIntl}
           </S.StdButtonCustom>
         </S.LeftSide>
 

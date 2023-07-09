@@ -8,9 +8,9 @@ import SectionDivider from "@/../components/SectionDivider";
 import { MeetTheFoundersSection } from "@/../components/MeetTheFoundersSection";
 import { NextPageWithLayout } from "@pages/_app";
 import PageLayout from "@components/PageLayout";
-import { IntlProvider } from "react-intl";
+// import { IntlProvider } from "react-intl";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import _useLocale from "@/hooks/useLocale";
+// import _useLocale from "@/hooks/useLocale";
 
 const Page: NextPageWithLayout = () => {
   return (
@@ -24,14 +24,11 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = _useLocale();
 
   return (
-    <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.DEFAULT}>
-        {page}
-      </PageLayout>
-    </IntlProvider>
+    <PageLayout chosenHeader={ChosenHeader.DEFAULT}>
+      {page}
+    </PageLayout>
   );
 };
 

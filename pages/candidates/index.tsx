@@ -4,8 +4,8 @@ import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-import { IntlProvider } from "react-intl";
-import _useLocale from "@/hooks/useLocale";
+// import { IntlProvider } from "react-intl";
+// import _useLocale from "@/hooks/useLocale";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
 import CTAction from "@pages/sales/components/CTAction";
@@ -40,9 +40,9 @@ export default function OnlineCourse() {
       <CTAction 
         buttonURL="/online-course"
         pageName="candidates"
-        titleIntl="page.candidates.title"
+        titleIntl="Get your Dream Job in" // page.candidates.title
         subTitleIntl=""
-        buttonIntl="page.candidates.buttonCallToAction"
+        buttonIntl="Buy Online Course Now"//"page.candidates.buttonCallToAction"
       />
       <PageBodyLayout id="page-candidates"
         distanceFromTop={isMobile ? "770px" : "800px"}
@@ -62,10 +62,7 @@ export default function OnlineCourse() {
 }
 
 OnlineCourse.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = _useLocale();
   return (
-    <IntlProvider locale={locale!} messages={messages}>
       <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
-    </IntlProvider>
   );
 };
