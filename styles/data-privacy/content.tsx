@@ -7,6 +7,7 @@ import {
     Underlined 
 } from ".";
 import { CustomLink, EmailLink, LinkTo } from "@/components/generics/EmailLink";
+import Link from "next/link";
 
 
 
@@ -199,6 +200,17 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           We provide a form on our website for you to contact us at any time. To use the contact form, it is necessary to provide a name for personal addressing and a valid email address for communication, so that we know who the inquiry is from and can process it accordingly. <br />
           If you send us inquiries through the contact form, your information from the inquiry form, including the contact details you provided, as well as your IP address, will be processed in accordance with Art. 6(1)(b) and (f) of the GDPR for the purpose of carrying out pre-contractual measures based on your request or for the exercise of our legitimate interest, namely the conduct of our business activities. <br />
           The inquiries and the associated data will be deleted no later than 6 months after receipt, unless they are required for further contractual relationships. <br />
+          <br />
+          We use SendGrid, an email delivery service, for our contact form. The service provider is the American company Twilio Inc, 889 Winslow St, Redwood City, California 94063, USA.
+          <br />
+          SendGrid also processes data from you in the USA, among other places. We would like to point out that according to the opinion of the European Court of Justice, there is currently no adequate level of protection for the transfer of data to the USA. This may be associated with various risks to the lawfulness and security of data processing.
+          <br />
+          As a basis for data processing with recipients located in third countries (outside the European Union, Iceland, Liechtenstein, Norway, i.e. especially in the USA) or a data transfer there, SendGrid uses so-called standard contractual clauses (= Art. 46. para. 2 and 3 DSGVO). Standard Contractual Clauses (SCC) are templates provided by the EU Commission and are intended to ensure that your data comply with European data protection standards even if they are transferred to third countries (such as the USA) and stored there. Through these clauses, SendGrid undertakes to comply with the European level of data protection when processing your relevant data, even if the data is stored, processed and managed in the USA. These clauses are based on an implementing decision of the EU Commission. You can find the decision and the corresponding standard contractual clauses here, among other places: https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de
+          <br />
+          The Data Processing Addendum, which corresponds to the standard contractual clauses, can be found at <Link href="https://www.twilio.com/legal/data-protection-addendum" target="_blank">https://www.twilio.com/legal/data-protection-addendum</Link>.
+          <br />
+          You can learn more about the data processed through the use of SendGrid in the Privacy Policy at <Link target="_blank" href="https://www.twilio.com/legal/privacy">https://www.twilio.com/legal/privacy</Link>.
+          <br />
           <br />
           f) <Underlined>Application Form</Underlined> <br />
           <br />

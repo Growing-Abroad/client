@@ -6,7 +6,6 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import PageBodyLayout from "@/components/generics/PageBody";
 import useAppContext from "@/hooks/useAppContext";
 import { EWaveType } from "@/components/Wave";
-// import _useLocale from "@/hooks/useLocale";
 import CTAction from "@pages/sales/components/CTAction";
 import styled from "styled-components";
 
@@ -27,7 +26,7 @@ export const JobsWrapper = styled.div`
 
 export default function Jobs() {
   const {
-    windowSize: { height }, isMobile,
+    windowSize: isMobile,
   } = useAppContext();
 
 

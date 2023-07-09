@@ -7,15 +7,13 @@ import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import { EWaveType } from "@/components/Wave";
+import { EWaveType } from "@components/Wave";
 import Motivation from "./components/Motivation";
 import FollowDreams from "./components/FollowDream";
 import WhatYouGet from "./components/WhatYouGet";
 import Investiment from "./components/Investiment";
 import BigCard from "@pages/online-course/components/BigCard";
-import PageBodyLayout from "@/components/generics/PageBody";
-// import _useLocale from "@/hooks/useLocale";
-// import { IntlProvider } from "react-intl";
+import PageBodyLayout from "@components/generics/PageBody";
 import DiscoverGA from "./components/DiscoverGA";
 import StoriesPageCandidates from "../candidates/components/StoriesPageCandidates";
 import TwoCards from "@pages/online-course/components/TwoCards";
@@ -49,9 +47,9 @@ export default function Sales() {
       <SalesWrapper>
         <CTAction 
           pageName="sales"
-          buttonIntl="Buy Online Course Now"//"page.sales.buttonCallToAction"
-          subTitleIntl="Build a successful career abroad with this amazing ONLINE COURSE"//"page.sales.subtitle"
-          titleIntl="Land your Dream job in"//"page.sales.title"
+          buttonIntl="Buy Online Course Now"
+          subTitleIntl="Build a successful career abroad with this amazing ONLINE COURSE"
+          titleIntl="Land your Dream job in"
         />
         <PageBodyLayout
           id="page-sales"
@@ -81,10 +79,7 @@ export default function Sales() {
 }
 
 Sales.getLayout = function getLayout(page: ReactElement) {
-  // const { locale, messages } = _useLocale();
   return (
-    // <IntlProvider locale={locale!} messages={messages}>
       <PageLayout chosenHeader={ChosenHeader.FOR_SALES} hideBlueSection={true}>{page}</PageLayout>
-    // </IntlProvider>
   ); 
 };

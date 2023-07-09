@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { CircularProgress } from "@mui/material";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
@@ -14,7 +13,10 @@ import StdError from "@/components/generics/StdError";
 import uploadIcon from "@assets/pages/jobs/icon-upload.svg";
 import newApplication from "@/services/applications/applications.service";
 import LoadingComponent from "@/components/generics/Loading";
-import { AxiosResponse } from "axios";
+import styles from "../../../newsletter-confirmation/funnels.style.module.css";
+import Toast from "@/components/Toast";
+import Popup from "components/PopUp";
+import notebooimg from "@/../public/assets/images/notebook-img.png";
 
 export interface IFormFields {
   pronoum: string;
@@ -27,17 +29,6 @@ export interface IFormFields {
   newsletter: string;
   file: FileList;
   otherFile: FileList;
-}
-
-interface IPhone {
-  countryData: string;
-  number: {
-    name?: string;
-    iso2?: string;
-    dialCode?: string;
-    priority?: number;
-    areaCodes?: string[] | null;
-  };
 }
 
 const expertiseOptions = [
@@ -91,8 +82,8 @@ export default function UploadCvSection() {
   const [selectedFile, setSelectedFile] = useState<File>();
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
-
-  // const phoneRef = useRef<IntlTelInput | null>(null);
+  const [showToast, setShowToast] = useState<boolean>(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const formDefaultValues = {
     pronoum: "",
@@ -110,10 +101,9 @@ export default function UploadCvSection() {
   
 
   const {
-    formState: { errors, isSubmitting },
+    formState: { errors },
     handleSubmit,
     register,
-    setValue,
     reset
   } = methods;
 
@@ -121,16 +111,19 @@ export default function UploadCvSection() {
     event.preventDefault();
   };
 
-  const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
-    console.log("talentpool", data);
-    setLoading(true);
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
 
+  const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
+    setLoading(true);
     try {
-      const response: AxiosResponse = await newApplication(data);
-      console.log({response})
+      await newApplication(data);
       resetStates();
+      setIsPopupOpen(true)
     } catch (error) {
-      // Handle error
+      setIsPopupOpen(false)
+      setShowToast(true)
       console.error(error);
     } finally {
       setLoading(false);
@@ -139,15 +132,9 @@ export default function UploadCvSection() {
     
   const resetStates = () => {
     reset();
-    // phoneRef.current?.setNumber('');
     setSelectedFile(undefined);
     setSelectedFileOptional(undefined);
   }
-
-  const handleSanitaze = ({ number, countryData }: IPhone) => {
-    const phoneNumber = number.dialCode + countryData;
-    return `+${phoneNumber.replace(/\D/g, "")}`;
-  };
 
   return (
     <>
@@ -268,18 +255,9 @@ export default function UploadCvSection() {
                     : ""
                 }
               >
-                {/* <IntlTelInput
-                  preferredCountries={["de"]}
-                  fieldId="phone"
-                  fieldName="phone"
-                  format
-                  key="phone"
-                  {...register("phone", { required: true })}
-                  ref={phoneRef}
-                  onPhoneNumberChange={(value, countryData, number) => {
-                    setValue("phone", handleSanitaze({ countryData, number }));
-                  }}
-                /> */}
+              <StdTextInput name="phone" required={true} />
+
+                
               </StdInput>
             </S.FieldGroup>
 
@@ -448,9 +426,35 @@ export default function UploadCvSection() {
             icon={faUpload}
             type="submit"
           >
-            {isSubmitting ? <CircularProgress /> : "Upload Now"}
+            Upload Now
           </StdButton>
+          {showToast && 
+            <S.ToastContainer>
+              <Toast
+                duration={90000}
+                setShowToast={setShowToast}
+                message="An error has occurred. Please try again later."
+              />          
+            </S.ToastContainer>
+          }
+
         </S.CvForm>
+        
+        <Popup isOpen={isPopupOpen} onClose={handleClosePopup}>
+          <S.FunnelPagesContainer>
+            <h1 style={{marginBottom: 10}} className={styles.funnels_pages__title}>You did it!</h1>
+            <p className={styles.funnels_pages__paragraph}>
+              You successfully registered in our Talentpool - whoop whoop! <br />
+              As soon as we find a position that's a great fit for you, we'll reach out to you directly.
+            </p>
+            <S.PopImg
+              src={notebooimg.src}
+              alt="two guys cheering"
+              height={400}
+              width={718}
+            />
+          </S.FunnelPagesContainer>
+        </Popup>
       </FormProvider>
     </>
   );

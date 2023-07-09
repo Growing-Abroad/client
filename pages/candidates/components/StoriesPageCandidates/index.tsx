@@ -3,11 +3,11 @@ import {
   SucessStoriesWrapperCustom
 } from "@/styles/pages-styles/candidates/Success-stories/index.styles";
 import TwoColorTitle from "@components/two-color-title";
-import OriginalFancyCarousel from "@/components/OriginalFancyCarousel";
-import { successStoriesData, successStoriesDataCoaching } from "@/components/SuccessStoriesSection/mock";
+import OriginalFancyCarousel from "@components/OriginalFancyCarousel";
+import { successStoriesData, successStoriesDataCoaching } from "@components/SuccessStoriesSection/mock";
 import { useState } from "react";
-import { ModalLayout } from "@/components/ModalLayout";
-import useModal, { ModalHook } from "@/hooks/useModal";
+import { ModalLayout } from "@components/ModalLayout";
+import useModal, { ModalHook } from "@hooks/useModal";
 
 interface StoriesPageCandidatesProps {
   hasSubTitle?: boolean
