@@ -20,7 +20,7 @@ export default function ThankYouNewsletterPage({ canAccess }: any) {
   const router = useNextRouter();
 
   useEffect(() => {
-    if (canAccess == null) router.push("/");
+    if (canAccess == null) router.push("/candidates");
   });
 
   return (

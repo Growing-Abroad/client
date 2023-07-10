@@ -12,7 +12,7 @@ export default [
       `Ex Bosch, Accenture, Allianz,`,
       `Management Experience`,
     ],
-    href: "https://www.linkedin.com/feed/",
+    href: "https://www.linkedin.com/in/uandersondasilva/",
     countryFlag: "br",
   },
   {
@@ -24,7 +24,7 @@ export default [
       `Certified Professional Coach`,
       `Professional Actor`,
     ],
-    href: "https://www.linkedin.com/feed/",
+    href: "https://www.linkedin.com/in/manuel-feneberg/",
     countryFlag: "us",
   },
 ];

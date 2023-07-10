@@ -3,7 +3,7 @@ import { variables } from '@/styles/global-variables';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PropsWithChildren } from 'react';
-import { ButtonProps } from 'react-bootstrap';
+// import { ButtonProps } from 'react-bootstrap';
 import styled, { CSSProperties } from 'styled-components';
 
 const {
@@ -15,7 +15,7 @@ interface HoverProps {
   backgroundColor?: string;
 }
 
-interface StyledStdBtnProps extends ButtonProps {
+interface StyledStdBtnProps  {
   hover?: HoverProps;
   backgroundColor?: string;
   color?: string;
@@ -57,6 +57,7 @@ export interface IStdButton extends PropsWithChildren, StyledStdBtnProps {
   style?: CSSProperties;
   icon?: IconProp | '';
   onClick?(arg: any): any;
+  type?: 'submit' | 'reset' | 'button' | undefined;
 }
 
 export default function StdButton({
@@ -67,6 +68,7 @@ export default function StdButton({
   hover,
   backgroundColor,
   color,
+  type,
   onClick,
   ...props
 }: IStdButton) {
@@ -81,6 +83,7 @@ export default function StdButton({
       className={className}
       style={style}
       onClick={onClick}
+      type={type}
     >
       {icon && <FontAwesomeIcon icon={icon} size={isMobile ? 'sm': undefined} style={isMobile ? {marginRight: '8px'} : {marginRight: '16px'}}/>}
       {children}

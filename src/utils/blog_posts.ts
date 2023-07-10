@@ -1,12 +1,11 @@
+import { IImage } from "@pages/candidates/components/OurServices/OurServicesSwiper"
+
 interface ICategory {
   id: string
   name: string
 }
 
-export interface IImage {
-  src: string
-  alt: string
-}
+
 
 export interface IPost {
   id: string

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoints } from "utils/constants";
+import { breakpoints } from "@/utils/constants";
 
 export const Container = styled.main`
     display: flex;
@@ -20,6 +20,6 @@ export const Container = styled.main`
     }
 
     @media (min-width: ${breakpoints.desktop.max}px) {
-        margin-top: 75px;
+        margin-top: 65px;
     }
 `

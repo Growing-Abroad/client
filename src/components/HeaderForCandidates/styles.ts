@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { breakpoints } from "utils/constants";
+import { breakpoints } from "@/utils/constants";
 
 export interface ContainerProps {
   itsOpen: boolean;

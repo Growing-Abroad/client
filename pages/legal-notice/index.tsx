@@ -72,7 +72,7 @@ export default function LegalNotice() {
   const { isMobile } = useAppContext();
 
   return (
-    <LegalNoticeContainer >
+    <LegalNoticeContainer>
       <LegalNoticeContent>
         <LegalNoticeTitle>Legal Notice</LegalNoticeTitle>        
 
@@ -93,7 +93,7 @@ export default function LegalNotice() {
         <LegalNoticeParagraph>Registration Number: HRB 284545</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>VAT Identification Number</LegalNoticeTitle2>
-        <LegalNoticeParagraph>VAT identification number according to §27a of the German Value Added Tax Act (Umsatzsteuergesetz): [Insert VAT ID here]</LegalNoticeParagraph>
+        <LegalNoticeParagraph>VAT identification number according to §27a of the German Value Added Tax Act (Umsatzsteuergesetz): [DE361378190]</LegalNoticeParagraph>
 
         <LegalNoticeTitle2>Responsible for content according to § 55 Abs. 2 RStV</LegalNoticeTitle2>
         <LegalNoticeParagraph>Growing Abroad GmbH</LegalNoticeParagraph>

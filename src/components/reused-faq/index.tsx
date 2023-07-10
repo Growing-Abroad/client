@@ -1,7 +1,8 @@
 import useAppContext from "@/hooks/useAppContext";
 import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "../two-color-title";
-import { GeneralFaqMockUp, FaqCoaching } from "./faq-mock-ups";
+import { FaqCoaching } from "./faq-mock-ups";
+import { GeneralFaqMockUp } from "@pages/faq";
 
 interface IReusedFaqProps {
     pageType?: string

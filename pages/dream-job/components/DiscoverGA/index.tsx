@@ -1,4 +1,4 @@
-import * as S from "../../../../styles/candidates/components/DiscoverGA/index.styles";
+import * as S from "@/styles/pages-styles/candidates/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import { StaticImageData } from "next/image";

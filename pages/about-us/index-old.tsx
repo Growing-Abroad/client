@@ -6,7 +6,7 @@ import ShareValues from "./components/ShareValues";
 import { TeamMembers } from "./components/TeamMembers";
 import PageLayout from "../../src/components/PageLayout";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import visionAndMissionMock from "@/utils/mock-ups/vision-and-mission.mock";
+import visionAndMissionMock from "@utils/mock-ups/vision-and-mission.mock";
 
 export default function AboutUs() {
   return (

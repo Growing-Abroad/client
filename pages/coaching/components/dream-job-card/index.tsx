@@ -137,6 +137,14 @@ const ImgWrapper = styled.div`
         }
 
     }
+    .section-mgs {
+        height: 100%; 
+
+        @media (max-width: ${mediaQuery}) {
+            height: 250px;
+            width: 223px;
+        }
+    }
 `
 
 export interface IDramJobCardProps {
@@ -147,7 +155,7 @@ export interface IDramJobCardProps {
     info: string[],
     deprecatedPrice: string,
     actualPrice: string,
-    img: StaticImageData,
+    img: string,
     classes?: string
 
 }
@@ -185,11 +193,11 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                     />
                     
                     <ul className="services-list" >
-                        {info.map((info: string, i) => (
-                            <li className="list-item" key={info+i}>
-                                <Image src={checkIcon} height={18} width={22.20} alt={'check icon'}/>
+                        {info?.map((infoData: string, i) => (
+                            <li className="list-item" key={infoData+i}>
+                                {checkIcon && <Image src={checkIcon} height={18} width={22} alt={'check icon'}/>}
                                 <StdParagraqh className="paragraqh">
-                                    {info}
+                                    {infoData}
                                 </StdParagraqh>
                             </li>
                         ))}
@@ -208,11 +216,11 @@ export default function DreamJobCard({title, description, info, deprecatedPrice,
                     {isMobile && <div className="price price-mobile">
                         <span>{actualPrice}</span>
                         <span style={{textDecoration: 'line-through'}}>{deprecatedPrice}</span>
-                        <Link href={url} style={{textDecoration: "none"}}>
+                        {url && <Link href={url} style={{textDecoration: "none"}}>
                             <StdButton>Book Now</StdButton>
-                        </Link>
+                        </Link>}
                     </div>}
-                    <Image src={img} alt="cv-optimization" style={isMobile ? {height: '250px', width: '223px'} : {height: '100%'}} />
+                    {img && <Image src={img} alt="cv-optimization" width={500} height={400} className="section-mgs"/>}
                 </ImgWrapper>
             </Service>
         </>

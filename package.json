@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-i18n-example",
+  "name": "main-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.11.11",
+    "@netlify/plugin-nextjs": "^4.39.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "next": "^13.1.2",
@@ -25,7 +26,6 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.0",
     "react-icons": "^4.7.1",
-    "react-intl": "^6.2.5",
     "react-is": "^18.2.0",
     "react-timeline-animation": "^1.2.3",
     "sharp": "^0.32.0",

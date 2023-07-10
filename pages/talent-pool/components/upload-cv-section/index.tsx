@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import { CircularProgress } from "@mui/material";
+import React, { useState, useEffect } from "react";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
@@ -14,7 +13,10 @@ import StdError from "@/components/generics/StdError";
 import uploadIcon from "@assets/pages/jobs/icon-upload.svg";
 import newApplication from "@/services/applications/applications.service";
 import LoadingComponent from "@/components/generics/Loading";
-import { AxiosResponse } from "axios";
+import styles from "../../../newsletter-confirmation/funnels.style.module.css";
+import Toast from "@/components/Toast";
+import Popup from "components/PopUp";
+import notebooimg from "@/../public/assets/images/notebook-img.png";
 
 export interface IFormFields {
   pronoum: string;
@@ -27,17 +29,6 @@ export interface IFormFields {
   newsletter: string;
   file: FileList;
   otherFile: FileList;
-}
-
-interface IPhone {
-  countryData: string;
-  number: {
-    name?: string;
-    iso2?: string;
-    dialCode?: string;
-    priority?: number;
-    areaCodes?: string[] | null;
-  };
 }
 
 const expertiseOptions = [
@@ -89,10 +80,12 @@ const titleOptions = [
 export default function UploadCvSection() {
   const { isMobile, loading, setLoading } = useAppContext();
   const [selectedFile, setSelectedFile] = useState<File>();
+  const [inputError, setInputError] = useState<boolean>(false);
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
-
-  // const phoneRef = useRef<IntlTelInput | null>(null);
+  const [showToast, setShowToast] = useState<boolean>(false);
+  const [msgToast, setMsgToast] = useState<string>('');
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const formDefaultValues = {
     pronoum: "",
@@ -107,51 +100,78 @@ export default function UploadCvSection() {
     reValidateMode: "onChange",
     defaultValues: formDefaultValues,
   });
-  
 
   const {
-    formState: { errors, isSubmitting },
+    formState: { errors },
     handleSubmit,
     register,
+    reset,
     setValue,
-    reset
   } = methods;
 
-  const handleDragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
-    event.preventDefault();
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
   };
 
   const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
-    console.log("talentpool", data);
-    setLoading(true);
-
-    try {
-      const response: AxiosResponse = await newApplication(data);
-      console.log({response})
-      resetStates();
-    } catch (error) {
-      // Handle error
-      console.error(error);
-    } finally {
-      setLoading(false);
+    if (selectedFile !== undefined) {
+      setLoading(true);
+      try {
+        await newApplication(data);
+        resetStates();
+        setIsPopupOpen(true);
+      } catch (error) {
+        setIsPopupOpen(false);
+        setShowToast(true);
+        console.error(error);
+        setMsgToast("An error has occurred. Please try again later.")
+      } finally {
+        setLoading(false);
+      }
+    } else{
+      setMsgToast("please fill in all fields")
+      setShowToast(true)
+      setInputError(true)
     }
-  };
     
+  };
+
   const resetStates = () => {
     reset();
-    // phoneRef.current?.setNumber('');
     setSelectedFile(undefined);
     setSelectedFileOptional(undefined);
-  }
-
-  const handleSanitaze = ({ number, countryData }: IPhone) => {
-    const phoneNumber = number.dialCode + countryData;
-    return `+${phoneNumber.replace(/\D/g, "")}`;
   };
+
+  const HandlePreventDefault: React.DragEventHandler<HTMLDivElement> = (
+    event
+  ) => {
+    event.preventDefault();
+  };
+
+  const handleDrop: React.DragEventHandler<HTMLDivElement> = (event) => {
+    event.preventDefault();
+
+    setValue("file", event.dataTransfer.files, { shouldValidate: true });
+    setSelectedFile(event.dataTransfer.files[0]);
+  };
+
+  const handleDropOptional: React.DragEventHandler<HTMLDivElement> = (
+    event
+  ) => {
+    event.preventDefault();
+    setValue("otherFile", event.dataTransfer.files);
+    setSelectedFileOptional(event.dataTransfer.files[0]);
+  };
+
+  useEffect(() => {
+    setInputError(false)
+  },[selectedFile])
+
+  const MB = (1024 * 1024)
 
   return (
     <>
-      {loading && <LoadingComponent/>}
+      {loading && <LoadingComponent />}
       <S.UploadCvWrapper>
         <S.InfoTitle
           text1="Create a Profile &"
@@ -178,7 +198,7 @@ export default function UploadCvSection() {
               to include sensitive data (see Article 9 DSGVO) in your
               application, neither in the form nor in the uploaded documents.
             </S.UIStdParagraqhCustom>
-            <S.UIInfoButton onClick={() => location.href = "/online-course"}>
+            <S.UIInfoButton onClick={() => (location.href = "/online-course")}>
               To the online course
             </S.UIInfoButton>
           </S.ContentInfo>
@@ -268,18 +288,7 @@ export default function UploadCvSection() {
                     : ""
                 }
               >
-                {/* <IntlTelInput
-                  preferredCountries={["de"]}
-                  fieldId="phone"
-                  fieldName="phone"
-                  format
-                  key="phone"
-                  {...register("phone", { required: true })}
-                  ref={phoneRef}
-                  onPhoneNumberChange={(value, countryData, number) => {
-                    setValue("phone", handleSanitaze({ countryData, number }));
-                  }}
-                /> */}
+                <StdTextInput name="phone" required={true} />
               </StdInput>
             </S.FieldGroup>
 
@@ -316,7 +325,12 @@ export default function UploadCvSection() {
                 with max upload size of 5MB.
               </S.UISubtitle>
               <S.UITitle text1="CV Upload *" text2="" />
-              <S.DropArea onDragOver={handleDragOver}>
+              <S.DropArea
+                onDragOver={HandlePreventDefault}
+                onDragEnter={HandlePreventDefault}
+                onDragLeave={HandlePreventDefault}
+                onDrop={handleDrop}
+              >
                 {!selectedFile ? (
                   <S.DropMessage>
                     {isMobile
@@ -337,14 +351,16 @@ export default function UploadCvSection() {
                   id="cv-file-input"
                   type="file"
                   {...register("file", {
-                    required: true,
+                    required: false,
                     onChange: (e) => setSelectedFile(e.target.files[0]),
                   })}
                 />
                 <StdError>
-                  {errors.file?.type === "required"
+                  {inputError
                     ? "Please upload your CV"
-                    : errors.file ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file." : ""}
+                    : (selectedFile?.size ?? 0)/MB > MB*5  
+                    ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file."
+                    : ""}
                 </StdError>
               </S.DropArea>
               <div onClick={() => SetShowNewInput(!showNewInput)}>
@@ -355,7 +371,12 @@ export default function UploadCvSection() {
               </div>
 
               {(showNewInput || selectedFileOptional) && (
-                <S.DropArea onDragOver={handleDragOver}>
+                <S.DropArea
+                  onDragOver={HandlePreventDefault}
+                  onDragEnter={HandlePreventDefault}
+                  onDragLeave={HandlePreventDefault}
+                  onDrop={handleDropOptional}
+                >
                   {!selectedFileOptional ? (
                     <div className="drop-message">
                       <span>
@@ -401,10 +422,9 @@ export default function UploadCvSection() {
                 <S.PrivacyText>
                   Yes, I want to get updates and news of Growing Abroad and I
                   accept the websites{" "}
-                  <Link target="_blank" href="/data-privacy-policy">
-                    Privacy Policy
-                  </Link>
-                  . <br />Our newsletter subscription is non-binding.
+                  <Link href="/data-privacy">Privacy Policy</Link>
+                  . <br />
+                  Our newsletter subscription is non-binding.
                 </S.PrivacyText>
               </S.PrivacyContent>
             </StdInput>
@@ -426,11 +446,11 @@ export default function UploadCvSection() {
                 />
                 <S.PrivacyText>
                   I agree to the{" "}
-                  <Link target="_blank" href="/declaration-of-consent ">
+                  <Link href="/declaration-of-consent ">
                     declaration of consent
                   </Link>{" "}
                   and have read and understood the{" "}
-                  <Link target="_blank" href="/data-privacy-policy/applicants">
+                  <Link href="/data-protection">
                     revocation and privacy policy
                   </Link>
                   . *
@@ -448,9 +468,40 @@ export default function UploadCvSection() {
             icon={faUpload}
             type="submit"
           >
-            {isSubmitting ? <CircularProgress /> : "Upload Now"}
+            Upload Now
           </StdButton>
+          {showToast && (
+            <S.ToastContainer>
+              <Toast
+                setShowToast={setShowToast}
+                message={msgToast}
+              />
+            </S.ToastContainer>
+          )}
         </S.CvForm>
+
+        <Popup isOpen={isPopupOpen} onClose={handleClosePopup}>
+          <S.FunnelPagesContainer>
+            <h1
+              style={{ marginBottom: 10 }}
+              className={styles.funnels_pages__title}
+            >
+              You did it!
+            </h1>
+            <p className={styles.funnels_pages__paragraph}>
+              You successfully registered in our Talentpool - whoop whoop!{" "}
+              <br />
+              As soon as we find a position that's a great fit for you, we'll
+              reach out to you directly.
+            </p>
+            <S.PopImg
+              src={notebooimg.src}
+              alt="two guys cheering"
+              height={400}
+              width={718}
+            />
+          </S.FunnelPagesContainer>
+        </Popup>
       </FormProvider>
     </>
   );

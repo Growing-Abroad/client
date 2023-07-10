@@ -1,4 +1,4 @@
-import * as S from "../../../../../styles/candidates/components/Blog/BlogSection/index.styles";
+import * as S from "@/styles/pages-styles/candidates/Blog/BlogSection/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import Card from "@components/Card";
 import useAppContext from "@/hooks/useAppContext";

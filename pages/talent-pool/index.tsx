@@ -6,9 +6,7 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import PageBodyLayout from "@/components/generics/PageBody";
 import useAppContext from "@/hooks/useAppContext";
 import { EWaveType } from "@/components/Wave";
-import _useLocale from "@/hooks/useLocale";
-import { IntlProvider } from "react-intl";
-import CTAction from "@pages/sales/components/CTAction";
+import CTAction from "@pages/dream-job/components/CTAction";
 import styled from "styled-components";
 
 export const JobsWrapper = styled.div`
@@ -28,10 +26,9 @@ export const JobsWrapper = styled.div`
 
 export default function Jobs() {
   const {
-    windowSize: { height },
+    windowSize: isMobile,
   } = useAppContext();
 
-  const { isMobile } = useAppContext();
 
   return (
     <>
@@ -39,9 +36,9 @@ export default function Jobs() {
         <CTAction
           buttonURL=""
           pageName="jobs"
-          titleIntl="page.jobs.title"
+          titleIntl="Land your Dream job in"//"page.jobs.title"
           subTitleIntl=""
-          buttonIntl="page.jobs.buttonCallToAction"
+          buttonIntl="Upload your CV NOW"//"page.jobs.buttonCallToAction"
         />
         <PageBodyLayout
           id="page-jobs"
@@ -57,16 +54,13 @@ export default function Jobs() {
 }
 
 Jobs.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = _useLocale();
 
   return (
-    <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout
-        chosenHeader={ChosenHeader.FOR_CANDIDATES}
-        hideBlueSection={true}
-      >
-        {page}
-      </PageLayout>
-    </IntlProvider>
+    <PageLayout
+      chosenHeader={ChosenHeader.FOR_CANDIDATES}
+      hideBlueSection={true}
+    >
+      {page}
+    </PageLayout>
   );
 };

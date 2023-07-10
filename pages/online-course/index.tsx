@@ -8,16 +8,13 @@ import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-import { IntlProvider } from "react-intl";
-import _useLocale from "@/hooks/useLocale";
-import Investiment from "@pages/sales/components/Investiment";
-import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
+import Investiment from "@pages/dream-job/components/Investiment";
+import StoriesPageCandidates from "../candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
-import CTAction from "@pages/sales/components/CTAction";
-import FollowDreams from "@pages/sales/components/FollowDream";
+import CTAction from "@pages/dream-job/components/CTAction";
+import FollowDreams from "@pages/dream-job/components/FollowDream";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 
 export const OnlineCourseWrapper = styled.div`
@@ -44,6 +41,45 @@ const TwoColorTitleCustom = styled(TwoColorTitle)`
   
 `
 
+export const OnlineCourseFaqMockUp = [
+  {
+    title: "What happens after I purchase the course? ",
+    content: `You will receive an order confirmation and a welcome email containing a link to access the member area of the online course "Land Your Dream Job in Germany or Europe." Using this link, you can create an account on our online course platform hosted by Elopage. Once you have registered, you will gain access to all the videos, the digital workbook, and other course materials. Additionally, you will find a link to the Growing Abroad Community Group within this online course.`,
+  },
+  {
+    title: "What language is used in the Online Course?",
+    content:
+"The course is in English, as this is a requirement for jobs in Germany. Our recruiting experts are fluent in German and Portuguese."  },
+  {
+    title: "I have a completed vocational training. Is this course for me? ",
+    content:
+      "The course is designed for those with a university degree or those currently studying and looking for an internship. You can purchase the course with a completed vocational training, but you will need to adapt the content to your profession. The course provides an in-depth look at various topics and will provide you with great application materials and knowledge to help you succeed in job interviews. ",
+  },
+  {
+    title: "Does the Online Course make sense if I am not in Germany?     ",
+    content:
+      "Absolutely! The course is designed for those in Germany and those living abroad. It will help you achieve your goal of working in Germany",
+  },
+  {
+    title: "How does payment work?",
+    content: "Payment can be made through PayPal, credit card, Apple Pay, and Google Pay. The price will be displayed in Euros. If you are from a country with a different currency, you can utilize a currency converter to calculate the price in your respective currency."
+  },
+  {
+    title: "After this Online Course, can I get jobs in other European countries?",
+    content:
+      "Yes. The techniques and methods taught in the course apply to all European countries. Our customers have secured jobs in many different European countries.",
+  },
+  {
+    title: "Is this course a guarantee to secure a job in Germany or Europe?",
+    content: "While this course provides comprehensive preparation to help you secure your dream job in Germany or Europe, it is important to note that success ultimately depends on your own dedication and efforts. The course equips you with valuable knowledge and skills, making it easier for you to navigate the job market. However, it does not guarantee job placement. Your level of motivation and willingness to apply what you learn will greatly impact your job search."
+  },
+  {
+    title: "How long will I have access to the online course?",
+    content: "You will have access to the online course for a duration of 3 years. Throughout this period, you can watch the course content as many times as you wish."
+  }
+];
+
+
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
 
@@ -59,9 +95,9 @@ export default function OnlineCourse() {
       <OnlineCourseWrapper>
         <CTAction
           pageName="onlineCourses"
-          titleIntl="page.onlineCourse.title"
+          titleIntl="Land your Dream job in"
           subTitleIntl=""
-          buttonIntl="page.onlineCourse.buttonCallToAction"
+          buttonIntl="Buy Online Course Now"
         />
         <PageBodyLayout
           id="page-onlie-course"
@@ -97,10 +133,12 @@ export default function OnlineCourse() {
 }
 
 OnlineCourse.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = _useLocale();
+  // const { locale, messages } = _useLocale();
   return (
-    <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
-    </IntlProvider>
+    // <IntlProvider locale={locale!} messages={messages}>
+      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>
+        {page}
+      </PageLayout>
+    // </IntlProvider>
   );
 };

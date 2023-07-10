@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useIntl } from "react-intl";
+// import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { theme } from "@styles/theme";
 
@@ -57,14 +57,14 @@ const UISpan = styled.span`
 export const TextChanger = ({ texts, duration = 3000 }: TextChangerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const intl = useIntl();
+  // const intl = useIntl();
 
-  const t = (id: string): string => {
-    return intl.formatMessage({ id });
-  };
+  // const t = (id: string): string => {
+  //   return intl.formatMessage({ id });
+  // };
 
   const textsTranslations = texts.map((texts) => {
-    return t(`${texts}`);
+    return texts //t(`${texts}`);
   });
 
   const currentName = textsTranslations[currentIndex];

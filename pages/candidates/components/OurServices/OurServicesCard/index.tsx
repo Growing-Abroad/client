@@ -1,6 +1,6 @@
-import * as S from "../../../../../styles/candidates/components/OurServices/OurServicesCard/index.styles";
+import * as S from "@/styles/pages-styles/candidates/OurServices/OurServicesCard/index.styles";
 import { BsCheckLg } from "react-icons/bs";
-import { IService } from "@utils/services";
+import { IService } from "@/utils/services";
 
 export default function OurServicesCard({
   id,
@@ -20,10 +20,10 @@ export default function OurServicesCard({
 
   return (
     <S.Container>
-      <div
+      {image && <div
         className="card-image"
-        style={{ backgroundImage: `url(${image.src})` }}
-      ></div>
+        style={{ backgroundImage: `url(${image?.src})` }}
+      ></div>}
       <S.CardContainer>
         <S.CardHeader>
           <h2 dangerouslySetInnerHTML={{ __html: title }} />
@@ -31,7 +31,7 @@ export default function OurServicesCard({
         </S.CardHeader>
 
         <S.CardDescriptions>
-          {descriptions.map((description) => (
+          {descriptions?.map((description) => (
             <div key={description.id}>
               <BsCheckLg className="star" />
               <p dangerouslySetInnerHTML={{ __html: description.content }} />

@@ -1,7 +1,7 @@
 import {
   DiscoverReadMoreWrapper,
   DiscoverGrowingAbroadSection,
-} from "../../../../styles/candidates/components/DiscoverGA/index.styles";
+} from "@/styles/pages-styles/candidates/DiscoverGA/index.styles";
 import TwoColorTitle from "@components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";

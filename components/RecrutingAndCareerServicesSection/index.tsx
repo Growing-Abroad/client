@@ -12,6 +12,7 @@ import {
 } from "@/../styles/components/RecrutingAndCareerServicesSection/index.styles";
 import { CardWithImage } from "@/components";
 import useAppContext from "@/hooks/useAppContext";
+import { useRouter } from "next/router"
 
 function RecruitingAndCareerServicesSection() {
   const {
@@ -20,6 +21,7 @@ function RecruitingAndCareerServicesSection() {
   } = useAppContext();
 
   const shouldBreakLine: boolean = width <= smallDesktopSize;
+  const router = useRouter()
 
   return (
     <Container>
@@ -37,7 +39,7 @@ function RecruitingAndCareerServicesSection() {
           description="We will find the best international talents for you and help you to attract qualified professionals from around the world"
           imageSrc={Company.src}
           buttonTitle="Find Experts Now"
-          onClick={() => null}
+          onClick={() => router.push("/candidates")}
         />
         <CardSeparator />
         <CardWithImage
@@ -45,7 +47,7 @@ function RecruitingAndCareerServicesSection() {
           description="We help you to land your dream job in Germany or Europe and build a successful career abroad"
           imageSrc={Interview.src}
           buttonTitle="Find a job now"
-          onClick={() => null}
+          onClick={() => router.push("/candidates")}
         />
       </CardsContainer>
     </Container>

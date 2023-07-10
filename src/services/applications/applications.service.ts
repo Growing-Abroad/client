@@ -1,5 +1,5 @@
 import { toBase64 } from "@/utils/functions/to-base-64";
-import { IFormFields } from "@pages/jobs/components/upload-cv-section";
+import { IFormFields } from "@pages/talent-pool/components/upload-cv-section";
 import axios from "axios";
 
 
@@ -16,7 +16,7 @@ const newApplication = async (data: IFormFields) => {
             otherFile: otherFile64
         };
         const body = JSON.stringify(newData);
-        const response = await axios.post('http://localhost:3001/talentpool', body, {headers});
+        const response = await axios.post('http://api.growingabroad.de/talentpool', body, {headers});
 
         return response
         

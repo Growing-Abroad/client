@@ -3,7 +3,7 @@ import CenteredSection from "../centeredSection";
 import styled from "styled-components";
 import { variables } from "@/styles/global-variables";
 import { theme } from "@/styles/theme";
-import DreamJobCard, { IDramJobCardProps } from "./dream-job-card";
+import DreamJobCard, { IDramJobCardProps } from "../dream-job-card";
 import cvOptimization from '@assets/pages/coaching/cv-optimization.png';
 import coverLetter from '@assets/pages/coaching/cover-letter-optimization.png';
 import jobInterviewPrep from '@assets/pages/coaching/job-interview.png';
@@ -46,6 +46,7 @@ const CardsWrapper = styled.div`
     }
 `
 
+
 const mockupDreamJobCard: IDramJobCardProps[] = [
     {
         url: "https://growingabroad.de/s/growingabroad/coaching-cv/payment",
@@ -59,7 +60,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         ],
         deprecatedPrice: '300 €',
         actualPrice: '147 €',
-        img: cvOptimization
+        img: cvOptimization.src
     },
     {
         url: "https://growingabroad.de/s/growingabroad/coaching-cover-letter/payment",
@@ -73,7 +74,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         ],
         deprecatedPrice: '300 €',
         actualPrice: '147 €',
-        img: coverLetter
+        img: coverLetter.src
     },
     {
         url: "https://growingabroad.de/s/growingabroad/coaching-linkedin/payment",
@@ -87,7 +88,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         ],
         deprecatedPrice: '300 €',
         actualPrice: '147 €',
-        img: linkedinOpt
+        img: linkedinOpt.src
     },
     {
         url: "https://growingabroad.de/s/growingabroad/coaching-job-search-strategy/payment",
@@ -101,7 +102,7 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         ],
         deprecatedPrice: '300 €',
         actualPrice: '147 €',
-        img: jobSearchStrategy
+        img: jobSearchStrategy.src
     },
     {
         url: "https://growingabroad.de/s/growingabroad/coaching-job-interview/payment",
@@ -115,13 +116,13 @@ const mockupDreamJobCard: IDramJobCardProps[] = [
         ],
         deprecatedPrice: '500 €',
         actualPrice: '247 €',
-        img: jobInterviewPrep
+        img: jobInterviewPrep.src
     }
 ]
 
-
 export default function DreamJobSection() {
     const { isMobile } = useAppContext();
+    
     return (
         <>
             <CenteredSection contentStyles={isMobile ? {paddingTop: '40px', paddingBottom: '40px'} : {}}>

@@ -1,20 +1,20 @@
 import CallToAction from "./components/CallToAction/CallToAction";
 import WorkIn from "./components/WorkIn/WorkIn";
 import OurServicesSection from "./components/OurServices";
-import { StoriesPageCandidates } from "./components/StoriesPageCandidates";
+import { StoriesPageCandidates } from "@pages/candidates/components/StoriesPageCandidates";
 import CommunitySection from "./components/Community";
-import BlogSection from "./components/Blog/BlogSection";
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "@pages/_app";
 import PageLayout from "@components/PageLayout";
 import DiscoverGA from "./components/DiscoverGA";
-import { IntlProvider } from "react-intl";
+// import { IntlProvider } from "react-intl";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import _useLocale from "@/hooks/useLocale";
+// import _useLocale from "@/hooks/useLocale";
 import { EWaveType } from "@/components/Wave";
 import useAppContext from "@/hooks/useAppContext";
 import PageBodyLayout from "@/components/generics/PageBody";
 import styled from "styled-components";
+import BlogSection from "./components/Blog/BlogSection";
 
 
 export const CandidatesWrapper = styled.div`
@@ -65,12 +65,12 @@ const Candidates: NextPageWithLayout = () => {
 };
 
 Candidates.getLayout = function getLayout(page: ReactElement) {
-  const { locale, messages } = _useLocale();
+  // const { locale, messages } = _useLocale();
 
   return (
-    <IntlProvider locale={locale!} messages={messages}>
+    // <IntlProvider locale={locale!} messages={messages}>
       <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES} usePageBody={true} >{page}</PageLayout>
-    </IntlProvider>
+    // </IntlProvider>
   );
 };
 

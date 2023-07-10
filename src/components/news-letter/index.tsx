@@ -1,12 +1,13 @@
 import useAppContext from "@/hooks/useAppContext";
 import signInNewsLetter from "@/services/news-letter/news-letter.service";
 import { Checkbox } from "@mui/material";
-import { FormEvent } from "react";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import { useTheme } from "styled-components";
-import { useRouter as useNextRouter } from "next/router";
 import StdButton from "../generics/StdButton/StdButton";
 import { useState } from "react";
+import StdError from "../generics/StdError";
+import Toast from "../Toast";
+
 import {
   InputNewsLetter,
   InputWrapper,
@@ -18,7 +19,6 @@ import {
   FlexContainerCheckbox,
   SuccessMsg,
 } from "./style";
-import StdError from "../generics/StdError";
 
 interface INewsLetter {
   name: string;
@@ -27,8 +27,8 @@ interface INewsLetter {
 }
 
 export default function NewsLetter() {
-  const router = useNextRouter();
   const [showForm, setShowForm] = useState(true);
+  const [showToast, setShowToast] = useState<boolean>(false);
 
   const formDefaultValues = {
     name: "",
@@ -52,14 +52,6 @@ export default function NewsLetter() {
     register,
   } = methods;
 
-  const handleCheckBox = (e: FormEvent<HTMLInputElement>) => {
-    if (e.currentTarget.checked) {
-      e.currentTarget.value = "false";
-    } else {
-      e.currentTarget.value = "true";
-    }
-  };
-
   const onSubmit: SubmitHandler<INewsLetter> = async (data) => {
     const { name, email, consent } = data;
 
@@ -74,22 +66,18 @@ export default function NewsLetter() {
         },
         listId: 6,
       },
+      setShowToast
     };
-    const { response } = await signInNewsLetter(newsletterData);
-    if (response.ok) {
-      setShowForm(false);
-      const parametros = { params: response.ok };
-      router.push(
-        {
-          pathname: "/newsletter-confirmation",
-          query: parametros,
-        },
-        "/newsletter-confirmation"
-      );
-    } else {
-      //todo
+    try {
+      const { response } = await signInNewsLetter(newsletterData);
+      if (response.ok) {
+        setShowForm(false);
+      } 
+    } catch (error) {
+      console.error(error)
     }
     setLoading(false);
+    
   };
 
   return (
@@ -185,10 +173,21 @@ export default function NewsLetter() {
             </NewsLetterForm>
           </FormProvider>
         ) : (
-          <SuccessMsg>
-            You will receive an email shortly to <span>CONFIRM YOUR RESGISTRATION</span>. <br />
-            If you don’t find any mail, then please also check your Spam Folder.
-          </SuccessMsg>
+          <>
+            {showToast ? (
+              <Toast
+                setShowToast={setShowToast}
+                message="An error occurred while subscribing to the newsletter. Please try again later."
+              />
+            ) : (
+              <SuccessMsg>
+                You will receive an email shortly to{" "}
+                <span>CONFIRM YOUR REGISTRATION</span>. <br />
+                If you don’t find any mail, then please also check your Spam
+                Folder.
+              </SuccessMsg>
+            )}
+          </>
         )}
       </NewsLetterContainer>
     </>

@@ -34,9 +34,9 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   const handleGoToLegal = () => onGoToNextPage(EPagesNames.LEGAL_NOTICE);
 
-  const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
+  const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.DATA_PRIVACY);
 
-  const handleGoToPrivacyApplicants = () => onGoToNextPage(EPagesNames.PRIVACY_APPLICANTS);
+  const handleGoToPrivacyApplicants = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
 
   return (
     <S.FooterContainer usePageBody={usePageBody}>
@@ -100,7 +100,7 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                           width={26}
                         />
                       </Link>
-                      <Link target="_blank" href="https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ" >
+                      <Link target="_blank" href="https://youtube.com/@growing.abroad" >
                         <Image
                           src={YoutubeIcon}
                           alt="youtube icon"

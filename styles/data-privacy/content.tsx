@@ -7,6 +7,7 @@ import {
     Underlined 
 } from ".";
 import { CustomLink, EmailLink, LinkTo } from "@/components/generics/EmailLink";
+import Link from "next/link";
 
 
 
@@ -162,7 +163,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           <br />
           For the sale of our products and services, we use the online sales platform elopage provided by elopage GmbH, Kurfürstendamm 208, 107179 Berlin. Therefore, when you click on a product button on our website, you will be redirected to our sales page on elopage, where we also provide you with all further information regarding the processing of your data in the context of sales and payment processing. <br />
           We have entered into a data processing agreement with elopage. <br /> 
-          For more information about elopage and the processing of personal data by elopage, please visit https://elopage.com/privacy?locale=de. <br />
+          For more information about elopage and the processing of personal data by elopage, please visit <Link href="https://elopage.com/privacy?locale=de" target="_blank">https://elopage.com/privacy?locale=de</Link>.<br />
           <br />
           d) <Underlined>Newsletter</Underlined> <br />
           <br />
@@ -199,6 +200,17 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           We provide a form on our website for you to contact us at any time. To use the contact form, it is necessary to provide a name for personal addressing and a valid email address for communication, so that we know who the inquiry is from and can process it accordingly. <br />
           If you send us inquiries through the contact form, your information from the inquiry form, including the contact details you provided, as well as your IP address, will be processed in accordance with Art. 6(1)(b) and (f) of the GDPR for the purpose of carrying out pre-contractual measures based on your request or for the exercise of our legitimate interest, namely the conduct of our business activities. <br />
           The inquiries and the associated data will be deleted no later than 6 months after receipt, unless they are required for further contractual relationships. <br />
+          <br />
+          We use SendGrid, an email delivery service, for our contact form. The service provider is the American company Twilio Inc, 889 Winslow St, Redwood City, California 94063, USA.
+          <br />
+          SendGrid also processes data from you in the USA, among other places. We would like to point out that according to the opinion of the European Court of Justice, there is currently no adequate level of protection for the transfer of data to the USA. This may be associated with various risks to the lawfulness and security of data processing.
+          <br />
+          As a basis for data processing with recipients located in third countries (outside the European Union, Iceland, Liechtenstein, Norway, i.e. especially in the USA) or a data transfer there, SendGrid uses so-called standard contractual clauses (= Art. 46. para. 2 and 3 DSGVO). Standard Contractual Clauses (SCC) are templates provided by the EU Commission and are intended to ensure that your data comply with European data protection standards even if they are transferred to third countries (such as the USA) and stored there. Through these clauses, SendGrid undertakes to comply with the European level of data protection when processing your relevant data, even if the data is stored, processed and managed in the USA. These clauses are based on an implementing decision of the EU Commission. You can find the decision and the corresponding standard contractual clauses here, among other places: https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de
+          <br />
+          The Data Processing Addendum, which corresponds to the standard contractual clauses, can be found at <Link href="https://www.twilio.com/legal/data-protection-addendum" target="_blank">https://www.twilio.com/legal/data-protection-addendum</Link>.
+          <br />
+          You can learn more about the data processed through the use of SendGrid in the Privacy Policy at <Link target="_blank" href="https://www.twilio.com/legal/privacy">https://www.twilio.com/legal/privacy</Link>.
+          <br />
           <br />
           f) <Underlined>Application Form</Underlined> <br />
           <br />
@@ -314,7 +326,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           We embed videos from YouTube, which is operated by Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland), on our website using iFrame. As part of embedding the videos, we have enabled YouTube's enhanced privacy mode.  <br />
           When you play a YouTube video during your visit, a connection is established to YouTube's servers, and the YouTube server is informed of which of our pages you have visited. <br />
           This allows YouTube to directly associate your browsing behavior with your personal profile. You can prevent this by logging out of your member account before visiting our website. <br />Additionally, when the service starts, YouTube sets various cookies to improve their offered services and prevent misuse, according to their own statements. <br />
-          For more information on how user data is handled and the cookies set, please refer to YouTube's privacy policy at: https://www.google.com/intl/de/policies/privacy <br />
+          For more information on how user data is handled and the cookies set, please refer to YouTube's privacy policy at: <Link href="https://www.google.com/intl/de/policies/privacy" target="_blank">https://www.google.com/intl/de/policies/privacy</Link> <br />
           By embedding YouTube, the Google Fonts from Google are also dynamically loaded without explicit determination by the website operator or visitor. The integration of these web fonts is done through a server request, typically a server from Google in the USA. As a result, the following information may be transmitted to the server and stored by Google: <br />
           <Ul>
             <li>Name and version of the browser used</li>
@@ -420,7 +432,7 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
         <>
           If we make changes to the privacy policy, it will be clearly indicated on the website, and registered customers will be informed. <br />
           <br />
-          Effective Date: June 13, 2023.
+          Effective Date: July 10, 2023.
         </>  
       )
     }

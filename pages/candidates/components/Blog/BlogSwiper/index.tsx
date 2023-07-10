@@ -1,10 +1,10 @@
 import "swiper/swiper-bundle.css";
-import * as S from "../../../../../styles/candidates/components/Blog/BlogSwiper/index.styles";
+import * as S from "@/styles/pages-styles/candidates/Blog/BlogSwiper/index.styles";
 import { posts, IPost } from "@utils/blog_posts";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
-import useAppContext from "@/hooks/useAppContext";
+import useAppContext from "@hooks/useAppContext";
 import BlogCard from "../BlogCard";
 
 export default function BlogSwiper() {
@@ -12,15 +12,15 @@ export default function BlogSwiper() {
   const {
     windowSize: { width },
   } = useAppContext();
-  const [posts_, setPosts] = useState<IPost[]>();
+  const [posts_, setPosts] = useState<IPost[]>(posts);
 
   const handleSwiperCards = (mobile: number, desktop: number) => {
     return width < 768 ? mobile : desktop;
   };
 
-  useEffect(() => {
-    setPosts(posts);
-  }, []);
+  // useEffect(() => {
+  //   setPosts(posts);
+  // }, []);
 
   return (
     <S.Container>
@@ -43,7 +43,7 @@ export default function BlogSwiper() {
         loop
         style={{ padding: "0 60px" }}
       >
-        {posts_?.map((post) => (
+        {posts?.map((post) => (
           <SwiperSlide key={post.id} zoom>
             <BlogCard {...post} />
           </SwiperSlide>

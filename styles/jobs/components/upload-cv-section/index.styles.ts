@@ -5,7 +5,7 @@ import TwoColorTitle from "@/components/two-color-title";
 import StdParagraqh from "@/components/generics/StdParagraqh/StdParagraqh";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import Image from "next/image";
-import StdInput from "@/components/generics/StdInput";
+import leadsBg from "@/../public/assets/images/leads-bg.jpg";
 
 const {
   colors: { blue700, yellow400, blue300, blue400 },
@@ -74,6 +74,7 @@ export const CvForm = styled.form`
   flex-direction: column;
   align-items: center;
 
+
   .allow-dropdown {
     color: #05335b;
     border: 1px solid #05335b;
@@ -107,10 +108,10 @@ export const DeclarationTitle = styled(TwoColorTitle)`
 export const UIStdParagraqh = styled(StdParagraqh)`
   margin-bottom: 32px !important;
   cursor: pointer;
-  color: #4A9AFD;
+  color: #4a9afd;
   font-size: 20px;
   margin: 21px 0 0;
-  
+
   &.cv-upload-sub {
     margin-top: 32px;
     margin-bottom: 0;
@@ -203,7 +204,6 @@ export const PrivacyText = styled.p`
   }
   font-size: 12px;
   margin: 0;
-
 `;
 
 export const UITitle = styled(TwoColorTitle)`
@@ -341,4 +341,33 @@ export const FileInput = styled.input`
 
 export const UIStdParagraqhCustom = styled(StdParagraqh)`
   font-weight: 400;
+`;
+
+export const PopImg = styled(Image)`
+  width: 100%;
+  max-width: 394px;
+  margin-top: 46px;
+  margin-bottom: 8px;
+  height: auto;
+`;
+
+export const FunnelPagesContainer = styled.div`
+  background-image: url(${leadsBg.src});
+  height: 456px;
+  padding: 0;
+  margin: 0;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding: 0 40px;
+  }
+`;
+
+export const ToastContainer = styled.div`
+  div {
+    bottom: 67px;
+  }
 `

@@ -1,10 +1,9 @@
 import styled from "styled-components"
-import { useIntl } from "react-intl"
+// import { useIntl } from "react-intl"
 
 import ContainerHero from "@/components/ContainerHero"
 import JobsHeroBg from "@assets/pages/jobs/jobs-hero-bg-desktop.png"
 import JobsHeroMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png"
-import JobsHeroWide from "@assets/pages/jobs/jobs-hero-ultra-wide.png"
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";
 import { theme } from "@/styles/theme";
@@ -13,7 +12,7 @@ import StdButton from "@/components/generics/StdButton/StdButton"
 import { TextChanger } from "components/TextChanger"
 
 const { colors: { blue700, blue500 }} = theme;
-const { sizes: { maxWidthAll, globalHorizontalPadding, mediaQuery }} = variables;
+const { sizes: { maxWidthAll, mediaQuery }} = variables;
 
 const ContainerWrapper = styled.section`
   width: 100%;
@@ -63,11 +62,11 @@ export const HeroTitleWrapper = styled.div`
 export default function JobsHeroSection() {
   const { isMobile } = useAppContext();
 
-  const intl = useIntl();
+  // const intl = useIntl();
 
-  const t = (id: string): string => {
-    return intl.formatMessage({ id });
-  };
+  // const t = (id: string): string => {
+  //   return intl.formatMessage({ id });
+  // };
 
   return (
     <>
@@ -89,12 +88,12 @@ export default function JobsHeroSection() {
           <HeroTitleWrapper>
             <div style={{ maxWidth: '600px' }}>
               <TwoColorTitle
-                text1={t("page.home.callToAction")}
+                text1={"Land your Dream Job in"}
                 text2={
                   <TextChanger
                     texts={[
-                      "page.home.callToAction.germany",
-                      "page.home.callToAction.europe",
+                      "Germany",
+                      " Europe",
                     ]}
                   />
                 }

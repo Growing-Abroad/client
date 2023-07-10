@@ -8,7 +8,6 @@ import {
   Content,
   ButtonsContainer,
   Button,
-  IconsContainer,
   IconButton,
   StyledBurger,
   SubContainer,
@@ -76,7 +75,7 @@ function HeaderForPublicRoutes() {
             ) : (
               <Logo src={GrowingAbroadImage.src} />
             )}
-            {isMobile && (
+            {/* {isMobile && (
               <IconButton showSecondaryDesktopMenu={showSecondaryDesktopMenu}>
                 <FontAwesomeIcon
                   icon={faGlobe}
@@ -84,7 +83,7 @@ function HeaderForPublicRoutes() {
                   style={{ color: white }}
                 />
               </IconButton>
-            )}
+            )} */}
           </LogoContainer>
           <Content>
             <ButtonsContainer>
@@ -101,7 +100,7 @@ function HeaderForPublicRoutes() {
                 For candidates
               </Button>
             </ButtonsContainer>
-            <IconsContainer>
+            {/* <IconsContainer>
               {!isMobile && (
                 <>
                   <IconButton
@@ -116,7 +115,7 @@ function HeaderForPublicRoutes() {
                   </IconButton>
                 </>
               )}
-            </IconsContainer>
+            </IconsContainer> */}
           </Content>
         </SubContainer>
       </Container>

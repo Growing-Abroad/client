@@ -45,6 +45,13 @@ export const DataPrivacyContent = styled.div`
       color: ${blue400};
     }
   }
+
+    a {
+    color: #05335B;
+    :hover {
+      color: #0000ee;
+    }
+  }
 `
 
 export const DataPrivacyTitle = styled.h1`

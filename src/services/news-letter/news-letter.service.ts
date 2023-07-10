@@ -5,6 +5,8 @@ interface IsendNewsLetterServiceResponse {
   contactList: T.ContactList;
 }
 
+type SetShowToast = React.Dispatch<React.SetStateAction<boolean>>;
+
 interface IsendNewsLetterServiceProps {
   url: string
   data: {
@@ -14,9 +16,10 @@ interface IsendNewsLetterServiceProps {
     },
     listId: number
   }
+  setShowToast: SetShowToast
 }
 
-const signInNewsLetter = async ({ url, data }: IsendNewsLetterServiceProps): Promise<IsendNewsLetterServiceResponse | any> => {
+const signInNewsLetter = async ({ url, data, setShowToast }: IsendNewsLetterServiceProps): Promise<IsendNewsLetterServiceResponse | any> => {
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -27,13 +30,16 @@ const signInNewsLetter = async ({ url, data }: IsendNewsLetterServiceProps): Pro
     });
 
     if (!response.ok) {
+      setShowToast(true)
       throw new Error('Error: ' + response.status);
     }
 
     const responseData = await response.json();
+    setShowToast(false)
     
     return { responseData, response };
   } catch (error) {
+    setShowToast(true)
     console.error('Error:', error);
     return { error };
   }
