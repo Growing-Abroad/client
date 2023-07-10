@@ -371,3 +371,18 @@ export const ToastContainer = styled.div`
     bottom: 67px;
   }
 `
+
+export const PhoneContainer = styled.div`
+    all: unset;
+    color: #05335B;
+    border: 1px solid #05335B;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    input {
+      &:focus-visible {
+        outline: none;
+      }
+    }
+`
