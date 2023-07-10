@@ -33,7 +33,7 @@ export const socials1: ISocial[] = [
     source: InstagramIcon,
     name: "instagram",
     socialLink: "https://www.instagram.com/growing.abroad",
-    followNumber: 8200,
+    followNumber: 11000,
     followType: FollowType.followers,
   },
   {
@@ -49,7 +49,7 @@ export const socials2: ISocial[] = [
   {
     source: YoutubeIcon,
     name: "Youtube",
-    socialLink: "https://www.youtube.com/channel/UCFlN7h2oM6fR5vfgPUQ-xLQ",
+    socialLink: "https://youtube.com/@growing.abroad",
     followNumber: 500,
     followType: FollowType.subscribers,
   },

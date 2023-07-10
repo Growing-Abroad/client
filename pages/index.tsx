@@ -13,10 +13,10 @@ import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const { req, res } = context;
 
-  if (req && req.url === '/') {
-    res.writeHead(302, { Location: '/candidates' });
-    res.end();
-  }
+  // if (req && req.url === '/') {
+  //   res.writeHead(302, { Location: '/candidates' });
+  //   res.end();
+  // }
 
   return {
     props: {},
@@ -29,15 +29,15 @@ const Page: NextPageWithLayout = () => {
       <HeroSection />
       <ConsultingGmbHSection />
       <RecruitingAndCareerServicesSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
     </>
   );
 };
-
+ 
 Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
-    <PageLayout chosenHeader={ChosenHeader.DEFAULT}>
+    <PageLayout chosenHeader={ChosenHeader.DEFAULT} hideBlueSection={true}>
       {page}
     </PageLayout>
   );

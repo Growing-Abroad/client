@@ -379,7 +379,7 @@ export default function UploadCvSection() {
                 <S.PrivacyText>
                   Yes, I want to get updates and news of Growing Abroad and I
                   accept the websites{" "}
-                  <Link target="_blank" href="/data-privacy-policy">
+                  <Link href="/data-privacy">
                     Privacy Policy
                   </Link>
                   . <br />Our newsletter subscription is non-binding.
@@ -404,11 +404,11 @@ export default function UploadCvSection() {
                 />
                 <S.PrivacyText>
                   I agree to the{" "}
-                  <Link target="_blank" href="/declaration-of-consent ">
+                  <Link href="/declaration-of-consent ">
                     declaration of consent
                   </Link>{" "}
                   and have read and understood the{" "}
-                  <Link target="_blank" href="/data-privacy-policy/applicants">
+                  <Link href="/data-protection">
                     revocation and privacy policy
                   </Link>
                   . *

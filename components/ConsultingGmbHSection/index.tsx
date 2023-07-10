@@ -38,50 +38,7 @@ function ConsultingGmbHSection() {
         )}
       </TitlesContainer>
 
-      {/* <Content>
-        <ParagraphsContainer>
-          <Paragraph>
-            At Growing Abroad we are committed to match international skilled
-            talents with companies that have a growing demand for jobs in the
-            German and European job market.
-          </Paragraph>
-          <Paragraph>
-            We are specialized not only in providing career development and
-            consulting services to ambitious students and professionals
-            seeking to establish themselves in Germany and Europe but also
-            offer HR services for German companies matching international
-            talents and candidates to fulfill their growing demand of jobs.
-          </Paragraph>
-          <Paragraph>
-            <strong>Business Experts:</strong>
-            <br />
-            +10 years experience in Tech, Engineering, Consulting and IT
-            Project Management
-          </Paragraph>
-          <Paragraph>
-            <strong>Trusted Career Coaches:</strong>
-            <br />
-            90% Success Rate for our qualified international talents to get
-            hired
-          </Paragraph>
-          <Paragraph>
-            <strong>Talent Reach:</strong>
-            <br />
-            60.000+ Talents on our Social Media Platforms
-          </Paragraph>
-        </ParagraphsContainer>
 
-        <CarouselContainer>
-          <FancyCarousel
-            initialSlideIndex={1}
-            haveSmallsSlides
-            dataArray={consultingGmbhMock}
-            IsCentralized
-            isIntroducingAPerson
-          />
-        </CarouselContainer>
-
-      </Content> */}
 
       <BlueSquareWithCarousel carouselData={consultingGmbhMock} changeOnHover>
         <ParagraphsContainer>

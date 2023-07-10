@@ -8,16 +8,13 @@ import FaqSection from "@pages/faq/components/FaqSection";
 import TwoColorTitle from "@/components/two-color-title";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-// import { OnlineCourseFaqMockUp } from "@/components/reused-faq/faq-mock-ups";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-// import { IntlProvider } from "react-intl";
-// import _useLocale from "@/hooks/useLocale";
-import Investiment from "@pages/sales/components/Investiment";
+import Investiment from "@pages/dream-job/components/Investiment";
 import StoriesPageCandidates from "../candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
-import CTAction from "@pages/sales/components/CTAction";
-import FollowDreams from "@pages/sales/components/FollowDream";
+import CTAction from "@pages/dream-job/components/CTAction";
+import FollowDreams from "@pages/dream-job/components/FollowDream";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 
 export const OnlineCourseWrapper = styled.div`
@@ -98,9 +95,9 @@ export default function OnlineCourse() {
       <OnlineCourseWrapper>
         <CTAction
           pageName="onlineCourses"
-          titleIntl="Land your Dream job in"//"page.onlineCourse.title"
+          titleIntl="Land your Dream job in"
           subTitleIntl=""
-          buttonIntl="Buy Online Course Now"//"page.onlineCourse.buttonCallToAction"
+          buttonIntl="Buy Online Course Now"
         />
         <PageBodyLayout
           id="page-onlie-course"

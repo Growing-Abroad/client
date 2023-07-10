@@ -8,8 +8,11 @@ import {
   Container,
 } from "./styles";
 import Image from "next/image";
+import { useRouter } from "next/router"
 
 export const Presentation = () => {
+  const router = useRouter()
+
   return (
     <Container>
       <Wrapper>
@@ -21,7 +24,7 @@ export const Presentation = () => {
           Are you looking for Skilled International Talents for your open
           positions?
         </Description>
-        <Button>Find experts now</Button>
+        <Button onClick={() => router.push("/contact-us")}>Find experts now</Button>
         <ImageBox>
           <Image
             fill

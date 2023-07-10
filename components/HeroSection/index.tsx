@@ -15,9 +15,12 @@ import {
 } from "@/../styles/components/HeroSection/index.styles";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import useAppContext from "@/hooks/useAppContext";
+import { useRouter } from "next/router"
 
 function HeroSection() {
   const { isMobile } = useAppContext();
+  const router = useRouter()
+
   return (
     <Container>
       <VideoContainer>
@@ -67,7 +70,7 @@ function HeroSection() {
             </SubtitleContainer>
           )}
           <ButtonsContainer>
-            <StdButton
+            <StdButton onClick={() => router.push("/companies")}
               style={{
                 width: `${isMobile ? "196px" : "284px"}`,
                 height: `${isMobile ? "35px" : "59px"}`,
@@ -82,7 +85,7 @@ function HeroSection() {
             >
               For Companies
             </StdButton>
-            <StdButton
+            <StdButton onClick={() => router.push("/candidates")}
               style={{
                 width: `${isMobile ? "177px" : "284px"}`,
                 height: `${isMobile ? "35px" : "59px"}`,

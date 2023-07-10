@@ -4,7 +4,6 @@ import styled from "styled-components"
 import ContainerHero from "@/components/ContainerHero"
 import JobsHeroBg from "@assets/pages/jobs/jobs-hero-bg-desktop.png"
 import JobsHeroMobile from "@assets/pages/jobs/jobs-hero-bg-mobile.png"
-// import JobsHeroWide from "@assets/pages/jobs/jobs-hero-ultra-wide.png"
 import useAppContext from "@/hooks/useAppContext";
 import TwoColorTitle from "@/components/two-color-title";
 import { theme } from "@/styles/theme";

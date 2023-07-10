@@ -165,9 +165,7 @@ export const FlexContainer = styled.div`
   gap: 10px;
   input {
     width: 100%;
-    + span {
-      color: #ffdb5c;
-    }
+   
   }
 `;
 
@@ -175,7 +173,7 @@ export const FlexContainerCheckbox = styled(FlexContainer)`
   width: 100%;
   gap: 10px;
   .paragraph + span {
-    color: #ffdb5c;
+    margin: 0;
   }
 `;
 export const SuccessMsg = styled.h3`

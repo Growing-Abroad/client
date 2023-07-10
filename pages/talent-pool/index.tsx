@@ -6,7 +6,7 @@ import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import PageBodyLayout from "@/components/generics/PageBody";
 import useAppContext from "@/hooks/useAppContext";
 import { EWaveType } from "@/components/Wave";
-import CTAction from "@pages/sales/components/CTAction";
+import CTAction from "@pages/dream-job/components/CTAction";
 import styled from "styled-components";
 
 export const JobsWrapper = styled.div`

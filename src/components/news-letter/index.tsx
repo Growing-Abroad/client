@@ -182,7 +182,7 @@ export default function NewsLetter() {
             ) : (
               <SuccessMsg>
                 You will receive an email shortly to{" "}
-                <span>CONFIRM YOUR RESGISTRATION</span>. <br />
+                <span>CONFIRM YOUR REGISTRATION</span>. <br />
                 If you don’t find any mail, then please also check your Spam
                 Folder.
               </SuccessMsg>

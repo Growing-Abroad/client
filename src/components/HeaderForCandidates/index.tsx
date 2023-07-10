@@ -156,10 +156,6 @@ function HeaderForCandidates() {
             {!shouldHaveMobileBehavior && (
               <IconsContainer>
                 <>
-                  {/* <Button onClick={pushTo(EPagesNames.LOGIN)}>Login</Button>
-                  <IconButton>
-                    <AwesomeIcon icon={faGlobe} size="2xl" />
-                  </IconButton> */}
                   <Burger
                     open={itsDesktopMenuOpen}
                     handleClick={() =>
@@ -167,30 +163,6 @@ function HeaderForCandidates() {
                     }
                     isForDesktop
                   />
-                  {/* <StdButton
-                    style={{
-                      width: 195,
-                      height: 32,
-                      fontSize: 18,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: 8,
-                      boxShadow: "none",
-                      margin: "0"
-                    }}
-                    onClick={pushTo(EPagesNames.COMPANIES)}
-                    backgroundColor={
-                      !shouldHaveMobileBehavior ? blue700 : white
-                    }
-                    color={!shouldHaveMobileBehavior ? white : blue700}
-                    hover={{
-                      backgroundColor: blue400,
-                      color: white,
-                    }}
-                  >
-                    For Companies
-                  </StdButton> */}
                 </>
               </IconsContainer>
             )}

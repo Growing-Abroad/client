@@ -32,6 +32,12 @@ export const DataPrivacyContent = styled.div`
   width: 100%;
   padding-inline: ${globalHorizontalPadding};
   max-width: ${maxWidthAll};
+  a {
+    color: #05335B;
+    :hover {
+      color: #0000ee;
+    }
+  }
 
   @media (max-width: ${mediaQuery}) {
     padding-inline: ${globalHorizontalPaddingMobile};
