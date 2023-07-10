@@ -13,10 +13,10 @@ import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const { req, res } = context;
 
-  // if (req && req.url === '/') {
-  //   res.writeHead(302, { Location: '/candidates' });
-  //   res.end();
-  // }
+  if (req && req.url === '/') {
+    res.writeHead(302, { Location: '/candidates' });
+    res.end();
+  }
 
   return {
     props: {},
