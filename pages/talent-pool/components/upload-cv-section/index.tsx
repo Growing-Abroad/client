@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
@@ -80,9 +80,11 @@ const titleOptions = [
 export default function UploadCvSection() {
   const { isMobile, loading, setLoading } = useAppContext();
   const [selectedFile, setSelectedFile] = useState<File>();
+  const [inputError, setInputError] = useState<boolean>(false);
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
   const [showToast, setShowToast] = useState<boolean>(false);
+  const [msgToast, setMsgToast] = useState<string>('');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const formDefaultValues = {
@@ -98,47 +100,78 @@ export default function UploadCvSection() {
     reValidateMode: "onChange",
     defaultValues: formDefaultValues,
   });
-  
 
   const {
     formState: { errors },
     handleSubmit,
     register,
-    reset
+    reset,
+    setValue,
   } = methods;
-
-  const handleDragOver: React.DragEventHandler<HTMLDivElement> = (event) => {
-    event.preventDefault();
-  };
 
   const handleClosePopup = () => {
     setIsPopupOpen(false);
   };
 
   const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
-    setLoading(true);
-    try {
-      await newApplication(data);
-      resetStates();
-      setIsPopupOpen(true)
-    } catch (error) {
-      setIsPopupOpen(false)
+    if (selectedFile !== undefined) {
+      setLoading(true);
+      try {
+        await newApplication(data);
+        resetStates();
+        setIsPopupOpen(true);
+      } catch (error) {
+        setIsPopupOpen(false);
+        setShowToast(true);
+        console.error(error);
+        setMsgToast("An error has occurred. Please try again later.")
+      } finally {
+        setLoading(false);
+      }
+    } else{
+      setMsgToast("please fill in all fields")
       setShowToast(true)
-      console.error(error);
-    } finally {
-      setLoading(false);
+      setInputError(true)
     }
-  };
     
+  };
+
   const resetStates = () => {
     reset();
     setSelectedFile(undefined);
     setSelectedFileOptional(undefined);
-  }
+  };
+
+  const HandlePreventDefault: React.DragEventHandler<HTMLDivElement> = (
+    event
+  ) => {
+    event.preventDefault();
+  };
+
+  const handleDrop: React.DragEventHandler<HTMLDivElement> = (event) => {
+    event.preventDefault();
+
+    setValue("file", event.dataTransfer.files, { shouldValidate: true });
+    setSelectedFile(event.dataTransfer.files[0]);
+  };
+
+  const handleDropOptional: React.DragEventHandler<HTMLDivElement> = (
+    event
+  ) => {
+    event.preventDefault();
+    setValue("otherFile", event.dataTransfer.files);
+    setSelectedFileOptional(event.dataTransfer.files[0]);
+  };
+
+  useEffect(() => {
+    setInputError(false)
+  },[selectedFile])
+
+  const MB = (1024 * 1024)
 
   return (
     <>
-      {loading && <LoadingComponent/>}
+      {loading && <LoadingComponent />}
       <S.UploadCvWrapper>
         <S.InfoTitle
           text1="Create a Profile &"
@@ -165,7 +198,7 @@ export default function UploadCvSection() {
               to include sensitive data (see Article 9 DSGVO) in your
               application, neither in the form nor in the uploaded documents.
             </S.UIStdParagraqhCustom>
-            <S.UIInfoButton onClick={() => location.href = "/online-course"}>
+            <S.UIInfoButton onClick={() => (location.href = "/online-course")}>
               To the online course
             </S.UIInfoButton>
           </S.ContentInfo>
@@ -255,9 +288,7 @@ export default function UploadCvSection() {
                     : ""
                 }
               >
-              <StdTextInput name="phone" required={true} />
-
-                
+                <StdTextInput name="phone" required={true} />
               </StdInput>
             </S.FieldGroup>
 
@@ -294,7 +325,12 @@ export default function UploadCvSection() {
                 with max upload size of 5MB.
               </S.UISubtitle>
               <S.UITitle text1="CV Upload *" text2="" />
-              <S.DropArea onDragOver={handleDragOver}>
+              <S.DropArea
+                onDragOver={HandlePreventDefault}
+                onDragEnter={HandlePreventDefault}
+                onDragLeave={HandlePreventDefault}
+                onDrop={handleDrop}
+              >
                 {!selectedFile ? (
                   <S.DropMessage>
                     {isMobile
@@ -315,14 +351,16 @@ export default function UploadCvSection() {
                   id="cv-file-input"
                   type="file"
                   {...register("file", {
-                    required: true,
+                    required: false,
                     onChange: (e) => setSelectedFile(e.target.files[0]),
                   })}
                 />
                 <StdError>
-                  {errors.file?.type === "required"
+                  {inputError
                     ? "Please upload your CV"
-                    : errors.file ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file." : ""}
+                    : (selectedFile?.size ?? 0)/MB > MB*5  
+                    ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file."
+                    : ""}
                 </StdError>
               </S.DropArea>
               <div onClick={() => SetShowNewInput(!showNewInput)}>
@@ -333,7 +371,12 @@ export default function UploadCvSection() {
               </div>
 
               {(showNewInput || selectedFileOptional) && (
-                <S.DropArea onDragOver={handleDragOver}>
+                <S.DropArea
+                  onDragOver={HandlePreventDefault}
+                  onDragEnter={HandlePreventDefault}
+                  onDragLeave={HandlePreventDefault}
+                  onDrop={handleDropOptional}
+                >
                   {!selectedFileOptional ? (
                     <div className="drop-message">
                       <span>
@@ -379,10 +422,9 @@ export default function UploadCvSection() {
                 <S.PrivacyText>
                   Yes, I want to get updates and news of Growing Abroad and I
                   accept the websites{" "}
-                  <Link href="/data-privacy">
-                    Privacy Policy
-                  </Link>
-                  . <br />Our newsletter subscription is non-binding.
+                  <Link href="/data-privacy">Privacy Policy</Link>
+                  . <br />
+                  Our newsletter subscription is non-binding.
                 </S.PrivacyText>
               </S.PrivacyContent>
             </StdInput>
@@ -428,24 +470,29 @@ export default function UploadCvSection() {
           >
             Upload Now
           </StdButton>
-          {showToast && 
+          {showToast && (
             <S.ToastContainer>
               <Toast
-                duration={90000}
                 setShowToast={setShowToast}
-                message="An error has occurred. Please try again later."
-              />          
+                message={msgToast}
+              />
             </S.ToastContainer>
-          }
-
+          )}
         </S.CvForm>
-        
+
         <Popup isOpen={isPopupOpen} onClose={handleClosePopup}>
           <S.FunnelPagesContainer>
-            <h1 style={{marginBottom: 10}} className={styles.funnels_pages__title}>You did it!</h1>
+            <h1
+              style={{ marginBottom: 10 }}
+              className={styles.funnels_pages__title}
+            >
+              You did it!
+            </h1>
             <p className={styles.funnels_pages__paragraph}>
-              You successfully registered in our Talentpool - whoop whoop! <br />
-              As soon as we find a position that's a great fit for you, we'll reach out to you directly.
+              You successfully registered in our Talentpool - whoop whoop!{" "}
+              <br />
+              As soon as we find a position that's a great fit for you, we'll
+              reach out to you directly.
             </p>
             <S.PopImg
               src={notebooimg.src}
