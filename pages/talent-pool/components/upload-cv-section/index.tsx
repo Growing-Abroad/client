@@ -17,6 +17,8 @@ import styles from "../../../newsletter-confirmation/funnels.style.module.css";
 import Toast from "@/components/Toast";
 import Popup from "components/PopUp";
 import notebooimg from "@/../public/assets/images/notebook-img.png";
+import PhoneInputWithCountry from "react-phone-number-input/react-hook-form";
+import 'react-phone-number-input/style.css'
 
 export interface IFormFields {
   pronoum: string;
@@ -84,7 +86,7 @@ export default function UploadCvSection() {
   const [selectedFileOptional, setSelectedFileOptional] = useState<File>();
   const [showNewInput, SetShowNewInput] = useState(false);
   const [showToast, setShowToast] = useState<boolean>(false);
-  const [msgToast, setMsgToast] = useState<string>('');
+  const [msgToast, setMsgToast] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const formDefaultValues = {
@@ -124,16 +126,15 @@ export default function UploadCvSection() {
         setIsPopupOpen(false);
         setShowToast(true);
         console.error(error);
-        setMsgToast("An error has occurred. Please try again later.")
+        setMsgToast("An error has occurred. Please try again later.");
       } finally {
         setLoading(false);
       }
-    } else{
-      setMsgToast("please fill in all fields")
-      setShowToast(true)
-      setInputError(true)
+    } else {
+      setMsgToast("please fill in all fields");
+      setShowToast(true);
+      setInputError(true);
     }
-    
   };
 
   const resetStates = () => {
@@ -164,10 +165,10 @@ export default function UploadCvSection() {
   };
 
   useEffect(() => {
-    setInputError(false)
-  },[selectedFile])
+    setInputError(false);
+  }, [selectedFile]);
 
-  const MB = (1024 * 1024)
+  const MB = 1024 * 1024;
 
   return (
     <>
@@ -288,7 +289,13 @@ export default function UploadCvSection() {
                     : ""
                 }
               >
-                <StdTextInput name="phone" required={true} />
+                <S.PhoneContainer>
+                  <PhoneInputWithCountry
+                    defaultCountry="DE"
+                    name="phone"
+                    rules={{ required: true }}
+                  />
+                </S.PhoneContainer>
               </StdInput>
             </S.FieldGroup>
 
@@ -358,7 +365,7 @@ export default function UploadCvSection() {
                 <StdError>
                   {inputError
                     ? "Please upload your CV"
-                    : (selectedFile?.size ?? 0)/MB > MB*5  
+                    : (selectedFile?.size ?? 0) / MB > MB * 5
                     ? "The file exceeds the maximum size of 5 MB. Please choose a smaller file."
                     : ""}
                 </StdError>
@@ -472,10 +479,7 @@ export default function UploadCvSection() {
           </StdButton>
           {showToast && (
             <S.ToastContainer>
-              <Toast
-                setShowToast={setShowToast}
-                message={msgToast}
-              />
+              <Toast setShowToast={setShowToast} message={msgToast} />
             </S.ToastContainer>
           )}
         </S.CvForm>

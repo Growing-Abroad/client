@@ -27,6 +27,7 @@
     "react-hook-form": "^7.45.0",
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
+    "react-phone-number-input": "^3.3.0",
     "react-timeline-animation": "^1.2.3",
     "sharp": "^0.32.0",
     "styled-components": "^5.3.6",
