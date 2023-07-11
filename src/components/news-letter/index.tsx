@@ -54,13 +54,15 @@ export default function NewsLetter() {
 
   const onSubmit: SubmitHandler<INewsLetter> = async (data) => {
     const { name, email, consent } = data;
-
+    const splitedName = name.split(' ');
     setLoading(true);
     const newsletterData = {
       url: "https://api.growingabroad.de/contact",
       data: {
         user: {
           name,
+          firstName: splitedName[0],
+          lastName: splitedName[1] || '',
           email,
           consent,
         },
