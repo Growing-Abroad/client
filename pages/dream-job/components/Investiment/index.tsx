@@ -3,12 +3,12 @@ import computers from "public/assets/images/banners-devices-view.jpg";
 import Image from "next/image";
 import classes from "./style.module.css";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
-
-
+import { useRouter } from "next/router"
 
 
 function Investiment() {
-  
+  const router = useRouter()
+
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
     if (sectionElement) {
@@ -31,7 +31,7 @@ function Investiment() {
       <S.ParagraphCustom>
         This course is an investment in <span>your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>
       </S.ParagraphCustom>
-      <S.StdButtonCustom onClick={hadleScroll}>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
         Get your Acess Now
       </S.StdButtonCustom>
     </S.Container>

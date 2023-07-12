@@ -1,7 +1,7 @@
 import * as S from "../../../../styles/online-course/components/CTActions/styles";
 import gaCoaches from "@assets/new-cta-img.jpg";
 import { TextChanger } from "components/TextChanger";
-// import { useIntl } from "react-intl";
+import { useRouter } from "next/router"
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 interface ICTActionProps {
@@ -29,6 +29,7 @@ function CTAction({
   // };
 
   const icon = pageName == "candidates" ? faPlay : "";
+  const router = useRouter()
 
   const texts = [
     " Germany", //"page.home.callToAction.germany",
@@ -58,7 +59,7 @@ function CTAction({
           <S.SubTitle>{subTitleIntl}</S.SubTitle>
 
           <S.StdButtonCustom
-            onClick={hadleScroll}
+            onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}
             icon={icon}
             pageName={pageName}
           >

@@ -7,6 +7,7 @@ import index2 from "@/../public/assets/optimization.jpg";
 import index3 from "@/../public/assets/job-search-strategy.jpg";
 import index4 from "@assets/job-interview-preparation.jpg";
 import index5 from "@/../public/assets/job-interview-success.jpg";
+import { useRouter } from "next/router"
 
 const TimelineObserver = dynamic(() => import("react-timeline-animation"), {
   ssr: false, 
@@ -70,6 +71,8 @@ export default function VerticalProgressBarCustom() {
   };
   
   const Timeline = ({ setObserver, callback }: any) => {
+    const router = useRouter()
+
     const timelineData = [
       {
         id: "1",
@@ -160,7 +163,7 @@ export default function VerticalProgressBarCustom() {
           </S.Circle>
           <S.CardTitle className="last-Item">{lastText}</S.CardTitle>
         </S.LastContent>
-        <S.UIStdButton onClick={hadleScroll}>
+        <S.UIStdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
           Buy Online Course Now
       </S.UIStdButton>
       </div>

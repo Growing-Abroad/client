@@ -8,9 +8,11 @@ import {
   IconNegativeRedGest,
   IconPositiveGreenGest,
 } from "@/components/Icons";
+import { useRouter } from "next/router"
 
 export function TwoCards() {
   const { isMobile } = useAppContext();
+  const router = useRouter()
 
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
@@ -101,7 +103,7 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
       </S.ContentTwoCards>
-      <S.StdButtonCustom onClick={hadleScroll}>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
         Buy Now
       </S.StdButtonCustom>
     </S.Container>

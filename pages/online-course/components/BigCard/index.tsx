@@ -119,7 +119,7 @@ export function BigCard() {
             </p>
           </S.CardText>
         </div>
-        <S.StdButtonCustom onClick={() => router.push("/s/growingabroad/land-your-dream-job/payment")}>
+        <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
           Get Access Now
         </S.StdButtonCustom>
       </S.BigCardWrapper>
