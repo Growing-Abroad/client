@@ -339,7 +339,7 @@ export default function CoachingPackageOnlineCourseSection() {
               ))}
             </ul>
             <ButtonContainer>
-              <StdButton onClick={() => router.push("/s/growingabroad/coaching-package/payment")}>Book Now</StdButton>
+              <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/coaching-package/payment")}>Book Now</StdButton>
             </ButtonContainer>
           </div>
         </Card>

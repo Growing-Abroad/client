@@ -4,6 +4,7 @@ import classes from "./style.module.css";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheck } from "@/components/Icons";
+import { useRouter } from "next/router"
 
 interface IWhatYouGetProps {
   isSales?: boolean 
@@ -11,6 +12,7 @@ interface IWhatYouGetProps {
 
 export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
   const { isMobile } = useAppContext();
+  const router = useRouter()
 
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
@@ -95,7 +97,7 @@ export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
               life
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
-          <StdButton onClick={hadleScroll} style={{ width: "181px", margin: "38px auto 100px" }}>
+          <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")} style={{ width: "181px", margin: "38px auto 100px" }}>
             Buy Now
           </StdButton>
         </S.RightContentWhyBuyCourse>

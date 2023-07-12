@@ -6,7 +6,6 @@ import VisionAndMissionNew, {
   IText,
 } from "@pages/about-us/components/VisionAndMissionNew";
 import CoachingPackageOnlineCourseSection from "@pages/coaching/components/coaching-package-online-course";
-import WhatOurClientsSay from "./components/what-our-clients-say";
 import ReusedFaq from "@/components/reused-faq";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import VisionAndMissionBackground from "../../public/assets/pages/coaching/career-coaches.jpg";

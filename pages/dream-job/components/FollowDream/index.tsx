@@ -4,9 +4,11 @@ import classes from "./style.module.css";
 import * as S from "../../../../styles/about-us/components/WhoWeAre/index.styles";
 import useAppContext from "@/hooks/useAppContext";
 import StdButton from "@/components/generics/StdButton/StdButton";
+import { useRouter } from "next/router"
 
 function FollowDreams() {
   const { isMobile } = useAppContext();
+  const router = useRouter()
 
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
@@ -37,7 +39,6 @@ function FollowDreams() {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       />
 
-      {/* </S.UIIframeYoutube> */}
 
       <S.Paragraph className="sales">
         <p  className={`${classes.resume} subtitle`}>
@@ -46,7 +47,9 @@ function FollowDreams() {
           Europe.
         </p>
       </S.Paragraph>
-      <StdButton onClick={hadleScroll}>Buy Online Course Now</StdButton>
+      <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+        Buy Online Course Now
+      </StdButton>
     </S.Container>
   );
 }

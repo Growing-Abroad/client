@@ -133,7 +133,7 @@ function HeaderForCandidates() {
                 <Button onClick={pushTo(EPagesNames.JOBS)}>
                 Talentpool
                 </Button>
-              <UIButton onClick={() => router.push("/s/growingabroad/sign_in")}>login</UIButton></>)
+              <UIButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/sign_in")}>login</UIButton></>)
               }
               {shouldHaveMobileBehavior && (
                 <>
@@ -146,9 +146,7 @@ function HeaderForCandidates() {
                   <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
                     About Us
                   </Button>
-                  {/* <Button onClick={pushTo(EPagesNames.CAREER_BLOG)}>
-                    Career Blog
-                  </Button> */}
+                 
                   <Button onClick={pushTo(EPagesNames.FAQ)}>FAQ</Button>
                 </>
               )}

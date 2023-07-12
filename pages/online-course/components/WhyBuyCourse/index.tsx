@@ -3,9 +3,11 @@ import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/WhyBuyCourse/style";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheck } from "@/components/Icons";
+import { useRouter } from "next/router"
 
 export function WhyBuyCourse() {
   const { isMobile } = useAppContext();
+  const router = useRouter()
 
   const hadleScroll = () => {
     const sectionElement = document.getElementById("scroll-id");
@@ -85,7 +87,9 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <S.StdButtonCustom onClick={hadleScroll}>Buy Online Course Now</S.StdButtonCustom>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+        Buy Online Course Now
+      </S.StdButtonCustom>
     </S.WrapperWhyBuyCourse>
   );
 }
