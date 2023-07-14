@@ -12,9 +12,12 @@ import VisionAndMissionBackground from "../../public/assets/pages/coaching/caree
 import useAppContext from "@/hooks/useAppContext";
 import PageBodyLayout from "@/components/generics/PageBody";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
+import SEO from "@/components/seo";
 
 export default function Coaching() {
-  const { windowSize: {width} } = useAppContext();
+  const {
+    windowSize: { width },
+  } = useAppContext();
 
   const text1: IText = {
     heading: "Goal",
@@ -29,25 +32,26 @@ export default function Coaching() {
 
   function getDistanceFromTop(): string {
     if (width <= 430) {
-      return '340px';
+      return "340px";
     }
     if (width > 430 && width <= 1513) {
-      return 'calc(21.25rem + ((1vw - 2.3px) * 22.1607))';
+      return "calc(21.25rem + ((1vw - 2.3px) * 22.1607))";
     }
     if (width > 1513) {
-      return '580px';
+      return "580px";
     }
-    return '';
+    return "";
   }
 
   return (
     <>
+      <SEO
+        description="We are a HR agency specialized in the German and European job market. We offer coaching services to help you land your dream job 3 times faster"
+        title="Coaching | Growing Abroad"
+        url="https://growingabroad.de/coaching"
+      />
       <CoachingHeroSection distanceFromTop={getDistanceFromTop()} />
-      <PageBodyLayout
-        id="page-coaching"
-        distanceFromTop={getDistanceFromTop()}
-      >
-
+      <PageBodyLayout id="page-coaching" distanceFromTop={getDistanceFromTop()}>
         <DreamJobSection />
         <CoachingPackageOnlineCourseSection />
         <VisionAndMissionNew
@@ -58,9 +62,8 @@ export default function Coaching() {
           text1={text1}
           text2={text2}
         />
-        <StoriesPageCandidates  pageType="coaching" hasSubTitle={false} />
-        <div style={{marginTop: 50}} >
-
+        <StoriesPageCandidates pageType="coaching" hasSubTitle={false} />
+        <div style={{ marginTop: 50 }}>
           <ReusedFaq pageType="coaching" />
         </div>
       </PageBodyLayout>

@@ -32,6 +32,9 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <Head>
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Manuel Feneberg and Uanderson Silva" />
+        <meta name="keywords" content="Jobs in Germany, German Job Market, English speaking jobs in Germany , jobs in Germany for English speakers, English jobs in Germany" />
+
       </Head> 
       <ContextProvider>
         {/* <IntlProviderWrapper> */}
