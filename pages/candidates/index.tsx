@@ -37,10 +37,10 @@ export default function OnlineCourse() {
     <CandidatesWrapper>
       <SEO 
         description="Land your dream job in Germany with high qualified career experts in the German and European Job Market. Your dream to work and live in Germany can come true"
-        title="Candidates"
-        url="/candidates"
+        title="Candidates | Growing Abroad"
+        url="https://growingabroad.de/candidates"
       />
-      
+
       <CTAction 
         buttonURL="/online-course"
         pageName="candidates"

@@ -16,6 +16,7 @@ import styled from "styled-components";
 import CTAction from "@pages/dream-job/components/CTAction";
 import FollowDreams from "@pages/dream-job/components/FollowDream";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
+import SEO from "@/components/seo";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -35,11 +36,10 @@ export const OnlineCourseWrapper = styled.div`
 const TwoColorTitleCustom = styled(TwoColorTitle)`
   width: 350px;
   max-width: 1039px;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 100%;
   }
-  
-`
+`;
 
 export const OnlineCourseFaqMockUp = [
   {
@@ -49,7 +49,8 @@ export const OnlineCourseFaqMockUp = [
   {
     title: "What language is used in the Online Course?",
     content:
-"The course is in English, as this is a requirement for jobs in Germany. Our recruiting experts are fluent in German and Portuguese."  },
+      "The course is in English, as this is a requirement for jobs in Germany. Our recruiting experts are fluent in German and Portuguese.",
+  },
   {
     title: "I have a completed vocational training. Is this course for me? ",
     content:
@@ -62,36 +63,44 @@ export const OnlineCourseFaqMockUp = [
   },
   {
     title: "How does payment work?",
-    content: "Payment can be made through PayPal, credit card, Apple Pay, and Google Pay. The price will be displayed in Euros. If you are from a country with a different currency, you can utilize a currency converter to calculate the price in your respective currency."
+    content:
+      "Payment can be made through PayPal, credit card, Apple Pay, and Google Pay. The price will be displayed in Euros. If you are from a country with a different currency, you can utilize a currency converter to calculate the price in your respective currency.",
   },
   {
-    title: "After this Online Course, can I get jobs in other European countries?",
+    title:
+      "After this Online Course, can I get jobs in other European countries?",
     content:
       "Yes. The techniques and methods taught in the course apply to all European countries. Our customers have secured jobs in many different European countries.",
   },
   {
     title: "Is this course a guarantee to secure a job in Germany or Europe?",
-    content: "While this course provides comprehensive preparation to help you secure your dream job in Germany or Europe, it is important to note that success ultimately depends on your own dedication and efforts. The course equips you with valuable knowledge and skills, making it easier for you to navigate the job market. However, it does not guarantee job placement. Your level of motivation and willingness to apply what you learn will greatly impact your job search."
+    content:
+      "While this course provides comprehensive preparation to help you secure your dream job in Germany or Europe, it is important to note that success ultimately depends on your own dedication and efforts. The course equips you with valuable knowledge and skills, making it easier for you to navigate the job market. However, it does not guarantee job placement. Your level of motivation and willingness to apply what you learn will greatly impact your job search.",
   },
   {
     title: "How long will I have access to the online course?",
-    content: "You will have access to the online course for a duration of 3 years. Throughout this period, you can watch the course content as many times as you wish."
-  }
+    content:
+      "You will have access to the online course for a duration of 3 years. Throughout this period, you can watch the course content as many times as you wish.",
+  },
 ];
-
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
-  },[])
+  }, []);
 
   return (
     <>
+      <SEO
+        description="Build a successful career abroad with our Online Course. Learn how to build your application into German standards, how to rock your interview and much more"
+        title="Online Course | Growing Abroad"
+        url="https://growingabroad.de/online-course"
+      />
       <OnlineCourseWrapper>
         <CTAction
           pageName="onlineCourses"
@@ -105,11 +114,11 @@ export default function OnlineCourse() {
           waveType={EWaveType.linear}
         >
           <TwoColorTitleCustom
-        text1="Build a successful career abroad "
-        text2="with this amazing ONLINE COURSE"
-        fontSize={isMobile ? "36px" : "52px"}
-        hasSpaceBtw
-      />
+            text1="Build a successful career abroad "
+            text2="with this amazing ONLINE COURSE"
+            fontSize={isMobile ? "36px" : "52px"}
+            hasSpaceBtw
+          />
           <WhyBuyCourse />
           <VerticalProgressBarCustom />
 
@@ -136,9 +145,7 @@ OnlineCourse.getLayout = function getLayout(page: ReactElement) {
   // const { locale, messages } = _useLocale();
   return (
     // <IntlProvider locale={locale!} messages={messages}>
-      <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>
-        {page}
-      </PageLayout>
+    <PageLayout chosenHeader={ChosenHeader.FOR_CANDIDATES}>{page}</PageLayout>
     // </IntlProvider>
   );
 };

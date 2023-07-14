@@ -7,10 +7,16 @@ import PageLayout from "../../src/components/PageLayout";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import visionAndMissionMock from "@utils/mock-ups/vision-and-mission.mock";
 import Founders from "./components/Founders/index ";
+import SEO from "@/components/seo";
 
 export default function AboutUs() {
   return (
     <>
+      <SEO
+        description="Tired to get rejection during the job application process? We are Career Experts with more than 10 years of experience and will help you in this journey "
+        title="About Us | Growing Abroad"
+        url="https://growingabroad.de/about-us"
+      />
       <HeroSection />
       <WhoWeAre pageType="about-us" />
       <VisionAndMissionNew

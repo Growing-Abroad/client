@@ -19,7 +19,7 @@ import StoriesPageCandidates from "../candidates/components/StoriesPageCandidate
 import TwoCards from "@pages/online-course/components/TwoCards";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 import { OnlineCourseFaqMockUp } from "@pages/online-course";
-
+import SEO from "@/components/seo";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -36,16 +36,18 @@ export const SalesWrapper = styled.div`
   }
 `;
 
-
-
-
 export default function Sales() {
   const { isMobile } = useAppContext();
 
   return (
     <>
+      <SEO
+        description="Do you want to work in Germany with a well-paid job, career perspective and still have work life balance? Our amazing Online Course is the perfect start for you"
+        title="Dream Job | Growing Abroad"
+        url="https://growingabroad.de/dream-job"
+      />
       <SalesWrapper>
-        <CTAction 
+        <CTAction
           pageName="sales"
           buttonIntl="Buy Online Course Now"
           subTitleIntl="Build a successful career abroad with this amazing ONLINE COURSE"
@@ -80,6 +82,8 @@ export default function Sales() {
 
 Sales.getLayout = function getLayout(page: ReactElement) {
   return (
-      <PageLayout chosenHeader={ChosenHeader.FOR_SALES} hideBlueSection={true}>{page}</PageLayout>
-  ); 
+    <PageLayout chosenHeader={ChosenHeader.FOR_SALES} hideBlueSection={true}>
+      {page}
+    </PageLayout>
+  );
 };
