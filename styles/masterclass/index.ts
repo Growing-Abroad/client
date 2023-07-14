@@ -28,12 +28,10 @@ export const Container = styled.div`
 `;
 
 export const ContainerLogin = styled(Container)`
-    @media screen and (min-width: 1267px) {
-      margin-left: 88px;
+  @media screen and (min-width: 1267px) {
+    margin-left: 88px;
   }
-`
-
-
+`;
 
 export const ImageUanManu = styled(Image)`
   height: auto;
@@ -109,17 +107,17 @@ export const ItemText = styled.p`
 
 export const UIStdButton = styled(StdButton)`
   margin: 46px auto 0;
-  @media screen and (min-width: 1020px){
-    margin: 46px auto 0 0;    
+  @media screen and (min-width: 1020px) {
+    margin: 46px auto 0 0;
   }
 `;
 
 export const UIStdButtonLogin = styled(UIStdButton)`
   margin: 0 auto;
-  @media screen and (min-width: 1020px){
-    margin: 0 auto 0 0;    
+  @media screen and (min-width: 1020px) {
+    margin: 0 auto 0 0;
   }
-`
+`;
 
 export const MasterlassTitleLogin = styled(MasterlassTitle)`
   @media screen and (min-width: 1020px) {
@@ -155,8 +153,8 @@ export const CheckoboxInputMasterclass = styled.input`
 
 export const LabelCheckbox = styled.label`
   display: flex;
-    align-items: center;
-    gap: 12px;
+  align-items: center;
+  gap: 12px;
 `;
 
 export const LabelCheckboxText = styled.p`
@@ -174,7 +172,6 @@ export const LabelCheckboxLink = styled(Link)`
   text-decoration-line: underline;
 `;
 
-
 export const ContentItemsLogin = styled(ContentItems)`
   @media screen and (min-width: 1020px) {
     max-width: 1063px;
@@ -182,4 +179,165 @@ export const ContentItemsLogin = styled(ContentItems)`
   @media screen and (min-width: 1267px) {
     max-width: 1236px;
   }
-`
+`;
+
+export const CountdownTimerContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  color: #05335b;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center;
+  max-width: 324px;
+  margin: 40px auto auto;
+  @media screen and (min-width: 768px) {
+    margin: 30px auto auto;
+  }
+`;
+
+export const CountdownTimerTitle = styled.h1`
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.3px;
+  text-transform: capitalize;
+  margin: 73px 16px 33px;
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    margin: 55px 16px 23px;
+  }
+`;
+
+export const CountdownTimerSubTitle = styled.h2`
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  max-width: 743px;
+  margin: auto auto 33px;
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    margin: auto auto 53px;
+  }
+`;
+
+export const CountdownTimerText = styled.p`
+  margin: 0;
+  font-size: 24px;
+`;
+
+export const ImageContainerVideo = styled.div`
+  border-radius: 5px;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1513px;
+  video {
+    min-height: 195.33px;
+  }
+`;
+
+export const ImageBackgroundVideo = styled(Image)`
+  max-height: 438px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+`;
+
+export const Player = styled(Image).attrs({
+  alt: "youtube play button",
+})`
+  :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 25%;
+    height: auto;
+  }
+`;
+
+export const PlayerContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ThankyouItems = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 51px;
+  margin: 62px 0;
+  justify-content: center;
+`;
+
+export const ThankyouItem = styled.div`
+  border-radius: 10px;
+  border: 3px solid #05335b;
+  width: 366px;
+  max-height: 283px;
+`;
+
+export const ContainerIcon = styled.div`
+  width: 64px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #4a9afd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 14px;
+`;
+
+export const ThankyouItemsTitle = styled.h4`
+  color: #05335b;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.3px;
+  margin: 0;
+  padding: 0 20px;
+`;
+
+export const ThankyouItemsText = styled.p`
+  color: #05335b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 25px 0 0;
+  padding: 0 20px 20px;
+`;
+
+export const TextEmail = styled.p`
+  margin: 28px auto 54px;
+  color: #05335b;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 946px;
+`;
