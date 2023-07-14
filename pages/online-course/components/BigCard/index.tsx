@@ -1,7 +1,5 @@
-import Image from "next/image";
 import * as S from "../../../../styles/online-course/components/BigCard/styles";
 import onlineCourse from "@/../public/assets/Photos-Main-Page/online-course-success.jpg";
-import onlineCourseTenporary from "@/../public/assets/Photos-Main-Page/online-course-success2.jpg";
 import discount from "@/../public/assets/discount.svg";
 import useAppContext from "@/hooks/useAppContext";
 import { IconCheckBlue } from "@/components/Icons";
