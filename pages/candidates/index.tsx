@@ -1,11 +1,9 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { PageLayout } from "@/components";
 import useAppContext from "@/hooks/useAppContext";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { EWaveType } from "@/components/Wave";
 import PageBodyLayout from "@/components/generics/PageBody";
-// import { IntlProvider } from "react-intl";
-// import _useLocale from "@/hooks/useLocale";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import styled from "styled-components";
 import CTAction from "@pages/dream-job/components/CTAction";
@@ -13,7 +11,6 @@ import WorkIn from "./components/WorkIn/WorkIn";
 import DiscoverGA from "@pages/dream-job/components/DiscoverGA";
 import OurServicesSection from "./components/OurServices";
 import CommunitySection from "./components/Community";
-// import BlogSection from "./components/Blog/BlogSection";
 
 
 export const CandidatesWrapper = styled.div`

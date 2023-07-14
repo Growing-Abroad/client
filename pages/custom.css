@@ -11,3 +11,7 @@ body {
 .container {
     max-width: 100%
 }
+
+#CookiebotWidget {
+    display: none !important;
+}
