@@ -17,7 +17,8 @@ import styles from "../../../newsletter-confirmation/funnels.style.module.css";
 import Toast from "@/components/Toast";
 import Popup from "components/PopUp";
 import notebooimg from "@/../public/assets/images/notebook-img.png";
-import PhoneInputWithCountry from "react-phone-number-input/react-hook-form";
+import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form';
+
 import 'react-phone-number-input/style.css'
 
 export interface IFormFields {
@@ -109,6 +110,7 @@ export default function UploadCvSection() {
     register,
     reset,
     setValue,
+    control
   } = methods;
 
   const handleClosePopup = () => {
@@ -291,6 +293,7 @@ export default function UploadCvSection() {
               >
                 <S.PhoneContainer>
                   <PhoneInputWithCountry
+                    control={control}
                     defaultCountry="DE"
                     name="phone"
                     rules={{ required: true }}

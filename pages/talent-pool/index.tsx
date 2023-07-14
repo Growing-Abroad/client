@@ -24,7 +24,7 @@ export const JobsWrapper = styled.div`
   }
 `;
 
-export default function Jobs() {
+export default function Talentpool() {
   const {
     windowSize: isMobile,
   } = useAppContext();
@@ -53,7 +53,7 @@ export default function Jobs() {
   );
 }
 
-Jobs.getLayout = function getLayout(page: ReactElement) {
+Talentpool.getLayout = function getLayout(page: ReactElement) {
 
   return (
     <PageLayout
