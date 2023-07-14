@@ -11,6 +11,7 @@ import WorkIn from "./components/WorkIn/WorkIn";
 import DiscoverGA from "@pages/dream-job/components/DiscoverGA";
 import OurServicesSection from "./components/OurServices";
 import CommunitySection from "./components/Community";
+import SEO from "@/components/seo";
 
 
 export const CandidatesWrapper = styled.div`
@@ -34,6 +35,12 @@ export default function OnlineCourse() {
   return (
    <>
     <CandidatesWrapper>
+      <SEO 
+        description="Land your dream job in Germany with high qualified career experts in the German and European Job Market. Your dream to work and live in Germany can come true"
+        title="Candidates"
+        url="/candidates"
+      />
+      
       <CTAction 
         buttonURL="/online-course"
         pageName="candidates"
