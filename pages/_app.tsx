@@ -33,8 +33,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Manuel Feneberg and Uanderson Silva" />
-        <meta name="google-site-verification" content="nDxOBGqzc3zXa4RcLdrBDD8xKPwn7WqHXOmdeuKThY8" />
-        
+        <meta name="google-site-verification" content="e91Ujp8EDtLZbad6gOtFcIWDqAgHaTrQLQGAIhqFqL4" />
       </Head> 
       <ContextProvider>
         {/* <IntlProviderWrapper> */}
