@@ -45,7 +45,6 @@ export function BigCard() {
       />
       <S.BigCardWrapper id="scroll-id">
         
-         {dataAtual > dataDesejada && 
           <S.ImageFlagDiscount
             isIos={isIos}
             src={discount}
@@ -53,23 +52,14 @@ export function BigCard() {
             width={153}
             height={103}
           />
-         }
         
-        {dataAtual > dataDesejada ? (
         <S.ImageCustom
         src={onlineCourse}
         alt=""
         width={isMobile ? 383 : 705}
         height={isMobile ? 241 : 294}
       />
-      ) : (
-        <S.ImageCustom
-          src={onlineCourseTenporary}
-          alt=""
-          width={isMobile ? 383 : 705}
-          height={isMobile ? 241 : 294}
-        />
-      )}
+     
         <h1>Online Course</h1>
         <h2>
           Land your Dream Job in{" "}

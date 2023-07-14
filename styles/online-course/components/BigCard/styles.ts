@@ -111,7 +111,6 @@ export const PriceSpan = styled.span`
   text-align: center;
   width: 100%;
   font-weight: 700;
-  text-decoration: line-through;
   @media (max-width: ${mediaQuery}) {
     font-size: 40px;
   }
