@@ -3,7 +3,6 @@ import leadsBg from "@/../public/assets/images/leads-bg.jpg";
 import Image from "next/image";
 import StdButton from "@/components/generics/StdButton/StdButton";
 import StdTextInput from "@/components/generics/StdInput/StdTextInput";
-import StdInput from "@/components/generics/StdInput";
 import Link from "next/link";
 
 export const ContainerFunnelPagesContainer = styled.div`
@@ -17,6 +16,9 @@ export const ContainerFunnelPagesContainer = styled.div`
   background-size: auto 100%;
   background-repeat: repeat-x;
   padding: 0 16px;
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Container = styled.div`
@@ -112,8 +114,9 @@ export const UIStdButton = styled(StdButton)`
   }
 `;
 
-export const UIStdButtonLogin = styled(UIStdButton)`
+export const UIStdButtonLogin = styled(UIStdButton)<{disable: boolean}>`
   margin: 0 auto;
+  pointer-events: ${({disable}) => disable ? "none" : "initial"};
   @media screen and (min-width: 1020px) {
     margin: 0 auto 0 0;
   }
@@ -199,7 +202,7 @@ export const CountdownTimerContainer = styled.div`
   }
 `;
 
-export const CountdownTimerTitle = styled.h1`
+export const WhiteTitle = styled.h1`
   color: #fff;
   text-align: center;
   font-size: 36px;
@@ -341,3 +344,30 @@ export const TextEmail = styled.p`
   line-height: normal;
   max-width: 946px;
 `;
+
+export const UIImage = styled(Image)`
+  margin-top: 46px;
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 718px;
+  height: auto;
+`;
+
+export const UIParagraph = styled.p`
+  margin: 0;
+  color: #05335b;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;
+
+
+export const UILink = styled(Link)`
+  text-decoration: none;
+  button {
+    display: flex;
+    gap: 8px;
+  }
+`

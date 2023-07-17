@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components";
-import { ReactElement, useState } from "react";
+import { ReactElement, useState, useEffect } from "react";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import * as S from "../../styles/masterclass";
 import UanAndManu from "@/../public/assets/masterclassDesktop.png";
@@ -10,6 +10,7 @@ import signInNewsLetter from "@/services/news-letter/news-letter.service";
 import useAppContext from "@/hooks/useAppContext";
 import Toast from "@/components/Toast";
 import { useRouter } from "next/router"
+import LoadingComponent from "@/components/generics/Loading";
 
 const formDefaultValues = {
   name: "",
@@ -24,15 +25,24 @@ export interface IFormFields {
 }
 
 export default function MasterclassLogin() {
-  const { setLoading } = useAppContext();
+  const { loading, setLoading } = useAppContext();
   const [showToast, setShowToast] = useState<boolean>(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const methods = useForm<IFormFields>({
     mode: "onBlur",
     reValidateMode: "onChange",
     defaultValues: formDefaultValues,
   });
+
+  useEffect(() => {
+    if (showToast) {
+      setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+    }
+  }, [showToast]);
+
   const onSubmit: SubmitHandler<IFormFields> = async (data: IFormFields) => {
     const { name, email, consent } = data;
     const splitedName = name.split(' ');
@@ -53,13 +63,12 @@ export default function MasterclassLogin() {
     };
     try {
       await signInNewsLetter(newsletterData);
-      router.push("/masterclass/thank-you")
+      router.push("/masterclass/thank-you");
     } catch (error) {
-      setShowToast(true)
-      console.error(error)
+      setShowToast(true);
+      console.error(error);
+      setLoading(false);
     }
-    setLoading(false);
-    
   };
 
   const {
@@ -68,8 +77,21 @@ export default function MasterclassLogin() {
     register,
   } = methods;
 
+  const renderToast = () => {
+    if (showToast) {
+      return (
+        <Toast
+          setShowToast={setShowToast}
+          message="An error occurred while signing up for the FREE Masterclass. Please try again later."
+        />
+      );
+    }
+    return null;
+  };
+
   return (
     <>
+          {loading && <LoadingComponent />}
       <S.ContainerFunnelPagesContainer>
         <S.MasterlassTitleLogin>
           Find out how to land your Dream Job in
@@ -128,7 +150,7 @@ export default function MasterclassLogin() {
                       : ""}
                   </StdError>
 
-                  <S.UIStdButtonLogin type="submit">
+                  <S.UIStdButtonLogin type="submit" disable={loading}>
                     FREE Masterclass - Sign Up Now
                   </S.UIStdButtonLogin>
                 </S.CvForm>
@@ -137,12 +159,7 @@ export default function MasterclassLogin() {
           </S.ContainerLogin>
           <S.ImageUanManu src={UanAndManu} alt="Uan and Manu" />
         </S.ContentItemsLogin>
-        {showToast && (
-              <Toast
-                setShowToast={setShowToast}
-                message="An error occurred while signing up for the FREE Masterclass. Please try again later."
-              />
-            )}
+        {renderToast()}
       </S.ContainerFunnelPagesContainer>
     </>
   );

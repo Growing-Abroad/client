@@ -13,7 +13,6 @@ import openMail from "@assets/pages/masterclass/icons/openMail.svg";
 import clickMail from "@assets/pages/masterclass/icons/clickMail.svg";
 
 export default function MasterclassTankYou() {
-  const router = useRouter();
   const timer = useCountdownTimer(10);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const infoData = [
@@ -72,9 +71,9 @@ export default function MasterclassTankYou() {
   return (
     <>
       <S.ContainerFunnelPagesContainer>
-        <S.CountdownTimerTitle>
+        <S.WhiteTitle>
           Please confirm your E-Mail Address
-        </S.CountdownTimerTitle>
+        </S.WhiteTitle>
         <S.CountdownTimerSubTitle>
           Thank you for signing up. Just confirm your E-Mail Address before you
           can watch the free Masterclass "How to land your dream job in Germanyy"
