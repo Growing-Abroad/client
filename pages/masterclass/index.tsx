@@ -6,10 +6,9 @@ import UanAndManu from "@/../public/assets/masterclassDesktop.png";
 import { Item } from "@/utils/mock-ups/masterclass";
 import Star from "@assets/pages/masterclass/star.svg";
 import Image from "next/image";
-import { useRouter } from "next/router"
+import Link from "next/link";
 
 export default function Masterclass() {
-  const router = useRouter()
 
   return (
     <>
@@ -29,9 +28,10 @@ export default function Masterclass() {
                 </S.MasterclassItem>
               ))}
             </S.ContentItem>
-            <S.UIStdButton onClick={() => router.push("/masterclass/login")}>
-              FREE Masterclass - Sign Up Now
-            </S.UIStdButton>
+
+            <Link href="/masterclass/login">
+              <S.UIStdButton>FREE Masterclass - Sign Up Now</S.UIStdButton>
+            </Link>
           </S.Container>
           <S.ImageUanManu src={UanAndManu} alt="Uan and Manu" />
         </S.ContentItems>
