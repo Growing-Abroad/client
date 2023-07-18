@@ -66,6 +66,10 @@ export const MasterlassTitle = styled.h1`
   }
 `;
 
+export const MasterlassSpan2 = styled.span`
+  color: #4a9afd;
+`;
+
 export const MasterlassSpan = styled.span`
   color: #ffdb5c;
 `;
@@ -114,9 +118,9 @@ export const UIStdButton = styled(StdButton)`
   }
 `;
 
-export const UIStdButtonLogin = styled(UIStdButton)<{disable: boolean}>`
+export const UIStdButtonLogin = styled(UIStdButton)<{ disable: boolean }>`
   margin: 0 auto;
-  pointer-events: ${({disable}) => disable ? "none" : "initial"};
+  pointer-events: ${({ disable }) => (disable ? "none" : "initial")};
   @media screen and (min-width: 1020px) {
     margin: 0 auto 0 0;
   }
@@ -238,51 +242,6 @@ export const CountdownTimerText = styled.p`
   font-size: 24px;
 `;
 
-export const ImageContainerVideo = styled.div`
-  border-radius: 5px;
-  overflow: hidden;
-  height: auto;
-  position: relative;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1513px;
-  video {
-    min-height: 195.33px;
-  }
-`;
-
-export const ImageBackgroundVideo = styled(Image)`
-  max-height: 438px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-`;
-
-export const Player = styled(Image).attrs({
-  alt: "youtube play button",
-})`
-  :hover {
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    width: 25%;
-    height: auto;
-  }
-`;
-
-export const PlayerContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 export const ThankyouItems = styled.div`
   display: flex;
@@ -363,11 +322,27 @@ export const UIParagraph = styled.p`
   line-height: normal;
 `;
 
-
 export const UILink = styled(Link)`
   text-decoration: none;
   button {
     display: flex;
     gap: 8px;
   }
-`
+`;
+
+export const VideoContainer = styled.div`
+  padding: 56.25% 0 0;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    padding: 439px 0 0;
+  }
+`;
+
+export const VideoIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 438px;
+`;
