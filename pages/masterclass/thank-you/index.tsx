@@ -1,43 +1,47 @@
 import { PageLayout } from "@/components";
 import { ReactElement, useCallback, useState } from "react";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import { useRouter } from "next/router";
 import useCountdownTimer from "@/hooks/useCountdownTimer";
-import * as S from "../../styles/masterclass";
-import UanAndManu from "@assets/pages/masterclass/videoBg.jpg";
-import VideoComponent from "@/components/VideoComponent";
-import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
+import * as S from "../../../styles/masterclass";
 import Image from "next/image";
 import closeMail from "@assets/pages/masterclass/icons/closeMail.svg";
 import openMail from "@assets/pages/masterclass/icons/openMail.svg";
 import clickMail from "@assets/pages/masterclass/icons/clickMail.svg";
+import VideoComponent from "@/components/VideoComponent";
+import UanAndManu from "@assets/pages/masterclass/videoBg.jpg";
+import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
 
 export default function MasterclassTankYou() {
   const timer = useCountdownTimer(10);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
   const infoData = [
     {
       title: "Check your E Mail Inbox",
-      content: "Go to the Inbox of the email Address you used to sign up on the previous page. Also check your SPAM Folder.",
+      content:
+        "Go to the Inbox of the email Address you used to sign up on the previous page. Also check your SPAM Folder.",
       image: closeMail.src,
       width: 32,
       height: 37,
     },
     {
       title: "Open the confirmation Mail",
-      content: "Find the email sent by us. It has the subject line: “Please confirm your Email Address” and is sent from team@growingabroad.de",
+      content:
+        "Find the email sent by us. It has the subject line: “Please confirm your Email Address” and is sent from team@growingabroad.de",
       image: openMail.src,
       width: 32,
-      height: 37
+      height: 37,
     },
     {
       title: "Click on the confirmation link",
-      content: "Once you click on the link in the email, your address is confirmed and you will be redirected to the workshop immediately.",
+      content:
+        "Once you click on the link in the email, your address is confirmed and you will be redirected to the workshop immediately.",
       image: clickMail.src,
       width: 20,
-      height: 37
-    }
-  ]
+      height: 37,
+    },
+  ];
+
   const handlePause = useCallback(() => {
     if (isVideoPlaying) {
       setIsVideoPlaying(false);
@@ -71,12 +75,11 @@ export default function MasterclassTankYou() {
   return (
     <>
       <S.ContainerFunnelPagesContainer>
-        <S.WhiteTitle>
-          Please confirm your E-Mail Address
-        </S.WhiteTitle>
+        <S.WhiteTitle>Please confirm your E-Mail Address</S.WhiteTitle>
         <S.CountdownTimerSubTitle>
           Thank you for signing up. Just confirm your E-Mail Address before you
-          can watch the free Masterclass "How to land your dream job in Germanyy"
+          can watch the free Masterclass "How to land your dream job in
+          Germanyy"
         </S.CountdownTimerSubTitle>
         <S.ImageContainerVideo onClick={handlePause}>
           {!isVideoPlaying ? (
@@ -90,7 +93,7 @@ export default function MasterclassTankYou() {
           ) : (
             <VideoComponent
               isPlaying={isVideoPlaying}
-              src="../assets/videos/Masterclass_video.mp4"
+              src="../assets/videos/Masterclass-TYV.mp4"
               type="video/mp4"
               controls
             />
@@ -101,25 +104,38 @@ export default function MasterclassTankYou() {
             </S.PlayerContainer>
           )}
         </S.ImageContainerVideo>
-        <div>{!timer.completed ? (
-          <>
-            {formatTime(timer.seconds)}
-            <S.ThankyouItems>
-              {infoData.map((item, idx) => (
-                <S.ThankyouItem key={idx}>
-                  <S.ContainerIcon>
-                    <Image src={item.image} alt="Icon" width={item.width} height={item.height} />
-                  </S.ContainerIcon>
-                  <S.ThankyouItemsTitle>{item.title}</S.ThankyouItemsTitle>
-                  <S.ThankyouItemsText>{item.content}</S.ThankyouItemsText>
-                </S.ThankyouItem>
-              ))}
-            </S.ThankyouItems>
-          </>
-        ) : (<S.TextEmail>Please check your E Mail Inbox. If you cannot find the Mail also check your SPAM folder.
-          If you have trouble finding the mail contact us on team@growingabroad.de</S.TextEmail>)}
-        </div>
 
+
+       
+        <div>
+          {!timer.completed ? (
+            <>
+              {formatTime(timer.seconds)}
+              <S.ThankyouItems>
+                {infoData.map((item, idx) => (
+                  <S.ThankyouItem key={idx}>
+                    <S.ContainerIcon>
+                      <Image
+                        src={item.image}
+                        alt="Icon"
+                        width={item.width}
+                        height={item.height}
+                      />
+                    </S.ContainerIcon>
+                    <S.ThankyouItemsTitle>{item.title}</S.ThankyouItemsTitle>
+                    <S.ThankyouItemsText>{item.content}</S.ThankyouItemsText>
+                  </S.ThankyouItem>
+                ))}
+              </S.ThankyouItems>
+            </>
+          ) : (
+            <S.TextEmail>
+              Please check your E Mail Inbox. If you cannot find the Mail also
+              check your SPAM folder. If you have trouble finding the mail
+              contact us on team@growingabroad.de
+            </S.TextEmail>
+          )}
+        </div>
       </S.ContainerFunnelPagesContainer>
     </>
   );
