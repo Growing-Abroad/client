@@ -2,7 +2,7 @@ import { PageLayout } from "@/components";
 import { ReactElement, useState } from "react";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import useCountdownTimer from "@/hooks/useCountdownTimer";
-import * as S from "../../styles/masterclass";
+import * as S from "../../../styles/masterclass";
 import Image from "next/image";
 import closeMail from "@assets/pages/masterclass/icons/closeMail.svg";
 import openMail from "@assets/pages/masterclass/icons/openMail.svg";
@@ -10,7 +10,6 @@ import clickMail from "@assets/pages/masterclass/icons/clickMail.svg";
 
 export default function MasterclassTankYou() {
   const timer = useCountdownTimer(10);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const infoData = [
     {
       title: "Check your E Mail Inbox",

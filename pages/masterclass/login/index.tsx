@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components";
 import { ReactElement, useState, useEffect } from "react";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
-import * as S from "../../styles/masterclass";
+import * as S from "../../../styles/masterclass";
 import UanAndManu from "@/../public/assets/masterclassDesktop.png";
 import { SubmitHandler, useForm, FormProvider } from "react-hook-form";
 import StdInput from "@/components/generics/StdInput";

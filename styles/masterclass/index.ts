@@ -66,10 +66,6 @@ export const MasterlassTitle = styled.h1`
   }
 `;
 
-export const MasterlassSpan2 = styled.span`
-  color: #4a9afd;
-`;
-
 export const MasterlassSpan = styled.span`
   color: #ffdb5c;
 `;
@@ -242,7 +238,6 @@ export const CountdownTimerText = styled.p`
   font-size: 24px;
 `;
 
-
 export const ThankyouItems = styled.div`
   display: flex;
   flex-direction: row;
@@ -346,3 +341,35 @@ export const VideoIframe = styled.iframe`
   height: 100%;
   max-height: 438px;
 `;
+
+export const FreeMasterClassTitle = styled.h1`
+  color: #05335b;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.3px;
+  text-transform: capitalize;
+  margin: 73px 0 57px;
+  @media screen and (min-width: 768px) {
+    margin: 55px 0 43px;
+    color: #fff;
+  }
+`;
+
+export const FreeMasterClassTitleSpan = styled.span`
+  color: #05335b;
+  span {
+    @media screen and (max-width: 767px) {
+      color: #4a9afd;
+    }
+  }
+`;
+
+
+export const UILinkFreeMasterClass = styled(UILink)`
+  @media screen and (min-width: 768px) {
+    margin: auto auto 52px; 
+  }
+`

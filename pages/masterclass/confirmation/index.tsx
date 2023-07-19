@@ -1,6 +1,6 @@
 import FunnelPagesContainer from "components/FunnelPagesContainer";
 import notebooimg from "@/../public/assets/images/notebook-img.png";
-import * as S from "../../styles/masterclass";
+import * as S from "../../../styles/masterclass";
 import mousePointer from "@assets/pages/masterclass/icons/mousePointer.svg";
 import Image from "next/image";
 import { PageLayout } from "@/components";

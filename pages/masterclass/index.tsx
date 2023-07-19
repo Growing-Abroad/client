@@ -15,7 +15,7 @@ export default function Masterclass() {
       <S.ContainerFunnelPagesContainer>
         <S.MasterlassTitle>
           How to land your Dream Job In{" "}
-          <S.MasterlassSpan2>Germany</S.MasterlassSpan2> or{" "}
+          <S.MasterlassSpan>Germany</S.MasterlassSpan> or{" "}
           <S.MasterlassSpan>Europe</S.MasterlassSpan> now
         </S.MasterlassTitle>
         <S.ContentItems>
