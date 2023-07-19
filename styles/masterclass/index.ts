@@ -373,3 +373,49 @@ export const UILinkFreeMasterClass = styled(UILink)`
     margin: auto auto 52px; 
   }
 `
+
+export const ImageContainerVideo = styled.div`
+  border-radius: 5px;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1513px;
+  video {
+    min-height: 195.33px;
+  }
+`;
+
+export const ImageBackgroundVideo = styled(Image)`
+  max-height: 438px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+`;
+
+export const PlayerContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Player = styled(Image).attrs({
+  alt: "youtube play button",
+})`
+  :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 25%;
+    height: auto;
+  }
+`;
