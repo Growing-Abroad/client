@@ -28,6 +28,8 @@ export const JobsWrapper = styled.div`
 export default function Talentpool() {
   const { windowSize: isMobile } = useAppContext();
 
+
+
   return (
     <>
       <SEO
