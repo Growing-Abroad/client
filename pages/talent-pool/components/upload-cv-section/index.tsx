@@ -209,7 +209,7 @@ export default function UploadCvSection() {
       </S.UploadCvWrapper>
 
       <FormProvider {...methods}>
-        <S.CvForm id="scroll-id" onSubmit={handleSubmit(onSubmit)}>
+        <S.CvForm onSubmit={handleSubmit(onSubmit)}>
           <S.ContainerField>
             <S.UITitle text1="Personal Information" text2="" />
             <S.UISubtitle>Enter your personal details below</S.UISubtitle>
@@ -327,7 +327,7 @@ export default function UploadCvSection() {
             </S.SpecializationsContainer>
           </S.ContainerField>
 
-          <S.UploadDocsContainer>
+          <S.UploadDocsContainer id="scroll-id">
             <S.UploadDocsContent>
               <S.UITitle text1="Documents" text2="" />
               <S.UISubtitle>

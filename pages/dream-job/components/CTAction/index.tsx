@@ -19,14 +19,6 @@ function CTAction({
   buttonIntl,
   buttonURL = "",
 }: ICTActionProps) {
-  // const intl = useIntl();
-
-  // const t = (id: string): string => {
-  //   if (id !== "") {
-  //     return intl.formatMessage({ id });
-  //   }
-  //   return "";
-  // };
 
   const icon = pageName == "candidates" ? faPlay : "";
   const router = useRouter()
@@ -43,7 +35,7 @@ function CTAction({
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
     }else {
-        location.href = buttonURL
+      router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")
     }
   };
 
@@ -59,7 +51,7 @@ function CTAction({
           <S.SubTitle>{subTitleIntl}</S.SubTitle>
 
           <S.StdButtonCustom
-            onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}
+            onClick={hadleScroll}
             icon={icon}
             pageName={pageName}
           >

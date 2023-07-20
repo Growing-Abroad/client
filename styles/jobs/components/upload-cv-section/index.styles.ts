@@ -341,6 +341,7 @@ export const FileInput = styled.input`
 
 export const UIStdParagraqhCustom = styled(StdParagraqh)`
   font-weight: 400;
+  color: #05335B;
 `;
 
 export const PopImg = styled(Image)`

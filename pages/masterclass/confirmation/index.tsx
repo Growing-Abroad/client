@@ -20,7 +20,7 @@ export default function MasterclassConfirmation({ canAccess }: any) {
             Click the button below to watch the free Masterclass on <br /> "How
             to land your dream job in Germany"
           </S.UIParagraph>
-          <S.UILink href="/masterclass/login">
+          <S.UILink href="/masterclass/free-masterclass">
             <S.UIStdButton>
               <Image src={mousePointer} alt="Icon Mouse" height={19} />
               Watch the Masterclass Now

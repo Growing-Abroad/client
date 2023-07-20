@@ -62,11 +62,6 @@ export const HeroTitleWrapper = styled.div`
 export default function JobsHeroSection() {
   const { isMobile } = useAppContext();
 
-  // const intl = useIntl();
-
-  // const t = (id: string): string => {
-  //   return intl.formatMessage({ id });
-  // };
 
   return (
     <>
