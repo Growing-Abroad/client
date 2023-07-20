@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components";
-import { ReactElement, useCallback, useState } from "react";
+import { ReactElement, useState } from "react";
 import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import useCountdownTimer from "@/hooks/useCountdownTimer";
 import * as S from "../../../styles/masterclass";
@@ -7,14 +7,9 @@ import Image from "next/image";
 import closeMail from "@assets/pages/masterclass/icons/closeMail.svg";
 import openMail from "@assets/pages/masterclass/icons/openMail.svg";
 import clickMail from "@assets/pages/masterclass/icons/clickMail.svg";
-import VideoComponent from "@/components/VideoComponent";
-import UanAndManu from "@assets/pages/masterclass/videoBg.jpg";
-import YoutubeplayButton from "public/assets/youtube-play-btn.jpg";
 
 export default function MasterclassTankYou() {
   const timer = useCountdownTimer(10);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   const infoData = [
     {
       title: "Check your E Mail Inbox",
@@ -41,16 +36,6 @@ export default function MasterclassTankYou() {
       height: 37,
     },
   ];
-
-  const handlePause = useCallback(() => {
-    if (isVideoPlaying) {
-      setIsVideoPlaying(false);
-    }
-  }, [isVideoPlaying, setIsVideoPlaying]);
-
-  const handlePlay = useCallback(() => {
-    setIsVideoPlaying(true);
-  }, [setIsVideoPlaying]);
 
 
   const formatTime = (time: number) => {
@@ -81,30 +66,14 @@ export default function MasterclassTankYou() {
           can watch the free Masterclass "How to land your dream job in
           Germanyy"
         </S.CountdownTimerSubTitle>
-        <S.ImageContainerVideo onClick={handlePause}>
-          {!isVideoPlaying ? (
-            <S.ImageBackgroundVideo
-              width={1128}
-              height={628}
-              src={UanAndManu}
-              alt="uan and manu"
-              
-            ></S.ImageBackgroundVideo>
-          ) : (
-            <VideoComponent
-              isPlaying={isVideoPlaying}
-              src="../assets/videos/Masterclass-TYV.mp4"
-              type="video/mp4"
-              controls
-            />
-          )}
-          {!isVideoPlaying && (
-            <S.PlayerContainer>
-              <S.Player onClick={handlePlay} src={YoutubeplayButton}></S.Player>
-            </S.PlayerContainer>
-          )}
-        </S.ImageContainerVideo>
-
+        <S.VideoContainer>
+          <S.VideoIframe
+            src="https://player.vimeo.com/video/846655227?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="Masterclass TYV"
+            width="100%" height="438px" 
+          ></S.VideoIframe>
+        </S.VideoContainer>
 
        
         <div>
