@@ -2,11 +2,12 @@ import {NextPage} from "next";
 import {ReactElement, ReactNode} from "react";
 import {AppProps} from "next/app";
 import {MyThemeProvider} from "@styles/MyThemeProvider";
-import ContextProvider from "@/context/ContextProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import useWithAuth from "@/components/DevAuth";
 import './custom.css';
 import Head from "next/head";
+import ContextProvider from "@/context/AppContext/ContextProvider";
+import { AuthProvider } from "@/context/AuthContext/AuthProvider";
 // import _useLocale from "@/hooks/useLocale";
 // import IntlProviderWrapper from "@/components/IntlProviderWrapper";
 
@@ -35,15 +36,17 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="author" content="Manuel Feneberg and Uanderson Silva" />
         <meta name="google-site-verification" content="e91Ujp8EDtLZbad6gOtFcIWDqAgHaTrQLQGAIhqFqL4" />
       </Head> 
-      <ContextProvider>
-        {/* <IntlProviderWrapper> */}
-            <MyThemeProvider>
-              {getLayout(
-                  <Component {...pageProps} />
-              )}
-            </MyThemeProvider>
-        {/* </IntlProviderWrapper> */}
-      </ContextProvider>
+      <AuthProvider>
+        <ContextProvider>
+          {/* <IntlProviderWrapper> */}
+              <MyThemeProvider>
+                {getLayout(
+                    <Component {...pageProps} />
+                )}
+              </MyThemeProvider>
+          {/* </IntlProviderWrapper> */}
+        </ContextProvider>
+      </AuthProvider>
     </>
   );
 }
