@@ -40,15 +40,9 @@ const AdminLogin = () => {
   const onSubmitLogin: SubmitHandler<ILoginFields> = async (data: ILoginFields) => {
     console.log({data})
     try {
-      // const response = await axios.post('/api/auth/login', data);
+      const response = await axios.post('http://localhost:3001/sign-in', data);
 
       //MOCK DATA
-      const response = {
-        data: {
-          accessToken: 'teste-auth-token', 
-          refreshToken: 'teste-refresh-token'
-        } 
-      }
       
       const token = response.data.accessToken;
       if (!token) {
