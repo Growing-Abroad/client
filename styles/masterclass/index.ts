@@ -336,13 +336,21 @@ export const VideoContainer = styled.div`
 export const VideoIframe = styled.div`
   iframe {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+`;
+
+export const VideoIframe2 = styled.iframe`
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;  
-}
-
+  max-height: 438px;
 `;
 
 export const FreeMasterClassTitle = styled.h1`
@@ -370,12 +378,11 @@ export const FreeMasterClassTitleSpan = styled.span`
   }
 `;
 
-
 export const UILinkFreeMasterClass = styled(UILink)`
   @media screen and (min-width: 768px) {
-    margin: auto auto 52px; 
+    margin: auto auto 52px;
   }
-`
+`;
 
 export const ImageContainerVideo = styled.div`
   border-radius: 5px;

@@ -67,12 +67,12 @@ export default function MasterclassTankYou() {
           Germanyy"
         </S.CountdownTimerSubTitle>
         <S.VideoContainer>
-          <S.VideoIframe
+          <S.VideoIframe2
             src="https://player.vimeo.com/video/846655227?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             allow="autoplay; fullscreen; picture-in-picture"
             title="Masterclass TYV"
             width="100%" height="438px" 
-          ></S.VideoIframe>
+          ></S.VideoIframe2>
         </S.VideoContainer>
 
        
