@@ -40,11 +40,15 @@ const AdminLogin = () => {
   const onSubmitLogin: SubmitHandler<ILoginFields> = async (data: ILoginFields) => {
     console.log({data})
     try {
-      const response = await axios.post('http://localhost:3001/sign-in', data);
+      const response = await axios.post('http://localhost:3001/sign-in', data, {
+        withCredentials: true
+      });
 
       //MOCK DATA
       
       const token = response.data.accessToken;
+      console.log('tokenValue');
+      console.log(token);
       if (!token) {
         console.log('error')
         return
@@ -57,8 +61,10 @@ const AdminLogin = () => {
   };
 
   useEffect(() => {
+    console.log('useEffect');
     console.log({accessToken: authValues?.accessToken})
     if (authValues?.accessToken) {
+      console.log('bora');
       route.push('/admin');
     }
   }, [authValues?.accessToken]);
