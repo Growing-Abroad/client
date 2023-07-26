@@ -333,13 +333,16 @@ export const VideoContainer = styled.div`
   }
 `;
 
-export const VideoIframe = styled.iframe`
-  position: absolute;
+export const VideoIframe = styled.div`
+  iframe {
+    position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  max-height: 438px;
+  pointer-events: none;  
+}
+
 `;
 
 export const FreeMasterClassTitle = styled.h1`
