@@ -64,7 +64,7 @@ export default function MasterclassTankYou() {
  
         </S.VideoContainer>
         {seconds >= 1310 &&
-          <S.UILinkFreeMasterClass href="/masterclass/login">
+          <S.UILinkFreeMasterClass href="/dream-job">
             <S.UIStdButton>Get Instant Access</S.UIStdButton>
           </S.UILinkFreeMasterClass>
         }
