@@ -5,10 +5,13 @@ import { mockedPoolData } from "@/utils/mock-ups/talent-pool-mocked-data";
 
 export async function getFileFromDb(userId: string) {
   try {
-      const response = await axios.get(`http://localhost:3001/file/${userId}`);
-      console.log({response})
+    const response = await axios.get(`http://localhost:3001/file/${userId}`, {
+      responseType: 'blob'
+    });
+    const blobURL = URL.createObjectURL(response.data);
+    window.open(blobURL, '_blank');
   } catch (error) {
-      console.error(error);
+    console.error(error);
   }
 }
 

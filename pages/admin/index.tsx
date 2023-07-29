@@ -15,16 +15,17 @@ export const getServerSideProps = async (context: any) => {
   };
 
 export type User = {
-    id: number;
+    _id: number;
     pronoum: string;
     firstName: string;
     lastName: string;
     email: string;
     phone: string;
     areasOfExpertise: Array<string>;
-    file: Array<{}>;
+    files: Array<{}>;
     otherFiles?: Array<{}>;
 };
+
 interface IFileProp {
     userId: string
 }
@@ -67,7 +68,7 @@ function Admin() {
                 />
                 <S.UserList>
                     {filteredUsers?.map((user, i) => (
-                        <li key={user.id.toString()+i} onClick={() => setSelectedUser(user)}>
+                        <li key={user._id.toString()+i} onClick={() => setSelectedUser(user)}>
                             {user.firstName} {user.lastName}
                         </li>
                     ))}
@@ -84,11 +85,11 @@ function Admin() {
                         {/* Note: Displaying FileList directly can be complex. This is a simple representation */}
                         <div className="files-list">
                             <span>CV:</span>
-                            {selectedUser.file.map((_, i) => (<FileLink key={i} userId={selectedUser.id.toString()}/>))}
+                            {selectedUser.files.map((_, i) => (<FileLink key={i} userId={selectedUser._id.toString()}/>))}
                         </div>
                         <div className="files-list">
                             <span>Other Files:</span>
-                             {selectedUser.otherFiles?.map((_, i) => (<FileLink key={i} userId={selectedUser.id.toString()}/>))}
+                             {selectedUser.otherFiles?.map((_, i) => (<FileLink key={i} userId={selectedUser._id.toString()}/>))}
                         </div>
                     </>
                 )}
