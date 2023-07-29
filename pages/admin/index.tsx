@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import { fetchUsersData, getFileFromDb } from "@/services/admin/application.service";
 
 export const getServerSideProps = async (context: any) => {
     const authCheck = await withAuthServerSide(context);
@@ -12,48 +14,48 @@ export const getServerSideProps = async (context: any) => {
     return authCheck;
   };
 
-type User = {
-    _id: number;
+export type User = {
+    id: number;
     pronoum: string;
     firstName: string;
     lastName: string;
     email: string;
     phone: string;
     areasOfExpertise: Array<string>;
-    files: Array<{}>;
+    file: Array<{}>;
     otherFiles?: Array<{}>;
 };
-  
+interface IFileProp {
+    userId: string
+}
+
+const FileLink = ({userId}: IFileProp) => {
+    return(
+        <S.FileButton onClick={() => getFileFromDb(userId)}>
+            <FontAwesomeIcon icon={faFilePdf} size="2x"/>
+        </S.FileButton>
+    )
+}
 
 function Admin() {
     const [users, setUsers] = useState<User[]>([]);
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const authValues = useAuthContext();
-    console.log({authValues: authValues});
+    // console.log({authValues: authValues});
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get<User[]>('http://localhost:3001/talentpool');
-                setUsers(response.data);
-                console.log({talentResponse: response.data});
-                // setUsers(mockedPoolData);
-                // setSelectedUser(mockedPoolData[0]);
-            } catch (error) {
-                console.error("Failed to fetch user data: ", error);
-            }
-        };
-
-        fetchData();
+        fetchUsersData()
+        .then(res => {
+            setUsers(res);
+            setSelectedUser(res[0]);
+        })
     }, []);
 
     const filteredUsers = users.filter(user => 
         `${user.firstName} ${user.lastName}`.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-
-    console.log({authValues})
     return(
 
         <S.AdminContainer>
@@ -64,8 +66,8 @@ function Admin() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <S.UserList>
-                    {filteredUsers.map((user, i) => (
-                        <li key={user._id.toString()+i} onClick={() => setSelectedUser(user)}>
+                    {filteredUsers?.map((user, i) => (
+                        <li key={user.id.toString()+i} onClick={() => setSelectedUser(user)}>
                             {user.firstName} {user.lastName}
                         </li>
                     ))}
@@ -82,11 +84,11 @@ function Admin() {
                         {/* Note: Displaying FileList directly can be complex. This is a simple representation */}
                         <div className="files-list">
                             <span>CV:</span>
-                            {selectedUser.files.map(() => (<FontAwesomeIcon icon={faFilePdf} size="2x"/>))}
+                            {selectedUser.file.map((_, i) => (<FileLink key={i} userId={selectedUser.id.toString()}/>))}
                         </div>
                         <div className="files-list">
                             <span>Other Files:</span>
-                             {selectedUser.otherFiles?.map(() => (<FontAwesomeIcon icon={faFilePdf} size="2x"/>))}
+                             {selectedUser.otherFiles?.map((_, i) => (<FileLink key={i} userId={selectedUser.id.toString()}/>))}
                         </div>
                     </>
                 )}

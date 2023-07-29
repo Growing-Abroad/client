@@ -42,6 +42,10 @@ export const DetailsSection = styled.div`
   }
 `;
 
+export const FileButton = styled.button`
+  all: unset;
+`;
+
 export const SearchBox = styled.input`
   width: 100%;
   padding: 10px;
