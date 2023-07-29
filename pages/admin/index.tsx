@@ -10,9 +10,9 @@ import { fetchUsersData, getFileFromDb } from "@/services/admin/application.serv
 
 export const getServerSideProps = async (context: any) => {
     const authCheck = await withAuthServerSide(context);
-    console.log({authCheck: authCheck});
+    console.log({ authCheck: authCheck });
     return authCheck;
-  };
+};
 
 export type User = {
     _id: number;
@@ -22,18 +22,18 @@ export type User = {
     email: string;
     phone: string;
     areasOfExpertise: Array<string>;
-    files: Array<{}>;
-    otherFiles?: Array<{}>;
+    fileId: string;
+    otherFileId?: string;
 };
 
 interface IFileProp {
-    userId: string
+    fileId: string
 }
 
-const FileLink = ({userId}: IFileProp) => {
-    return(
-        <S.FileButton onClick={() => getFileFromDb(userId)}>
-            <FontAwesomeIcon icon={faFilePdf} size="2x"/>
+const FileLink = ({ fileId }: IFileProp) => {
+    return (
+        <S.FileButton onClick={() => getFileFromDb(fileId)}>
+            <FontAwesomeIcon icon={faFilePdf} size="2x" />
         </S.FileButton>
     )
 }
@@ -43,32 +43,32 @@ function Admin() {
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const authValues = useAuthContext();
-    // console.log({authValues: authValues});
+    console.log({ authValues: authValues });
 
     useEffect(() => {
         fetchUsersData()
-        .then(res => {
-            setUsers(res);
-            setSelectedUser(res[0]);
-        })
+            .then(res => {
+                setUsers(res);
+                setSelectedUser(res[0]);
+            })
     }, []);
 
-    const filteredUsers = users.filter(user => 
+    const filteredUsers = users.filter(user =>
         `${user.firstName} ${user.lastName}`.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    return(
+    return (
 
         <S.AdminContainer>
             <S.ListSection>
                 <S.SearchBox
-                placeholder="Search for a user..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Search for a user..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <S.UserList>
                     {filteredUsers?.map((user, i) => (
-                        <li key={user._id.toString()+i} onClick={() => setSelectedUser(user)}>
+                        <li key={user._id.toString() + i} onClick={() => setSelectedUser(user)}>
                             {user.firstName} {user.lastName}
                         </li>
                     ))}
@@ -84,12 +84,10 @@ function Admin() {
                         <p>Areas of Expertise: {selectedUser.areasOfExpertise.join(', ')}</p>
                         {/* Note: Displaying FileList directly can be complex. This is a simple representation */}
                         <div className="files-list">
-                            <span>CV:</span>
-                            {selectedUser.files.map((_, i) => (<FileLink key={i} userId={selectedUser._id.toString()}/>))}
+                            <span>CV:</span> <FileLink key={selectedUser.fileId} fileId={selectedUser.fileId} />
                         </div>
                         <div className="files-list">
-                            <span>Other Files:</span>
-                             {selectedUser.otherFiles?.map((_, i) => (<FileLink key={i} userId={selectedUser._id.toString()}/>))}
+                            <span>Other Files:</span> <FileLink key={selectedUser.otherFileId} fileId={selectedUser.otherFileId ?? ""} />
                         </div>
                     </>
                 )}

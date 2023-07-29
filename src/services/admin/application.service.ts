@@ -3,9 +3,9 @@ import axios from "axios";
 import { mockedPoolData } from "@/utils/mock-ups/talent-pool-mocked-data";
 
 
-export async function getFileFromDb(userId: string) {
+export async function getFileFromDb(fileId: string) {
   try {
-    const response = await axios.get(`http://localhost:3001/file/${userId}`, {
+    const response = await axios.get(`http://localhost:3001/file/${fileId}`, {
       responseType: 'blob'
     });
     const blobURL = URL.createObjectURL(response.data);
