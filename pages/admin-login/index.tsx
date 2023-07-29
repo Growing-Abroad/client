@@ -56,15 +56,13 @@ const AdminLogin = () => {
       authValues?.setAccessToken(token);
     } catch (error) {
       // Handle error, show error message
-      console.error(error)
+      // console.error(error)
     }
   };
 
   useEffect(() => {
-    console.log('useEffect');
     console.log({accessToken: authValues?.accessToken})
     if (authValues?.accessToken) {
-      console.log('bora');
       route.push('/admin');
     }
   }, [authValues?.accessToken]);
