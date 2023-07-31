@@ -58,7 +58,7 @@
     "pages/components",
     "pages/AboutUs",
     "ni18n.config.ts",   
-    "src/context/AppContext.ts"  
+    "src/context/AppContext/AppContext.ts"  
 , "pages/candidates/components/StoriesPageCandidates", "pages/candidates/components/DiscoverGA", "pages/candidates/components/Blog/BlogCard", "pages/candidates/components/OurServices/OurServicesSwiper", "pages/candidates/components/Community/SocialCard", "pages/candidates/components/Community", "pages/coaching/components/coaching-package-online-course"  ],
   "exclude": [
     "node_modules"

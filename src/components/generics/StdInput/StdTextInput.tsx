@@ -17,19 +17,21 @@ const Input = styled.input`
 export interface IStdTextInputProps {
   name: string,
   required?: boolean
-  placeholder?: string
+  placeholder?: string,
+  type?: string
 }
 
 export default function StdTextInput({
   name,
   required = false,
   placeholder,
+  type,
   ...rest
 }: IStdTextInputProps) {
   const { register } = useFormContext()
 
   return(
-    <Input placeholder={placeholder}
+    <Input placeholder={placeholder} type={type || 'text'}
       {...rest} {...register(name, { required })}
       name={name}
     />
