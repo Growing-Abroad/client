@@ -5,7 +5,7 @@ import { mockedPoolData } from "@/utils/mock-ups/talent-pool-mocked-data";
 
 export async function getFileFromDb(fileId: string, accessToken: string) {
   try {
-    const response = await axios.get(`http://localhost:3001/file/${fileId}`, {
+    const response = await axios.get(`https://api.growingabroad.de/file/${fileId}`, {
       responseType: 'blob',
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -20,7 +20,7 @@ export async function getFileFromDb(fileId: string, accessToken: string) {
 
 export async function fetchUsersData(accessToken: string): Promise<Array<User>> {
   try {
-    const response = await axios.get<User[]>('http://localhost:3001/talentpool', {
+    const response = await axios.get<User[]>('https://api.growingabroad.de/talentpool', {
       headers: {Authorization: `Bearer ${accessToken}`}
     });
     // return mockedPoolData;

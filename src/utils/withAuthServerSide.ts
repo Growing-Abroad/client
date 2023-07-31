@@ -6,7 +6,7 @@ import cookie from 'js-cookie';
 
 export const getAccessToken = async (refreshToken: string) => {
   try {
-    const response = await axios.get('http://localhost:3001/refresh', {
+    const response = await axios.get('https://api.growingabroad.de/refresh', {
       withCredentials: true,
       headers: {
         "Authorization": `Bearer ${refreshToken}`
