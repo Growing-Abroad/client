@@ -10,7 +10,7 @@ import GrowingLogo from '@assets/growing-abroad/full-logo-growing-reduced.png';
 import Image from 'next/image';
 import { useRouter } from "next/router";
 import { useAuthContext } from '@/hooks/useAuthContext';
-
+import cookie from 'js-cookie';
 
 interface ILoginFields {
   email: string,
@@ -51,6 +51,7 @@ const AdminLogin = () => {
         return
       }
       authValues?.setAccessToken(token);
+      cookie.set('AccessToken', token, { secure: true, sameSite: 'strict'  });
     } catch (error) {
       // Handle error, show error message
       // console.error(error)

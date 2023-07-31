@@ -2,6 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 // import { parse } from 'cookie';
 import { parse } from 'cookie';
 import axios from 'axios';
+import cookie from 'js-cookie';
 
 export const getAccessToken = async (refreshToken: string) => {
   try {
@@ -22,12 +23,26 @@ export const getAccessToken = async (refreshToken: string) => {
 
 export const withAuthServerSide = async (context: GetServerSidePropsContext) => {
   const cookies = context.req.headers.cookie;
-  const cookieToken = parse(cookies || '').Refresh;
-  console.log({cookieToken: cookieToken});
-  const authenticationToken = await getAccessToken(cookieToken);
+
+  const accessToken = parse(cookies || '').AccessToken;
+  console.log({accessToken});
+  if (accessToken) {
+    cookie.remove('AccessToken');
+    return {
+      props: {
+        authenticationToken: accessToken
+      },
+    };
+  } 
+
+  const refreshToken = parse(cookies || '').Refresh;
+  console.log({refreshToken});
+
+
+  const authenticationToken = await getAccessToken(refreshToken);
   console.log({qqTaAcontecendo: authenticationToken});
 
-  if (!cookieToken || !authenticationToken) {
+  if (!refreshToken || !authenticationToken) {
     return {
       redirect: {
         destination: '/admin-login',

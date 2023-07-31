@@ -27,18 +27,23 @@ export type User = {
 };
 
 interface IFileProp {
-    fileId: string
+    fileId: string,
+    authToken: string
 }
 
-const FileLink = ({ fileId }: IFileProp) => {
+const FileLink = ({ fileId, authToken }: IFileProp) => {
+    if (!fileId) return '';
     return (
-        <S.FileButton onClick={() => getFileFromDb(fileId)}>
+        <S.FileButton onClick={() => getFileFromDb(fileId, authToken)}>
             <FontAwesomeIcon icon={faFilePdf} size="2x" />
         </S.FileButton>
     )
 }
+interface AdminProps {
+    authenticationToken: string;
+}
 
-function Admin() {
+function Admin({ authenticationToken }: AdminProps) {
     const [users, setUsers] = useState<User[]>([]);
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
@@ -46,7 +51,10 @@ function Admin() {
     console.log({ authValues: authValues });
 
     useEffect(() => {
-        fetchUsersData()
+        if (!authenticationToken) return; 
+
+        authValues?.setAccessToken(authenticationToken);
+        fetchUsersData(authenticationToken)
             .then(res => {
                 setUsers(res);
                 setSelectedUser(res[0]);
@@ -84,10 +92,20 @@ function Admin() {
                         <p>Areas of Expertise: {selectedUser.areasOfExpertise.join(', ')}</p>
                         {/* Note: Displaying FileList directly can be complex. This is a simple representation */}
                         <div className="files-list">
-                            <span>CV:</span> <FileLink key={selectedUser.fileId} fileId={selectedUser.fileId} />
+                            <span>CV:</span> 
+                            <FileLink 
+                                key={selectedUser.fileId} 
+                                fileId={selectedUser.fileId} 
+                                authToken={authenticationToken}
+                            />
                         </div>
                         <div className="files-list">
-                            <span>Other Files:</span> <FileLink key={selectedUser.otherFileId} fileId={selectedUser.otherFileId ?? ""} />
+                            <span>Other Files:</span> 
+                            <FileLink 
+                                key={selectedUser.otherFileId} 
+                                fileId={selectedUser.otherFileId ?? ""} 
+                                authToken={authenticationToken}    
+                            />
                         </div>
                     </>
                 )}
