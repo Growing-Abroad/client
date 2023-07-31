@@ -95,7 +95,7 @@ const AdminLogin = () => {
                 errors.password?.type === "required" ? "Type your Password" : ""
               }
             >
-              <StdTextInput name="password" required={true} />
+              <StdTextInput name="password" required={true} type='password'/>
             </StdInput>
 
             <StdButton type='submit' style={{borderRadius: '10px'}} >Login</StdButton>
