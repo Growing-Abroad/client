@@ -44,7 +44,6 @@ const AdminLogin = () => {
   } = formMethods;
 
   const onSubmitLogin: SubmitHandler<ILoginFields> = async (data: ILoginFields) => {
-    console.log({data})
     try {
       const response = await axios.post('https://api.growingabroad.de/sign-in', data, {
         withCredentials: true
@@ -64,7 +63,6 @@ const AdminLogin = () => {
   };
 
   useEffect(() => {
-    console.log({accessToken: authValues?.accessToken})
     if (authValues?.accessToken) {
       route.push('/admin');
     }
