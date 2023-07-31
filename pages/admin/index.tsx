@@ -31,7 +31,7 @@ interface IFileProp {
 }
 
 const FileLink = ({ fileId, authToken }: IFileProp) => {
-    if (!fileId) return '';
+    if (!fileId) return (<></>);
     return (
         <S.FileButton onClick={() => getFileFromDb(fileId, authToken)}>
             <FontAwesomeIcon icon={faFilePdf} size="2x" />
