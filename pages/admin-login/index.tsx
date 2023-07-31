@@ -11,6 +11,11 @@ import Image from 'next/image';
 import { useRouter } from "next/router";
 import { useAuthContext } from '@/hooks/useAuthContext';
 import cookie from 'js-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { theme } from '@/styles/theme';
+
+const {colors: { blue700}} = theme;
 
 interface ILoginFields {
   email: string,
@@ -20,6 +25,7 @@ interface ILoginFields {
 const AdminLogin = () => {
   const authValues = useAuthContext();
   const route = useRouter();
+  const [inputType, setInputType] = useState<string>('password');
 
   const formDefaultValues: ILoginFields = {
     email: '',
@@ -94,8 +100,14 @@ const AdminLogin = () => {
               errorMessage={
                 errors.password?.type === "required" ? "Type your Password" : ""
               }
+              
             >
-              <StdTextInput name="password" required={true} type='password'/>
+              <S.InputWrapper>
+                <StdTextInput name="password" required={true} type={inputType} />
+                <S.PasswordTypeButton onClick={() => setInputType(inputType === 'password' ? 'text': 'password')}>
+                  <FontAwesomeIcon color={'#05335b96'} icon={inputType === 'text' ? faEyeSlash : faEye} size="1x"  />
+                </S.PasswordTypeButton> 
+              </S.InputWrapper>
             </StdInput>
 
             <StdButton type='submit' style={{borderRadius: '10px'}} >Login</StdButton>

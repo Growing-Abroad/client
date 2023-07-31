@@ -34,3 +34,32 @@ export const LoginForm = styled.form`
   flex-direction: column;
   gap: 12px;
 `
+
+export const InputWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`
+
+export const PasswordTypeButton = styled.button`
+  all: unset;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 6px;
+  margin: auto 0;
+  top: 0;
+  bottom: 0;
+
+  &:hover {
+    background-color: rgba(0,0,0,.05)
+  }
+`;
