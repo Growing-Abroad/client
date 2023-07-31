@@ -16,7 +16,6 @@ export const getAccessToken = async (refreshToken: string) => {
       return response.data;
     }
   }catch (err) {
-    // console.log({deuRUim: err})
     return undefined;
   }
 }
@@ -25,7 +24,6 @@ export const withAuthServerSide = async (context: GetServerSidePropsContext) => 
   const cookies = context.req.headers.cookie;
 
   const accessToken = parse(cookies || '').AccessToken;
-  console.log({accessToken});
   if (accessToken) {
     cookie.remove('AccessToken');
     return {
@@ -36,11 +34,9 @@ export const withAuthServerSide = async (context: GetServerSidePropsContext) => 
   } 
 
   const refreshToken = parse(cookies || '').Refresh;
-  console.log({refreshToken});
 
 
   const authenticationToken = await getAccessToken(refreshToken);
-  console.log({qqTaAcontecendo: authenticationToken});
 
   if (!refreshToken || !authenticationToken) {
     return {

@@ -10,7 +10,6 @@ import { fetchUsersData, getFileFromDb } from "@/services/admin/application.serv
 
 export const getServerSideProps = async (context: any) => {
     const authCheck = await withAuthServerSide(context);
-    console.log({ authCheck: authCheck });
     return authCheck;
 };
 
@@ -48,7 +47,6 @@ function Admin({ authenticationToken }: AdminProps) {
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const authValues = useAuthContext();
-    console.log({ authValues: authValues });
 
     useEffect(() => {
         if (!authenticationToken) return; 

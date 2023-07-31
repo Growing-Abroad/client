@@ -45,7 +45,6 @@ const AdminLogin = () => {
       });
 
       const token = response.data.accessToken;
-      console.log({token});
       if (!token) {
         console.log('error')
         return
