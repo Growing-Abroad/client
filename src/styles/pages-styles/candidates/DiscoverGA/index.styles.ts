@@ -146,4 +146,5 @@ export const Subtitle = styled.p`
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.3px;
+  max-width: 868px;
 `
