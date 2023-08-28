@@ -12,13 +12,14 @@ import { useRouter } from "next/router"
 
 export const Presentation = () => {
   const router = useRouter()
-
+  
+     
   return (
     <Container>
       <Wrapper>
         <Title>
-          We match skilled International <span>TALENTS</span> with your{" "}
-          <span>COMPANY</span>
+        We will find the best <span>Talents</span> in the job market 
+  for your <span>Company</span>
         </Title>
         <Description>
           Are you looking for Skilled International Talents for your open

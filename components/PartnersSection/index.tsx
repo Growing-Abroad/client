@@ -150,7 +150,7 @@ function PartnersSection() {
         <ImageContainerB>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[checkIfIsMobile(isMobile)].height}
+            height={103}
             src={WomansWorldIcon}
             alt="Woman's World"
           />

@@ -17,7 +17,7 @@ interface DiscoverGAProps {
   text2?: string;
   manuContent?: string;
   uanContent?: string;
-  typePages?: "cadidates" | "sales" | "online-course";
+  typePages?: "cadidates" | "sales" | "online-course" | "home";
 }
 
 export default function DiscoverGA({
@@ -34,16 +34,24 @@ export default function DiscoverGA({
   }
 
   return (
-    <S.DiscoverGrowingAbroadSection className="sales">
+    <S.DiscoverGrowingAbroadSection className={`sales ${typePages == "home" && "home"}`}>
       <TwoColorTitle
         text1={text1}
         text2={text2}
-        breakingLine={typePages !== "cadidates"}
+        breakingLine={typePages !== "home"}
         hasSpaceBtw
         as="h2"
         wrapperClassName="discover-wrapper"
         className="discover-title"
       />
+
+      {typePages === "home" && (
+        <S.Subtitle>
+          {isMobile
+            ? "Recruiting, Career Coach &  Development Services"
+            : "Your Recruiting Agency offering Headhunting, Career Coaching & Development Services in the European and German job Market"}
+        </S.Subtitle>
+      )}
       <BlueSquareWithCarousel
         carouselData={candidatesDiscoverMockup}
         changeOnHover
@@ -53,22 +61,27 @@ export default function DiscoverGA({
         <S.DiscoverReadMoreWrapper
           className={`${typePages === "cadidates" && "cadidates"} sales`}
         >
-          {typePages === "cadidates" ? (
+          {typePages === "cadidates" || typePages === "home" ? (
             <StdParagraqh
               className="discover-text"
               style={{ fontSize: isMobile ? ".875rem" : "", fontWeight: 600 }}
             >
               <>
                 We help <b>skilled foreigners</b> from all over the world secure
-                and land their <b>dream job in Germany and Europe. <br /> <br /> </b>
+                and land their{" "}
+                <b>
+                  dream job in Germany and Europe. <br /> <br />{" "}
+                </b>
                 As Career experts we will be your mentor, career advisor, coach,
                 and motivator, helping you to navigate the complex job market in
                 Germany and Europe. Whether you need help with{" "}
                 <b>building a CV</b> on European standards, a{" "}
                 <b>cover letter</b> or getting confidence and{" "}
                 <b>convincing the recruiters</b> in the job interview, we're
-                here to help. <br /><br />We understand that moving to a new country can be
-                overwhelming, which is why we're here to{" "}
+                here to help. <br />
+                <br />
+                We understand that moving to a new country can be overwhelming,
+                which is why we're here to{" "}
                 <b>provide the support and guidance</b> you need to make a
                 successful career transition.
                 <S.UILink href="/about-us">Read More</S.UILink>

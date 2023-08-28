@@ -9,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 168px 140px;
+  padding: 0;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
@@ -21,11 +21,7 @@ export const Container = styled.div`
 export const TitleContainer = styled.div`
   padding: 0;
 
-  ${({ theme }) => css`
-    @media (max-width: ${theme.sizes.mediaQuery}) {
-      padding: 0 60px;
-    }
-  `}
+
 `;
 
 export const ImageContainerA = styled.div`
@@ -35,33 +31,15 @@ export const ImageContainerA = styled.div`
 
 export const ImageContainerB = styled.div`
   display: grid;
-  grid-area: "AreaB";
 `;
 
 export const Content = styled.div<ContentProps>`
-  display: grid;
+  display: flex;
   width: 100%;
-  /* max-width: 100%; */
+  flex-wrap: wrap;  
   margin-top: 60px;
   grid-gap: 24.5px 110px;
   justify-content: center;
   align-items: center;
 
-  ${({ isMobile }) =>
-    isMobile
-      ? css`
-          grid-template-areas:
-            "AreaA AreaA"
-            "AreaA AreaA"
-            "AreaA AreaA"
-            "AreaB AreaB"
-            "AreaB AreaB"
-            "AreaB AreaB";
-          /* grid-gap: 5px; */
-        `
-      : css`
-          grid-template-areas:
-            "AreaA AreaA AreaA AreaA AreaA"
-            "AreaB AreaB AreaB AreaB AreaB";
-        `}
 `;

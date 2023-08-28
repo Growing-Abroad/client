@@ -29,7 +29,7 @@ function Header({ chosenHeader }: HeaderProps) {
     case ChosenHeader.FOR_CANDIDATES:
       return <HeaderForCandidates />
     case ChosenHeader.FOR_COMPANIES:
-      return <HeaderForCompanies />
+      return <></>
     case ChosenHeader.FOR_SALES:
       return <></>
     case ChosenHeader.FOR_MASTERCLASS:
@@ -46,7 +46,7 @@ function PageLayout(props: Props) {
     <>
       <Header chosenHeader={chosenHeader} />
         {children}
-      <Footer usePageBody={props.usePageBody} hideBlueSection={props.hideBlueSection} />
+      <Footer usePageBody={props.usePageBody} hideBlueSection={props.hideBlueSection} hideNewslleter={chosenHeader == ChosenHeader.FOR_COMPANIES} />
     </>
   );
 }

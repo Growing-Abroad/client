@@ -1,14 +1,31 @@
+import { PageLayout } from "@/components";
 import HeaderForCandidates from "@/components/HeaderForCandidates";
+import { ChosenHeader } from "@/components/PageLayout/PageLayout";
 import { CompaniesModule } from "@/modules/companies";
-import React from "react";
+import WorkIn from "@pages/candidates/components/WorkIn/WorkIn";
+import AreaBanner from "components/AreaBanner";
+import PartnersSection from "components/PartnersSection";
+import Process from "components/Process";
+import React, { ReactElement } from "react";
 
-const Companies = () => {
+export default function Companies() {
   return (
     <>
       <HeaderForCandidates />
       <CompaniesModule />
+      <WorkIn pageType="companies" />
+      <AreaBanner />
+      <Process />
+      <PartnersSection />
+
+
     </>
   );
 };
 
-export default Companies;
+Companies.getLayout = function getLayout(page: ReactElement) {
+  return (
+      <PageLayout chosenHeader={ChosenHeader.FOR_COMPANIES}>{page}</PageLayout>
+  );
+};
+

@@ -13,7 +13,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 405px) {
-      padding-top: 173px;
+      padding-top: 60px;
     }
   `};
 `;
