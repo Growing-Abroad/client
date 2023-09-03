@@ -73,6 +73,9 @@ export const ItemContainer = styled.div`
   display: flex;
   gap: 28px;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    padding: 0 40px;
+  }
 
 `;
 
@@ -191,9 +194,6 @@ export const Line = styled.div`
 export const UITwoColorTitle = styled(TwoColorTitle)`
   margin: auto auto 40px;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
 `
 
 export const UITwoColorTitleContainer = styled.div`

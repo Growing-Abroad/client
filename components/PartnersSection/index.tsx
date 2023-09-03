@@ -10,8 +10,10 @@ import RedBookIcon from "@/../public/assets/partners-icons/red-book.svg";
 import SelfIcon from "@/../public/assets/partners-icons/self.svg";
 import BuzzFeedIcon from "@/../public/assets/partners-icons/buzz-feed.svg";
 import WomansWorldIcon from "@/../public/assets/partners-icons/womans-world.svg";
-import Rammlerbau from "@/../public/assets/partners-icons/rammlerbräu_1.jpg";
-import AlineCeli from "@/../public/assets/partners-icons/Aline Celi Logo.jpg";
+
+
+import Rammlerbau from "@/../public/assets/partners-icons/rammlerbrau_1.jpg";
+import AlineCeli from "@/../public/assets/partners-icons/AlineCeliLogo.jpg";
 import Eletrovorteil from "@/../public/assets/partners-icons/Elektrovorteil.jpg";
 import Flexpress from "@/../public/assets/partners-icons/Flexpress.jpg";
 import Kickbase from "@/../public/assets/partners-icons/Kickbase-logo_1.jpg";
@@ -87,82 +89,45 @@ function PartnersSection() {
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={TodayIcon}
-            alt="Today"
+            src={Rammlerbau}
+            alt="Rammlerbau"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={HuuffpostIcon}
-            alt="Huffpost"
+            src={AlineCeli}
+            alt="AlineCeli"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={TasteOfHomeIcon}
-            alt="Taste of Home"
+            src={Eletrovorteil}
+            alt="Eletrovorteil"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={ParadeIcon}
-            alt="Parade"
+            src={Flexpress}
+            alt="Flexpress"
           />
         </ImageContainerA>
         <ImageContainerA>
           <Image
             width={imageSizes[checkIfIsMobile(isMobile)].width}
             height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={RedBookIcon}
-            alt="Redbook"
+            src={Kickbase}
+            alt="Kickbase"
           />
         </ImageContainerA>
-        <ImageContainerB>
-          <Image
-            width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[isMobile ? "mobile" : "desktop"].height}
-            src={SelfIcon}
-            alt="Self"
-          />
-        </ImageContainerB>
-        <ImageContainerB>
-          <Image
-            width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={ParadeIcon}
-            alt="Parade"
-          />
-        </ImageContainerB>
-        <ImageContainerB>
-          <Image
-            width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[isMobile ? "mobile" : "desktop"].height}
-            src={BuzzFeedIcon}
-            alt="Buzz Feed"
-          />
-        </ImageContainerB>
-        <ImageContainerB>
-          <Image
-            width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={103}
-            src={WomansWorldIcon}
-            alt="Woman's World"
-          />
-        </ImageContainerB>
-        <ImageContainerB>
-          <Image
-            width={imageSizes[checkIfIsMobile(isMobile)].width}
-            height={imageSizes[checkIfIsMobile(isMobile)].height}
-            src={HuuffpostIcon}
-            alt="Huffpost"
-          />
-        </ImageContainerB>
+       
+        
+        
       </Content>
     </Container>
   );

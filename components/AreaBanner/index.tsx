@@ -1,30 +1,64 @@
 import TwoColorTitle from "@/components/two-color-title";
 import * as S from "./styles";
-import It from "../../public/assets/images/it.jpg";
-import data_science from "../../public/assets/images/data-science.jpg";
+import It from "../../public/assets/images/ITServices.jpg";
+import data_science from "../../public/assets/images/Dataanalytics.jpg";
 import business from "../../public/assets/images/business.jpg";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 
 const Item = [
   {
     photo: It,
     title: "IT",
-    description: "Web and Design Software Development IT Security Engineering Cloud Project Manager"
+    description: (
+      <>
+        Web and Design
+        <br />
+        Software Development
+        <br />
+        IT Security
+        <br />
+        Engineering
+        <br />
+        Cloud
+        <br />
+        Project Manager
+      </>
+    ),
   },
   {
     photo: data_science,
     title: "Data and Analytics",
-    description: "Marketing and Sales Finance Business Analyst Business Development Supply Chain"
+    description: (
+      <>
+        Data Analyst
+        <br />
+        BI and Big Data
+        <br />
+        Data Engineer
+        <br />
+        Data Science
+        <br />
+        Machine Learning Engineer
+      </>
+    ),
   },
   {
     photo: business,
     title: "Business and Economy ",
-    description: "Marketing and Sales Finance Business Analyst Business Development Supply Chain"
+    description: (
+      <>
+        Marketing and Sales <br />
+        Finance <br />
+        Business Analyst <br />
+        Business Development <br />
+        Supply Chain
+      </>
+    ),
   },
-]
+];
 
 const AreaBanner = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <S.Section>
@@ -42,20 +76,16 @@ const AreaBanner = () => {
 
       <S.ContainerItens>
         {Item.map((item, idx) => (
-           <S.Item key={idx}>
+          <S.Item key={idx}>
             <S.ImageUI src={item.photo} alt={item.title} />
             <S.Overlay>
               <S.TitleItem>{item.title}</S.TitleItem>
               <S.SubTitle>{item.description}</S.SubTitle>
             </S.Overlay>
-         </S.Item>
+          </S.Item>
         ))}
-
-
-        
       </S.ContainerItens>
-      <S.Button href="/contact-us" >Contact us now</S.Button>
-
+      <S.Button href="/contact-us">Contact us now</S.Button>
     </S.Section>
   );
 };

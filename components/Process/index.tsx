@@ -73,7 +73,7 @@ export default function Process() {
       {
         id: "2",
         imageSrc: index2,
-        title: "search of Talents ",
+        title: "Search of Talents ",
         description: "We undertake a rigorous screening process to identify the most qualified talents in the market, ensuring a precise alignment of their skills and qualifications with your specific requirements"
       },
       {
@@ -86,7 +86,7 @@ export default function Process() {
         id: "4",
         imageSrc: index4,
         title: "Interview and Hire",
-        description: "We will conduct the initial assessment and interview to ensure the candidates' quality and address any additional inquiries prior to their interview with your organization"
+        description: "You get the most qualified candidates for interview and hire. Payment is only required upon successful placement"
         
       },
 

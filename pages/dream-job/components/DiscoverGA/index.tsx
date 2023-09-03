@@ -34,7 +34,9 @@ export default function DiscoverGA({
   }
 
   return (
-    <S.DiscoverGrowingAbroadSection className={`sales ${typePages == "home" && "home"}`}>
+    <S.DiscoverGrowingAbroadSection
+      className={`sales ${typePages == "home" && "home"}`}
+    >
       <TwoColorTitle
         text1={text1}
         text2={text2}
@@ -62,31 +64,67 @@ export default function DiscoverGA({
           className={`${typePages === "cadidates" && "cadidates"} sales`}
         >
           {typePages === "cadidates" || typePages === "home" ? (
-            <StdParagraqh
-              className="discover-text"
-              style={{ fontSize: isMobile ? ".875rem" : "", fontWeight: 600 }}
-            >
-              <>
-                We help <b>skilled foreigners</b> from all over the world secure
-                and land their{" "}
-                <b>
-                  dream job in Germany and Europe. <br /> <br />{" "}
-                </b>
-                As Career experts we will be your mentor, career advisor, coach,
-                and motivator, helping you to navigate the complex job market in
-                Germany and Europe. Whether you need help with{" "}
-                <b>building a CV</b> on European standards, a{" "}
-                <b>cover letter</b> or getting confidence and{" "}
-                <b>convincing the recruiters</b> in the job interview, we're
-                here to help. <br />
-                <br />
-                We understand that moving to a new country can be overwhelming,
-                which is why we're here to{" "}
-                <b>provide the support and guidance</b> you need to make a
-                successful career transition.
-                <S.UILink href="/about-us">Read More</S.UILink>
-              </>
-            </StdParagraqh>
+            <>
+              {typePages === "home" ? (
+                <StdParagraqh
+                  className="discover-text"
+                  style={{
+                    fontSize: isMobile ? ".875rem" : "",
+                    fontWeight: 600,
+                  }}
+                >
+                  <>
+                    We founded Growing Abroad Consulting to match international
+                    talents with companies due to the fast growing demand of
+                    jobs in Germany and Europe.
+                    <br /> <br />
+                    We offer Career development and Consulting for ambitious
+                    students and professionals looking to settle in Germany as
+                    well as HR services to match the best talents for German
+                    Companies.
+                    <br /> <br />
+                    <b>We have experience in different industries:</b> Financial
+                    Service, Management and Consulting, Tech, Automotive and
+                    Industry 4.0
+                    <br /> <br />
+                    <b>
+                      We have a pool of talents in different areas of business:
+                    </b>{" "}
+                    IT, Engineering, Web, Data and Analytics, Business and
+                    Project Management
+                  </>
+                </StdParagraqh>
+              ) : (
+                <StdParagraqh
+                  className="discover-text"
+                  style={{
+                    fontSize: isMobile ? ".875rem" : "",
+                    fontWeight: 600,
+                  }}
+                >
+                  <>
+                    We help <b>skilled foreigners</b> from all over the world
+                    secure and land their{" "}
+                    <b>
+                      dream job in Germany and Europe. <br /> <br />{" "}
+                    </b>
+                    As Career experts we will be your mentor, career advisor,
+                    coach, and motivator, helping you to navigate the complex
+                    job market in Germany and Europe. Whether you need help with{" "}
+                    <b>building a CV</b> on European standards, a{" "}
+                    <b>cover letter</b> or getting confidence and{" "}
+                    <b>convincing the recruiters</b> in the job interview, we're
+                    here to help. <br />
+                    <br />
+                    We understand that moving to a new country can be
+                    overwhelming, which is why we're here to{" "}
+                    <b>provide the support and guidance</b> you need to make a
+                    successful career transition.
+                    <S.UILink href="/about-us">Read More</S.UILink>
+                  </>
+                </StdParagraqh>
+              )}
+            </>
           ) : (
             <StdParagraqh
               className="discover-text"

@@ -38,7 +38,7 @@ const Page: NextPageWithLayout = () => {
 Page.getLayout = function getLayout(page: ReactElement) {
 
   return (
-    <PageLayout chosenHeader={ChosenHeader.DEFAULT} hideBlueSection={false} >
+    <PageLayout chosenHeader={ChosenHeader.DEFAULT} hideBlueSection={true} >
       {page}
     </PageLayout>
   );

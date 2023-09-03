@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0;
-
+  margin-bottom: 165px;
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {
       padding: 0 30px;
@@ -27,6 +27,21 @@ export const TitleContainer = styled.div`
 export const ImageContainerA = styled.div`
   display: grid;
   grid-area: "AreaA";
+  &:nth-child(2) {
+    img {
+      margin-top: 14px;
+    }
+  }
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    img {
+      margin-top: 46px;
+    }
+  }
+  img {
+    height: auto;
+  }
 `;
 
 export const ImageContainerB = styled.div`
