@@ -27,7 +27,8 @@ export const Section = styled.section`
     align-items: center;
     justify-content: center;
     padding: 0 16px;
-    margin-top: 50px;
+    margin-top: 55px;
+    margin-bottom: 40px;
 `
 
 
@@ -41,6 +42,7 @@ export const ContainerItens = styled.div`
 `
 
 export const TitleItem = styled.h3`
+  text-align: center;
   color: #FFF;
   font-size: 29px;
   font-style: normal;
@@ -56,9 +58,11 @@ export const SubTitle = styled.h4`
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 40px; 
+  line-height: 34px; 
   @media screen and (min-width: 1020px){
    font-size: 27px;
+   line-height: 40px; 
+
   }
 `
 

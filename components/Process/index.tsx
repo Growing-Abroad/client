@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import useAppContext from "@/hooks/useAppContext";
 
 import index1 from "@/../public/assets/job-briefing.jpg";
 import index2 from "@/../public/assets/talent-search.jpg";
@@ -35,8 +34,6 @@ export default function Process() {
         window.removeEventListener('resize', handleResize);
       };
     }, []);
-
-    const { isMobile } = useAppContext();
 
     return (
       <React.Fragment>

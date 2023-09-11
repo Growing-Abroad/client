@@ -2,6 +2,13 @@ import * as S from "@/styles/pages-styles/candidates/OurServices/OurServicesCard
 import { BsCheckLg } from "react-icons/bs";
 import { IService } from "@/utils/services";
 
+const links = [
+  "online-course",
+  "https://growingabroad.myelopage.com/s/growingabroad/online-course-cv-optimization",
+  "https://growingabroad.myelopage.com/s/growingabroad/online-course-cover-letter-optimization",
+  "https://growingabroad.myelopage.com/s/growingabroad/job-interview-online-course"
+]
+
 export default function OurServicesCard({
   id,
   title,
@@ -11,7 +18,7 @@ export default function OurServicesCard({
 }: IService) {
 
   const handleRedirect = (id: string) => {
-    if(id == "online-course") {
+    if(links.includes(id)) {
       location.href = id;
     }else {
       location.href = `/coaching#${id}`;

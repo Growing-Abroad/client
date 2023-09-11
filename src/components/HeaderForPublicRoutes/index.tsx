@@ -8,14 +8,11 @@ import {
   Content,
   ButtonsContainer,
   Button,
-  IconButton,
   StyledBurger,
   SubContainer,
 } from "./styles";
 import { useTheme } from "styled-components";
 import useAppContext from "@/hooks/useAppContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 
 function HeaderForPublicRoutes() {

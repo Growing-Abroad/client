@@ -49,6 +49,9 @@ export const CardHeader = styled.div`
   font-size: 1.5rem;
   h2 {
     font-weight: 600;
+    @media screen and (min-width: 1020px) {
+      font-size: 31px;
+    }
   }
   h3 {
     font-size: 1rem;

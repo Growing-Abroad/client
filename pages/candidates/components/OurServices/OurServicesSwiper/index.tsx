@@ -7,8 +7,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Castle from "@/../public/assets/Photos-Main-Page/cover-letter-optimization.jpg";
 import CvOptimization from "@/../public/assets/Photos-Main-Page/CV-Optimization.jpg";
 import JobSearchStrategy from "@/../public/assets/Photos-Main-Page/Job-Search-Strategy.jpg";
-
+import OnlineCourseCVOptimization from "@/../public/assets/Photos-Main-Page/curriculo.jpg";
 import CoachingPackage from "@/../public/assets/Photos-Main-Page/Coaching-Package.jpg";
+import OnlineCourseCoverLetterOptimization from "@/../public/assets/Photos-Main-Page/OnlineCourseCoverLetterOptimization.jpg";
+import JobInterviewPreparation from "@/../public/assets/Photos-Main-Page/JobInterviewPreparation.jpg";
 
 import OnlineCourse from "@assets/Photos-Main-Page/online-course-success.jpg";
 import JobInterview from "@assets/Photos-Main-Page/job-interview-coaching.jpg";
@@ -37,8 +39,89 @@ export interface IService {
 
 export const services: IService[] = [
   {
+    id: "https://growingabroad.myelopage.com/s/growingabroad/online-course-cv-optimization",
+    title: "Online Course: CV Optimization",
+    subtitle: "Video lessons to convince german hiring managers with your CV",
+    image: {
+      src: OnlineCourseCVOptimization?.src,
+      alt: "Online Course: CV Optimization",
+    },
+    descriptions: [
+      {
+        id: "9",
+        content:
+          "5 Video lessons to learn step by step how to optimize your CV for the German market",
+      },
+      {
+        id: "99",
+        content:
+          "Interactive Workbook with key insights on the Optimization + Coaching tasks",
+      },
+      {
+        id: "999",
+        content:
+          "Bonus material: CV Templates",
+      },
+    ],
+    hasMoreInfo: false,
+  },
+  {
+    id: "https://growingabroad.myelopage.com/s/growingabroad/online-course-cover-letter-optimization",
+    title: "Online Course: Cover Letter Optimization",
+    subtitle: "Video lessons to convince german hiring managers with your cover letter",
+    image: {
+      src: OnlineCourseCoverLetterOptimization?.src,
+      alt: "Online Course: CV Optimization",
+    },
+    descriptions: [
+      {
+        id: "9",
+        content:
+        "2 Video lessons to learn step by step how to optimize your Cover Letter for the German market",
+      },
+      {
+        id: "99",
+        content:
+        "Interactive Workbook with key insights on the Optimization + Coaching tasks",
+      },
+      {
+        id: "999",
+        content:
+        "Bonus material: Cover Letter templates",
+      },
+    ],
+    hasMoreInfo: false,
+  },
+  {
+    id: "https://growingabroad.myelopage.com/s/growingabroad/job-interview-online-course",
+    title: "Online Course: Job Interview Preparation",
+    subtitle: "Video lessons to nail your next german job interview",
+    image: {
+      src: JobInterviewPreparation?.src,
+      alt: "Online Course: Job Interview Preparation",
+    },
+    descriptions: [
+      {
+        id: "9",
+        content:
+        "6 Video lessons to learn step by step how to convince in job interviews",
+      },
+      {
+        id: "99",
+        content:
+        "Interactive Workbook with key insights on the job interview process + Coaching tasks",
+      },
+      {
+        id: "999",
+        content:
+        "Bonus material: List of the 80 most typical interview questions",
+      },
+    ],
+    hasMoreInfo: false,
+  },
+  {
     id: "Job-Interview-Preparation",
-    title: "Job Interview Preparation",
+    title: "Coaching: Job Interview Preparation",
     subtitle: "To rock every Job Interview in Germany",
     image: {
       src: JobInterview?.src,
@@ -65,7 +148,7 @@ export const services: IService[] = [
   },
   {
     id: "online-course",  
-    title: "Online <br /> Course",
+    title: "Coaching: Dream Job",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
       src: OnlineCourse?.src,
@@ -92,7 +175,7 @@ export const services: IService[] = [
   },
   {
     id: "CV-Optimization",
-    title: "CV <br /> Optimization",
+    title: "Coaching: CV Optimization",
     subtitle: "To have a CV in german standards",
     image: {
       src: CvOptimization?.src,
@@ -119,7 +202,7 @@ export const services: IService[] = [
   },
   {
     id: "Cover-Letter-Optimization",
-    title: "Cover Letter Optimization",
+    title: "Coaching: Cover Letter Optimization",
     subtitle: "To have a Cover letter in german standards",
     image: {
       src: Castle?.src,
@@ -146,7 +229,7 @@ export const services: IService[] = [
   },
   {
     id: "LinkedIn-Optimization",
-    title: "LinkedIn Optimization",
+    title: "Coaching: LinkedIn Optimization",
     subtitle: "To get contacted by german recruiters",
     image: {
       src: LinkedInOptimization?.src,
@@ -173,7 +256,7 @@ export const services: IService[] = [
   },
   {
     id: "Job-Search-Strategy",
-    title: "Job Search Strategy",
+    title: "Coaching: Job Search Strategy",
     subtitle: "To find the best jobs in the market",
     image: {
       src: JobSearchStrategy?.src,
@@ -200,7 +283,7 @@ export const services: IService[] = [
   },
   {
     id: "Coaching-Package",
-    title: "Coaching Package",
+    title: "Coaching: Coaching Package",
     subtitle: "To be fully prepared for the german market",
     image: {
       src: CoachingPackage?.src,

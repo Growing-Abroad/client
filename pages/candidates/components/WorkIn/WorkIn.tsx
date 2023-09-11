@@ -57,8 +57,8 @@ function WorkIn({ pageType = "cadidates" }: IWorkInProps) {
   return (
     <S.Container>
       <TwoColorTitle
-        text1="English Speaking Jobs in"
-        text2="Germany"
+        text1={pageType === "companies" ? "Strugglig to hire skilled": "English Speaking Jobs in"}
+        text2={pageType === "companies" ? "talents" : "Germany"}
         hasSpaceBtw
         as="h2"
         wrapperStyles={{ maxWidth: "100%" }}

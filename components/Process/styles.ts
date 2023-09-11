@@ -9,7 +9,7 @@ interface ItemContainerProps {
 
 export const ContainerProgressBar = styled.div`
 max-width: 1519px;
-    margin: 75px auto auto;
+margin: 75px auto 35px;
   padding: 0 16px;
   width: 100%;
   @media screen and (min-width: 768px) {

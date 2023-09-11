@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 73px 140px 109px;
+  padding: 100px 140px 125px;
   max-width: ${({ theme }) => theme.sizes.maxWidthAll};
   ${({ theme }) => css`
     @media (max-width: ${theme.sizes.mediaQuery}) {

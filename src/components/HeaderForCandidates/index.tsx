@@ -41,9 +41,10 @@ function HeaderForCandidates() {
   }
 
   const { pushTo } = useRouter(closeMenus)
+  const route = useNextRouter()
 
   const {
-    colors: { white, blue700, blue400 },
+    colors: { blue700 },
   } = useTheme();
 
 
@@ -125,8 +126,12 @@ function HeaderForCandidates() {
           <Content>
             <ButtonsContainer>
               { showButtons &&
-                (<><Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
-                Online course
+                (<>
+                <Button onClick={() => route.push("https://growingabroad.myelopage.com/s/growingabroad")}>
+                  Our Services 
+                </Button>
+                <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                  Dream Job
               </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
                   Coaching
                 </Button>
