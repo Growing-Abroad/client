@@ -1,5 +1,5 @@
 export enum EPagesNames {
-  DEFAULT = "candidates",
+  DEFAULT = "",
   ABOUT_US = "about-us",
   BLOG = "blog",
   CANDIDATES = "candidates",

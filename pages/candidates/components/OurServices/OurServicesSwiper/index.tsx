@@ -148,7 +148,7 @@ export const services: IService[] = [
   },
   {
     id: "online-course",  
-    title: "Coaching: Dream Job",
+    title: "Online Course: Dream Job",
     subtitle: "How to land your dream job in Germany or Europe",
     image: {
       src: OnlineCourse?.src,
