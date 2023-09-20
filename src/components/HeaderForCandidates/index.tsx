@@ -41,6 +41,7 @@ function HeaderForCandidates() {
   }
 
   const { pushTo } = useRouter(closeMenus)
+  const route = useNextRouter()
 
   const {
     colors: { white, blue700, blue400 },
@@ -125,8 +126,12 @@ function HeaderForCandidates() {
           <Content>
             <ButtonsContainer>
               { showButtons &&
-                (<><Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
-                Online course
+                (<>
+                <Button onClick={() => route.push("https://growingabroad.myelopage.com/s/growingabroad")}>
+                  Our Services 
+                </Button>
+                <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                  Dream Job
               </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
                   Coaching
                 </Button>
@@ -161,6 +166,30 @@ function HeaderForCandidates() {
                     }
                     isForDesktop
                   />
+                  <StdButton
+                    style={{
+                      width: 195,
+                      height: 32,
+                      fontSize: 18,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: 8,
+                      boxShadow: "none",
+                      margin: "0"
+                    }}
+                    onClick={pushTo(EPagesNames.COMPANIES)}
+                    backgroundColor={
+                      !shouldHaveMobileBehavior ? blue700 : white
+                    }
+                    color={!shouldHaveMobileBehavior ? white : blue700}
+                    hover={{
+                      backgroundColor: blue400,
+                      color: white,
+                    }}
+                  >
+                    For Companies
+                  </StdButton>
                 </>
               </IconsContainer>
             )}

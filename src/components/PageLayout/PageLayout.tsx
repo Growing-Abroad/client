@@ -46,7 +46,7 @@ function PageLayout(props: Props) {
     <>
       <Header chosenHeader={chosenHeader} />
         {children}
-      <Footer usePageBody={props.usePageBody} hideBlueSection={props.hideBlueSection} />
+      <Footer usePageBody={props.usePageBody} hideBlueSection={props.hideBlueSection} hideNewslleter={chosenHeader == ChosenHeader.FOR_COMPANIES} />
     </>
   );
 }

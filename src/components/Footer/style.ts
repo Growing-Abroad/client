@@ -13,6 +13,7 @@ const {
 export interface IFooter {
   usePageBody?: boolean;
   hideBlueSection?: boolean;
+  hideNewslleter?: boolean;
 }
 
 export const FooterContainer = styled.footer<IFooter>`
