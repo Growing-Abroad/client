@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import GrowingAbroadImage from "@/../public/assets/pages/growing-abroad-images/LOGO-Growing.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+
 import {
   Container,
   LogoContainer,
@@ -9,91 +13,197 @@ import {
   Button,
   IconsContainer,
   IconButton,
-  StyledBurger,
   AwesomeIcon,
-} from "./styles";
+  Header,
+  UIButton,
+} from "../HeaderForCandidates/styles";
 import StdButton from "../generics/StdButton/StdButton";
 import { useTheme } from "styled-components";
-import useAppContext from "@/hooks/useAppContext";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/router";
-
-enum PageName {
-  DEFAULT = "",
-  OUR_SERVICES = "our-services",
-  ABOUT_US = "about-us",
-  FOR_CANDIDATES = "candidates",
-}
+import { DesktopMenuContent } from "../HeaderForCandidates/Comopnents/DesktopMenuContent";
+import { EPagesNames } from "@/utils/enums/pagesNames.enum";
+import { Burger } from "../HeaderForCandidates/Comopnents/Burguer";
+import { StyledBurgerContainer } from "../HeaderForCandidates/Comopnents/Burguer/styles";
+import { useRouter } from "@/hooks/useRouter";
+import { breakpoints } from "@/utils/constants";
+import { useRouter as useNextRouter } from "next/router"
 
 function HeaderForCompanies() {
-  const [itsOpen, setItsOpen] = useState(false);
+  const [itsMobileMenuOpen, setItsMobileMenuOpen] = useState(false);
+  const [itsDesktopMenuOpen, setItsDesktopMenuOpen] = useState(false);
+  const [shouldHaveMobileBehavior, setShouldHaveMobileBehavior] =
+    useState(false);
+  const [showButtons, setShowButtons] = useState(true);
+  const router = useNextRouter()
+
+  const closeMenus = () => {
+    setItsDesktopMenuOpen(false)
+    setItsMobileMenuOpen(false)
+  }
+
+  const { pushTo } = useRouter(closeMenus)
+  const route = useNextRouter()
 
   const {
     colors: { white, blue700, blue400 },
   } = useTheme();
 
-  const { isMobile } = useAppContext();
 
-  const route = useRouter();
+  useEffect(() => {
+    function checkShowButtons() {
+      if (window.innerWidth < breakpoints.desktop.max) {
+        return setShowButtons(false);
+      }
 
-  const pushTo = (page: PageName) => () => route.push(`/${page}`);
+      setShowButtons(true);
+    }
+
+    function checkIfShouldHaveMobileBehavior() {
+      if (window.innerWidth < breakpoints.laptop.max) {
+        return setShouldHaveMobileBehavior(true);
+      }
+
+      setShouldHaveMobileBehavior(false);
+    }
+
+    function checkAll() {
+      checkIfShouldHaveMobileBehavior();
+      checkShowButtons();
+    }
+
+
+    window.addEventListener("resize", checkAll);
+
+    return () => {
+      window.removeEventListener("resize", checkAll);
+    };
+  }, []);
 
   return (
     <>
-      <StyledBurger open={itsOpen} onClick={() => setItsOpen(!itsOpen)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </StyledBurger>
-      <Container itsOpen={itsOpen}>
-        <LogoContainer onClick={pushTo(PageName.DEFAULT)}>
-          <Logo src={GrowingAbroadImage.src} />
-          {isMobile && (
-            <IconButton>
-              <AwesomeIcon icon={faGlobe} />
-            </IconButton>
-          )}
+      <Header>
+        <LogoContainer>
+          <Logo
+            src={GrowingAbroadImage.src}
+            onClick={pushTo(EPagesNames.DEFAULT)}
+          />
         </LogoContainer>
-        <Content>
-          <ButtonsContainer>
-            <Button onClick={pushTo(PageName.OUR_SERVICES)}>our services</Button>
-            <Button onClick={pushTo(PageName.ABOUT_US)}>about us</Button>
-            {isMobile && (
-              <Button onClick={pushTo(PageName.FOR_CANDIDATES)}>For Candidates</Button>
+        <IconButton withoutPadding>
+          <FontAwesomeIcon
+            icon={faGlobe}
+            size="2xl"
+            style={{ color: blue700 }}
+            className="global-icon"
+          />
+        </IconButton>
+        <StyledBurgerContainer open={itsMobileMenuOpen}>
+          <Burger
+            bgColor={blue700}
+            open={itsMobileMenuOpen}
+            handleClick={() => setItsMobileMenuOpen(!itsMobileMenuOpen)}
+          />
+        </StyledBurgerContainer>
+      </Header>
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "white",
+          display: "flex",
+          boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
+          justifyContent: "center",
+          position: "fixed",
+          zIndex: 500,
+        }}
+      >
+        <Container itsOpen={itsMobileMenuOpen}>
+          {!shouldHaveMobileBehavior && (
+            <LogoContainer className="desktop">
+              <Logo
+                src={GrowingAbroadImage.src}
+                onClick={pushTo(EPagesNames.DEFAULT)}
+              />
+            </LogoContainer>
+          )}
+          <Content>
+            <ButtonsContainer>
+              { showButtons &&
+                (<>
+                {/* <Button onClick={() => route.push("https://growingabroad.myelopage.com/s/growingabroad")}>
+                  Our Services 
+                </Button>
+                <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                  Dream Job
+              </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
+                  Coaching
+                </Button>
+                <Button onClick={pushTo(EPagesNames.JOBS)}>
+                Talentpool
+                </Button> */}
+              {/* <UIButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/sign_in")}>login</UIButton> */}
+              </>)
+              }
+              {shouldHaveMobileBehavior && (
+                <>
+                  <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                    Online course
+                  </Button>
+                  <Button onClick={pushTo(EPagesNames.COACHING)}>
+                    Coaching
+                  </Button><Button onClick={pushTo(EPagesNames.JOBS)}>Talent Pool</Button>
+                  <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
+                    About Us
+                  </Button>
+                 
+                  <Button onClick={pushTo(EPagesNames.FAQ)}>FAQ</Button>
+                </>
+              )}
+            </ButtonsContainer>
+            {!shouldHaveMobileBehavior && (
+              <IconsContainer>
+                <>
+                  <Burger
+                    open={itsDesktopMenuOpen}
+                    handleClick={() =>
+                      setItsDesktopMenuOpen(!itsDesktopMenuOpen)
+                    }
+                    isForDesktop
+                  />
+                  <StdButton
+                    style={{
+                      width: 195,
+                      height: 32,
+                      fontSize: 18,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: 8,
+                      boxShadow: "none",
+                      margin: "0"
+                    }}
+                    onClick={pushTo(EPagesNames.CANDIDATES)}
+                    backgroundColor={
+                      !shouldHaveMobileBehavior ? blue700 : white
+                    }
+                    color={!shouldHaveMobileBehavior ? white : blue700}
+                    hover={{
+                      backgroundColor: blue400,
+                      color: white,
+                    }}
+                  >
+                    For Candidates
+                  </StdButton>
+                </>
+              </IconsContainer>
             )}
-          </ButtonsContainer>
-          <IconsContainer>
-            {!isMobile && (
-              <>
-                <IconButton>
-                  <AwesomeIcon icon={faGlobe} />
-                </IconButton>
-                <StdButton
-                  style={{
-                    width: 195,
-                    height: 32,
-                    fontSize: 18,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: 8,
-                    color: !isMobile ? white : blue700,
-                  }}
-                  backgroundColor={!isMobile ? blue700 : white}
-                  hover={{
-                    backgroundColor: blue400,
-                    color: white,
-                  }}
-                >
-                  For Candidates
-                </StdButton>
-              </>
-            )}
-          </IconsContainer>
-        </Content>
-      </Container>
+          </Content>
+          <DesktopMenuContent
+            itsOpen={itsDesktopMenuOpen}
+            setItsOpen={setItsDesktopMenuOpen}
+          />
+        </Container>
+      </div>
     </>
   );
 }
 
 export default HeaderForCompanies;
+

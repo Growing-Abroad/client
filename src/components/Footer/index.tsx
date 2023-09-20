@@ -13,7 +13,11 @@ import { useRouter } from "next/router";
 import { EPagesNames } from "@/utils/enums/pagesNames.enum";
 import Link from "next/link";
 
-export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
+export default function Footer({
+  usePageBody,
+  hideBlueSection,
+  hideNewslleter = false,
+}: S.IFooter) {
   const route = useRouter();
 
   const { isMobile } = useAppContext();
@@ -28,7 +32,8 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   const handleGoToContactUs = () => onGoToNextPage(EPagesNames.CONTACT_US);
 
-  const handleGoToOnlineCourse = () => onGoToNextPage(EPagesNames.ONLINE_COURSE);
+  const handleGoToOnlineCourse = () =>
+    onGoToNextPage(EPagesNames.ONLINE_COURSE);
 
   const handleGoToCoaching = () => onGoToNextPage(EPagesNames.COACHING);
 
@@ -36,23 +41,24 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
 
   const handleGoToPrivacy = () => onGoToNextPage(EPagesNames.DATA_PRIVACY);
 
-  const handleGoToPrivacyApplicants = () => onGoToNextPage(EPagesNames.PRIVACY_POLICY);
+  const handleGoToPrivacyApplicants = () =>
+    onGoToNextPage(EPagesNames.PRIVACY_POLICY);
 
   return (
     <S.FooterContainer usePageBody={usePageBody}>
-        {!hideBlueSection
-          &&
-          <>
-            <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
-              <S.ImgBG
-                style={{ backgroundImage: `url(${wave.src})` }}
-                className="wave wave-desktop"
-              ></S.ImgBG>
-              <S.FooterContentWrapper>
-                <NewsLetter />
-                <S.FooterLinksContentWrapper>
-                  <S.FooterLinks width="400px" alignItems="start">
-                    <h3>Contact us</h3>
+      {!hideBlueSection && (
+        <>
+          <S.StyledFooter style={{ paddingTop: isMobile ? 0 : 130 }}>
+            <S.ImgBG
+              style={{ backgroundImage: `url(${wave.src})` }}
+              className="wave wave-desktop"
+            ></S.ImgBG>
+            <S.FooterContentWrapper>
+              {!hideNewslleter && <NewsLetter />}
+              <S.FooterLinksContentWrapper>
+                <S.FooterLinks width="400px" alignItems="start">
+                  <h3>Contact us</h3>
+                  {!hideNewslleter && (
                     <p>
                       Also check out the section{" "}
                       <span onClick={handleGoToFaq}>
@@ -60,100 +66,117 @@ export default function Footer({usePageBody, hideBlueSection}: S.IFooter) {
                       </span>{" "}
                       Maybe your question is already answered there.
                     </p>
-                    <S.StdButtonCustom onClick={handleGoToContactUs}
-                      icon={faEnvelope}
+                  )}
+
+                  <S.StdButtonCustom
+                    onClick={handleGoToContactUs}
+                    icon={faEnvelope}
+                  >
+                    Contact Us
+                  </S.StdButtonCustom>
+                </S.FooterLinks>
+                <S.FooterLinks>
+                  {" "}
+                  <h3>{hideNewslleter ? "For Candidates" : "Quick links"}</h3>
+                  <li onClick={handleGoToAboutUs}>About Us</li>
+                  <li onClick={handleGoToOnlineCourse}>Online Course</li>
+                  <li onClick={handleGoToCoaching}>Coaching</li>
+                  <li onClick={handleGoToTalentPool}>Talent Pool</li>
+                </S.FooterLinks>
+                <S.FooterLinks>
+                  <h3>Useful links</h3>
+                  <li onClick={handleGoToFaq}>FAQ</li>
+                  <li onClick={handleGoToPrivacy}>Privacy Policy</li>
+                  <li onClick={handleGoToPrivacyApplicants}>
+                    Privacy Applicants
+                  </li>
+                  <li onClick={handleGoToLegal}>Legal Notice</li>
+                </S.FooterLinks>
+                <S.FooterLinks>
+                  <h3>Social media</h3>
+                  <S.SocialMedia>
+                    <Link
+                      target="_blank"
+                      href="https://www.instagram.com/growing.abroad/"
                     >
-                      Contact Us
-                    </S.StdButtonCustom>
-                  </S.FooterLinks>
-                  <S.FooterLinks>
-                    {" "}
-                    <h3>Quick links</h3>
-                    <li onClick={handleGoToAboutUs}>About Us</li>
-                    <li onClick={handleGoToOnlineCourse}>Online Course</li>
-                    <li onClick={handleGoToCoaching}>Coaching</li>
-                    <li onClick={handleGoToTalentPool}>Talent Pool</li>
-                  </S.FooterLinks>
-                  <S.FooterLinks>
-                    <h3>Useful links</h3>
-                    <li onClick={handleGoToFaq}>FAQ</li>
-                    <li onClick={handleGoToPrivacy}>Privacy Policy</li>
-                    <li onClick={handleGoToPrivacyApplicants}>Privacy Applicants</li>
-                    <li onClick={handleGoToLegal}>Legal Notice</li>
-                  </S.FooterLinks>
-                  <S.FooterLinks>
-                    <h3>Social media</h3>
-                    <S.SocialMedia>
-                      <Link target="_blank" href="https://www.instagram.com/growing.abroad/" >
-                        <Image
-                          src={InstagramIcon}
-                          alt="instagram icon"
-                          height={26}
-                          width={26}
-                        />
-                      </Link>
-                      <Link target="_blank" href="https://www.tiktok.com/@growing.abroad" >
-                        <Image
-                          src={TikTokIcon}
-                          alt="tiktok icon"
-                          height={26}
-                          width={26}
-                        />
-                      </Link>
-                      <Link target="_blank" href="https://youtube.com/@growing.abroad" >
-                        <Image
-                          src={YoutubeIcon}
-                          alt="youtube icon"
-                          height={26}
-                          width={26}
-                        />
-                      </Link>
-                      <Link target="_blank" href="https://discord.com/invite/5kGd44eA" >
-                        <Image
-                          src={discordLogoIcon}
-                          alt="discord icon"
-                          height={26}
-                          width={26}
-                        />
-                      </Link>
-                      <Link target="_blank" href="https://www.linkedin.com/company/growing.abroad/"> 
-                        <Image
-                          src={LinkedInIcon}
-                          alt="linkedin icon"
-                          height={26}
-                          width={26}
-                        />
-                      </Link>
-                    </S.SocialMedia>
-                  </S.FooterLinks>
-                </S.FooterLinksContentWrapper>
-              </S.FooterContentWrapper>
-              <S.FooterBottomContainer>
-                <S.FooterBottomWrapper>
-                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
-                  <S.FooterBottomRight>
-                    <S.Links href="/legal-notice">Legal Notice</S.Links>
-                    <S.Links href="/data-privacy">Data Privacy</S.Links>
-                  </S.FooterBottomRight>
-                </S.FooterBottomWrapper>
-              </S.FooterBottomContainer>
-            </S.StyledFooter>
-          </>
-        }
-        {
-          hideBlueSection
-          &&  <S.FooterBottomContainer>
-                <S.FooterBottomWrapper>
-                  <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
-                  <S.FooterBottomRight>
-                    <S.Links href="/legal-notice">Legal Notice</S.Links>
-                    <S.Links href="/data-privacy">Data Privacy</S.Links>
-                  </S.FooterBottomRight>
-                </S.FooterBottomWrapper>
-              </S.FooterBottomContainer>
-        }
-
-
+                      <Image
+                        src={InstagramIcon}
+                        alt="instagram icon"
+                        height={26}
+                        width={26}
+                      />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://www.tiktok.com/@growing.abroad"
+                    >
+                      <Image
+                        src={TikTokIcon}
+                        alt="tiktok icon"
+                        height={26}
+                        width={26}
+                      />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://youtube.com/@growing.abroad"
+                    >
+                      <Image
+                        src={YoutubeIcon}
+                        alt="youtube icon"
+                        height={26}
+                        width={26}
+                      />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://discord.com/invite/5kGd44eA"
+                    >
+                      <Image
+                        src={discordLogoIcon}
+                        alt="discord icon"
+                        height={26}
+                        width={26}
+                      />
+                    </Link>
+                    <Link
+                      target="_blank"
+                      href="https://www.linkedin.com/company/growing.abroad/"
+                    >
+                      <Image
+                        src={LinkedInIcon}
+                        alt="linkedin icon"
+                        height={26}
+                        width={26}
+                      />
+                    </Link>
+                  </S.SocialMedia>
+                </S.FooterLinks>
+              </S.FooterLinksContentWrapper>
+            </S.FooterContentWrapper>
+            <S.FooterBottomContainer>
+              <S.FooterBottomWrapper>
+                <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
+                <S.FooterBottomRight>
+                  <S.Links href="/legal-notice">Legal Notice</S.Links>
+                  <S.Links href="/data-privacy">Data Privacy</S.Links>
+                </S.FooterBottomRight>
+              </S.FooterBottomWrapper>
+            </S.FooterBottomContainer>
+          </S.StyledFooter>
+        </>
+      )}
+      {hideBlueSection && (
+        <S.FooterBottomContainer>
+          <S.FooterBottomWrapper>
+            <span> Copyright &copy;&nbsp;2023 Growing Abroad </span>
+            <S.FooterBottomRight>
+              <S.Links href="/legal-notice">Legal Notice</S.Links>
+              <S.Links href="/data-privacy">Data Privacy</S.Links>
+            </S.FooterBottomRight>
+          </S.FooterBottomWrapper>
+        </S.FooterBottomContainer>
+      )}
     </S.FooterContainer>
   );
 }

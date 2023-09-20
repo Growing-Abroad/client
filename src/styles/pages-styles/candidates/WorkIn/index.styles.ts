@@ -35,7 +35,7 @@ export const CardSpace = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 38px;
   margin-top: 48px;
 
@@ -70,7 +70,7 @@ export const Card = styled.article`
     line-height: 2.438rem;
     letter-spacing: 1.3px;
     text-align: center;
-
+    justify-content: center;
     height: 78px;
     width: 276px;
     margin-top: 24px;

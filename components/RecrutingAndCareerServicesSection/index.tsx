@@ -39,7 +39,7 @@ function RecruitingAndCareerServicesSection() {
           description="We will find the best international talents for you and help you to attract qualified professionals from around the world"
           imageSrc={Company.src}
           buttonTitle="Find Experts Now"
-          onClick={() => router.push("/candidates")}
+          onClick={() => router.push("/companies")}
         />
         <CardSeparator />
         <CardWithImage
