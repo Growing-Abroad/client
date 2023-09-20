@@ -11,7 +11,6 @@ import React, { ReactElement } from "react";
 export default function Companies() {
   return (
     <>
-      <HeaderForCandidates />
       <CompaniesModule />
       <WorkIn pageType="companies" />
       <AreaBanner />

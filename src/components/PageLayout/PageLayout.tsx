@@ -29,7 +29,7 @@ function Header({ chosenHeader }: HeaderProps) {
     case ChosenHeader.FOR_CANDIDATES:
       return <HeaderForCandidates />
     case ChosenHeader.FOR_COMPANIES:
-      return <></>
+      return <HeaderForCompanies />
     case ChosenHeader.FOR_SALES:
       return <></>
     case ChosenHeader.FOR_MASTERCLASS:
