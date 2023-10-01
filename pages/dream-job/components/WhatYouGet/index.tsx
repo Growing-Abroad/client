@@ -97,7 +97,7 @@ export function WhatYouGet({isSales=false}: IWhatYouGetProps) {
               life
             </S.TextWhyBuyCourse>
           </S.TextWrapperWhyBuyCourse>
-          <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")} style={{ width: "181px", margin: "38px auto 100px" }}>
+          <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")} style={{ width: "181px", margin: "38px auto 100px" }}>
             Buy Now
           </StdButton>
         </S.RightContentWhyBuyCourse>

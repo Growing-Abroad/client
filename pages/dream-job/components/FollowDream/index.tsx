@@ -47,7 +47,7 @@ function FollowDreams() {
           Europe.
         </p>
       </S.Paragraph>
-      <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+      <StdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")}>
         Buy Online Course Now
       </StdButton>
     </S.Container>

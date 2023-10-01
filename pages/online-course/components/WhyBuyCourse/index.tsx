@@ -87,7 +87,7 @@ export function WhyBuyCourse() {
           </S.TextWrapperWhyBuyCourse>
         </S.RightContentWhyBuyCourse>
       </S.ContentWhyBuyCourse>
-      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment", "_blank")}>
         Buy Online Course Now
       </S.StdButtonCustom>
     </S.WrapperWhyBuyCourse>

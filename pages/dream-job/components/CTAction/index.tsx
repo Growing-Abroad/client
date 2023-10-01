@@ -35,7 +35,7 @@ function CTAction({
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
     }else {
-      router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")
+      router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")
     }
   };
 
