@@ -163,7 +163,7 @@ export default function VerticalProgressBarCustom() {
           </S.Circle>
           <S.CardTitle className="last-Item">{lastText}</S.CardTitle>
         </S.LastContent>
-        <S.UIStdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+        <S.UIStdButton onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")}>
           Buy Online Course Now
       </S.UIStdButton>
       </div>

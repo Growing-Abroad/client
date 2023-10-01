@@ -31,7 +31,7 @@ function Investiment() {
       <S.ParagraphCustom>
         This course is an investment in <span>your <span style={{ color: "#4A9AFD" }}>Successful Future </span></span>
       </S.ParagraphCustom>
-      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")}>
         Get your Acess Now
       </S.StdButtonCustom>
     </S.Container>

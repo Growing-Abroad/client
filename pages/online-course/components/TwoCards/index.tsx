@@ -103,7 +103,7 @@ export function TwoCards() {
           </div>
         </S.TwoCardsWrapper>
       </S.ContentTwoCards>
-      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/land-your-dream-job/payment")}>
+      <S.StdButtonCustom onClick={() => router.push("https://growingabroad.myelopage.com/s/growingabroad/dream-job/payment")}>
         Buy Now
       </S.StdButtonCustom>
     </S.Container>
