@@ -32,6 +32,12 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SDT35TQ491" />
+          <Script id="google-analytics">
+            {`
+              window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SDT35TQ491');
+            `}
+          </Script>
           <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6ed28db6-2b30-4a16-8326-d479955f1de2" data-blockingmode="auto" type="text/javascript" />
           <Script id="CookieDeclaration" src="https://consent.cookiebot.com/6ed28db6-2b30-4a16-8326-d479955f1de2/cd.js" type="text/javascript" async />
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
