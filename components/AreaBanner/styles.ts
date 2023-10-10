@@ -93,6 +93,7 @@ export const ImageUI = styled(Image)`
   width: 100%;
   max-height: 331px;
   max-width: 429.06px;
+  
   @media screen and (min-width: 768px) and (max-width: 1064px){
     max-width: 311px;
   }
