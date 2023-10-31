@@ -5,6 +5,7 @@ on:
     branches:
       - prod
 
+
 env:
   PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
   REGION: us-east1
