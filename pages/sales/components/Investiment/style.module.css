@@ -1,0 +1,181 @@
+
+.imageContainer {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.youtubeImage {
+    width: 100%;
+    height: auto;
+}
+
+.ripplesContainer {
+    text-align: center;
+	margin: 0 auto;
+	/* padding: 2em 0 3em; */
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: calc(50% - 48px);
+    left: calc(50% - 108px);
+}
+
+.blurbRippleOut {
+	display: inline-block;
+	font-size: 0px;
+	cursor: pointer;
+	margin: 15px 30px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+	-webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+	-moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+	transition: transform ease-out 0.1s, background 0.2s;
+}
+.youtubePlayButton{
+  width:144px;
+  height:99px;
+  border-radius:14px;
+
+}
+
+.blurbRippleOut:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	content: '';
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	top: 0;
+	left: 0;
+	padding: 0;
+	z-index: -1;
+	box-shadow: 0 0 0 2px rgba(178, 221, 76, 1);
+	opacity: 0;
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+}
+
+.blurbRippleOut:before {
+	speak: none;
+	font-size: 48px;
+	line-height: 90px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+}
+
+.blurbRippleOut:hover {
+	background: transparent;
+	-webkit-transform: scale(0.93);
+	-moz-transform: scale(0.93);
+	-ms-transform: scale(0.93);
+	transform: scale(0.93);
+	color: #fff;
+    border: 10px solid #4a99fc69;
+}
+
+.blurbRippleOut:hover:after {
+	-webkit-animation: sonarEffect 1.3s ease-out 75ms;
+	-moz-animation: sonarEffect 1.3s ease-out 75ms;
+	animation: sonarEffect 1.3s ease-out 75ms;
+}
+
+
+@keyframes sonarEffect {
+	0% {
+		opacity: 0.5;
+	}
+	40% {
+		opacity: 0.7;
+		box-shadow: 0 0 0 2px rgba(178, 221, 76, 1), 0 0 10px 10px rgba(178, 221, 76, 1), 0 0 0 10px rgba(178, 221, 76, 1);
+	}
+	100% {
+		box-shadow: 0 0 0 2px rgba(178, 221, 76, 1), 0 0 10px 10px rgba(178, 221, 76, 1), 0 0 0 10px rgba(178, 221, 76, 1);
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+/*** underline styling **/
+.embarmain {
+    margin: 0 0 30px;
+	display: flex;
+}
+.embar.embarbig {
+    margin: auto;
+    position: relative;
+}
+
+.tcenter .embar.embarbig::before {
+    right: 0;
+    margin: auto;
+}
+
+.embar.embarbig::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 52px;
+    height: 4px;
+    left: 0;
+    border: 4px solid transparent;
+    border-bottom: 0;
+    border-top-color: #0073cf;
+    top: auto;
+}
+
+.centerContents {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 768px) {
+	.centerContents {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+@media (max-width: 580px) {
+	.imageContainer {
+		padding: 0 10px;
+	}
+
+	.whoWrAre {
+		padding-top: 22.43px;
+	}
+}
+
+@media(max-width:580px){
+  .youtubePlayButton{
+    width:44px;
+    height:30px;
+    border-radius:9px;
+  }
+  .ripplesContainer {
+    text-align: center;
+	margin: 0 auto;
+	/* padding: 2em 0 3em; */
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: calc(50% - 30px);
+    left: calc(50% - 50px);
+}
+}

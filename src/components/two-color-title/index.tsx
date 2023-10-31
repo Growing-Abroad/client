@@ -1,38 +1,62 @@
-import { CSSProperties } from 'styled-components';
-import { TwoColorTitleWrapper, Text } from './style';
-export interface TwoColorTitleParameters {
-  text1: string;
-  text2: string;
+import { theme } from "@/styles/theme";
+import { CSSProperties } from "styled-components";
+import { TwoColorTitleWrapper, Text, ColoredSpan, IText } from "./style";
+import { ReactNode } from "react";
+
+const {
+  colors: { blue700, blue400 },
+} = theme;
+
+export interface TwoColorTitleParameters extends IText {
+  text1: ReactNode;
+  text2: ReactNode;
   hasSpaceBtw?: boolean;
-  fullWidth?: boolean;
   wrapperStyles?: CSSProperties;
   fontSize?: string;
-  color?: string;
   styles?: CSSProperties;
-  as?: keyof JSX.IntrinsicElements
+  className?: string;
+  breakingLine?: boolean;
+  color1?: string;
+  color2?: string;
+  wrapperClassName?: string;
 }
 
 const TwoColorTitle: React.FC<TwoColorTitleParameters> = ({
   text1,
   text2,
-  hasSpaceBtw,  
-  fullWidth,
+  hasSpaceBtw,
   wrapperStyles,
+  className,
+  breakingLine,
   as,
-  styles, 
+  styles,
+  color1,
+  color2,
+  wrapperClassName,
   ...rest
 }) => {
   return (
-    <TwoColorTitleWrapper style={wrapperStyles}>
-      <Text color={'primaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
-        {text1}
-        {hasSpaceBtw ? '\xa0' : ''}
-      </Text>
-      <Text color={'secondaryBlue'} styles={{...styles, ...rest}} as={as || 'h1'} >
-        {text2}
-      </Text>
-    </TwoColorTitleWrapper >
+    <TwoColorTitleWrapper style={wrapperStyles} className={wrapperClassName}>
+      {text1 && (
+        <Text
+          color={color1 ? color1 : blue700}
+          className={className}
+          style={{ ...styles, ...rest }}
+          as={as || "h1"}
+        >
+          {text1}
+          {hasSpaceBtw ? "\xa0" : ""}
+          {breakingLine && <br />}
+          <ColoredSpan
+            color={color2 ? color2 : blue400}
+            style={{ ...styles, ...rest }}
+          >
+            {text2}
+          </ColoredSpan>
+        </Text>
+      )}
+    </TwoColorTitleWrapper>
   );
-}
+};
 
 export default TwoColorTitle;

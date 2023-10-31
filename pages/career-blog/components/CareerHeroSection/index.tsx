@@ -1,22 +1,15 @@
-import TwoColorTitle from '@components/two-color-title';
-import Image from 'next/image';
-import search from '@/../public/assets/search.svg';
-import background from '@/../public/assets/pages/career-blog/background-hero.webp';
-import backgroundMobile from '@/../public/assets/pages/career-blog/background-hero-mobile.webp';
+import TwoColorTitle from "@components/two-color-title";
+import background from "@/../public/assets/pages/career-blog/background-hero.jpg";
+import backgroundMobile from "@/../public/assets/pages/career-blog/background-hero-mobile.jpg";
 
 import {
   Container,
   ContentHero,
   SubheadingHero,
-  Line,
-  NavHero,
-  NavList,
-  NavItem,
-  SearchButton,
-} from './style';
-import ContainerHero from '@/components/ContainerHero';
-import useAppContext from '@/hooks/useAppContext';
-import { Wrapper } from '@/components/Wrapper';
+} from "@/../styles/career-blog/components/CareerHeroSection/index.styles";
+import ContainerHero from "@/components/ContainerHero";
+import NavHero from "@/components/NavHero";
+import useAppContext from "@/hooks/useAppContext";
 
 export default function CareerHeroSection() {
   const { isMobile } = useAppContext();
@@ -35,12 +28,13 @@ export default function CareerHeroSection() {
                 text1="Career"
                 text2="Blogs"
                 hasSpaceBtw
+                className="title"
                 wrapperStyles={{
-                  justifyContent: 'flex-start',
-                  fontSize: '44px',
+                  flexDirection: "column",
+                  fontSize: "44px",
                   paddingBottom: 0,
-                  lineHeight: '54px',
-                  textAlign: 'center',
+                  lineHeight: "54px",
+                  textAlign: "center",
                 }}
               />
             </ContentHero>
@@ -61,7 +55,7 @@ export default function CareerHeroSection() {
               text1="Career"
               text2="Blogs"
               hasSpaceBtw
-              wrapperStyles={{ justifyContent: 'flex-start' }}
+              wrapperStyles={{ justifyContent: "flex-start" }}
             />
             <SubheadingHero>
               Everything you need to know about your career in Germany or
@@ -70,21 +64,7 @@ export default function CareerHeroSection() {
           </ContentHero>
         </ContainerHero>
       )}
-      <NavHero>
-        <NavList>
-          <NavItem>APPLICATION</NavItem>
-          <NavItem>JOB SEARCH</NavItem>
-          <NavItem>JOB INTERVIEW</NavItem>
-          <NavItem>GERMANY</NavItem>
-          <NavItem>VISA</NavItem>
-          <NavItem>
-            <SearchButton>
-              <Image src={search} alt="serch-icon" />
-            </SearchButton>
-          </NavItem>
-        </NavList>
-      </NavHero>
-      <Line />
+
     </Container>
   );
 }

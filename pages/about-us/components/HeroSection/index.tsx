@@ -1,59 +1,42 @@
-import React, { useEffect } from "react";
-import * as S from "./styles";
-import HeroBackground from "@/../public/assets/pages/about-us/hero-background.webp"
-import TwoColorTitle from "@components/two-color-title";
-import Image from "next/image";
-import quoteLeft from "@/../public/assets/pages/about-us/quotes-left.webp"
-import quoteRight from "@/../public/assets/pages/about-us/quotes-right.webp"
-import Uan from "@/../public/assets/pages/about-us/uan-career-coach.webp";
-import Manu from "@/../public/assets/pages/about-us/manu-career-coach.webp";
-import { Montserrat } from "@next/font/google";
-import classes from './Hero.module.css'
-import { Row } from "react-bootstrap";
+import React from "react";
+import * as S from "@/../styles/about-us/components/HeroSection/index.styles";
+import HeroBackground from "@/../public/assets/growing-abroad.jpg";
+import { Montserrat } from "next/font/google";
+import classes from "./Hero.module.css";
+import useAppContext from "@/hooks/useAppContext";
+import BlueSquare from "./components/BlueSqare";
 
 const montserrat = Montserrat({
-  subsets: ['latin']
-})
+  subsets: ["latin"],
+});
 
 function HeroSection() {
-
+  const { windowSize } = useAppContext();
 
   return (
-    <S.Container backgroundImg={HeroBackground.src}>
+    <S.Container>
+      <S.UIImage src={HeroBackground} alt="background Uan and Manu" />
       <S.ContentWrapper>
-        <TwoColorTitle text1="Discover" text2="Growing Abroad" hasSpaceBtw />
-        <p style={{ maxWidth: '80vw', fontFamily: montserrat.style.fontFamily }} className={classes.para}>
-          We, Uan from Brazil and Manu from Germany, put together our skills and knowledge to create a unique
-          platform for foreigners to help to make your dream to live and work in Germany or Europe come true.
-        </p>
-
         <S.ImagesContainer>
-
-          <S.ImagesWrapper background={Uan.src}>
-            <S.BlueSquare />
-
-            <S.TextsWrapper>
+          <S.ImagesWrapper>
+            <BlueSquare type="left-square">
               <S.Quote className={classes.quotes}>“</S.Quote>
-              <S.TextLeft className="text-left">If you don't believe in yourself, nobody else will.</S.TextLeft>
-            </S.TextsWrapper>
-
+              <S.TextLeft>
+                If you don't believe in yourself, nobody else will.
+              </S.TextLeft>
+            </BlueSquare>
           </S.ImagesWrapper>
 
-          <S.ImagesWrapper className="right-wrapper" background={Manu.src}>
-            <S.BlueSquare className="right-image" />
-
-            <S.TextsWrapper className="reverse">
+          <S.ImagesWrapper className="right-wrapper">
+            <BlueSquare type="right-square">
               <S.Quote className={classes.quotes}>”</S.Quote>
-              <S.TextRight className="text-right">
-                You just have this one life.
+              <S.TextRight>
+                You just have this one life. So start living.
               </S.TextRight>
-            </S.TextsWrapper>
-
+            </BlueSquare>
           </S.ImagesWrapper>
-
         </S.ImagesContainer>
       </S.ContentWrapper>
-
     </S.Container>
   );
 }

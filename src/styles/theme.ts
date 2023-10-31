@@ -1,18 +1,17 @@
-type ITheme = Record<string, Record<string, string>>
+import { variables } from './global-variables';
 
-export const theme: ITheme = {
+const { sizes } = variables;
+
+export const theme = {
   colors: {
-    primaryBlue: '#05335b',
-    primaryYellow: '#FFDB5C',
-    secondaryBlue: '#4a9afd',
-    terciaryBlue: '#EDF5FF',
     gray1: '#9DA5AF',
-    white:'#FFFFFF',
-
+    white: '#FFFFFF',
+    blue300: '#EDF5FF',
     blue400: '#4A9AFD',
     blue500: '#0073CF',
+    blue600: '#128FC8',
     blue700: '#05335B',
     yellow400: '#FFDB5C',
-    themeBlue: '#0073CF'
   },
+  sizes,
 };

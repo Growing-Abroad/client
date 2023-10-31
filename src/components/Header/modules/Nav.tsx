@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
 import { BurguerLogo, StyledUl } from '../Header.style';
-import Logo from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.webp';
+import Logo from '@/../public/assets/pages/growing-abroad-images/LOGO-Growing-black.jpg';
 import Link from 'next/link';
 
 function Nav(props: NavProps) {
@@ -17,7 +17,7 @@ function Nav(props: NavProps) {
         </li>
         <li><Link href={'/blog'}>Blog</Link></li>
         <li>Jobs</li>
-        <li>FAQ</li>
+        <li><Link href={'/faq'}>Faq</Link></li>
       </StyledUl>
     </nav>
   );

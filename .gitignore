@@ -12,7 +12,9 @@
 /.next/
 /out/
 pnpm-lock.yaml
-
+.yarn*
+.pnp.*
+yarn.lock
 # production
 /build
 

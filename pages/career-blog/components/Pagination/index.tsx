@@ -1,18 +1,21 @@
-import { Button, ContentPagination } from './style';
+import {
+  Button,
+  ContentPagination,
+} from "../../../../styles/career-blog/components/Pagination/index.styles";
 
-interface IPaginationProps{
-  indexes:number;
+interface IPaginationProps {
+  indexes: number;
 }
-export default function Pagination({indexes}:IPaginationProps) {
-  const renderButton = (button:number)=>{
-    return <Button key={button}>{button}</Button>
+export default function Pagination({ indexes }: IPaginationProps) {
+  const renderButton = (button: number) => {
+    return <Button key={button}>{button}</Button>;
+  };
+
+  const buttons: number[] = [];
+
+  for (let i = 1; i < indexes; i++) {
+    buttons.push(i);
   }
-
-  const buttons:number[]=[];
-
-    for(let i=1; i<indexes; i++){
-     buttons.push (i)
-    }
 
   return (
     <ContentPagination>
