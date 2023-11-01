@@ -14,9 +14,6 @@ const nextConfig = {
   eslint: {
       ignoreDuringBuilds: true,
   },
-  server: {
-    port: 8080,
-  },
 };
 
 
