@@ -11,10 +11,12 @@ COPY . .
 
 # Install production dependencies.
 # If you add a package-lock.json, speed your build by switching to 'npm ci'.
-RUN yarn
+RUN npm ci --only=production
 
 RUN npm run build
 
 EXPOSE 3000
+ENV PORT 3000
+
 
 CMD ["npm", "start"]
