@@ -350,7 +350,7 @@ export default function UploadCvSection() {
                 ) : (
                   <S.DropMessage>
                     <div>{selectedFile.name}</div>
-                    <div>{selectedFile.size} MB</div>
+                    <div>{(selectedFile.size / 1000 / 1000).toFixed(2)} MB</div>
                   </S.DropMessage>
                 )}
                 <S.FileInputLabel htmlFor="cv-file-input">
@@ -401,7 +401,7 @@ export default function UploadCvSection() {
                         {selectedFileOptional.name}
                       </div>
                       <div className="file-size">
-                        {selectedFileOptional.size} MB
+                        {(selectedFileOptional.size / 1000 / 1000).toFixed(2)} MB
                       </div>
                     </div>
                   )}
