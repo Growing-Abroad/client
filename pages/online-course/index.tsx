@@ -17,6 +17,7 @@ import CTAction from "@pages/dream-job/components/CTAction";
 import FollowDreams from "@pages/dream-job/components/FollowDream";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 import SEO from "@/components/seo";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 export const OnlineCourseWrapper = styled.div`
   width: 100%;
@@ -83,6 +84,19 @@ export const OnlineCourseFaqMockUp = [
       "You will have access to the online course for a duration of 3 years. Throughout this period, you can watch the course content as many times as you wish.",
   },
 ];
+
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+  const { req, res } = context;
+
+  // if (req && req.url === '/') {
+    res.writeHead(302, { Location: '/' });
+    res.end();
+  // }
+
+  return {
+    props: {},
+  };
+};
 
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();

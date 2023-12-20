@@ -20,6 +20,7 @@ import TwoCards from "@pages/online-course/components/TwoCards";
 import VerticalProgressBarCustom from "components/VerticalProgressBarCustom";
 import { OnlineCourseFaqMockUp } from "@pages/online-course";
 import SEO from "@/components/seo";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 export const SalesWrapper = styled.div`
   width: 100%;
@@ -35,6 +36,19 @@ export const SalesWrapper = styled.div`
     }
   }
 `;
+
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+  const { req, res } = context;
+
+  // if (req && req.url === '/') {
+    res.writeHead(302, { Location: '/' });
+    res.end();
+  // }
+
+  return {
+    props: {},
+  };
+};
 
 export default function Sales() {
   const { isMobile } = useAppContext();

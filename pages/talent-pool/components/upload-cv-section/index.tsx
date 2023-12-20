@@ -201,9 +201,9 @@ export default function UploadCvSection() {
               to include sensitive data (see Article 9 DSGVO) in your
               application, neither in the form nor in the uploaded documents.
             </S.UIStdParagraqhCustom>
-            <S.UIInfoButton onClick={() => (location.href = "/online-course")}>
+            {/* <S.UIInfoButton onClick={() => (location.href = "/online-course")}>
               To the online course
-            </S.UIInfoButton>
+            </S.UIInfoButton> */}
           </S.ContentInfo>
         </S.UploadCvDetails>
       </S.UploadCvWrapper>

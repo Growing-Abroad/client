@@ -54,7 +54,10 @@ export default function OnlineCourse() {
       >
         <WorkIn />
         <DiscoverGA text1="Discover" text2="Growing Abroad" typePages="cadidates" />
-        <OurServicesSection />
+        {/* <OurServicesSection /> */}
+        <br />
+        <br />
+        <br />
         <StoriesPageCandidates hasSubTitle={true} />
 
         <CommunitySection />

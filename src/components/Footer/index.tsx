@@ -79,8 +79,8 @@ export default function Footer({
                   {" "}
                   <h3>{hideNewslleter ? "For Candidates" : "Quick links"}</h3>
                   <li onClick={handleGoToAboutUs}>About Us</li>
-                  <li onClick={handleGoToOnlineCourse}>Online Course</li>
-                  <li onClick={handleGoToCoaching}>Coaching</li>
+                  {/* <li onClick={handleGoToOnlineCourse}>Online Course</li>
+                  <li onClick={handleGoToCoaching}>Coaching</li> */}
                   <li onClick={handleGoToTalentPool}>Talent Pool</li>
                 </S.FooterLinks>
                 <S.FooterLinks>
@@ -128,7 +128,7 @@ export default function Footer({
                         width={26}
                       />
                     </Link>
-                    <Link
+                    {/* <Link
                       target="_blank"
                       href="https://discord.com/invite/5kGd44eA"
                     >
@@ -138,7 +138,7 @@ export default function Footer({
                         height={26}
                         width={26}
                       />
-                    </Link>
+                    </Link> */}
                     <Link
                       target="_blank"
                       href="https://www.linkedin.com/company/growing.abroad/"

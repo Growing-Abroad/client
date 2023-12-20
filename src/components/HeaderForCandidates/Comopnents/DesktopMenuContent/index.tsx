@@ -51,12 +51,16 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
       <Content>
         <LeftSideContainer>
           <LeftSideContent>
-            <MenuItemContainer onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+            {/* <MenuItemContainer onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
               <RSMenuItem>Online Course{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
-            </MenuItemContainer>
-            <MenuItemContainer onClick={pushTo(EPagesNames.COACHING)}>
+            </MenuItemContainer> */}
+            {/* <MenuItemContainer onClick={pushTo(EPagesNames.COACHING)}>
               <RSMenuItem>Coaching{"\xa0"}</RSMenuItem>
+              <AwesomeIcon />
+            </MenuItemContainer> */}
+                        <MenuItemContainer onClick={pushTo(EPagesNames.ABOUT_US)}>
+              <RSMenuItem>About Us{"\xa0"}</RSMenuItem>
               <AwesomeIcon />
             </MenuItemContainer>
             <MenuItemContainer onClick={pushTo(EPagesNames.JOBS)}>
@@ -67,12 +71,12 @@ export function DesktopMenuContent({ itsOpen, setItsOpen }: Props) {
         </LeftSideContainer>
         <RightSideContainer>
           <RightSideContent>
-            <MenuItemContainer>
+            {/* <MenuItemContainer>
               <LSMenuItem onClick={pushTo(EPagesNames.ABOUT_US)}>
                 About Us{"\xa0"}
               </LSMenuItem>
               <AwesomeIcon />
-            </MenuItemContainer>
+            </MenuItemContainer> */}
             {/* <MenuItemContainer>
               <LSMenuItem onClick={pushTo(EPagesNames.BLOG)}>Blog{"\xa0"}</LSMenuItem>
               <AwesomeIcon />

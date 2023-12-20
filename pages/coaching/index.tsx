@@ -13,6 +13,20 @@ import useAppContext from "@/hooks/useAppContext";
 import PageBodyLayout from "@/components/generics/PageBody";
 import StoriesPageCandidates from "@pages/candidates/components/StoriesPageCandidates";
 import SEO from "@/components/seo";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
+
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
+  const { req, res } = context;
+
+  // if (req && req.url === '/') {
+    res.writeHead(302, { Location: '/' });
+    res.end();
+  // }
+
+  return {
+    props: {},
+  };
+};
 
 export default function Coaching() {
   const {

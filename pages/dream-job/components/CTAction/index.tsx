@@ -50,13 +50,13 @@ function CTAction({
 
           <S.SubTitle>{subTitleIntl}</S.SubTitle>
 
-          <S.StdButtonCustom
+          {/* <S.StdButtonCustom
             onClick={hadleScroll}
             icon={icon}
             pageName={pageName}
           >
             {buttonIntl}
-          </S.StdButtonCustom>
+          </S.StdButtonCustom> */}
         </S.LeftSide>
 
         <S.RightSide pageName={pageName}>

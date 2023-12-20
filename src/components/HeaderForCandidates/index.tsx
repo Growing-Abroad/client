@@ -127,14 +127,18 @@ function HeaderForCandidates() {
             <ButtonsContainer>
               { showButtons &&
                 (<>
+                <Button onClick={pushTo(EPagesNames.ABOUT_US)}>
+                  About Us 
+                </Button>
                 <Button onClick={() => route.push("https://growingabroad.myelopage.com/s/growingabroad")}>
                   Our Services 
                 </Button>
-                <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
+                {/* <Button onClick={pushTo(EPagesNames.ONLINE_COURSE)}>
                   Dream Job
-              </Button><Button onClick={pushTo(EPagesNames.COACHING)}>
+              </Button> */}
+              {/* <Button onClick={pushTo(EPagesNames.COACHING)}>
                   Coaching
-                </Button>
+                </Button> */}
                 <Button onClick={pushTo(EPagesNames.JOBS)}>
                 Talentpool
                 </Button>
