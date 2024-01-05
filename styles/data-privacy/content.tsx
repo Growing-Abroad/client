@@ -292,6 +292,16 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           For more information, please refer to Google's privacy policy, which can be accessed at the following links: <br />
           <LinkTo>https://www.google.com/fonts#AboutPlace:about</LinkTo> <br />
           <LinkTo>https://www.google.com/policies/privacy/</LinkTo>
+          <br />
+          <br />
+          f) <Underlined>Wufoo</Underlined> <br />
+          <br />
+          We use the Wufoo form service, a US web form application from the provider SurveyMonkey Europe UC, 2nd Floor, 2 Shelbourne Buildings, Shelbourne Road, Dublin Ireland. This Privacy Shield-certified service provider processes user data exclusively on our behalf. As a result, the content you enter in a contact form is processed and stored. We only use your personal data to carry out the free consultation and to inform you from time to time about offers and other content that may be of interest to you by e-mail or telephone.
+          All data entered by you in forms is encrypted and stored on the provider's servers, secured by passwords. 
+          The purpose of using the service is to facilitate our processing and provision. 
+          The explanations at <CustomLink href="https://www.wufoo.com/privacy/" target="_blank">https://www.wufoo.com/privacy/</CustomLink>,
+          in particular the PRIVACY FORM RESPONDENTS section, also apply to storage.
+
         </>
       )
     },
@@ -341,6 +351,17 @@ export const content: Array<{title: string, paragraph: string | JSX.Element}> = 
           <LinkTo>https://www.google.com/fonts#AboutPlace:about</LinkTo>  <br />
           <LinkTo>https://www.google.com/policies/privacy/</LinkTo> <br />
           The legal basis is derived from your consent given in accordance with Art. 6(1)(a) of the GDPR. You can revoke your consent at any time by changing the cookie settings on our website.
+          <br /><br /><Underlined>Wistia</Underlined>  <br />
+          <br />
+          Our thank you page uses plugins from the online video provider Wistia. 
+          Wistia is a service of Wistia, Inc, 17 Tudor Street, Cambridge, MA 02139, USA.
+          When you visit our contact page, a connection to the Wistia servers is established and 
+          the plugin is displayed. This tells the Wistia server which websites users have visited 
+          and how long they have watched a video. The integration requires that Wistia can recognize 
+          the IP address of the user. The IP address is required to be able to send the content to the user's browser.
+          Further information on data protection and the cookies used can be found 
+          online at <CustomLink href="https://wistia.com/privacy" target="_blank">https://wistia.com/privacy</CustomLink>. Wistia also processes your personal 
+          data in the USA and has submitted to the EU-US Privacy Shield, <CustomLink href="https://www.privacyshield.gov/EU-US-Framework" target="_blank">https://www.privacyshield.gov/EU-US-Framework</CustomLink>. 
         </>  
       )
     },

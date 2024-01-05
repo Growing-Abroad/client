@@ -29,6 +29,10 @@ export const CandidatesWrapper = styled.div`
   }
 `;
 
+const  WrappperSpace = styled.div`
+  margin-bottom: 50px;
+`;
+
 export default function OnlineCourse() {
   const { isMobile } = useAppContext();
 
@@ -55,9 +59,7 @@ export default function OnlineCourse() {
         <WorkIn />
         <DiscoverGA text1="Discover" text2="Growing Abroad" typePages="cadidates" />
         {/* <OurServicesSection /> */}
-        <br />
-        <br />
-        <br />
+        <WrappperSpace />
         <StoriesPageCandidates hasSubTitle={true} />
 
         <CommunitySection />
